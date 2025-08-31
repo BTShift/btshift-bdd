@@ -9,8 +9,9 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: 1,
-  globalSetup: require.resolve('./tests/global-setup'),
-  globalTeardown: require.resolve('./tests/global-teardown'),
+  // Cleanup configuration - controlled by environment variables
+  globalSetup: process.env.SKIP_CLEANUP_BEFORE !== 'true' ? require.resolve('./tests/global-setup') : undefined,
+  globalTeardown: process.env.SKIP_CLEANUP_AFTER !== 'true' ? require.resolve('./tests/global-teardown') : undefined,
   reporter: [
     ['html'],
     ['json', { outputFile: 'test-results/results.json' }],

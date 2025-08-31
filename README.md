@@ -78,12 +78,19 @@ cp .env.example .env
 
 ### All Tests
 ```bash
-npm test
+npm test                  # Runs with automatic cleanup before and after
 ```
 
 ### Playwright E2E Tests Only
 ```bash
-npm run test:e2e
+npm run test:e2e          # Standard test run with cleanup
+```
+
+### Test Without Cleanup (For Investigation)
+```bash
+npm run test:keep-data    # Skips cleanup AFTER tests (keeps data for debugging)
+npm run test:no-cleanup   # Skips ALL cleanup (before and after)
+npm run test:debug        # Debug mode + keeps test data after
 ```
 
 ### Cucumber BDD Tests Only
@@ -96,14 +103,15 @@ npm run test:bdd
 npm run test:ui
 ```
 
-### Debug Mode
-```bash
-npm run test:debug
-```
-
 ### View Test Report
 ```bash
 npm run test:report
+```
+
+### Manual Cleanup
+```bash
+npm run cleanup           # Clean all test data manually
+npm run cleanup:check     # Preview what would be cleaned (dry run)
 ```
 
 ## Test Scenarios
