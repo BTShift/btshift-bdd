@@ -64,14 +64,27 @@ export class DatabaseManager {
     // Delete all test tenants
     await this.tenantDbClient.query('DELETE FROM "Tenants" WHERE "Name" LIKE $1', ['%BDD%']);
     await this.tenantDbClient.query('DELETE FROM "Tenants" WHERE "Name" LIKE $1', ['%test%']);
+    await this.tenantDbClient.query('DELETE FROM "Tenants" WHERE "Name" LIKE $1', ['%Test%']);
     
     // Clean up test tenant databases
     const testDatabases = await this.tenantDbClient.query(
-      "SELECT datname FROM pg_database WHERE datname LIKE 'tenant_%test%' OR datname LIKE 'tenant_%bdd%'"
+      "SELECT datname FROM pg_database WHERE datname LIKE 'tenant_%test%' OR datname LIKE 'tenant_%bdd%' OR datname LIKE 'tenant_duplicate%' OR datname LIKE 'tenant_activation%' OR datname LIKE 'tenant_tenant%'"
     );
     
     for (const db of testDatabases.rows) {
       try {
+        // First terminate all connections to the database
+        await this.tenantDbClient.query(`
+          SELECT pg_terminate_backend(pg_stat_activity.pid)
+          FROM pg_stat_activity
+          WHERE pg_stat_activity.datname = $1
+            AND pid <> pg_backend_pid()
+        `, [db.datname]);
+        
+        // Wait a bit for connections to close
+        await new Promise(resolve => setTimeout(resolve, 500));
+        
+        // Now drop the database
         await this.tenantDbClient.query(`DROP DATABASE IF EXISTS "${db.datname}"`);
       } catch (error) {
         console.log(`Could not drop database ${db.datname}:`, error);

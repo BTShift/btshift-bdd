@@ -11,7 +11,11 @@
     "test:report": "playwright show-report",
     "playwright:install": "playwright install chromium",
     "setup": "npm install && npm run playwright:install",
-    "clean": "rm -rf test-results playwright-report dist"
+    "clean": "rm -rf test-results playwright-report dist",
+    "cleanup": "ts-node scripts/cleanup.ts",
+    "cleanup:force": "npm run cleanup",
+    "pretest": "echo 'Tests will automatically cleanup before and after execution'",
+    "posttest": "echo 'Cleanup complete. Run npm run cleanup manually if needed'"
   },
   "keywords": [],
   "author": "",
