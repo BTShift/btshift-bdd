@@ -61,10 +61,21 @@ export class DatabaseManager {
   }
 
   async cleanupAllTenants(): Promise<void> {
-    // Delete all test tenants
-    await this.tenantDbClient.query('DELETE FROM "Tenants" WHERE "Name" LIKE $1', ['%BDD%']);
-    await this.tenantDbClient.query('DELETE FROM "Tenants" WHERE "Name" LIKE $1', ['%test%']);
-    await this.tenantDbClient.query('DELETE FROM "Tenants" WHERE "Name" LIKE $1', ['%Test%']);
+    // Delete all test tenants with comprehensive patterns
+    await this.tenantDbClient.query(`
+      DELETE FROM "Tenants" 
+      WHERE "Name" LIKE '%BDD%' 
+         OR "Name" LIKE '%Test%' 
+         OR "Name" LIKE '%test%'
+         OR "Name" LIKE 'Tenant A%'
+         OR "Name" LIKE 'Tenant B%'
+         OR "Name" LIKE 'Duplicate%'
+         OR "Name" LIKE 'Activation%'
+         OR "Domain" LIKE '%bdd%'
+         OR "Domain" LIKE '%test%'
+         OR "Domain" LIKE 'tenant-a-%'
+         OR "Domain" LIKE 'tenant-b-%'
+    `);
     
     // Clean up test tenant databases
     const testDatabases = await this.tenantDbClient.query(

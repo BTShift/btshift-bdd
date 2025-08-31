@@ -57,8 +57,15 @@ class TestDataCleaner {
         WHERE "Name" LIKE '%BDD%' 
            OR "Name" LIKE '%Test%' 
            OR "Name" LIKE '%test%'
+           OR "Name" LIKE 'Tenant A%'
+           OR "Name" LIKE 'Tenant B%'
+           OR "Name" LIKE 'Duplicate%'
+           OR "Name" LIKE 'Activation%'
            OR "Domain" LIKE '%bdd%'
            OR "Domain" LIKE '%test%'
+           OR "Domain" LIKE 'tenant-a-%'
+           OR "Domain" LIKE 'tenant-b-%'
+           OR "Domain" LIKE '%[0-9]%'  -- Domains with timestamps
       `);
 
       console.log(`Found ${testTenants.rows.length} test tenants to clean up`);
@@ -78,8 +85,14 @@ class TestDataCleaner {
         WHERE "Name" LIKE '%BDD%' 
            OR "Name" LIKE '%Test%' 
            OR "Name" LIKE '%test%'
+           OR "Name" LIKE 'Tenant A%'
+           OR "Name" LIKE 'Tenant B%'
+           OR "Name" LIKE 'Duplicate%'
+           OR "Name" LIKE 'Activation%'
            OR "Domain" LIKE '%bdd%'
            OR "Domain" LIKE '%test%'
+           OR "Domain" LIKE 'tenant-a-%'
+           OR "Domain" LIKE 'tenant-b-%'
       `);
 
       console.log(`✅ Deleted ${deleteResult.rowCount} test tenants from database`);
@@ -101,6 +114,9 @@ class TestDataCleaner {
            OR datname LIKE 'tenant_duplicate%'
            OR datname LIKE 'tenant_activation%'
            OR datname LIKE 'tenant_tenant%'
+           OR datname LIKE 'tenant_tenant-a-%'
+           OR datname LIKE 'tenant_tenant-b-%'
+           OR datname ~ 'tenant_.*[0-9]{10,}'  -- Databases with timestamps
       `);
 
       console.log(`Found ${testDatabases.rows.length} test databases to clean up`);
