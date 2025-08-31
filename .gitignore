@@ -1,0 +1,14 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+.env
+*.log
+.DS_Store
+coverage/
+.nyc_output/
+*.orig
+*.swp
+*~
+test-videos/
+test-screenshots/
