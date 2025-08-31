@@ -18,9 +18,9 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
     companyName: 'BDD Test Company Ltd',
     domain: `bdd-test-${Date.now()}`,
     plan: 'Professional',
-    adminEmail: `bdd-admin-${Date.now()}@test.com`,
-    adminFirstName: 'BDD',
-    adminLastName: 'Admin',
+    adminEmail: 'anass.yatim@gmail.com',
+    adminFirstName: 'Anass',
+    adminLastName: 'Yatim',
     phone: '+212612345678',
     address: '123 Test Street, Casablanca',
     country: 'Morocco'

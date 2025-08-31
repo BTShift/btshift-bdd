@@ -20,7 +20,7 @@ export class TenantPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.createTenantButton = page.locator('button:has-text("Create"), button:has-text("New Tenant"), a:has-text("Create Tenant")');
+    this.createTenantButton = page.locator('button:has-text("Create"), button:has-text("New Tenant"), a:has-text("Create Tenant"), a:has-text("Add Tenant")');
     this.tenantNameInput = page.locator('input[name="name"], input[name="tenantName"]');
     this.companyNameInput = page.locator('input[name="companyName"]');
     this.domainInput = page.locator('input[name="domain"]');

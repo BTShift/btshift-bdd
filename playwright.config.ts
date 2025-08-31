@@ -29,9 +29,5 @@ export default defineConfig({
     },
   ],
 
-  webServer: process.env.CI ? undefined : {
-    command: 'echo "Using Railway deployed services"',
-    port: 3000,
-    reuseExistingServer: true,
-  },
+  // No webServer needed - using Railway deployed services
 });
