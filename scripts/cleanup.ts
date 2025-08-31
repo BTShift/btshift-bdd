@@ -154,14 +154,41 @@ class TestDataCleaner {
     console.log('\n🧹 Cleaning up test users...');
     
     try {
-      // Delete test users from identity database
+      // First, let's see what users exist
+      const existingUsers = await this.identityDbClient.query(`
+        SELECT "Id", "Email", "FirstName", "LastName" FROM "Users"
+      `);
+      
+      if (existingUsers.rows.length > 0) {
+        console.log(`  Found ${existingUsers.rows.length} total users in database`);
+        existingUsers.rows.forEach(user => {
+          console.log(`    - ${user.Email} (${user.FirstName} ${user.LastName})`);
+        });
+      }
+      
+      // Delete test users from identity database with comprehensive patterns
+      // IMPORTANT: Never delete the superadmin
       const deleteResult = await this.identityDbClient.query(`
         DELETE FROM "Users" 
-        WHERE "Email" LIKE '%@test.com'
+        WHERE (
+          "Email" LIKE '%@test.com'
            OR "Email" LIKE '%bdd%'
            OR "Email" LIKE '%test%'
+           OR "Email" LIKE '%@tenant-a.com'
+           OR "Email" LIKE '%@tenant-b.com'
+           OR "Email" LIKE 'admin@%'
+           OR "Email" LIKE 'activation-%@%'
+           OR "Email" LIKE 'duplicate%@%'
            OR "Email" = 'anass.yatim@gmail.com'
-           OR "FirstName" IN ('BDD', 'Test', 'Duplicate')
+           OR "FirstName" IN ('BDD', 'Test', 'Duplicate', 'Activation', 'Anass')
+           OR "FirstName" LIKE 'Test%'
+           OR "FirstName" LIKE 'BDD%'
+           OR "LastName" LIKE 'Admin%'
+           OR "LastName" = 'Yatim'
+           OR "Email" ~ '[0-9]{10,}'  -- Emails with timestamps
+        )
+        AND "Email" != 'superadmin@shift.ma'  -- Never delete superadmin
+        AND "Email" != 'admin@btshift.com'    -- Keep any permanent admin accounts
       `);
 
       console.log(`✅ Deleted ${deleteResult.rowCount} test users from identity database`);
