@@ -70,14 +70,23 @@ class TestDataCleaner {
 
       console.log(`Found ${testTenants.rows.length} test tenants to clean up`);
 
-      // Delete saga states for test tenants
-      for (const tenant of testTenants.rows) {
-        await this.tenantDbClient.query(
-          'DELETE FROM "TenantOnboardingStates" WHERE "TenantId" = $1',
-          [tenant.Id]
-        );
-        console.log(`  ✅ Deleted saga state for tenant: ${tenant.Name}`);
-      }
+      // Delete saga states for test tenants (both matching by TenantId and by name patterns)
+      const sagaDeleteResult = await this.tenantDbClient.query(`
+        DELETE FROM "TenantOnboardingStates" 
+        WHERE "TenantName" LIKE '%BDD%' 
+           OR "TenantName" LIKE '%Test%' 
+           OR "TenantName" LIKE '%test%'
+           OR "TenantName" LIKE 'Tenant A%'
+           OR "TenantName" LIKE 'Tenant B%'
+           OR "TenantName" LIKE 'Duplicate%'
+           OR "TenantName" LIKE 'Activation%'
+           OR "TenantName" LIKE 'Sprint1%'
+           OR "TenantName" LIKE 'Schema Fix%'
+           OR "TenantName" LIKE 'Saga Success%'
+           OR "TenantName" LIKE 'Clean Test%'
+           OR "TenantId" IN (SELECT "Id"::text FROM "Tenants" WHERE "Name" LIKE '%Test%' OR "Name" LIKE '%BDD%')
+      `);
+      console.log(`  ✅ Deleted ${sagaDeleteResult.rowCount} saga states (including orphaned ones)`);
 
       // Delete test tenants
       const deleteResult = await this.tenantDbClient.query(`

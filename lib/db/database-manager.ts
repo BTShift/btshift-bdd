@@ -140,18 +140,64 @@ export class DatabaseManager {
     }
   }
 
+  async getSagaState(tenantId: string): Promise<any> {
+    const query = `
+      SELECT 
+        "CorrelationId",
+        "CurrentState",
+        "TenantId",
+        "DatabaseProvisionedAt",
+        "IdentityConfiguredAt",
+        "ClientManagementInitializedAt",
+        "AccountingInitializedAt",
+        "CompletedAt",
+        "LastError",
+        "RetryCount"
+      FROM "TenantOnboardingStates" 
+      WHERE "TenantId" = $1
+    `;
+    const result = await this.tenantDbClient.query(query, [tenantId]);
+    return result.rows[0];
+  }
+
   async waitForSagaCompletion(tenantId: string, maxWaitMs: number = 30000): Promise<boolean> {
     const startTime = Date.now();
+    
+    console.log(`Waiting for saga completion for tenant ${tenantId}`);
     
     while (Date.now() - startTime < maxWaitMs) {
       const sagaState = await this.getSagaState(tenantId);
       
-      if (sagaState && (sagaState.CurrentState === 'Completed' || sagaState.CurrentState === 'Failed')) {
-        return sagaState.CurrentState === 'Completed';
+      if (sagaState) {
+        console.log(`Saga state for tenant ${tenantId}: ${sagaState.CurrentState}`);
+        
+        // Check if completed successfully
+        if (sagaState.CurrentState === 'Completed' && sagaState.CompletedAt) {
+          return true;
+        }
+        
+        // Check if failed
+        if (sagaState.CurrentState === 'Failed' || sagaState.LastError) {
+          console.error(`Saga failed for tenant ${tenantId}: ${sagaState.LastError}`);
+          return false;
+        }
       }
       
-      // Wait 1 second before checking again
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Wait 2 seconds before checking again
+      await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+    
+    // Timeout - log the last state
+    const finalState = await this.getSagaState(tenantId);
+    if (finalState) {
+      console.log(`Saga timeout for tenant ${tenantId}. Final state: ${finalState.CurrentState}`);
+      console.log('Saga progress:', {
+        DatabaseProvisioned: !!finalState.DatabaseProvisionedAt,
+        IdentityConfigured: !!finalState.IdentityConfiguredAt,
+        ClientManagementInitialized: !!finalState.ClientManagementInitializedAt,
+        AccountingInitialized: !!finalState.AccountingInitializedAt,
+        Completed: !!finalState.CompletedAt
+      });
     }
     
     return false;

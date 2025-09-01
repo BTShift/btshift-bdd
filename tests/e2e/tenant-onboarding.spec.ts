@@ -46,6 +46,7 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
   });
 
   test('Complete tenant creation flow through UI', async ({ page }) => {
+    test.setTimeout(60000); // Increase timeout to 60 seconds for saga completion
     // Step 1: Login as SuperAdmin
     await loginPage.navigate(process.env.PLATFORM_ADMIN_URL);
     await loginPage.login(
@@ -58,8 +59,15 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
     await tenantPage.navigate();
     await tenantPage.clickCreateTenant();
 
-    // Step 3: Fill and submit tenant form
-    await tenantPage.fillTenantForm(testTenantData);
+    // Step 3: Fill and submit tenant form (multi-step)
+    await tenantPage.fillTenantFormMultiStep({
+      name: testTenantData.name,
+      companyName: testTenantData.companyName,
+      domain: testTenantData.domain,
+      adminEmail: testTenantData.adminEmail,
+      adminFirstName: testTenantData.adminFirstName,
+      adminLastName: testTenantData.adminLastName
+    });
     await tenantPage.submitForm();
 
     // Step 4: Verify success in UI
@@ -76,18 +84,27 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
     expect(tenant).toBeDefined();
     expect(tenant.Status).toBe('Pending');
     
-    // Step 7: Check database was provisioned
+    // Step 7: Verify saga was initiated and track its progress
+    const sagaState = await dbManager.getSagaState(tenant.Id);
+    expect(sagaState).toBeDefined();
+    expect(sagaState.TenantId).toBe(tenant.Id);
+    
+    // Step 8: Wait for saga completion (this validates the entire onboarding flow)
+    console.log('Waiting for saga to complete all onboarding steps...');
+    const sagaCompleted = await dbManager.waitForSagaCompletion(tenant.Id, 45000); // 45 seconds timeout
+    
+    // If saga didn't complete, get the final state for debugging
+    if (!sagaCompleted) {
+      const finalState = await dbManager.getSagaState(tenant.Id);
+      console.log('Saga did not complete. Final state:', finalState);
+    }
+    
+    expect(sagaCompleted).toBe(true);
+    
+    // Step 9: Verify database was provisioned as part of the saga
     const dbName = `tenant_${testTenantData.domain.replace(/-/g, '')}`;
     const dbExists = await dbManager.checkTenantDatabaseExists(dbName);
     expect(dbExists).toBe(true);
-
-    // Step 8: Verify saga was initiated
-    const sagaState = await dbManager.getSagaState(tenant.Id);
-    expect(sagaState).toBeDefined();
-    
-    // Step 9: Wait for saga completion (max 30 seconds)
-    const sagaCompleted = await dbManager.waitForSagaCompletion(tenant.Id, 30000);
-    expect(sagaCompleted).toBe(true);
   });
 
   test('Tenant activation flow', async ({ page }) => {
