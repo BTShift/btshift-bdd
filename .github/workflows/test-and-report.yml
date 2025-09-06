@@ -109,13 +109,15 @@ jobs:
             if [ -d "${{ github.run_number }}" ]; then
               echo "✅ Found run folder: ${{ github.run_number }}"
               
-              # Create latest folder with proper permissions
-              mkdir -p latest
-              cp -r "${{ github.run_number }}"/* latest/ 2>/dev/null || {
-                echo "⚠️ Failed to copy contents, trying alternative method..."
+              # Copy the entire folder as 'latest' (this creates the directory automatically)
+              cp -r "${{ github.run_number }}" latest 2>/dev/null || {
+                echo "⚠️ cp failed, trying rsync..."
                 rsync -av "${{ github.run_number }}/" latest/ || {
-                  echo "❌ Both copy methods failed"
-                  exit 0  # Don't fail the workflow
+                  echo "⚠️ rsync failed, trying sudo approach..."
+                  sudo cp -r "${{ github.run_number }}" latest || {
+                    echo "❌ All copy methods failed, but continuing workflow..."
+                    exit 0  # Don't fail the workflow
+                  }
                 }
               }
               echo "✅ Created latest folder from run ${{ github.run_number }}"
