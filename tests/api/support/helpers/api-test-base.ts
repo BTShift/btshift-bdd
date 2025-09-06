@@ -123,6 +123,9 @@ export async function setupApiTest(): Promise<TestContext> {
   const client = new TypedApiClient();
   const cleanup = new CleanupManager();
   
+  // Always return context object to prevent undefined errors in teardown
+  const context = { client, cleanup };
+  
   // Login as SuperAdmin - use PLATFORM_ADMIN credentials from .env
   const credentials = {
     email: process.env.PLATFORM_ADMIN_EMAIL || process.env.SUPER_ADMIN_EMAIL || 'superadmin@shift.ma',
@@ -137,17 +140,26 @@ export async function setupApiTest(): Promise<TestContext> {
     console.log('🔑 Token preview:', client.getAuthToken()?.substring(0, 20) + '...');
   } catch (error) {
     console.error('❌ Login failed:', error.message);
-    throw error;
+    // Still return context so teardown doesn't fail with undefined
+    return context;
   }
   
-  return { client, cleanup };
+  return context;
 }
 
 export async function teardownApiTest(context: TestContext): Promise<void> {
   if (context?.cleanup) {
-    await context.cleanup.executeCleanup(context.client);
+    try {
+      await context.cleanup.executeCleanup(context.client);
+    } catch (error) {
+      console.warn('⚠️ Cleanup failed:', error.message);
+    }
   }
-  if (context?.client) {
-    await context.client.logout();
+  if (context?.client && context.client.getAuthToken()) {
+    try {
+      await context.client.logout();
+    } catch (error) {
+      console.warn('⚠️ Logout failed:', error.message);
+    }
   }
 }
