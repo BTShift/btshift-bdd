@@ -27,10 +27,12 @@ describe('Authentication - Login Happy Path API Tests', () => {
     ctx.reportLastCorrelationId();
 
     expect(response).toBeDefined();
-    expect((response as any).tokenInfo?.accessToken).toBeTruthy();
-    expect((response as any).tokenInfo?.refreshToken).toBeTruthy();
-    expect((response as any).userInfo?.email).toBe(credentials.email);
-    expect((response as any).userInfo?.roles).toContain('SuperAdmin');
+    // Handle wrapped response format
+    const responseData = (response as any).data || response;
+    expect(responseData.tokenInfo?.accessToken).toBeTruthy();
+    expect(responseData.tokenInfo?.refreshToken).toBeTruthy();
+    expect(responseData.userInfo?.email).toBe(credentials.email);
+    expect(responseData.userInfo?.roles).toContain('SuperAdmin');
   });
 
   test('should validate a valid token', async () => {
