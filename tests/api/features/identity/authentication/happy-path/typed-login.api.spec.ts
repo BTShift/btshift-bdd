@@ -3,13 +3,14 @@ import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client';
 import { superAdminCredentials } from '../../../../support/fixtures/tenant-data';
 
-describe('Authentication - Login with Typed Client (Using NPM Packages)', () => {
+describe('Business Feature: Platform Access Control', () => {
   let client: TypedApiClient;
 
   beforeAll(async () => {
-    allure.parentSuite('Identity Service');
-    allure.suite('Authentication');
-    allure.subSuite('Login Operations');
+    allure.feature('Identity & Access Management');
+    allure.parentSuite('🔐 Security & Access');
+    allure.suite('Authentication Systems');
+    allure.subSuite('User Login Process');
     
     client = new TypedApiClient();
   });
@@ -20,7 +21,16 @@ describe('Authentication - Login with Typed Client (Using NPM Packages)', () => 
     }
   });
 
-  test('should successfully login with typed client from npm package', async () => {
+  test('Super Admin can access the platform with valid credentials', async () => {
+    allure.story('As a Super Admin, I want to securely log into the platform so I can manage tenants and users');
+    allure.description('This test validates that Super Admin can authenticate using the platform login system and receive proper access tokens for subsequent operations.');
+    allure.tag('authentication');
+    allure.tag('security');
+    allure.tag('access-control');
+    allure.owner('Super Admin');
+    allure.severity('blocker');
+
+    let loginResponse: any;
     // Act - Using the typed client from @btshift/identity-types
     const response = await client.identity('/api/authentication/login', 'post', {
       body: {

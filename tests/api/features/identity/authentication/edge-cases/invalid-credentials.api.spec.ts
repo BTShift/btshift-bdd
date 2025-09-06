@@ -8,7 +8,8 @@ describe('Authentication - Invalid Credentials API Tests', () => {
   const validEmail = TestDataFactory.credentials().email;
 
   beforeAll(async () => {
-    allure.parentSuite('Authentication');
+    allure.parentSuite('Authentication') Access');
+    allure.feature('Identity & Access Management');
     client = new TypedApiClient();
   });
 

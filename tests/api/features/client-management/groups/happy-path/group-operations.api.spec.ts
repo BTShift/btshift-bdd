@@ -8,8 +8,9 @@ describe('Client Management - Group Operations', () => {
   let testTenantId: string = 'test-tenant-123';
 
   beforeAll(async () => {
-    allure.parentSuite('Client Management Service');
-    allure.suite('Group Management');
+    allure.parentSuite('👥 Client Services');
+    allure.feature('Client Relationship Management');
+    allure.suite('Client Organization');
     ctx = await setupApiTest();
   });
 

@@ -7,7 +7,8 @@ describe('Identity Service - Invitation Operations', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
-    allure.parentSuite('User Invitations');
+    allure.parentSuite('User Invitations') Access');
+    allure.feature('Identity & Access Management');
     ctx = await setupApiTest();
   });
 

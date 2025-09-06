@@ -6,7 +6,8 @@ describe('Identity Service - Permission Management Operations', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
-    allure.parentSuite('Permission Management');
+    allure.parentSuite('Permission Management') Access');
+    allure.feature('Identity & Access Management');
     ctx = await setupApiTest();
   });
 

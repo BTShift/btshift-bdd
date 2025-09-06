@@ -8,7 +8,8 @@ describe('Tenant Management - Subscription Operations', () => {
   let testTenantId: string;
 
   beforeAll(async () => {
-    allure.parentSuite('Tenant Management Service');
+    allure.parentSuite('🏢 Business Operations');
+    allure.feature('Tenant Management');
     allure.suite('Subscription Management');
     ctx = await setupApiTest();
     

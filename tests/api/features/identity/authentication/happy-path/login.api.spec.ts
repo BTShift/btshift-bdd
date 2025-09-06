@@ -8,7 +8,8 @@ describe('Authentication - Login Happy Path API Tests', () => {
   const credentials = TestDataFactory.credentials();
 
   beforeAll(async () => {
-    allure.parentSuite('Authentication');
+    allure.parentSuite('Authentication') Access');
+    allure.feature('Identity & Access Management');
     client = new TypedApiClient();
   });
 

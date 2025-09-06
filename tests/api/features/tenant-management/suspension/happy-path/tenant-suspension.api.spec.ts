@@ -7,8 +7,9 @@ describe('Tenant Management - Suspension Operations', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
-    allure.parentSuite('Tenant Management Service');
-    allure.suite('Tenant Lifecycle');
+    allure.parentSuite('🏢 Business Operations');
+    allure.feature('Tenant Management');
+    allure.suite('Tenant Lifecycle Management');
     ctx = await setupApiTest();
   });
 

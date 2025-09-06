@@ -9,7 +9,8 @@ describe('Identity Service - Password Reset Operations', () => {
   let testUserEmail: string;
 
   beforeAll(async () => {
-    allure.parentSuite('Password Reset');
+    allure.parentSuite('Password Reset') Access');
+    allure.feature('Identity & Access Management');
     ctx = await setupApiTest();
     
     // Create a test user for password reset operations

@@ -8,7 +8,8 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
   const createdTenantIds: string[] = [];
 
   beforeAll(async () => {
-    allure.parentSuite('Tenant Onboarding');
+    allure.parentSuite('🏢 Business Operations');
+    allure.feature('Tenant Management');
     client = new TypedApiClient();
     // Login as SuperAdmin
     await client.login(superAdminCredentials.email, superAdminCredentials.password);

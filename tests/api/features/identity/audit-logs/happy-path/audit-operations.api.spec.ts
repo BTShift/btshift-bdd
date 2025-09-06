@@ -6,7 +6,8 @@ describe('Identity Service - Audit Log Operations', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
-    allure.parentSuite('Audit Logs');
+    allure.parentSuite('Audit Logs') Access');
+    allure.feature('Identity & Access Management');
     ctx = await setupApiTest();
   });
 

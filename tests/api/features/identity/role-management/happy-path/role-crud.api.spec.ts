@@ -6,7 +6,8 @@ describe('Identity Service - Role Management Operations', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
-    allure.parentSuite('Role Management');
+    allure.parentSuite('Role Management') Access');
+    allure.feature('Identity & Access Management');
     ctx = await setupApiTest();
   });
 

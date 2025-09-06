@@ -8,7 +8,8 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   const createdClientIds: string[] = [];
 
   beforeAll(async () => {
-    allure.parentSuite('Client Management Service');
+    allure.parentSuite('👥 Client Services');
+    allure.feature('Client Relationship Management');
     allure.suite('Client Operations');
     client = new TypedApiClient();
     // Login as SuperAdmin

@@ -3,13 +3,14 @@ import { allure } from 'allure-playwright';
 import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
-describe('Tenant Creation - Happy Path API Tests', () => {
+describe('Business Feature: Tenant Onboarding', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
-    allure.parentSuite('Tenant Management Service');
-    allure.suite('Tenant Onboarding');
-    allure.subSuite('Tenant Creation');
+    allure.feature('Tenant Management');
+    allure.parentSuite('🏢 Business Operations');
+    allure.suite('Tenant Lifecycle Management');
+    allure.subSuite('New Tenant Onboarding');
     
     ctx = await setupApiTest();
   });
@@ -18,20 +19,43 @@ describe('Tenant Creation - Happy Path API Tests', () => {
     await teardownApiTest(ctx);
   });
 
-  test('should successfully create a new tenant with valid data', async () => {
-    const tenantData = TestDataFactory.tenant();
+  test('Super Admin can successfully onboard a new accounting firm', async () => {
+    allure.story('As a Super Admin, I want to onboard new accounting firms so they can start using our platform');
+    allure.description('This test validates the complete tenant creation workflow from a business perspective, ensuring all required data is captured and the tenant is properly initialized.');
+    allure.tag('critical-path');
+    allure.tag('business-flow');
+    allure.owner('Super Admin');
+    allure.severity('critical');
     
-    const response = await ctx.client.tenant('/api/tenants', 'post', {
-      body: tenantData
+    let tenantData: any;
+    let response: any;
+
+    await allure.step('📋 Given: I have prepared new tenant registration data', async () => {
+      tenantData = TestDataFactory.tenant();
+      allure.attachment('Tenant Registration Data', JSON.stringify(tenantData, null, 2), 'application/json');
     });
-    
-    ctx.cleanup.addTenant((response as any).id);
-    
-    expect(response).toBeDefined();
-    expect((response as any).id).toBeTruthy();
-    expect((response as any).companyName).toBe(tenantData.companyName);
-    expect((response as any).tenantName).toBe(tenantData.tenantName);
-    expect((response as any).status).toBe('Pending');
+
+    await allure.step('🚀 When: I submit the tenant registration request', async () => {
+      response = await ctx.client.tenant('/api/tenants', 'post', {
+        body: tenantData
+      });
+      ctx.cleanup.addTenant((response as any).id);
+    });
+
+    await allure.step('✅ Then: The tenant should be created successfully', async () => {
+      expect(response).toBeDefined();
+      expect((response as any).id).toBeTruthy();
+      allure.attachment('Created Tenant Response', JSON.stringify(response, null, 2), 'application/json');
+    });
+
+    await allure.step('🔍 And: The tenant data should match the request', async () => {
+      expect((response as any).companyName).toBe(tenantData.companyName);
+      expect((response as any).tenantName).toBe(tenantData.tenantName);
+    });
+
+    await allure.step('📊 And: The tenant status should be Pending', async () => {
+      expect((response as any).status).toBe('Pending');
+    });
   });
 
   test('should retrieve the created tenant by ID', async () => {

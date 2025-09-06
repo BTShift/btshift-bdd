@@ -7,7 +7,8 @@ describe('Tenant Creation - Duplicate Prevention API Tests', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
-    allure.parentSuite('Tenant Onboarding');
+    allure.parentSuite('🏢 Business Operations');
+    allure.feature('Tenant Management');
     ctx = await setupApiTest();
   });
 

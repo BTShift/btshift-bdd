@@ -8,8 +8,9 @@ describe('Client Management - User-Client Associations', () => {
   let testTenantId: string = 'test-tenant-123';
 
   beforeAll(async () => {
-    allure.parentSuite('Client Management Service');
-    allure.suite('User-Client Associations');
+    allure.parentSuite('👥 Client Services');
+    allure.feature('Client Relationship Management');
+    allure.suite('Client-User Relationships');
     ctx = await setupApiTest();
   });
 
