@@ -1,2 +1,0 @@
-❌ Global authentication failed: Login succeeded but no token was returned
-❌ [daac8b68] Setup failed: Login succeeded but no token was returned

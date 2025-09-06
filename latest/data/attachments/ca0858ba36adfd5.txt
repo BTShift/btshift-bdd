@@ -1,2 +1,0 @@
-❌ Global authentication failed: Login succeeded but no token was returned
-❌ [a7617fcc] Setup failed: Login succeeded but no token was returned

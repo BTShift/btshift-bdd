@@ -1,2 +1,0 @@
-🔐 [Identity] Getting auth token: null
-🔐 [Tenant] Getting auth token: null

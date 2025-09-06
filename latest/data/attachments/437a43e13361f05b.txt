@@ -1,2 +1,0 @@
-❌ Global authentication failed: Login succeeded but no token was returned
-❌ [bd70d6f0] Setup failed: Login succeeded but no token was returned
