@@ -93,47 +93,24 @@ jobs:
           allure_history: allure-history
           keep_reports: 20
 
-      - name: Create latest folder (bulletproof approach)
+      - name: Fix permissions for allure-history
         if: always()
         run: |
-          echo "🎯 BULLETPROOF: Creating latest folder with Docker approach..."
-          
-          if [ -d "allure-history" ]; then
-            echo "✅ allure-history exists"
-            
-            # Use Docker to handle the copy with proper permissions - this bypasses all permission issues
-            if [ -d "allure-history/${{ github.run_number }}" ]; then
-              echo "✅ Found run folder: ${{ github.run_number }}"
-              
-              # Remove old latest if it exists
-              sudo rm -rf allure-history/latest 2>/dev/null || true
-              
-              # Use Docker with root access to copy files
-              docker run --rm \
-                -v "$(pwd)/allure-history:/workspace" \
-                -w /workspace \
-                alpine:latest \
-                sh -c "
-                  rm -rf latest 2>/dev/null || true
-                  cp -r ${{ github.run_number }} latest
-                  chmod -R 755 latest
-                  chown -R $(id -u):$(id -g) latest 2>/dev/null || true
-                " || {
-                  # Fallback: Just create a simple symlink if Docker fails
-                  echo "🔄 Docker approach failed, using symlink fallback..."
-                  cd allure-history
-                  rm -f latest 2>/dev/null || true
-                  ln -sf "${{ github.run_number }}" latest
-                }
-              
-              echo "✅ Latest folder created successfully!"
-              ls -la allure-history/ | grep latest || echo "⚠️ Latest folder not visible, but deployment will continue"
-            else
-              echo "❌ Run folder ${{ github.run_number }} not found"
-              ls -la allure-history/
-            fi
+          sudo mkdir -p allure-history/latest
+          sudo chown -R $USER:$USER allure-history
+
+      - name: Create latest folder
+        if: always()
+        run: |
+          echo "📁 Creating latest folder..."
+          if [ -d "allure-history" ] && [ -d "allure-history/${{ github.run_number }}" ]; then
+            cd allure-history
+            rm -rf latest
+            cp -r "${{ github.run_number }}" latest
+            echo "✅ Created latest folder from run ${{ github.run_number }}"
           else
-            echo "❌ allure-history directory not found"
+            echo "❌ Could not find required directories"
+            ls -la allure-history/ 2>/dev/null || echo "allure-history not found"
           fi
 
       - name: Deploy report to GitHub Pages

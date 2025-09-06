@@ -9,7 +9,7 @@ describe('Identity Service - Session Management Operations', () => {
   let testSessionId: string;
 
   beforeAll(async () => {
-    allure.parentSuite('Session Management') Access');
+    allure.parentSuite('Session Management'');
     allure.feature('Identity & Access Management');
     ctx = await setupApiTest();
     
