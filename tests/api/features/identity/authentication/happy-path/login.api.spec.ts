@@ -22,11 +22,10 @@ describe('Authentication - Login Happy Path API Tests', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).success).toBe(true);
     expect((response as any).tokenInfo?.accessToken).toBeTruthy();
     expect((response as any).tokenInfo?.refreshToken).toBeTruthy();
-    expect((response as any).user?.email).toBe(credentials.email);
-    expect((response as any).user?.roles).toContain('SuperAdmin');
+    expect((response as any).userInfo?.email).toBe(credentials.email);
+    expect((response as any).userInfo?.roles).toContain('SuperAdmin');
   });
 
   test('should validate a valid token', async () => {

@@ -123,10 +123,10 @@ export async function setupApiTest(): Promise<TestContext> {
   const client = new TypedApiClient();
   const cleanup = new CleanupManager();
   
-  // Login as SuperAdmin
+  // Login as SuperAdmin - use PLATFORM_ADMIN credentials from .env
   const credentials = {
-    email: process.env.SUPER_ADMIN_EMAIL || 'superadmin@btshift.com',
-    password: process.env.SUPER_ADMIN_PASSWORD || 'SuperAdmin123!'
+    email: process.env.PLATFORM_ADMIN_EMAIL || process.env.SUPER_ADMIN_EMAIL || 'superadmin@shift.ma',
+    password: process.env.PLATFORM_ADMIN_PASSWORD || process.env.SUPER_ADMIN_PASSWORD || 'SuperAdmin@123!'
   };
   
   await client.login(credentials.email, credentials.password);

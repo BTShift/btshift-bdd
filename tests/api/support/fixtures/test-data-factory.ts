@@ -88,8 +88,8 @@ export class TestDataFactory {
 
   static credentials() {
     return {
-      email: process.env.SUPER_ADMIN_EMAIL || 'superadmin@btshift.com',
-      password: process.env.SUPER_ADMIN_PASSWORD || 'SuperAdmin123!'
+      email: process.env.PLATFORM_ADMIN_EMAIL || process.env.SUPER_ADMIN_EMAIL || 'superadmin@shift.ma',
+      password: process.env.PLATFORM_ADMIN_PASSWORD || process.env.SUPER_ADMIN_PASSWORD || 'SuperAdmin@123!'
     };
   }
 }

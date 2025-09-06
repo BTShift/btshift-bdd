@@ -24,30 +24,21 @@ export class TypedApiClient {
     // Initialize identity client
     const identityClient = makeIdentityClient({
       baseUrl: this.baseUrl,
-      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined,
-      headers: {
-        'Content-Type': 'application/json',
-      }
+      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined
     });
     this.identity = identityClient.api;
 
     // Initialize tenant management client
     const tenantClient = makeTenantClient({
       baseUrl: this.baseUrl,
-      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined,
-      headers: {
-        'Content-Type': 'application/json',
-      }
+      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined
     });
     this.tenant = tenantClient.api;
 
     // Initialize client management client
     const clientClient = makeClientManagementClient({
       baseUrl: this.baseUrl,
-      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined,
-      headers: {
-        'Content-Type': 'application/json',
-      }
+      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined
     });
     this.clientManagement = clientClient.api;
   }
@@ -73,6 +64,10 @@ export class TypedApiClient {
     // Check if response has token info and set it
     if ((response as any)?.tokenInfo?.accessToken) {
       this.setAuthToken((response as any).tokenInfo.accessToken);
+    } else if ((response as any)?.accessToken) {
+      this.setAuthToken((response as any).accessToken);
+    } else if ((response as any)?.token) {
+      this.setAuthToken((response as any).token);
     }
     
     return response;
@@ -80,10 +75,17 @@ export class TypedApiClient {
 
   // Helper method to logout
   async logout(): Promise<void> {
-    try {
-      await this.identity('/api/authentication/logout', 'post');
-    } finally {
-      this.clearAuthToken();
+    if (this.authToken) {
+      try {
+        await this.identity('/api/authentication/logout', 'post', {
+          body: {}
+        });
+      } catch (error) {
+        // Ignore logout errors - token will be cleared anyway
+        console.warn('Logout failed:', error);
+      } finally {
+        this.clearAuthToken();
+      }
     }
   }
 }
