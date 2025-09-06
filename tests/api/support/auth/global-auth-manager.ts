@@ -80,16 +80,22 @@ export class GlobalAuthManager {
       // Extract token and set expiration (default to 10 minutes if not specified)
       const token = client.getAuthToken();
       if (!token) {
+        console.error('🔍 Login response:', loginResponse);
+        console.error('🔍 Client auth token:', client.getAuthToken());
         throw new Error('Login succeeded but no token was returned');
       }
       
       // Set expiration to 8 minutes (leaving 2-minute buffer for refresh)
       const expiresAt = new Date(Date.now() + 8 * 60 * 1000);
       
+      // Extract refresh token from the new response format
+      const responseData = (loginResponse as any)?.data;
+      const refreshToken = responseData?.tokenInfo?.refreshToken;
+      
       this.authInfo = {
         token,
         expiresAt,
-        refreshToken: (loginResponse as any)?.refreshToken
+        refreshToken: refreshToken
       };
       
       console.log(`✅ [${sessionId}] Global authentication successful`);

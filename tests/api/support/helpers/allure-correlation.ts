@@ -22,13 +22,21 @@ export class AllureCorrelationHelper {
       serviceName?: string;
     }
   ): void {
-    // Add correlation ID as parameter for easy visibility
-    allure.parameter('Correlation ID', correlationId);
+    // Add correlation ID as prominent parameter for easy visibility
+    allure.parameter('🔍 X-Correlation-ID', correlationId);
     
     // If request and response correlation IDs are different, show both
     if (requestCorrelationId && requestCorrelationId !== correlationId) {
-      allure.parameter('Request Correlation ID', requestCorrelationId);
-      allure.parameter('Response Correlation ID', correlationId);
+      allure.parameter('📤 Request Correlation ID', requestCorrelationId);
+      allure.parameter('📥 Response Correlation ID', correlationId);
+    }
+    
+    // Add service and endpoint context as parameters
+    if (context?.serviceName) {
+      allure.parameter('🔧 Service', context.serviceName);
+    }
+    if (context?.method && context?.endpoint) {
+      allure.parameter('🌐 API Call', `${context.method} ${context.endpoint}`);
     }
     
     // Add detailed correlation information as attachment
@@ -46,7 +54,7 @@ export class AllureCorrelationHelper {
     }
     
     allure.attachment(
-      'Correlation Details',
+      '🔍 X-Correlation-ID Details',
       JSON.stringify(correlationInfo, null, 2),
       'application/json'
     );

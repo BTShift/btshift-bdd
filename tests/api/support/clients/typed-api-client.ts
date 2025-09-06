@@ -120,17 +120,35 @@ export class TypedApiClient {
               
               console.log(`✅ [${serviceName}] ${method?.toUpperCase()} ${path} | Request-ID: ${requestCorrelationId} | Response-ID: ${responseCorrelationId} | Success`);
               
-              // Return enhanced response with correlation ID metadata
-              return {
+              // Create enhanced response with correlation ID metadata
+              const enhancedResponse = {
                 data: result,
                 correlationId: responseCorrelationId,
                 requestCorrelationId: requestCorrelationId
               };
+              
+              // Automatically report correlation ID to Allure
+              const AllureCorrelationHelper = require('../helpers/allure-correlation').AllureCorrelationHelper;
+              AllureCorrelationHelper.reportFromApiResponse(enhancedResponse, {
+                endpoint: path,
+                method: method?.toUpperCase(),
+                serviceName
+              });
+              
+              return enhancedResponse;
             } catch (error) {
               console.error(`❌ [${serviceName}] ${method?.toUpperCase()} ${path} | Correlation-ID: ${requestCorrelationId} | Error:`, error.message);
               
               // Store correlation ID even on error for debugging
               this.lastCorrelationId = requestCorrelationId;
+              
+              // Report correlation ID to Allure even on error
+              const AllureCorrelationHelper = require('../helpers/allure-correlation').AllureCorrelationHelper;
+              AllureCorrelationHelper.reportCorrelationId(requestCorrelationId, undefined, {
+                endpoint: path,
+                method: method?.toUpperCase(),
+                serviceName
+              });
               
               // Re-throw error but preserve correlation ID context
               const enhancedError = error as any;
@@ -151,8 +169,9 @@ export class TypedApiClient {
       body: { email, password }
     });
     
-    // Check if response data has token info and set it
-    const responseData = response.data;
+    // Check both the wrapped response data and direct response for token info
+    // This handles both the correlation-wrapped response and direct API response
+    const responseData = response.data || response;
     if (responseData?.tokenInfo?.accessToken) {
       this.setAuthToken(responseData.tokenInfo.accessToken);
     } else if (responseData?.accessToken) {
