@@ -1,4 +1,5 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client';
 import { generateUniqueTenantData, superAdminCredentials } from '../../../../support/fixtures/tenant-data';
 
@@ -7,6 +8,7 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
   const createdTenantIds: string[] = [];
 
   beforeAll(async () => {
+    allure.parentSuite('Tenant Onboarding');
     client = new TypedApiClient();
     // Login as SuperAdmin
     await client.login(superAdminCredentials.email, superAdminCredentials.password);

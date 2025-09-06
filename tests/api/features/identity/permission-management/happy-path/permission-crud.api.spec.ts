@@ -1,10 +1,12 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 
 describe('Identity Service - Permission Management Operations', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
+    allure.parentSuite('Permission Management');
     ctx = await setupApiTest();
   });
 

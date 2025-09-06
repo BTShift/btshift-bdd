@@ -1,4 +1,5 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client';
 import { superAdminCredentials } from '../../../../support/fixtures/tenant-data';
 
@@ -7,6 +8,8 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   const createdClientIds: string[] = [];
 
   beforeAll(async () => {
+    allure.parentSuite('Client Management Service');
+    allure.suite('Client Operations');
     client = new TypedApiClient();
     // Login as SuperAdmin
     await client.login(superAdminCredentials.email, superAdminCredentials.password);

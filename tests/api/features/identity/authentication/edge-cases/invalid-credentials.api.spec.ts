@@ -1,4 +1,5 @@
 import { describe, beforeAll, test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
@@ -7,6 +8,7 @@ describe('Authentication - Invalid Credentials API Tests', () => {
   const validEmail = TestDataFactory.credentials().email;
 
   beforeAll(async () => {
+    allure.parentSuite('Authentication');
     client = new TypedApiClient();
   });
 

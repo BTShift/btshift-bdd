@@ -1,4 +1,5 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
@@ -6,6 +7,7 @@ describe('Identity Service - Invitation Operations', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
+    allure.parentSuite('User Invitations');
     ctx = await setupApiTest();
   });
 

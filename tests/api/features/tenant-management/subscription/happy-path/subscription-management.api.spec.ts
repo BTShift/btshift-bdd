@@ -1,4 +1,5 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
+import { allure } from 'allure-playwright';
 import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
@@ -7,6 +8,8 @@ describe('Tenant Management - Subscription Operations', () => {
   let testTenantId: string;
 
   beforeAll(async () => {
+    allure.parentSuite('Tenant Management Service');
+    allure.suite('Subscription Management');
     ctx = await setupApiTest();
     
     // Create a test tenant
