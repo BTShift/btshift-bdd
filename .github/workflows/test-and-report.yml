@@ -80,9 +80,18 @@ jobs:
       - name: Create latest folder
         if: always()
         run: |
-          cd allure-history
-          rm -rf latest
-          cp -r ${{ github.run_number }} latest
+          if [ -d "allure-history" ]; then
+            cd allure-history
+            rm -rf latest
+            if [ -d "${{ github.run_number }}" ]; then
+              cp -r ${{ github.run_number }} latest
+              echo "Created latest folder from run ${{ github.run_number }}"
+            else
+              echo "Run folder ${{ github.run_number }} not found"
+            fi
+          else
+            echo "allure-history directory not found"
+          fi
 
       - name: Deploy report to GitHub Pages
         if: always()
