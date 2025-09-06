@@ -1,0 +1,5 @@
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 6aba2870-aeaf-46a1-91d2-d6206207fe62 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 6aba2870-aeaf-46a1-91d2-d6206207fe62 | Success
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: c3e5a416-d366-482e-ba6f-29f161156545 | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 792120ac-874f-4f2c-be53-3862f1d4e876 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 792120ac-874f-4f2c-be53-3862f1d4e876 | Success

@@ -1,0 +1,13 @@
+🚀 [ceba35a8] Setting up test context with global auth...
+🔑 [global-auth-1757186987024] Starting global authentication...
+🔐 [global-auth-1757186987024] Logging in as: superadmin@shift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 1be7b684-c84b-486f-89fd-ccd5fe8b5ab6 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 1be7b684-c84b-486f-89fd-ccd5fe8b5ab6 | Success
+✅ [global-auth-1757186987024] Global authentication successful
+🕐 [global-auth-1757186987024] Token expires at: 2025-09-06T19:37:47.420Z
+🎫 [global-auth-1757186987024] Token preview: eyJhbGciOiJIUzI1NiIs...
+✅ [ceba35a8] Using global authentication
+🕐 [ceba35a8] Token expires: 7:37:47 PM
+🔍 [Identity] POST /api/permissions | X-Correlation-ID: 7bfbfe8c-16ed-4d47-aea1-823886759674 | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 742d692a-9433-4066-98af-c1ae451309ee | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 742d692a-9433-4066-98af-c1ae451309ee | Success

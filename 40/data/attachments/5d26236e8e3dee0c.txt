@@ -1,0 +1,4 @@
+🔍 [Identity] GET /api/audit-logs | X-Correlation-ID: 95d19b8e-0f01-4a0e-888e-a44f143d22f6 | Auth: Yes
+✅ [Identity] GET /api/audit-logs | X-Correlation-ID: 95d19b8e-0f01-4a0e-888e-a44f143d22f6 | Success
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 44781074-5814-46c5-a2d5-2b4e93d14724 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 44781074-5814-46c5-a2d5-2b4e93d14724 | Success

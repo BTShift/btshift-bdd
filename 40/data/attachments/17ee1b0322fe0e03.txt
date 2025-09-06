@@ -1,0 +1,24 @@
+🚀 [fa9ce20c] Setting up test context with global auth...
+🔑 [global-auth-1757187007853] Starting global authentication...
+🔐 [global-auth-1757187007853] Logging in as: superadmin@shift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: da0c91c2-cd3a-444f-b1c3-f50e9dc5f109 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: da0c91c2-cd3a-444f-b1c3-f50e9dc5f109 | Success
+✅ [global-auth-1757187007853] Global authentication successful
+🕐 [global-auth-1757187007853] Token expires at: 2025-09-06T19:38:08.243Z
+🎫 [global-auth-1757187007853] Token preview: eyJhbGciOiJIUzI1NiIs...
+✅ [fa9ce20c] Using global authentication
+🕐 [fa9ce20c] Token expires: 7:38:08 PM
+🔍 [Identity] POST /api/roles | X-Correlation-ID: f7dd05ef-5e87-4a95-8f5a-3deb6346dd1e | Auth: Yes
+✅ [Identity] POST /api/roles | X-Correlation-ID: f7dd05ef-5e87-4a95-8f5a-3deb6346dd1e | Success
+🔍 [Identity] POST /api/roles | X-Correlation-ID: 2cd4d240-563b-4c6c-b8d7-4310e941c46c | Auth: Yes
+✅ [Identity] POST /api/roles | X-Correlation-ID: 2cd4d240-563b-4c6c-b8d7-4310e941c46c | Success
+🔍 [Identity] GET /api/roles | X-Correlation-ID: 6bba1ade-9a4a-497a-9133-94d4b9e2fb42 | Auth: Yes
+✅ [Identity] GET /api/roles | X-Correlation-ID: 6bba1ade-9a4a-497a-9133-94d4b9e2fb42 | Success
+🔍 [Identity] DELETE /api/roles/7cd07dac-0164-42dc-8429-90cced422dbf | X-Correlation-ID: 172c64f3-22c3-4f21-ab96-f06f0a94ecda | Auth: Yes
+✅ [Identity] DELETE /api/roles/7cd07dac-0164-42dc-8429-90cced422dbf | X-Correlation-ID: 172c64f3-22c3-4f21-ab96-f06f0a94ecda | Success
+🧹 Cleaned up role: 7cd07dac-0164-42dc-8429-90cced422dbf
+🔍 [Identity] DELETE /api/roles/b0f56a78-c91d-47cf-b280-0b778fc22ab3 | X-Correlation-ID: d8387525-ad88-40af-8842-756a871d4555 | Auth: Yes
+✅ [Identity] DELETE /api/roles/b0f56a78-c91d-47cf-b280-0b778fc22ab3 | X-Correlation-ID: d8387525-ad88-40af-8842-756a871d4555 | Success
+🧹 Cleaned up role: b0f56a78-c91d-47cf-b280-0b778fc22ab3
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 6b81110f-9611-4c05-a66c-d94589fa3da4 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 6b81110f-9611-4c05-a66c-d94589fa3da4 | Success
