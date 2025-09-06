@@ -1,0 +1,16 @@
+🚀 [2888c89c] Setting up test context with global auth...
+🔑 [global-auth-1757184270992] Starting global authentication...
+🔐 [global-auth-1757184270992] Logging in as: superadmin@shift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 7b91264e-0e74-478d-bbe1-1c3e33e65d64
+🔐 [Identity] Getting auth token: null
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 7b91264e-0e74-478d-bbe1-1c3e33e65d64 | Success
+✅ [global-auth-1757184270992] Global authentication successful
+🕐 [global-auth-1757184270992] Token expires at: 2025-09-06T18:52:31.523Z
+🎫 [global-auth-1757184270992] Token preview: eyJhbGciOiJIUzI1NiIs...
+✅ [2888c89c] Using global authentication
+🕐 [2888c89c] Token expires: 6:52:31 PM
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: 76425970-2621-4d83-80b2-05678dcb5f2a
+🔐 [ClientManagement] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: ca3f5893-8914-4bc0-a8f7-12cf3707ff17
+🔐 [Identity] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: ca3f5893-8914-4bc0-a8f7-12cf3707ff17 | Success

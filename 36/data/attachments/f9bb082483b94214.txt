@@ -1,0 +1,1 @@
+❌ [ClientManagement] POST /api/groups | X-Correlation-ID: d15e43ee-f3e6-4b2d-8948-f01f48fb190b | Error: HTTP 404: Not Found
