@@ -1,0 +1,8 @@
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 339ea60c-2850-4e03-9c65-5473b044391a
+🔐 [Identity] Getting auth token: null
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 339ea60c-2850-4e03-9c65-5473b044391a | Success
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 0347e36b-9206-478a-baa3-e0f6368476f9
+🔐 [ClientManagement] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: d1732d34-44f2-471f-9862-ee5b4b468904
+🔐 [Identity] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: d1732d34-44f2-471f-9862-ee5b4b468904 | Success
