@@ -26,7 +26,8 @@ describe('Identity Service - Password Reset Operations', () => {
         password: 'OldPassword123!'
       }
     });
-    testUserId = (user as any).userId;
+    const userPasswordData = ctx.getData(user);
+    testUserId = userPasswordData.userId;
     ctx.cleanup.addUser(testUserId);
   });
 
@@ -42,8 +43,9 @@ describe('Identity Service - Password Reset Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).success).toBe(true);
-    expect((response as any).message).toContain('reset email sent');
+    const resetRequestData = ctx.getData(response);
+    expect(resetRequestData.success).toBe(true);
+    expect(resetRequestData.message).toContain('reset email sent');
   });
 
   test('should validate password reset token', async () => {
@@ -64,7 +66,8 @@ describe('Identity Service - Password Reset Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).valid).toBeDefined();
+    const validateData = ctx.getData(response);
+    expect(validateData.valid).toBeDefined();
   });
 
   test('should reset password with valid token', async () => {
@@ -86,8 +89,9 @@ describe('Identity Service - Password Reset Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).success).toBe(true);
-    expect((response as any).message).toContain('Password reset successful');
+    const confirmResetData = ctx.getData(response);
+    expect(confirmResetData.success).toBe(true);
+    expect(confirmResetData.message).toContain('Password reset successful');
   });
 
   test('should change password for authenticated user', async () => {
@@ -99,7 +103,8 @@ describe('Identity Service - Password Reset Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).success).toBe(true);
+    const changePasswordData = ctx.getData(response);
+    expect(changePasswordData.success).toBe(true);
   });
 
   test('should enforce password policy', async () => {
@@ -122,11 +127,12 @@ describe('Identity Service - Password Reset Operations', () => {
     const response = await ctx.client.identity('/api/auth/password-policy', 'get');
 
     expect(response).toBeDefined();
-    expect((response as any).minLength).toBeDefined();
-    expect((response as any).requireUppercase).toBeDefined();
-    expect((response as any).requireLowercase).toBeDefined();
-    expect((response as any).requireNumbers).toBeDefined();
-    expect((response as any).requireSpecialCharacters).toBeDefined();
+    const policyData = ctx.getData(response);
+    expect(policyData.minLength).toBeDefined();
+    expect(policyData.requireUppercase).toBeDefined();
+    expect(policyData.requireLowercase).toBeDefined();
+    expect(policyData.requireNumbers).toBeDefined();
+    expect(policyData.requireSpecialCharacters).toBeDefined();
   });
 
   test('should check password strength', async () => {
@@ -137,9 +143,10 @@ describe('Identity Service - Password Reset Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).strength).toBeDefined();
-    expect((response as any).score).toBeDefined();
-    expect((response as any).suggestions).toBeDefined();
+    const strengthData = ctx.getData(response);
+    expect(strengthData.strength).toBeDefined();
+    expect(strengthData.score).toBeDefined();
+    expect(strengthData.suggestions).toBeDefined();
   });
 
   test('should expire password reset token after use', async () => {

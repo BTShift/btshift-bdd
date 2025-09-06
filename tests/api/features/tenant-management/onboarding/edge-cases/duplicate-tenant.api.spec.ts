@@ -21,7 +21,8 @@ describe('Tenant Creation - Duplicate Prevention API Tests', () => {
     const created = await ctx.client.tenant('/api/tenants', 'post', {
       body: tenantData
     });
-    ctx.cleanup.addTenant((created as any).id);
+    const duplicateNameTestData = ctx.getData(created);
+    ctx.cleanup.addTenant(duplicateNameTestData.id);
 
     const duplicateData = {
       ...TestDataFactory.tenant(),
@@ -44,7 +45,8 @@ describe('Tenant Creation - Duplicate Prevention API Tests', () => {
     const created = await ctx.client.tenant('/api/tenants', 'post', {
       body: tenantData
     });
-    ctx.cleanup.addTenant((created as any).id);
+    const duplicateDomainTestData = ctx.getData(created);
+    ctx.cleanup.addTenant(duplicateDomainTestData.id);
 
     const duplicateData = {
       ...TestDataFactory.tenant(),
@@ -66,7 +68,8 @@ describe('Tenant Creation - Duplicate Prevention API Tests', () => {
     const created = await ctx.client.tenant('/api/tenants', 'post', {
       body: tenantData
     });
-    ctx.cleanup.addTenant((created as any).id);
+    const duplicateEmailTestData = ctx.getData(created);
+    ctx.cleanup.addTenant(duplicateEmailTestData.id);
 
     const duplicateData = {
       ...TestDataFactory.tenant(),
@@ -88,12 +91,14 @@ describe('Tenant Creation - Duplicate Prevention API Tests', () => {
     const created = await ctx.client.tenant('/api/tenants', 'post', {
       body: tenantData
     });
-    ctx.cleanup.addTenant((created as any).id);
+    const tenantExistsTestData = ctx.getData(created);
+    ctx.cleanup.addTenant(tenantExistsTestData.id);
 
     const response = await ctx.client.tenant(`/api/tenants/by-name/${tenantData.tenantName}`, 'get');
     
     expect(response).toBeDefined();
-    expect((response as any).id).toBe((created as any).id);
+    const responseData = ctx.getData(response);
+    expect(responseData.id).toBe(tenantExistsTestData.id);
   });
 
   test('should verify tenant exists check returns false for non-existing tenant', async () => {
