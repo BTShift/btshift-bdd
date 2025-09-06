@@ -1,3 +1,0 @@
-❌ [Identity] POST /api/invitations/6b5737bd-d587-4b61-b86e-19d379a595d1/resend | X-Correlation-ID: 9174959b-ceff-4259-bc80-bb76a8d3e92b | Error: API Error: 400 - {"code":3,"message":"Request JSON payload is not correctly formatted.","details":[]}
-❌ [Identity] POST /api/invitations/6b5737bd-d587-4b61-b86e-19d379a595d1/cancel | X-Correlation-ID: 3347cdd3-24c3-4b02-8603-62a9de77532f | Error: API Error: 404 - 
-⚠️ Failed to cancel invitation 6b5737bd-d587-4b61-b86e-19d379a595d1

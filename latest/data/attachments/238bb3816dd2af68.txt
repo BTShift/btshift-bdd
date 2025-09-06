@@ -1,0 +1,3 @@
+🚀 [bafa4093] Setting up UNAUTHENTICATED test context...
+🌐 [bafa4093] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 84e6526f-6b08-489a-a404-4b91e1e6b238 | Auth: No

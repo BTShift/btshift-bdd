@@ -1,0 +1,4 @@
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: ce535727-72c1-4ffc-9155-b3bb60750dff | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: ce535727-72c1-4ffc-9155-b3bb60750dff | Success
+🔍 [Tenant] GET /api/tenants | X-Correlation-ID: ecb9e61d-62db-49f5-934d-1a24a837ed57 | Auth: Yes
+✅ [Tenant] GET /api/tenants | X-Correlation-ID: ecb9e61d-62db-49f5-934d-1a24a837ed57 | Success

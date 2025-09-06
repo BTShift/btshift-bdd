@@ -1,0 +1,15 @@
+🚀 [6bec03fb] Setting up test context with global auth...
+🔑 [global-auth-1757191169331] Starting global authentication...
+🔐 [global-auth-1757191169331] Logging in as: superadmin@shift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 45cea6d2-b179-4f47-834a-d2b2d4d2362a | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 45cea6d2-b179-4f47-834a-d2b2d4d2362a | Success
+✅ [global-auth-1757191169331] Global authentication successful
+🕐 [global-auth-1757191169331] Token expires at: 2025-09-06T20:47:29.726Z
+🎫 [global-auth-1757191169331] Token preview: eyJhbGciOiJIUzI1NiIs...
+✅ [6bec03fb] Using global authentication
+🕐 [6bec03fb] Token expires: 8:47:29 PM
+🔍 [Identity] POST /api/invitations | X-Correlation-ID: 51332da9-2a74-4e2e-9724-798a07f86b19 | Auth: Yes
+✅ [Identity] POST /api/invitations | X-Correlation-ID: 51332da9-2a74-4e2e-9724-798a07f86b19 | Success
+🔍 [Identity] POST /api/invitations/4e9fa102-7003-4dfa-b5a8-f4e229c1503d/cancel | X-Correlation-ID: de4eb6b9-cb70-4539-b71c-e70e300d4f3a | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 21624dbd-5d96-4776-8b47-0250debf3be9 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 21624dbd-5d96-4776-8b47-0250debf3be9 | Success

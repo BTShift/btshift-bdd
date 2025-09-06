@@ -1,0 +1,18 @@
+🚀 [eabce45b] Setting up test context with global auth...
+🔑 [global-auth-1757191211573] Starting global authentication...
+🔐 [global-auth-1757191211573] Logging in as: superadmin@shift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: d759031b-7937-4187-a918-aa1f9088ccd0 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: d759031b-7937-4187-a918-aa1f9088ccd0 | Success
+✅ [global-auth-1757191211573] Global authentication successful
+🕐 [global-auth-1757191211573] Token expires at: 2025-09-06T20:48:13.032Z
+🎫 [global-auth-1757191211573] Token preview: eyJhbGciOiJIUzI1NiIs...
+✅ [eabce45b] Using global authentication
+🕐 [eabce45b] Token expires: 8:48:13 PM
+🔍 [Identity] POST /api/roles | X-Correlation-ID: 0e73a652-7751-41e3-9175-85b0e9becf0f | Auth: Yes
+✅ [Identity] POST /api/roles | X-Correlation-ID: 0e73a652-7751-41e3-9175-85b0e9becf0f | Success
+🔍 [Identity] POST /api/users | X-Correlation-ID: bd68581d-258a-4d85-ac61-38dd4b1b71cd | Auth: Yes
+🔍 [Identity] DELETE /api/roles/d16ffb0a-a090-4fd0-aed6-5fc5b06ddfbb | X-Correlation-ID: 2cd4ae4a-a3b2-4d18-a976-e34199a2da0f | Auth: Yes
+✅ [Identity] DELETE /api/roles/d16ffb0a-a090-4fd0-aed6-5fc5b06ddfbb | X-Correlation-ID: 2cd4ae4a-a3b2-4d18-a976-e34199a2da0f | Success
+🧹 Cleaned up role: d16ffb0a-a090-4fd0-aed6-5fc5b06ddfbb
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 5fa70fe9-1cb8-42de-818b-fbba0e40e557 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 5fa70fe9-1cb8-42de-818b-fbba0e40e557 | Success
