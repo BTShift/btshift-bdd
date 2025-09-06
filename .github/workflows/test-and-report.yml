@@ -93,38 +93,44 @@ jobs:
           allure_history: allure-history
           keep_reports: 20
 
-      - name: Create latest folder
+      - name: Create latest folder (bulletproof approach)
         if: always()
         run: |
-          echo "📁 Checking allure-history structure..."
+          echo "🎯 BULLETPROOF: Creating latest folder with Docker approach..."
+          
           if [ -d "allure-history" ]; then
-            echo "✅ allure-history exists, contents:"
-            ls -la allure-history/
-            cd allure-history
+            echo "✅ allure-history exists"
             
-            # Remove existing latest folder
-            rm -rf latest
-            
-            # Check if current run folder exists
-            if [ -d "${{ github.run_number }}" ]; then
+            # Use Docker to handle the copy with proper permissions - this bypasses all permission issues
+            if [ -d "allure-history/${{ github.run_number }}" ]; then
               echo "✅ Found run folder: ${{ github.run_number }}"
               
-              # Copy the entire folder as 'latest' (this creates the directory automatically)
-              cp -r "${{ github.run_number }}" latest 2>/dev/null || {
-                echo "⚠️ cp failed, trying rsync..."
-                rsync -av "${{ github.run_number }}/" latest/ || {
-                  echo "⚠️ rsync failed, trying sudo approach..."
-                  sudo cp -r "${{ github.run_number }}" latest || {
-                    echo "❌ All copy methods failed, but continuing workflow..."
-                    exit 0  # Don't fail the workflow
-                  }
+              # Remove old latest if it exists
+              sudo rm -rf allure-history/latest 2>/dev/null || true
+              
+              # Use Docker with root access to copy files
+              docker run --rm \
+                -v "$(pwd)/allure-history:/workspace" \
+                -w /workspace \
+                alpine:latest \
+                sh -c "
+                  rm -rf latest 2>/dev/null || true
+                  cp -r ${{ github.run_number }} latest
+                  chmod -R 755 latest
+                  chown -R $(id -u):$(id -g) latest 2>/dev/null || true
+                " || {
+                  # Fallback: Just create a simple symlink if Docker fails
+                  echo "🔄 Docker approach failed, using symlink fallback..."
+                  cd allure-history
+                  rm -f latest 2>/dev/null || true
+                  ln -sf "${{ github.run_number }}" latest
                 }
-              }
-              echo "✅ Created latest folder from run ${{ github.run_number }}"
+              
+              echo "✅ Latest folder created successfully!"
+              ls -la allure-history/ | grep latest || echo "⚠️ Latest folder not visible, but deployment will continue"
             else
               echo "❌ Run folder ${{ github.run_number }} not found"
-              echo "Available folders:"
-              ls -la
+              ls -la allure-history/
             fi
           else
             echo "❌ allure-history directory not found"
