@@ -162,8 +162,8 @@ describe('Identity Service - Role Management Operations', () => {
     const role = await ctx.client.identity('/api/roles', 'post', {
       body: roleData
     });
-    const roleData = ctx.getData(role);
-    ctx.cleanup.addRole(roleData.roleId);
+    const roleResponseData = ctx.getData(role);
+    ctx.cleanup.addRole(roleResponseData.roleId);
 
     const userData = {
       email: `test.user${Date.now()}@example.com`,
@@ -176,12 +176,12 @@ describe('Identity Service - Role Management Operations', () => {
     const user = await ctx.client.identity('/api/users', 'post', {
       body: userData
     });
-    const userData2 = ctx.getData(user);
-    ctx.cleanup.addUser(userData2.userId);
+    const userResponseData = ctx.getData(user);
+    ctx.cleanup.addUser(userResponseData.userId);
 
-    const assignResponse = await ctx.client.identity(`/api/users/${userData2.userId}/roles`, 'post', {
+    const assignResponse = await ctx.client.identity(`/api/users/${userResponseData.userId}/roles`, 'post', {
       body: {
-        roleId: roleData.roleId
+        roleId: roleResponseData.roleId
       }
     });
     const assignData = ctx.getData(assignResponse);
@@ -199,8 +199,8 @@ describe('Identity Service - Role Management Operations', () => {
     const role = await ctx.client.identity('/api/roles', 'post', {
       body: roleData
     });
-    const roleData = ctx.getData(role);
-    ctx.cleanup.addRole(roleData.roleId);
+    const roleResponseData = ctx.getData(role);
+    ctx.cleanup.addRole(roleResponseData.roleId);
 
     const userData = {
       email: `test.user${Date.now()}@example.com`,
@@ -213,16 +213,16 @@ describe('Identity Service - Role Management Operations', () => {
     const user = await ctx.client.identity('/api/users', 'post', {
       body: userData
     });
-    const userData2 = ctx.getData(user);
-    ctx.cleanup.addUser(userData2.userId);
+    const userResponseData = ctx.getData(user);
+    ctx.cleanup.addUser(userResponseData.userId);
 
-    await ctx.client.identity(`/api/users/${userData2.userId}/roles`, 'post', {
+    await ctx.client.identity(`/api/users/${userResponseData.userId}/roles`, 'post', {
       body: {
-        roleId: roleData.roleId
+        roleId: roleResponseData.roleId
       }
     });
 
-    const removeResponse = await ctx.client.identity(`/api/users/${userData2.userId}/roles/${roleData.roleId}`, 'delete');
+    const removeResponse = await ctx.client.identity(`/api/users/${userResponseData.userId}/roles/${roleResponseData.roleId}`, 'delete');
     const removeData = ctx.getData(removeResponse);
 
     expect(removeData.success).toBe(true);
@@ -238,8 +238,8 @@ describe('Identity Service - Role Management Operations', () => {
     const role = await ctx.client.identity('/api/roles', 'post', {
       body: roleData
     });
-    const roleData = ctx.getData(role);
-    ctx.cleanup.addRole(roleData.roleId);
+    const roleResponseData = ctx.getData(role);
+    ctx.cleanup.addRole(roleResponseData.roleId);
 
     const userData = {
       email: `test.user${Date.now()}@example.com`,
@@ -252,22 +252,22 @@ describe('Identity Service - Role Management Operations', () => {
     const user = await ctx.client.identity('/api/users', 'post', {
       body: userData
     });
-    const userData2 = ctx.getData(user);
-    ctx.cleanup.addUser(userData2.userId);
+    const userResponseData = ctx.getData(user);
+    ctx.cleanup.addUser(userResponseData.userId);
 
-    await ctx.client.identity(`/api/users/${userData2.userId}/roles`, 'post', {
+    await ctx.client.identity(`/api/users/${userResponseData.userId}/roles`, 'post', {
       body: {
-        roleId: roleData.roleId
+        roleId: roleResponseData.roleId
       }
     });
 
-    const response = await ctx.client.identity(`/api/roles/${roleData.roleId}/users`, 'get');
+    const response = await ctx.client.identity(`/api/roles/${roleResponseData.roleId}/users`, 'get');
     const responseData = ctx.getData(response);
 
     expect(responseData.users).toBeDefined();
     expect(Array.isArray(responseData.users)).toBe(true);
     
     const userIds = responseData.users.map((u: any) => u.userId);
-    expect(userIds).toContain(userData2.userId);
+    expect(userIds).toContain(userResponseData.userId);
   });
 });
