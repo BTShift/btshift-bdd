@@ -9,7 +9,7 @@ describe('Identity Service - Password Reset Operations', () => {
   let testUserEmail: string;
 
   beforeAll(async () => {
-    allure.parentSuite('Password Reset'');
+    allure.parentSuite('Password Reset');
     allure.feature('Identity & Access Management');
     ctx = await setupApiTest();
     

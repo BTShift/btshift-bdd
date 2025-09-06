@@ -7,7 +7,7 @@ describe('Identity Service - User Management CRUD Operations', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
-    allure.parentSuite('User Management'');
+    allure.parentSuite('User Management');
     allure.feature('Identity & Access Management');
     ctx = await setupApiTest();
   });

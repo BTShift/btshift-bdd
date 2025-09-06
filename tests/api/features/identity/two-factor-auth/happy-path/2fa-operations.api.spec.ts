@@ -8,7 +8,7 @@ describe('Identity Service - Two-Factor Authentication Operations', () => {
   let testUserId: string;
 
   beforeAll(async () => {
-    allure.parentSuite('Two-Factor Authentication'');
+    allure.parentSuite('Two-Factor Authentication');
     allure.feature('Identity & Access Management');
     ctx = await setupApiTest();
     
