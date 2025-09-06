@@ -1,0 +1,2 @@
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: fa8bb771-e4ef-44dc-8691-6e34b049833b
+🔐 [Identity] Getting auth token: null

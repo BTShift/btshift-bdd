@@ -1,0 +1,6 @@
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: dc47a328-b8ce-4cc0-a464-48983f9de60b
+🔐 [Identity] Getting auth token: null
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 786e9db3-5893-4b64-ac9b-5dc2464ad556
+🔐 [Identity] Getting auth token: null
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 3187ba22-8c7e-4278-bb7f-52939522462a
+🔐 [Identity] Getting auth token: null
