@@ -23,6 +23,9 @@ describe('Authentication - Login Happy Path API Tests', () => {
       body: credentials
     });
 
+    // Report the X-Correlation-ID to Allure for this API call
+    ctx.reportLastCorrelationId();
+
     expect(response).toBeDefined();
     expect((response as any).tokenInfo?.accessToken).toBeTruthy();
     expect((response as any).tokenInfo?.refreshToken).toBeTruthy();

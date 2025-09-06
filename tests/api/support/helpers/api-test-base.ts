@@ -12,6 +12,10 @@ export interface TestContext {
   client: TypedApiClient;
   cleanup: CleanupManager;
   correlation: CorrelationTracker;
+  /**
+   * Report the last correlation ID from an API response to Allure
+   */
+  reportLastCorrelationId(): void;
 }
 
 export class CorrelationTracker {
@@ -208,14 +212,34 @@ export async function setupApiTest(): Promise<TestContext> {
     console.log(`✅ [${testSessionId}] Using global authentication`);
     console.log(`🕐 [${testSessionId}] Token expires: ${tokenInfo?.expiresAt.toLocaleTimeString()}`);
     
-    return { client, cleanup, correlation };
+    return { 
+      client, 
+      cleanup, 
+      correlation,
+      reportLastCorrelationId: () => {
+        const lastCorrelationId = client.getLastCorrelationId();
+        if (lastCorrelationId) {
+          AllureCorrelationHelper.reportCorrelationId(lastCorrelationId);
+        }
+      }
+    };
   } catch (error) {
     console.error(`❌ [${testSessionId}] Setup failed:`, error.message);
     // Fallback to non-authenticated client for cleanup purposes
     const client = new TypedApiClient();
     const cleanup = new CleanupManager();
     const correlation = new CorrelationTracker();
-    return { client, cleanup, correlation };
+    return { 
+      client, 
+      cleanup, 
+      correlation,
+      reportLastCorrelationId: () => {
+        const lastCorrelationId = client.getLastCorrelationId();
+        if (lastCorrelationId) {
+          AllureCorrelationHelper.reportCorrelationId(lastCorrelationId);
+        }
+      }
+    };
   }
 }
 
@@ -233,7 +257,17 @@ export async function setupUnauthenticatedApiTest(): Promise<TestContext> {
   
   console.log(`🌐 [${testSessionId}] API Gateway URL:`, process.env.API_GATEWAY_URL);
   
-  return { client, cleanup, correlation };
+  return { 
+    client, 
+    cleanup, 
+    correlation,
+    reportLastCorrelationId: () => {
+      const lastCorrelationId = client.getLastCorrelationId();
+      if (lastCorrelationId) {
+        AllureCorrelationHelper.reportCorrelationId(lastCorrelationId);
+      }
+    }
+  };
 }
 
 export async function teardownApiTest(context: TestContext): Promise<void> {

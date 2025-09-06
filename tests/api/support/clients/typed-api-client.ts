@@ -118,7 +118,7 @@ export class TypedApiClient {
               // Store the correlation ID for tracking
               this.lastCorrelationId = responseCorrelationId;
               
-              console.log(`✅ [${serviceName}] ${method?.toUpperCase()} ${path} | Request-ID: ${requestCorrelationId} | Response-ID: ${responseCorrelationId} | Success`);
+              console.log(`✅ [${serviceName}] ${method?.toUpperCase()} ${path} | X-Correlation-ID: ${responseCorrelationId} | Success`);
               
               // Create enhanced response with correlation ID metadata
               const enhancedResponse = {
@@ -127,28 +127,12 @@ export class TypedApiClient {
                 requestCorrelationId: requestCorrelationId
               };
               
-              // Automatically report correlation ID to Allure
-              const AllureCorrelationHelper = require('../helpers/allure-correlation').AllureCorrelationHelper;
-              AllureCorrelationHelper.reportFromApiResponse(enhancedResponse, {
-                endpoint: path,
-                method: method?.toUpperCase(),
-                serviceName
-              });
-              
               return enhancedResponse;
             } catch (error) {
-              console.error(`❌ [${serviceName}] ${method?.toUpperCase()} ${path} | Correlation-ID: ${requestCorrelationId} | Error:`, error.message);
+              console.error(`❌ [${serviceName}] ${method?.toUpperCase()} ${path} | X-Correlation-ID: ${requestCorrelationId} | Error:`, error.message);
               
               // Store correlation ID even on error for debugging
               this.lastCorrelationId = requestCorrelationId;
-              
-              // Report correlation ID to Allure even on error
-              const AllureCorrelationHelper = require('../helpers/allure-correlation').AllureCorrelationHelper;
-              AllureCorrelationHelper.reportCorrelationId(requestCorrelationId, undefined, {
-                endpoint: path,
-                method: method?.toUpperCase(),
-                serviceName
-              });
               
               // Re-throw error but preserve correlation ID context
               const enhancedError = error as any;
