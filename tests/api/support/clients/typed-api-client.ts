@@ -25,7 +25,10 @@ export class TypedApiClient {
     // Initialize identity client
     const identityClient = makeIdentityClient({
       baseUrl: this.baseUrl,
-      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined,
+      getAuth: () => {
+        console.log(`🔐 [Identity] Getting auth token: ${this.authToken ? 'Bearer ' + this.authToken.substring(0, 20) + '...' : 'null'}`);
+        return this.authToken ? `Bearer ${this.authToken}` : undefined;
+      },
       headers: () => ({
         'X-Correlation-ID': randomUUID()
       })
@@ -35,7 +38,10 @@ export class TypedApiClient {
     // Initialize tenant management client
     const tenantClient = makeTenantClient({
       baseUrl: this.baseUrl,
-      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined,
+      getAuth: () => {
+        console.log(`🔐 [Tenant] Getting auth token: ${this.authToken ? 'Bearer ' + this.authToken.substring(0, 20) + '...' : 'null'}`);
+        return this.authToken ? `Bearer ${this.authToken}` : undefined;
+      },
       headers: () => ({
         'X-Correlation-ID': randomUUID()
       })
@@ -45,7 +51,10 @@ export class TypedApiClient {
     // Initialize client management client
     const clientClient = makeClientManagementClient({
       baseUrl: this.baseUrl,
-      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined,
+      getAuth: () => {
+        console.log(`🔐 [ClientManagement] Getting auth token: ${this.authToken ? 'Bearer ' + this.authToken.substring(0, 20) + '...' : 'null'}`);
+        return this.authToken ? `Bearer ${this.authToken}` : undefined;
+      },
       headers: () => ({
         'X-Correlation-ID': randomUUID()
       })
