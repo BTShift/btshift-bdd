@@ -1,0 +1,2 @@
+❌ Global authentication failed: Login succeeded but no token was returned
+❌ [aaf4b626] Setup failed: Login succeeded but no token was returned

@@ -1,0 +1,2 @@
+❌ Global authentication failed: Login succeeded but no token was returned
+❌ [ff517d1a] Setup failed: Login succeeded but no token was returned

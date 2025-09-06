@@ -1,0 +1,2 @@
+❌ Global authentication failed: Login succeeded but no token was returned
+❌ [cdd28ee6] Setup failed: Login succeeded but no token was returned

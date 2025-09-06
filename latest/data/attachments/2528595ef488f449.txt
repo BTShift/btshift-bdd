@@ -1,0 +1,2 @@
+❌ Global authentication failed: Login succeeded but no token was returned
+❌ [f299dda3] Setup failed: Login succeeded but no token was returned

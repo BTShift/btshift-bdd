@@ -1,0 +1,2 @@
+❌ Global authentication failed: Login succeeded but no token was returned
+❌ [55443df1] Setup failed: Login succeeded but no token was returned

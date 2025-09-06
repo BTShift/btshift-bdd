@@ -1,0 +1,4 @@
+🚀 [51b5d084] Setting up UNAUTHENTICATED test context...
+🌐 [51b5d084] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🔐 [Identity] Getting auth token: null
+🔐 [Identity] Getting auth token: null

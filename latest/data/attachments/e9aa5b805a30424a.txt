@@ -1,0 +1,2 @@
+❌ Global authentication failed: Login succeeded but no token was returned
+❌ [e63a5670] Setup failed: Login succeeded but no token was returned

@@ -1,0 +1,2 @@
+❌ Global authentication failed: Login succeeded but no token was returned
+❌ [ef32e474] Setup failed: Login succeeded but no token was returned
