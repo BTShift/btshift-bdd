@@ -1,0 +1,5 @@
+🚀 Starting test session: f9d5e6e0-96cb-46ae-b26b-0c5adbf896fa
+🔐 [f9d5e6e0-96cb-46ae-b26b-0c5adbf896fa] Attempting login with email: superadmin@shift.ma
+🌐 [f9d5e6e0-96cb-46ae-b26b-0c5adbf896fa] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🔑 [f9d5e6e0-96cb-46ae-b26b-0c5adbf896fa] Login successful, token set: true
+🔑 [f9d5e6e0-96cb-46ae-b26b-0c5adbf896fa] Token preview: eyJhbGciOiJIUzI1NiIs...
