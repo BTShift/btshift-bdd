@@ -77,6 +77,13 @@ jobs:
           allure_history: allure-history
           keep_reports: 20
 
+      - name: Create latest folder
+        if: always()
+        run: |
+          cd allure-history
+          rm -rf latest
+          cp -r ${{ github.run_number }} latest
+
       - name: Deploy report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
