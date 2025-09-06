@@ -8,9 +8,10 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write  # Need write to push to gh-pages
   pages: write
   id-token: write
+  packages: read  # Need read for GitHub packages
 
 jobs:
   test:
@@ -28,7 +29,7 @@ jobs:
 
       - name: Setup NPM authentication
         run: |
-          echo "@btshift:registry=https://npm.pkg.github.com" > ~/.npmrc
+          echo "@btshift:registry=https://npm.pkg.github.com" >> ~/.npmrc
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
 
       - name: Install dependencies
