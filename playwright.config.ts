@@ -7,7 +7,7 @@ export default defineConfig({
   testDir: './tests',
   fullyParallel: false,
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 0,
+  retries: 0,
   workers: 1,
   // Cleanup configuration - controlled by environment variables
   globalSetup: process.env.SKIP_CLEANUP_BEFORE !== 'true' ? require.resolve('./tests/global-setup') : undefined,

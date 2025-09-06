@@ -9,6 +9,7 @@ import { makeClient as makeClientManagementClient } from '@btshift/client-manage
 import type { paths as IdentityPaths } from '@btshift/identity-types';
 import type { paths as TenantPaths } from '@btshift/tenant-management-types';
 import type { paths as ClientPaths } from '@btshift/client-management-types';
+import { randomUUID } from 'crypto';
 
 export class TypedApiClient {
   private authToken: string | null = null;
@@ -24,23 +25,32 @@ export class TypedApiClient {
     // Initialize identity client
     const identityClient = makeIdentityClient({
       baseUrl: this.baseUrl,
-      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined
+      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined,
+      headers: () => ({
+        'X-Correlation-ID': randomUUID()
+      })
     });
-    this.identity = identityClient.api;
+    this.identity = this.wrapWithCorrelationLogging(identityClient.api, 'Identity');
 
     // Initialize tenant management client
     const tenantClient = makeTenantClient({
       baseUrl: this.baseUrl,
-      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined
+      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined,
+      headers: () => ({
+        'X-Correlation-ID': randomUUID()
+      })
     });
-    this.tenant = tenantClient.api;
+    this.tenant = this.wrapWithCorrelationLogging(tenantClient.api, 'Tenant');
 
     // Initialize client management client
     const clientClient = makeClientManagementClient({
       baseUrl: this.baseUrl,
-      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined
+      getAuth: () => this.authToken ? `Bearer ${this.authToken}` : undefined,
+      headers: () => ({
+        'X-Correlation-ID': randomUUID()
+      })
     });
-    this.clientManagement = clientClient.api;
+    this.clientManagement = this.wrapWithCorrelationLogging(clientClient.api, 'ClientManagement');
   }
 
   setAuthToken(token: string): void {
@@ -53,6 +63,39 @@ export class TypedApiClient {
 
   getAuthToken(): string | null {
     return this.authToken;
+  }
+
+  // Wrap API calls with correlation ID logging
+  private wrapWithCorrelationLogging(api: any, serviceName: string): any {
+    return new Proxy(api, {
+      get: (target, prop) => {
+        const originalMethod = target[prop];
+        if (typeof originalMethod === 'function') {
+          return async (...args: any[]) => {
+            const correlationId = randomUUID();
+            const [path, method, options = {}] = args;
+            
+            // Add correlation ID to headers
+            const headers = {
+              'X-Correlation-ID': correlationId,
+              ...options.headers
+            };
+            
+            console.log(`🔍 [${serviceName}] ${method?.toUpperCase()} ${path} | Correlation-ID: ${correlationId}`);
+            
+            try {
+              const result = await originalMethod.apply(target, [path, method, { ...options, headers }]);
+              console.log(`✅ [${serviceName}] ${method?.toUpperCase()} ${path} | Correlation-ID: ${correlationId} | Success`);
+              return result;
+            } catch (error) {
+              console.error(`❌ [${serviceName}] ${method?.toUpperCase()} ${path} | Correlation-ID: ${correlationId} | Error:`, error.message);
+              throw error;
+            }
+          };
+        }
+        return originalMethod;
+      }
+    });
   }
 
   // Helper method to login and set token automatically

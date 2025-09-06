@@ -38,7 +38,6 @@ jobs:
 
       - name: Run API tests
         run: npm run test:api
-        continue-on-error: true
         env:
           PLATFORM_ADMIN_EMAIL: superadmin@shift.ma
           PLATFORM_ADMIN_PASSWORD: ${{ secrets.PLATFORM_ADMIN_PASSWORD }}
@@ -66,6 +65,23 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
+      - name: Check test results
+        if: always()
+        run: |
+          echo "📊 Checking test results..."
+          if [ -d "allure-results" ]; then
+            echo "✅ allure-results directory exists"
+            echo "📁 Contents of allure-results:"
+            ls -la allure-results/
+            if [ "$(ls -A allure-results)" ]; then
+              echo "✅ Test results found - $(ls allure-results | wc -l) files"
+            else
+              echo "❌ allure-results directory is empty"
+            fi
+          else
+            echo "❌ allure-results directory not found"
+          fi
+
       - name: Generate Allure Report
         uses: simple-elf/allure-report-action@master
         if: always()
@@ -80,17 +96,36 @@ jobs:
       - name: Create latest folder
         if: always()
         run: |
+          echo "📁 Checking allure-history structure..."
           if [ -d "allure-history" ]; then
+            echo "✅ allure-history exists, contents:"
+            ls -la allure-history/
             cd allure-history
+            
+            # Remove existing latest folder
             rm -rf latest
+            
+            # Check if current run folder exists
             if [ -d "${{ github.run_number }}" ]; then
-              cp -r ${{ github.run_number }} latest
-              echo "Created latest folder from run ${{ github.run_number }}"
+              echo "✅ Found run folder: ${{ github.run_number }}"
+              
+              # Create latest folder with proper permissions
+              mkdir -p latest
+              cp -r "${{ github.run_number }}"/* latest/ 2>/dev/null || {
+                echo "⚠️ Failed to copy contents, trying alternative method..."
+                rsync -av "${{ github.run_number }}/" latest/ || {
+                  echo "❌ Both copy methods failed"
+                  exit 0  # Don't fail the workflow
+                }
+              }
+              echo "✅ Created latest folder from run ${{ github.run_number }}"
             else
-              echo "Run folder ${{ github.run_number }} not found"
+              echo "❌ Run folder ${{ github.run_number }} not found"
+              echo "Available folders:"
+              ls -la
             fi
           else
-            echo "allure-history directory not found"
+            echo "❌ allure-history directory not found"
           fi
 
       - name: Deploy report to GitHub Pages

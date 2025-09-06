@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npm run test:api && npm run test:ui",
-    "test:api": "playwright test tests/api --reporter=html --output=test-results/api",
+    "test:api": "playwright test tests/api",
     "test:api:happy": "playwright test tests/api --grep='happy-path' --reporter=html",
     "test:api:edge": "playwright test tests/api --grep='edge-cases' --reporter=html",
     "test:ui": "playwright test tests/ui --reporter=html --output=test-results/ui",

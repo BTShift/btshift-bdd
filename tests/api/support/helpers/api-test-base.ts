@@ -3,6 +3,7 @@
  */
 
 import { TypedApiClient } from '../clients/typed-api-client';
+import * as crypto from 'crypto';
 
 export interface TestContext {
   client: TypedApiClient;
@@ -120,6 +121,9 @@ export class CleanupManager {
 }
 
 export async function setupApiTest(): Promise<TestContext> {
+  const testSessionId = crypto.randomUUID();
+  console.log(`🚀 Starting test session: ${testSessionId}`);
+  
   const client = new TypedApiClient();
   const cleanup = new CleanupManager();
   
@@ -132,14 +136,15 @@ export async function setupApiTest(): Promise<TestContext> {
     password: process.env.PLATFORM_ADMIN_PASSWORD || process.env.SUPER_ADMIN_PASSWORD || 'SuperAdmin@123!'
   };
   
-  console.log('🔐 Attempting login with email:', credentials.email);
+  console.log(`🔐 [${testSessionId}] Attempting login with email:`, credentials.email);
+  console.log(`🌐 [${testSessionId}] API Gateway URL:`, process.env.API_GATEWAY_URL);
   
   try {
     const loginResponse = await client.login(credentials.email, credentials.password);
-    console.log('🔑 Login successful, token set:', !!client.getAuthToken());
-    console.log('🔑 Token preview:', client.getAuthToken()?.substring(0, 20) + '...');
+    console.log(`🔑 [${testSessionId}] Login successful, token set:`, !!client.getAuthToken());
+    console.log(`🔑 [${testSessionId}] Token preview:`, client.getAuthToken()?.substring(0, 20) + '...');
   } catch (error) {
-    console.error('❌ Login failed:', error.message);
+    console.error(`❌ [${testSessionId}] Login failed:`, error.message);
     // Still return context so teardown doesn't fail with undefined
     return context;
   }
