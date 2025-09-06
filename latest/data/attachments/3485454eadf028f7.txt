@@ -1,0 +1,1 @@
+❌ [Tenant] POST /api/tenants | X-Correlation-ID: 3822ea66-6685-49e9-ab70-e83d63472e1f | Error: API Error: 401 - 
