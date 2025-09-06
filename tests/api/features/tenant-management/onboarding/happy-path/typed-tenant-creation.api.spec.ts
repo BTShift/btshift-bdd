@@ -1,7 +1,8 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client';
-import { generateUniqueTenantData, superAdminCredentials } from '../../../../support/fixtures/tenant-data';
+import { generateUniqueTenantData } from '../../../../support/fixtures/tenant-data';
+import { GlobalAuthManager } from '../../../../support/auth/global-auth-manager';
 
 describe('Tenant Creation - Using Typed NPM Packages', () => {
   let client: TypedApiClient;
@@ -10,9 +11,9 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
   beforeAll(async () => {
     allure.parentSuite('🏢 Business Operations');
     allure.feature('Tenant Management');
-    client = new TypedApiClient();
-    // Login as SuperAdmin
-    await client.login(superAdminCredentials.email, superAdminCredentials.password);
+    // Use GlobalAuthManager to avoid multiple logins
+    const authManager = GlobalAuthManager.getInstance();
+    client = await authManager.getAuthenticatedClient();
   });
 
   afterAll(async () => {
@@ -25,7 +26,7 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
         console.warn(`⚠️  Failed to cleanup tenant ${tenantId}:`, error);
       }
     }
-    await client.logout();
+    // No logout needed - let the token expire naturally
   });
 
   test('should create tenant with typed client from @btshift/tenant-management-types', async () => {

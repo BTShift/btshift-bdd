@@ -1,7 +1,7 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client';
-import { superAdminCredentials } from '../../../../support/fixtures/tenant-data';
+import { GlobalAuthManager } from '../../../../support/auth/global-auth-manager';
 
 describe('Client Management - CRUD with Typed NPM Packages', () => {
   let client: TypedApiClient;
@@ -11,9 +11,9 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     allure.parentSuite('👥 Client Services');
     allure.feature('Client Relationship Management');
     allure.suite('Client Operations');
-    client = new TypedApiClient();
-    // Login as SuperAdmin
-    await client.login(superAdminCredentials.email, superAdminCredentials.password);
+    // Use GlobalAuthManager to avoid multiple logins
+    const authManager = GlobalAuthManager.getInstance();
+    client = await authManager.getAuthenticatedClient();
   });
 
   afterAll(async () => {
@@ -26,7 +26,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
         console.warn(`⚠️  Failed to cleanup client ${clientId}:`, error);
       }
     }
-    await client.logout();
+    // No logout needed - let the token expire naturally
   });
 
   test('should create client with typed client from @btshift/client-management-types', async () => {
