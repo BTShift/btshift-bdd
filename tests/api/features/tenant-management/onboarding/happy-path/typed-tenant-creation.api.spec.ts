@@ -50,12 +50,12 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
 
     // Assert - Response is typed based on OpenAPI schema
     expect(response).toBeDefined();
-    expect((response as any).id).toBeTruthy();
-    expect((response as any).tenantName).toBe(tenantData.tenantName);
-    expect((response as any).status).toBe('Pending');
+    expect(response.data.id).toBeTruthy();
+    expect(response.data.tenantName).toBe(tenantData.tenantName);
+    expect(response.data.status).toBe('Pending');
     
     // Track for cleanup
-    createdTenantIds.push((response as any).id);
+    createdTenantIds.push(response.data.id);
   });
 
   test('should get tenant by ID with typed client', async () => {
@@ -76,7 +76,7 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
       }
     });
     
-    const tenantId = (createResponse as any).id;
+    const tenantId = createResponse.data.id;
     createdTenantIds.push(tenantId);
 
     // Act - Get tenant using typed endpoint
@@ -84,8 +84,8 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
 
     // Assert
     expect(getResponse).toBeDefined();
-    expect((getResponse as any).id).toBe(tenantId);
-    expect((getResponse as any).tenantName).toBe(tenantData.tenantName);
+    expect(getResponse.data.id).toBe(tenantId);
+    expect(getResponse.data.tenantName).toBe(tenantData.tenantName);
   });
 
   test('should list tenants with typed client', async () => {
@@ -101,10 +101,10 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
 
     // Assert - Response structure is typed
     expect(response).toBeDefined();
-    expect(Array.isArray((response as any).tenants)).toBe(true);
-    expect((response as any).totalCount).toBeDefined();
-    expect((response as any).pageSize).toBeDefined();
-    expect((response as any).pageNumber).toBeDefined();
+    expect(Array.isArray(response.data.tenants)).toBe(true);
+    expect(response.data.totalCount).toBeDefined();
+    expect(response.data.pageSize).toBeDefined();
+    expect(response.data.pageNumber).toBeDefined();
   });
 
   test('should activate tenant with typed client', async () => {
@@ -125,7 +125,7 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
       }
     });
     
-    const tenantId = (createResponse as any).id;
+    const tenantId = createResponse.data.id;
     createdTenantIds.push(tenantId);
 
     // Wait for tenant to be ready
@@ -136,8 +136,8 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
 
     // Assert
     expect(activateResponse).toBeDefined();
-    expect((activateResponse as any).id).toBe(tenantId);
-    expect((activateResponse as any).status).toBe('Active');
+    expect(activateResponse.data.id).toBe(tenantId);
+    expect(activateResponse.data.status).toBe('Active');
   });
 
   test('should handle typed error responses for duplicate tenant', async () => {
@@ -157,7 +157,7 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
         country: tenantData.country
       }
     });
-    createdTenantIds.push((firstResponse as any).id);
+    createdTenantIds.push(firstResponse.data.id);
 
     // Act & Assert - Try to create duplicate
     try {

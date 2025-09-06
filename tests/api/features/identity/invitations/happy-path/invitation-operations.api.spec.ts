@@ -28,14 +28,15 @@ describe('Identity Service - Invitation Operations', () => {
     const response = await ctx.client.identity('/api/invitations', 'post', {
       body: invitationData
     });
+    const responseData = ctx.getData(response);
 
-    ctx.cleanup.addInvitation((response as any).invitationId);
+    ctx.cleanup.addInvitation(responseData.invitationId);
 
     expect(response).toBeDefined();
-    expect((response as any).invitationId).toBeTruthy();
-    expect((response as any).email).toBe(invitationData.email);
-    expect((response as any).status).toBe('Pending');
-    expect((response as any).invitationToken).toBeTruthy();
+    expect(responseData.invitationId).toBeTruthy();
+    expect(responseData.email).toBe(invitationData.email);
+    expect(responseData.status).toBe('Pending');
+    expect(responseData.invitationToken).toBeTruthy();
   });
 
   test('should get invitation by ID', async () => {
@@ -49,12 +50,14 @@ describe('Identity Service - Invitation Operations', () => {
     const created = await ctx.client.identity('/api/invitations', 'post', {
       body: invitationData
     });
-    ctx.cleanup.addInvitation((created as any).invitationId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addInvitation(createdData.invitationId);
 
-    const response = await ctx.client.identity(`/api/invitations/${(created as any).invitationId}`, 'get');
+    const response = await ctx.client.identity(`/api/invitations/${createdData.invitationId}`, 'get');
+    const responseData = ctx.getData(response);
 
-    expect((response as any).invitationId).toBe((created as any).invitationId);
-    expect((response as any).email).toBe(invitationData.email);
+    expect(responseData.invitationId).toBe(createdData.invitationId);
+    expect(responseData.email).toBe(invitationData.email);
   });
 
   test('should accept invitation', async () => {
@@ -68,18 +71,20 @@ describe('Identity Service - Invitation Operations', () => {
     const created = await ctx.client.identity('/api/invitations', 'post', {
       body: invitationData
     });
-    ctx.cleanup.addInvitation((created as any).invitationId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addInvitation(createdData.invitationId);
 
-    const response = await ctx.client.identity(`/api/invitations/${(created as any).invitationId}/accept`, 'post', {
+    const response = await ctx.client.identity(`/api/invitations/${createdData.invitationId}/accept`, 'post', {
       body: {
-        invitationToken: (created as any).invitationToken,
+        invitationToken: createdData.invitationToken,
         password: 'NewUser123!@#'
       }
     });
+    const responseData = ctx.getData(response);
 
-    expect((response as any).success).toBe(true);
-    expect((response as any).userId).toBeTruthy();
-    ctx.cleanup.addUser((response as any).userId);
+    expect(responseData.success).toBe(true);
+    expect(responseData.userId).toBeTruthy();
+    ctx.cleanup.addUser(responseData.userId);
   });
 
   test('should resend invitation', async () => {
@@ -93,12 +98,14 @@ describe('Identity Service - Invitation Operations', () => {
     const created = await ctx.client.identity('/api/invitations', 'post', {
       body: invitationData
     });
-    ctx.cleanup.addInvitation((created as any).invitationId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addInvitation(createdData.invitationId);
 
-    const response = await ctx.client.identity(`/api/invitations/${(created as any).invitationId}/resend`, 'post');
+    const response = await ctx.client.identity(`/api/invitations/${createdData.invitationId}/resend`, 'post');
+    const responseData = ctx.getData(response);
 
-    expect((response as any).success).toBe(true);
-    expect((response as any).message).toContain('resent');
+    expect(responseData.success).toBe(true);
+    expect(responseData.message).toContain('resent');
   });
 
   test('should cancel invitation', async () => {
@@ -112,13 +119,16 @@ describe('Identity Service - Invitation Operations', () => {
     const created = await ctx.client.identity('/api/invitations', 'post', {
       body: invitationData
     });
+    const createdData = ctx.getData(created);
 
-    const response = await ctx.client.identity(`/api/invitations/${(created as any).invitationId}/cancel`, 'post');
+    const response = await ctx.client.identity(`/api/invitations/${createdData.invitationId}/cancel`, 'post');
+    const responseData = ctx.getData(response);
 
-    expect((response as any).success).toBe(true);
+    expect(responseData.success).toBe(true);
 
-    const getResponse = await ctx.client.identity(`/api/invitations/${(created as any).invitationId}`, 'get');
-    expect((getResponse as any).status).toBe('Cancelled');
+    const getResponse = await ctx.client.identity(`/api/invitations/${createdData.invitationId}`, 'get');
+    const getResponseData = ctx.getData(getResponse);
+    expect(getResponseData.status).toBe('Cancelled');
   });
 
   test('should list pending invitations', async () => {
@@ -131,9 +141,10 @@ describe('Identity Service - Invitation Operations', () => {
         } 
       }
     });
+    const responseData = ctx.getData(response);
 
-    expect((response as any).invitations).toBeDefined();
-    expect(Array.isArray((response as any).invitations)).toBe(true);
+    expect(responseData.invitations).toBeDefined();
+    expect(Array.isArray(responseData.invitations)).toBe(true);
   });
 
   test('should validate invitation token', async () => {
@@ -147,15 +158,17 @@ describe('Identity Service - Invitation Operations', () => {
     const created = await ctx.client.identity('/api/invitations', 'post', {
       body: invitationData
     });
-    ctx.cleanup.addInvitation((created as any).invitationId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addInvitation(createdData.invitationId);
 
     const response = await ctx.client.identity('/api/invitations/validate', 'post', {
       body: {
-        invitationToken: (created as any).invitationToken
+        invitationToken: createdData.invitationToken
       }
     });
+    const responseData = ctx.getData(response);
 
-    expect((response as any).valid).toBe(true);
-    expect((response as any).invitationId).toBe((created as any).invitationId);
+    expect(responseData.valid).toBe(true);
+    expect(responseData.invitationId).toBe(createdData.invitationId);
   });
 });

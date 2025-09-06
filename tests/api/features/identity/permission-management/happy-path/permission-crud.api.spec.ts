@@ -27,14 +27,15 @@ describe('Identity Service - Permission Management Operations', () => {
       body: permissionData
     });
 
-    ctx.cleanup.addPermission((response as any).permissionId);
+    const createdPermissionData = ctx.getData(response);
+    ctx.cleanup.addPermission(createdPermissionData.permissionId);
 
     expect(response).toBeDefined();
-    expect((response as any).permissionId).toBeTruthy();
-    expect((response as any).name).toBe(permissionData.name);
-    expect((response as any).description).toBe(permissionData.description);
-    expect((response as any).resource).toBe(permissionData.resource);
-    expect((response as any).action).toBe(permissionData.action);
+    expect(createdPermissionData.permissionId).toBeTruthy();
+    expect(createdPermissionData.name).toBe(permissionData.name);
+    expect(createdPermissionData.description).toBe(permissionData.description);
+    expect(createdPermissionData.resource).toBe(permissionData.resource);
+    expect(createdPermissionData.action).toBe(permissionData.action);
   });
 
   test('should retrieve permission by ID', async () => {
@@ -48,13 +49,15 @@ describe('Identity Service - Permission Management Operations', () => {
     const created = await ctx.client.identity('/api/permissions', 'post', {
       body: permissionData
     });
-    ctx.cleanup.addPermission((created as any).permissionId);
+    const createdRetrievalData = ctx.getData(created);
+    ctx.cleanup.addPermission(createdRetrievalData.permissionId);
 
-    const retrieved = await ctx.client.identity(`/api/permissions/${(created as any).permissionId}`, 'get');
+    const retrieved = await ctx.client.identity(`/api/permissions/${createdRetrievalData.permissionId}`, 'get');
+    const retrievedData = ctx.getData(retrieved);
 
-    expect((retrieved as any).permissionId).toBe((created as any).permissionId);
-    expect((retrieved as any).name).toBe(permissionData.name);
-    expect((retrieved as any).description).toBe(permissionData.description);
+    expect(retrievedData.permissionId).toBe(createdRetrievalData.permissionId);
+    expect(retrievedData.name).toBe(permissionData.name);
+    expect(retrievedData.description).toBe(permissionData.description);
   });
 
   test('should update permission', async () => {
@@ -68,20 +71,22 @@ describe('Identity Service - Permission Management Operations', () => {
     const created = await ctx.client.identity('/api/permissions', 'post', {
       body: permissionData
     });
-    ctx.cleanup.addPermission((created as any).permissionId);
+    const createdUpdateData = ctx.getData(created);
+    ctx.cleanup.addPermission(createdUpdateData.permissionId);
 
     const updateData = {
       description: 'Updated permission description',
       action: 'write'
     };
 
-    const updated = await ctx.client.identity(`/api/permissions/${(created as any).permissionId}`, 'put', {
+    const updated = await ctx.client.identity(`/api/permissions/${createdUpdateData.permissionId}`, 'put', {
       body: updateData
     });
+    const updatedData = ctx.getData(updated);
 
-    expect((updated as any).permissionId).toBe((created as any).permissionId);
-    expect((updated as any).description).toBe(updateData.description);
-    expect((updated as any).action).toBe(updateData.action);
+    expect(updatedData.permissionId).toBe(createdUpdateData.permissionId);
+    expect(updatedData.description).toBe(updateData.description);
+    expect(updatedData.action).toBe(updateData.action);
   });
 
   test('should delete permission', async () => {
@@ -96,12 +101,14 @@ describe('Identity Service - Permission Management Operations', () => {
       body: permissionData
     });
 
-    const deleteResponse = await ctx.client.identity(`/api/permissions/${(created as any).permissionId}`, 'delete');
+    const createdDeleteData = ctx.getData(created);
+    const deleteResponse = await ctx.client.identity(`/api/permissions/${createdDeleteData.permissionId}`, 'delete');
+    const deleteResponseData = ctx.getData(deleteResponse);
     
-    expect((deleteResponse as any).success).toBe(true);
+    expect(deleteResponseData.success).toBe(true);
 
     await expect(
-      ctx.client.identity(`/api/permissions/${(created as any).permissionId}`, 'get')
+      ctx.client.identity(`/api/permissions/${createdDeleteData.permissionId}`, 'get')
     ).rejects.toMatchObject({
       response: { status: 404 }
     });
@@ -125,12 +132,14 @@ describe('Identity Service - Permission Management Operations', () => {
     const created1 = await ctx.client.identity('/api/permissions', 'post', {
       body: permission1
     });
-    ctx.cleanup.addPermission((created1 as any).permissionId);
+    const created1Data = ctx.getData(created1);
+    ctx.cleanup.addPermission(created1Data.permissionId);
 
     const created2 = await ctx.client.identity('/api/permissions', 'post', {
       body: permission2
     });
-    ctx.cleanup.addPermission((created2 as any).permissionId);
+    const created2Data = ctx.getData(created2);
+    ctx.cleanup.addPermission(created2Data.permissionId);
 
     const response = await ctx.client.identity('/api/permissions', 'get', {
       params: { 
@@ -141,12 +150,13 @@ describe('Identity Service - Permission Management Operations', () => {
       }
     });
 
-    expect((response as any).permissions).toBeDefined();
-    expect(Array.isArray((response as any).permissions)).toBe(true);
+    const listResponseData = ctx.getData(response);
+    expect(listResponseData.permissions).toBeDefined();
+    expect(Array.isArray(listResponseData.permissions)).toBe(true);
     
-    const permissionIds = (response as any).permissions.map((p: any) => p.permissionId);
-    expect(permissionIds).toContain((created1 as any).permissionId);
-    expect(permissionIds).toContain((created2 as any).permissionId);
+    const permissionIds = listResponseData.permissions.map((p: any) => p.permissionId);
+    expect(permissionIds).toContain(created1Data.permissionId);
+    expect(permissionIds).toContain(created2Data.permissionId);
   });
 
   test('should grant permission to user', async () => {
@@ -160,7 +170,8 @@ describe('Identity Service - Permission Management Operations', () => {
     const permission = await ctx.client.identity('/api/permissions', 'post', {
       body: permissionData
     });
-    ctx.cleanup.addPermission((permission as any).permissionId);
+    const permissionGrantData = ctx.getData(permission);
+    ctx.cleanup.addPermission(permissionGrantData.permissionId);
 
     const userData = {
       email: `test.user${Date.now()}@example.com`,
@@ -173,15 +184,17 @@ describe('Identity Service - Permission Management Operations', () => {
     const user = await ctx.client.identity('/api/users', 'post', {
       body: userData
     });
-    ctx.cleanup.addUser((user as any).userId);
+    const userGrantData = ctx.getData(user);
+    ctx.cleanup.addUser(userGrantData.userId);
 
-    const grantResponse = await ctx.client.identity(`/api/users/${(user as any).userId}/permissions`, 'post', {
+    const grantResponse = await ctx.client.identity(`/api/users/${userGrantData.userId}/permissions`, 'post', {
       body: {
-        permissionId: (permission as any).permissionId
+        permissionId: permissionGrantData.permissionId
       }
     });
+    const grantResponseData = ctx.getData(grantResponse);
 
-    expect((grantResponse as any).success).toBe(true);
+    expect(grantResponseData.success).toBe(true);
   });
 
   test('should revoke permission from user', async () => {
@@ -195,7 +208,8 @@ describe('Identity Service - Permission Management Operations', () => {
     const permission = await ctx.client.identity('/api/permissions', 'post', {
       body: permissionData
     });
-    ctx.cleanup.addPermission((permission as any).permissionId);
+    const permissionRevokeData = ctx.getData(permission);
+    ctx.cleanup.addPermission(permissionRevokeData.permissionId);
 
     const userData = {
       email: `test.user${Date.now()}@example.com`,
@@ -208,17 +222,19 @@ describe('Identity Service - Permission Management Operations', () => {
     const user = await ctx.client.identity('/api/users', 'post', {
       body: userData
     });
-    ctx.cleanup.addUser((user as any).userId);
+    const userRevokeData = ctx.getData(user);
+    ctx.cleanup.addUser(userRevokeData.userId);
 
-    await ctx.client.identity(`/api/users/${(user as any).userId}/permissions`, 'post', {
+    await ctx.client.identity(`/api/users/${userRevokeData.userId}/permissions`, 'post', {
       body: {
-        permissionId: (permission as any).permissionId
+        permissionId: permissionRevokeData.permissionId
       }
     });
 
-    const revokeResponse = await ctx.client.identity(`/api/users/${(user as any).userId}/permissions/${(permission as any).permissionId}`, 'delete');
+    const revokeResponse = await ctx.client.identity(`/api/users/${userRevokeData.userId}/permissions/${permissionRevokeData.permissionId}`, 'delete');
+    const revokeResponseData = ctx.getData(revokeResponse);
 
-    expect((revokeResponse as any).success).toBe(true);
+    expect(revokeResponseData.success).toBe(true);
   });
 
   test('should get user permissions', async () => {
@@ -232,7 +248,8 @@ describe('Identity Service - Permission Management Operations', () => {
     const permission = await ctx.client.identity('/api/permissions', 'post', {
       body: permissionData
     });
-    ctx.cleanup.addPermission((permission as any).permissionId);
+    const permissionListData = ctx.getData(permission);
+    ctx.cleanup.addPermission(permissionListData.permissionId);
 
     const userData = {
       email: `test.user${Date.now()}@example.com`,
@@ -245,21 +262,23 @@ describe('Identity Service - Permission Management Operations', () => {
     const user = await ctx.client.identity('/api/users', 'post', {
       body: userData
     });
-    ctx.cleanup.addUser((user as any).userId);
+    const userListData = ctx.getData(user);
+    ctx.cleanup.addUser(userListData.userId);
 
-    await ctx.client.identity(`/api/users/${(user as any).userId}/permissions`, 'post', {
+    await ctx.client.identity(`/api/users/${userListData.userId}/permissions`, 'post', {
       body: {
-        permissionId: (permission as any).permissionId
+        permissionId: permissionListData.permissionId
       }
     });
 
-    const response = await ctx.client.identity(`/api/users/${(user as any).userId}/permissions`, 'get');
+    const response = await ctx.client.identity(`/api/users/${userListData.userId}/permissions`, 'get');
+    const userPermissionsData = ctx.getData(response);
 
-    expect((response as any).permissions).toBeDefined();
-    expect(Array.isArray((response as any).permissions)).toBe(true);
+    expect(userPermissionsData.permissions).toBeDefined();
+    expect(Array.isArray(userPermissionsData.permissions)).toBe(true);
     
-    const permissionIds = (response as any).permissions.map((p: any) => p.permissionId);
-    expect(permissionIds).toContain((permission as any).permissionId);
+    const permissionIds = userPermissionsData.permissions.map((p: any) => p.permissionId);
+    expect(permissionIds).toContain(permissionListData.permissionId);
   });
 
   test('should check if user has permission', async () => {
@@ -273,7 +292,8 @@ describe('Identity Service - Permission Management Operations', () => {
     const permission = await ctx.client.identity('/api/permissions', 'post', {
       body: permissionData
     });
-    ctx.cleanup.addPermission((permission as any).permissionId);
+    const permissionCheckData = ctx.getData(permission);
+    ctx.cleanup.addPermission(permissionCheckData.permissionId);
 
     const userData = {
       email: `test.user${Date.now()}@example.com`,
@@ -286,20 +306,22 @@ describe('Identity Service - Permission Management Operations', () => {
     const user = await ctx.client.identity('/api/users', 'post', {
       body: userData
     });
-    ctx.cleanup.addUser((user as any).userId);
+    const userCheckData = ctx.getData(user);
+    ctx.cleanup.addUser(userCheckData.userId);
 
-    await ctx.client.identity(`/api/users/${(user as any).userId}/permissions`, 'post', {
+    await ctx.client.identity(`/api/users/${userCheckData.userId}/permissions`, 'post', {
       body: {
-        permissionId: (permission as any).permissionId
+        permissionId: permissionCheckData.permissionId
       }
     });
 
-    const response = await ctx.client.identity(`/api/users/${(user as any).userId}/has-permission`, 'post', {
+    const response = await ctx.client.identity(`/api/users/${userCheckData.userId}/has-permission`, 'post', {
       body: {
         permissionName: permissionData.name
       }
     });
+    const hasPermissionData = ctx.getData(response);
 
-    expect((response as any).hasPermission).toBe(true);
+    expect(hasPermissionData.hasPermission).toBe(true);
   });
 });

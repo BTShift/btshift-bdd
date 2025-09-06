@@ -29,12 +29,13 @@ describe('Client Management - Group Operations', () => {
       body: groupData
     });
 
-    ctx.cleanup.addGroup((response as any).group_id);
+    const responseData = ctx.getData(response);
+    ctx.cleanup.addGroup(responseData.group_id);
 
     expect(response).toBeDefined();
-    expect((response as any).group_id).toBeTruthy();
-    expect((response as any).name).toBe(groupData.name);
-    expect((response as any).description).toBe(groupData.description);
+    expect(responseData.group_id).toBeTruthy();
+    expect(responseData.name).toBe(groupData.name);
+    expect(responseData.description).toBe(groupData.description);
   });
 
   test('should update an existing group', async () => {
@@ -47,20 +48,22 @@ describe('Client Management - Group Operations', () => {
     const created = await ctx.client.clientManagement('/api/groups', 'post', {
       body: groupData
     });
-    ctx.cleanup.addGroup((created as any).group_id);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addGroup(createdData.group_id);
 
     const updateData = {
       name: `UpdatedGroup_${Date.now()}`,
       description: 'Updated description'
     };
 
-    const response = await ctx.client.clientManagement(`/api/groups/${(created as any).group_id}`, 'put', {
+    const response = await ctx.client.clientManagement(`/api/groups/${createdData.group_id}`, 'put', {
       body: updateData
     });
 
-    expect((response as any).group_id).toBe((created as any).group_id);
-    expect((response as any).name).toBe(updateData.name);
-    expect((response as any).description).toBe(updateData.description);
+    const updateResponseData = ctx.getData(response);
+    expect(updateResponseData.group_id).toBe(createdData.group_id);
+    expect(updateResponseData.name).toBe(updateData.name);
+    expect(updateResponseData.description).toBe(updateData.description);
   });
 
   test('should delete a group', async () => {
@@ -73,10 +76,12 @@ describe('Client Management - Group Operations', () => {
     const created = await ctx.client.clientManagement('/api/groups', 'post', {
       body: groupData
     });
+    const deleteCreatedData = ctx.getData(created);
 
-    const response = await ctx.client.clientManagement(`/api/groups/${(created as any).group_id}`, 'delete');
+    const response = await ctx.client.clientManagement(`/api/groups/${deleteCreatedData.group_id}`, 'delete');
 
-    expect((response as any).success).toBe(true);
+    const deleteResponseData = ctx.getData(response);
+    expect(deleteResponseData.success).toBe(true);
   });
 
   test('should list all groups for a tenant', async () => {
@@ -88,7 +93,8 @@ describe('Client Management - Group Operations', () => {
         tenant_id: testTenantId
       }
     });
-    ctx.cleanup.addGroup((group1 as any).group_id);
+    const group1Data = ctx.getData(group1);
+    ctx.cleanup.addGroup(group1Data.group_id);
 
     const group2 = await ctx.client.clientManagement('/api/groups', 'post', {
       body: {
@@ -97,7 +103,8 @@ describe('Client Management - Group Operations', () => {
         tenant_id: testTenantId
       }
     });
-    ctx.cleanup.addGroup((group2 as any).group_id);
+    const group2Data = ctx.getData(group2);
+    ctx.cleanup.addGroup(group2Data.group_id);
 
     const response = await ctx.client.clientManagement('/api/groups', 'get', {
       params: {
@@ -109,9 +116,10 @@ describe('Client Management - Group Operations', () => {
       }
     });
 
-    expect((response as any).groups).toBeDefined();
-    expect(Array.isArray((response as any).groups)).toBe(true);
-    expect((response as any).groups.length).toBeGreaterThanOrEqual(2);
+    const listResponseData = ctx.getData(response);
+    expect(listResponseData.groups).toBeDefined();
+    expect(Array.isArray(listResponseData.groups)).toBe(true);
+    expect(listResponseData.groups.length).toBeGreaterThanOrEqual(2);
   });
 
   test('should add a client to a group', async () => {
@@ -123,22 +131,25 @@ describe('Client Management - Group Operations', () => {
         tenant_id: testTenantId
       }
     });
-    ctx.cleanup.addGroup((group as any).group_id);
+    const groupData = ctx.getData(group);
+    ctx.cleanup.addGroup(groupData.group_id);
 
     // Create a client
-    const clientData = TestDataFactory.client();
+    const clientRequestData = TestDataFactory.client();
     const client = await ctx.client.clientManagement('/api/clients', 'post', {
-      body: clientData
+      body: clientRequestData
     });
-    ctx.cleanup.addClient((client as any).client_id);
+    const clientData = ctx.getData(client);
+    ctx.cleanup.addClient(clientData.client_id);
 
     // Add client to group
     const response = await ctx.client.clientManagement(
-      `/api/groups/${(group as any).group_id}/clients/${(client as any).client_id}`,
+      `/api/groups/${groupData.group_id}/clients/${clientData.client_id}`,
       'post'
     );
 
-    expect((response as any).success).toBe(true);
+    const addClientResponseData = ctx.getData(response);
+    expect(addClientResponseData.success).toBe(true);
   });
 
   test('should remove a client from a group', async () => {
@@ -150,27 +161,30 @@ describe('Client Management - Group Operations', () => {
         tenant_id: testTenantId
       }
     });
-    ctx.cleanup.addGroup((group as any).group_id);
+    const removeGroupData = ctx.getData(group);
+    ctx.cleanup.addGroup(removeGroupData.group_id);
 
-    const clientData = TestDataFactory.client();
+    const removeClientRequestData = TestDataFactory.client();
     const client = await ctx.client.clientManagement('/api/clients', 'post', {
-      body: clientData
+      body: removeClientRequestData
     });
-    ctx.cleanup.addClient((client as any).client_id);
+    const removeClientResponseData = ctx.getData(client);
+    ctx.cleanup.addClient(removeClientResponseData.client_id);
 
     // Add client to group first
     await ctx.client.clientManagement(
-      `/api/groups/${(group as any).group_id}/clients/${(client as any).client_id}`,
+      `/api/groups/${removeGroupData.group_id}/clients/${removeClientResponseData.client_id}`,
       'post'
     );
 
     // Remove client from group
     const response = await ctx.client.clientManagement(
-      `/api/groups/${(group as any).group_id}/clients/${(client as any).client_id}`,
+      `/api/groups/${removeGroupData.group_id}/clients/${removeClientResponseData.client_id}`,
       'delete'
     );
 
-    expect((response as any).success).toBe(true);
+    const removeResponseData = ctx.getData(response);
+    expect(removeResponseData.success).toBe(true);
   });
 
   test('should get all clients in a group', async () => {
@@ -182,33 +196,36 @@ describe('Client Management - Group Operations', () => {
         tenant_id: testTenantId
       }
     });
-    ctx.cleanup.addGroup((group as any).group_id);
+    const listGroupData = ctx.getData(group);
+    ctx.cleanup.addGroup(listGroupData.group_id);
 
     // Create and add multiple clients
-    const client1Data = TestDataFactory.client();
+    const listClient1RequestData = TestDataFactory.client();
     const client1 = await ctx.client.clientManagement('/api/clients', 'post', {
-      body: client1Data
+      body: listClient1RequestData
     });
-    ctx.cleanup.addClient((client1 as any).client_id);
+    const client1ResponseData = ctx.getData(client1);
+    ctx.cleanup.addClient(client1ResponseData.client_id);
 
-    const client2Data = TestDataFactory.client();
+    const listClient2RequestData = TestDataFactory.client();
     const client2 = await ctx.client.clientManagement('/api/clients', 'post', {
-      body: client2Data
+      body: listClient2RequestData
     });
-    ctx.cleanup.addClient((client2 as any).client_id);
+    const client2ResponseData = ctx.getData(client2);
+    ctx.cleanup.addClient(client2ResponseData.client_id);
 
     await ctx.client.clientManagement(
-      `/api/groups/${(group as any).group_id}/clients/${(client1 as any).client_id}`,
+      `/api/groups/${listGroupData.group_id}/clients/${client1ResponseData.client_id}`,
       'post'
     );
     await ctx.client.clientManagement(
-      `/api/groups/${(group as any).group_id}/clients/${(client2 as any).client_id}`,
+      `/api/groups/${listGroupData.group_id}/clients/${client2ResponseData.client_id}`,
       'post'
     );
 
     // Get group clients
     const response = await ctx.client.clientManagement(
-      `/api/groups/${(group as any).group_id}/clients`,
+      `/api/groups/${listGroupData.group_id}/clients`,
       'get',
       {
         params: {
@@ -219,9 +236,10 @@ describe('Client Management - Group Operations', () => {
       }
     );
 
-    expect((response as any).clients).toBeDefined();
-    expect(Array.isArray((response as any).clients)).toBe(true);
-    expect((response as any).clients.length).toBe(2);
+    const groupClientsResponseData = ctx.getData(response);
+    expect(groupClientsResponseData.clients).toBeDefined();
+    expect(Array.isArray(groupClientsResponseData.clients)).toBe(true);
+    expect(groupClientsResponseData.clients.length).toBe(2);
   });
 
   test('should get all groups for a client', async () => {
@@ -230,7 +248,8 @@ describe('Client Management - Group Operations', () => {
     const client = await ctx.client.clientManagement('/api/clients', 'post', {
       body: clientData
     });
-    ctx.cleanup.addClient((client as any).client_id);
+    const clientGroupsClientData = ctx.getData(client);
+    ctx.cleanup.addClient(clientGroupsClientData.client_id);
 
     // Create and assign multiple groups
     const group1 = await ctx.client.clientManagement('/api/groups', 'post', {
@@ -240,7 +259,8 @@ describe('Client Management - Group Operations', () => {
         tenant_id: testTenantId
       }
     });
-    ctx.cleanup.addGroup((group1 as any).group_id);
+    const clientGroup1Data = ctx.getData(group1);
+    ctx.cleanup.addGroup(clientGroup1Data.group_id);
 
     const group2 = await ctx.client.clientManagement('/api/groups', 'post', {
       body: {
@@ -249,20 +269,21 @@ describe('Client Management - Group Operations', () => {
         tenant_id: testTenantId
       }
     });
-    ctx.cleanup.addGroup((group2 as any).group_id);
+    const clientGroup2Data = ctx.getData(group2);
+    ctx.cleanup.addGroup(clientGroup2Data.group_id);
 
     await ctx.client.clientManagement(
-      `/api/groups/${(group1 as any).group_id}/clients/${(client as any).client_id}`,
+      `/api/groups/${clientGroup1Data.group_id}/clients/${clientGroupsClientData.client_id}`,
       'post'
     );
     await ctx.client.clientManagement(
-      `/api/groups/${(group2 as any).group_id}/clients/${(client as any).client_id}`,
+      `/api/groups/${clientGroup2Data.group_id}/clients/${clientGroupsClientData.client_id}`,
       'post'
     );
 
     // Get client groups
     const response = await ctx.client.clientManagement(
-      `/api/clients/${(client as any).client_id}/groups`,
+      `/api/clients/${clientGroupsClientData.client_id}/groups`,
       'get',
       {
         params: {
@@ -273,8 +294,9 @@ describe('Client Management - Group Operations', () => {
       }
     );
 
-    expect((response as any).groups).toBeDefined();
-    expect(Array.isArray((response as any).groups)).toBe(true);
-    expect((response as any).groups.length).toBe(2);
+    const clientGroupsResponseData = ctx.getData(response);
+    expect(clientGroupsResponseData.groups).toBeDefined();
+    expect(Array.isArray(clientGroupsResponseData.groups)).toBe(true);
+    expect(clientGroupsResponseData.groups.length).toBe(2);
   });
 });

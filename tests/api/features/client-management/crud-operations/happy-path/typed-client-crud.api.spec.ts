@@ -48,13 +48,13 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Assert - Response is typed based on OpenAPI schema
     expect(response).toBeDefined();
-    expect((response as any).id).toBeTruthy();
-    expect((response as any).name).toBe(clientData.name);
-    expect((response as any).email).toBe(clientData.email);
-    expect((response as any).status).toBe('Active');
+    expect(response.data.id).toBeTruthy();
+    expect(response.data.name).toBe(clientData.name);
+    expect(response.data.email).toBe(clientData.email);
+    expect(response.data.status).toBe('Active');
     
     // Track for cleanup
-    createdClientIds.push((response as any).id);
+    createdClientIds.push(response.data.id);
   });
 
   test('should get client by ID with typed client', async () => {
@@ -68,7 +68,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       body: clientData
     });
     
-    const clientId = (createResponse as any).id;
+    const clientId = createResponse.data.id;
     createdClientIds.push(clientId);
 
     // Act - Get client using typed endpoint
@@ -76,9 +76,9 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Assert
     expect(getResponse).toBeDefined();
-    expect((getResponse as any).id).toBe(clientId);
-    expect((getResponse as any).name).toBe(clientData.name);
-    expect((getResponse as any).email).toBe(clientData.email);
+    expect(getResponse.data.id).toBe(clientId);
+    expect(getResponse.data.name).toBe(clientData.name);
+    expect(getResponse.data.email).toBe(clientData.email);
   });
 
   test('should update client with typed client', async () => {
@@ -93,7 +93,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       body: originalData
     });
     
-    const clientId = (createResponse as any).id;
+    const clientId = createResponse.data.id;
     createdClientIds.push(clientId);
 
     // Act - Update client
@@ -109,10 +109,10 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Assert
     expect(updateResponse).toBeDefined();
-    expect((updateResponse as any).id).toBe(clientId);
-    expect((updateResponse as any).name).toBe(updateData.name);
-    expect((updateResponse as any).phone).toBe(updateData.phone);
-    expect((updateResponse as any).notes).toBe(updateData.notes);
+    expect(updateResponse.data.id).toBe(clientId);
+    expect(updateResponse.data.name).toBe(updateData.name);
+    expect(updateResponse.data.phone).toBe(updateData.phone);
+    expect(updateResponse.data.notes).toBe(updateData.notes);
   });
 
   test('should list clients with typed client', async () => {
@@ -128,10 +128,10 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Assert - Response structure is typed
     expect(response).toBeDefined();
-    expect(Array.isArray((response as any).clients)).toBe(true);
-    expect((response as any).totalCount).toBeDefined();
-    expect((response as any).pageSize).toBeDefined();
-    expect((response as any).pageNumber).toBeDefined();
+    expect(Array.isArray(response.data.clients)).toBe(true);
+    expect(response.data.totalCount).toBeDefined();
+    expect(response.data.pageSize).toBeDefined();
+    expect(response.data.pageNumber).toBeDefined();
   });
 
   test('should create client group with typed client', async () => {
@@ -149,13 +149,13 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       }
     });
     
-    createdClientIds.push((client1 as any).id, (client2 as any).id);
+    createdClientIds.push(client1.data.id, client2.data.id);
 
     // Act - Create client group
     const groupData = {
       name: `Test Group ${Date.now()}`,
       description: 'Created by typed API test',
-      clientIds: [(client1 as any).id, (client2 as any).id]
+      clientIds: [client1.data.id, client2.data.id]
     };
     
     const groupResponse = await client.clientManagement('/api/client-groups', 'post', {
@@ -164,11 +164,11 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Assert
     expect(groupResponse).toBeDefined();
-    expect((groupResponse as any).id).toBeTruthy();
-    expect((groupResponse as any).name).toBe(groupData.name);
-    expect((groupResponse as any).description).toBe(groupData.description);
-    expect(Array.isArray((groupResponse as any).clients)).toBe(true);
-    expect((groupResponse as any).clients.length).toBe(2);
+    expect(groupResponse.data.id).toBeTruthy();
+    expect(groupResponse.data.name).toBe(groupData.name);
+    expect(groupResponse.data.description).toBe(groupData.description);
+    expect(Array.isArray(groupResponse.data.clients)).toBe(true);
+    expect(groupResponse.data.clients.length).toBe(2);
   });
 
   test('should handle user-client associations with typed client', async () => {
@@ -182,7 +182,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       body: clientData
     });
     
-    const clientId = (clientResponse as any).id;
+    const clientId = clientResponse.data.id;
     createdClientIds.push(clientId);
 
     // Note: In a real test, you'd have a test user ID
@@ -215,7 +215,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       body: clientData
     });
     
-    const clientId = (createResponse as any).id;
+    const clientId = createResponse.data.id;
 
     // Act - Delete client
     await client.clientManagement(`/api/clients/${clientId}`, 'delete');

@@ -40,9 +40,10 @@ describe('Business Feature: Platform Access Control', () => {
 
     // Assert - Response is fully typed based on the OpenAPI schema
     expect(response).toBeDefined();
-    expect((response as any).success).toBe(true);
-    expect((response as any).tokenInfo).toBeDefined();
-    expect((response as any).tokenInfo.accessToken).toBeTruthy();
+    const loginResponseData = ctx.getData(response);
+    expect(loginResponseData.success).toBe(true);
+    expect(loginResponseData.tokenInfo).toBeDefined();
+    expect(loginResponseData.tokenInfo.accessToken).toBeTruthy();
     
     // Verify token was set
     expect(ctx.client.getAuthToken()).toBeTruthy();
@@ -57,8 +58,9 @@ describe('Business Feature: Platform Access Control', () => {
 
     // Assert
     expect(response).toBeDefined();
-    expect((response as any).email).toBe(superAdminCredentials.email);
-    expect((response as any).roles).toBeDefined();
+    const meResponseData = ctx.getData(response);
+    expect(meResponseData.email).toBe(superAdminCredentials.email);
+    expect(meResponseData.roles).toBeDefined();
   });
 
   test('should refresh token with typed ctx.client', async () => {
@@ -67,7 +69,8 @@ describe('Business Feature: Platform Access Control', () => {
       superAdminCredentials.email,
       superAdminCredentials.password
     );
-    const refreshToken = (loginResponse as any).tokenInfo?.refreshToken;
+    const loginTokenData = ctx.getData(loginResponse);
+    const refreshToken = loginTokenData.tokenInfo?.refreshToken;
     expect(refreshToken).toBeTruthy();
 
     // Act - Refresh token
@@ -77,9 +80,10 @@ describe('Business Feature: Platform Access Control', () => {
 
     // Assert
     expect(refreshResponse).toBeDefined();
-    expect((refreshResponse as any).tokenInfo?.accessToken).toBeTruthy();
-    expect((refreshResponse as any).tokenInfo?.accessToken).not.toBe(
-      (loginResponse as any).tokenInfo?.accessToken
+    const refreshTokenData = ctx.getData(refreshResponse);
+    expect(refreshTokenData.tokenInfo?.accessToken).toBeTruthy();
+    expect(refreshTokenData.tokenInfo?.accessToken).not.toBe(
+      loginTokenData.tokenInfo?.accessToken
     );
   });
 

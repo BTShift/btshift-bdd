@@ -25,7 +25,8 @@ describe('Identity Service - Session Management Operations', () => {
         password: 'Test123!@#'
       }
     });
-    testUserId = (user as any).userId;
+    const userResponseData = ctx.getData(user);
+    testUserId = userResponseData.userId;
     ctx.cleanup.addUser(testUserId);
 
     // Create a session by logging in
@@ -35,7 +36,8 @@ describe('Identity Service - Session Management Operations', () => {
         password: 'Test123!@#'
       }
     });
-    testSessionId = (loginResponse as any).sessionId;
+    const loginResponseData = ctx.getData(loginResponse);
+    testSessionId = loginResponseData.sessionId;
   });
 
   afterAll(async () => {
@@ -46,23 +48,25 @@ describe('Identity Service - Session Management Operations', () => {
     const response = await ctx.client.identity('/api/sessions/current', 'get');
 
     expect(response).toBeDefined();
-    expect((response as any).sessionId).toBeTruthy();
-    expect((response as any).userId).toBeTruthy();
-    expect((response as any).createdAt).toBeTruthy();
-    expect((response as any).lastActivityAt).toBeTruthy();
-    expect((response as any).ipAddress).toBeTruthy();
-    expect((response as any).userAgent).toBeTruthy();
+    const currentSessionData = ctx.getData(response);
+    expect(currentSessionData.sessionId).toBeTruthy();
+    expect(currentSessionData.userId).toBeTruthy();
+    expect(currentSessionData.createdAt).toBeTruthy();
+    expect(currentSessionData.lastActivityAt).toBeTruthy();
+    expect(currentSessionData.ipAddress).toBeTruthy();
+    expect(currentSessionData.userAgent).toBeTruthy();
   });
 
   test('should list all active sessions for user', async () => {
     const response = await ctx.client.identity(`/api/users/${testUserId}/sessions`, 'get');
 
     expect(response).toBeDefined();
-    expect((response as any).sessions).toBeDefined();
-    expect(Array.isArray((response as any).sessions)).toBe(true);
-    expect((response as any).sessions.length).toBeGreaterThan(0);
+    const sessionsResponseData = ctx.getData(response);
+    expect(sessionsResponseData.sessions).toBeDefined();
+    expect(Array.isArray(sessionsResponseData.sessions)).toBe(true);
+    expect(sessionsResponseData.sessions.length).toBeGreaterThan(0);
     
-    const sessionIds = (response as any).sessions.map((s: any) => s.sessionId);
+    const sessionIds = sessionsResponseData.sessions.map((s: any) => s.sessionId);
     expect(sessionIds).toContain(testSessionId);
   });
 
@@ -70,18 +74,20 @@ describe('Identity Service - Session Management Operations', () => {
     const response = await ctx.client.identity(`/api/sessions/${testSessionId}`, 'get');
 
     expect(response).toBeDefined();
-    expect((response as any).sessionId).toBe(testSessionId);
-    expect((response as any).userId).toBe(testUserId);
-    expect((response as any).isActive).toBe(true);
+    const sessionDetailsData = ctx.getData(response);
+    expect(sessionDetailsData.sessionId).toBe(testSessionId);
+    expect(sessionDetailsData.userId).toBe(testUserId);
+    expect(sessionDetailsData.isActive).toBe(true);
   });
 
   test('should refresh session', async () => {
     const response = await ctx.client.identity(`/api/sessions/${testSessionId}/refresh`, 'post');
 
     expect(response).toBeDefined();
-    expect((response as any).token).toBeTruthy();
-    expect((response as any).refreshToken).toBeTruthy();
-    expect((response as any).expiresAt).toBeTruthy();
+    const refreshResponseData = ctx.getData(response);
+    expect(refreshResponseData.token).toBeTruthy();
+    expect(refreshResponseData.refreshToken).toBeTruthy();
+    expect(refreshResponseData.expiresAt).toBeTruthy();
   });
 
   test('should revoke specific session', async () => {
@@ -97,7 +103,8 @@ describe('Identity Service - Session Management Operations', () => {
         password: 'Test123!@#'
       }
     });
-    ctx.cleanup.addUser((user as any).userId);
+    const newUserData = ctx.getData(user);
+    ctx.cleanup.addUser(newUserData.userId);
 
     const loginResponse = await ctx.client.identity('/api/auth/login', 'post', {
       body: {
@@ -105,12 +112,14 @@ describe('Identity Service - Session Management Operations', () => {
         password: 'Test123!@#'
       }
     });
-    const sessionToRevoke = (loginResponse as any).sessionId;
+    const newLoginResponseData = ctx.getData(loginResponse);
+    const sessionToRevoke = newLoginResponseData.sessionId;
 
     const response = await ctx.client.identity(`/api/sessions/${sessionToRevoke}/revoke`, 'post');
 
     expect(response).toBeDefined();
-    expect((response as any).success).toBe(true);
+    const revokeResponseData = ctx.getData(response);
+    expect(revokeResponseData.success).toBe(true);
 
     // Verify session is revoked
     await expect(
@@ -124,8 +133,9 @@ describe('Identity Service - Session Management Operations', () => {
     const response = await ctx.client.identity(`/api/users/${testUserId}/sessions/revoke-all`, 'post');
 
     expect(response).toBeDefined();
-    expect((response as any).success).toBe(true);
-    expect((response as any).revokedCount).toBeGreaterThan(0);
+    const revokeAllResponseData = ctx.getData(response);
+    expect(revokeAllResponseData.success).toBe(true);
+    expect(revokeAllResponseData.revokedCount).toBeGreaterThan(0);
   });
 
   test('should track session activity', async () => {
@@ -137,7 +147,8 @@ describe('Identity Service - Session Management Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).success).toBe(true);
+    const activityResponseData = ctx.getData(response);
+    expect(activityResponseData.success).toBe(true);
   });
 
   test('should get session activity history', async () => {
@@ -152,9 +163,10 @@ describe('Identity Service - Session Management Operations', () => {
     const response = await ctx.client.identity(`/api/sessions/${testSessionId}/activity`, 'get');
 
     expect(response).toBeDefined();
-    expect((response as any).activities).toBeDefined();
-    expect(Array.isArray((response as any).activities)).toBe(true);
-    expect((response as any).activities.length).toBeGreaterThan(0);
+    const activityHistoryData = ctx.getData(response);
+    expect(activityHistoryData.activities).toBeDefined();
+    expect(Array.isArray(activityHistoryData.activities)).toBe(true);
+    expect(activityHistoryData.activities.length).toBeGreaterThan(0);
   });
 
   test('should validate session token', async () => {
@@ -165,9 +177,10 @@ describe('Identity Service - Session Management Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).valid).toBe(true);
-    expect((response as any).sessionId).toBeTruthy();
-    expect((response as any).userId).toBeTruthy();
+    const validateResponseData = ctx.getData(response);
+    expect(validateResponseData.valid).toBe(true);
+    expect(validateResponseData.sessionId).toBeTruthy();
+    expect(validateResponseData.userId).toBeTruthy();
   });
 
   test('should handle session timeout', async () => {
@@ -183,7 +196,8 @@ describe('Identity Service - Session Management Operations', () => {
         password: 'Test123!@#'
       }
     });
-    ctx.cleanup.addUser((user as any).userId);
+    const timeoutUserData = ctx.getData(user);
+    ctx.cleanup.addUser(timeoutUserData.userId);
 
     const loginResponse = await ctx.client.identity('/api/auth/login', 'post', {
       body: {
@@ -193,32 +207,36 @@ describe('Identity Service - Session Management Operations', () => {
       }
     });
 
-    const shortSession = (loginResponse as any).sessionId;
+    const timeoutLoginData = ctx.getData(loginResponse);
+    const shortSession = timeoutLoginData.sessionId;
 
     // Wait for timeout (in real test, would wait actual timeout period)
     // For now, just check the session details
     const sessionDetails = await ctx.client.identity(`/api/sessions/${shortSession}`, 'get');
 
     expect(sessionDetails).toBeDefined();
-    expect((sessionDetails as any).sessionTimeout).toBe(1);
+    const timeoutSessionDetails = ctx.getData(sessionDetails);
+    expect(timeoutSessionDetails.sessionTimeout).toBe(1);
   });
 
   test('should get session statistics', async () => {
     const response = await ctx.client.identity(`/api/users/${testUserId}/sessions/stats`, 'get');
 
     expect(response).toBeDefined();
-    expect((response as any).totalSessions).toBeDefined();
-    expect((response as any).activeSessions).toBeDefined();
-    expect((response as any).averageSessionDuration).toBeDefined();
-    expect((response as any).lastLoginAt).toBeDefined();
+    const statsResponseData = ctx.getData(response);
+    expect(statsResponseData.totalSessions).toBeDefined();
+    expect(statsResponseData.activeSessions).toBeDefined();
+    expect(statsResponseData.averageSessionDuration).toBeDefined();
+    expect(statsResponseData.lastLoginAt).toBeDefined();
   });
 
   test('should detect concurrent sessions', async () => {
     const response = await ctx.client.identity(`/api/users/${testUserId}/sessions/concurrent`, 'get');
 
     expect(response).toBeDefined();
-    expect((response as any).concurrentSessions).toBeDefined();
-    expect((response as any).maxAllowed).toBeDefined();
-    expect((response as any).exceedsLimit).toBeDefined();
+    const concurrentResponseData = ctx.getData(response);
+    expect(concurrentResponseData.concurrentSessions).toBeDefined();
+    expect(concurrentResponseData.maxAllowed).toBeDefined();
+    expect(concurrentResponseData.exceedsLimit).toBeDefined();
   });
 });

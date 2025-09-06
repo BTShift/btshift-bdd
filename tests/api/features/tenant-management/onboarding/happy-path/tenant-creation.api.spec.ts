@@ -106,14 +106,16 @@ describe('Business Feature: Tenant Onboarding', () => {
     const created = await ctx.client.tenant('/api/tenants', 'post', {
       body: tenantData
     });
-    ctx.cleanup.addTenant((created as any).id);
+    const activationTestData = ctx.getData(created);
+    ctx.cleanup.addTenant(activationTestData.id);
 
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    const activated = await ctx.client.tenant(`/api/tenants/${(created as any).id}/activate`, 'post');
+    const activated = await ctx.client.tenant(`/api/tenants/${activationTestData.id}/activate`, 'post');
+    const activatedData = ctx.getData(activated);
 
-    expect((activated as any).id).toBe((created as any).id);
-    expect((activated as any).status).toBe('Active');
+    expect(activatedData.id).toBe(activationTestData.id);
+    expect(activatedData.status).toBe('Active');
   });
 
   test('should successfully send welcome email after tenant activation', async () => {
@@ -121,13 +123,14 @@ describe('Business Feature: Tenant Onboarding', () => {
     const created = await ctx.client.tenant('/api/tenants', 'post', {
       body: tenantData
     });
-    ctx.cleanup.addTenant((created as any).id);
+    const welcomeEmailTestData = ctx.getData(created);
+    ctx.cleanup.addTenant(welcomeEmailTestData.id);
     
     await new Promise(resolve => setTimeout(resolve, 2000));
-    await ctx.client.tenant(`/api/tenants/${(created as any).id}/activate`, 'post');
+    await ctx.client.tenant(`/api/tenants/${welcomeEmailTestData.id}/activate`, 'post');
 
     await expect(
-      ctx.client.tenant(`/api/tenants/${(created as any).id}/resend-welcome`, 'post')
+      ctx.client.tenant(`/api/tenants/${welcomeEmailTestData.id}/resend-welcome`, 'post')
     ).resolves.toBeDefined();
   });
 
@@ -136,16 +139,18 @@ describe('Business Feature: Tenant Onboarding', () => {
     const created = await ctx.client.tenant('/api/tenants', 'post', {
       body: tenantData
     });
-    ctx.cleanup.addTenant((created as any).id);
+    const listTenantTestData = ctx.getData(created);
+    ctx.cleanup.addTenant(listTenantTestData.id);
 
     const response = await ctx.client.tenant('/api/tenants', 'get', {
       params: { query: { pageSize: 50, pageNumber: 1 } }
     });
 
-    expect((response as any).tenants).toBeDefined();
-    expect(Array.isArray((response as any).tenants)).toBe(true);
+    const listResponseData = ctx.getData(response);
+    expect(listResponseData.tenants).toBeDefined();
+    expect(Array.isArray(listResponseData.tenants)).toBe(true);
     
-    const found = (response as any).tenants.find((t: any) => t.id === (created as any).id);
+    const found = listResponseData.tenants.find((t: any) => t.id === listTenantTestData.id);
     expect(found).toBeDefined();
     expect(found.tenantName).toBe(tenantData.tenantName);
   });

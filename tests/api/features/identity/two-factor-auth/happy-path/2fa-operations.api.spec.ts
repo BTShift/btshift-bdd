@@ -23,7 +23,8 @@ describe('Identity Service - Two-Factor Authentication Operations', () => {
         role: 'User'
       }
     });
-    testUserId = (user as any).userId;
+    const userResponseData = ctx.getData(user);
+    testUserId = userResponseData.userId;
     ctx.cleanup.addUser(testUserId);
   });
 
@@ -33,13 +34,14 @@ describe('Identity Service - Two-Factor Authentication Operations', () => {
 
   test('should enable two-factor authentication', async () => {
     const response = await ctx.client.identity(`/api/users/${testUserId}/2fa/enable`, 'post');
+    const responseData = ctx.getData(response);
 
     expect(response).toBeDefined();
-    expect((response as any).secret).toBeTruthy();
-    expect((response as any).qrCodeUrl).toBeTruthy();
-    expect((response as any).backupCodes).toBeDefined();
-    expect(Array.isArray((response as any).backupCodes)).toBe(true);
-    expect((response as any).backupCodes.length).toBeGreaterThan(0);
+    expect(responseData.secret).toBeTruthy();
+    expect(responseData.qrCodeUrl).toBeTruthy();
+    expect(responseData.backupCodes).toBeDefined();
+    expect(Array.isArray(responseData.backupCodes)).toBe(true);
+    expect(responseData.backupCodes.length).toBeGreaterThan(0);
   });
 
   test('should verify two-factor authentication code', async () => {
@@ -50,9 +52,10 @@ describe('Identity Service - Two-Factor Authentication Operations', () => {
         code: '123456' // This would need to be a valid TOTP in production
       }
     });
+    const responseData = ctx.getData(response);
 
     expect(response).toBeDefined();
-    expect((response as any).verified).toBeDefined();
+    expect(responseData.verified).toBeDefined();
   });
 
   test('should disable two-factor authentication', async () => {
@@ -61,9 +64,10 @@ describe('Identity Service - Two-Factor Authentication Operations', () => {
         code: '123456' // Would need valid TOTP or backup code
       }
     });
+    const responseData = ctx.getData(response);
 
     expect(response).toBeDefined();
-    expect((response as any).success).toBe(true);
+    expect(responseData.success).toBe(true);
   });
 
   test('should generate new backup codes', async () => {
@@ -75,34 +79,38 @@ describe('Identity Service - Two-Factor Authentication Operations', () => {
         code: '123456' // Would need valid TOTP
       }
     });
+    const responseData = ctx.getData(response);
 
     expect(response).toBeDefined();
-    expect((response as any).backupCodes).toBeDefined();
-    expect(Array.isArray((response as any).backupCodes)).toBe(true);
-    expect((response as any).backupCodes.length).toBeGreaterThan(0);
+    expect(responseData.backupCodes).toBeDefined();
+    expect(Array.isArray(responseData.backupCodes)).toBe(true);
+    expect(responseData.backupCodes.length).toBeGreaterThan(0);
   });
 
   test('should verify backup code', async () => {
     // Enable 2FA and get backup codes
     const enableResponse = await ctx.client.identity(`/api/users/${testUserId}/2fa/enable`, 'post');
-    const backupCodes = (enableResponse as any).backupCodes;
+    const enableResponseData = ctx.getData(enableResponse);
+    const backupCodes = enableResponseData.backupCodes;
 
     const response = await ctx.client.identity(`/api/users/${testUserId}/2fa/verify-backup`, 'post', {
       body: {
         backupCode: backupCodes[0]
       }
     });
+    const responseData = ctx.getData(response);
 
     expect(response).toBeDefined();
-    expect((response as any).verified).toBeDefined();
+    expect(responseData.verified).toBeDefined();
   });
 
   test('should get two-factor authentication status', async () => {
     const response = await ctx.client.identity(`/api/users/${testUserId}/2fa/status`, 'get');
+    const responseData = ctx.getData(response);
 
     expect(response).toBeDefined();
-    expect((response as any).enabled).toBeDefined();
-    expect(typeof (response as any).enabled).toBe('boolean');
+    expect(responseData.enabled).toBeDefined();
+    expect(typeof responseData.enabled).toBe('boolean');
   });
 
   test('should require 2FA for sensitive operations', async () => {
@@ -122,10 +130,11 @@ describe('Identity Service - Two-Factor Authentication Operations', () => {
 
   test('should send 2FA code via SMS', async () => {
     const response = await ctx.client.identity(`/api/users/${testUserId}/2fa/send-sms`, 'post');
+    const responseData = ctx.getData(response);
 
     expect(response).toBeDefined();
-    expect((response as any).success).toBe(true);
-    expect((response as any).message).toContain('SMS sent');
+    expect(responseData.success).toBe(true);
+    expect(responseData.message).toContain('SMS sent');
   });
 
   test('should validate 2FA for login', async () => {
@@ -140,10 +149,11 @@ describe('Identity Service - Two-Factor Authentication Operations', () => {
         password: 'Test123!@#'
       }
     });
-    ctx.cleanup.addUser((user as any).userId);
+    const userResponseData = ctx.getData(user);
+    ctx.cleanup.addUser(userResponseData.userId);
 
     // Enable 2FA for the user
-    await ctx.client.identity(`/api/users/${(user as any).userId}/2fa/enable`, 'post');
+    await ctx.client.identity(`/api/users/${userResponseData.userId}/2fa/enable`, 'post');
 
     // Attempt login should require 2FA
     const loginResponse = await ctx.client.identity('/api/auth/login', 'post', {
@@ -152,19 +162,21 @@ describe('Identity Service - Two-Factor Authentication Operations', () => {
         password: 'Test123!@#'
       }
     });
+    const loginResponseData = ctx.getData(loginResponse);
 
-    expect((loginResponse as any).requires2FA).toBe(true);
-    expect((loginResponse as any).tempToken).toBeTruthy();
+    expect(loginResponseData.requires2FA).toBe(true);
+    expect(loginResponseData.tempToken).toBeTruthy();
 
     // Complete login with 2FA code
     const completeLoginResponse = await ctx.client.identity('/api/auth/login/2fa', 'post', {
       body: {
-        tempToken: (loginResponse as any).tempToken,
+        tempToken: loginResponseData.tempToken,
         code: '123456'
       }
     });
+    const completeLoginResponseData = ctx.getData(completeLoginResponse);
 
-    expect((completeLoginResponse as any).token).toBeTruthy();
-    expect((completeLoginResponse as any).refreshToken).toBeTruthy();
+    expect(completeLoginResponseData.token).toBeTruthy();
+    expect(completeLoginResponseData.refreshToken).toBeTruthy();
   });
 });

@@ -26,9 +26,10 @@ describe('Identity Service - Audit Log Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).logs).toBeDefined();
-    expect(Array.isArray((response as any).logs)).toBe(true);
-    expect((response as any).totalCount).toBeDefined();
+    const auditLogsData = ctx.getData(response);
+    expect(auditLogsData.logs).toBeDefined();
+    expect(Array.isArray(auditLogsData.logs)).toBe(true);
+    expect(auditLogsData.totalCount).toBeDefined();
   });
 
   test('should filter audit logs by user', async () => {
@@ -43,7 +44,8 @@ describe('Identity Service - Audit Log Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).logs).toBeDefined();
+    const userFilterData = ctx.getData(response);
+    expect(userFilterData.logs).toBeDefined();
   });
 
   test('should filter audit logs by date range', async () => {
@@ -59,7 +61,8 @@ describe('Identity Service - Audit Log Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).logs).toBeDefined();
+    const dateFilterData = ctx.getData(response);
+    expect(dateFilterData.logs).toBeDefined();
   });
 
   test('should filter audit logs by action type', async () => {
@@ -74,9 +77,10 @@ describe('Identity Service - Audit Log Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).logs).toBeDefined();
-    if ((response as any).logs.length > 0) {
-      expect((response as any).logs[0].actionType).toBe('LOGIN');
+    const actionFilterData = ctx.getData(response);
+    expect(actionFilterData.logs).toBeDefined();
+    if (actionFilterData.logs.length > 0) {
+      expect(actionFilterData.logs[0].actionType).toBe('LOGIN');
     }
   });
 
@@ -86,12 +90,14 @@ describe('Identity Service - Audit Log Operations', () => {
       params: { query: { pageNumber: 1, pageSize: 1 } }
     });
 
-    if ((logsResponse as any).logs.length > 0) {
-      const logId = (logsResponse as any).logs[0].id;
+    const logsData = ctx.getData(logsResponse);
+    if (logsData.logs.length > 0) {
+      const logId = logsData.logs[0].id;
       const response = await ctx.client.identity(`/api/audit-logs/${logId}`, 'get');
+      const logByIdData = ctx.getData(response);
 
       expect(response).toBeDefined();
-      expect((response as any).id).toBe(logId);
+      expect(logByIdData.id).toBe(logId);
     }
   });
 
@@ -105,6 +111,7 @@ describe('Identity Service - Audit Log Operations', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).downloadUrl).toBeTruthy();
+    const exportData = ctx.getData(response);
+    expect(exportData.downloadUrl).toBeTruthy();
   });
 });
