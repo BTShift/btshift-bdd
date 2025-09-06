@@ -11,9 +11,17 @@ import type { paths as TenantPaths } from '@btshift/tenant-management-types';
 import type { paths as ClientPaths } from '@btshift/client-management-types';
 import { randomUUID } from 'crypto';
 
+// Enhanced response type that includes correlation ID metadata
+export interface ApiResponse<T = any> {
+  data: T;
+  correlationId: string;
+  requestCorrelationId: string;
+}
+
 export class TypedApiClient {
   private authToken: string | null = null;
   private baseUrl: string;
+  private lastCorrelationId: string | null = null;
   
   public identity: ReturnType<typeof makeIdentityClient>['api'];
   public tenant: ReturnType<typeof makeTenantClient>['api'];
@@ -74,31 +82,61 @@ export class TypedApiClient {
     return this.authToken;
   }
 
-  // Wrap API calls with correlation ID logging
+  getLastCorrelationId(): string | null {
+    return this.lastCorrelationId;
+  }
+
+  // Wrap API calls with correlation ID logging and capture
   private wrapWithCorrelationLogging(api: any, serviceName: string): any {
     return new Proxy(api, {
       get: (target, prop) => {
         const originalMethod = target[prop];
         if (typeof originalMethod === 'function') {
-          return async (...args: any[]) => {
-            const correlationId = randomUUID();
+          return async (...args: any[]): Promise<ApiResponse> => {
+            const requestCorrelationId = randomUUID();
             const [path, method, options = {}] = args;
             
             // Add correlation ID to headers
             const headers = {
-              'X-Correlation-ID': correlationId,
+              'X-Correlation-ID': requestCorrelationId,
               ...options.headers
             };
             
-            console.log(`🔍 [${serviceName}] ${method?.toUpperCase()} ${path} | Correlation-ID: ${correlationId}`);
+            console.log(`🔍 [${serviceName}] ${method?.toUpperCase()} ${path} | Correlation-ID: ${requestCorrelationId}`);
             
             try {
               const result = await originalMethod.apply(target, [path, method, { ...options, headers }]);
-              console.log(`✅ [${serviceName}] ${method?.toUpperCase()} ${path} | Correlation-ID: ${correlationId} | Success`);
-              return result;
+              
+              // Extract correlation ID from response headers if available
+              let responseCorrelationId = requestCorrelationId; // Default fallback
+              if (result && typeof result === 'object' && result.headers) {
+                responseCorrelationId = result.headers['x-correlation-id'] || 
+                                     result.headers['X-Correlation-ID'] || 
+                                     requestCorrelationId;
+              }
+              
+              // Store the correlation ID for tracking
+              this.lastCorrelationId = responseCorrelationId;
+              
+              console.log(`✅ [${serviceName}] ${method?.toUpperCase()} ${path} | Request-ID: ${requestCorrelationId} | Response-ID: ${responseCorrelationId} | Success`);
+              
+              // Return enhanced response with correlation ID metadata
+              return {
+                data: result,
+                correlationId: responseCorrelationId,
+                requestCorrelationId: requestCorrelationId
+              };
             } catch (error) {
-              console.error(`❌ [${serviceName}] ${method?.toUpperCase()} ${path} | Correlation-ID: ${correlationId} | Error:`, error.message);
-              throw error;
+              console.error(`❌ [${serviceName}] ${method?.toUpperCase()} ${path} | Correlation-ID: ${requestCorrelationId} | Error:`, error.message);
+              
+              // Store correlation ID even on error for debugging
+              this.lastCorrelationId = requestCorrelationId;
+              
+              // Re-throw error but preserve correlation ID context
+              const enhancedError = error as any;
+              enhancedError.correlationId = requestCorrelationId;
+              enhancedError.requestCorrelationId = requestCorrelationId;
+              throw enhancedError;
             }
           };
         }
@@ -108,18 +146,19 @@ export class TypedApiClient {
   }
 
   // Helper method to login and set token automatically
-  async login(email: string, password: string): Promise<any> {
+  async login(email: string, password: string): Promise<ApiResponse> {
     const response = await this.identity('/api/authentication/login', 'post', {
       body: { email, password }
     });
     
-    // Check if response has token info and set it
-    if ((response as any)?.tokenInfo?.accessToken) {
-      this.setAuthToken((response as any).tokenInfo.accessToken);
-    } else if ((response as any)?.accessToken) {
-      this.setAuthToken((response as any).accessToken);
-    } else if ((response as any)?.token) {
-      this.setAuthToken((response as any).token);
+    // Check if response data has token info and set it
+    const responseData = response.data;
+    if (responseData?.tokenInfo?.accessToken) {
+      this.setAuthToken(responseData.tokenInfo.accessToken);
+    } else if (responseData?.accessToken) {
+      this.setAuthToken(responseData.accessToken);
+    } else if (responseData?.token) {
+      this.setAuthToken(responseData.token);
     }
     
     return response;

@@ -1,13 +1,82 @@
 /**
  * Base class for API tests - DRY approach with shared setup/teardown
+ * Uses Global Authentication Manager to avoid multiple logins
  */
 
-import { TypedApiClient } from '../clients/typed-api-client';
+import { TypedApiClient, ApiResponse } from '../clients/typed-api-client';
+import { GlobalAuthManager } from '../auth/global-auth-manager';
+import { AllureCorrelationHelper } from './allure-correlation';
 import * as crypto from 'crypto';
 
 export interface TestContext {
   client: TypedApiClient;
   cleanup: CleanupManager;
+  correlation: CorrelationTracker;
+}
+
+export class CorrelationTracker {
+  private correlationHistory: Array<{
+    correlationId: string;
+    requestCorrelationId: string;
+    timestamp: Date;
+    context?: any;
+  }> = [];
+
+  /**
+   * Track a correlation ID from an API response
+   */
+  track(response: ApiResponse, context?: any): void {
+    this.correlationHistory.push({
+      correlationId: response.correlationId,
+      requestCorrelationId: response.requestCorrelationId,
+      timestamp: new Date(),
+      context
+    });
+  }
+
+  /**
+   * Get the last tracked correlation ID
+   */
+  getLastCorrelationId(): string | null {
+    const last = this.correlationHistory[this.correlationHistory.length - 1];
+    return last?.correlationId || null;
+  }
+
+  /**
+   * Get all tracked correlation IDs
+   */
+  getHistory(): typeof this.correlationHistory {
+    return [...this.correlationHistory];
+  }
+
+  /**
+   * Enhanced API call wrapper that automatically tracks correlation IDs and reports to Allure
+   */
+  async callAndReport<T extends ApiResponse>(
+    stepName: string,
+    apiCall: () => Promise<T>,
+    context?: {
+      endpoint?: string;
+      method?: string;
+      serviceName?: string;
+    }
+  ): Promise<T> {
+    return await AllureCorrelationHelper.stepWithCorrelation(
+      stepName,
+      async () => {
+        const response = await AllureCorrelationHelper.captureCorrelationOnError(
+          apiCall,
+          context
+        );
+        
+        // Track the correlation ID
+        this.track(response, context);
+        
+        return response;
+      },
+      context
+    );
+  }
 }
 
 export class CleanupManager {
@@ -120,36 +189,51 @@ export class CleanupManager {
   }
 }
 
+/**
+ * Setup API test context using global authentication
+ * This avoids multiple login calls and improves performance
+ */
 export async function setupApiTest(): Promise<TestContext> {
-  const testSessionId = crypto.randomUUID();
-  console.log(`🚀 Starting test session: ${testSessionId}`);
+  const testSessionId = crypto.randomUUID().substring(0, 8);
+  console.log(`🚀 [${testSessionId}] Setting up test context with global auth...`);
+  
+  try {
+    // Get authenticated client from global auth manager
+    const authManager = GlobalAuthManager.getInstance();
+    const client = await authManager.getAuthenticatedClient();
+    const cleanup = new CleanupManager();
+    const correlation = new CorrelationTracker();
+    
+    const tokenInfo = authManager.getTokenInfo();
+    console.log(`✅ [${testSessionId}] Using global authentication`);
+    console.log(`🕐 [${testSessionId}] Token expires: ${tokenInfo?.expiresAt.toLocaleTimeString()}`);
+    
+    return { client, cleanup, correlation };
+  } catch (error) {
+    console.error(`❌ [${testSessionId}] Setup failed:`, error.message);
+    // Fallback to non-authenticated client for cleanup purposes
+    const client = new TypedApiClient();
+    const cleanup = new CleanupManager();
+    const correlation = new CorrelationTracker();
+    return { client, cleanup, correlation };
+  }
+}
+
+/**
+ * Setup API test context WITHOUT authentication
+ * Use this for authentication/login feature tests that need to test login itself
+ */
+export async function setupUnauthenticatedApiTest(): Promise<TestContext> {
+  const testSessionId = crypto.randomUUID().substring(0, 8);
+  console.log(`🚀 [${testSessionId}] Setting up UNAUTHENTICATED test context...`);
   
   const client = new TypedApiClient();
   const cleanup = new CleanupManager();
+  const correlation = new CorrelationTracker();
   
-  // Always return context object to prevent undefined errors in teardown
-  const context = { client, cleanup };
-  
-  // Login as SuperAdmin - use PLATFORM_ADMIN credentials from .env
-  const credentials = {
-    email: process.env.PLATFORM_ADMIN_EMAIL || process.env.SUPER_ADMIN_EMAIL || 'superadmin@shift.ma',
-    password: process.env.PLATFORM_ADMIN_PASSWORD || process.env.SUPER_ADMIN_PASSWORD || 'SuperAdmin@123!'
-  };
-  
-  console.log(`🔐 [${testSessionId}] Attempting login with email:`, credentials.email);
   console.log(`🌐 [${testSessionId}] API Gateway URL:`, process.env.API_GATEWAY_URL);
   
-  try {
-    const loginResponse = await client.login(credentials.email, credentials.password);
-    console.log(`🔑 [${testSessionId}] Login successful, token set:`, !!client.getAuthToken());
-    console.log(`🔑 [${testSessionId}] Token preview:`, client.getAuthToken()?.substring(0, 20) + '...');
-  } catch (error) {
-    console.error(`❌ [${testSessionId}] Login failed:`, error.message);
-    // Still return context so teardown doesn't fail with undefined
-    return context;
-  }
-  
-  return context;
+  return { client, cleanup, correlation };
 }
 
 export async function teardownApiTest(context: TestContext): Promise<void> {

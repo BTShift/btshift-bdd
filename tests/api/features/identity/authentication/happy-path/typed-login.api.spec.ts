@@ -1,10 +1,10 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { TypedApiClient } from '../../../../support/clients/typed-api-client';
+import { setupUnauthenticatedApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { superAdminCredentials } from '../../../../support/fixtures/tenant-data';
 
 describe('Business Feature: Platform Access Control', () => {
-  let client: TypedApiClient;
+  let ctx: TestContext;
 
   beforeAll(async () => {
     allure.feature('Identity & Access Management');
@@ -12,13 +12,12 @@ describe('Business Feature: Platform Access Control', () => {
     allure.suite('Authentication Systems');
     allure.subSuite('User Login Process');
     
-    client = new TypedApiClient();
+    // Use unauthenticated setup since we're testing login functionality
+    ctx = await setupUnauthenticatedApiTest();
   });
 
   afterAll(async () => {
-    if (client.getAuthToken()) {
-      await client.logout();
-    }
+    await teardownApiTest(ctx);
   });
 
   test('Super Admin can access the platform with valid credentials', async () => {
@@ -31,8 +30,8 @@ describe('Business Feature: Platform Access Control', () => {
     allure.severity('blocker');
 
     let loginResponse: any;
-    // Act - Using the typed client from @btshift/identity-types
-    const response = await client.identity('/api/authentication/login', 'post', {
+    // Act - Using the typed ctx.client from @btshift/identity-types
+    const response = await ctx.client.identity('/api/authentication/login', 'post', {
       body: {
         email: superAdminCredentials.email,
         password: superAdminCredentials.password
@@ -46,15 +45,15 @@ describe('Business Feature: Platform Access Control', () => {
     expect((response as any).tokenInfo.accessToken).toBeTruthy();
     
     // Verify token was set
-    expect(client.getAuthToken()).toBeTruthy();
+    expect(ctx.client.getAuthToken()).toBeTruthy();
   });
 
-  test('should get current user information with typed client', async () => {
+  test('should get current user information with typed ctx.client', async () => {
     // Arrange - Login first
-    await client.login(superAdminCredentials.email, superAdminCredentials.password);
+    await ctx.client.login(superAdminCredentials.email, superAdminCredentials.password);
 
     // Act - Get current user using typed endpoint
-    const response = await client.identity('/api/authentication/me', 'get');
+    const response = await ctx.client.identity('/api/authentication/me', 'get');
 
     // Assert
     expect(response).toBeDefined();
@@ -62,9 +61,9 @@ describe('Business Feature: Platform Access Control', () => {
     expect((response as any).roles).toBeDefined();
   });
 
-  test('should refresh token with typed client', async () => {
+  test('should refresh token with typed ctx.client', async () => {
     // Arrange - Login to get tokens
-    const loginResponse = await client.login(
+    const loginResponse = await ctx.client.login(
       superAdminCredentials.email,
       superAdminCredentials.password
     );
@@ -72,7 +71,7 @@ describe('Business Feature: Platform Access Control', () => {
     expect(refreshToken).toBeTruthy();
 
     // Act - Refresh token
-    const refreshResponse = await client.identity('/api/authentication/refresh', 'post', {
+    const refreshResponse = await ctx.client.identity('/api/authentication/refresh', 'post', {
       body: { refreshToken }
     });
 
@@ -84,14 +83,14 @@ describe('Business Feature: Platform Access Control', () => {
     );
   });
 
-  test('should handle change password with typed client', async () => {
+  test('should handle change password with typed ctx.client', async () => {
     // Note: This is a demo - in real tests you'd use a test user
     // Arrange - Login first
-    await client.login(superAdminCredentials.email, superAdminCredentials.password);
+    await ctx.client.login(superAdminCredentials.email, superAdminCredentials.password);
 
     // Act - Attempt to change password (will fail for SuperAdmin but tests the typed API)
     try {
-      await client.identity('/api/authentication/change-password', 'post', {
+      await ctx.client.identity('/api/authentication/change-password', 'post', {
         body: {
           currentPassword: superAdminCredentials.password,
           newPassword: 'NewTestPassword123!',
@@ -108,7 +107,7 @@ describe('Business Feature: Platform Access Control', () => {
   test('should validate typed error responses', async () => {
     // Act & Assert - Invalid login should return typed error
     try {
-      await client.identity('/api/authentication/login', 'post', {
+      await ctx.client.identity('/api/authentication/login', 'post', {
         body: {
           email: 'invalid@example.com',
           password: 'WrongPassword'

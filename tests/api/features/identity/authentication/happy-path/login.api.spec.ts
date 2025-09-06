@@ -1,26 +1,25 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { TypedApiClient } from '../../../../support/clients/typed-api-client';
+import { setupUnauthenticatedApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
 describe('Authentication - Login Happy Path API Tests', () => {
-  let client: TypedApiClient;
+  let ctx: TestContext;
   const credentials = TestDataFactory.credentials();
 
   beforeAll(async () => {
     allure.parentSuite('Authentication');
     allure.feature('Identity & Access Management');
-    client = new TypedApiClient();
+    // Use unauthenticated setup since we're testing login functionality
+    ctx = await setupUnauthenticatedApiTest();
   });
 
   afterAll(async () => {
-    if (client.getAuthToken()) {
-      await client.logout();
-    }
+    await teardownApiTest(ctx);
   });
 
   test('should successfully login with valid SuperAdmin credentials', async () => {
-    const response = await client.identity('/api/authentication/login', 'post', {
+    const response = await ctx.client.identity('/api/authentication/login', 'post', {
       body: credentials
     });
 
@@ -32,10 +31,10 @@ describe('Authentication - Login Happy Path API Tests', () => {
   });
 
   test('should validate a valid token', async () => {
-    await client.login(credentials.email, credentials.password);
-    const token = client.getAuthToken();
+    await ctx.client.login(credentials.email, credentials.password);
+    const token = ctx.client.getAuthToken();
 
-    const response = await client.identity('/api/authentication/validate-token', 'get', {
+    const response = await ctx.client.identity('/api/authentication/validate-token', 'get', {
       params: { query: { token } }
     });
 
@@ -45,11 +44,11 @@ describe('Authentication - Login Happy Path API Tests', () => {
   });
 
   test('should refresh token with valid refresh token', async () => {
-    const loginResponse = await client.login(credentials.email, credentials.password);
+    const loginResponse = await ctx.client.login(credentials.email, credentials.password);
     const refreshToken = (loginResponse as any).tokenInfo?.refreshToken;
-    const originalToken = client.getAuthToken();
+    const originalToken = ctx.client.getAuthToken();
 
-    const refreshResponse = await client.identity('/api/authentication/refresh', 'post', {
+    const refreshResponse = await ctx.client.identity('/api/authentication/refresh', 'post', {
       body: { refreshToken }
     });
 
@@ -58,26 +57,26 @@ describe('Authentication - Login Happy Path API Tests', () => {
   });
 
   test('should logout successfully', async () => {
-    await client.login(credentials.email, credentials.password);
-    expect(client.getAuthToken()).toBeTruthy();
+    await ctx.client.login(credentials.email, credentials.password);
+    expect(ctx.client.getAuthToken()).toBeTruthy();
 
-    await client.logout();
-    expect(client.getAuthToken()).toBeNull();
+    await ctx.client.logout();
+    expect(ctx.client.getAuthToken()).toBeNull();
   });
 
   test('should maintain authentication state across multiple requests', async () => {
-    await client.login(credentials.email, credentials.password);
-    const token = client.getAuthToken();
+    await ctx.client.login(credentials.email, credentials.password);
+    const token = ctx.client.getAuthToken();
 
     for (let i = 0; i < 3; i++) {
-      const response = await client.identity('/api/authentication/me', 'get');
+      const response = await ctx.client.identity('/api/authentication/me', 'get');
       expect(response).toBeDefined();
-      expect(client.getAuthToken()).toBe(token);
+      expect(ctx.client.getAuthToken()).toBe(token);
     }
   });
 
   test('should return user information in login response', async () => {
-    const response = await client.identity('/api/authentication/login', 'post', {
+    const response = await ctx.client.identity('/api/authentication/login', 'post', {
       body: credentials
     });
 
@@ -91,7 +90,7 @@ describe('Authentication - Login Happy Path API Tests', () => {
   });
 
   test('should have token with reasonable expiration time', async () => {
-    const response = await client.identity('/api/authentication/login', 'post', {
+    const response = await ctx.client.identity('/api/authentication/login', 'post', {
       body: credentials
     });
     

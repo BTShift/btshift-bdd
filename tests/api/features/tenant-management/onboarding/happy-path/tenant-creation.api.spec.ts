@@ -35,53 +35,70 @@ describe('Business Feature: Tenant Onboarding', () => {
       allure.attachment('Tenant Registration Data', JSON.stringify(tenantData, null, 2), 'application/json');
     });
 
-    await allure.step('🚀 When: I submit the tenant registration request', async () => {
-      response = await ctx.client.tenant('/api/tenants', 'post', {
-        body: tenantData
-      });
-      ctx.cleanup.addTenant((response as any).id);
-    });
+    // Use the enhanced correlation tracking for automatic Allure reporting
+    response = await ctx.correlation.callAndReport(
+      '🚀 When: I submit the tenant registration request',
+      () => ctx.client.tenant('/api/tenants', 'post', { body: tenantData }),
+      {
+        endpoint: '/api/tenants',
+        method: 'POST',
+        serviceName: 'Tenant Management'
+      }
+    );
+    ctx.cleanup.addTenant(response.data.id);
 
     await allure.step('✅ Then: The tenant should be created successfully', async () => {
-      expect(response).toBeDefined();
-      expect((response as any).id).toBeTruthy();
-      allure.attachment('Created Tenant Response', JSON.stringify(response, null, 2), 'application/json');
+      expect(response.data).toBeDefined();
+      expect(response.data.id).toBeTruthy();
+      allure.attachment('Created Tenant Response', JSON.stringify(response.data, null, 2), 'application/json');
     });
 
     await allure.step('🔍 And: The tenant data should match the request', async () => {
-      expect((response as any).companyName).toBe(tenantData.companyName);
-      expect((response as any).tenantName).toBe(tenantData.tenantName);
+      expect(response.data.companyName).toBe(tenantData.companyName);
+      expect(response.data.tenantName).toBe(tenantData.tenantName);
     });
 
     await allure.step('📊 And: The tenant status should be Pending', async () => {
-      expect((response as any).status).toBe('Pending');
+      expect(response.data.status).toBe('Pending');
     });
   });
 
   test('should retrieve the created tenant by ID', async () => {
     const tenantData = TestDataFactory.tenant();
-    const created = await ctx.client.tenant('/api/tenants', 'post', {
-      body: tenantData
-    });
-    ctx.cleanup.addTenant((created as any).id);
+    const created = await ctx.correlation.callAndReport(
+      'Create tenant for retrieval test',
+      () => ctx.client.tenant('/api/tenants', 'post', { body: tenantData }),
+      { endpoint: '/api/tenants', method: 'POST', serviceName: 'Tenant Management' }
+    );
+    ctx.cleanup.addTenant(created.data.id);
 
-    const retrieved = await ctx.client.tenant(`/api/tenants/${(created as any).id}`, 'get');
+    const retrieved = await ctx.correlation.callAndReport(
+      'Retrieve tenant by ID',
+      () => ctx.client.tenant(`/api/tenants/${created.data.id}`, 'get'),
+      { endpoint: `/api/tenants/${created.data.id}`, method: 'GET', serviceName: 'Tenant Management' }
+    );
 
-    expect((retrieved as any).id).toBe((created as any).id);
-    expect((retrieved as any).tenantName).toBe(tenantData.tenantName);
+    expect(retrieved.data.id).toBe(created.data.id);
+    expect(retrieved.data.tenantName).toBe(tenantData.tenantName);
   });
 
   test('should retrieve the created tenant by name', async () => {
     const tenantData = TestDataFactory.tenant();
-    const created = await ctx.client.tenant('/api/tenants', 'post', {
-      body: tenantData
-    });
-    ctx.cleanup.addTenant((created as any).id);
+    const created = await ctx.correlation.callAndReport(
+      'Create tenant for name retrieval test',
+      () => ctx.client.tenant('/api/tenants', 'post', { body: tenantData }),
+      { endpoint: '/api/tenants', method: 'POST', serviceName: 'Tenant Management' }
+    );
+    ctx.cleanup.addTenant(created.data.id);
 
-    const retrieved = await ctx.client.tenant(`/api/tenants/by-name/${tenantData.tenantName}`, 'get');
+    const retrieved = await ctx.correlation.callAndReport(
+      'Retrieve tenant by name',
+      () => ctx.client.tenant(`/api/tenants/by-name/${tenantData.tenantName}`, 'get'),
+      { endpoint: `/api/tenants/by-name/${tenantData.tenantName}`, method: 'GET', serviceName: 'Tenant Management' }
+    );
 
-    expect((retrieved as any).id).toBe((created as any).id);
-    expect((retrieved as any).tenantName).toBe(tenantData.tenantName);
+    expect(retrieved.data.id).toBe(created.data.id);
+    expect(retrieved.data.tenantName).toBe(tenantData.tenantName);
   });
 
   test('should successfully activate a pending tenant', async () => {
