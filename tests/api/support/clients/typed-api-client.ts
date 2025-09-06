@@ -64,12 +64,8 @@ export class TypedApiClient {
     const clientClient = makeClientManagementClient({
       baseUrl: this.baseUrl,
       getAuth: () => {
-        const authHeader = this.authToken ? `Bearer ${this.authToken}` : undefined;
-        console.log(`🔐 [ClientManagement] Getting auth token: ${authHeader ? authHeader.substring(0, 30) + '...' : 'NO TOKEN'}`);
-        if (!authHeader && this.authToken === null) {
-          console.warn('⚠️ [ClientManagement] Auth token is null - authentication may be required');
-        }
-        return authHeader;
+        console.log(`🔐 [ClientManagement] Getting auth token: ${this.authToken ? 'Bearer ' + this.authToken.substring(0, 20) + '...' : 'null'}`);
+        return this.authToken ? `Bearer ${this.authToken}` : undefined;
       },
       headers: () => {
         // Don't generate correlation ID here, let the wrapper handle it
@@ -151,32 +147,12 @@ export class TypedApiClient {
     // Check both the wrapped response data and direct response for token info
     // This handles both the correlation-wrapped response and direct API response
     const responseData = response.data || response;
-    
-    // Debug logging
-    console.log('🔐 Login response structure:', {
-      hasData: !!response.data,
-      hasTokenInfo: !!responseData?.tokenInfo,
-      hasAccessToken: !!responseData?.accessToken,
-      hasToken: !!responseData?.token,
-      tokenInfoAccessToken: responseData?.tokenInfo?.accessToken ? 'present' : 'missing'
-    });
-    
     if (responseData?.tokenInfo?.accessToken) {
       this.setAuthToken(responseData.tokenInfo.accessToken);
-      console.log('✅ Token set from tokenInfo.accessToken');
     } else if (responseData?.accessToken) {
       this.setAuthToken(responseData.accessToken);
-      console.log('✅ Token set from accessToken');
     } else if (responseData?.token) {
       this.setAuthToken(responseData.token);
-      console.log('✅ Token set from token');
-    } else {
-      console.error('❌ No token found in login response!', JSON.stringify(responseData, null, 2));
-    }
-    
-    // Verify token was set
-    if (!this.authToken) {
-      throw new Error('Failed to set authentication token after login');
     }
     
     return response;
