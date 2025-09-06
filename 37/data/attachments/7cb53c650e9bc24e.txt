@@ -1,0 +1,2 @@
+🔍 [Identity] GET /api/authentication/validate-token | X-Correlation-ID: d94b7572-88e2-45a7-b50e-ede1588caad9
+🔐 [Identity] Getting auth token: null

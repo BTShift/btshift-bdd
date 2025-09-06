@@ -1,0 +1,1 @@
+❌ [ClientManagement] POST /api/clients | X-Correlation-ID: 9d3bce45-650b-4dfd-baa8-cf280f9a2cff | Error: HTTP 401: Unauthorized
