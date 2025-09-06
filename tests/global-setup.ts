@@ -17,6 +17,9 @@ async function globalSetup(config: FullConfig) {
     console.error('⚠️  Pre-test cleanup failed, but continuing with tests:', error);
   }
   
+  // Store cleanup instance for teardown
+  (global as any).__CLEANER__ = cleaner;
+  
   console.log('\n================================');
   console.log('🚀 Starting test execution...\n');
   
