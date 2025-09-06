@@ -34,8 +34,8 @@ export class TypedApiClient {
     const identityClient = makeIdentityClient({
       baseUrl: this.baseUrl,
       getAuth: () => {
-        console.log(`🔐 [Identity] Getting auth token: ${this.authToken ? 'Bearer ' + this.authToken.substring(0, 20) + '...' : 'null'}`);
-        return this.authToken ? `Bearer ${this.authToken}` : undefined;
+        // Return just the token, the client library adds 'Bearer' prefix
+        return this.authToken || undefined;
       },
       headers: () => {
         // Don't generate correlation ID here, let the wrapper handle it
@@ -50,8 +50,8 @@ export class TypedApiClient {
     const tenantClient = makeTenantClient({
       baseUrl: this.baseUrl,
       getAuth: () => {
-        console.log(`🔐 [Tenant] Getting auth token: ${this.authToken ? 'Bearer ' + this.authToken.substring(0, 20) + '...' : 'null'}`);
-        return this.authToken ? `Bearer ${this.authToken}` : undefined;
+        // Return just the token, the client library adds 'Bearer' prefix
+        return this.authToken || undefined;
       },
       headers: () => {
         // Don't generate correlation ID here, let the wrapper handle it
@@ -64,8 +64,8 @@ export class TypedApiClient {
     const clientClient = makeClientManagementClient({
       baseUrl: this.baseUrl,
       getAuth: () => {
-        console.log(`🔐 [ClientManagement] Getting auth token: ${this.authToken ? 'Bearer ' + this.authToken.substring(0, 20) + '...' : 'null'}`);
-        return this.authToken ? `Bearer ${this.authToken}` : undefined;
+        // Return just the token, the client library adds 'Bearer' prefix
+        return this.authToken || undefined;
       },
       headers: () => {
         // Don't generate correlation ID here, let the wrapper handle it
@@ -111,7 +111,9 @@ export class TypedApiClient {
         }
       };
       
-      console.log(`🔍 [${serviceName}] ${method?.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId}`);
+      // Debug: Check if Authorization header is present
+      const hasAuth = options.headers?.Authorization || this.authToken;
+      console.log(`🔍 [${serviceName}] ${method?.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Auth: ${hasAuth ? 'Yes' : 'No'}`);
       
       try {
         const result = await api(path, method, enhancedOptions);
