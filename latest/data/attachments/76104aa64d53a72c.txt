@@ -1,0 +1,14 @@
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 7212218e-d026-4d9d-aa58-1f3181e8c70a
+🔐 [Identity] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 7212218e-d026-4d9d-aa58-1f3181e8c70a | Success
+🔐 Login response structure: {
+  hasData: true,
+  hasTokenInfo: true,
+  hasAccessToken: false,
+  hasToken: false,
+  tokenInfoAccessToken: 'present'
+}
+✅ Token set from tokenInfo.accessToken
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: e4d6442d-6b6b-4bfb-afb6-95c4e941efa4
+🔐 [Identity] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: e4d6442d-6b6b-4bfb-afb6-95c4e941efa4 | Success

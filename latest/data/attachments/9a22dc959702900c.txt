@@ -1,0 +1,16 @@
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: b111b583-6f7d-496d-ab95-6bd4699447d2
+🔐 [Identity] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: b111b583-6f7d-496d-ab95-6bd4699447d2 | Success
+🔐 Login response structure: {
+  hasData: true,
+  hasTokenInfo: true,
+  hasAccessToken: false,
+  hasToken: false,
+  tokenInfoAccessToken: 'present'
+}
+✅ Token set from tokenInfo.accessToken
+🔍 [Identity] POST /api/authentication/change-password | X-Correlation-ID: 4b7a4cae-e3d3-4297-9feb-89294e141182
+🔐 [Identity] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 15ac992f-8cae-4a73-bd8b-88f035f76618
+🔐 [Identity] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 15ac992f-8cae-4a73-bd8b-88f035f76618 | Success

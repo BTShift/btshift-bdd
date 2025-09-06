@@ -1,0 +1,24 @@
+🚀 [3075e771] Setting up test context with global auth...
+🔑 [global-auth-1757184745801] Starting global authentication...
+🔐 [global-auth-1757184745801] Logging in as: superadmin@shift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 3ebe6f3c-8c52-4f38-b1b8-4b388b0075e0
+🔐 [Identity] Getting auth token: null
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 3ebe6f3c-8c52-4f38-b1b8-4b388b0075e0 | Success
+🔐 Login response structure: {
+  hasData: true,
+  hasTokenInfo: true,
+  hasAccessToken: false,
+  hasToken: false,
+  tokenInfoAccessToken: 'present'
+}
+✅ Token set from tokenInfo.accessToken
+✅ [global-auth-1757184745801] Global authentication successful
+🕐 [global-auth-1757184745801] Token expires at: 2025-09-06T19:00:26.212Z
+🎫 [global-auth-1757184745801] Token preview: eyJhbGciOiJIUzI1NiIs...
+✅ [3075e771] Using global authentication
+🕐 [3075e771] Token expires: 7:00:26 PM
+🔍 [Identity] GET /api/audit-logs | X-Correlation-ID: 5f983411-f02e-4f5f-ba7e-12717295be2b
+🔐 [Identity] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: e0380627-cf61-4fe6-a41c-1ee2e2838748
+🔐 [Identity] Getting auth token: Bearer eyJhbGciOiJIUzI1NiIs...
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: e0380627-cf61-4fe6-a41c-1ee2e2838748 | Success
