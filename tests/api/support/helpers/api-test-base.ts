@@ -129,14 +129,25 @@ export async function setupApiTest(): Promise<TestContext> {
     password: process.env.PLATFORM_ADMIN_PASSWORD || process.env.SUPER_ADMIN_PASSWORD || 'SuperAdmin@123!'
   };
   
-  const loginResponse = await client.login(credentials.email, credentials.password);
-  console.log('🔑 Login successful, token set:', !!client.getAuthToken());
-  console.log('🔑 Token preview:', client.getAuthToken()?.substring(0, 20) + '...');
+  console.log('🔐 Attempting login with email:', credentials.email);
+  
+  try {
+    const loginResponse = await client.login(credentials.email, credentials.password);
+    console.log('🔑 Login successful, token set:', !!client.getAuthToken());
+    console.log('🔑 Token preview:', client.getAuthToken()?.substring(0, 20) + '...');
+  } catch (error) {
+    console.error('❌ Login failed:', error.message);
+    throw error;
+  }
   
   return { client, cleanup };
 }
 
 export async function teardownApiTest(context: TestContext): Promise<void> {
-  await context.cleanup.executeCleanup(context.client);
-  await context.client.logout();
+  if (context?.cleanup) {
+    await context.cleanup.executeCleanup(context.client);
+  }
+  if (context?.client) {
+    await context.client.logout();
+  }
 }

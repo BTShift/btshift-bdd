@@ -40,8 +40,10 @@ jobs:
         run: npm run test:api
         continue-on-error: true
         env:
-          SUPER_ADMIN_EMAIL: superadmin@btshift.com
-          SUPER_ADMIN_PASSWORD: ${{ secrets.SUPER_ADMIN_PASSWORD }}
+          PLATFORM_ADMIN_EMAIL: superadmin@shift.ma
+          PLATFORM_ADMIN_PASSWORD: ${{ secrets.PLATFORM_ADMIN_PASSWORD }}
+          SUPER_ADMIN_EMAIL: superadmin@shift.ma
+          SUPER_ADMIN_PASSWORD: ${{ secrets.PLATFORM_ADMIN_PASSWORD }}
           PLATFORM_ADMIN_URL: https://platform-admin-portal-production.up.railway.app
           API_GATEWAY_URL: https://api-gateway-production-91e9.up.railway.app
           # Database connections for cleanup
