@@ -29,13 +29,14 @@ describe('Identity Service - User Management CRUD Operations', () => {
       }
     });
 
-    ctx.cleanup.addUser((response as any).userId);
+    const responseData = ctx.getData(response);
+    ctx.cleanup.addUser(responseData.userId);
     
     expect(response).toBeDefined();
-    expect((response as any).userId).toBeTruthy();
-    expect((response as any).email).toBe(userData.email);
-    expect((response as any).firstName).toBe(userData.firstName);
-    expect((response as any).lastName).toBe(userData.lastName);
+    expect(responseData.userId).toBeTruthy();
+    expect(responseData.email).toBe(userData.email);
+    expect(responseData.firstName).toBe(userData.firstName);
+    expect(responseData.lastName).toBe(userData.lastName);
   });
 
   test('should retrieve user by ID', async () => {
@@ -49,14 +50,16 @@ describe('Identity Service - User Management CRUD Operations', () => {
         role: 'User'
       }
     });
-    ctx.cleanup.addUser((created as any).userId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addUser(createdData.userId);
 
-    const retrieved = await ctx.client.identity(`/api/users/${(created as any).userId}`, 'get');
+    const retrieved = await ctx.client.identity(`/api/users/${createdData.userId}`, 'get');
+    const retrievedData = ctx.getData(retrieved);
 
-    expect((retrieved as any).userId).toBe((created as any).userId);
-    expect((retrieved as any).email).toBe(userData.email);
-    expect((retrieved as any).firstName).toBe(userData.firstName);
-    expect((retrieved as any).lastName).toBe(userData.lastName);
+    expect(retrievedData.userId).toBe(createdData.userId);
+    expect(retrievedData.email).toBe(userData.email);
+    expect(retrievedData.firstName).toBe(userData.firstName);
+    expect(retrievedData.lastName).toBe(userData.lastName);
   });
 
   test('should update user information', async () => {
@@ -70,22 +73,24 @@ describe('Identity Service - User Management CRUD Operations', () => {
         role: 'User'
       }
     });
-    ctx.cleanup.addUser((created as any).userId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addUser(createdData.userId);
 
-    const updatedData = {
+    const updatePayload = {
       firstName: 'Updated',
       lastName: 'Name',
       phoneNumber: '+212600000001'
     };
 
-    const updated = await ctx.client.identity(`/api/users/${(created as any).userId}`, 'put', {
-      body: updatedData
+    const updated = await ctx.client.identity(`/api/users/${createdData.userId}`, 'put', {
+      body: updatePayload
     });
+    const updatedData = ctx.getData(updated);
 
-    expect((updated as any).userId).toBe((created as any).userId);
-    expect((updated as any).firstName).toBe(updatedData.firstName);
-    expect((updated as any).lastName).toBe(updatedData.lastName);
-    expect((updated as any).phoneNumber).toBe(updatedData.phoneNumber);
+    expect(updatedData.userId).toBe(createdData.userId);
+    expect(updatedData.firstName).toBe(updatePayload.firstName);
+    expect(updatedData.lastName).toBe(updatePayload.lastName);
+    expect(updatedData.phoneNumber).toBe(updatePayload.phoneNumber);
   });
 
   test('should delete user', async () => {
@@ -100,12 +105,14 @@ describe('Identity Service - User Management CRUD Operations', () => {
       }
     });
 
-    const deleteResponse = await ctx.client.identity(`/api/users/${(created as any).userId}`, 'delete');
+    const createdData = ctx.getData(created);
+    const deleteResponse = await ctx.client.identity(`/api/users/${createdData.userId}`, 'delete');
+    const deleteData = ctx.getData(deleteResponse);
     
-    expect((deleteResponse as any).success).toBe(true);
+    expect(deleteData.success).toBe(true);
 
     await expect(
-      ctx.client.identity(`/api/users/${(created as any).userId}`, 'get')
+      ctx.client.identity(`/api/users/${createdData.userId}`, 'get')
     ).rejects.toMatchObject({
       response: { status: 404 }
     });
@@ -124,7 +131,8 @@ describe('Identity Service - User Management CRUD Operations', () => {
         role: 'User'
       }
     });
-    ctx.cleanup.addUser((created1 as any).userId);
+    const created1Data = ctx.getData(created1);
+    ctx.cleanup.addUser(created1Data.userId);
 
     const created2 = await ctx.client.identity('/api/users', 'post', {
       body: {
@@ -135,7 +143,8 @@ describe('Identity Service - User Management CRUD Operations', () => {
         role: 'User'
       }
     });
-    ctx.cleanup.addUser((created2 as any).userId);
+    const created2Data = ctx.getData(created2);
+    ctx.cleanup.addUser(created2Data.userId);
 
     const response = await ctx.client.identity('/api/users', 'get', {
       params: { 
@@ -145,14 +154,15 @@ describe('Identity Service - User Management CRUD Operations', () => {
         } 
       }
     });
+    const responseData = ctx.getData(response);
 
-    expect((response as any).users).toBeDefined();
-    expect(Array.isArray((response as any).users)).toBe(true);
-    expect((response as any).totalCount).toBeGreaterThanOrEqual(2);
+    expect(responseData.users).toBeDefined();
+    expect(Array.isArray(responseData.users)).toBe(true);
+    expect(responseData.totalCount).toBeGreaterThanOrEqual(2);
     
-    const userIds = (response as any).users.map((u: any) => u.userId);
-    expect(userIds).toContain((created1 as any).userId);
-    expect(userIds).toContain((created2 as any).userId);
+    const userIds = responseData.users.map((u: any) => u.userId);
+    expect(userIds).toContain(created1Data.userId);
+    expect(userIds).toContain(created2Data.userId);
   });
 
   test('should search users by email', async () => {
@@ -166,7 +176,8 @@ describe('Identity Service - User Management CRUD Operations', () => {
         role: 'User'
       }
     });
-    ctx.cleanup.addUser((created as any).userId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addUser(createdData.userId);
 
     const response = await ctx.client.identity('/api/users/search', 'get', {
       params: { 
@@ -175,12 +186,13 @@ describe('Identity Service - User Management CRUD Operations', () => {
         } 
       }
     });
+    const responseData = ctx.getData(response);
 
-    expect((response as any).users).toBeDefined();
-    expect(Array.isArray((response as any).users)).toBe(true);
-    expect((response as any).users.length).toBeGreaterThanOrEqual(1);
+    expect(responseData.users).toBeDefined();
+    expect(Array.isArray(responseData.users)).toBe(true);
+    expect(responseData.users.length).toBeGreaterThanOrEqual(1);
     
-    const found = (response as any).users.find((u: any) => u.userId === (created as any).userId);
+    const found = responseData.users.find((u: any) => u.userId === createdData.userId);
     expect(found).toBeDefined();
     expect(found.email).toBe(userData.email);
   });
@@ -196,12 +208,14 @@ describe('Identity Service - User Management CRUD Operations', () => {
         role: 'User'
       }
     });
-    ctx.cleanup.addUser((created as any).userId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addUser(createdData.userId);
 
     const retrieved = await ctx.client.identity(`/api/users/by-email/${encodeURIComponent(userData.email)}`, 'get');
+    const retrievedData = ctx.getData(retrieved);
 
-    expect((retrieved as any).userId).toBe((created as any).userId);
-    expect((retrieved as any).email).toBe(userData.email);
+    expect(retrievedData.userId).toBe(createdData.userId);
+    expect(retrievedData.email).toBe(userData.email);
   });
 
   test('should deactivate and reactivate user', async () => {
@@ -215,12 +229,15 @@ describe('Identity Service - User Management CRUD Operations', () => {
         role: 'User'
       }
     });
-    ctx.cleanup.addUser((created as any).userId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addUser(createdData.userId);
 
-    const deactivated = await ctx.client.identity(`/api/users/${(created as any).userId}/deactivate`, 'post');
-    expect((deactivated as any).isActive).toBe(false);
+    const deactivated = await ctx.client.identity(`/api/users/${createdData.userId}/deactivate`, 'post');
+    const deactivatedData = ctx.getData(deactivated);
+    expect(deactivatedData.isActive).toBe(false);
 
-    const reactivated = await ctx.client.identity(`/api/users/${(created as any).userId}/activate`, 'post');
-    expect((reactivated as any).isActive).toBe(true);
+    const reactivated = await ctx.client.identity(`/api/users/${createdData.userId}/activate`, 'post');
+    const reactivatedData = ctx.getData(reactivated);
+    expect(reactivatedData.isActive).toBe(true);
   });
 });

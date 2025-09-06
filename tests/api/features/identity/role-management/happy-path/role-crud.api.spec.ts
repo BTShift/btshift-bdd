@@ -26,13 +26,14 @@ describe('Identity Service - Role Management Operations', () => {
       body: roleData
     });
 
-    ctx.cleanup.addRole((response as any).roleId);
+    const responseData = ctx.getData(response);
+    ctx.cleanup.addRole(responseData.roleId);
 
     expect(response).toBeDefined();
-    expect((response as any).roleId).toBeTruthy();
-    expect((response as any).name).toBe(roleData.name);
-    expect((response as any).description).toBe(roleData.description);
-    expect((response as any).permissions).toEqual(roleData.permissions);
+    expect(responseData.roleId).toBeTruthy();
+    expect(responseData.name).toBe(roleData.name);
+    expect(responseData.description).toBe(roleData.description);
+    expect(responseData.permissions).toEqual(roleData.permissions);
   });
 
   test('should retrieve role by ID', async () => {
@@ -45,13 +46,15 @@ describe('Identity Service - Role Management Operations', () => {
     const created = await ctx.client.identity('/api/roles', 'post', {
       body: roleData
     });
-    ctx.cleanup.addRole((created as any).roleId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addRole(createdData.roleId);
 
-    const retrieved = await ctx.client.identity(`/api/roles/${(created as any).roleId}`, 'get');
+    const retrieved = await ctx.client.identity(`/api/roles/${createdData.roleId}`, 'get');
+    const retrievedData = ctx.getData(retrieved);
 
-    expect((retrieved as any).roleId).toBe((created as any).roleId);
-    expect((retrieved as any).name).toBe(roleData.name);
-    expect((retrieved as any).description).toBe(roleData.description);
+    expect(retrievedData.roleId).toBe(createdData.roleId);
+    expect(retrievedData.name).toBe(roleData.name);
+    expect(retrievedData.description).toBe(roleData.description);
   });
 
   test('should update role', async () => {
@@ -64,20 +67,22 @@ describe('Identity Service - Role Management Operations', () => {
     const created = await ctx.client.identity('/api/roles', 'post', {
       body: roleData
     });
-    ctx.cleanup.addRole((created as any).roleId);
+    const createdData = ctx.getData(created);
+    ctx.cleanup.addRole(createdData.roleId);
 
     const updateData = {
       description: 'Updated description',
       permissions: ['read:users', 'write:users', 'delete:users']
     };
 
-    const updated = await ctx.client.identity(`/api/roles/${(created as any).roleId}`, 'put', {
+    const updated = await ctx.client.identity(`/api/roles/${createdData.roleId}`, 'put', {
       body: updateData
     });
+    const updatedData = ctx.getData(updated);
 
-    expect((updated as any).roleId).toBe((created as any).roleId);
-    expect((updated as any).description).toBe(updateData.description);
-    expect((updated as any).permissions).toEqual(updateData.permissions);
+    expect(updatedData.roleId).toBe(createdData.roleId);
+    expect(updatedData.description).toBe(updateData.description);
+    expect(updatedData.permissions).toEqual(updateData.permissions);
   });
 
   test('should delete role', async () => {
@@ -91,12 +96,14 @@ describe('Identity Service - Role Management Operations', () => {
       body: roleData
     });
 
-    const deleteResponse = await ctx.client.identity(`/api/roles/${(created as any).roleId}`, 'delete');
+    const createdData = ctx.getData(created);
+    const deleteResponse = await ctx.client.identity(`/api/roles/${createdData.roleId}`, 'delete');
+    const deleteData = ctx.getData(deleteResponse);
     
-    expect((deleteResponse as any).success).toBe(true);
+    expect(deleteData.success).toBe(true);
 
     await expect(
-      ctx.client.identity(`/api/roles/${(created as any).roleId}`, 'get')
+      ctx.client.identity(`/api/roles/${createdData.roleId}`, 'get')
     ).rejects.toMatchObject({
       response: { status: 404 }
     });
@@ -118,12 +125,14 @@ describe('Identity Service - Role Management Operations', () => {
     const created1 = await ctx.client.identity('/api/roles', 'post', {
       body: roleData1
     });
-    ctx.cleanup.addRole((created1 as any).roleId);
+    const created1Data = ctx.getData(created1);
+    ctx.cleanup.addRole(created1Data.roleId);
 
     const created2 = await ctx.client.identity('/api/roles', 'post', {
       body: roleData2
     });
-    ctx.cleanup.addRole((created2 as any).roleId);
+    const created2Data = ctx.getData(created2);
+    ctx.cleanup.addRole(created2Data.roleId);
 
     const response = await ctx.client.identity('/api/roles', 'get', {
       params: { 
@@ -133,13 +142,14 @@ describe('Identity Service - Role Management Operations', () => {
         } 
       }
     });
+    const responseData = ctx.getData(response);
 
-    expect((response as any).roles).toBeDefined();
-    expect(Array.isArray((response as any).roles)).toBe(true);
+    expect(responseData.roles).toBeDefined();
+    expect(Array.isArray(responseData.roles)).toBe(true);
     
-    const roleIds = (response as any).roles.map((r: any) => r.roleId);
-    expect(roleIds).toContain((created1 as any).roleId);
-    expect(roleIds).toContain((created2 as any).roleId);
+    const roleIds = responseData.roles.map((r: any) => r.roleId);
+    expect(roleIds).toContain(created1Data.roleId);
+    expect(roleIds).toContain(created2Data.roleId);
   });
 
   test('should assign role to user', async () => {
@@ -152,7 +162,8 @@ describe('Identity Service - Role Management Operations', () => {
     const role = await ctx.client.identity('/api/roles', 'post', {
       body: roleData
     });
-    ctx.cleanup.addRole((role as any).roleId);
+    const roleData = ctx.getData(role);
+    ctx.cleanup.addRole(roleData.roleId);
 
     const userData = {
       email: `test.user${Date.now()}@example.com`,
@@ -165,15 +176,17 @@ describe('Identity Service - Role Management Operations', () => {
     const user = await ctx.client.identity('/api/users', 'post', {
       body: userData
     });
-    ctx.cleanup.addUser((user as any).userId);
+    const userData2 = ctx.getData(user);
+    ctx.cleanup.addUser(userData2.userId);
 
-    const assignResponse = await ctx.client.identity(`/api/users/${(user as any).userId}/roles`, 'post', {
+    const assignResponse = await ctx.client.identity(`/api/users/${userData2.userId}/roles`, 'post', {
       body: {
-        roleId: (role as any).roleId
+        roleId: roleData.roleId
       }
     });
+    const assignData = ctx.getData(assignResponse);
 
-    expect((assignResponse as any).success).toBe(true);
+    expect(assignData.success).toBe(true);
   });
 
   test('should remove role from user', async () => {
@@ -186,7 +199,8 @@ describe('Identity Service - Role Management Operations', () => {
     const role = await ctx.client.identity('/api/roles', 'post', {
       body: roleData
     });
-    ctx.cleanup.addRole((role as any).roleId);
+    const roleData = ctx.getData(role);
+    ctx.cleanup.addRole(roleData.roleId);
 
     const userData = {
       email: `test.user${Date.now()}@example.com`,
@@ -199,17 +213,19 @@ describe('Identity Service - Role Management Operations', () => {
     const user = await ctx.client.identity('/api/users', 'post', {
       body: userData
     });
-    ctx.cleanup.addUser((user as any).userId);
+    const userData2 = ctx.getData(user);
+    ctx.cleanup.addUser(userData2.userId);
 
-    await ctx.client.identity(`/api/users/${(user as any).userId}/roles`, 'post', {
+    await ctx.client.identity(`/api/users/${userData2.userId}/roles`, 'post', {
       body: {
-        roleId: (role as any).roleId
+        roleId: roleData.roleId
       }
     });
 
-    const removeResponse = await ctx.client.identity(`/api/users/${(user as any).userId}/roles/${(role as any).roleId}`, 'delete');
+    const removeResponse = await ctx.client.identity(`/api/users/${userData2.userId}/roles/${roleData.roleId}`, 'delete');
+    const removeData = ctx.getData(removeResponse);
 
-    expect((removeResponse as any).success).toBe(true);
+    expect(removeData.success).toBe(true);
   });
 
   test('should get users by role', async () => {
@@ -222,7 +238,8 @@ describe('Identity Service - Role Management Operations', () => {
     const role = await ctx.client.identity('/api/roles', 'post', {
       body: roleData
     });
-    ctx.cleanup.addRole((role as any).roleId);
+    const roleData = ctx.getData(role);
+    ctx.cleanup.addRole(roleData.roleId);
 
     const userData = {
       email: `test.user${Date.now()}@example.com`,
@@ -235,20 +252,22 @@ describe('Identity Service - Role Management Operations', () => {
     const user = await ctx.client.identity('/api/users', 'post', {
       body: userData
     });
-    ctx.cleanup.addUser((user as any).userId);
+    const userData2 = ctx.getData(user);
+    ctx.cleanup.addUser(userData2.userId);
 
-    await ctx.client.identity(`/api/users/${(user as any).userId}/roles`, 'post', {
+    await ctx.client.identity(`/api/users/${userData2.userId}/roles`, 'post', {
       body: {
-        roleId: (role as any).roleId
+        roleId: roleData.roleId
       }
     });
 
-    const response = await ctx.client.identity(`/api/roles/${(role as any).roleId}/users`, 'get');
+    const response = await ctx.client.identity(`/api/roles/${roleData.roleId}/users`, 'get');
+    const responseData = ctx.getData(response);
 
-    expect((response as any).users).toBeDefined();
-    expect(Array.isArray((response as any).users)).toBe(true);
+    expect(responseData.users).toBeDefined();
+    expect(Array.isArray(responseData.users)).toBe(true);
     
-    const userIds = (response as any).users.map((u: any) => u.userId);
-    expect(userIds).toContain((user as any).userId);
+    const userIds = responseData.users.map((u: any) => u.userId);
+    expect(userIds).toContain(userData2.userId);
   });
 });

@@ -27,8 +27,8 @@ describe('Authentication - Login Happy Path API Tests', () => {
     ctx.reportLastCorrelationId();
 
     expect(response).toBeDefined();
-    // Handle wrapped response format
-    const responseData = (response as any).data || response;
+    // Handle wrapped response format using helper
+    const responseData = ctx.getData(response);
     expect(responseData.tokenInfo?.accessToken).toBeTruthy();
     expect(responseData.tokenInfo?.refreshToken).toBeTruthy();
     expect(responseData.userInfo?.email).toBe(credentials.email);
@@ -44,21 +44,24 @@ describe('Authentication - Login Happy Path API Tests', () => {
     });
 
     expect(response).toBeDefined();
-    expect((response as any).valid).toBe(true);
-    expect((response as any).user?.email).toBe(credentials.email);
+    const responseData = ctx.getData(response);
+    expect(responseData.valid).toBe(true);
+    expect(responseData.user?.email).toBe(credentials.email);
   });
 
   test('should refresh token with valid refresh token', async () => {
     const loginResponse = await ctx.client.login(credentials.email, credentials.password);
-    const refreshToken = (loginResponse as any).tokenInfo?.refreshToken;
+    const loginData = ctx.getData(loginResponse);
+    const refreshToken = loginData.tokenInfo?.refreshToken;
     const originalToken = ctx.client.getAuthToken();
 
     const refreshResponse = await ctx.client.identity('/api/authentication/refresh', 'post', {
       body: { refreshToken }
     });
+    const refreshData = ctx.getData(refreshResponse);
 
-    expect((refreshResponse as any).tokenInfo?.accessToken).toBeTruthy();
-    expect((refreshResponse as any).tokenInfo?.accessToken).not.toBe(originalToken);
+    expect(refreshData.tokenInfo?.accessToken).toBeTruthy();
+    expect(refreshData.tokenInfo?.accessToken).not.toBe(originalToken);
   });
 
   test('should logout successfully', async () => {
@@ -85,7 +88,8 @@ describe('Authentication - Login Happy Path API Tests', () => {
       body: credentials
     });
 
-    const user = (response as any).user;
+    const responseData = ctx.getData(response);
+    const user = responseData.user;
     expect(user).toBeDefined();
     expect(user.id).toBeTruthy();
     expect(user.email).toBe(credentials.email);
@@ -99,7 +103,8 @@ describe('Authentication - Login Happy Path API Tests', () => {
       body: credentials
     });
     
-    const expiresAt = new Date((response as any).tokenInfo.expiresAt);
+    const responseData = ctx.getData(response);
+    const expiresAt = new Date(responseData.tokenInfo.expiresAt);
     const now = new Date();
     const diffMinutes = (expiresAt.getTime() - now.getTime()) / (1000 * 60);
     

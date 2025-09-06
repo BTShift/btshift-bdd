@@ -16,6 +16,10 @@ export interface TestContext {
    * Report the last correlation ID from an API response to Allure
    */
   reportLastCorrelationId(): void;
+  /**
+   * Extract response data from wrapped API response
+   */
+  getData<T = any>(response: any): T;
 }
 
 export class CorrelationTracker {
@@ -221,6 +225,9 @@ export async function setupApiTest(): Promise<TestContext> {
         if (lastCorrelationId) {
           AllureCorrelationHelper.reportCorrelationId(lastCorrelationId);
         }
+      },
+      getData: <T = any>(response: any): T => {
+        return response?.data || response;
       }
     };
   } catch (error) {
@@ -238,6 +245,9 @@ export async function setupApiTest(): Promise<TestContext> {
         if (lastCorrelationId) {
           AllureCorrelationHelper.reportCorrelationId(lastCorrelationId);
         }
+      },
+      getData: <T = any>(response: any): T => {
+        return response?.data || response;
       }
     };
   }
@@ -266,6 +276,9 @@ export async function setupUnauthenticatedApiTest(): Promise<TestContext> {
       if (lastCorrelationId) {
         AllureCorrelationHelper.reportCorrelationId(lastCorrelationId);
       }
+    },
+    getData: <T = any>(response: any): T => {
+      return response?.data || response;
     }
   };
 }
