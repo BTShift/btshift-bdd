@@ -15,7 +15,24 @@ export default defineConfig({
   reporter: [
     ['html'],
     ['json', { outputFile: 'test-results/results.json' }],
-    ['list']
+    ['list'],
+    ['allure-playwright', {
+      outputFolder: 'allure-results',
+      detail: true,
+      suiteTitle: true,
+      categories: [
+        {
+          name: 'API Tests',
+          matchedStatuses: ['passed', 'failed'],
+          messageRegex: '.*api.*'
+        }
+      ],
+      environmentInfo: {
+        Environment: process.env.NODE_ENV || 'development',
+        Platform: 'BTShift BDD Test Suite',
+        BaseURL: process.env.PLATFORM_ADMIN_URL || 'https://platform-admin-portal-production.up.railway.app'
+      }
+    }]
   ],
   use: {
     baseURL: process.env.PLATFORM_ADMIN_URL || 'https://platform-admin-portal-production.up.railway.app',

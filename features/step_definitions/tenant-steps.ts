@@ -30,6 +30,12 @@ Before(async function() {
 });
 
 After(async function() {
+  if (process.env.SKIP_CLEANUP_AFTER !== 'true') {
+    // Only cleanup if not explicitly skipping
+    console.log('Cleaning up test data...');
+  } else {
+    console.log('Skipping cleanup (SKIP_CLEANUP_AFTER=true) - data preserved');
+  }
   await dbManager.disconnect();
   await context.close();
   await browser.close();
@@ -45,6 +51,10 @@ Given('I am logged in as a SuperAdmin', async function() {
 });
 
 Given('all tenant databases have been cleaned up', async function() {
+  if (process.env.SKIP_CLEANUP_BEFORE === 'true') {
+    console.log('Skipping cleanup (SKIP_CLEANUP_BEFORE=true)');
+    return;
+  }
   await dbManager.cleanupAllTenants();
   await dbManager.cleanupTestUsers();
 });
