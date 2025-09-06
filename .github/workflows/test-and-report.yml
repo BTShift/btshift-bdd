@@ -27,13 +27,11 @@ jobs:
           node-version: '18'
           cache: 'npm'
 
-      - name: Setup NPM authentication
-        run: |
-          echo "@btshift:registry=https://npm.pkg.github.com" >> ~/.npmrc
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PACKAGE_TOKEN }}" >> ~/.npmrc
-
       - name: Install dependencies
-        run: npm ci
+        run: |
+          echo "@btshift:registry=https://npm.pkg.github.com" > .npmrc
+          echo "//npm.pkg.github.com/:_authToken=${{ secrets.PACKAGE_TOKEN }}" >> .npmrc
+          npm ci
 
       - name: Install Playwright browsers
         run: npx playwright install chromium
