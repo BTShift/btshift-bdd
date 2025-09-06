@@ -1,6 +1,6 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
-import { TypedApiClient } from '../../../support/clients/typed-api-client';
-import { superAdminCredentials } from '../../../support/fixtures/tenant-data';
+import { TypedApiClient } from '../../../../support/clients/typed-api-client';
+import { superAdminCredentials } from '../../../../support/fixtures/tenant-data';
 
 describe('Authentication - Login with Typed Client (Using NPM Packages)', () => {
   let client: TypedApiClient;

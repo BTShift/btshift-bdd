@@ -1,6 +1,6 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
-import { TypedApiClient } from '../../../support/clients/typed-api-client';
-import { TestDataFactory } from '../../../support/fixtures/test-data-factory';
+import { TypedApiClient } from '../../../../support/clients/typed-api-client';
+import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
 describe('Authentication - Login Happy Path API Tests', () => {
   let client: TypedApiClient;

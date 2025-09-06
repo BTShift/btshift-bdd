@@ -1,6 +1,6 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
-import { setupApiTest, teardownApiTest, TestContext } from '../../../support/helpers/api-test-base';
-import { TestDataFactory } from '../../../support/fixtures/test-data-factory';
+import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
+import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
 describe('Tenant Creation - Duplicate Prevention API Tests', () => {
   let ctx: TestContext;

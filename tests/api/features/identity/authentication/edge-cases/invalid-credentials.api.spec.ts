@@ -1,6 +1,6 @@
 import { describe, beforeAll, test, expect } from '@playwright/test';
-import { TypedApiClient } from '../../../support/clients/typed-api-client';
-import { TestDataFactory } from '../../../support/fixtures/test-data-factory';
+import { TypedApiClient } from '../../../../support/clients/typed-api-client';
+import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
 describe('Authentication - Invalid Credentials API Tests', () => {
   let client: TypedApiClient;
