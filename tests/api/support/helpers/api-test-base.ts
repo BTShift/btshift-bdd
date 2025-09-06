@@ -129,7 +129,9 @@ export async function setupApiTest(): Promise<TestContext> {
     password: process.env.PLATFORM_ADMIN_PASSWORD || process.env.SUPER_ADMIN_PASSWORD || 'SuperAdmin@123!'
   };
   
-  await client.login(credentials.email, credentials.password);
+  const loginResponse = await client.login(credentials.email, credentials.password);
+  console.log('🔑 Login successful, token set:', !!client.getAuthToken());
+  console.log('🔑 Token preview:', client.getAuthToken()?.substring(0, 20) + '...');
   
   return { client, cleanup };
 }
