@@ -1,0 +1,3 @@
+❌ [Identity] GET /api/invitations/21000b14-b3c3-4ffa-8866-58f6927c781c | X-Correlation-ID: 256c13e3-cb23-4f6f-9471-fe3ff01d66c2 | Error: API Error: 405 - 
+❌ [Identity] POST /api/invitations/21000b14-b3c3-4ffa-8866-58f6927c781c/cancel | X-Correlation-ID: dd1c97eb-8acc-405c-a8b9-dd9d07c83d1a | Error: API Error: 404 - 
+⚠️ Failed to cancel invitation 21000b14-b3c3-4ffa-8866-58f6927c781c

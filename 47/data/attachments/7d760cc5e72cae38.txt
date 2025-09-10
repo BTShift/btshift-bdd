@@ -1,0 +1,1 @@
+❌ [Identity] POST /api/authentication/refresh | X-Correlation-ID: a408b19c-2df6-42b1-8232-a479e75c7b24 | Error: API Error: 400 - {"code":3,"message":"An error occurred while refreshing token","details":[]}
