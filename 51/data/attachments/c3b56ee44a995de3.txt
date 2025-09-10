@@ -1,0 +1,33 @@
+🚀 [9e4c6927] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757541148772-hvop7fhv3 for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757541148773-udwn15e9p for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757541148773-afc10988 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757541148773] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757541148773] Logging in as: test.tenantadmin@btshift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757541148773-udwn15e9p"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 2b871e66-15b1-4a46-ba6d-e75a1f8a2664 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 2b871e66-15b1-4a46-ba6d-e75a1f8a2664 | Success
+✅ [tenantadmin-1757541148773] TenantAdmin authentication successful
+🕐 [tenantadmin-1757541148773] Token expires at: 2025-09-10T22:00:29.215Z
+🏢 [tenantadmin-1757541148773] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [9e4c6927] Using TenantAdmin authentication
+🕐 [9e4c6927] Token expires: 10:00:29 PM
+🏢 [9e4c6927] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757541149249-l66ujxyp9 for feature: multi-user-example.feature
+📋 Test context set: multi-user-example.feature :: api/features/multi-user-example.spec.ts (positive)
+🧪 Test case: should create client within tenant
+🔄 Current step: Test Execution
+🎬 Auto-context: multi-user-example.feature :: api/features/multi-user-example.spec.ts :: should create client within tenant
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"multi-user-example.feature","scenario":"api/features/multi-user-example.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757541149249-l66ujxyp9","testCase":"should create client within tenant"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: a94061ba-06b5-4176-b98f-c20395661f25 | Auth: Yes
+🏁 Clearing test context for session: test-1757541149249-l66ujxyp9
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 3fdc4d3f-a7ef-457c-a925-d908ed230ce4 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 3fdc4d3f-a7ef-457c-a925-d908ed230ce4 | Success

@@ -1,0 +1,16 @@
+🎬 Starting test session: test-1757541097361-ggpfdm8ti for feature: invitation-operations.api.feature
+📋 Test context set: invitation-operations.api.feature :: api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts (positive)
+🧪 Test case: should validate invitation token
+🔄 Current step: Test Execution
+🎬 Auto-context: invitation-operations.api.feature :: api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts :: should validate invitation token
+🧪 Adding test context to POST /api/invitations
+🧪 Test context JSON: {"featureFile":"invitation-operations.api.feature","scenario":"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757541097361-ggpfdm8ti","testCase":"should validate invitation token"}
+🔍 [Identity] POST /api/invitations | X-Correlation-ID: b9feaf01-ed3b-4da0-8196-9831ee2f7427 | Auth: Yes
+✅ [Identity] POST /api/invitations | X-Correlation-ID: b9feaf01-ed3b-4da0-8196-9831ee2f7427 | Success
+🧪 Adding test context to POST /api/invitations/validate
+🧪 Test context JSON: {"featureFile":"invitation-operations.api.feature","scenario":"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757541097361-ggpfdm8ti","testCase":"should validate invitation token"}
+🔍 [Identity] POST /api/invitations/validate | X-Correlation-ID: afe6bae2-1293-44a1-b74e-736d4e3074ad | Auth: Yes
+🏁 Clearing test context for session: test-1757541097361-ggpfdm8ti
+🔍 [Identity] POST /api/invitations/ec1f5323-5df3-4123-998a-5497121d3790/cancel | X-Correlation-ID: 31a5ce73-0b5e-43a4-ba2e-6e7aafcbd6e0 | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 343cca08-1c40-46ca-b319-3f95f082542c | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 343cca08-1c40-46ca-b319-3f95f082542c | Success

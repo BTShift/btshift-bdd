@@ -1,0 +1,33 @@
+🚀 [649c27db] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757541139057-5o1zioeno for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757541139058-xf37hl9ze for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757541139058-d6bbe69f for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757541139058] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757541139058] Logging in as: test.tenantadmin@btshift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757541139058-xf37hl9ze"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: cc5df375-9d88-4c1f-b1d1-8c2ae2a5f3d2 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: cc5df375-9d88-4c1f-b1d1-8c2ae2a5f3d2 | Success
+✅ [tenantadmin-1757541139058] TenantAdmin authentication successful
+🕐 [tenantadmin-1757541139058] Token expires at: 2025-09-10T22:00:19.486Z
+🏢 [tenantadmin-1757541139058] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [649c27db] Using TenantAdmin authentication
+🕐 [649c27db] Token expires: 10:00:19 PM
+🏢 [649c27db] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757541139515-k4zjwh1k5 for feature: user-crud.api.feature
+📋 Test context set: user-crud.api.feature :: api/features/identity/user-management/happy-path/user-crud.api.spec.ts (positive)
+🧪 Test case: should list users with pagination
+🔄 Current step: Test Execution
+🎬 Auto-context: user-crud.api.feature :: api/features/identity/user-management/happy-path/user-crud.api.spec.ts :: should list users with pagination
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"user-crud.api.feature","scenario":"api/features/identity/user-management/happy-path/user-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757541139515-k4zjwh1k5","testCase":"should list users with pagination"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 72da8904-f0af-4be5-b698-7caf19981553 | Auth: Yes
+🏁 Clearing test context for session: test-1757541139515-k4zjwh1k5
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: d98f72fe-2fab-4c1b-92de-9946d3f85ae7 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: d98f72fe-2fab-4c1b-92de-9946d3f85ae7 | Success

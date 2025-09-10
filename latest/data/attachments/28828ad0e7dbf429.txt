@@ -1,8 +1,0 @@
-🧪 Adding test context to POST /api/authentication/login
-🧪 Test context JSON: {"featureFile":"api-authentication.feature","scenario":"API Authentication Test","currentStep":"API Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538607532-sggebh2g9"}
-🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 840fc067-4b19-4489-8d57-452a22ec88fa | Auth: Yes
-✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 840fc067-4b19-4489-8d57-452a22ec88fa | Success
-🧪 Adding test context to POST /api/authentication/logout
-🧪 Test context JSON: {"featureFile":"api-authentication.feature","scenario":"API Authentication Test","currentStep":"API Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538607532-sggebh2g9"}
-🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 721440a4-7428-4a65-8933-fa77714f28b8 | Auth: Yes
-✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 721440a4-7428-4a65-8933-fa77714f28b8 | Success
