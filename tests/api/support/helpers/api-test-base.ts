@@ -8,6 +8,7 @@ import { GlobalAuthManager } from '../auth/global-auth-manager';
 import { MultiUserAuthManager, UserContext } from '../auth/multi-user-auth-manager';
 import { TestContextHelper } from '../auth/test-context-helper';
 import { AllureCorrelationHelper } from './allure-correlation';
+import { TestContextManager } from '../../../../lib/helpers/test-context-manager';
 import * as crypto from 'crypto';
 
 export interface TestContext {
@@ -262,6 +263,19 @@ export async function setupApiTest(): Promise<TestContext> {
 export async function setupUnauthenticatedApiTest(): Promise<TestContext> {
   const testSessionId = crypto.randomUUID().substring(0, 8);
   console.log(`🚀 [${testSessionId}] Setting up UNAUTHENTICATED test context...`);
+  
+  // Initialize test context for BDD correlation
+  const testContextManager = TestContextManager.getInstance();
+  
+  // Try to extract test context from the current test execution
+  // This is a simplified approach - in a real scenario, you might get this from Playwright test info
+  const featureFile = 'api-authentication.feature';
+  const scenarioName = 'API Authentication Test';
+  const testIntent = 'positive'; // Most API tests are positive unless specified otherwise
+  
+  testContextManager.startTestSession(featureFile);
+  testContextManager.setScenario(featureFile, scenarioName, testIntent as 'positive' | 'negative');
+  testContextManager.setCurrentStep('API Test Execution', '2xx_success');
   
   const client = new TypedApiClient();
   const cleanup = new CleanupManager();
