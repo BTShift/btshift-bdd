@@ -1,0 +1,3 @@
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"api-global-auth-test.feature","scenario":"API Test with Global Auth","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538718236-msazm424z"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: 27ca8005-e3f2-447a-8d2b-2e5f627798ee | Auth: Yes

@@ -1,9 +1,0 @@
-🔑 [tenantadmin-1757537176894] Starting TenantAdmin authentication...
-🔐 [tenantadmin-1757537176894] Logging in as: test.tenantadmin@btshift.ma
-🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: fc009dc0-1a02-41ec-ba0d-d07d49b35f58 | Auth: No
-✅ [Identity] POST /api/authentication/login | X-Correlation-ID: fc009dc0-1a02-41ec-ba0d-d07d49b35f58 | Success
-✅ [tenantadmin-1757537176894] TenantAdmin authentication successful
-🕐 [tenantadmin-1757537176894] Token expires at: 2025-09-10T20:54:17.734Z
-🏢 [tenantadmin-1757537176894] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
-🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
-🔍 [ClientManagement] GET /api/clients | X-Correlation-ID: de7e64e8-ebe3-44ff-9828-5e55a61d5778 | Auth: Yes

@@ -1,0 +1,14 @@
+🧪 Adding test context to POST /api/invitations
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538631257-6a487ck1i"}
+🔍 [Identity] POST /api/invitations | X-Correlation-ID: 9c615c54-1393-4f6a-a864-0f464ee10e7d | Auth: Yes
+✅ [Identity] POST /api/invitations | X-Correlation-ID: 9c615c54-1393-4f6a-a864-0f464ee10e7d | Success
+🧪 Adding test context to POST /api/invitations/validate
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538631257-6a487ck1i"}
+🔍 [Identity] POST /api/invitations/validate | X-Correlation-ID: 65aa09e2-7b4e-4442-afa1-d93260334020 | Auth: Yes
+🧪 Adding test context to POST /api/invitations/4ee59bd6-e8b4-4126-b1c0-9c2aeb810e00/cancel
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538631257-6a487ck1i"}
+🔍 [Identity] POST /api/invitations/4ee59bd6-e8b4-4126-b1c0-9c2aeb810e00/cancel | X-Correlation-ID: 570370c4-1d86-4900-a425-5c7acc22fce8 | Auth: Yes
+🧪 Adding test context to POST /api/authentication/logout
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538631257-6a487ck1i"}
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 4551a163-ae7b-4c4b-a2e0-351184fefda5 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 4551a163-ae7b-4c4b-a2e0-351184fefda5 | Success

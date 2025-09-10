@@ -1,0 +1,26 @@
+🚀 [dff6ff2e] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757538631257-18ie322g4 for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757538631257-6a487ck1i for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757538631257-c2666bd6 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757538631258] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757538631258] Logging in as: test.tenantadmin@btshift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538631257-6a487ck1i"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: aac01b5d-d52e-4af5-bb5d-189a95934e42 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: aac01b5d-d52e-4af5-bb5d-189a95934e42 | Success
+✅ [tenantadmin-1757538631258] TenantAdmin authentication successful
+🕐 [tenantadmin-1757538631258] Token expires at: 2025-09-10T21:18:31.676Z
+🏢 [tenantadmin-1757538631258] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [dff6ff2e] Using TenantAdmin authentication
+🕐 [dff6ff2e] Token expires: 9:18:31 PM
+🏢 [dff6ff2e] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to GET /api/invitations
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538631257-6a487ck1i"}
+🔍 [Identity] GET /api/invitations | X-Correlation-ID: 5761589c-76b9-4e50-8c4f-83673b383703 | Auth: Yes
+✅ [Identity] GET /api/invitations | X-Correlation-ID: 5761589c-76b9-4e50-8c4f-83673b383703 | Success

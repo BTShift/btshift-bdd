@@ -1,2 +1,0 @@
-❌ Global authentication failed: Login succeeded but no token was returned
-❌ [74e20546] Setup failed: Login succeeded but no token was returned

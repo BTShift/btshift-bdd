@@ -1,3 +1,0 @@
-🧪 Adding test context to POST /api/authentication/login
-🧪 Test context JSON: {"featureFile":"api-authentication.feature","scenario":"API Authentication Test","currentStep":"API Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537238133-x7xg76157"}
-🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 59f56a5e-a3f1-4894-a31d-004799823dcb | Auth: No

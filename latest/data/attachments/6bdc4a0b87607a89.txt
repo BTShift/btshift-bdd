@@ -1,0 +1,17 @@
+🎬 Starting test session: test-1757538719779-ycnkxkjea for feature: api-global-auth-test.feature
+📋 Test context set: api-global-auth-test.feature :: API Test with Global Auth (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757538719779-e5650814 for feature: api-global-auth-test.feature
+📋 Test context set: api-global-auth-test.feature :: API Test with Global Auth (positive)
+🔑 [global-auth-1757538719780] Starting global authentication...
+🔐 [global-auth-1757538719780] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-global-auth-test.feature","scenario":"API Test with Global Auth","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538719779-ycnkxkjea"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 87ed6645-262b-465e-9b2b-3a82dfd65136 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 87ed6645-262b-465e-9b2b-3a82dfd65136 | Success
+✅ [global-auth-1757538719780] Global authentication successful
+🕐 [global-auth-1757538719780] Token expires at: 2025-09-10T21:20:00.215Z
+🎫 [global-auth-1757538719780] Token preview: eyJhbGciOiJIUzI1NiIs...
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"api-global-auth-test.feature","scenario":"API Test with Global Auth","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538719779-ycnkxkjea"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: b60da4fc-f45c-468f-8f88-7575b347fc51 | Auth: Yes

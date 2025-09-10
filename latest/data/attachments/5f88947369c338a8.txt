@@ -1,0 +1,27 @@
+🚀 [d56c3fd9] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757538724174-u9sozsrqf for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757538724174-1qznzdpff for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757538724174-1fb96670 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757538724175] Starting SuperAdmin authentication...
+🔐 [superadmin-1757538724175] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538724174-1qznzdpff"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: e93695bc-895a-476b-ace4-f837061b6dba | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: e93695bc-895a-476b-ace4-f837061b6dba | Success
+✅ [superadmin-1757538724175] SuperAdmin authentication successful
+🕐 [superadmin-1757538724175] Token expires at: 2025-09-10T21:20:04.571Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [d56c3fd9] Using SuperAdmin authentication
+🕐 [d56c3fd9] Token expires: 9:20:04 PM
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538724174-1qznzdpff"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: a2ab6322-0e23-41ed-be4a-47e02838a6a0 | Auth: Yes
+🧪 Adding test context to POST /api/authentication/logout
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538724174-1qznzdpff"}
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 94f4a2aa-e718-4cc4-99a2-854789a5dd0a | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 94f4a2aa-e718-4cc4-99a2-854789a5dd0a | Success

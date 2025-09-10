@@ -1,0 +1,4 @@
+🧪 Adding test context to GET /api/audit-logs
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538591778-ae8w5eh3g"}
+🔍 [Identity] GET /api/audit-logs | X-Correlation-ID: ed8b4cd5-950b-40be-9d6b-50c62cc3214e | Auth: Yes
+✅ [Identity] GET /api/audit-logs | X-Correlation-ID: ed8b4cd5-950b-40be-9d6b-50c62cc3214e | Success

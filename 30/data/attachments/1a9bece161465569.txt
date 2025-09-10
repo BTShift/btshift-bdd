@@ -1,2 +1,0 @@
-❌ Global authentication failed: Login succeeded but no token was returned
-❌ [f2386e49] Setup failed: Login succeeded but no token was returned

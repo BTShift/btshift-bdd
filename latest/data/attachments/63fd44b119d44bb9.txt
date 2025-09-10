@@ -1,1 +1,0 @@
-❌ [Tenant] GET /api/tenants/by-name/non-existent-1757537331514 | X-Correlation-ID: af19c1cd-e811-4923-8539-a75af891d5fe | Error: API Error: 404 - 

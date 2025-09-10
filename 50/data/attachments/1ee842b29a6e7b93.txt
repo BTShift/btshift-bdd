@@ -1,0 +1,3 @@
+🧪 Adding test context to GET /api/authentication/validate-token
+🧪 Test context JSON: {"featureFile":"api-authentication.feature","scenario":"API Authentication Test","currentStep":"API Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757538599827-fkcbmp6vo"}
+🔍 [Identity] GET /api/authentication/validate-token | X-Correlation-ID: 9b49526d-333b-4c78-ad1a-70715ec825ce | Auth: No
