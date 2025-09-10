@@ -1,4 +1,5 @@
-import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
+import { describe, beforeAll, afterAll, expect } from '@playwright/test';
+import { test } from '../../../../../support/test-context-fixture';
 import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client';
 import { MultiUserAuthManager } from '../../../../support/auth/multi-user-auth-manager';
@@ -30,6 +31,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   });
 
   test('should create client with typed client from @btshift/client-management-types', async () => {
+    
     // Arrange
     const clientData = {
       name: `Test Client ${Date.now()}`,
@@ -58,6 +60,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   });
 
   test('should get client by ID with typed client', async () => {
+    
     // Arrange - Create a client first
     const clientData = {
       name: `Get Test Client ${Date.now()}`,
@@ -82,6 +85,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   });
 
   test('should update client with typed client', async () => {
+    
     // Arrange - Create a client
     const originalData = {
       name: `Update Test Client ${Date.now()}`,
@@ -116,6 +120,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   });
 
   test('should list clients with typed client', async () => {
+    
     // Act - List clients with pagination
     const response = await client.clientManagement('/api/clients', 'get', {
       params: {
@@ -135,6 +140,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   });
 
   test('should create client group with typed client', async () => {
+    
     // Arrange - Create clients for the group
     const client1 = await client.clientManagement('/api/clients', 'post', {
       body: {
@@ -172,6 +178,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   });
 
   test('should handle user-client associations with typed client', async () => {
+    
     // Arrange - Create a client
     const clientData = {
       name: `Association Test Client ${Date.now()}`,
@@ -205,6 +212,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   });
 
   test('should delete client with typed client', async () => {
+    
     // Arrange - Create a client to delete
     const clientData = {
       name: `Delete Test Client ${Date.now()}`,

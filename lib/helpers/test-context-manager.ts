@@ -6,6 +6,7 @@
 export interface TestContext {
   featureFile: string;
   scenario: string;
+  testCase?: string;  // Individual test case name (e.g., "should create client group with typed client")
   currentStep: string;
   testIntent: 'positive' | 'negative';
   expectedOutcome: string;
@@ -48,6 +49,19 @@ export class TestContextManager {
     };
     
     console.log(`📋 Test context set: ${featureFile} :: ${scenarioName} (${testIntent})`);
+  }
+
+  /**
+   * Set the individual test case name (e.g., "should create client group with typed client")
+   */
+  setTestCase(testCaseName: string): void {
+    if (!this.currentContext) {
+      console.warn('⚠️  No test context set when updating test case:', testCaseName);
+      return;
+    }
+
+    this.currentContext.testCase = testCaseName;
+    console.log(`🧪 Test case: ${testCaseName}`);
   }
 
   /**

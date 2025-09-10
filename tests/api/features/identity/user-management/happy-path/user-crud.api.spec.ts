@@ -1,4 +1,5 @@
-import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
+import { describe, beforeAll, afterAll, expect } from '@playwright/test';
+import { test } from '../../../../../support/test-context-fixture';
 import { allure } from 'allure-playwright';
 import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';

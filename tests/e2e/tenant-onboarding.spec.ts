@@ -1,4 +1,5 @@
-import { test, expect } from '@playwright/test';
+import { expect } from '@playwright/test';
+import { test } from '../support/test-context-fixture';
 import { LoginPage } from '../../lib/pages/login-page';
 import { TenantPage } from '../../lib/pages/tenant-page';
 import { DatabaseManager } from '../../lib/db/database-manager';
