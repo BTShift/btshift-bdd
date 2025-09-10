@@ -1,0 +1,1 @@
+❌ [Identity] GET /api/users/current | X-Correlation-ID: 146dc432-1752-4040-8985-b596e4059993 | Error: API Error: 400 - {"code":3,"message":"An error occurred while retrieving user","details":[]}
