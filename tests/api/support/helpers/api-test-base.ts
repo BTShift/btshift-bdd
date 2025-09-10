@@ -208,6 +208,17 @@ export async function setupApiTest(): Promise<TestContext> {
   const testSessionId = crypto.randomUUID().substring(0, 8);
   console.log(`🚀 [${testSessionId}] Setting up test context with global auth...`);
   
+  // Initialize test context for BDD correlation
+  const testContextManager = TestContextManager.getInstance();
+  
+  const featureFile = 'api-global-auth-test.feature';
+  const scenarioName = 'API Test with Global Auth';
+  const testIntent = 'positive';
+  
+  testContextManager.startTestSession(featureFile);
+  testContextManager.setScenario(featureFile, scenarioName, testIntent as 'positive' | 'negative');
+  testContextManager.setCurrentStep('Test Execution', '2xx_success');
+  
   try {
     // Get authenticated client from global auth manager
     const authManager = GlobalAuthManager.getInstance();
@@ -306,6 +317,18 @@ export async function setupUnauthenticatedApiTest(): Promise<TestContext> {
 export async function setupApiTestWithContext(context: UserContext): Promise<TestContext> {
   const testSessionId = crypto.randomUUID().substring(0, 8);
   console.log(`🚀 [${testSessionId}] Setting up test with ${context} context...`);
+  
+  // Initialize test context for BDD correlation
+  const testContextManager = TestContextManager.getInstance();
+  
+  // Use a more descriptive feature name based on the test context
+  const featureFile = `api-${context.toLowerCase()}-test.feature`;
+  const scenarioName = `API Test with ${context} Context`;
+  const testIntent = 'positive'; // Most API tests are positive unless specified otherwise
+  
+  testContextManager.startTestSession(featureFile);
+  testContextManager.setScenario(featureFile, scenarioName, testIntent as 'positive' | 'negative');
+  testContextManager.setCurrentStep('Test Execution', '2xx_success');
   
   try {
     // Get authenticated client from multi-user auth manager

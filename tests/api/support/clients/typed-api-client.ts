@@ -119,6 +119,7 @@ export class TypedApiClient {
       // Log test context if available
       if (testContext) {
         console.log(`🧪 Adding test context to ${method?.toUpperCase()} ${path}`);
+        console.log(`🧪 Test context JSON:`, testContext);
       }
       
       // Debug: Check if Authorization header is present
