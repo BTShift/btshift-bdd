@@ -1,0 +1,4 @@
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 0716a20b-cd1f-41a1-b56b-09457316bc25 | Auth: Yes
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 0716a20b-cd1f-41a1-b56b-09457316bc25 | Success
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: cfabfc6a-d7f7-4369-b47a-9ccb9181eec5 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: cfabfc6a-d7f7-4369-b47a-9ccb9181eec5 | Success

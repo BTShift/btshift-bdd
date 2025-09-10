@@ -1,0 +1,15 @@
+🚀 [ce7ed410] Setting up test with TenantAdmin context...
+🔑 [tenantadmin-1757524751132] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757524751132] Logging in as: test.tenantadmin@btshift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 23b8f4ab-be4b-4f65-ad77-9086002f0a5c | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 23b8f4ab-be4b-4f65-ad77-9086002f0a5c | Success
+✅ [tenantadmin-1757524751132] TenantAdmin authentication successful
+🕐 [tenantadmin-1757524751132] Token expires at: 2025-09-10T17:27:11.573Z
+🏢 [tenantadmin-1757524751132] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [ce7ed410] Using TenantAdmin authentication
+🕐 [ce7ed410] Token expires: 5:27:11 PM
+🏢 [ce7ed410] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔍 [Identity] POST /api/permissions | X-Correlation-ID: 51ebb309-00fa-4f6b-8966-448f8d918697 | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 6aff0863-3bac-460e-b8b7-1e5130e7c566 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 6aff0863-3bac-460e-b8b7-1e5130e7c566 | Success
