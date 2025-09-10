@@ -1,0 +1,31 @@
+🚀 [2a76a4a0] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757537262967-5fleqv00n for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🔑 [tenantadmin-1757537262968] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757537262968] Logging in as: test.tenantadmin@btshift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-test.feature","scenario":"API Test with TenantAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537262967-5fleqv00n"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 1d0ba9b7-2791-4900-a329-1eb815792f2d | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 1d0ba9b7-2791-4900-a329-1eb815792f2d | Success
+✅ [tenantadmin-1757537262968] TenantAdmin authentication successful
+🕐 [tenantadmin-1757537262968] Token expires at: 2025-09-10T20:55:43.404Z
+🏢 [tenantadmin-1757537262968] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [2a76a4a0] Using TenantAdmin authentication
+🕐 [2a76a4a0] Token expires: 8:55:43 PM
+🏢 [2a76a4a0] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/invitations
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-test.feature","scenario":"API Test with TenantAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537262967-5fleqv00n"}
+🔍 [Identity] POST /api/invitations | X-Correlation-ID: c78024da-fd05-4ac9-b58f-8d09356f0ec3 | Auth: Yes
+✅ [Identity] POST /api/invitations | X-Correlation-ID: c78024da-fd05-4ac9-b58f-8d09356f0ec3 | Success
+🧪 Adding test context to GET /api/invitations/c3432cc8-5954-455d-a553-0ead36dc6892
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-test.feature","scenario":"API Test with TenantAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537262967-5fleqv00n"}
+🔍 [Identity] GET /api/invitations/c3432cc8-5954-455d-a553-0ead36dc6892 | X-Correlation-ID: 47e0cf37-e47e-471d-abc8-02c16c0273f6 | Auth: Yes
+🧪 Adding test context to POST /api/invitations/c3432cc8-5954-455d-a553-0ead36dc6892/cancel
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-test.feature","scenario":"API Test with TenantAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537262967-5fleqv00n"}
+🔍 [Identity] POST /api/invitations/c3432cc8-5954-455d-a553-0ead36dc6892/cancel | X-Correlation-ID: 601cbb42-d719-4ed6-9a3f-ce56e7964306 | Auth: Yes
+🧪 Adding test context to POST /api/authentication/logout
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-test.feature","scenario":"API Test with TenantAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537262967-5fleqv00n"}
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 08f41ae1-ec17-4142-9709-faea13515011 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 08f41ae1-ec17-4142-9709-faea13515011 | Success

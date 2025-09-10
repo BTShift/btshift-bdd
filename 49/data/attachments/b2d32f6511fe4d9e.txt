@@ -1,0 +1,26 @@
+🚀 [f86e8d7e] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757537232498-oiuk8250y for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🔑 [superadmin-1757537232499] Starting SuperAdmin authentication...
+🔐 [superadmin-1757537232499] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-test.feature","scenario":"API Test with SuperAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537232498-oiuk8250y"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 8ddd8ac4-c6e8-4503-b882-19bbbdb790d6 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 8ddd8ac4-c6e8-4503-b882-19bbbdb790d6 | Success
+✅ [superadmin-1757537232499] SuperAdmin authentication successful
+🕐 [superadmin-1757537232499] Token expires at: 2025-09-10T20:55:13.052Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [f86e8d7e] Using SuperAdmin authentication
+🕐 [f86e8d7e] Token expires: 8:55:13 PM
+🧪 Adding test context to GET /api/audit-logs
+🧪 Test context JSON: {"featureFile":"api-superadmin-test.feature","scenario":"API Test with SuperAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537232498-oiuk8250y"}
+🔍 [Identity] GET /api/audit-logs | X-Correlation-ID: b6a1ea2f-f711-4c27-aec1-d032f52961c4 | Auth: Yes
+✅ [Identity] GET /api/audit-logs | X-Correlation-ID: b6a1ea2f-f711-4c27-aec1-d032f52961c4 | Success
+🧪 Adding test context to GET /api/audit-logs/8811fc41-7fff-4ad5-95e4-8bc9b2475934
+🧪 Test context JSON: {"featureFile":"api-superadmin-test.feature","scenario":"API Test with SuperAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537232498-oiuk8250y"}
+🔍 [Identity] GET /api/audit-logs/8811fc41-7fff-4ad5-95e4-8bc9b2475934 | X-Correlation-ID: 6c3a5c8e-9a0b-47e1-9415-64fd529fb52f | Auth: Yes
+🧪 Adding test context to POST /api/authentication/logout
+🧪 Test context JSON: {"featureFile":"api-superadmin-test.feature","scenario":"API Test with SuperAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537232498-oiuk8250y"}
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: e46ecb3d-c355-476b-be7f-ee16528d7371 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: e46ecb3d-c355-476b-be7f-ee16528d7371 | Success

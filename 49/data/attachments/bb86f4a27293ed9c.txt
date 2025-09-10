@@ -1,0 +1,24 @@
+🚀 [bf19fcb2] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757537287679-atkflj4qv for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🔑 [tenantadmin-1757537287680] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757537287680] Logging in as: test.tenantadmin@btshift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-test.feature","scenario":"API Test with TenantAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537287679-atkflj4qv"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: d2c4a6c7-ef2e-4913-89f6-00fc3340d191 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: d2c4a6c7-ef2e-4913-89f6-00fc3340d191 | Success
+✅ [tenantadmin-1757537287680] TenantAdmin authentication successful
+🕐 [tenantadmin-1757537287680] Token expires at: 2025-09-10T20:56:08.044Z
+🏢 [tenantadmin-1757537287680] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [bf19fcb2] Using TenantAdmin authentication
+🕐 [bf19fcb2] Token expires: 8:56:08 PM
+🏢 [bf19fcb2] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/permissions
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-test.feature","scenario":"API Test with TenantAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537287679-atkflj4qv"}
+🔍 [Identity] POST /api/permissions | X-Correlation-ID: 37505b37-46dd-492b-8ab1-e2b94200cea5 | Auth: Yes
+🧪 Adding test context to POST /api/authentication/logout
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-test.feature","scenario":"API Test with TenantAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537287679-atkflj4qv"}
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 520bb5b1-4cb2-467f-961e-fca157f4af12 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 520bb5b1-4cb2-467f-961e-fca157f4af12 | Success

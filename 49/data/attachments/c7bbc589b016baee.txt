@@ -1,0 +1,8 @@
+🚀 [a0c17989] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757537238133-x7xg76157 for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [a0c17989] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-authentication.feature","scenario":"API Authentication Test","currentStep":"API Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537238133-x7xg76157"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: f4e08f45-4e85-4195-8309-8bdf14d9ce73 | Auth: No

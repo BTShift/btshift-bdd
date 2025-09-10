@@ -1,0 +1,22 @@
+🚀 [72b83b87] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757537332480-yw6jimdwq for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🔑 [superadmin-1757537332481] Starting SuperAdmin authentication...
+🔐 [superadmin-1757537332481] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-test.feature","scenario":"API Test with SuperAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537332480-yw6jimdwq"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 18e5051d-a988-4adf-ab7d-40571ba65b1d | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 18e5051d-a988-4adf-ab7d-40571ba65b1d | Success
+✅ [superadmin-1757537332481] SuperAdmin authentication successful
+🕐 [superadmin-1757537332481] Token expires at: 2025-09-10T20:56:52.873Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [72b83b87] Using SuperAdmin authentication
+🕐 [72b83b87] Token expires: 8:56:52 PM
+🧪 Adding test context to GET /api/tenants/00000000-0000-0000-0000-000000000000
+🧪 Test context JSON: {"featureFile":"api-superadmin-test.feature","scenario":"API Test with SuperAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537332480-yw6jimdwq"}
+🔍 [Tenant] GET /api/tenants/00000000-0000-0000-0000-000000000000 | X-Correlation-ID: a5ad57e4-95cc-466e-b57b-82e459c5f9f9 | Auth: Yes
+🧪 Adding test context to POST /api/authentication/logout
+🧪 Test context JSON: {"featureFile":"api-superadmin-test.feature","scenario":"API Test with SuperAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537332480-yw6jimdwq"}
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 7b161179-677c-48f6-84a0-c161f0625705 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 7b161179-677c-48f6-84a0-c161f0625705 | Success

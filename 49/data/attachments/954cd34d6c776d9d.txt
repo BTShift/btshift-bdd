@@ -1,0 +1,13 @@
+🚀 [1602afbe] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757537248500-gltm9m3rf for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [1602afbe] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-authentication.feature","scenario":"API Authentication Test","currentStep":"API Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537248500-gltm9m3rf"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 5d6aaa7b-3d6d-483f-9699-39a0bff85242 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 5d6aaa7b-3d6d-483f-9699-39a0bff85242 | Success
+🧪 Adding test context to POST /api/authentication/refresh
+🧪 Test context JSON: {"featureFile":"api-authentication.feature","scenario":"API Authentication Test","currentStep":"API Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537248500-gltm9m3rf"}
+🔍 [Identity] POST /api/authentication/refresh | X-Correlation-ID: b5441392-8fca-4239-8f29-e6cce61d4587 | Auth: Yes
+✅ [Identity] POST /api/authentication/refresh | X-Correlation-ID: b5441392-8fca-4239-8f29-e6cce61d4587 | Success

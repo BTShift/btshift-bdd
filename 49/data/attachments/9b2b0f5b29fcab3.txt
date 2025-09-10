@@ -1,0 +1,16 @@
+🚀 [1fe0acf4] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757537255499-njs4rjozb for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [1fe0acf4] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-authentication.feature","scenario":"API Authentication Test","currentStep":"API Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537255499-njs4rjozb"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 17f4bdd1-6e08-453b-af39-edb808d7f5ce | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 17f4bdd1-6e08-453b-af39-edb808d7f5ce | Success
+🧪 Adding test context to POST /api/authentication/refresh
+🧪 Test context JSON: {"featureFile":"api-authentication.feature","scenario":"API Authentication Test","currentStep":"API Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537255499-njs4rjozb"}
+🔍 [Identity] POST /api/authentication/refresh | X-Correlation-ID: 656fe2de-4a7d-4dd9-b076-fa6a2048fffe | Auth: Yes
+🧪 Adding test context to POST /api/authentication/logout
+🧪 Test context JSON: {"featureFile":"api-authentication.feature","scenario":"API Authentication Test","currentStep":"API Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537255499-njs4rjozb"}
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: b1595300-e222-4bfa-87be-6eb465a8b1f1 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: b1595300-e222-4bfa-87be-6eb465a8b1f1 | Success

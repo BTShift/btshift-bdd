@@ -1,0 +1,8 @@
+🧪 Adding test context to GET /api/audit-logs
+🧪 Test context JSON: {"featureFile":"api-superadmin-test.feature","scenario":"API Test with SuperAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537227979-oxaf0a9k2"}
+🔍 [Identity] GET /api/audit-logs | X-Correlation-ID: 1d6dc86c-e0ee-44c4-8a0c-f0d079b71eae | Auth: Yes
+✅ [Identity] GET /api/audit-logs | X-Correlation-ID: 1d6dc86c-e0ee-44c4-8a0c-f0d079b71eae | Success
+🧪 Adding test context to POST /api/authentication/logout
+🧪 Test context JSON: {"featureFile":"api-superadmin-test.feature","scenario":"API Test with SuperAdmin Context","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757537227979-oxaf0a9k2"}
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: ae0c29a7-f9a9-445e-88a4-626e142a6a63 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: ae0c29a7-f9a9-445e-88a4-626e142a6a63 | Success
