@@ -1,10 +1,11 @@
-import { Given, When, Then, Before, After } from '@cucumber/cucumber';
+import { Given, When, Then, Before, After, BeforeAll, AfterAll } from '@cucumber/cucumber';
 import { chromium, Browser, Page, BrowserContext } from 'playwright';
 import { expect } from '@playwright/test';
 import { LoginPage } from '../../lib/pages/login-page';
 import { TenantPage } from '../../lib/pages/tenant-page';
 import { DatabaseManager } from '../../lib/db/database-manager';
 import { ApiClient } from '../../lib/helpers/api-client';
+import { TestContextManager } from '../../lib/helpers/test-context-manager';
 
 let browser: Browser;
 let context: BrowserContext;
@@ -16,7 +17,16 @@ let apiClient: ApiClient;
 let createdTenantId: string;
 let tenantData: any = {};
 
-Before(async function() {
+Before(async function(scenario) {
+  // Initialize test context for this scenario
+  const testContextManager = TestContextManager.getInstance();
+  const featureFile = TestContextManager.extractFeatureName(scenario.gherkinDocument.uri || 'unknown.feature');
+  const scenarioName = scenario.pickle.name;
+  const testIntent = TestContextManager.inferTestIntent(scenarioName);
+  
+  testContextManager.startTestSession(featureFile);
+  testContextManager.setScenario(featureFile, scenarioName, testIntent);
+  
   browser = await chromium.launch({ headless: process.env.HEADLESS !== 'false' });
   context = await browser.newContext();
   page = await context.newPage();
@@ -27,9 +37,14 @@ Before(async function() {
   apiClient = new ApiClient();
   
   await dbManager.connect();
+  
+  console.log(`🎬 Starting scenario: ${featureFile} :: ${scenarioName} (${testIntent})`);
 });
 
 After(async function() {
+  // Clear test context
+  TestContextManager.getInstance().clearContext();
+  
   if (process.env.SKIP_CLEANUP_AFTER !== 'true') {
     // Only cleanup if not explicitly skipping
     console.log('Cleaning up test data...');
@@ -42,6 +57,11 @@ After(async function() {
 });
 
 Given('I am logged in as a SuperAdmin', async function() {
+  TestContextManager.getInstance().setCurrentStep(
+    'Given I am logged in as a SuperAdmin',
+    '200_success'
+  );
+  
   await page.goto(process.env.PLATFORM_ADMIN_URL!);
   await loginPage.login(
     process.env.PLATFORM_ADMIN_EMAIL!,
@@ -60,6 +80,11 @@ Given('all tenant databases have been cleaned up', async function() {
 });
 
 Given('a pending tenant {string} exists', async function(tenantName: string) {
+  TestContextManager.getInstance().setCurrentStep(
+    `Given a pending tenant "${tenantName}" exists`,
+    '201_created'
+  );
+  
   await apiClient.login(
     process.env.PLATFORM_ADMIN_EMAIL!,
     process.env.PLATFORM_ADMIN_PASSWORD!

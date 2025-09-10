@@ -1,5 +1,6 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import dotenv from 'dotenv';
+import { TestContextManager } from './test-context-manager';
 
 dotenv.config();
 
@@ -16,12 +17,20 @@ export class ApiClient {
       },
     });
 
-    // Add request interceptor to include auth token
+    // Add request interceptor to include auth token and test context
     this.client.interceptors.request.use(
       (config) => {
         if (this.authToken) {
           config.headers.Authorization = `Bearer ${this.authToken}`;
         }
+        
+        // Add test context header if available
+        const testContext = TestContextManager.getInstance().getContextHeader();
+        if (testContext) {
+          config.headers['X-Test-Context'] = testContext;
+          console.log(`🧪 Adding test context to ${config.method?.toUpperCase()} ${config.url}`);
+        }
+        
         return config;
       },
       (error) => {
