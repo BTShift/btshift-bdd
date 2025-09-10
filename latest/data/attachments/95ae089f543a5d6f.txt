@@ -1,0 +1,12 @@
+🚀 [8a08081a] Setting up test with SuperAdmin context...
+🔑 [superadmin-1757511753799] Starting SuperAdmin authentication...
+🔐 [superadmin-1757511753799] Logging in as: superadmin@shift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 3b29c3af-71a6-46dd-8889-d6f573ae0e9b | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 3b29c3af-71a6-46dd-8889-d6f573ae0e9b | Success
+✅ [superadmin-1757511753799] SuperAdmin authentication successful
+🕐 [superadmin-1757511753799] Token expires at: 2025-09-10T13:50:35.309Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [8a08081a] Using SuperAdmin authentication
+🕐 [8a08081a] Token expires: 1:50:35 PM
+🔍 [Identity] GET /api/audit-logs | X-Correlation-ID: 8fff8e23-a69b-4a6c-99df-2b2c0f53a728 | Auth: Yes
+✅ [Identity] GET /api/audit-logs | X-Correlation-ID: 8fff8e23-a69b-4a6c-99df-2b2c0f53a728 | Success
