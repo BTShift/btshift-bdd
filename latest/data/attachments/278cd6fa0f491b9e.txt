@@ -1,0 +1,1 @@
+❌ [Identity] POST /api/permissions | X-Correlation-ID: 716b5d99-da91-459e-9a5f-d469a4d7fd0f | Error: API Error: 403 - 

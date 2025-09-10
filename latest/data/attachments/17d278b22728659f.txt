@@ -1,7 +1,0 @@
-🚀 [10ac3074] Setting up UNAUTHENTICATED test context...
-🌐 [10ac3074] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
-🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 3691629e-bfe2-49c2-ba5a-19a1c6945c97 | Auth: No
-✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 3691629e-bfe2-49c2-ba5a-19a1c6945c97 | Success
-🔍 [Identity] GET /api/authentication/me | X-Correlation-ID: bded7a7e-9960-47dc-b4a4-fa30fe693617 | Auth: Yes
-🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 88f5b603-564e-4e3c-bd8f-0bb4aea0c656 | Auth: Yes
-✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 88f5b603-564e-4e3c-bd8f-0bb4aea0c656 | Success

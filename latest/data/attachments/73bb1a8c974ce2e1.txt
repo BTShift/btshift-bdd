@@ -1,2 +1,0 @@
-❌ [Identity] POST /api/invitations/20e1903b-586a-4fe9-b210-7225fd120e64/cancel | X-Correlation-ID: 1147b58c-a3f9-43be-a5bf-06a75fecfaa7 | Error: API Error: 404 - 
-⚠️ Failed to cancel invitation 20e1903b-586a-4fe9-b210-7225fd120e64

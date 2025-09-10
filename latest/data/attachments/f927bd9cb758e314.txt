@@ -1,1 +1,0 @@
-❌ [Identity] POST /api/permissions | X-Correlation-ID: 05d7724c-24ab-4bcd-b28a-967d3f21d776 | Error: API Error: 404 - 
