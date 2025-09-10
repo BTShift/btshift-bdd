@@ -10,6 +10,7 @@ import type { paths as IdentityPaths } from '@btshift/identity-types';
 import type { paths as TenantPaths } from '@btshift/tenant-management-types';
 import type { paths as ClientPaths } from '@btshift/client-management-types';
 import { randomUUID } from 'crypto';
+import { TestContextManager } from '../../../../lib/helpers/test-context-manager';
 
 // Enhanced response type that includes correlation ID metadata
 export interface ApiResponse<T = any> {
@@ -102,14 +103,23 @@ export class TypedApiClient {
       const correlationId = randomUUID();
       this.lastCorrelationId = correlationId;
       
-      // Add correlation ID to headers
+      // Get test context from TestContextManager
+      const testContext = TestContextManager.getInstance().getContextHeader();
+      
+      // Add correlation ID and test context to headers
       const enhancedOptions = {
         ...options,
         headers: {
           'X-Correlation-ID': correlationId,
+          ...(testContext && { 'X-Test-Context': testContext }),
           ...options.headers
         }
       };
+      
+      // Log test context if available
+      if (testContext) {
+        console.log(`🧪 Adding test context to ${method?.toUpperCase()} ${path}`);
+      }
       
       // Debug: Check if Authorization header is present
       const hasAuth = options.headers?.Authorization || this.authToken;
