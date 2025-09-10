@@ -1,6 +1,6 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
+import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
 describe('Client Management - Group Operations', () => {
@@ -11,7 +11,7 @@ describe('Client Management - Group Operations', () => {
     allure.parentSuite('👥 Client Services');
     allure.feature('Client Relationship Management');
     allure.suite('Client Organization');
-    ctx = await setupApiTest();
+    ctx = await setupApiTestWithContext('TenantAdmin');
   });
 
   afterAll(async () => {

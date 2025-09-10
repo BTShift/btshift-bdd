@@ -1,6 +1,6 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
+import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
 describe('Identity Service - Invitation Operations', () => {
@@ -9,7 +9,7 @@ describe('Identity Service - Invitation Operations', () => {
   beforeAll(async () => {
     allure.parentSuite('User Invitations');
     allure.feature('Identity & Access Management');
-    ctx = await setupApiTest();
+    ctx = await setupApiTestWithContext('TenantAdmin');
   });
 
   afterAll(async () => {

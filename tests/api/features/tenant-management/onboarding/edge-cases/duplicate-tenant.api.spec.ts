@@ -1,6 +1,6 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
+import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
 describe('Tenant Creation - Duplicate Prevention API Tests', () => {
@@ -9,7 +9,7 @@ describe('Tenant Creation - Duplicate Prevention API Tests', () => {
   beforeAll(async () => {
     allure.parentSuite('🏢 Business Operations');
     allure.feature('Tenant Management');
-    ctx = await setupApiTest();
+    ctx = await setupApiTestWithContext('SuperAdmin');
   });
 
   afterAll(async () => {

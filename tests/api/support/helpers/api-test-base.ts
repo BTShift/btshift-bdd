@@ -1,10 +1,12 @@
 /**
  * Base class for API tests - DRY approach with shared setup/teardown
- * Uses Global Authentication Manager to avoid multiple logins
+ * Supports both Global Authentication Manager and Multi-User Context Authentication
  */
 
 import { TypedApiClient, ApiResponse } from '../clients/typed-api-client';
 import { GlobalAuthManager } from '../auth/global-auth-manager';
+import { MultiUserAuthManager, UserContext } from '../auth/multi-user-auth-manager';
+import { TestContextHelper } from '../auth/test-context-helper';
 import { AllureCorrelationHelper } from './allure-correlation';
 import * as crypto from 'crypto';
 
@@ -281,6 +283,61 @@ export async function setupUnauthenticatedApiTest(): Promise<TestContext> {
       return response?.data || response;
     }
   };
+}
+
+/**
+ * Setup API test context with specific user context (SuperAdmin or TenantAdmin)
+ * This is the recommended approach for proper multi-tenant testing
+ */
+export async function setupApiTestWithContext(context: UserContext): Promise<TestContext> {
+  const testSessionId = crypto.randomUUID().substring(0, 8);
+  console.log(`🚀 [${testSessionId}] Setting up test with ${context} context...`);
+  
+  try {
+    // Get authenticated client from multi-user auth manager
+    const authManager = MultiUserAuthManager.getInstance();
+    const client = await authManager.getAuthenticatedClient(context);
+    const cleanup = new CleanupManager();
+    const correlation = new CorrelationTracker();
+    
+    const tokenInfo = authManager.getTokenInfo(context);
+    console.log(`✅ [${testSessionId}] Using ${context} authentication`);
+    console.log(`🕐 [${testSessionId}] Token expires: ${tokenInfo?.expiresAt.toLocaleTimeString()}`);
+    
+    if (context === 'TenantAdmin') {
+      console.log(`🏢 [${testSessionId}] Tenant ID: ${authManager.getTenantId()}`);
+    }
+    
+    return { 
+      client, 
+      cleanup, 
+      correlation,
+      reportLastCorrelationId: () => {
+        const lastCorrelationId = client.getLastCorrelationId();
+        if (lastCorrelationId) {
+          AllureCorrelationHelper.reportCorrelationId(lastCorrelationId);
+        }
+      },
+      getData: <T = any>(response: any): T => {
+        return response?.data || response;
+      }
+    };
+  } catch (error) {
+    console.error(`❌ [${testSessionId}] Setup failed:`, error.message);
+    throw error;
+  }
+}
+
+/**
+ * Automatically determine context based on test file and setup
+ */
+export async function setupApiTestAuto(testFilePath?: string): Promise<TestContext> {
+  const context = testFilePath 
+    ? TestContextHelper.getContextForTestFile(testFilePath)
+    : { context: 'TenantAdmin' as UserContext, reason: 'Default context' };
+  
+  console.log(`🎯 Auto-selected context: ${context.context} (${context.reason})`);
+  return setupApiTestWithContext(context.context);
 }
 
 export async function teardownApiTest(context: TestContext): Promise<void> {

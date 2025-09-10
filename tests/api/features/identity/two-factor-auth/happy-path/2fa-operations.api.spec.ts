@@ -1,6 +1,6 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
+import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
 describe('Identity Service - Two-Factor Authentication Operations', () => {
@@ -10,7 +10,7 @@ describe('Identity Service - Two-Factor Authentication Operations', () => {
   beforeAll(async () => {
     allure.parentSuite('Two-Factor Authentication');
     allure.feature('Identity & Access Management');
-    ctx = await setupApiTest();
+    ctx = await setupApiTestWithContext('TenantAdmin');
     
     // Create a test user for 2FA operations
     const userData = TestDataFactory.user();
