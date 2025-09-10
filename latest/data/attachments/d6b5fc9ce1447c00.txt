@@ -1,0 +1,13 @@
+🚀 [fcfb9397] Setting up test with SuperAdmin context...
+🔑 [superadmin-1757535138235] Starting SuperAdmin authentication...
+🔐 [superadmin-1757535138235] Logging in as: superadmin@shift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 7aa6776b-62ba-42e8-abb4-f1bcc2f2a584 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 7aa6776b-62ba-42e8-abb4-f1bcc2f2a584 | Success
+✅ [superadmin-1757535138235] SuperAdmin authentication successful
+🕐 [superadmin-1757535138235] Token expires at: 2025-09-10T20:20:18.647Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [fcfb9397] Using SuperAdmin authentication
+🕐 [fcfb9397] Token expires: 8:20:18 PM
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: 3bc49d77-9079-4add-a322-139261d46560 | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: f5be7892-434a-4d5e-95cf-c0ee0efc84f3 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: f5be7892-434a-4d5e-95cf-c0ee0efc84f3 | Success

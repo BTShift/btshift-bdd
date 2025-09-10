@@ -1,0 +1,1 @@
+❌ [ClientManagement] POST /api/clients | X-Correlation-ID: de801ae0-6f81-4a6f-8809-54fa1d50cff0 | Error: HTTP 403: Forbidden

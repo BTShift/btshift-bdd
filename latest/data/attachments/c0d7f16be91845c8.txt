@@ -1,8 +1,0 @@
-🔑 [global-auth-1757527501809] Starting global authentication...
-🔐 [global-auth-1757527501809] Logging in as: superadmin@shift.ma
-🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: e8beab3b-a910-4722-9ebf-eceb2b5b8689 | Auth: No
-✅ [Identity] POST /api/authentication/login | X-Correlation-ID: e8beab3b-a910-4722-9ebf-eceb2b5b8689 | Success
-✅ [global-auth-1757527501809] Global authentication successful
-🕐 [global-auth-1757527501809] Token expires at: 2025-09-10T18:13:04.663Z
-🎫 [global-auth-1757527501809] Token preview: eyJhbGciOiJIUzI1NiIs...
-🔍 [Tenant] POST /api/tenants | X-Correlation-ID: ef48efcc-4c91-4ffc-b9c4-8eb4050897c3 | Auth: Yes
