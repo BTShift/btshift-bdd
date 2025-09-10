@@ -1,0 +1,26 @@
+🚀 [2f12e0ba] Setting up test with SuperAdmin context...
+🔑 [superadmin-1757526809934] Starting SuperAdmin authentication...
+🔐 [superadmin-1757526809934] Logging in as: superadmin@shift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 5f63e887-269a-4c15-b28d-1237316c3b11 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 5f63e887-269a-4c15-b28d-1237316c3b11 | Success
+✅ [superadmin-1757526809934] SuperAdmin authentication successful
+🕐 [superadmin-1757526809934] Token expires at: 2025-09-10T18:01:30.412Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [2f12e0ba] Using SuperAdmin authentication
+🕐 [2f12e0ba] Token expires: 6:01:30 PM
+🔍 [Tenant] GET /api/tenants | X-Correlation-ID: 25f9fef4-eb87-443f-b7e6-a13473920988 | Auth: Yes
+✅ [Tenant] GET /api/tenants | X-Correlation-ID: 25f9fef4-eb87-443f-b7e6-a13473920988 | Success
+SuperAdmin sees 0 tenants
+🚀 [10078da6] Setting up test with TenantAdmin context...
+🔑 [tenantadmin-1757526810662] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757526810662] Logging in as: test.tenantadmin@btshift.ma
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 0944ffb1-ea3c-49a9-878c-bd84160ff798 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 0944ffb1-ea3c-49a9-878c-bd84160ff798 | Success
+✅ [tenantadmin-1757526810662] TenantAdmin authentication successful
+🕐 [tenantadmin-1757526810662] Token expires at: 2025-09-10T18:01:31.122Z
+🏢 [tenantadmin-1757526810662] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [10078da6] Using TenantAdmin authentication
+🕐 [10078da6] Token expires: 6:01:31 PM
+🏢 [10078da6] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔍 [Identity] GET /api/users/current | X-Correlation-ID: 6db50611-297e-4d5e-a95c-98235a9c8482 | Auth: Yes
