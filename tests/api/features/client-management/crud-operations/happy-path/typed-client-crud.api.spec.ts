@@ -1,7 +1,7 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client';
-import { GlobalAuthManager } from '../../../../support/auth/global-auth-manager';
+import { MultiUserAuthManager } from '../../../../support/auth/multi-user-auth-manager';
 
 describe('Client Management - CRUD with Typed NPM Packages', () => {
   let client: TypedApiClient;
@@ -11,9 +11,9 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     allure.parentSuite('👥 Client Services');
     allure.feature('Client Relationship Management');
     allure.suite('Client Operations');
-    // Use GlobalAuthManager to avoid multiple logins
-    const authManager = GlobalAuthManager.getInstance();
-    client = await authManager.getAuthenticatedClient();
+    // Use TenantAdmin context for client management operations
+    const authManager = MultiUserAuthManager.getInstance();
+    client = await authManager.getAuthenticatedClient('TenantAdmin');
   });
 
   afterAll(async () => {
