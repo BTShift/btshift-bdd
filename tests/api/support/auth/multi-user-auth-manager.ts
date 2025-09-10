@@ -5,6 +5,8 @@
  */
 
 import { TypedApiClient } from '../clients/typed-api-client';
+import { TestContextManager } from '../../../../lib/helpers/test-context-manager';
+import * as crypto from 'crypto';
 
 export type UserContext = 'SuperAdmin' | 'TenantAdmin';
 
@@ -40,6 +42,22 @@ export class MultiUserAuthManager {
    * Get authenticated client for specific user context
    */
   async getAuthenticatedClient(context: UserContext): Promise<TypedApiClient> {
+    // Initialize test context for BDD correlation
+    const testContextManager = TestContextManager.getInstance();
+    const testSessionId = `test-${Date.now()}-${crypto.randomUUID().substring(0, 8)}`;
+    
+    // Use a descriptive feature name based on the test context
+    const featureFile = `api-${context.toLowerCase()}-multiauth.feature`;
+    const scenarioName = `API Test with ${context} (MultiUserAuth)`;
+    const testIntent = 'positive'; // Most API tests are positive unless specified otherwise
+    
+    testContextManager.startTestSession(featureFile);
+    testContextManager.setScenario(featureFile, scenarioName, testIntent as 'positive' | 'negative');
+    testContextManager.setCurrentStep('Test Execution', '2xx_success');
+    
+    console.log(`🎬 Starting test session: ${testSessionId} for feature: ${featureFile}`);
+    console.log(`📋 Test context set: ${featureFile} :: ${scenarioName} (${testIntent})`);
+    
     await this.ensureAuthenticated(context);
     
     const client = new TypedApiClient();

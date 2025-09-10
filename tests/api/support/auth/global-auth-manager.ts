@@ -9,6 +9,8 @@
 
 import { TypedApiClient } from '../clients/typed-api-client';
 import { TestDataFactory } from '../fixtures/test-data-factory';
+import { TestContextManager } from '../../../../lib/helpers/test-context-manager';
+import * as crypto from 'crypto';
 
 interface AuthTokenInfo {
   token: string;
@@ -34,6 +36,21 @@ export class GlobalAuthManager {
    * Get authenticated client - ensures authentication before returning
    */
   async getAuthenticatedClient(): Promise<TypedApiClient> {
+    // Initialize test context for BDD correlation
+    const testContextManager = TestContextManager.getInstance();
+    const testSessionId = `test-${Date.now()}-${crypto.randomUUID().substring(0, 8)}`;
+    
+    const featureFile = 'api-global-auth-test.feature';
+    const scenarioName = 'API Test with Global Auth';
+    const testIntent = 'positive';
+    
+    testContextManager.startTestSession(featureFile);
+    testContextManager.setScenario(featureFile, scenarioName, testIntent as 'positive' | 'negative');
+    testContextManager.setCurrentStep('Test Execution', '2xx_success');
+    
+    console.log(`🎬 Starting test session: ${testSessionId} for feature: ${featureFile}`);
+    console.log(`📋 Test context set: ${featureFile} :: ${scenarioName} (${testIntent})`);
+    
     await this.ensureAuthenticated();
     
     const client = new TypedApiClient();
