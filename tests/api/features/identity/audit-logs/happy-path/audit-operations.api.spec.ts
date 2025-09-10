@@ -1,6 +1,6 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
+import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 
 describe('Identity Service - Audit Log Operations', () => {
   let ctx: TestContext;
@@ -8,7 +8,7 @@ describe('Identity Service - Audit Log Operations', () => {
   beforeAll(async () => {
     allure.parentSuite('Audit Logs');
     allure.feature('Identity & Access Management');
-    ctx = await setupApiTest();
+    ctx = await setupApiTestWithContext('SuperAdmin');
   });
 
   afterAll(async () => {

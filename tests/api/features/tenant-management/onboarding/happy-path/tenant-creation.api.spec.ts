@@ -1,6 +1,6 @@
 import { describe, beforeAll, afterAll, test, expect } from '@playwright/test';
 import { allure } from 'allure-playwright';
-import { setupApiTest, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
+import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 
 describe('Business Feature: Tenant Onboarding', () => {
@@ -12,7 +12,7 @@ describe('Business Feature: Tenant Onboarding', () => {
     allure.suite('Tenant Lifecycle Management');
     allure.subSuite('New Tenant Onboarding');
     
-    ctx = await setupApiTest();
+    ctx = await setupApiTestWithContext('SuperAdmin');
   });
 
   afterAll(async () => {

@@ -3,6 +3,8 @@ dist/
 test-results/
 playwright-report/
 .env
+.env.*
+!.env.*.template
 *.log
 .DS_Store
 coverage/

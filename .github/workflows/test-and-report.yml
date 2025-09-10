@@ -39,10 +39,18 @@ jobs:
       - name: Run API tests
         run: npm run test:api
         env:
+          # Legacy single-user auth (for backward compatibility during migration)
           PLATFORM_ADMIN_EMAIL: superadmin@shift.ma
           PLATFORM_ADMIN_PASSWORD: ${{ secrets.PLATFORM_ADMIN_PASSWORD }}
-          SUPER_ADMIN_EMAIL: superadmin@shift.ma
-          SUPER_ADMIN_PASSWORD: ${{ secrets.PLATFORM_ADMIN_PASSWORD }}
+          # Multi-user authentication
+          SUPER_ADMIN_EMAIL: ${{ secrets.SUPER_ADMIN_EMAIL }}
+          SUPER_ADMIN_PASSWORD: ${{ secrets.SUPER_ADMIN_PASSWORD }}
+          TENANT_ADMIN_EMAIL: ${{ secrets.TENANT_ADMIN_EMAIL }}
+          TENANT_ADMIN_PASSWORD: ${{ secrets.TENANT_ADMIN_PASSWORD }}
+          TENANT_ID: ${{ secrets.TENANT_ID }}
+          USE_MULTI_USER_AUTH: ${{ secrets.USE_MULTI_USER_AUTH }}
+          DEFAULT_USER_CONTEXT: TenantAdmin
+          # Service URLs
           PLATFORM_ADMIN_URL: https://platform-admin-portal-production.up.railway.app
           API_GATEWAY_URL: https://api-gateway-production-91e9.up.railway.app
           # Database connections for cleanup
