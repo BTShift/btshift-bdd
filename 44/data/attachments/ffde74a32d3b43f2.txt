@@ -1,6 +1,0 @@
-🔍 [Identity] POST /api/invitations | X-Correlation-ID: bf17e220-a4cd-4d30-a38d-684d1875f066 | Auth: Yes
-✅ [Identity] POST /api/invitations | X-Correlation-ID: bf17e220-a4cd-4d30-a38d-684d1875f066 | Success
-🔍 [Identity] POST /api/invitations/validate | X-Correlation-ID: 580304eb-902b-46eb-b177-23c8248b2fd8 | Auth: Yes
-🔍 [Identity] POST /api/invitations/aba56147-ced6-4def-a814-be42ea46a8de/cancel | X-Correlation-ID: 1b1a5875-b4ab-4a24-b3e5-3c1ee208bd4f | Auth: Yes
-🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 09220131-d22a-4370-9cc7-ee712148f4e7 | Auth: Yes
-✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 09220131-d22a-4370-9cc7-ee712148f4e7 | Success

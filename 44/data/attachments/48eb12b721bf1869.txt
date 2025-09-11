@@ -1,7 +1,0 @@
-🚀 [dbb8780a] Setting up UNAUTHENTICATED test context...
-🌐 [dbb8780a] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
-🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 63bad866-fa49-437b-916f-1347e68ed407 | Auth: No
-✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 63bad866-fa49-437b-916f-1347e68ed407 | Success
-🔍 [Identity] GET /api/authentication/me | X-Correlation-ID: 8b3f5920-3f99-44e1-bd01-fefe637ba1c3 | Auth: Yes
-🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 9eacc5c2-8e6c-466e-af13-0113e32b0a99 | Auth: Yes
-✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 9eacc5c2-8e6c-466e-af13-0113e32b0a99 | Success

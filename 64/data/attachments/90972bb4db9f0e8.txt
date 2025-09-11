@@ -1,0 +1,15 @@
+🎬 Starting test session: test-1757625780765-u9hx8v7xo for feature: invalid-credentials.api.feature
+📋 Test context set: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts (negative)
+🧪 Test case: should handle multiple failed login attempts gracefully
+🔄 Current step: Test Execution
+🎬 Auto-context: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts :: should handle multiple failed login attempts gracefully
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"invalid-credentials.api.feature","scenario":"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757625780765-u9hx8v7xo","testCase":"should handle multiple failed login attempts gracefully"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: b77e7efb-b460-4f12-97b6-277c4df985c0 | Auth: No
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"invalid-credentials.api.feature","scenario":"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757625780765-u9hx8v7xo","testCase":"should handle multiple failed login attempts gracefully"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 90e01455-7c05-4f49-82a5-fd73ef3271fe | Auth: No
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"invalid-credentials.api.feature","scenario":"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757625780765-u9hx8v7xo","testCase":"should handle multiple failed login attempts gracefully"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: b53e3cd9-6991-4544-9b7e-e2d5a23835fd | Auth: No
+🏁 Clearing test context for session: test-1757625780765-u9hx8v7xo
