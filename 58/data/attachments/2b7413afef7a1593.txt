@@ -1,0 +1,1 @@
+❌ [Tenant] GET /api/platform/settings | X-Correlation-ID: 1b4c7013-6b8b-4059-95e6-7c29e154d5f7 | Error: API Error: 404 - 
