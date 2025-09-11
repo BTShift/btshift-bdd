@@ -1,1 +1,0 @@
-❌ [ClientManagement] POST /api/clients | X-Correlation-ID: 6837dbb3-3339-4d66-be53-c74460abe262 | Error: HTTP 409: Conflict

@@ -1,0 +1,34 @@
+🚀 [12ee0994] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757613477518-2vbc4lzoz for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757613477519-jk5vhurbq for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757613477519-13a6d1de for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757613477519] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757613477519] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757613477519] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757613477519-jk5vhurbq"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: f1e56b3f-4f2e-438a-8b44-210eb346bd2d | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: f1e56b3f-4f2e-438a-8b44-210eb346bd2d | Success
+✅ [tenantadmin-1757613477519] TenantAdmin authentication successful
+🕐 [tenantadmin-1757613477519] Token expires at: 2025-09-11T18:05:57.883Z
+🏢 [tenantadmin-1757613477519] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [12ee0994] Using TenantAdmin authentication
+🕐 [12ee0994] Token expires: 6:05:57 PM
+🏢 [12ee0994] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757613477912-wh3vv4x9z for feature: user-client-associations.api.feature
+📋 Test context set: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts (positive)
+🧪 Test case: should track assignment metadata
+🔄 Current step: Test Execution
+🎬 Auto-context: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts :: should track assignment metadata
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757613477912-wh3vv4x9z","testCase":"should track assignment metadata"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 519bf542-83f8-4ea2-b40e-4a045a0c3c8e | Auth: Yes
+🏁 Clearing test context for session: test-1757613477912-wh3vv4x9z
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: bec64bf2-ad6d-47d9-8d38-b4156ed2088b | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: bec64bf2-ad6d-47d9-8d38-b4156ed2088b | Success

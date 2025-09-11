@@ -1,0 +1,31 @@
+🚀 [2c4e0dc3] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757613572887-12g05az2f for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757613572887-iw9bypr78 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757613572887-e9582184 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757613572888] Starting SuperAdmin authentication...
+🔐 [superadmin-1757613572888] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757613572887-iw9bypr78"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 334c1eaf-1d81-422c-8ca0-a4cf29ef8747 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 334c1eaf-1d81-422c-8ca0-a4cf29ef8747 | Success
+✅ [superadmin-1757613572888] SuperAdmin authentication successful
+🕐 [superadmin-1757613572888] Token expires at: 2025-09-11T18:07:33.241Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [2c4e0dc3] Using SuperAdmin authentication
+🕐 [2c4e0dc3] Token expires: 6:07:33 PM
+🎬 Starting test session: test-1757613573270-wue7uemab for feature: tenant-creation.api.feature
+📋 Test context set: tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts (positive)
+🧪 Test case: Super Admin can successfully onboard a new accounting firm
+🔄 Current step: Test Execution
+🎬 Auto-context: tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts :: Super Admin can successfully onboard a new accounting firm
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"tenant-creation.api.feature","scenario":"api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757613573270-wue7uemab","testCase":"Super Admin can successfully onboard a new accounting firm"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: 39b02274-998f-4331-857b-66915e879a01 | Auth: Yes
+🏁 Clearing test context for session: test-1757613573270-wue7uemab
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 82905ce7-7fa2-4231-a165-971eaf7809e4 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 82905ce7-7fa2-4231-a165-971eaf7809e4 | Success

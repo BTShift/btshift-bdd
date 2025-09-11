@@ -1,1 +1,0 @@
-❌ [Identity] PUT /api/roles/f42daf20-30db-4b6a-9f90-8e12666a8181 | X-Correlation-ID: 059fb574-6f2c-44fb-aaed-146b8901f3cc | Error: API Error: 400 - {"code":3,"message":"An error occurred while updating the role","details":[]}

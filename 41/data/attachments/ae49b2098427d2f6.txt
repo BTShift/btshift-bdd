@@ -1,1 +1,0 @@
-❌ [Identity] GET /api/invitations | X-Correlation-ID: 304b501f-675f-4320-b0bb-8ecde7021031 | Error: API Error: 403 - {"code":7,"message":"User does not have permission to view invitations","details":[]}
