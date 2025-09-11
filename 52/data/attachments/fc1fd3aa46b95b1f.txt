@@ -1,0 +1,16 @@
+🎬 Starting test session: test-1757556568762-asv9z6clj for feature: invitation-operations.api.feature
+📋 Test context set: invitation-operations.api.feature :: api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts (positive)
+🧪 Test case: should validate invitation token
+🔄 Current step: Test Execution
+🎬 Auto-context: invitation-operations.api.feature :: api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts :: should validate invitation token
+🧪 Adding test context to POST /api/invitations
+🧪 Test context JSON: {"featureFile":"invitation-operations.api.feature","scenario":"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757556568762-asv9z6clj","testCase":"should validate invitation token"}
+🔍 [Identity] POST /api/invitations | X-Correlation-ID: 162d2d6d-9002-48b7-ab4a-068f430dde70 | Auth: Yes
+✅ [Identity] POST /api/invitations | X-Correlation-ID: 162d2d6d-9002-48b7-ab4a-068f430dde70 | Success
+🧪 Adding test context to POST /api/invitations/validate
+🧪 Test context JSON: {"featureFile":"invitation-operations.api.feature","scenario":"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757556568762-asv9z6clj","testCase":"should validate invitation token"}
+🔍 [Identity] POST /api/invitations/validate | X-Correlation-ID: 093e5a19-c42a-40d1-9788-ef120da51e91 | Auth: Yes
+🏁 Clearing test context for session: test-1757556568762-asv9z6clj
+🔍 [Identity] POST /api/invitations/98ca5779-4514-4a63-8c8f-ec7e05f7dd87/cancel | X-Correlation-ID: 5adc7f66-2e0b-4c8f-9f82-61e1a9d26f1f | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: ac08ba1d-3876-47f5-8360-e1dc1fe1c463 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: ac08ba1d-3876-47f5-8360-e1dc1fe1c463 | Success

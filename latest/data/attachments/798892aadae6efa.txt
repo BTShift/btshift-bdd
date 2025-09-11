@@ -1,0 +1,31 @@
+🚀 [4a2ad5e5] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757556642978-t36wf56uy for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757556642978-arpp43yem for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757556642978-c280c352 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757556642979] Starting SuperAdmin authentication...
+🔐 [superadmin-1757556642979] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757556642978-arpp43yem"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 9ec6f8f2-ac9f-4549-b834-2efb82b634a8 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 9ec6f8f2-ac9f-4549-b834-2efb82b634a8 | Success
+✅ [superadmin-1757556642979] SuperAdmin authentication successful
+🕐 [superadmin-1757556642979] Token expires at: 2025-09-11T02:18:43.298Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [4a2ad5e5] Using SuperAdmin authentication
+🕐 [4a2ad5e5] Token expires: 2:18:43 AM
+🎬 Starting test session: test-1757556643328-p7xla7ggk for feature: tenant-creation.api.feature
+📋 Test context set: tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts (positive)
+🧪 Test case: should retrieve the created tenant by name
+🔄 Current step: Test Execution
+🎬 Auto-context: tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts :: should retrieve the created tenant by name
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"tenant-creation.api.feature","scenario":"api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757556643328-p7xla7ggk","testCase":"should retrieve the created tenant by name"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: e96c49e8-1e0d-4f14-b5e8-202733bf8e02 | Auth: Yes
+🏁 Clearing test context for session: test-1757556643328-p7xla7ggk
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 09cd2b33-09cc-4614-b744-90813c997391 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 09cd2b33-09cc-4614-b744-90813c997391 | Success

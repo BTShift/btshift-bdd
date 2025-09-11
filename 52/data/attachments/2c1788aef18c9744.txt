@@ -1,0 +1,1 @@
+❌ [Identity] GET /api/authentication/validate-token | X-Correlation-ID: 080da19a-00b7-456b-abbe-ce47e947ca0f | Error: API Error: 404 - 
