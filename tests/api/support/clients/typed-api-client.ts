@@ -152,9 +152,20 @@ export class TypedApiClient {
   }
 
   // Helper method to login and set token automatically
-  async login(email: string, password: string): Promise<ApiResponse> {
+  async login(email: string, password: string, tenantId?: string, portalType?: string): Promise<ApiResponse> {
+    // Build login body with optional tenant context
+    const loginBody: any = { email, password };
+    
+    // Add tenant context if provided
+    if (tenantId) {
+      loginBody.tenantId = tenantId;
+    }
+    if (portalType) {
+      loginBody.portalType = portalType;
+    }
+    
     const response = await this.identity('/api/authentication/login', 'post', {
-      body: { email, password }
+      body: loginBody
     });
     
     // Check both the wrapped response data and direct response for token info

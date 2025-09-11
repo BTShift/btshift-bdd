@@ -111,7 +111,21 @@ export class MultiUserAuthManager {
       const client = new TypedApiClient();
       
       console.log(`🔐 [${sessionId}] Logging in as: ${credentials.email}`);
-      const loginResponse = await client.login(credentials.email, credentials.password);
+      
+      // Pass tenant context for TenantAdmin users
+      let loginResponse: any;
+      if (context === 'TenantAdmin' && credentials.tenantId) {
+        console.log(`🏢 [${sessionId}] Including tenant context: ${credentials.tenantId}`);
+        loginResponse = await client.login(
+          credentials.email, 
+          credentials.password,
+          credentials.tenantId,
+          'Tenant'  // Specify Tenant portal for tenant users
+        );
+      } else {
+        // SuperAdmin doesn't need tenant context
+        loginResponse = await client.login(credentials.email, credentials.password);
+      }
       
       const token = client.getAuthToken();
       if (!token) {
@@ -158,8 +172,8 @@ export class MultiUserAuthManager {
       
       case 'TenantAdmin':
         return {
-          email: process.env.TENANT_ADMIN_EMAIL || 'anass.yatim+nstech2@gmail.com',
-          password: process.env.TENANT_ADMIN_PASSWORD || 'TenantAdmin@123!',
+          email: process.env.TENANT_ADMIN_EMAIL || 'test.tenantadmin@btshift.ma',
+          password: process.env.TENANT_ADMIN_PASSWORD || 'SuperAdmin@123!',
           tenantId: process.env.TENANT_ID || 'aef1fb0d-84fb-412d-97c8-06f7eb7f3846'
         };
       
