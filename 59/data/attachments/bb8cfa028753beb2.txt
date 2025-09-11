@@ -1,0 +1,31 @@
+🚀 [0a9674a0] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757606526679-ovof2pj8t for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757606526680-uia7kjngi for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757606526680-c488edbd for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757606526680] Starting SuperAdmin authentication...
+🔐 [superadmin-1757606526680] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757606526680-uia7kjngi"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: e4c7309e-b0ee-4979-b20b-84160943bf7b | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: e4c7309e-b0ee-4979-b20b-84160943bf7b | Success
+✅ [superadmin-1757606526680] SuperAdmin authentication successful
+🕐 [superadmin-1757606526680] Token expires at: 2025-09-11T16:10:06.997Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [0a9674a0] Using SuperAdmin authentication
+🕐 [0a9674a0] Token expires: 4:10:06 PM
+🎬 Starting test session: test-1757606527026-77ch3rxwg for feature: duplicate-tenant.api.feature
+📋 Test context set: duplicate-tenant.api.feature :: api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts (negative)
+🧪 Test case: should verify tenant exists check returns true for existing tenant
+🔄 Current step: Test Execution
+🎬 Auto-context: duplicate-tenant.api.feature :: api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts :: should verify tenant exists check returns true for existing tenant
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"duplicate-tenant.api.feature","scenario":"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757606527026-77ch3rxwg","testCase":"should verify tenant exists check returns true for existing tenant"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: 291031c8-814d-4822-87c0-cf9075e5ea16 | Auth: Yes
+🏁 Clearing test context for session: test-1757606527026-77ch3rxwg
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 80aba345-f6d5-42d7-94c0-9215f2b56d98 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 80aba345-f6d5-42d7-94c0-9215f2b56d98 | Success

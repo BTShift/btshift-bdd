@@ -1,0 +1,23 @@
+🎬 Starting test session: test-1757606545352-gbxhzef57 for feature: api-global-auth-test.feature
+📋 Test context set: api-global-auth-test.feature :: API Test with Global Auth (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757606545352-1f201b75 for feature: api-global-auth-test.feature
+📋 Test context set: api-global-auth-test.feature :: API Test with Global Auth (positive)
+🔑 [global-auth-1757606545353] Starting global authentication...
+🔐 [global-auth-1757606545353] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-global-auth-test.feature","scenario":"API Test with Global Auth","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757606545352-gbxhzef57"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 180dd32b-ea9b-468a-ba9c-69c070bcb667 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 180dd32b-ea9b-468a-ba9c-69c070bcb667 | Success
+✅ [global-auth-1757606545353] Global authentication successful
+🕐 [global-auth-1757606545353] Token expires at: 2025-09-11T16:10:25.702Z
+🎫 [global-auth-1757606545353] Token preview: eyJhbGciOiJIUzI1NiIs...
+🎬 Starting test session: test-1757606545725-5n6v530kz for feature: typed-tenant-creation.api.feature
+📋 Test context set: typed-tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts (negative)
+🧪 Test case: should handle typed error responses for duplicate tenant
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts :: should handle typed error responses for duplicate tenant
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"typed-tenant-creation.api.feature","scenario":"api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757606545725-5n6v530kz","testCase":"should handle typed error responses for duplicate tenant"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: 362b30c8-1fbc-453d-a629-38b4a3ca70c9 | Auth: Yes
+🏁 Clearing test context for session: test-1757606545725-5n6v530kz
