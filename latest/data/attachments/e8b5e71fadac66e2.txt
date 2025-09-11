@@ -1,0 +1,15 @@
+🚀 [4ba56542] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757599378331-nb0tk883u for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [4ba56542] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757599378352-4xwknfjn9 for feature: typed-login.api.feature
+📋 Test context set: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts (positive)
+🧪 Test case: Super Admin can access the platform with valid credentials
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts :: Super Admin can access the platform with valid credentials
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"typed-login.api.feature","scenario":"api/features/identity/authentication/happy-path/typed-login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757599378352-4xwknfjn9","testCase":"Super Admin can access the platform with valid credentials"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: d5662fc5-73d0-4441-9587-637337da1755 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: d5662fc5-73d0-4441-9587-637337da1755 | Success
+🏁 Clearing test context for session: test-1757599378352-4xwknfjn9

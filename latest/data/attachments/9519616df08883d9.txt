@@ -1,0 +1,25 @@
+🎬 Starting test session: test-1757599339932-ao8cklmmc for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757599339932-7f99eb86 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757599339933] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757599339933] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757599339933] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757599339932-ao8cklmmc"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 5340691d-628d-4676-a08c-9fb12f77f0aa | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 5340691d-628d-4676-a08c-9fb12f77f0aa | Success
+✅ [tenantadmin-1757599339933] TenantAdmin authentication successful
+🕐 [tenantadmin-1757599339933] Token expires at: 2025-09-11T14:10:20.477Z
+🏢 [tenantadmin-1757599339933] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+🎬 Starting test session: test-1757599340493-h2x18d7yx for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should create client group with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should create client group with typed client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757599340493-h2x18d7yx","testCase":"should create client group with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: a3f570a2-790d-409c-afa1-68d59c2de0e0 | Auth: Yes
+🏁 Clearing test context for session: test-1757599340493-h2x18d7yx
