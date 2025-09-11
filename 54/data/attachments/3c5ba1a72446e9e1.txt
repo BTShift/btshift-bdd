@@ -1,0 +1,14 @@
+🚀 [2758de47] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757595199686-akxpczx70 for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [2758de47] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757595199707-liv661n4b for feature: typed-login.api.feature
+📋 Test context set: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts (negative)
+🧪 Test case: should validate typed error responses
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts :: should validate typed error responses
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"typed-login.api.feature","scenario":"api/features/identity/authentication/happy-path/typed-login.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757595199707-liv661n4b","testCase":"should validate typed error responses"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: b83dbdbb-b5d1-4d30-a895-50de67672a8d | Auth: No
+🏁 Clearing test context for session: test-1757595199707-liv661n4b

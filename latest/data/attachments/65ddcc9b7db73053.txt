@@ -1,0 +1,31 @@
+🚀 [97e59e49] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757595296631-pdehyny4k for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757595296631-r4raorno6 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757595296631-4c34b0d4 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757595296632] Starting SuperAdmin authentication...
+🔐 [superadmin-1757595296632] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757595296631-r4raorno6"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: ad9ba83c-57f2-4ac3-b956-8087cd6c8fb0 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: ad9ba83c-57f2-4ac3-b956-8087cd6c8fb0 | Success
+✅ [superadmin-1757595296632] SuperAdmin authentication successful
+🕐 [superadmin-1757595296632] Token expires at: 2025-09-11T13:02:57.000Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [97e59e49] Using SuperAdmin authentication
+🕐 [97e59e49] Token expires: 1:02:57 PM
+🎬 Starting test session: test-1757595297035-ykbnpw1vf for feature: tenant-suspension.api.feature
+📋 Test context set: tenant-suspension.api.feature :: api/features/tenant-management/suspension/happy-path/tenant-suspension.api.spec.ts (positive)
+🧪 Test case: should delete a tenant
+🔄 Current step: Test Execution
+🎬 Auto-context: tenant-suspension.api.feature :: api/features/tenant-management/suspension/happy-path/tenant-suspension.api.spec.ts :: should delete a tenant
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"tenant-suspension.api.feature","scenario":"api/features/tenant-management/suspension/happy-path/tenant-suspension.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757595297035-ykbnpw1vf","testCase":"should delete a tenant"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: 4623f7da-1786-421e-a159-391e38017340 | Auth: Yes
+🏁 Clearing test context for session: test-1757595297035-ykbnpw1vf
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 833f3e14-dd60-4c97-a9fe-a2302063151a | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 833f3e14-dd60-4c97-a9fe-a2302063151a | Success

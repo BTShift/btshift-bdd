@@ -1,0 +1,15 @@
+🎬 Starting test session: test-1757595191427-pgwk5xcom for feature: login.api.feature
+📋 Test context set: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts (positive)
+🧪 Test case: should maintain authentication state across multiple requests
+🔄 Current step: Test Execution
+🎬 Auto-context: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts :: should maintain authentication state across multiple requests
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757595191427-pgwk5xcom","testCase":"should maintain authentication state across multiple requests"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 85079141-b036-41ca-9d75-822d72fb4569 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 85079141-b036-41ca-9d75-822d72fb4569 | Success
+🧪 Adding test context to GET /api/authentication/me
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757595191427-pgwk5xcom","testCase":"should maintain authentication state across multiple requests"}
+🔍 [Identity] GET /api/authentication/me | X-Correlation-ID: 808032d8-e1b5-4ee0-b978-68449310e253 | Auth: Yes
+🏁 Clearing test context for session: test-1757595191427-pgwk5xcom
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: d031ef3b-15a9-4d46-8af5-c41f10096a65 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: d031ef3b-15a9-4d46-8af5-c41f10096a65 | Success
