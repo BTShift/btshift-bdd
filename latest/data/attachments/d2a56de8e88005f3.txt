@@ -1,0 +1,15 @@
+🚀 [40774ea8] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757581374044-iusixsccn for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [40774ea8] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757581374064-wl2tnslq1 for feature: login.api.feature
+📋 Test context set: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts (positive)
+🧪 Test case: should have token with reasonable expiration time
+🔄 Current step: Test Execution
+🎬 Auto-context: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts :: should have token with reasonable expiration time
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757581374064-wl2tnslq1","testCase":"should have token with reasonable expiration time"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 2198ea66-f9f0-448f-b78d-f7674f580e8a | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 2198ea66-f9f0-448f-b78d-f7674f580e8a | Success
+🏁 Clearing test context for session: test-1757581374064-wl2tnslq1

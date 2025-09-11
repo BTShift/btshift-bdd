@@ -1,0 +1,34 @@
+🚀 [33f4681e] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757581461401-7l9cfcehu for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757581461401-hxjddko23 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757581461401-8d2a7972 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757581461402] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757581461402] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757581461402] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757581461401-hxjddko23"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 1f4b1c88-d2a1-4eb2-8699-d57fa1b4ce5c | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 1f4b1c88-d2a1-4eb2-8699-d57fa1b4ce5c | Success
+✅ [tenantadmin-1757581461402] TenantAdmin authentication successful
+🕐 [tenantadmin-1757581461402] Token expires at: 2025-09-11T09:12:21.863Z
+🏢 [tenantadmin-1757581461402] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [33f4681e] Using TenantAdmin authentication
+🕐 [33f4681e] Token expires: 9:12:21 AM
+🏢 [33f4681e] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757581461898-lq7m56pui for feature: multi-user-example.feature
+📋 Test context set: multi-user-example.feature :: api/features/multi-user-example.spec.ts (negative)
+🧪 Test case: should NOT be able to access platform settings
+🔄 Current step: Test Execution
+🎬 Auto-context: multi-user-example.feature :: api/features/multi-user-example.spec.ts :: should NOT be able to access platform settings
+🧪 Adding test context to GET /api/platform/settings
+🧪 Test context JSON: {"featureFile":"multi-user-example.feature","scenario":"api/features/multi-user-example.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757581461898-lq7m56pui","testCase":"should NOT be able to access platform settings"}
+🔍 [Tenant] GET /api/platform/settings | X-Correlation-ID: 5153fcc8-6dba-4ee6-ad0b-a9bcec305fb7 | Auth: Yes
+🏁 Clearing test context for session: test-1757581461898-lq7m56pui
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 5419af60-1a33-4eac-84b9-dfe07bb9b684 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 5419af60-1a33-4eac-84b9-dfe07bb9b684 | Success
