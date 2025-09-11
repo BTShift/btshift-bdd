@@ -1,9 +1,0 @@
-🎬 Starting test session: test-1757595290008-duffx7f0x for feature: typed-tenant-creation.api.feature
-📋 Test context set: typed-tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts (positive)
-🧪 Test case: should activate tenant with typed client
-🔄 Current step: Test Execution
-🎬 Auto-context: typed-tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts :: should activate tenant with typed client
-🧪 Adding test context to POST /api/tenants
-🧪 Test context JSON: {"featureFile":"typed-tenant-creation.api.feature","scenario":"api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757595290008-duffx7f0x","testCase":"should activate tenant with typed client"}
-🔍 [Tenant] POST /api/tenants | X-Correlation-ID: d76ee41a-5c81-498a-a7ca-984381e01f1f | Auth: Yes
-🏁 Clearing test context for session: test-1757595290008-duffx7f0x

@@ -1,4 +1,0 @@
-🚀 [eb47a115] Setting up UNAUTHENTICATED test context...
-🌐 [eb47a115] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
-🔍 [Identity] GET /api/authentication/validate-token | X-Correlation-ID: 14215929-42f8-48ed-a63c-bb0c21ad4fe0
-🔐 [Identity] Getting auth token: null

@@ -1,0 +1,35 @@
+🎯 Auto-selected context: TenantAdmin (Default to tenant context for test isolation)
+🚀 [caa85051] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757595884584-ig3n37fmr for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757595884584-6vf4qts0a for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757595884584-198eb155 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757595884585] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757595884585] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757595884585] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757595884584-6vf4qts0a"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: c3af3ba2-e9ce-4be5-9813-eeefffd49ae9 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: c3af3ba2-e9ce-4be5-9813-eeefffd49ae9 | Success
+✅ [tenantadmin-1757595884585] TenantAdmin authentication successful
+🕐 [tenantadmin-1757595884585] Token expires at: 2025-09-11T13:12:45.178Z
+🏢 [tenantadmin-1757595884585] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [caa85051] Using TenantAdmin authentication
+🕐 [caa85051] Token expires: 1:12:45 PM
+🏢 [caa85051] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757595885212-kvqvha8zd for feature: multi-user-example.feature
+📋 Test context set: multi-user-example.feature :: api/features/multi-user-example.spec.ts (positive)
+🧪 Test case: should automatically use appropriate context
+🔄 Current step: Test Execution
+🎬 Auto-context: multi-user-example.feature :: api/features/multi-user-example.spec.ts :: should automatically use appropriate context
+🧪 Adding test context to GET /api/users/current
+🧪 Test context JSON: {"featureFile":"multi-user-example.feature","scenario":"api/features/multi-user-example.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757595885212-kvqvha8zd","testCase":"should automatically use appropriate context"}
+🔍 [Identity] GET /api/users/current | X-Correlation-ID: 1daa98fd-0497-40b7-810c-7f69375ea022 | Auth: Yes
+🏁 Clearing test context for session: test-1757595885212-kvqvha8zd
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 03996973-1233-4d27-8708-54f15c672dca | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 03996973-1233-4d27-8708-54f15c672dca | Success
