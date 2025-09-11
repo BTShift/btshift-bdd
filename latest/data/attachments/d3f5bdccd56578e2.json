@@ -1,0 +1,10 @@
+{
+  "correlationId": "19d96882-bbca-47cd-947a-8c0e8de16bab",
+  "timestamp": "2025-09-11T13:39:00.111Z",
+  "requestCorrelationId": "19d96882-bbca-47cd-947a-8c0e8de16bab",
+  "context": {
+    "endpoint": "/api/tenants",
+    "method": "POST",
+    "serviceName": "Tenant Management"
+  }
+}
