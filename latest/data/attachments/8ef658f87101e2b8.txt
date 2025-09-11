@@ -1,0 +1,15 @@
+🎬 Starting test session: test-1757611896361-gx0gfno15 for feature: login.api.feature
+📋 Test context set: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts (positive)
+🧪 Test case: should validate a valid token
+🔄 Current step: Test Execution
+🎬 Auto-context: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts :: should validate a valid token
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757611896361-gx0gfno15","testCase":"should validate a valid token"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 40fe6d47-3872-4172-b875-e7369399e2e4 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 40fe6d47-3872-4172-b875-e7369399e2e4 | Success
+🧪 Adding test context to GET /api/authentication/validate-token
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757611896361-gx0gfno15","testCase":"should validate a valid token"}
+🔍 [Identity] GET /api/authentication/validate-token | X-Correlation-ID: 96f25a79-4142-42f2-b7a1-85f8051cbb08 | Auth: Yes
+🏁 Clearing test context for session: test-1757611896361-gx0gfno15
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 89dac9da-020e-4170-9e0b-180a1a645d4a | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 89dac9da-020e-4170-9e0b-180a1a645d4a | Success

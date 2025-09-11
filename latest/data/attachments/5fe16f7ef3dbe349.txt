@@ -1,0 +1,19 @@
+🚀 [b4dcb555] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757611897595-e5imzuvpl for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [b4dcb555] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757611897615-luzyhhe75 for feature: login.api.feature
+📋 Test context set: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts (positive)
+🧪 Test case: should refresh token with valid refresh token
+🔄 Current step: Test Execution
+🎬 Auto-context: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts :: should refresh token with valid refresh token
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757611897615-luzyhhe75","testCase":"should refresh token with valid refresh token"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 91eb543e-67f5-4a61-ae91-05b133033ccf | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 91eb543e-67f5-4a61-ae91-05b133033ccf | Success
+🧪 Adding test context to POST /api/authentication/refresh
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757611897615-luzyhhe75","testCase":"should refresh token with valid refresh token"}
+🔍 [Identity] POST /api/authentication/refresh | X-Correlation-ID: 15dcde7c-f8f8-4855-bbaa-8db811e098ab | Auth: Yes
+✅ [Identity] POST /api/authentication/refresh | X-Correlation-ID: 15dcde7c-f8f8-4855-bbaa-8db811e098ab | Success
+🏁 Clearing test context for session: test-1757611897615-luzyhhe75

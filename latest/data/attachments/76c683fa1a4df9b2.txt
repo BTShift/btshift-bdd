@@ -1,0 +1,9 @@
+🎬 Starting test session: test-1757611895136-9zqumf2hv for feature: invalid-credentials.api.feature
+📋 Test context set: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts (negative)
+🧪 Test case: should return appropriate error response for unauthorized access
+🔄 Current step: Test Execution
+🎬 Auto-context: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts :: should return appropriate error response for unauthorized access
+🧪 Adding test context to GET /api/authentication/validate-token
+🧪 Test context JSON: {"featureFile":"invalid-credentials.api.feature","scenario":"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757611895136-9zqumf2hv","testCase":"should return appropriate error response for unauthorized access"}
+🔍 [Identity] GET /api/authentication/validate-token | X-Correlation-ID: a9b9b17d-070a-4a4e-a2ee-b6b6e00d79e5 | Auth: No
+🏁 Clearing test context for session: test-1757611895136-9zqumf2hv

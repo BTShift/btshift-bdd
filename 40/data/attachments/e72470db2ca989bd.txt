@@ -1,2 +1,0 @@
-🔍 [Identity] GET /api/audit-logs | X-Correlation-ID: 584547ea-aec8-4258-90c5-f8389e02d8ec | Auth: Yes
-✅ [Identity] GET /api/audit-logs | X-Correlation-ID: 584547ea-aec8-4258-90c5-f8389e02d8ec | Success

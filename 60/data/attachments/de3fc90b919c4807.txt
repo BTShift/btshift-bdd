@@ -1,0 +1,25 @@
+🎬 Starting test session: test-1757611864158-0041oq7kq for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757611864158-17d30d87 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757611864159] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757611864159] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757611864159] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757611864158-0041oq7kq"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: b9906589-d861-4a86-bdb4-9223446ab257 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: b9906589-d861-4a86-bdb4-9223446ab257 | Success
+✅ [tenantadmin-1757611864159] TenantAdmin authentication successful
+🕐 [tenantadmin-1757611864159] Token expires at: 2025-09-11T17:39:04.587Z
+🏢 [tenantadmin-1757611864159] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+🎬 Starting test session: test-1757611864603-1qhl9fauj for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should delete client with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should delete client with typed client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757611864603-1qhl9fauj","testCase":"should delete client with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 6837dbb3-3339-4d66-be53-c74460abe262 | Auth: Yes
+🏁 Clearing test context for session: test-1757611864603-1qhl9fauj

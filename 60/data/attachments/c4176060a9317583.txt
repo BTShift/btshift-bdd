@@ -1,0 +1,11 @@
+🎬 Starting test session: test-1757611956987-cgetff2l2 for feature: multi-user-example.feature
+📋 Test context set: multi-user-example.feature :: api/features/multi-user-example.spec.ts (positive)
+🧪 Test case: should access platform settings (SuperAdmin only)
+🔄 Current step: Test Execution
+🎬 Auto-context: multi-user-example.feature :: api/features/multi-user-example.spec.ts :: should access platform settings (SuperAdmin only)
+🧪 Adding test context to GET /api/platform/settings
+🧪 Test context JSON: {"featureFile":"multi-user-example.feature","scenario":"api/features/multi-user-example.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757611956987-cgetff2l2","testCase":"should access platform settings (SuperAdmin only)"}
+🔍 [Tenant] GET /api/platform/settings | X-Correlation-ID: 6fd01664-67f0-4631-b2ab-f844ecddbe7e | Auth: Yes
+🏁 Clearing test context for session: test-1757611956987-cgetff2l2
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 610c0d86-6495-4c06-94d1-c464865b2a89 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 610c0d86-6495-4c06-94d1-c464865b2a89 | Success

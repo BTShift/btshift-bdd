@@ -1,0 +1,23 @@
+🎬 Starting test session: test-1757611983883-2j7nmx71i for feature: api-global-auth-test.feature
+📋 Test context set: api-global-auth-test.feature :: API Test with Global Auth (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757611983883-08d07c69 for feature: api-global-auth-test.feature
+📋 Test context set: api-global-auth-test.feature :: API Test with Global Auth (positive)
+🔑 [global-auth-1757611983884] Starting global authentication...
+🔐 [global-auth-1757611983884] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-global-auth-test.feature","scenario":"API Test with Global Auth","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757611983883-2j7nmx71i"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 3ad00dcc-7f7a-4aa4-b2a3-da7d9511c84d | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 3ad00dcc-7f7a-4aa4-b2a3-da7d9511c84d | Success
+✅ [global-auth-1757611983884] Global authentication successful
+🕐 [global-auth-1757611983884] Token expires at: 2025-09-11T17:41:04.244Z
+🎫 [global-auth-1757611983884] Token preview: eyJhbGciOiJIUzI1NiIs...
+🎬 Starting test session: test-1757611984259-azyyo6qj0 for feature: typed-tenant-creation.api.feature
+📋 Test context set: typed-tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts (positive)
+🧪 Test case: should create tenant with typed client from @btshift/tenant-management-types
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts :: should create tenant with typed client from @btshift/tenant-management-types
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"typed-tenant-creation.api.feature","scenario":"api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757611984259-azyyo6qj0","testCase":"should create tenant with typed client from @btshift/tenant-management-types"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: 75c4d117-872d-4b18-82b7-9afac6b18933 | Auth: Yes
+🏁 Clearing test context for session: test-1757611984259-azyyo6qj0
