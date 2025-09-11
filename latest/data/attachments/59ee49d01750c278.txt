@@ -1,1 +1,0 @@
-❌ [Identity] POST /api/permissions | X-Correlation-ID: 48f39a20-baa4-4e77-9bcc-bfaa95335ea7 | Error: API Error: 405 - 

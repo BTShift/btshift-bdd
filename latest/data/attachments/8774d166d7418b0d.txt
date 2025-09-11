@@ -1,0 +1,14 @@
+🎬 Starting test session: test-1757615190676-5x4c53pdy for feature: login.api.feature
+📋 Test context set: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts (positive)
+🧪 Test case: should logout successfully
+🔄 Current step: Test Execution
+🎬 Auto-context: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts :: should logout successfully
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757615190676-5x4c53pdy","testCase":"should logout successfully"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 6546478e-f1d7-4c6c-803a-3bd5d7f7a5fe | Auth: Yes
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 6546478e-f1d7-4c6c-803a-3bd5d7f7a5fe | Success
+🧪 Adding test context to POST /api/authentication/logout
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757615190676-5x4c53pdy","testCase":"should logout successfully"}
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 667c17a0-299c-4f90-ae11-d57c48230676 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 667c17a0-299c-4f90-ae11-d57c48230676 | Success
+🏁 Clearing test context for session: test-1757615190676-5x4c53pdy

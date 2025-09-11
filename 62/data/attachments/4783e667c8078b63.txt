@@ -1,0 +1,9 @@
+🎬 Starting test session: test-1757615183937-9c9azgigc for feature: invalid-credentials.api.feature
+📋 Test context set: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts (negative)
+🧪 Test case: should reject login with malformed email
+🔄 Current step: Test Execution
+🎬 Auto-context: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts :: should reject login with malformed email
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"invalid-credentials.api.feature","scenario":"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757615183937-9c9azgigc","testCase":"should reject login with malformed email"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: e92feac3-8a33-415d-973a-b94469108ded | Auth: No
+🏁 Clearing test context for session: test-1757615183937-9c9azgigc

@@ -1,0 +1,23 @@
+🎬 Starting test session: test-1757615275169-sjxsq1o03 for feature: api-global-auth-test.feature
+📋 Test context set: api-global-auth-test.feature :: API Test with Global Auth (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757615275169-1ccf027b for feature: api-global-auth-test.feature
+📋 Test context set: api-global-auth-test.feature :: API Test with Global Auth (positive)
+🔑 [global-auth-1757615275170] Starting global authentication...
+🔐 [global-auth-1757615275170] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-global-auth-test.feature","scenario":"API Test with Global Auth","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757615275169-sjxsq1o03"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 78c565ae-e73a-4dd7-948f-431a89b4b11a | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 78c565ae-e73a-4dd7-948f-431a89b4b11a | Success
+✅ [global-auth-1757615275170] Global authentication successful
+🕐 [global-auth-1757615275170] Token expires at: 2025-09-11T18:35:55.544Z
+🎫 [global-auth-1757615275170] Token preview: eyJhbGciOiJIUzI1NiIs...
+🎬 Starting test session: test-1757615275560-sz172dff7 for feature: typed-tenant-creation.api.feature
+📋 Test context set: typed-tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts (positive)
+🧪 Test case: should get tenant by ID with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts :: should get tenant by ID with typed client
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"typed-tenant-creation.api.feature","scenario":"api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757615275560-sz172dff7","testCase":"should get tenant by ID with typed client"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: 33829847-43eb-4988-9695-02442526ccb0 | Auth: Yes
+🏁 Clearing test context for session: test-1757615275560-sz172dff7
