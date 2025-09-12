@@ -1,0 +1,15 @@
+🚀 [a0908c25] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757667330172-zb3l4g44g for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [a0908c25] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757667330192-xhuoq6s4t for feature: login.api.feature
+📋 Test context set: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts (positive)
+🧪 Test case: should have token with reasonable expiration time
+🔄 Current step: Test Execution
+🎬 Auto-context: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts :: should have token with reasonable expiration time
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757667330192-xhuoq6s4t","testCase":"should have token with reasonable expiration time"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 559f5cd2-e733-41a1-9d9d-1857e00b36b6 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 559f5cd2-e733-41a1-9d9d-1857e00b36b6 | Success
+🏁 Clearing test context for session: test-1757667330192-xhuoq6s4t

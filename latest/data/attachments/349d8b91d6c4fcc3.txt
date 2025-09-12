@@ -1,0 +1,20 @@
+🚀 [7f623f69] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757667332306-m5itmmc8w for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [7f623f69] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757667332326-p2xctvlrz for feature: typed-login.api.feature
+📋 Test context set: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts (positive)
+🧪 Test case: should get current user information with typed ctx.client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts :: should get current user information with typed ctx.client
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"typed-login.api.feature","scenario":"api/features/identity/authentication/happy-path/typed-login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757667332326-p2xctvlrz","testCase":"should get current user information with typed ctx.client"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 9ea35aad-edfb-4e27-913b-0ada96c67fe6 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 9ea35aad-edfb-4e27-913b-0ada96c67fe6 | Success
+🧪 Adding test context to GET /api/authentication/me
+🧪 Test context JSON: {"featureFile":"typed-login.api.feature","scenario":"api/features/identity/authentication/happy-path/typed-login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757667332326-p2xctvlrz","testCase":"should get current user information with typed ctx.client"}
+🔍 [Identity] GET /api/authentication/me | X-Correlation-ID: 3b7d7cd1-a1c8-461e-9537-a0b78dfd961f | Auth: Yes
+🏁 Clearing test context for session: test-1757667332326-p2xctvlrz
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: c747ccf7-09c0-4543-963a-7b04e790d98b | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: c747ccf7-09c0-4543-963a-7b04e790d98b | Success

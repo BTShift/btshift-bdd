@@ -1,0 +1,35 @@
+🚀 [20b8ae04] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757667316485-uvonlz9z0 for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757667316486-fxbn69bde for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757667316486-2dc0bd37 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757667316486] Starting SuperAdmin authentication...
+🔐 [superadmin-1757667316486] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757667316486-fxbn69bde"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 9e70923a-5328-4636-ad56-8427eb19539c | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 9e70923a-5328-4636-ad56-8427eb19539c | Success
+✅ [superadmin-1757667316486] SuperAdmin authentication successful
+🕐 [superadmin-1757667316486] Token expires at: 2025-09-12T09:03:16.858Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [20b8ae04] Using SuperAdmin authentication
+🕐 [20b8ae04] Token expires: 9:03:16 AM
+🎬 Starting test session: test-1757667316887-vr7ol2jky for feature: audit-operations.api.feature
+📋 Test context set: audit-operations.api.feature :: api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts (positive)
+🧪 Test case: should get audit log by ID
+🔄 Current step: Test Execution
+🎬 Auto-context: audit-operations.api.feature :: api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts :: should get audit log by ID
+🧪 Adding test context to GET /api/audit-logs
+🧪 Test context JSON: {"featureFile":"audit-operations.api.feature","scenario":"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757667316887-vr7ol2jky","testCase":"should get audit log by ID"}
+🔍 [Identity] GET /api/audit-logs | X-Correlation-ID: a503f269-0935-473b-ade4-a67fca19cb1c | Auth: Yes
+✅ [Identity] GET /api/audit-logs | X-Correlation-ID: a503f269-0935-473b-ade4-a67fca19cb1c | Success
+🧪 Adding test context to GET /api/audit-logs/e432fa84-9f5a-48fa-872f-b9b977fcf337
+🧪 Test context JSON: {"featureFile":"audit-operations.api.feature","scenario":"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757667316887-vr7ol2jky","testCase":"should get audit log by ID"}
+🔍 [Identity] GET /api/audit-logs/e432fa84-9f5a-48fa-872f-b9b977fcf337 | X-Correlation-ID: 81d74f69-6404-46a4-9531-c69b6ed335e0 | Auth: Yes
+🏁 Clearing test context for session: test-1757667316887-vr7ol2jky
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: a6cc5562-4fc9-4840-b6d8-61a65bd9deec | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: a6cc5562-4fc9-4840-b6d8-61a65bd9deec | Success

@@ -1,0 +1,31 @@
+🚀 [2ac2adc5] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757667391522-ihh08bo4w for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757667391522-m81sbphvs for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757667391522-29c11c56 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757667391523] Starting SuperAdmin authentication...
+🔐 [superadmin-1757667391523] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757667391522-m81sbphvs"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: db1b349c-2ded-4223-a1c7-b76530fa6a7d | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: db1b349c-2ded-4223-a1c7-b76530fa6a7d | Success
+✅ [superadmin-1757667391523] SuperAdmin authentication successful
+🕐 [superadmin-1757667391523] Token expires at: 2025-09-12T09:04:31.891Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [2ac2adc5] Using SuperAdmin authentication
+🕐 [2ac2adc5] Token expires: 9:04:31 AM
+🎬 Starting test session: test-1757667391926-w1mrzibgy for feature: duplicate-tenant.api.feature
+📋 Test context set: duplicate-tenant.api.feature :: api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts (negative)
+🧪 Test case: should prevent creating tenant with duplicate tenant name
+🔄 Current step: Test Execution
+🎬 Auto-context: duplicate-tenant.api.feature :: api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts :: should prevent creating tenant with duplicate tenant name
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"duplicate-tenant.api.feature","scenario":"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757667391926-w1mrzibgy","testCase":"should prevent creating tenant with duplicate tenant name"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: 9e80a248-1e94-463b-94b8-d3d6f1cc521a | Auth: Yes
+🏁 Clearing test context for session: test-1757667391926-w1mrzibgy
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: e84ca6f3-aa6e-442c-82d5-e53256ae7ed8 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: e84ca6f3-aa6e-442c-82d5-e53256ae7ed8 | Success

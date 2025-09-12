@@ -1,0 +1,14 @@
+🚀 [ca627854] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757667335496-9wnvenigt for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [ca627854] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757667335517-2esry1pjc for feature: typed-login.api.feature
+📋 Test context set: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts (negative)
+🧪 Test case: should validate typed error responses
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts :: should validate typed error responses
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"typed-login.api.feature","scenario":"api/features/identity/authentication/happy-path/typed-login.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757667335517-2esry1pjc","testCase":"should validate typed error responses"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: e797352a-cbe7-4a2b-b625-e058faf4362b | Auth: No
+🏁 Clearing test context for session: test-1757667335517-2esry1pjc

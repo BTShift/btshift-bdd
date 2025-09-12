@@ -1,0 +1,14 @@
+🚀 [70424273] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757667321601-l6uk3i06j for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [70424273] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757667321621-07dv5rkcv for feature: invalid-credentials.api.feature
+📋 Test context set: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts (negative)
+🧪 Test case: should reject token validation with expired token
+🔄 Current step: Test Execution
+🎬 Auto-context: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts :: should reject token validation with expired token
+🧪 Adding test context to GET /api/authentication/validate-token
+🧪 Test context JSON: {"featureFile":"invalid-credentials.api.feature","scenario":"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757667321621-07dv5rkcv","testCase":"should reject token validation with expired token"}
+🔍 [Identity] GET /api/authentication/validate-token | X-Correlation-ID: 6d2cb46c-996c-48e2-8a08-16561b2aa74c | Auth: No
+🏁 Clearing test context for session: test-1757667321621-07dv5rkcv
