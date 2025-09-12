@@ -9,7 +9,7 @@ async function findNSTechAndUser() {
 
   // Connection for platform database (identity is in the same DB)
   const platformClient = new Client({
-    connectionString: 'postgresql://postgres:XPTalMVXCwtQIAWtKvinUrbZJuBXucdq@switchyard.proxy.rlwy.net:15685/railway'
+    connectionString: 'postgresql://postgres:XPTalMVXCwtQIAWtKvinUrbZJuBXucdq@switchyard.proxy.rlwy.net:15685/identity_db'
   });
 
   try {

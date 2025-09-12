@@ -2,7 +2,7 @@ const { Client } = require('pg');
 
 async function checkAllUsers() {
   const platformClient = new Client({
-    connectionString: 'postgresql://postgres:XPTalMVXCwtQIAWtKvinUrbZJuBXucdq@switchyard.proxy.rlwy.net:15685/railway'
+    connectionString: 'postgresql://postgres:XPTalMVXCwtQIAWtKvinUrbZJuBXucdq@switchyard.proxy.rlwy.net:15685/identity_db'
   });
 
   try {
