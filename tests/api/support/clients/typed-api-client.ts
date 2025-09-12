@@ -11,6 +11,7 @@ import type { paths as TenantPaths } from '@btshift/tenant-management-types';
 import type { paths as ClientPaths } from '@btshift/client-management-types';
 import { randomUUID } from 'crypto';
 import { TestContextManager } from '../../../../lib/helpers/test-context-manager';
+import { ApiAllureReporter, ApiCallDetails } from '../helpers/api-allure-reporter';
 
 // Enhanced response type that includes correlation ID metadata
 export interface ApiResponse<T = any> {
@@ -98,6 +99,7 @@ export class TypedApiClient {
     // Since the API is a function, we need to wrap the function call directly
     return async (...args: any[]): Promise<ApiResponse> => {
       const [path, method, options = {}] = args;
+      const startTime = Date.now();
       
       // Generate correlation ID for this request
       const correlationId = randomUUID();
@@ -126,10 +128,37 @@ export class TypedApiClient {
       const hasAuth = options.headers?.Authorization || this.authToken;
       console.log(`🔍 [${serviceName}] ${method?.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Auth: ${hasAuth ? 'Yes' : 'No'}`);
       
+      // Prepare API call details for reporting
+      const apiCallDetails: ApiCallDetails = {
+        endpoint: path,
+        method: method || 'GET',
+        request: {
+          headers: enhancedOptions.headers,
+          body: enhancedOptions.body,
+          params: enhancedOptions.params,
+          query: enhancedOptions.params?.query
+        },
+        response: {},
+        correlationId,
+        timestamp: new Date()
+      };
+      
       try {
         const result = await api(path, method, enhancedOptions);
+        const duration = Date.now() - startTime;
         
         console.log(`✅ [${serviceName}] ${method?.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Success`);
+        
+        // Update API call details with response
+        apiCallDetails.response = {
+          status: 200, // Assume success if no error
+          body: result,
+          headers: {} // Response headers not easily accessible from the typed client
+        };
+        apiCallDetails.duration = duration;
+        
+        // Report to Allure
+        await ApiAllureReporter.reportApiCall(apiCallDetails);
         
         // Create enhanced response with correlation ID metadata
         const enhancedResponse = {
@@ -140,7 +169,22 @@ export class TypedApiClient {
         
         return enhancedResponse;
       } catch (error) {
+        const duration = Date.now() - startTime;
         console.error(`❌ [${serviceName}] ${method?.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Error:`, error.message);
+        
+        // Update API call details with error
+        apiCallDetails.response = {
+          status: error.response?.status || 0,
+          error: {
+            message: error.message,
+            response: error.response,
+            stack: error.stack
+          }
+        };
+        apiCallDetails.duration = duration;
+        
+        // Report to Allure
+        await ApiAllureReporter.reportApiCall(apiCallDetails);
         
         // Re-throw error but preserve correlation ID context
         const enhancedError = error as any;

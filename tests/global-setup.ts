@@ -1,9 +1,13 @@
 import { FullConfig } from '@playwright/test';
 import TestDataCleaner from '../scripts/cleanup';
+import { initializeApiReporter } from './api/config/api-reporter.config';
 
 async function globalSetup(config: FullConfig) {
   console.log('\n🎭 Playwright Global Setup');
   console.log('================================\n');
+  
+  // Initialize API Reporter configuration
+  initializeApiReporter();
   
   // Clean up any leftover test data from previous runs
   console.log('🧹 Cleaning up test data from previous runs...\n');

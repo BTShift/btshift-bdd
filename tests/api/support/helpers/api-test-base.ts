@@ -9,6 +9,7 @@ import { MultiUserAuthManager, UserContext } from '../auth/multi-user-auth-manag
 import { TestContextHelper } from '../auth/test-context-helper';
 import { AllureCorrelationHelper } from './allure-correlation';
 import { TestContextManager } from '../../../../lib/helpers/test-context-manager';
+import { ApiAllureReporter } from './api-allure-reporter';
 import * as crypto from 'crypto';
 
 export interface TestContext {
@@ -378,6 +379,13 @@ export async function setupApiTestAuto(testFilePath?: string): Promise<TestConte
 }
 
 export async function teardownApiTest(context: TestContext): Promise<void> {
+  // Attach full API history to Allure before cleanup
+  try {
+    await ApiAllureReporter.attachFullHistory('API Test Complete');
+  } catch (error) {
+    console.warn('⚠️ Failed to attach API history:', error.message);
+  }
+  
   if (context?.cleanup) {
     try {
       await context.cleanup.executeCleanup(context.client);
@@ -392,4 +400,7 @@ export async function teardownApiTest(context: TestContext): Promise<void> {
       console.warn('⚠️ Logout failed:', error.message);
     }
   }
+  
+  // Clear API history for next test
+  ApiAllureReporter.clearHistory();
 }
