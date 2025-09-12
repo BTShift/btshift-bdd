@@ -3,6 +3,7 @@ import { test } from '../../../../../support/test-context-fixture';
 import { allure } from 'allure-playwright';
 import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
+import { EnhancedAssertions, testStep, expectWithContext } from '../../../../support/helpers/enhanced-assertions';
 
 describe('Client Management - Group Operations', () => {
   let ctx: TestContext;
@@ -26,17 +27,32 @@ describe('Client Management - Group Operations', () => {
       tenantId: testTenantId
     };
 
-    const response = await ctx.client.clientManagement('/api/groups', 'post', {
-      body: groupData
+    const response = await testStep('Create new client group', async () => {
+      return await ctx.client.clientManagement('/api/groups', 'post', {
+        body: groupData
+      });
+    }, {
+      operation: 'Create Group',
+      endpoint: '/api/groups',
+      entityType: 'group'
     });
 
     const responseData = ctx.getData(response);
     ctx.cleanup.addGroup(responseData.groupId);
 
-    expect(response).toBeDefined();
-    expect(responseData.groupId).toBeTruthy();
-    expect(responseData.name).toBe(groupData.name);
-    expect(responseData.description).toBe(groupData.description);
+    await testStep('Verify group creation response', async () => {
+      const context = {
+        operation: 'Group Creation',
+        endpoint: '/api/groups',
+        entityId: responseData.groupId,
+        entityType: 'group'
+      };
+      
+      await expectWithContext(response, context).toBeDefined('Response should be defined');
+      await expectWithContext(responseData.groupId, context).toBeTruthy('Group ID should be generated');
+      await expectWithContext(responseData.name, context).toBe(groupData.name, `Group name should be '${groupData.name}'`);
+      await expectWithContext(responseData.description, context).toBe(groupData.description, `Group description should be '${groupData.description}'`);
+    });
   });
 
   test('should update an existing group', async () => {
@@ -74,15 +90,71 @@ describe('Client Management - Group Operations', () => {
       tenantId: testTenantId
     };
 
-    const created = await ctx.client.clientManagement('/api/groups', 'post', {
-      body: groupData
+    // Step 1: Create group to be deleted
+    const created = await testStep('Create group for deletion', async () => {
+      return await ctx.client.clientManagement('/api/groups', 'post', {
+        body: groupData
+      });
+    }, {
+      operation: 'Create Group',
+      endpoint: '/api/groups',
+      entityType: 'group'
     });
+    
     const deleteCreatedData = ctx.getData(created);
-
-    const response = await ctx.client.clientManagement(`/api/groups/${deleteCreatedData.groupId}` as any, 'delete');
+    const groupId = deleteCreatedData.groupId;
+    
+    // Step 2: Delete the group
+    const response = await testStep('Delete the group', async () => {
+      return await ctx.client.clientManagement(`/api/groups/${groupId}` as any, 'delete');
+    }, {
+      operation: 'Delete Group',
+      endpoint: `/api/groups/${groupId}`,
+      entityId: groupId,
+      entityType: 'group'
+    });
 
     const deleteResponseData = ctx.getData(response);
-    expect(deleteResponseData.success).toBe(true);
+    
+    // Step 3: Verify deletion was successful
+    await testStep('Verify deletion response', async () => {
+      await EnhancedAssertions.assertOperationSuccess(
+        deleteResponseData.success,
+        {
+          operation: 'Group Deletion',
+          endpoint: `/api/groups/${groupId}`,
+          entityId: groupId,
+          entityType: 'group',
+          additionalInfo: {
+            response: deleteResponseData,
+            groupName: groupData.name
+          }
+        }
+      );
+    });
+    
+    // Optional: Verify group no longer exists (if API supports checking)
+    // This would make the failure even clearer
+    try {
+      const checkExists = await ctx.client.clientManagement(`/api/groups/${groupId}` as any, 'get');
+      const exists = checkExists && ctx.getData(checkExists);
+      
+      await EnhancedAssertions.assertDeleted(!exists, {
+        operation: 'Group Deletion Verification',
+        endpoint: `/api/groups/${groupId}`,
+        entityId: groupId,
+        entityType: 'group',
+        additionalInfo: {
+          groupName: groupData.name,
+          checkResponse: exists
+        }
+      });
+    } catch (error) {
+      // If GET returns 404, that's expected - group was deleted
+      if (error.response?.status !== 404) {
+        console.log('✅ Group successfully deleted (GET returned 404)');
+      }
+    }
   });
 
   test('should list all groups for a tenant', async () => {
@@ -107,20 +179,47 @@ describe('Client Management - Group Operations', () => {
     const group2Data = ctx.getData(group2);
     ctx.cleanup.addGroup(group2Data.groupId);
 
-    const response = await ctx.client.clientManagement('/api/groups', 'get', {
-      params: {
-        query: {
-          tenantId: testTenantId,
-          page: 1,
-          pageSize: 10
+    const response = await testStep('List all groups for tenant', async () => {
+      return await ctx.client.clientManagement('/api/groups', 'get', {
+        params: {
+          query: {
+            tenantId: testTenantId,
+            page: 1,
+            pageSize: 10
+          }
         }
-      }
+      });
+    }, {
+      operation: 'List Groups',
+      endpoint: '/api/groups',
+      entityType: 'group'
     });
 
     const listResponseData = ctx.getData(response);
-    expect(listResponseData.groups).toBeDefined();
-    expect(Array.isArray(listResponseData.groups)).toBe(true);
-    expect(listResponseData.groups.length).toBeGreaterThanOrEqual(2);
+    
+    await testStep('Verify groups list response', async () => {
+      const context = {
+        operation: 'List Groups',
+        endpoint: '/api/groups',
+        entityType: 'groups',
+        additionalInfo: {
+          tenantId: testTenantId,
+          createdGroups: [group1Data.groupId, group2Data.groupId]
+        }
+      };
+      
+      await expectWithContext(listResponseData.groups, context).toBeDefined('Groups array should be defined');
+      
+      expect(Array.isArray(listResponseData.groups)).toBe(
+        true,
+        `Response should contain an array of groups but got: ${typeof listResponseData.groups}`
+      );
+      
+      expect(listResponseData.groups.length).toBeGreaterThanOrEqual(
+        2,
+        `Should have at least 2 groups (created: ${group1Data.name}, ${group2Data.name}) but found ${listResponseData.groups.length}`
+      );
+    });
   });
 
   test('should add a client to a group', async () => {

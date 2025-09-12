@@ -4,6 +4,7 @@ import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client';
 import { MultiUserAuthManager } from '../../../../support/auth/multi-user-auth-manager';
 import { TestContextManager } from '../../../../../../lib/helpers/test-context-manager';
+import { EnhancedAssertions, testStep, expectWithContext } from '../../../../support/helpers/enhanced-assertions';
 
 describe('Client Management - CRUD with Typed NPM Packages', () => {
   let client: TypedApiClient;
@@ -59,16 +60,44 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     };
 
     // Act - Using the typed client from npm package
-    const response = await client.clientManagement('/api/clients', 'post', {
-      body: clientData
+    const response = await testStep('Create client with typed API', async () => {
+      return await client.clientManagement('/api/clients', 'post', {
+        body: clientData
+      });
+    }, {
+      operation: 'Create Client',
+      endpoint: '/api/clients',
+      entityType: 'client'
     });
 
     // Assert - Response is typed based on OpenAPI schema
-    expect(response).toBeDefined();
-    expect(response.data.clientId).toBeTruthy();
-    expect(response.data.companyName).toBe(clientData.companyName);
-    expect(response.data.address).toBe(clientData.address);
-    expect(response.data.industry).toBe(clientData.industry);
+    await testStep('Verify client creation response', async () => {
+      const context = {
+        operation: 'Client Creation',
+        endpoint: '/api/clients',
+        entityId: response.data.clientId,
+        entityType: 'client',
+        additionalInfo: {
+          companyName: clientData.companyName,
+          iceNumber: clientData.iceNumber
+        }
+      };
+      
+      await expectWithContext(response, context).toBeDefined('Response should be defined');
+      await expectWithContext(response.data.clientId, context).toBeTruthy('Client ID should be generated');
+      await expectWithContext(response.data.companyName, context).toBe(
+        clientData.companyName,
+        `Company name should be '${clientData.companyName}'`
+      );
+      await expectWithContext(response.data.address, context).toBe(
+        clientData.address,
+        `Address should be '${clientData.address}'`
+      );
+      await expectWithContext(response.data.industry, context).toBe(
+        clientData.industry,
+        `Industry should be '${clientData.industry}'`
+      );
+    });
     
     // Track for cleanup
     createdClientIds.push(response.data.clientId);
@@ -91,13 +120,38 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     createdClientIds.push(clientId);
 
     // Act - Get client using typed endpoint
-    const getResponse = await client.clientManagement(`/api/clients/${clientId}` as any, 'get');
+    const getResponse = await testStep('Get client by ID', async () => {
+      return await client.clientManagement(`/api/clients/${clientId}` as any, 'get');
+    }, {
+      operation: 'Get Client',
+      endpoint: `/api/clients/${clientId}`,
+      entityId: clientId,
+      entityType: 'client'
+    });
 
     // Assert
-    expect(getResponse).toBeDefined();
-    expect(getResponse.data.clientId).toBe(clientId);
-    expect(getResponse.data.companyName).toBe(clientData.companyName);
-    expect(getResponse.data.country).toBe(clientData.country);
+    await testStep('Verify client retrieval', async () => {
+      const context = {
+        operation: 'Get Client',
+        endpoint: `/api/clients/${clientId}`,
+        entityId: clientId,
+        entityType: 'client'
+      };
+      
+      await expectWithContext(getResponse, context).toBeDefined('Response should be defined');
+      await expectWithContext(getResponse.data.clientId, context).toBe(
+        clientId,
+        `Client ID should match requested ID '${clientId}'`
+      );
+      await expectWithContext(getResponse.data.companyName, context).toBe(
+        clientData.companyName,
+        `Company name should be '${clientData.companyName}'`
+      );
+      await expectWithContext(getResponse.data.country, context).toBe(
+        clientData.country,
+        `Country should be '${clientData.country}'`
+      );
+    });
   });
 
   test('should update client with typed client', async () => {

@@ -3,6 +3,7 @@ import { test } from '../../../../../support/test-context-fixture';
 import { allure } from 'allure-playwright';
 import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
+import { EnhancedAssertions, testStep, expectWithContext } from '../../../../support/helpers/enhanced-assertions';
 
 describe('Client Management - User-Client Associations', () => {
   let ctx: TestContext;
@@ -55,8 +56,28 @@ describe('Client Management - User-Client Associations', () => {
     );
 
     const assignResponseData = ctx.getData(response);
-    expect(assignResponseData.success).toBe(true);
-    expect(assignResponseData.associationId).toBeTruthy();
+    
+    await testStep('Verify user assignment', async () => {
+      await EnhancedAssertions.assertOperationSuccess(
+        assignResponseData.success,
+        {
+          operation: 'User-Client Assignment',
+          endpoint: `/api/clients/${clientResponseData.clientId}/users/${userResponseData.userId}`,
+          entityType: 'user-client association',
+          additionalInfo: {
+            clientId: clientResponseData.clientId,
+            userId: userResponseData.userId,
+            clientName: clientData.name,
+            userEmail: userData.email
+          }
+        }
+      );
+      
+      await expectWithContext(assignResponseData.associationId, {
+        operation: 'User-Client Assignment',
+        entityType: 'association'
+      }).toBeTruthy('Association ID should be generated');
+    });
   });
 
   test('should remove a user from a client', async () => {
@@ -105,7 +126,23 @@ describe('Client Management - User-Client Associations', () => {
     );
 
     const removeAssociationResponseData = ctx.getData(response);
-    expect(removeAssociationResponseData.success).toBe(true);
+    
+    await testStep('Verify user removal from client', async () => {
+      await EnhancedAssertions.assertOperationSuccess(
+        removeAssociationResponseData.success,
+        {
+          operation: 'User-Client Removal',
+          endpoint: `/api/clients/${removeClientResponseData.clientId}/users/${removeUserResponseData.userId}`,
+          entityType: 'user-client association',
+          additionalInfo: {
+            clientId: removeClientResponseData.clientId,
+            userId: removeUserResponseData.userId,
+            clientName: removeClientData.name,
+            userEmail: removeUserData.email
+          }
+        }
+      );
+    });
   });
 
   test('should get all users assigned to a client', async () => {
