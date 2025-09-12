@@ -1,0 +1,15 @@
+🚀 [6a21088a] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757675742989-qmzwce4li for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [6a21088a] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757675743010-ib6plzi1h for feature: login.api.feature
+📋 Test context set: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts (positive)
+🧪 Test case: should return user information in login response
+🔄 Current step: Test Execution
+🎬 Auto-context: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts :: should return user information in login response
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757675743010-ib6plzi1h","testCase":"should return user information in login response"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: a73f6a65-d31a-44c7-8989-612eacd4de0f | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: a73f6a65-d31a-44c7-8989-612eacd4de0f | Success
+🏁 Clearing test context for session: test-1757675743010-ib6plzi1h

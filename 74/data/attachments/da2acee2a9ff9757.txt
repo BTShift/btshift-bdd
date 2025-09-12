@@ -1,0 +1,44 @@
+🎬 Starting test session: test-1757675700745-slyoodq4w for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should delete client with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should delete client with typed client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757675700745-slyoodq4w","testCase":"should delete client with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 9e08ed4d-ef65-4f06-b2f5-ebc67de0f8c8 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 9e08ed4d-ef65-4f06-b2f5-ebc67de0f8c8 | Success
+🧪 Adding test context to DELETE /api/clients/352ffeb5-b01d-4b2c-8c5a-fbe8a3a354ae
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757675700745-slyoodq4w","testCase":"should delete client with typed client"}
+🔍 [ClientManagement] DELETE /api/clients/352ffeb5-b01d-4b2c-8c5a-fbe8a3a354ae | X-Correlation-ID: fe73bb20-dcc4-46d2-86b7-20e228d568cc | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/352ffeb5-b01d-4b2c-8c5a-fbe8a3a354ae | X-Correlation-ID: fe73bb20-dcc4-46d2-86b7-20e228d568cc | Success
+🧪 Adding test context to GET /api/clients/352ffeb5-b01d-4b2c-8c5a-fbe8a3a354ae
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757675700745-slyoodq4w","testCase":"should delete client with typed client"}
+🔍 [ClientManagement] GET /api/clients/352ffeb5-b01d-4b2c-8c5a-fbe8a3a354ae | X-Correlation-ID: 84a0f68e-91ed-492b-ac41-ab6ee1bfdce3 | Auth: Yes
+🏁 Clearing test context for session: test-1757675700745-slyoodq4w
+🧹 Setting cleanup context for: typed-client-crud.api.feature :: Client Management Test Data Cleanup
+🧪 Adding test context to DELETE /api/clients/b2e127b9-abda-4552-9495-d81ec368a1bd
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"Client Management Test Data Cleanup","currentStep":"Test Cleanup","testIntent":"positive","expectedOutcome":"cleanup_success","testSessionId":"cleanup-1757675701244","testCase":"Data Cleanup"}
+🔍 [ClientManagement] DELETE /api/clients/b2e127b9-abda-4552-9495-d81ec368a1bd | X-Correlation-ID: ef9dcad0-4832-45c6-b6c0-adba6a399667 | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/b2e127b9-abda-4552-9495-d81ec368a1bd | X-Correlation-ID: ef9dcad0-4832-45c6-b6c0-adba6a399667 | Success
+🧹 Cleaned up client: b2e127b9-abda-4552-9495-d81ec368a1bd
+🧪 Adding test context to DELETE /api/clients/505f519a-d5ff-4bee-ae9b-8d575e856e40
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"Client Management Test Data Cleanup","currentStep":"Test Cleanup","testIntent":"positive","expectedOutcome":"cleanup_success","testSessionId":"cleanup-1757675701244","testCase":"Data Cleanup"}
+🔍 [ClientManagement] DELETE /api/clients/505f519a-d5ff-4bee-ae9b-8d575e856e40 | X-Correlation-ID: 4c6d7a0e-57a0-48f3-b877-995ddf9864cb | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/505f519a-d5ff-4bee-ae9b-8d575e856e40 | X-Correlation-ID: 4c6d7a0e-57a0-48f3-b877-995ddf9864cb | Success
+🧹 Cleaned up client: 505f519a-d5ff-4bee-ae9b-8d575e856e40
+🧪 Adding test context to DELETE /api/clients/94693c87-4346-4699-a16a-0e4978a0cd3a
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"Client Management Test Data Cleanup","currentStep":"Test Cleanup","testIntent":"positive","expectedOutcome":"cleanup_success","testSessionId":"cleanup-1757675701244","testCase":"Data Cleanup"}
+🔍 [ClientManagement] DELETE /api/clients/94693c87-4346-4699-a16a-0e4978a0cd3a | X-Correlation-ID: 6838f797-3468-4600-9186-b94e962d2504 | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/94693c87-4346-4699-a16a-0e4978a0cd3a | X-Correlation-ID: 6838f797-3468-4600-9186-b94e962d2504 | Success
+🧹 Cleaned up client: 94693c87-4346-4699-a16a-0e4978a0cd3a
+🧪 Adding test context to DELETE /api/clients/7015a529-3671-4768-ac55-856284e436ad
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"Client Management Test Data Cleanup","currentStep":"Test Cleanup","testIntent":"positive","expectedOutcome":"cleanup_success","testSessionId":"cleanup-1757675701244","testCase":"Data Cleanup"}
+🔍 [ClientManagement] DELETE /api/clients/7015a529-3671-4768-ac55-856284e436ad | X-Correlation-ID: 6530cef7-3927-4498-a273-873c37e190d5 | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/7015a529-3671-4768-ac55-856284e436ad | X-Correlation-ID: 6530cef7-3927-4498-a273-873c37e190d5 | Success
+🧹 Cleaned up client: 7015a529-3671-4768-ac55-856284e436ad
+🧪 Adding test context to DELETE /api/clients/4049d902-4f5f-4bdf-8d95-fd4ce7755624
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"Client Management Test Data Cleanup","currentStep":"Test Cleanup","testIntent":"positive","expectedOutcome":"cleanup_success","testSessionId":"cleanup-1757675701244","testCase":"Data Cleanup"}
+🔍 [ClientManagement] DELETE /api/clients/4049d902-4f5f-4bdf-8d95-fd4ce7755624 | X-Correlation-ID: 8290efa2-11c3-4d98-9a0a-65d5ec016d29 | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/4049d902-4f5f-4bdf-8d95-fd4ce7755624 | X-Correlation-ID: 8290efa2-11c3-4d98-9a0a-65d5ec016d29 | Success
+🧹 Cleaned up client: 4049d902-4f5f-4bdf-8d95-fd4ce7755624
+🏁 Clearing test context for session: null

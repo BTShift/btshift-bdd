@@ -1,0 +1,31 @@
+🚀 [bfbf177b] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757675800033-vkqi3nbr5 for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757675800033-jtwevgfow for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757675800033-cf2362ee for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757675800034] Starting SuperAdmin authentication...
+🔐 [superadmin-1757675800034] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757675800033-jtwevgfow"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 07af0514-cef7-4e9d-a89f-7f1e84a761cd | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 07af0514-cef7-4e9d-a89f-7f1e84a761cd | Success
+✅ [superadmin-1757675800034] SuperAdmin authentication successful
+🕐 [superadmin-1757675800034] Token expires at: 2025-09-12T11:24:40.378Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [bfbf177b] Using SuperAdmin authentication
+🕐 [bfbf177b] Token expires: 11:24:40 AM
+🎬 Starting test session: test-1757675800413-74orvs3w4 for feature: multi-user-example.feature
+📋 Test context set: multi-user-example.feature :: api/features/multi-user-example.spec.ts (positive)
+🧪 Test case: should list all tenants (SuperAdmin only)
+🔄 Current step: Test Execution
+🎬 Auto-context: multi-user-example.feature :: api/features/multi-user-example.spec.ts :: should list all tenants (SuperAdmin only)
+🧪 Adding test context to GET /api/tenants
+🧪 Test context JSON: {"featureFile":"multi-user-example.feature","scenario":"api/features/multi-user-example.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757675800413-74orvs3w4","testCase":"should list all tenants (SuperAdmin only)"}
+🔍 [Tenant] GET /api/tenants | X-Correlation-ID: 8c35f1e4-2d3a-49dc-b254-acd42df08d12 | Auth: Yes
+✅ [Tenant] GET /api/tenants | X-Correlation-ID: 8c35f1e4-2d3a-49dc-b254-acd42df08d12 | Success
+✅ SuperAdmin can see 0 tenants
+🏁 Clearing test context for session: test-1757675800413-74orvs3w4
