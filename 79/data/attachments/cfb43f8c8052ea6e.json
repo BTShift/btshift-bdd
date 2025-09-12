@@ -1,0 +1,15 @@
+{
+  "operation": "Group Deletion",
+  "endpoint": "/api/groups/17e9f12e-9589-4272-b037-d8e2f2284be9",
+  "entityId": "17e9f12e-9589-4272-b037-d8e2f2284be9",
+  "entityType": "group",
+  "additionalInfo": {
+    "response": {
+      "success": false,
+      "message": "Group not found"
+    },
+    "groupName": "TestGroup_1757685967228"
+  },
+  "assertion": "assertOperationSuccess",
+  "failed": true
+}

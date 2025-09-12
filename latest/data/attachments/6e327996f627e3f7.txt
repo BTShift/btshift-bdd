@@ -1,0 +1,14 @@
+🚀 [0b3e5d13] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757686011744-6yrhrkdv7 for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [0b3e5d13] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757686011764-0eakxk5mm for feature: invalid-credentials.api.feature
+📋 Test context set: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts (negative)
+🧪 Test case: should reject refresh token with empty refresh token
+🔄 Current step: Test Execution
+🎬 Auto-context: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts :: should reject refresh token with empty refresh token
+🧪 Adding test context to POST /api/authentication/refresh
+🧪 Test context JSON: {"featureFile":"invalid-credentials.api.feature","scenario":"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757686011764-0eakxk5mm","testCase":"should reject refresh token with empty refresh token"}
+🔍 [Identity] POST /api/authentication/refresh | X-Correlation-ID: 0d7e68cb-92d7-462d-8f80-ceb30dc31558 | Auth: No
+🏁 Clearing test context for session: test-1757686011764-0eakxk5mm

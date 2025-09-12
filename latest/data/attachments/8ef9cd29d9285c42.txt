@@ -1,0 +1,11 @@
+🎬 Starting test session: test-1757686094261-coom1qqqb for feature: multi-user-example.feature
+📋 Test context set: multi-user-example.feature :: api/features/multi-user-example.spec.ts (negative)
+🧪 Test case: should NOT be able to access platform settings
+🔄 Current step: Test Execution
+🎬 Auto-context: multi-user-example.feature :: api/features/multi-user-example.spec.ts :: should NOT be able to access platform settings
+🧪 Adding test context to GET /api/platform/settings
+🧪 Test context JSON: {"featureFile":"multi-user-example.feature","scenario":"api/features/multi-user-example.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757686094261-coom1qqqb","testCase":"should NOT be able to access platform settings"}
+🔍 [Tenant] GET /api/platform/settings | X-Correlation-ID: fec77344-4e25-4e83-88cd-54798ccff660 | Auth: Yes
+🏁 Clearing test context for session: test-1757686094261-coom1qqqb
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: eee36678-c8f8-41b2-bfb5-5dc51846dd67 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: eee36678-c8f8-41b2-bfb5-5dc51846dd67 | Success

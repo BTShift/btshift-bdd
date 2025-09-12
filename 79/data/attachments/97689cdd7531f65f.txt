@@ -1,0 +1,41 @@
+🚀 [7a123866] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757685965098-586vm4rvb for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757685965099-u567gn92r for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757685965099-b8457649 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757685965099] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757685965099] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757685965099] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685965099-u567gn92r"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 43946768-62ec-42e9-91cb-efc3381b4f9f | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 43946768-62ec-42e9-91cb-efc3381b4f9f | Success
+✅ [tenantadmin-1757685965099] TenantAdmin authentication successful
+🕐 [tenantadmin-1757685965099] Token expires at: 2025-09-12T14:14:05.484Z
+🏢 [tenantadmin-1757685965099] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [7a123866] Using TenantAdmin authentication
+🕐 [7a123866] Token expires: 2:14:05 PM
+🏢 [7a123866] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757685965532-joe6c68fd for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should update an existing group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should update an existing group
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685965532-joe6c68fd","testCase":"should update an existing group"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: 42f17047-ac66-4800-928d-c214091f3854 | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: 42f17047-ac66-4800-928d-c214091f3854 | Success
+🧪 Adding test context to PUT /api/groups/ca7ae55a-913b-415d-bdb6-c43d08622a57
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685965532-joe6c68fd","testCase":"should update an existing group"}
+🔍 [ClientManagement] PUT /api/groups/ca7ae55a-913b-415d-bdb6-c43d08622a57 | X-Correlation-ID: 9feff104-8618-4b8e-bdf8-046196c4e19d | Auth: Yes
+🏁 Clearing test context for session: test-1757685965532-joe6c68fd
+🔍 [ClientManagement] DELETE /api/groups/ca7ae55a-913b-415d-bdb6-c43d08622a57 | X-Correlation-ID: a9eca7ed-d568-4a38-9303-31957713ba49 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/ca7ae55a-913b-415d-bdb6-c43d08622a57 | X-Correlation-ID: a9eca7ed-d568-4a38-9303-31957713ba49 | Success
+🧹 Cleaned up group: ca7ae55a-913b-415d-bdb6-c43d08622a57
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 0abfc641-34cf-44ed-a3d1-e92feead506b | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 0abfc641-34cf-44ed-a3d1-e92feead506b | Success

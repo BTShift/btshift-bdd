@@ -1,0 +1,31 @@
+🚀 [6af89b78] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757686106694-2gxspcmih for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757686106695-rfyalw76m for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757686106695-32651ca2 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757686106695] Starting SuperAdmin authentication...
+🔐 [superadmin-1757686106695] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757686106695-rfyalw76m"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: cb78b3ad-8ef4-4267-aed6-ef2752766f6b | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: cb78b3ad-8ef4-4267-aed6-ef2752766f6b | Success
+✅ [superadmin-1757686106695] SuperAdmin authentication successful
+🕐 [superadmin-1757686106695] Token expires at: 2025-09-12T14:16:28.247Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [6af89b78] Using SuperAdmin authentication
+🕐 [6af89b78] Token expires: 2:16:28 PM
+🎬 Starting test session: test-1757686108277-johfrj6wj for feature: duplicate-tenant.api.feature
+📋 Test context set: duplicate-tenant.api.feature :: api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts (negative)
+🧪 Test case: should return 404 when getting tenant by non-existing ID
+🔄 Current step: Test Execution
+🎬 Auto-context: duplicate-tenant.api.feature :: api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts :: should return 404 when getting tenant by non-existing ID
+🧪 Adding test context to GET /api/tenants/00000000-0000-0000-0000-000000000000
+🧪 Test context JSON: {"featureFile":"duplicate-tenant.api.feature","scenario":"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757686108277-johfrj6wj","testCase":"should return 404 when getting tenant by non-existing ID"}
+🔍 [Tenant] GET /api/tenants/00000000-0000-0000-0000-000000000000 | X-Correlation-ID: 08560b7a-bd8f-41da-8415-a9814963af55 | Auth: Yes
+🏁 Clearing test context for session: test-1757686108277-johfrj6wj
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 16c1e788-10a5-4834-853e-c93ea4ff1dc0 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 16c1e788-10a5-4834-853e-c93ea4ff1dc0 | Success

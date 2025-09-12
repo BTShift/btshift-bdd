@@ -1,0 +1,31 @@
+🚀 [94bee8c1] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757686004884-ldwypik0s for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757686004884-76jrkz8jg for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757686004884-4ada892c for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757686004885] Starting SuperAdmin authentication...
+🔐 [superadmin-1757686004885] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757686004884-76jrkz8jg"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: ebbe821f-1a91-4dac-882a-bd185144ea1d | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: ebbe821f-1a91-4dac-882a-bd185144ea1d | Success
+✅ [superadmin-1757686004885] SuperAdmin authentication successful
+🕐 [superadmin-1757686004885] Token expires at: 2025-09-12T14:14:45.870Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [94bee8c1] Using SuperAdmin authentication
+🕐 [94bee8c1] Token expires: 2:14:45 PM
+🎬 Starting test session: test-1757686005899-3i1u2yd7t for feature: audit-operations.api.feature
+📋 Test context set: audit-operations.api.feature :: api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts (positive)
+🧪 Test case: should export audit logs
+🔄 Current step: Test Execution
+🎬 Auto-context: audit-operations.api.feature :: api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts :: should export audit logs
+🧪 Adding test context to POST /api/audit-logs/export
+🧪 Test context JSON: {"featureFile":"audit-operations.api.feature","scenario":"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757686005899-3i1u2yd7t","testCase":"should export audit logs"}
+🔍 [Identity] POST /api/audit-logs/export | X-Correlation-ID: 7aa8fedd-7ffa-4e94-b14e-99887e812b89 | Auth: Yes
+🏁 Clearing test context for session: test-1757686005899-3i1u2yd7t
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 05753876-8f4b-4c02-88de-989c9389a374 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 05753876-8f4b-4c02-88de-989c9389a374 | Success

@@ -1,0 +1,15 @@
+🎬 Starting test session: test-1757686025625-ukawzvn8c for feature: typed-login.api.feature
+📋 Test context set: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts (positive)
+🧪 Test case: should handle change password with typed ctx.client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts :: should handle change password with typed ctx.client
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"typed-login.api.feature","scenario":"api/features/identity/authentication/happy-path/typed-login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757686025625-ukawzvn8c","testCase":"should handle change password with typed ctx.client"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: bfd82307-4a0b-4690-8817-351b81c4be72 | Auth: Yes
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: bfd82307-4a0b-4690-8817-351b81c4be72 | Success
+🧪 Adding test context to POST /api/authentication/change-password
+🧪 Test context JSON: {"featureFile":"typed-login.api.feature","scenario":"api/features/identity/authentication/happy-path/typed-login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757686025625-ukawzvn8c","testCase":"should handle change password with typed ctx.client"}
+🔍 [Identity] POST /api/authentication/change-password | X-Correlation-ID: 1083aeca-6acf-499e-8e96-a495971944ee | Auth: Yes
+🏁 Clearing test context for session: test-1757686025625-ukawzvn8c
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: b8865db1-f56c-4776-a7df-d64c75118e3e | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: b8865db1-f56c-4776-a7df-d64c75118e3e | Success

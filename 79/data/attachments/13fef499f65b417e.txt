@@ -1,0 +1,34 @@
+🚀 [ccbf1f16] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757686029276-t7w6wxvni for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757686029277-8ma0yg453 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757686029277-f4322ae2 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757686029278] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757686029278] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757686029278] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757686029277-8ma0yg453"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 5e05c1ca-194d-420b-968d-6de8e6e6ada9 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 5e05c1ca-194d-420b-968d-6de8e6e6ada9 | Success
+✅ [tenantadmin-1757686029278] TenantAdmin authentication successful
+🕐 [tenantadmin-1757686029278] Token expires at: 2025-09-12T14:15:09.669Z
+🏢 [tenantadmin-1757686029278] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [ccbf1f16] Using TenantAdmin authentication
+🕐 [ccbf1f16] Token expires: 2:15:09 PM
+🏢 [ccbf1f16] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757686029699-de38h6f41 for feature: invitation-operations.api.feature
+📋 Test context set: invitation-operations.api.feature :: api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts (positive)
+🧪 Test case: should get invitation by ID
+🔄 Current step: Test Execution
+🎬 Auto-context: invitation-operations.api.feature :: api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts :: should get invitation by ID
+🧪 Adding test context to POST /api/invitations
+🧪 Test context JSON: {"featureFile":"invitation-operations.api.feature","scenario":"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757686029699-de38h6f41","testCase":"should get invitation by ID"}
+🔍 [Identity] POST /api/invitations | X-Correlation-ID: 882d9c47-5845-491f-b854-8f75dbd293b6 | Auth: Yes
+🏁 Clearing test context for session: test-1757686029699-de38h6f41
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 1917eecd-d112-43e8-88bb-a3d37d43db64 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 1917eecd-d112-43e8-88bb-a3d37d43db64 | Success
