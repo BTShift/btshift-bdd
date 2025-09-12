@@ -44,17 +44,18 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   test('should create client with typed client from @btshift/client-management-types', async () => {
     
     // Arrange
+    const timestamp = Date.now();
     const clientData = {
-      companyName: `Test Client ${Date.now()}`,
+      companyName: `Test Client ${timestamp}`,
       country: 'Morocco',
       address: '123 Test Street, Casablanca',
-      iceNumber: `ICE${Date.now()}`,
-      rcNumber: `RC${Date.now()}`,
-      vatNumber: `VAT${Date.now()}`,
-      cnssNumber: `CNSS${Date.now()}`,
+      iceNumber: timestamp.toString().padStart(15, '0'), // Generate exactly 15 digits for valid ICE number
+      rcNumber: `RC${timestamp}`,
+      vatNumber: `VAT${timestamp}`,
+      cnssNumber: `CNSS${timestamp}`,
       industry: 'Technology',
-      adminContactPerson: `admin-${Date.now()}@test.com`,
-      billingContactPerson: `billing-${Date.now()}@test.com`
+      adminContactPerson: `admin-${timestamp}@test.com`,
+      billingContactPerson: `billing-${timestamp}@test.com`
     };
 
     // Act - Using the typed client from npm package
