@@ -3,7 +3,7 @@
  * Supports both Global Authentication Manager and Multi-User Context Authentication
  */
 
-import { TypedApiClient, ApiResponse } from '../clients/typed-api-client-enhanced';
+import { TypedApiClient, ApiResponse } from '../clients/typed-api-client';
 import { GlobalAuthManager } from '../auth/global-auth-manager';
 import { MultiUserAuthManager, UserContext } from '../auth/multi-user-auth-manager';
 import { TestContextHelper } from '../auth/test-context-helper';
