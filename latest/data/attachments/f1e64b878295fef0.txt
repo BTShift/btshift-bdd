@@ -1,0 +1,1 @@
+❌ [Tenant] GET /api/tenants/00000000-0000-0000-0000-000000000000 | X-Correlation-ID: 4a7be2e6-4e7c-4733-9e16-1f4fe6d522db | Error: API Error: 404 - {"code":5,"message":"Tenant with ID '00000000-0000-0000-0000-000000000000' not found","details":[]}

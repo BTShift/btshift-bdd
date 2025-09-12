@@ -1,0 +1,39 @@
+🚀 [0f9561c2] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757668914763-gk4cbd1h5 for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757668914764-h896ti4c9 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757668914764-ba8e6e1c for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757668914765] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757668914765] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757668914765] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757668914764-h896ti4c9"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: c561b963-ee72-469d-b2d1-e72814919da9 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: c561b963-ee72-469d-b2d1-e72814919da9 | Success
+✅ [tenantadmin-1757668914765] TenantAdmin authentication successful
+🕐 [tenantadmin-1757668914765] Token expires at: 2025-09-12T09:29:55.205Z
+🏢 [tenantadmin-1757668914765] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [0f9561c2] Using TenantAdmin authentication
+🕐 [0f9561c2] Token expires: 9:29:55 AM
+🏢 [0f9561c2] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757668915235-kihsd8iqu for feature: user-client-associations.api.feature
+📋 Test context set: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts (positive)
+🧪 Test case: should get all users assigned to a client
+🔄 Current step: Test Execution
+🎬 Auto-context: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts :: should get all users assigned to a client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757668915235-kihsd8iqu","testCase":"should get all users assigned to a client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 5cfecc40-68a6-4a7e-8c12-954a8909d1a8 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 5cfecc40-68a6-4a7e-8c12-954a8909d1a8 | Success
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757668915235-kihsd8iqu","testCase":"should get all users assigned to a client"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 8104d935-5dca-4b31-b94b-e22653252f4c | Auth: Yes
+🏁 Clearing test context for session: test-1757668915235-kihsd8iqu
+🔍 [ClientManagement] DELETE /api/clients/undefined | X-Correlation-ID: b4e650b6-d260-4faa-9206-502e9e3fe27a | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 53084db0-f135-4194-8c9b-aa7cae0dc0c3 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 53084db0-f135-4194-8c9b-aa7cae0dc0c3 | Success

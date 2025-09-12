@@ -1,0 +1,39 @@
+🚀 [4e5d224a] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757668918245-d8p7glsjk for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757668918245-op9q78lsd for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757668918245-841ac537 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757668918246] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757668918246] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757668918246] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757668918245-op9q78lsd"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 242e8e6a-48b2-47bc-b6c6-cb211f4a982f | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 242e8e6a-48b2-47bc-b6c6-cb211f4a982f | Success
+✅ [tenantadmin-1757668918246] TenantAdmin authentication successful
+🕐 [tenantadmin-1757668918246] Token expires at: 2025-09-12T09:29:58.680Z
+🏢 [tenantadmin-1757668918246] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [4e5d224a] Using TenantAdmin authentication
+🕐 [4e5d224a] Token expires: 9:29:58 AM
+🏢 [4e5d224a] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757668918709-xlgjws1bg for feature: user-client-associations.api.feature
+📋 Test context set: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts (positive)
+🧪 Test case: should handle pagination for user-client associations
+🔄 Current step: Test Execution
+🎬 Auto-context: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts :: should handle pagination for user-client associations
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757668918709-xlgjws1bg","testCase":"should handle pagination for user-client associations"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 588025a6-bf2d-4d12-8d5f-5db71f8e8d0e | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 588025a6-bf2d-4d12-8d5f-5db71f8e8d0e | Success
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757668918709-xlgjws1bg","testCase":"should handle pagination for user-client associations"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 78ee2738-1f31-4ab5-ad8e-6bff87ecea7c | Auth: Yes
+🏁 Clearing test context for session: test-1757668918709-xlgjws1bg
+🔍 [ClientManagement] DELETE /api/clients/undefined | X-Correlation-ID: 113c1d68-f077-42bf-9614-5b8216bdf88f | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 416434e9-d6b0-46ed-ac63-73cb3fc0f0a8 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 416434e9-d6b0-46ed-ac63-73cb3fc0f0a8 | Success
