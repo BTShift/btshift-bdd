@@ -1,0 +1,23 @@
+🎬 Starting test session: test-1757670216242-8gmssabm2 for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should add a client to a group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should add a client to a group
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757670216242-8gmssabm2","testCase":"should add a client to a group"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: 1fffbcf3-bfd9-40fc-b70b-d9964ae364fa | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: 1fffbcf3-bfd9-40fc-b70b-d9964ae364fa | Success
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757670216242-8gmssabm2","testCase":"should add a client to a group"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 9754f599-71d7-47b6-b583-eb99d8af7caa | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 9754f599-71d7-47b6-b583-eb99d8af7caa | Success
+🧪 Adding test context to POST /api/groups/undefined/clients/undefined
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757670216242-8gmssabm2","testCase":"should add a client to a group"}
+🔍 [ClientManagement] POST /api/groups/undefined/clients/undefined | X-Correlation-ID: 8198467c-bfa2-4d06-9912-031316275bac | Auth: Yes
+🏁 Clearing test context for session: test-1757670216242-8gmssabm2
+🔍 [ClientManagement] DELETE /api/groups/undefined | X-Correlation-ID: 2d25ae89-0004-4551-a3f5-56b6cc94dba7 | Auth: Yes
+🔍 [ClientManagement] DELETE /api/groups/undefined | X-Correlation-ID: dc4ef9ea-f73b-4461-939e-48272bd49dc8 | Auth: Yes
+🔍 [ClientManagement] DELETE /api/groups/undefined | X-Correlation-ID: 757cd4bf-e251-4c47-bfab-81c0f4714dd0 | Auth: Yes
+🔍 [ClientManagement] DELETE /api/clients/undefined | X-Correlation-ID: 9c0097fb-57a2-42ca-b16a-79c3dd292870 | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 2abab664-42e1-470c-ba2a-202f33799dcf | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 2abab664-42e1-470c-ba2a-202f33799dcf | Success

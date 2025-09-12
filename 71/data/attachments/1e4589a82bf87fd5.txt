@@ -1,0 +1,30 @@
+🚀 [7bd467eb] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757670298495-vz8kqlas7 for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757670298496-oca7fu4jm for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757670298496-30ad073c for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757670298497] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757670298497] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757670298497] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757670298496-oca7fu4jm"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 5a0ec59d-b522-4fb7-8528-de7b89e5efed | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 5a0ec59d-b522-4fb7-8528-de7b89e5efed | Success
+✅ [tenantadmin-1757670298497] TenantAdmin authentication successful
+🕐 [tenantadmin-1757670298497] Token expires at: 2025-09-12T09:52:58.919Z
+🏢 [tenantadmin-1757670298497] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [7bd467eb] Using TenantAdmin authentication
+🕐 [7bd467eb] Token expires: 9:52:58 AM
+🏢 [7bd467eb] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757670298496-oca7fu4jm"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 4505ddc5-960d-42d4-bceb-24c66462dd36 | Auth: Yes
+🧪 Adding test context to POST /api/authentication/logout
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757670298496-oca7fu4jm"}
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: d35f7127-91c9-4d5a-add4-e978fc5f7078 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: d35f7127-91c9-4d5a-add4-e978fc5f7078 | Success
