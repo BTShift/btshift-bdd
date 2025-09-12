@@ -1,0 +1,32 @@
+🎬 Starting test session: test-1757687546652-9o7dcla39 for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should add a client to a group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should add a client to a group
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757687546652-9o7dcla39","testCase":"should add a client to a group"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: da79b76b-a6f3-4a52-8918-4ca19dbd007c | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: da79b76b-a6f3-4a52-8918-4ca19dbd007c | Success
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757687546652-9o7dcla39","testCase":"should add a client to a group"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: f3764ebd-9f63-474e-9fa2-9b417936e558 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: f3764ebd-9f63-474e-9fa2-9b417936e558 | Success
+🧪 Adding test context to POST /api/groups/e7a3f5c3-5dc3-40b3-a00a-d1ec96e12350/clients/f44cdc69-1038-41f9-97ce-70610ea0dca1
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757687546652-9o7dcla39","testCase":"should add a client to a group"}
+🔍 [ClientManagement] POST /api/groups/e7a3f5c3-5dc3-40b3-a00a-d1ec96e12350/clients/f44cdc69-1038-41f9-97ce-70610ea0dca1 | X-Correlation-ID: 784c526c-5157-4b17-93fc-e5415b858f29 | Auth: Yes
+✅ [ClientManagement] POST /api/groups/e7a3f5c3-5dc3-40b3-a00a-d1ec96e12350/clients/f44cdc69-1038-41f9-97ce-70610ea0dca1 | X-Correlation-ID: 784c526c-5157-4b17-93fc-e5415b858f29 | Success
+🏁 Clearing test context for session: test-1757687546652-9o7dcla39
+🔍 [ClientManagement] DELETE /api/groups/c8a00c73-bb56-416b-a0fb-e2739d56bba8 | X-Correlation-ID: 23a376a1-7b47-4cb0-bd9b-6aaa0bfa6a68 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/c8a00c73-bb56-416b-a0fb-e2739d56bba8 | X-Correlation-ID: 23a376a1-7b47-4cb0-bd9b-6aaa0bfa6a68 | Success
+🧹 Cleaned up group: c8a00c73-bb56-416b-a0fb-e2739d56bba8
+🔍 [ClientManagement] DELETE /api/groups/bc469af8-a4b9-4a61-81cb-793a68f1e75c | X-Correlation-ID: 2e7dc403-9f1d-427a-8cdc-e9f672d5f2db | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/bc469af8-a4b9-4a61-81cb-793a68f1e75c | X-Correlation-ID: 2e7dc403-9f1d-427a-8cdc-e9f672d5f2db | Success
+🧹 Cleaned up group: bc469af8-a4b9-4a61-81cb-793a68f1e75c
+🔍 [ClientManagement] DELETE /api/groups/e7a3f5c3-5dc3-40b3-a00a-d1ec96e12350 | X-Correlation-ID: ea02390f-5c5d-466d-8694-8d211fb17122 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/e7a3f5c3-5dc3-40b3-a00a-d1ec96e12350 | X-Correlation-ID: ea02390f-5c5d-466d-8694-8d211fb17122 | Success
+🧹 Cleaned up group: e7a3f5c3-5dc3-40b3-a00a-d1ec96e12350
+🔍 [ClientManagement] DELETE /api/clients/f44cdc69-1038-41f9-97ce-70610ea0dca1 | X-Correlation-ID: 82303198-e67a-4ad3-852f-25e021e9f1bb | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/f44cdc69-1038-41f9-97ce-70610ea0dca1 | X-Correlation-ID: 82303198-e67a-4ad3-852f-25e021e9f1bb | Success
+🧹 Cleaned up client: f44cdc69-1038-41f9-97ce-70610ea0dca1
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: d64ac992-5b2d-4ada-9fa1-25f48af70755 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: d64ac992-5b2d-4ada-9fa1-25f48af70755 | Success

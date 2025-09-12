@@ -1,0 +1,14 @@
+🎬 Starting test session: test-1757687538676-60o2fiyla for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should update client with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should update client with typed client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757687538676-60o2fiyla","testCase":"should update client with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: f3d5a7e6-521e-4cbd-8524-7c0c743c5c51 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: f3d5a7e6-521e-4cbd-8524-7c0c743c5c51 | Success
+🧪 Adding test context to PUT /api/clients/8e579982-94c5-44b9-86fb-20398e940c3f
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757687538676-60o2fiyla","testCase":"should update client with typed client"}
+🔍 [ClientManagement] PUT /api/clients/8e579982-94c5-44b9-86fb-20398e940c3f | X-Correlation-ID: ebf4990c-3293-47b0-a195-0cef2bce4ad8 | Auth: Yes
+✅ [ClientManagement] PUT /api/clients/8e579982-94c5-44b9-86fb-20398e940c3f | X-Correlation-ID: ebf4990c-3293-47b0-a195-0cef2bce4ad8 | Success
+🏁 Clearing test context for session: test-1757687538676-60o2fiyla
