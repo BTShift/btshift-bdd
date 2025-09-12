@@ -54,7 +54,7 @@ describe('Identity Service - User Management CRUD Operations', () => {
     const createdData = ctx.getData(created);
     ctx.cleanup.addUser(createdData.userId);
 
-    const retrieved = await ctx.client.identity(`/api/users/${createdData.userId}`, 'get');
+    const retrieved = await ctx.client.identity(`/api/users/${createdData.userId}` as any, 'get');
     const retrievedData = ctx.getData(retrieved);
 
     expect(retrievedData.userId).toBe(createdData.userId);
@@ -83,7 +83,7 @@ describe('Identity Service - User Management CRUD Operations', () => {
       phoneNumber: '+212600000001'
     };
 
-    const updated = await ctx.client.identity(`/api/users/${createdData.userId}`, 'put', {
+    const updated = await ctx.client.identity(`/api/users/${createdData.userId}` as any, 'put', {
       body: updatePayload
     });
     const updatedData = ctx.getData(updated);
@@ -107,13 +107,13 @@ describe('Identity Service - User Management CRUD Operations', () => {
     });
 
     const createdData = ctx.getData(created);
-    const deleteResponse = await ctx.client.identity(`/api/users/${createdData.userId}`, 'delete');
+    const deleteResponse = await ctx.client.identity(`/api/users/${createdData.userId}` as any, 'delete');
     const deleteData = ctx.getData(deleteResponse);
     
     expect(deleteData.success).toBe(true);
 
     await expect(
-      ctx.client.identity(`/api/users/${createdData.userId}`, 'get')
+      ctx.client.identity(`/api/users/${createdData.userId}` as any, 'get')
     ).rejects.toMatchObject({
       response: { status: 404 }
     });
@@ -150,7 +150,7 @@ describe('Identity Service - User Management CRUD Operations', () => {
     const response = await ctx.client.identity('/api/users', 'get', {
       params: { 
         query: { 
-          pageNumber: 1,
+          page: 1,
           pageSize: 10
         } 
       }
@@ -212,7 +212,7 @@ describe('Identity Service - User Management CRUD Operations', () => {
     const createdData = ctx.getData(created);
     ctx.cleanup.addUser(createdData.userId);
 
-    const retrieved = await ctx.client.identity(`/api/users/by-email/${encodeURIComponent(userData.email)}`, 'get');
+    const retrieved = await ctx.client.identity(`/api/users/by-email/${encodeURIComponent(userData.email)}` as any, 'get');
     const retrievedData = ctx.getData(retrieved);
 
     expect(retrievedData.userId).toBe(createdData.userId);
@@ -233,11 +233,11 @@ describe('Identity Service - User Management CRUD Operations', () => {
     const createdData = ctx.getData(created);
     ctx.cleanup.addUser(createdData.userId);
 
-    const deactivated = await ctx.client.identity(`/api/users/${createdData.userId}/deactivate`, 'post');
+    const deactivated = await ctx.client.identity(`/api/users/${createdData.userId}/deactivate` as any, 'post');
     const deactivatedData = ctx.getData(deactivated);
     expect(deactivatedData.isActive).toBe(false);
 
-    const reactivated = await ctx.client.identity(`/api/users/${createdData.userId}/activate`, 'post');
+    const reactivated = await ctx.client.identity(`/api/users/${createdData.userId}/activate` as any, 'post');
     const reactivatedData = ctx.getData(reactivated);
     expect(reactivatedData.isActive).toBe(true);
   });
