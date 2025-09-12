@@ -1,1 +1,0 @@
-🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: b23d33a2-8f81-4d1d-8e9c-2ee9956bd173 | Auth: No

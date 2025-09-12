@@ -1,1 +1,0 @@
-❌ [ClientManagement] POST /api/groups | X-Correlation-ID: 22590329-db11-4242-be71-4a44643ba2e0 | Error: HTTP 403: Forbidden

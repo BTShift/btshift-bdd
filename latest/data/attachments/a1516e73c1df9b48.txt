@@ -1,0 +1,39 @@
+🚀 [793c11e8] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757667026860-lv455lrkj for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757667026861-gw20vjdct for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757667026861-91e76ae8 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757667026862] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757667026862] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757667026862] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757667026861-gw20vjdct"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 43faed77-e199-4b5d-98e4-a49f28016cac | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 43faed77-e199-4b5d-98e4-a49f28016cac | Success
+✅ [tenantadmin-1757667026862] TenantAdmin authentication successful
+🕐 [tenantadmin-1757667026862] Token expires at: 2025-09-12T08:58:27.223Z
+🏢 [tenantadmin-1757667026862] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [793c11e8] Using TenantAdmin authentication
+🕐 [793c11e8] Token expires: 8:58:27 AM
+🏢 [793c11e8] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757667027252-xjl8nuqtd for feature: user-client-associations.api.feature
+📋 Test context set: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts (positive)
+🧪 Test case: should track assignment metadata
+🔄 Current step: Test Execution
+🎬 Auto-context: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts :: should track assignment metadata
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757667027252-xjl8nuqtd","testCase":"should track assignment metadata"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: d943b2bb-b2d1-4906-9220-09edeca07830 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: d943b2bb-b2d1-4906-9220-09edeca07830 | Success
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757667027252-xjl8nuqtd","testCase":"should track assignment metadata"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 97766b8d-6048-4f3e-8624-5e20da2dfc81 | Auth: Yes
+🏁 Clearing test context for session: test-1757667027252-xjl8nuqtd
+🔍 [ClientManagement] DELETE /api/clients/undefined | X-Correlation-ID: 9df40c31-4a4d-47b1-9087-61744d4ea716 | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 614df05d-550b-4a53-a576-778a90571055 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 614df05d-550b-4a53-a576-778a90571055 | Success
