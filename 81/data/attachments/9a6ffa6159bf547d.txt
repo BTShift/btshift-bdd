@@ -1,0 +1,151 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/groups
+Correlation ID: 71538222-c11a-4467-b151-284091020857
+Timestamp: 2025-09-12T14:38:05.161Z
+Duration: 118ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "71538222-c11a-4467-b151-284091020857",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687884744-j65ywt7v0\",\"testCase\":\"should list all groups for a tenant\"}"
+}
+
+=== Request Params ===
+{
+  "query": {
+    "tenantId": "test-tenant-123",
+    "page": 1,
+    "pageSize": 10
+  }
+}
+
+=== Query Parameters ===
+{
+  "tenantId": "test-tenant-123",
+  "page": 1,
+  "pageSize": 10
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "groups": [
+    {
+      "groupId": "0c7c1054-04fb-4787-b273-8f4e94a4f1d6",
+      "name": "Basic",
+      "description": "Basic clients with essential service packages",
+      "clientCount": 0
+    },
+    {
+      "groupId": "b08a313c-e120-47a4-a76a-faa19cfe5d8a",
+      "name": "Premium",
+      "description": "Premium clients with comprehensive service packages",
+      "clientCount": 0
+    },
+    {
+      "groupId": "84dc3bcb-e13e-430a-a625-55e6dca0dfd7",
+      "name": "Standard",
+      "description": "Standard clients with regular service packages",
+      "clientCount": 0
+    },
+    {
+      "groupId": "5bc978dd-d68d-403b-ba57-c32004e39db3",
+      "name": "Test Group 1757664389272",
+      "description": "Created by typed API test",
+      "clientCount": 0
+    },
+    {
+      "groupId": "6f85b24e-40d1-421d-b66a-410390c65eca",
+      "name": "Test Group 1757666958346",
+      "description": "Created by typed API test",
+      "clientCount": 0
+    },
+    {
+      "groupId": "63a440cf-6226-4e3e-a3f0-fa71a95d9989",
+      "name": "Test Group 1757667000670",
+      "description": "Created by typed API test",
+      "clientCount": 0
+    },
+    {
+      "groupId": "b8980302-e76c-4770-875c-5275e5e56da9",
+      "name": "Test Group 1757667285669",
+      "description": "Created by typed API test",
+      "clientCount": 0
+    },
+    {
+      "groupId": "23b48cd3-d1e6-4424-b651-db25815aec98",
+      "name": "Test Group 1757672138269",
+      "description": "Created by typed API test",
+      "clientCount": 2
+    },
+    {
+      "groupId": "e2c374f3-a6dd-477d-aa2d-d76641cd197b",
+      "name": "Test Group 1757675699880",
+      "description": "Created by typed API test",
+      "clientCount": 2
+    },
+    {
+      "groupId": "657a7980-ca9b-402c-bd0d-c1c5fb78672e",
+      "name": "Test Group 1757679136999",
+      "description": "Created by typed API test",
+      "clientCount": 2
+    },
+    {
+      "groupId": "9a1b95a9-bd03-4e47-a5a1-b2eb90b48990",
+      "name": "Test Group 1757679985061",
+      "description": "Created by typed API test",
+      "clientCount": 2
+    },
+    {
+      "groupId": "ad68d729-f232-4581-ba93-466a36e9be59",
+      "name": "Test Group 1757680212402",
+      "description": "Created by typed API test",
+      "clientCount": 2
+    },
+    {
+      "groupId": "176e1682-3cf2-4dfa-8885-f3b961bf96f1",
+      "name": "Test Group 1757682643692",
+      "description": "Created by typed API test",
+      "clientCount": 2
+    },
+    {
+      "groupId": "cbebce5a-a2e2-4d56-9a6b-4e11e1338735",
+      "name": "Test Group 1757685601959",
+      "description": "Created by typed API test",
+      "clientCount": 2
+    },
+    {
+      "groupId": "6d85d13e-a21b-4c9e-8aa0-7626a934151d",
+      "name": "Test Group 1757685959517",
+      "description": "Created by typed API test",
+      "clientCount": 2
+    },
+    {
+      "groupId": "182ce84f-3c7a-4855-8a20-f887666e423c",
+      "name": "Test Group 1757687539393",
+      "description": "Created by typed API test",
+      "clientCount": 2
+    },
+    {
+      "groupId": "228fb6af-0cd0-499d-bdfd-50afe5a868a7",
+      "name": "Test Group 1757687877541",
+      "description": "Created by typed API test",
+      "clientCount": 2
+    },
+    {
+      "groupId": "92db5507-471c-4167-b17b-3c631ea810cc",
+      "name": "VIP",
+      "description": "VIP clients with priority support and premium services",
+      "clientCount": 0
+    }
+  ],
+  "totalCount": 18,
+  "page": 1,
+  "pageSize": 20
+}

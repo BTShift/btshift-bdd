@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/groups/d6486c40-83b4-48d1-876c-f891119720e2/clients/b1329163-6b08-4dd8-804a-d0af9db74753
+Correlation ID: 48bc91d5-c947-42fb-bb99-9149f2e24c31
+Timestamp: 2025-09-12T14:38:09.967Z
+Duration: 121ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "48bc91d5-c947-42fb-bb99-9149f2e24c31",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687889511-q6zw2ogl8\",\"testCase\":\"should get all clients in a group\"}"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": false,
+  "message": "Failed to add client to group"
+}

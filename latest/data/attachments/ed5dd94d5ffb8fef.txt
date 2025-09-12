@@ -1,0 +1,35 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/groups
+Correlation ID: 002cbd2f-d474-4be0-8c9f-d2be413dd2b6
+Timestamp: 2025-09-12T14:37:57.541Z
+Duration: 137ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "002cbd2f-d474-4be0-8c9f-d2be413dd2b6",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687877283-t3mada0zv\",\"testCase\":\"should create client group with typed client\"}"
+}
+
+=== Request Body ===
+{
+  "name": "Test Group 1757687877541",
+  "description": "Created by typed API test"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "groupId": "228fb6af-0cd0-499d-bdfd-50afe5a868a7",
+  "name": "Test Group 1757687877541",
+  "description": "Created by typed API test",
+  "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+  "createdAt": "2025-09-12T14:37:57.6088161Z",
+  "updatedAt": "2025-09-12T14:37:57.6088164Z",
+  "clientCount": 0
+}

@@ -1,0 +1,23 @@
+=== API Call Details ===
+Method: DELETE
+Endpoint: /api/groups/771d565f-2c21-420a-b43e-0242ace010d1
+Correlation ID: 1c0029fc-bd17-4d76-bc71-6b0fc5772e4a
+Timestamp: 2025-09-12T14:38:08.028Z
+Duration: 119ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "1c0029fc-bd17-4d76-bc71-6b0fc5772e4a"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": false,
+  "message": "Group not found"
+}

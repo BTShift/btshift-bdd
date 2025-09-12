@@ -1,0 +1,3 @@
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 6e729586-05cf-4914-9c6c-cfd0169a995b | Error: API Error: 400 - {"code":3,"message":"An error occurred during authentication","details":[]}
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 675443b2-42d1-4f87-9d81-4bd67fbecfee | Error: API Error: 400 - {"code":3,"message":"An error occurred during authentication","details":[]}
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 8b509b42-9ca3-45df-a4fd-7553d83f0742 | Error: API Error: 400 - {"code":3,"message":"An error occurred during authentication","details":[]}

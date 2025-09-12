@@ -1,0 +1,14 @@
+🚀 [67388ac6] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757687909381-b9pbqu0mq for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [67388ac6] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757687909401-2is5cv87f for feature: invalid-credentials.api.feature
+📋 Test context set: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts (negative)
+🧪 Test case: should reject login with invalid email
+🔄 Current step: Test Execution
+🎬 Auto-context: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts :: should reject login with invalid email
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"invalid-credentials.api.feature","scenario":"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757687909401-2is5cv87f","testCase":"should reject login with invalid email"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: cd9a8d48-55e4-4838-89fb-2b6f333296ef | Auth: No
+🏁 Clearing test context for session: test-1757687909401-2is5cv87f

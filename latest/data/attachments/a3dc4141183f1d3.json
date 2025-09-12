@@ -1,0 +1,20 @@
+{
+  "endpoint": "/api/groups/29087445-cdb8-4fad-81bd-f1428cfe5b4d",
+  "method": "delete",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "abdcae8b-84dd-4464-8425-bcf941933c04"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": false,
+      "message": "Group not found"
+    },
+    "headers": {}
+  },
+  "correlationId": "abdcae8b-84dd-4464-8425-bcf941933c04",
+  "timestamp": {},
+  "duration": 113
+}

@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: DELETE
+Endpoint: /api/groups/771d565f-2c21-420a-b43e-0242ace010d1/clients/7dd135c4-6fa3-494a-a5fb-08e43eec840b
+Correlation ID: 320b4016-3145-45e9-be94-e6caa9c98339
+Timestamp: 2025-09-12T14:38:07.878Z
+Duration: 120ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "320b4016-3145-45e9-be94-e6caa9c98339",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687887412-8ivy17vrw\",\"testCase\":\"should remove a client from a group\"}"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": false,
+  "message": "Failed to remove client from group"
+}

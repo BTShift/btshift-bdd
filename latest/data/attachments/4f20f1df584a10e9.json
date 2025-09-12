@@ -1,0 +1,21 @@
+{
+  "endpoint": "/api/groups/d6486c40-83b4-48d1-876c-f891119720e2/clients/b1329163-6b08-4dd8-804a-d0af9db74753",
+  "method": "post",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "48bc91d5-c947-42fb-bb99-9149f2e24c31",
+      "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687889511-q6zw2ogl8\",\"testCase\":\"should get all clients in a group\"}"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": false,
+      "message": "Failed to add client to group"
+    },
+    "headers": {}
+  },
+  "correlationId": "48bc91d5-c947-42fb-bb99-9149f2e24c31",
+  "timestamp": {},
+  "duration": 121
+}

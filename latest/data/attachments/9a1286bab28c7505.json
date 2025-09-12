@@ -1,0 +1,21 @@
+{
+  "endpoint": "/api/groups/90b4fa4a-86df-4e1a-9818-8fe912600f17",
+  "method": "delete",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "969df646-06dc-4cc7-a2fe-2723a17314a5",
+      "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687883001-12yld4m82\",\"testCase\":\"should delete a group\"}"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": false,
+      "message": "Group not found"
+    },
+    "headers": {}
+  },
+  "correlationId": "969df646-06dc-4cc7-a2fe-2723a17314a5",
+  "timestamp": {},
+  "duration": 113
+}

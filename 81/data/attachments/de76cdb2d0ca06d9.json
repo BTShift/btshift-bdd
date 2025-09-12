@@ -1,0 +1,101 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-12T14:38:03.478Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "f646809f-e967-43db-b656-3e046b9b5682",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687882489-jqluk62vv\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "f646809f-e967-43db-b656-3e046b9b5682",
+      "timestamp": {},
+      "duration": 472
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "1607c187-fba1-49f4-97e5-323f86cb7bb9",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687883001-12yld4m82\",\"testCase\":\"should delete a group\"}"
+        },
+        "body": {
+          "name": "TestGroup_1757687883001",
+          "description": "Group to be deleted",
+          "tenantId": "test-tenant-123"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "90b4fa4a-86df-4e1a-9818-8fe912600f17",
+          "name": "TestGroup_1757687883001",
+          "description": "Group to be deleted",
+          "tenantId": "test-tenant-123",
+          "createdAt": "2025-09-12T14:38:03.2503561Z",
+          "updatedAt": "2025-09-12T14:38:03.2503565Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "1607c187-fba1-49f4-97e5-323f86cb7bb9",
+      "timestamp": {},
+      "duration": 326
+    },
+    {
+      "endpoint": "/api/groups/90b4fa4a-86df-4e1a-9818-8fe912600f17",
+      "method": "delete",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "969df646-06dc-4cc7-a2fe-2723a17314a5",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687883001-12yld4m82\",\"testCase\":\"should delete a group\"}"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": false,
+          "message": "Group not found"
+        },
+        "headers": {}
+      },
+      "correlationId": "969df646-06dc-4cc7-a2fe-2723a17314a5",
+      "timestamp": {},
+      "duration": 113
+    }
+  ]
+}

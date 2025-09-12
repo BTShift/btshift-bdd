@@ -1,0 +1,45 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: e6bc8134-d057-43b5-9091-f50e9f40cdb3
+Timestamp: 2025-09-12T14:38:44.025Z
+Duration: 284ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "e6bc8134-d057-43b5-9091-f50e9f40cdb3",
+  "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687924024-64ql6q64j\",\"testCase\":\"should handle change password with typed ctx.client\"}"
+}
+
+=== Request Body ===
+{
+  "email": "superadmin@shift.ma",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "tokenInfo": "***MASKED***",
+  "userInfo": {
+    "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+    "email": "superadmin@shift.ma",
+    "firstName": "Super",
+    "lastName": "Administrator",
+    "tenantId": "",
+    "roles": [
+      "SuperAdmin"
+    ],
+    "userType": "TenantUser",
+    "clientId": "",
+    "departmentId": "",
+    "teamId": ""
+  },
+  "requires2fa": false,
+  "sessionToken": "***MASKED***"
+}

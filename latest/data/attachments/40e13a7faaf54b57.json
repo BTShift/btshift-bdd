@@ -1,0 +1,167 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 5,
+  "timestamp": "2025-09-12T14:38:08.027Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "cc13bbad-ebfd-413a-80a0-cd56fde70474",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687886930-kw83a9l5z\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "cc13bbad-ebfd-413a-80a0-cd56fde70474",
+      "timestamp": {},
+      "duration": 443
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "906b43e8-7c47-47da-9c98-66dbdff238a3",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687887412-8ivy17vrw\",\"testCase\":\"should remove a client from a group\"}"
+        },
+        "body": {
+          "name": "TestGroup_1757687887413",
+          "description": "Group for client removal",
+          "tenantId": "test-tenant-123"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "771d565f-2c21-420a-b43e-0242ace010d1",
+          "name": "TestGroup_1757687887413",
+          "description": "Group for client removal",
+          "tenantId": "test-tenant-123",
+          "createdAt": "2025-09-12T14:38:07.5512482Z",
+          "updatedAt": "2025-09-12T14:38:07.5512487Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "906b43e8-7c47-47da-9c98-66dbdff238a3",
+      "timestamp": {},
+      "duration": 217
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "eec52249-febe-45b5-b997-f380aae72fe7",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687887412-8ivy17vrw\",\"testCase\":\"should remove a client from a group\"}"
+        },
+        "body": {
+          "name": "Client 1757687887632-t638kp68q-1",
+          "email": "client-1757687887632-t638kp68q-1@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757687887632-t638kp68q-1",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "7dd135c4-6fa3-494a-a5fb-08e43eec840b",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-12T14:38:07.6896607Z",
+          "updatedAt": "2025-09-12T14:38:07.6896610Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "eec52249-febe-45b5-b997-f380aae72fe7",
+      "timestamp": {},
+      "duration": 119
+    },
+    {
+      "endpoint": "/api/groups/771d565f-2c21-420a-b43e-0242ace010d1/clients/7dd135c4-6fa3-494a-a5fb-08e43eec840b",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "6b560fb3-6110-43af-8aab-36467e7656a1",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687887412-8ivy17vrw\",\"testCase\":\"should remove a client from a group\"}"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": false,
+          "message": "Failed to add client to group"
+        },
+        "headers": {}
+      },
+      "correlationId": "6b560fb3-6110-43af-8aab-36467e7656a1",
+      "timestamp": {},
+      "duration": 123
+    },
+    {
+      "endpoint": "/api/groups/771d565f-2c21-420a-b43e-0242ace010d1/clients/7dd135c4-6fa3-494a-a5fb-08e43eec840b",
+      "method": "delete",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "320b4016-3145-45e9-be94-e6caa9c98339",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687887412-8ivy17vrw\",\"testCase\":\"should remove a client from a group\"}"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": false,
+          "message": "Failed to remove client from group"
+        },
+        "headers": {}
+      },
+      "correlationId": "320b4016-3145-45e9-be94-e6caa9c98339",
+      "timestamp": {},
+      "duration": 120
+    }
+  ]
+}

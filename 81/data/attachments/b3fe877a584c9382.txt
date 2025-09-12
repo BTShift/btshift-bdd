@@ -1,0 +1,36 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/groups
+Correlation ID: 1607c187-fba1-49f4-97e5-323f86cb7bb9
+Timestamp: 2025-09-12T14:38:03.006Z
+Duration: 326ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "1607c187-fba1-49f4-97e5-323f86cb7bb9",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687883001-12yld4m82\",\"testCase\":\"should delete a group\"}"
+}
+
+=== Request Body ===
+{
+  "name": "TestGroup_1757687883001",
+  "description": "Group to be deleted",
+  "tenantId": "test-tenant-123"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "groupId": "90b4fa4a-86df-4e1a-9818-8fe912600f17",
+  "name": "TestGroup_1757687883001",
+  "description": "Group to be deleted",
+  "tenantId": "test-tenant-123",
+  "createdAt": "2025-09-12T14:38:03.2503561Z",
+  "updatedAt": "2025-09-12T14:38:03.2503565Z",
+  "clientCount": 0
+}

@@ -1,0 +1,121 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-12T14:38:21.315Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "82aa1c6b-7d15-44fa-9141-44ed25db53ee",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687900439-7vfz11p1m\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "82aa1c6b-7d15-44fa-9141-44ed25db53ee",
+      "timestamp": {},
+      "duration": 492
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "9067e1fe-9d21-4f06-926b-b37343765b0e",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687900969-oqu4p9vaf\",\"testCase\":\"should handle pagination for user-client associations\"}"
+        },
+        "body": {
+          "name": "Client 1757687900970-xqejhjw6h-1",
+          "email": "client-1757687900970-xqejhjw6h-1@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757687900970-xqejhjw6h-1",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "269ad379-f607-4283-b001-ef867b7276c1",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-12T14:38:21.1013404Z",
+          "updatedAt": "2025-09-12T14:38:21.1013405Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "9067e1fe-9d21-4f06-926b-b37343765b0e",
+      "timestamp": {},
+      "duration": 203
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "8da74e07-7358-4e0e-b75d-3578c2d50e40",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687900969-oqu4p9vaf\",\"testCase\":\"should handle pagination for user-client associations\"}"
+        },
+        "body": {
+          "email": "user-1757687901176-97to8kpjx-2@test.com",
+          "firstName": "Test",
+          "lastName": "User1757687901176-97to8kpjx-2",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "API Error: 403 - ",
+          "stack": "Error: API Error: 403 - \n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/src/client.ts:73:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts:317:20\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "8da74e07-7358-4e0e-b75d-3578c2d50e40",
+      "timestamp": {},
+      "duration": 121
+    }
+  ]
+}

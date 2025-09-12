@@ -1,0 +1,1 @@
+❌ [Identity] GET /api/authentication/me | X-Correlation-ID: 3afa9acf-12b8-4c26-a090-2f10c1328bd1 | Error: API Error: 400 - {"code":3,"message":"An error occurred while retrieving user information","details":[]}

@@ -1,0 +1,25 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/clients/e009ff19-73b0-47c7-91cd-81352a8cfa76/users/test-user-id
+Correlation ID: 42a4910f-f712-4dbc-a7e6-4136153b815c
+Timestamp: 2025-09-12T14:37:58.073Z
+Duration: 134ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "42a4910f-f712-4dbc-a7e6-4136153b815c",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687877949-9gpewb129\",\"testCase\":\"should handle user-client associations with typed client\"}"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": true,
+  "message": "User test-user-id successfully assigned to client e009ff19-73b0-47c7-91cd-81352a8cfa76",
+  "associationId": "b0bcc1cd-6029-4236-8229-f65dbca0a2c2"
+}

@@ -1,0 +1,21 @@
+{
+  "endpoint": "/api/clients/d2e7cca9-a525-4074-a0f3-6d60d097f041",
+  "method": "delete",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "a72fb504-cefc-43d8-862d-263963492253",
+      "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"Client Management Test Data Cleanup\",\"currentStep\":\"Test Cleanup\",\"testIntent\":\"positive\",\"expectedOutcome\":\"cleanup_success\",\"testSessionId\":\"cleanup-1757687878611\",\"testCase\":\"Data Cleanup\"}"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "message": "Client deleted successfully"
+    },
+    "headers": {}
+  },
+  "correlationId": "a72fb504-cefc-43d8-862d-263963492253",
+  "timestamp": {},
+  "duration": 127
+}

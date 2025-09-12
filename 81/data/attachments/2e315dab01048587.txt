@@ -1,0 +1,36 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/groups/d6486c40-83b4-48d1-876c-f891119720e2/clients
+Correlation ID: 6618442f-c12b-468d-9d94-e9c2739d8229
+Timestamp: 2025-09-12T14:38:10.205Z
+Duration: 112ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "6618442f-c12b-468d-9d94-e9c2739d8229",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687889511-q6zw2ogl8\",\"testCase\":\"should get all clients in a group\"}"
+}
+
+=== Request Params ===
+{
+  "query": {
+    "tenantId": "test-tenant-123"
+  }
+}
+
+=== Query Parameters ===
+{
+  "tenantId": "test-tenant-123"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "clients": [],
+  "totalCount": 0
+}

@@ -1,0 +1,46 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/clients
+Correlation ID: f4223179-26fc-4b3a-ac24-9ea3867004a4
+Timestamp: 2025-09-12T14:37:57.413Z
+Duration: 127ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "f4223179-26fc-4b3a-ac24-9ea3867004a4",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757687877283-t3mada0zv\",\"testCase\":\"should create client group with typed client\"}"
+}
+
+=== Request Body ===
+{
+  "companyName": "Group Client 2 1757687877413",
+  "country": "Morocco",
+  "industry": "Finance"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "clientId": "d2e7cca9-a525-4074-a0f3-6d60d097f041",
+  "companyName": "Group Client 2 1757687877413",
+  "country": "Morocco",
+  "address": "",
+  "iceNumber": "",
+  "rcNumber": "",
+  "vatNumber": "",
+  "cnssNumber": "",
+  "industry": "Finance",
+  "adminContactPerson": "",
+  "billingContactPerson": "",
+  "status": "Active",
+  "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+  "fiscalYearEnd": "",
+  "assignedTeamId": "",
+  "createdAt": "2025-09-12T14:37:57.4702218Z",
+  "updatedAt": "2025-09-12T14:37:57.4702220Z"
+}
