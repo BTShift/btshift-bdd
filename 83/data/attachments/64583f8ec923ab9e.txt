@@ -1,0 +1,67 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/tenants
+Correlation ID: 34d45e44-c654-41d6-a3ae-f9d86fc89a28
+Timestamp: 2025-09-12T23:41:09.811Z
+Duration: 755ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "34d45e44-c654-41d6-a3ae-f9d86fc89a28",
+  "X-Test-Context": "{\"featureFile\":\"multi-user-example.feature\",\"scenario\":\"api/features/multi-user-example.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720469810-qv2tv5fcr\",\"testCase\":\"should list all tenants (SuperAdmin only)\"}"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "tenants": [
+    {
+      "id": "a02138dd-4f80-45da-9c82-01887e03e7e4",
+      "name": "nstech4",
+      "companyName": "nstech4",
+      "domain": "nstech4",
+      "status": "Pending",
+      "plan": "Starter",
+      "userCount": 0,
+      "createdAt": "2025-09-04T08:51:16.6520390Z"
+    },
+    {
+      "id": "75c9e775-1ca8-41e5-8801-b6a8e255a8fa",
+      "name": "nstech3",
+      "companyName": "nstech3",
+      "domain": "nstech3",
+      "status": "Failed",
+      "plan": "Starter",
+      "userCount": 0,
+      "createdAt": "2025-09-03T16:35:40.4817330Z"
+    },
+    {
+      "id": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "name": "nstech2",
+      "companyName": "nstech2",
+      "domain": "nstech2",
+      "status": "Active",
+      "plan": "Starter",
+      "userCount": 0,
+      "createdAt": "2025-09-03T15:14:33.7431710Z"
+    },
+    {
+      "id": "645e8102-df5c-4f40-8b59-bc4f4dfd273c",
+      "name": "nstech",
+      "companyName": "nstech SARL",
+      "domain": "nstech",
+      "status": "Active",
+      "plan": "Starter",
+      "userCount": 0,
+      "createdAt": "2025-09-02T12:27:46.3199840Z"
+    }
+  ],
+  "totalCount": 4,
+  "pageNumber": 1,
+  "pageSize": 10
+}

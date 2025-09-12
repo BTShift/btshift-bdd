@@ -1,1 +1,0 @@
-❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 2e49682c-7c93-49b5-b0b3-033a98a5633c | Error: API Error: 400 - {"code":3,"message":"An error occurred during authentication","details":[]}

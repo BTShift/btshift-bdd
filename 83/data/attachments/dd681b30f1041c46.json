@@ -1,0 +1,79 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-12T23:41:34.006Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "a0b8cd6e-de14-48f7-935b-9fd8c5f6eb26",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720493414-43qyma6yh\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "a0b8cd6e-de14-48f7-935b-9fd8c5f6eb26",
+      "timestamp": {},
+      "duration": 342
+    },
+    {
+      "endpoint": "/api/tenants",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "9df3598d-74ed-4906-b263-b949e535c6e7",
+          "X-Test-Context": "{\"featureFile\":\"tenant-creation.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720493794-wvt2hcu8b\",\"testCase\":\"should retrieve the created tenant by ID\"}"
+        },
+        "body": {
+          "companyName": "Test Company 1757720493795-eclfsya9d-1",
+          "tenantName": "tenant-1757720493795-eclfsya9d-1",
+          "domain": "tenant-1757720493795-eclfsya9d-1",
+          "plan": "Professional",
+          "adminEmail": "admin-1757720493795-eclfsya9d-1@test.com",
+          "adminFirstName": "Test",
+          "adminLastName": "Admin",
+          "phoneNumber": "+212612345678",
+          "address": "123 Test Street, Casablanca",
+          "country": "Morocco"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "API Error: 400 - {\"code\":3,\"message\":\"Tenant name is required\",\"details\":[]}",
+          "stack": "Error: API Error: 400 - {\"code\":3,\"message\":\"Tenant name is required\",\"details\":[]}\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/tenant-management-types/src/client.ts:73:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.tenant (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at Function.captureCorrelationOnError (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/helpers/allure-correlation.ts:122:14)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/helpers/api-test-base.ts:79:26\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/helpers/allure-correlation.ts:99:24"
+        }
+      },
+      "correlationId": "9df3598d-74ed-4906-b263-b949e535c6e7",
+      "timestamp": {},
+      "duration": 176
+    }
+  ]
+}

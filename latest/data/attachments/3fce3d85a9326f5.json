@@ -1,0 +1,72 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-12T23:39:38.175Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "569469d0-6e4e-4d15-aa58-f45ac18ba3f8",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720377561-ikp3r5ekt\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "569469d0-6e4e-4d15-aa58-f45ac18ba3f8",
+      "timestamp": {},
+      "duration": 371
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b90b4aed-4da5-43ee-809f-bbd5c5c6921d",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720377971-gw9uqa7yh\",\"testCase\":\"should delete a group\"}"
+        },
+        "body": {
+          "name": "TestGroup_1757720377972",
+          "description": "Group to be deleted"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "HTTP 500: Internal Server Error",
+          "stack": "Error: HTTP 500: Internal Server Error\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/client-management-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.clientManagement (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at created.operation (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/client-management/groups/happy-path/group-operations.api.spec.ts:91:14)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/helpers/enhanced-assertions.ts:213:22"
+        }
+      },
+      "correlationId": "b90b4aed-4da5-43ee-809f-bbd5c5c6921d",
+      "timestamp": {},
+      "duration": 172
+    }
+  ]
+}

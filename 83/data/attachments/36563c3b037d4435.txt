@@ -1,0 +1,26 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: 91cbbef3-7c7b-4bbf-af01-c3525194f0db
+Timestamp: 2025-09-12T23:40:15.385Z
+Duration: 268ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "91cbbef3-7c7b-4bbf-af01-c3525194f0db",
+  "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720415384-kbqq57ccs\",\"testCase\":\"should validate typed error responses\"}"
+}
+
+=== Request Body ===
+{
+  "email": "invalid@example.com",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+
+Error Details:
+{
+  "message": "HTTP 400: Bad Request",
+  "stack": "Error: HTTP 400: Bad Request\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/authentication/happy-path/typed-login.api.spec.ts:115:7\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+}

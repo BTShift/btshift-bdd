@@ -1,0 +1,46 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: a226d8ee-227f-4389-b6b5-8782672686d4
+Timestamp: 2025-09-12T23:40:22.289Z
+Duration: 383ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "a226d8ee-227f-4389-b6b5-8782672686d4",
+  "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720422287-f23x2xw5p\"}"
+}
+
+=== Request Body ===
+{
+  "email": "test.tenantadmin@btshift.ma",
+  "password": "***MASKED***",
+  "portalType": "Tenant"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "tokenInfo": "***MASKED***",
+  "userInfo": {
+    "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+    "email": "test.tenantadmin@btshift.ma",
+    "firstName": "Test",
+    "lastName": "TenantAdmin",
+    "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+    "roles": [
+      "TenantAdmin"
+    ],
+    "userType": "",
+    "clientId": "",
+    "departmentId": "",
+    "teamId": ""
+  },
+  "requires2fa": false,
+  "sessionToken": "***MASKED***"
+}

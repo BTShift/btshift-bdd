@@ -1,1 +1,0 @@
-❌ [ClientManagement] POST /api/groups | X-Correlation-ID: 51b64050-cc70-4178-8505-57d727c0ce28 | Error: HTTP 500: Internal Server Error

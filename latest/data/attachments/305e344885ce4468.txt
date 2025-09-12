@@ -1,0 +1,34 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/clients
+Correlation ID: 21b1c915-5af8-44da-8622-3b5a54c296f5
+Timestamp: 2025-09-12T23:39:24.742Z
+Duration: 395ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "21b1c915-5af8-44da-8622-3b5a54c296f5",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720364734-e4lzhzjw2\",\"testCase\":\"should create client with typed client from @btshift/client-management-types\"}"
+}
+
+=== Request Body ===
+{
+  "companyName": "Test Client 1757720364734",
+  "country": "Morocco",
+  "address": "123 Test Street, Casablanca",
+  "iceNumber": "001757720364734",
+  "rcNumber": "RC1757720364734",
+  "vatNumber": "VAT1757720364734",
+  "cnssNumber": "CNSS1757720364734",
+  "industry": "Technology",
+  "adminContactPerson": "admin-1757720364734@test.com",
+  "billingContactPerson": "billing-1757720364734@test.com"
+}
+
+=== Response ===
+
+Error Details:
+{
+  "message": "HTTP 500: Internal Server Error",
+  "stack": "Error: HTTP 500: Internal Server Error\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/client-management-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.clientManagement (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at response.operation (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts:64:14)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/helpers/enhanced-assertions.ts:213:22"
+}

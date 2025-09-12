@@ -1,0 +1,1 @@
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 5f6820dc-0edd-4c41-a68c-205c7cd79926 | Error: HTTP 400: Bad Request
