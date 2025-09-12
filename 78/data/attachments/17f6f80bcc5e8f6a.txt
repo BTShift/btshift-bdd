@@ -1,0 +1,26 @@
+🎬 Starting test session: test-1757685601289-3ddt6c8h5 for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should create client group with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should create client group with typed client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685601289-3ddt6c8h5","testCase":"should create client group with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: fdd7fc32-8e04-4709-96d1-cfa0bbe26666 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: fdd7fc32-8e04-4709-96d1-cfa0bbe26666 | Success
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685601289-3ddt6c8h5","testCase":"should create client group with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 60a28f72-810a-48ce-9a61-849129a61e26 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 60a28f72-810a-48ce-9a61-849129a61e26 | Success
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685601289-3ddt6c8h5","testCase":"should create client group with typed client"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: 819194c5-4739-46fa-8663-313f62862da7 | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: 819194c5-4739-46fa-8663-313f62862da7 | Success
+🧪 Adding test context to POST /api/groups/cbebce5a-a2e2-4d56-9a6b-4e11e1338735/clients/04c9acd6-d84b-46b0-bae0-144a849fc1d9
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685601289-3ddt6c8h5","testCase":"should create client group with typed client"}
+🔍 [ClientManagement] POST /api/groups/cbebce5a-a2e2-4d56-9a6b-4e11e1338735/clients/04c9acd6-d84b-46b0-bae0-144a849fc1d9 | X-Correlation-ID: 1c66c2ec-65fd-437b-9534-977ac866d26a | Auth: Yes
+✅ [ClientManagement] POST /api/groups/cbebce5a-a2e2-4d56-9a6b-4e11e1338735/clients/04c9acd6-d84b-46b0-bae0-144a849fc1d9 | X-Correlation-ID: 1c66c2ec-65fd-437b-9534-977ac866d26a | Success
+🧪 Adding test context to POST /api/groups/cbebce5a-a2e2-4d56-9a6b-4e11e1338735/clients/6cc9261d-7c61-42d2-8b90-b2a317a084a5
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685601289-3ddt6c8h5","testCase":"should create client group with typed client"}
+🔍 [ClientManagement] POST /api/groups/cbebce5a-a2e2-4d56-9a6b-4e11e1338735/clients/6cc9261d-7c61-42d2-8b90-b2a317a084a5 | X-Correlation-ID: de2eb1b3-825b-4f9f-a8d9-65c810a8fc34 | Auth: Yes
+✅ [ClientManagement] POST /api/groups/cbebce5a-a2e2-4d56-9a6b-4e11e1338735/clients/6cc9261d-7c61-42d2-8b90-b2a317a084a5 | X-Correlation-ID: de2eb1b3-825b-4f9f-a8d9-65c810a8fc34 | Success
+🏁 Clearing test context for session: test-1757685601289-3ddt6c8h5

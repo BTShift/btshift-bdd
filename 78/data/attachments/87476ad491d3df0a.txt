@@ -1,0 +1,42 @@
+🚀 [1c68afd7] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757685608762-2ozfeuq3i for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757685608763-6wnwcnl2s for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757685608763-efa31f8e for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757685608763] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757685608763] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757685608763] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685608763-6wnwcnl2s"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 4f36b1bd-1477-46a1-8796-3d2105be8372 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 4f36b1bd-1477-46a1-8796-3d2105be8372 | Success
+✅ [tenantadmin-1757685608763] TenantAdmin authentication successful
+🕐 [tenantadmin-1757685608763] Token expires at: 2025-09-12T14:08:09.609Z
+🏢 [tenantadmin-1757685608763] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [1c68afd7] Using TenantAdmin authentication
+🕐 [1c68afd7] Token expires: 2:08:09 PM
+🏢 [1c68afd7] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757685609644-r8fjvdimq for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should delete a group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should delete a group
+📍 Step: Create group for deletion
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685609644-r8fjvdimq","testCase":"should delete a group"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: 3339f5c2-1836-4711-a92f-26aaa9850230 | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: 3339f5c2-1836-4711-a92f-26aaa9850230 | Success
+📍 Step: Delete the group
+🧪 Adding test context to DELETE /api/groups/960046c7-9888-4f67-9890-ef10e4d704cb
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685609644-r8fjvdimq","testCase":"should delete a group"}
+🔍 [ClientManagement] DELETE /api/groups/960046c7-9888-4f67-9890-ef10e4d704cb | X-Correlation-ID: 465d2d2b-155a-45ce-9742-63179dc5380a | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/960046c7-9888-4f67-9890-ef10e4d704cb | X-Correlation-ID: 465d2d2b-155a-45ce-9742-63179dc5380a | Success
+📍 Step: Verify deletion response
+🏁 Clearing test context for session: test-1757685609644-r8fjvdimq
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: a8ae9562-277e-4e61-b6ed-83ab8b583a49 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: a8ae9562-277e-4e61-b6ed-83ab8b583a49 | Success

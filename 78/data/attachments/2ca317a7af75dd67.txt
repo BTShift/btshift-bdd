@@ -1,0 +1,15 @@
+❌ Assertion Failed: {
+  "operation": "Group Deletion",
+  "endpoint": "/api/groups/960046c7-9888-4f67-9890-ef10e4d704cb",
+  "entityId": "960046c7-9888-4f67-9890-ef10e4d704cb",
+  "entityType": "group",
+  "additionalInfo": {
+    "response": {
+      "success": false,
+      "message": "Group not found"
+    },
+    "groupName": "TestGroup_1757685609645"
+  },
+  "assertion": "assertOperationSuccess",
+  "failed": true
+}

@@ -1,0 +1,39 @@
+🎬 Starting test session: test-1757685597280-kudr6erjl for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757685597280-373706ec for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757685597281] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757685597281] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757685597281] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685597280-kudr6erjl"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: a94b2044-581f-4317-91ac-60b492d4f36b | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: a94b2044-581f-4317-91ac-60b492d4f36b | Success
+✅ [tenantadmin-1757685597281] TenantAdmin authentication successful
+🕐 [tenantadmin-1757685597281] Token expires at: 2025-09-12T14:07:57.888Z
+🏢 [tenantadmin-1757685597281] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+🎬 Starting test session: test-1757685597903-sd2g4eqpj for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should get client by ID with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should get client by ID with typed client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685597903-sd2g4eqpj","testCase":"should get client by ID with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: b934bacd-53e4-480e-a8c7-cbfd6e34190f | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: b934bacd-53e4-480e-a8c7-cbfd6e34190f | Success
+📍 Step: Get client by ID
+🧪 Adding test context to GET /api/clients/4d596a09-42e4-42d6-b3ad-74d9a1a5f857
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757685597903-sd2g4eqpj","testCase":"should get client by ID with typed client"}
+🔍 [ClientManagement] GET /api/clients/4d596a09-42e4-42d6-b3ad-74d9a1a5f857 | X-Correlation-ID: 64a4d10a-7963-4f1e-9244-5ad63aac788a | Auth: Yes
+✅ [ClientManagement] GET /api/clients/4d596a09-42e4-42d6-b3ad-74d9a1a5f857 | X-Correlation-ID: 64a4d10a-7963-4f1e-9244-5ad63aac788a | Success
+📍 Step: Verify client retrieval
+🏁 Clearing test context for session: test-1757685597903-sd2g4eqpj
+🧹 Setting cleanup context for: typed-client-crud.api.feature :: Client Management Test Data Cleanup
+🧪 Adding test context to DELETE /api/clients/4d596a09-42e4-42d6-b3ad-74d9a1a5f857
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"Client Management Test Data Cleanup","currentStep":"Test Cleanup","testIntent":"positive","expectedOutcome":"cleanup_success","testSessionId":"cleanup-1757685598456","testCase":"Data Cleanup"}
+🔍 [ClientManagement] DELETE /api/clients/4d596a09-42e4-42d6-b3ad-74d9a1a5f857 | X-Correlation-ID: 8face32d-7958-469d-a63c-a2fc360dd2b6 | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/4d596a09-42e4-42d6-b3ad-74d9a1a5f857 | X-Correlation-ID: 8face32d-7958-469d-a63c-a2fc360dd2b6 | Success
+🧹 Cleaned up client: 4d596a09-42e4-42d6-b3ad-74d9a1a5f857
+🏁 Clearing test context for session: null
