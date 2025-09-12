@@ -1,0 +1,1 @@
+❌ [Identity] GET /api/users/current | X-Correlation-ID: c982ea47-b71c-4c5f-80bc-f7f3a9c495e7 | Error: API Error: 403 - 

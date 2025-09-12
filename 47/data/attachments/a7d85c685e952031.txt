@@ -1,3 +1,0 @@
-🔍 [Tenant] GET /api/platform/settings | X-Correlation-ID: 0adb66b5-4c6d-4a75-9041-d9ba34a6edd9 | Auth: Yes
-🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 76dd517f-0bd6-49e6-96be-5c8eb89bea86 | Auth: Yes
-✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 76dd517f-0bd6-49e6-96be-5c8eb89bea86 | Success
