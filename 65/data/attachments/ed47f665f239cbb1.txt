@@ -1,0 +1,1 @@
+❌ [Identity] POST /api/roles | X-Correlation-ID: e7763cb7-7a42-4b8a-908c-b44ba8c03eaa | Error: API Error: 403 - 

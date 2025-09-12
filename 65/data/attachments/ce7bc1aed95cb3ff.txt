@@ -1,0 +1,49 @@
+🚀 [5e3269a1] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757661548942-tpfz6hzfk for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757661548943-oqpq9t3ge for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757661548943-a5c73edb for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757661548943] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757661548943] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757661548943] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757661548943-oqpq9t3ge"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: b5dd836b-2b40-4bec-a923-874885cfdf67 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: b5dd836b-2b40-4bec-a923-874885cfdf67 | Success
+✅ [tenantadmin-1757661548943] TenantAdmin authentication successful
+🕐 [tenantadmin-1757661548943] Token expires at: 2025-09-12T07:27:09.335Z
+🏢 [tenantadmin-1757661548943] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [5e3269a1] Using TenantAdmin authentication
+🕐 [5e3269a1] Token expires: 7:27:09 AM
+🏢 [5e3269a1] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🎬 Starting test session: test-1757661549365-hqsc42q5x for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should get all clients in a group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should get all clients in a group
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757661549365-hqsc42q5x","testCase":"should get all clients in a group"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: c668c1fa-ded9-4e79-a631-05a7ac900e18 | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: c668c1fa-ded9-4e79-a631-05a7ac900e18 | Success
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757661549365-hqsc42q5x","testCase":"should get all clients in a group"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 3e95aff3-2c0b-4558-91d7-dc248e91b929 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 3e95aff3-2c0b-4558-91d7-dc248e91b929 | Success
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757661549365-hqsc42q5x","testCase":"should get all clients in a group"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 092c4b0f-5b91-4353-b1e6-ae668d012510 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 092c4b0f-5b91-4353-b1e6-ae668d012510 | Success
+🧪 Adding test context to POST /api/groups/undefined/clients/undefined
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757661549365-hqsc42q5x","testCase":"should get all clients in a group"}
+🔍 [ClientManagement] POST /api/groups/undefined/clients/undefined | X-Correlation-ID: b194daab-e6c5-4b9d-855f-fbcd8735b77b | Auth: Yes
+🏁 Clearing test context for session: test-1757661549365-hqsc42q5x
+🔍 [ClientManagement] DELETE /api/groups/undefined | X-Correlation-ID: 7b586ae4-beea-4ea5-bc10-23059e76b34b | Auth: Yes
+🔍 [ClientManagement] DELETE /api/clients/undefined | X-Correlation-ID: 5fc3ec87-bdba-4900-8729-8032a54bf0a4 | Auth: Yes
+🔍 [ClientManagement] DELETE /api/clients/undefined | X-Correlation-ID: 18e0f4c7-7ad0-4ca0-9498-4d7fbc151c73 | Auth: Yes
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 7a9a3f60-8e4e-4db2-9b2d-d4e97e2780bb | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 7a9a3f60-8e4e-4db2-9b2d-d4e97e2780bb | Success
