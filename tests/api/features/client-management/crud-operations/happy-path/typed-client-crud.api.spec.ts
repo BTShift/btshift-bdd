@@ -29,7 +29,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     // Cleanup created clients
     for (const clientId of createdClientIds) {
       try {
-        await client.clientManagement(`/api/clients/${clientId}`, 'delete');
+        await client.clientManagement(`/api/clients/${clientId}` as any, 'delete');
         console.log(`🧹 Cleaned up client: ${clientId}`);
       } catch (error) {
         console.warn(`⚠️  Failed to cleanup client ${clientId}:`, error);
@@ -45,26 +45,29 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     
     // Arrange
     const clientData = {
-      name: `Test Client ${Date.now()}`,
-      email: `client-${Date.now()}@test.com`,
-      phone: '+212612345678',
+      companyName: `Test Client ${Date.now()}`,
+      country: 'Morocco',
       address: '123 Test Street, Casablanca',
-      taxId: `TAX${Date.now()}`,
+      iceNumber: `ICE${Date.now()}`,
+      rcNumber: `RC${Date.now()}`,
+      vatNumber: `VAT${Date.now()}`,
+      cnssNumber: `CNSS${Date.now()}`,
       industry: 'Technology',
-      notes: 'Created by typed API test'
+      adminContactPerson: `admin-${Date.now()}@test.com`,
+      billingContactPerson: `billing-${Date.now()}@test.com`
     };
 
     // Act - Using the typed client from npm package
     const response = await client.clientManagement('/api/clients', 'post', {
-      body: clientData
+      body: JSON.stringify(clientData)
     });
 
     // Assert - Response is typed based on OpenAPI schema
     expect(response).toBeDefined();
     expect(response.data.clientId).toBeTruthy();
-    expect(response.data.name).toBe(clientData.name);
-    expect(response.data.email).toBe(clientData.email);
-    expect(response.data.status).toBe('Active');
+    expect(response.data.companyName).toBe(clientData.companyName);
+    expect(response.data.address).toBe(clientData.address);
+    expect(response.data.industry).toBe(clientData.industry);
     
     // Track for cleanup
     createdClientIds.push(response.data.clientId);
@@ -74,38 +77,39 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     
     // Arrange - Create a client first
     const clientData = {
-      name: `Get Test Client ${Date.now()}`,
-      email: `get-client-${Date.now()}@test.com`
+      companyName: `Get Test Client ${Date.now()}`,
+      country: 'Morocco',
+      industry: 'Technology'
     };
     
     const createResponse = await client.clientManagement('/api/clients', 'post', {
-      body: clientData
+      body: JSON.stringify(clientData)
     });
     
     const clientId = createResponse.data.clientId;
     createdClientIds.push(clientId);
 
     // Act - Get client using typed endpoint
-    const getResponse = await client.clientManagement(`/api/clients/${clientId}`, 'get');
+    const getResponse = await client.clientManagement(`/api/clients/${clientId}` as any, 'get');
 
     // Assert
     expect(getResponse).toBeDefined();
     expect(getResponse.data.clientId).toBe(clientId);
-    expect(getResponse.data.name).toBe(clientData.name);
-    expect(getResponse.data.email).toBe(clientData.email);
+    expect(getResponse.data.companyName).toBe(clientData.companyName);
+    expect(getResponse.data.country).toBe(clientData.country);
   });
 
   test('should update client with typed client', async () => {
     
     // Arrange - Create a client
     const originalData = {
-      name: `Update Test Client ${Date.now()}`,
-      email: `update-client-${Date.now()}@test.com`,
-      phone: '+212600000000'
+      companyName: `Update Test Client ${Date.now()}`,
+      country: 'Morocco',
+      industry: 'Technology'
     };
     
     const createResponse = await client.clientManagement('/api/clients', 'post', {
-      body: originalData
+      body: JSON.stringify(originalData)
     });
     
     const clientId = createResponse.data.clientId;
@@ -113,21 +117,21 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Act - Update client
     const updateData = {
-      name: originalData.name + ' Updated',
-      phone: '+212611111111',
-      notes: 'Updated via typed API'
+      companyName: originalData.companyName + ' Updated',
+      industry: 'Finance',
+      country: 'Morocco'
     };
     
-    const updateResponse = await client.clientManagement(`/api/clients/${clientId}`, 'put', {
-      body: updateData
+    const updateResponse = await client.clientManagement(`/api/clients/${clientId}` as any, 'put', {
+      body: JSON.stringify(updateData)
     });
 
     // Assert
     expect(updateResponse).toBeDefined();
     expect(updateResponse.data.clientId).toBe(clientId);
-    expect(updateResponse.data.name).toBe(updateData.name);
-    expect(updateResponse.data.phone).toBe(updateData.phone);
-    expect(updateResponse.data.notes).toBe(updateData.notes);
+    expect(updateResponse.data.companyName).toBe(updateData.companyName);
+    expect(updateResponse.data.industry).toBe(updateData.industry);
+    expect(updateResponse.data.country).toBe(updateData.country);
   });
 
   test('should list clients with typed client', async () => {
@@ -137,7 +141,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       params: {
         query: {
           pageSize: 10,
-          pageNumber: 1
+          page: 1
         }
       }
     });
@@ -147,23 +151,25 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     expect(Array.isArray(response.data.clients)).toBe(true);
     expect(response.data.totalCount).toBeDefined();
     expect(response.data.pageSize).toBeDefined();
-    expect(response.data.pageNumber).toBeDefined();
+    expect(response.data.page).toBeDefined();
   });
 
   test('should create client group with typed client', async () => {
     
     // Arrange - Create clients for the group
     const client1 = await client.clientManagement('/api/clients', 'post', {
-      body: {
-        name: `Group Client 1 ${Date.now()}`,
-        email: `group1-${Date.now()}@test.com`
-      }
+      body: JSON.stringify({
+        companyName: `Group Client 1 ${Date.now()}`,
+        country: 'Morocco',
+        industry: 'Technology'
+      })
     });
     const client2 = await client.clientManagement('/api/clients', 'post', {
-      body: {
-        name: `Group Client 2 ${Date.now()}`,
-        email: `group2-${Date.now()}@test.com`
-      }
+      body: JSON.stringify({
+        companyName: `Group Client 2 ${Date.now()}`,
+        country: 'Morocco',
+        industry: 'Finance'
+      })
     });
     
     createdClientIds.push(client1.data.clientId, client2.data.clientId);
@@ -171,12 +177,11 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     // Act - Create client group
     const groupData = {
       name: `Test Group ${Date.now()}`,
-      description: 'Created by typed API test',
-      clientIds: [client1.data.clientId, client2.data.clientId]
+      description: 'Created by typed API test'
     };
     
     const groupResponse = await client.clientManagement('/api/groups', 'post', {
-      body: groupData
+      body: JSON.stringify(groupData)
     });
 
     // Assert
@@ -184,20 +189,26 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     expect(groupResponse.data.groupId).toBeTruthy();
     expect(groupResponse.data.name).toBe(groupData.name);
     expect(groupResponse.data.description).toBe(groupData.description);
-    expect(Array.isArray(groupResponse.data.clients)).toBe(true);
-    expect(groupResponse.data.clients.length).toBe(2);
+    expect(groupResponse.data.clientCount).toBe(0); // New group starts with 0 clients
+    
+    // Now add clients to the group
+    if (groupResponse.data.groupId) {
+      await client.clientManagement(`/api/groups/${groupResponse.data.groupId}/clients/${client1.data.clientId}` as any, 'post');
+      await client.clientManagement(`/api/groups/${groupResponse.data.groupId}/clients/${client2.data.clientId}` as any, 'post');
+    }
   });
 
   test('should handle user-client associations with typed client', async () => {
     
     // Arrange - Create a client
     const clientData = {
-      name: `Association Test Client ${Date.now()}`,
-      email: `assoc-${Date.now()}@test.com`
+      companyName: `Association Test Client ${Date.now()}`,
+      country: 'Morocco',
+      industry: 'Technology'
     };
     
     const clientResponse = await client.clientManagement('/api/clients', 'post', {
-      body: clientData
+      body: JSON.stringify(clientData)
     });
     
     const clientId = clientResponse.data.clientId;
@@ -207,15 +218,9 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     // For demo purposes, using a placeholder
     const testUserId = 'test-user-id';
 
-    // Act - Create association (this might fail without a real user, but demonstrates the typed API)
+    // Act - Assign user to client (this might fail without a real user, but demonstrates the typed API)
     try {
-      await client.clientManagement('/api/user-client-associations', 'post', {
-        body: {
-          userId: testUserId,
-          clientId: clientId,
-          role: 'Editor'
-        }
-      });
+      await client.clientManagement(`/api/clients/${clientId}/users/${testUserId}` as any, 'post');
     } catch (error: any) {
       // Expected to fail without real user, but demonstrates typed error handling
       expect(error.response).toBeDefined();
@@ -226,23 +231,24 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     
     // Arrange - Create a client to delete
     const clientData = {
-      name: `Delete Test Client ${Date.now()}`,
-      email: `delete-${Date.now()}@test.com`
+      companyName: `Delete Test Client ${Date.now()}`,
+      country: 'Morocco',
+      industry: 'Technology'
     };
     
     const createResponse = await client.clientManagement('/api/clients', 'post', {
-      body: clientData
+      body: JSON.stringify(clientData)
     });
     
     const clientId = createResponse.data.clientId;
 
     // Act - Delete client
-    await client.clientManagement(`/api/clients/${clientId}`, 'delete');
+    await client.clientManagement(`/api/clients/${clientId}` as any, 'delete');
 
     // Assert - Verify deletion by trying to get the client
     try {
-      await client.clientManagement(`/api/clients/${clientId}`, 'get');
-      fail('Should have thrown 404 for deleted client');
+      await client.clientManagement(`/api/clients/${clientId}` as any, 'get');
+      throw new Error('Should have thrown 404 for deleted client');
     } catch (error: any) {
       expect(error.response?.status).toBe(404);
     }
