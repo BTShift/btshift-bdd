@@ -1,0 +1,1 @@
+❌ [ClientManagement] DELETE /api/groups/undefined | X-Correlation-ID: d6669bdb-d4bd-4dc6-8ba4-0fd5db9892f2 | Error: HTTP 500: Internal Server Error

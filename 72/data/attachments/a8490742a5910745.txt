@@ -1,0 +1,14 @@
+🎬 Starting test session: test-1757672138882-srt2lpxh6 for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should handle user-client associations with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should handle user-client associations with typed client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757672138882-srt2lpxh6","testCase":"should handle user-client associations with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: db3af79c-c01e-42af-97a0-453dfe1629e7 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: db3af79c-c01e-42af-97a0-453dfe1629e7 | Success
+🧪 Adding test context to POST /api/clients/0a6e8cec-6698-4df9-a4eb-e61f9b9cb273/users/test-user-id
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757672138882-srt2lpxh6","testCase":"should handle user-client associations with typed client"}
+🔍 [ClientManagement] POST /api/clients/0a6e8cec-6698-4df9-a4eb-e61f9b9cb273/users/test-user-id | X-Correlation-ID: cbe18f25-e410-4017-8765-90a3d7eb50ac | Auth: Yes
+✅ [ClientManagement] POST /api/clients/0a6e8cec-6698-4df9-a4eb-e61f9b9cb273/users/test-user-id | X-Correlation-ID: cbe18f25-e410-4017-8765-90a3d7eb50ac | Success
+🏁 Clearing test context for session: test-1757672138882-srt2lpxh6

@@ -1,1 +1,0 @@
-❌ [ClientManagement] POST /api/clients | X-Correlation-ID: 534e4532-8e0f-47a0-b876-316190aa0a17 | Error: HTTP 400: Bad Request
