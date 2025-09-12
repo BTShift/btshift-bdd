@@ -1,0 +1,2 @@
+❌ [ClientManagement] DELETE /api/groups/undefined | X-Correlation-ID: 53693484-4389-4f40-94cf-9c0c8b4f9324 | Error: HTTP 500: Internal Server Error
+⚠️ Failed to cleanup group undefined

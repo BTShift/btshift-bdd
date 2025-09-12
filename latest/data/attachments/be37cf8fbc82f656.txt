@@ -1,0 +1,12 @@
+🎬 Starting test session: test-1757663563648-1f1eyoswd for feature: audit-operations.api.feature
+📋 Test context set: audit-operations.api.feature :: api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts (positive)
+🧪 Test case: should filter audit logs by action type
+🔄 Current step: Test Execution
+🎬 Auto-context: audit-operations.api.feature :: api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts :: should filter audit logs by action type
+🧪 Adding test context to GET /api/audit-logs
+🧪 Test context JSON: {"featureFile":"audit-operations.api.feature","scenario":"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757663563648-1f1eyoswd","testCase":"should filter audit logs by action type"}
+🔍 [Identity] GET /api/audit-logs | X-Correlation-ID: 2d69fb26-c791-4aa6-b679-8faa1a318be0 | Auth: Yes
+✅ [Identity] GET /api/audit-logs | X-Correlation-ID: 2d69fb26-c791-4aa6-b679-8faa1a318be0 | Success
+🏁 Clearing test context for session: test-1757663563648-1f1eyoswd
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 259b8cf4-38ef-44da-9336-677fab1a8f8a | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 259b8cf4-38ef-44da-9336-677fab1a8f8a | Success

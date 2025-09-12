@@ -1,0 +1,35 @@
+🎬 Starting test session: test-1757663532714-wmak543y0 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757663532714-88cdbb48 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757663532715] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757663532715] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757663532715] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757663532714-wmak543y0"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: bb2811d5-c1bf-44e4-91c5-8ecd6bbec9f5 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: bb2811d5-c1bf-44e4-91c5-8ecd6bbec9f5 | Success
+✅ [tenantadmin-1757663532715] TenantAdmin authentication successful
+🕐 [tenantadmin-1757663532715] Token expires at: 2025-09-12T08:00:13.421Z
+🏢 [tenantadmin-1757663532715] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+🎬 Starting test session: test-1757663533437-64m8291xw for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should create client group with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should create client group with typed client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757663533437-64m8291xw","testCase":"should create client group with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 18ef2f44-dd7b-4337-a9fc-b38e933f4740 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 18ef2f44-dd7b-4337-a9fc-b38e933f4740 | Success
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757663533437-64m8291xw","testCase":"should create client group with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: f032a37f-ad57-439c-9526-2b207bb10e25 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: f032a37f-ad57-439c-9526-2b207bb10e25 | Success
+🧪 Adding test context to POST /api/client-groups
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757663533437-64m8291xw","testCase":"should create client group with typed client"}
+🔍 [ClientManagement] POST /api/client-groups | X-Correlation-ID: 9ef7c50a-e3df-47a1-828f-c6dbebe2141d | Auth: Yes
+🏁 Clearing test context for session: test-1757663533437-64m8291xw
+🔍 [ClientManagement] DELETE /api/clients/undefined | X-Correlation-ID: a966d70b-bd27-45cf-9d9c-eb6db6980c20 | Auth: Yes
+🔍 [ClientManagement] DELETE /api/clients/undefined | X-Correlation-ID: 7b08ae9b-ff33-4810-8bff-e05fed770591 | Auth: Yes

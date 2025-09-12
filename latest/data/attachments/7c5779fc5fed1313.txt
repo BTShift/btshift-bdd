@@ -1,0 +1,26 @@
+🎬 Starting test session: test-1757663531302-m8xrxlwkj for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757663531301-eb66e691 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757663531302] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757663531302] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757663531302] Including tenant context: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757663531302-m8xrxlwkj"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: cb735284-4d45-43be-b2c3-f0a41aec04f8 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: cb735284-4d45-43be-b2c3-f0a41aec04f8 | Success
+✅ [tenantadmin-1757663531302] TenantAdmin authentication successful
+🕐 [tenantadmin-1757663531302] Token expires at: 2025-09-12T08:00:11.822Z
+🏢 [tenantadmin-1757663531302] Tenant ID: aef1fb0d-84fb-412d-97c8-06f7eb7f3846
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+🎬 Starting test session: test-1757663531839-i4lurmppp for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should list clients with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should list clients with typed client
+🧪 Adding test context to GET /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757663531839-i4lurmppp","testCase":"should list clients with typed client"}
+🔍 [ClientManagement] GET /api/clients | X-Correlation-ID: 7a770df1-ceee-43f8-bc2e-ed41da04a562 | Auth: Yes
+✅ [ClientManagement] GET /api/clients | X-Correlation-ID: 7a770df1-ceee-43f8-bc2e-ed41da04a562 | Success
+🏁 Clearing test context for session: test-1757663531839-i4lurmppp
