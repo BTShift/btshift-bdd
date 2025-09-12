@@ -1,0 +1,21 @@
+🎬 Starting test session: test-1757680215980-m4hb8iy2p for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should update an existing group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should update an existing group
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757680215980-m4hb8iy2p","testCase":"should update an existing group"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: 66516b8c-a25f-4087-b202-44c983037fac | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: 66516b8c-a25f-4087-b202-44c983037fac | Success
+🧪 Adding test context to PUT /api/groups/65ab09ed-54ab-4d3d-a99e-bd2b109e9577
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757680215980-m4hb8iy2p","testCase":"should update an existing group"}
+🔍 [ClientManagement] PUT /api/groups/65ab09ed-54ab-4d3d-a99e-bd2b109e9577 | X-Correlation-ID: 99c88845-1108-421c-bfe5-23c488c92161 | Auth: Yes
+🏁 Clearing test context for session: test-1757680215980-m4hb8iy2p
+🔍 [ClientManagement] DELETE /api/groups/8a9acee7-169b-401a-8f9a-02c7f8809251 | X-Correlation-ID: 465b1e4e-853d-4b46-8818-c89baa27a491 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/8a9acee7-169b-401a-8f9a-02c7f8809251 | X-Correlation-ID: 465b1e4e-853d-4b46-8818-c89baa27a491 | Success
+🧹 Cleaned up group: 8a9acee7-169b-401a-8f9a-02c7f8809251
+🔍 [ClientManagement] DELETE /api/groups/65ab09ed-54ab-4d3d-a99e-bd2b109e9577 | X-Correlation-ID: 2a281af6-a300-41d1-bbde-68bcdae1e06e | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/65ab09ed-54ab-4d3d-a99e-bd2b109e9577 | X-Correlation-ID: 2a281af6-a300-41d1-bbde-68bcdae1e06e | Success
+🧹 Cleaned up group: 65ab09ed-54ab-4d3d-a99e-bd2b109e9577
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 35057f1e-03ef-4679-8c7a-62533f6462e2 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 35057f1e-03ef-4679-8c7a-62533f6462e2 | Success
