@@ -22,8 +22,7 @@ describe('Identity Service - Invitation Operations', () => {
       email: `invitee${Date.now()}@example.com`,
       firstName: 'John',
       lastName: 'Doe',
-      role: 'User',
-      tenantId: 'test-tenant-id'
+      role: 'User'
     };
 
     const response = await ctx.client.identity('/api/invitations', 'post', {

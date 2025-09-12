@@ -196,14 +196,11 @@ export class TypedApiClient {
   }
 
   // Helper method to login and set token automatically
-  async login(email: string, password: string, tenantId?: string, portalType?: string): Promise<ApiResponse> {
-    // Build login body with optional tenant context
+  async login(email: string, password: string, portalType?: string): Promise<ApiResponse> {
+    // Build login body - tenant context extracted from JWT automatically
     const loginBody: any = { email, password };
     
-    // Add tenant context if provided
-    if (tenantId) {
-      loginBody.tenantId = tenantId;
-    }
+    // Add portal type if provided
     if (portalType) {
       loginBody.portalType = portalType;
     }

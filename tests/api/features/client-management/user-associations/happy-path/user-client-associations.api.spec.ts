@@ -7,7 +7,6 @@ import { EnhancedAssertions, testStep, expectWithContext } from '../../../../sup
 
 describe('Client Management - User-Client Associations', () => {
   let ctx: TestContext;
-  let testTenantId: string = 'test-tenant-123';
 
   beforeAll(async () => {
     allure.parentSuite('👥 Client Services');
@@ -49,7 +48,6 @@ describe('Client Management - User-Client Associations', () => {
       'post',
       {
         body: {
-          tenantId: testTenantId,
           assignedBy: 'admin-user-id'
         }
       }
@@ -108,7 +106,6 @@ describe('Client Management - User-Client Associations', () => {
       'post',
       {
         body: {
-          tenantId: testTenantId,
           assignedBy: 'admin-user-id'
         }
       }
@@ -119,9 +116,7 @@ describe('Client Management - User-Client Associations', () => {
       `/api/clients/${removeClientResponseData.clientId}/users/${removeUserResponseData.userId}` as any,
       'delete',
       {
-        body: {
-          tenantId: testTenantId
-        }
+        body: {}
       }
     );
 
@@ -187,7 +182,6 @@ describe('Client Management - User-Client Associations', () => {
       'post',
       {
         body: {
-          tenantId: testTenantId,
           assignedBy: 'admin-user-id'
         }
       }
@@ -198,7 +192,6 @@ describe('Client Management - User-Client Associations', () => {
       'post',
       {
         body: {
-          tenantId: testTenantId,
           assignedBy: 'admin-user-id'
         }
       }
@@ -211,7 +204,6 @@ describe('Client Management - User-Client Associations', () => {
       {
         params: {
           query: {
-            tenantId: testTenantId,
             page: 1,
             pageSize: 10
           }
@@ -262,7 +254,6 @@ describe('Client Management - User-Client Associations', () => {
       'post',
       {
         body: {
-          tenantId: testTenantId,
           assignedBy: 'admin-user-id'
         }
       }
@@ -273,7 +264,6 @@ describe('Client Management - User-Client Associations', () => {
       'post',
       {
         body: {
-          tenantId: testTenantId,
           assignedBy: 'admin-user-id'
         }
       }
@@ -286,7 +276,6 @@ describe('Client Management - User-Client Associations', () => {
       {
         params: {
           query: {
-            tenantId: testTenantId,
             page: 1,
             pageSize: 10
           }
@@ -347,7 +336,6 @@ describe('Client Management - User-Client Associations', () => {
       {
         params: {
           query: {
-            tenantId: testTenantId,
             page: 1,
             pageSize: 3
           }
@@ -368,7 +356,6 @@ describe('Client Management - User-Client Associations', () => {
       {
         params: {
           query: {
-            tenantId: testTenantId,
             page: 2,
             pageSize: 3
           }
@@ -410,7 +397,6 @@ describe('Client Management - User-Client Associations', () => {
       'post',
       {
         body: {
-          tenantId: testTenantId,
           assignedBy: assignedBy
         }
       }
@@ -422,9 +408,7 @@ describe('Client Management - User-Client Associations', () => {
       'get',
       {
         params: {
-          query: {
-            tenantId: testTenantId
-          }
+          query: {}
         }
       }
     );
