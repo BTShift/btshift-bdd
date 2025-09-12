@@ -100,6 +100,27 @@ export class TestContextManager {
   }
 
   /**
+   * Set cleanup context for afterAll hooks
+   * This ensures cleanup operations are properly logged with context
+   */
+  setCleanupContext(featureFile: string, scenario: string): void {
+    // Preserve or create a session ID for cleanup
+    const sessionId = this.testSessionId || `cleanup-${Date.now()}`;
+    
+    this.currentContext = {
+      featureFile,
+      scenario,
+      currentStep: 'Test Cleanup',
+      testIntent: 'positive' as const,  // Cleanup is always positive intent
+      expectedOutcome: 'cleanup_success',
+      testSessionId: sessionId,
+      testCase: 'Data Cleanup'
+    };
+    
+    console.log(`🧹 Setting cleanup context for: ${featureFile} :: ${scenario}`);
+  }
+
+  /**
    * Clear the current context (called in After hook)
    */
   clearContext(): void {

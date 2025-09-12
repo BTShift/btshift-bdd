@@ -3,6 +3,7 @@ import { test } from '../../../../../support/test-context-fixture';
 import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client';
 import { MultiUserAuthManager } from '../../../../support/auth/multi-user-auth-manager';
+import { TestContextManager } from '../../../../../../lib/helpers/test-context-manager';
 
 describe('Client Management - CRUD with Typed NPM Packages', () => {
   let client: TypedApiClient;
@@ -18,6 +19,13 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
   });
 
   afterAll(async () => {
+    // Set cleanup context for proper BDD correlation
+    const testContextManager = TestContextManager.getInstance();
+    testContextManager.setCleanupContext(
+      'typed-client-crud.api.feature',
+      'Client Management Test Data Cleanup'
+    );
+    
     // Cleanup created clients
     for (const clientId of createdClientIds) {
       try {
@@ -27,6 +35,9 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
         console.warn(`⚠️  Failed to cleanup client ${clientId}:`, error);
       }
     }
+    
+    // Clear the cleanup context
+    testContextManager.clearContext();
     // No logout needed - let the token expire naturally
   });
 
@@ -50,13 +61,13 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Assert - Response is typed based on OpenAPI schema
     expect(response).toBeDefined();
-    expect(response.data.id).toBeTruthy();
+    expect(response.data.clientId).toBeTruthy();
     expect(response.data.name).toBe(clientData.name);
     expect(response.data.email).toBe(clientData.email);
     expect(response.data.status).toBe('Active');
     
     // Track for cleanup
-    createdClientIds.push(response.data.id);
+    createdClientIds.push(response.data.clientId);
   });
 
   test('should get client by ID with typed client', async () => {
@@ -71,7 +82,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       body: clientData
     });
     
-    const clientId = createResponse.data.id;
+    const clientId = createResponse.data.clientId;
     createdClientIds.push(clientId);
 
     // Act - Get client using typed endpoint
@@ -79,7 +90,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Assert
     expect(getResponse).toBeDefined();
-    expect(getResponse.data.id).toBe(clientId);
+    expect(getResponse.data.clientId).toBe(clientId);
     expect(getResponse.data.name).toBe(clientData.name);
     expect(getResponse.data.email).toBe(clientData.email);
   });
@@ -97,7 +108,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       body: originalData
     });
     
-    const clientId = createResponse.data.id;
+    const clientId = createResponse.data.clientId;
     createdClientIds.push(clientId);
 
     // Act - Update client
@@ -113,7 +124,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Assert
     expect(updateResponse).toBeDefined();
-    expect(updateResponse.data.id).toBe(clientId);
+    expect(updateResponse.data.clientId).toBe(clientId);
     expect(updateResponse.data.name).toBe(updateData.name);
     expect(updateResponse.data.phone).toBe(updateData.phone);
     expect(updateResponse.data.notes).toBe(updateData.notes);
@@ -155,13 +166,13 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       }
     });
     
-    createdClientIds.push(client1.data.id, client2.data.id);
+    createdClientIds.push(client1.data.clientId, client2.data.clientId);
 
     // Act - Create client group
     const groupData = {
       name: `Test Group ${Date.now()}`,
       description: 'Created by typed API test',
-      clientIds: [client1.data.id, client2.data.id]
+      clientIds: [client1.data.clientId, client2.data.clientId]
     };
     
     const groupResponse = await client.clientManagement('/api/groups', 'post', {
@@ -170,7 +181,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Assert
     expect(groupResponse).toBeDefined();
-    expect(groupResponse.data.id).toBeTruthy();
+    expect(groupResponse.data.groupId).toBeTruthy();
     expect(groupResponse.data.name).toBe(groupData.name);
     expect(groupResponse.data.description).toBe(groupData.description);
     expect(Array.isArray(groupResponse.data.clients)).toBe(true);
@@ -189,7 +200,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       body: clientData
     });
     
-    const clientId = clientResponse.data.id;
+    const clientId = clientResponse.data.clientId;
     createdClientIds.push(clientId);
 
     // Note: In a real test, you'd have a test user ID
@@ -223,7 +234,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       body: clientData
     });
     
-    const clientId = createResponse.data.id;
+    const clientId = createResponse.data.clientId;
 
     // Act - Delete client
     await client.clientManagement(`/api/clients/${clientId}`, 'delete');
