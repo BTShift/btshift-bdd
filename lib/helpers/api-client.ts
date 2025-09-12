@@ -109,7 +109,7 @@ export class ApiClient {
   }
 
   async createClientGroup(groupData: any): Promise<any> {
-    const response = await this.client.post('/api/client-groups', groupData);
+    const response = await this.client.post('/api/groups', groupData);
     return response.data;
   }
 

@@ -107,7 +107,7 @@ export class ClientManagementClient extends BaseApiClient {
   async createClientGroup(request: CreateClientGroupRequest): Promise<ClientGroupResponse> {
     const response = await this.request<ClientGroupResponse>({
       method: 'POST',
-      url: '/api/client-groups',
+      url: '/api/groups',
       data: request,
     });
     return response.data;
@@ -116,7 +116,7 @@ export class ClientManagementClient extends BaseApiClient {
   async getClientGroup(groupId: string): Promise<ClientGroupResponse> {
     const response = await this.request<ClientGroupResponse>({
       method: 'GET',
-      url: `/api/client-groups/${groupId}`,
+      url: `/api/groups/${groupId}`,
     });
     return response.data;
   }

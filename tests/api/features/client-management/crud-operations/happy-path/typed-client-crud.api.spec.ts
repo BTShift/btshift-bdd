@@ -164,7 +164,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
       clientIds: [client1.data.id, client2.data.id]
     };
     
-    const groupResponse = await client.clientManagement('/api/client-groups', 'post', {
+    const groupResponse = await client.clientManagement('/api/groups', 'post', {
       body: groupData
     });
 
