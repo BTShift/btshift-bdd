@@ -21,7 +21,6 @@ interface AuthTokenInfo {
 interface UserCredentials {
   email: string;
   password: string;
-  tenantId?: string;
 }
 
 export class MultiUserAuthManager {
@@ -112,14 +111,13 @@ export class MultiUserAuthManager {
       
       console.log(`🔐 [${sessionId}] Logging in as: ${credentials.email}`);
       
-      // Pass tenant context for TenantAdmin users
+      // Tenant context is now extracted from JWT automatically - no tenant_id needed
       let loginResponse: any;
-      if (context === 'TenantAdmin' && credentials.tenantId) {
-        console.log(`🏢 [${sessionId}] Including tenant context: ${credentials.tenantId}`);
+      if (context === 'TenantAdmin') {
+        console.log(`🏢 [${sessionId}] Tenant context will be extracted from email domain automatically`);
         loginResponse = await client.login(
           credentials.email, 
           credentials.password,
-          credentials.tenantId,
           'Tenant'  // Specify Tenant portal for tenant users
         );
       } else {
@@ -149,8 +147,8 @@ export class MultiUserAuthManager {
       console.log(`🕐 [${sessionId}] Token expires at: ${expiresAt.toISOString()}`);
       
       // Log tenant context if applicable
-      if (context === 'TenantAdmin' && credentials.tenantId) {
-        console.log(`🏢 [${sessionId}] Tenant ID: ${credentials.tenantId}`);
+      if (context === 'TenantAdmin') {
+        console.log(`🏢 [${sessionId}] Tenant context derived from JWT token automatically`);
       }
       
     } catch (error) {
@@ -173,8 +171,7 @@ export class MultiUserAuthManager {
       case 'TenantAdmin':
         return {
           email: process.env.TENANT_ADMIN_EMAIL || 'test.tenantadmin@btshift.ma',
-          password: process.env.TENANT_ADMIN_PASSWORD || 'SuperAdmin@123!',
-          tenantId: process.env.TENANT_ID || 'aef1fb0d-84fb-412d-97c8-06f7eb7f3846'
+          password: process.env.TENANT_ADMIN_PASSWORD || 'SuperAdmin@123!'
         };
       
       default:
@@ -216,9 +213,16 @@ export class MultiUserAuthManager {
   }
 
   /**
-   * Get tenant ID for current tenant admin
+   * Get tenant context info for logging (actual tenant ID is extracted from JWT by backend)
+   * This method is kept for backward compatibility with existing test code
    */
   getTenantId(): string {
-    return process.env.TENANT_ID || 'aef1fb0d-84fb-412d-97c8-06f7eb7f3846';
+    // Note: Tenant ID is no longer sent in requests - it's extracted from JWT
+    // This returns a placeholder for logging purposes only
+    const tenantAuth = this.authTokens.get('TenantAdmin');
+    if (tenantAuth) {
+      return `tenant-from-jwt-${tenantAuth.userEmail.split('@')[0]}`;
+    }
+    return 'tenant-from-jwt-default';
   }
 }

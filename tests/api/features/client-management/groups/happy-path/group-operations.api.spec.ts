@@ -7,7 +7,6 @@ import { EnhancedAssertions, testStep, expectWithContext } from '../../../../sup
 
 describe('Client Management - Group Operations', () => {
   let ctx: TestContext;
-  let testTenantId: string = 'test-tenant-123';
 
   beforeAll(async () => {
     allure.parentSuite('👥 Client Services');
@@ -23,8 +22,7 @@ describe('Client Management - Group Operations', () => {
   test('should create a new client group', async () => {
     const groupData = {
       name: `TestGroup_${Date.now()}`,
-      description: 'Test group for API testing',
-      tenantId: testTenantId
+      description: 'Test group for API testing'
     };
 
     const response = await testStep('Create new client group', async () => {
@@ -58,8 +56,7 @@ describe('Client Management - Group Operations', () => {
   test('should update an existing group', async () => {
     const groupData = {
       name: `TestGroup_${Date.now()}`,
-      description: 'Original description',
-      tenantId: testTenantId
+      description: 'Original description'
     };
 
     const created = await ctx.client.clientManagement('/api/groups', 'post', {
@@ -86,8 +83,7 @@ describe('Client Management - Group Operations', () => {
   test('should delete a group', async () => {
     const groupData = {
       name: `TestGroup_${Date.now()}`,
-      description: 'Group to be deleted',
-      tenantId: testTenantId
+      description: 'Group to be deleted'
     };
 
     // Step 1: Create group to be deleted
@@ -162,8 +158,7 @@ describe('Client Management - Group Operations', () => {
     const group1 = await ctx.client.clientManagement('/api/groups', 'post', {
       body: {
         name: `TestGroup1_${Date.now()}`,
-        description: 'First test group',
-        tenantId: testTenantId
+        description: 'First test group'
       }
     });
     const group1Data = ctx.getData(group1);
@@ -172,8 +167,7 @@ describe('Client Management - Group Operations', () => {
     const group2 = await ctx.client.clientManagement('/api/groups', 'post', {
       body: {
         name: `TestGroup2_${Date.now()}`,
-        description: 'Second test group',
-        tenantId: testTenantId
+        description: 'Second test group'
       }
     });
     const group2Data = ctx.getData(group2);
@@ -183,7 +177,6 @@ describe('Client Management - Group Operations', () => {
       return await ctx.client.clientManagement('/api/groups', 'get', {
         params: {
           query: {
-            tenantId: testTenantId,
             page: 1,
             pageSize: 10
           }
@@ -203,7 +196,6 @@ describe('Client Management - Group Operations', () => {
         endpoint: '/api/groups',
         entityType: 'groups',
         additionalInfo: {
-          tenantId: testTenantId,
           createdGroups: [group1Data.groupId, group2Data.groupId]
         }
       };
@@ -227,8 +219,7 @@ describe('Client Management - Group Operations', () => {
     const group = await ctx.client.clientManagement('/api/groups', 'post', {
       body: {
         name: `TestGroup_${Date.now()}`,
-        description: 'Group for client association',
-        tenantId: testTenantId
+        description: 'Group for client association'
       }
     });
     const groupData = ctx.getData(group);
@@ -257,8 +248,7 @@ describe('Client Management - Group Operations', () => {
     const group = await ctx.client.clientManagement('/api/groups', 'post', {
       body: {
         name: `TestGroup_${Date.now()}`,
-        description: 'Group for client removal',
-        tenantId: testTenantId
+        description: 'Group for client removal'
       }
     });
     const removeGroupData = ctx.getData(group);
@@ -292,8 +282,7 @@ describe('Client Management - Group Operations', () => {
     const group = await ctx.client.clientManagement('/api/groups', 'post', {
       body: {
         name: `TestGroup_${Date.now()}`,
-        description: 'Group for client listing',
-        tenantId: testTenantId
+        description: 'Group for client listing'
       }
     });
     const listGroupData = ctx.getData(group);
@@ -329,9 +318,7 @@ describe('Client Management - Group Operations', () => {
       'get',
       {
         params: {
-          query: {
-            tenantId: testTenantId
-          }
+          query: {}
         }
       }
     );
@@ -355,8 +342,7 @@ describe('Client Management - Group Operations', () => {
     const group1 = await ctx.client.clientManagement('/api/groups', 'post', {
       body: {
         name: `TestGroup1_${Date.now()}`,
-        description: 'First group',
-        tenantId: testTenantId
+        description: 'First group'
       }
     });
     const clientGroup1Data = ctx.getData(group1);
@@ -365,8 +351,7 @@ describe('Client Management - Group Operations', () => {
     const group2 = await ctx.client.clientManagement('/api/groups', 'post', {
       body: {
         name: `TestGroup2_${Date.now()}`,
-        description: 'Second group',
-        tenantId: testTenantId
+        description: 'Second group'
       }
     });
     const clientGroup2Data = ctx.getData(group2);
@@ -387,9 +372,7 @@ describe('Client Management - Group Operations', () => {
       'get',
       {
         params: {
-          query: {
-            tenantId: testTenantId
-          }
+          query: {}
         }
       }
     );
