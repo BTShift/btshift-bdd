@@ -1,0 +1,20 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/platform/settings
+Correlation ID: c0eebd66-f5e1-4463-bbbf-65f4dc62d2d0
+Timestamp: 2025-09-12T23:34:45.881Z
+Duration: 97ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "c0eebd66-f5e1-4463-bbbf-65f4dc62d2d0",
+  "X-Test-Context": "{\"featureFile\":\"multi-user-example.feature\",\"scenario\":\"api/features/multi-user-example.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720085881-pvatuwzeg\",\"testCase\":\"should access platform settings (SuperAdmin only)\"}"
+}
+
+=== Response ===
+
+Error Details:
+{
+  "message": "API Error: 404 - ",
+  "stack": "Error: API Error: 404 - \n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/tenant-management-types/src/client.ts:73:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.tenant (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/multi-user-example.spec.ts:41:24\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+}

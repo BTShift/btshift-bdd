@@ -1,0 +1,135 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 4,
+  "timestamp": "2025-09-12T23:33:55.267Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "05df0109-f942-4294-8b3a-6cdb889a0f38",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720034377-k81x4q9bd\",\"testCase\":\"should refresh token with typed ctx.client\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "05df0109-f942-4294-8b3a-6cdb889a0f38",
+      "timestamp": {},
+      "duration": 318
+    },
+    {
+      "endpoint": "/api/authentication/refresh",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "d87fd831-3550-4ab0-b7c7-70bd14ea2bad",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720034377-k81x4q9bd\",\"testCase\":\"should refresh token with typed ctx.client\"}"
+        },
+        "body": {
+          "refreshToken": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "d87fd831-3550-4ab0-b7c7-70bd14ea2bad",
+      "timestamp": {},
+      "duration": 157
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "abeb51af-4625-49bd-b4d2-ad46fb8701f7",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720034887-aihdbsc10\",\"testCase\":\"should handle change password with typed ctx.client\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "abeb51af-4625-49bd-b4d2-ad46fb8701f7",
+      "timestamp": {},
+      "duration": 244
+    },
+    {
+      "endpoint": "/api/authentication/change-password",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "ba999154-83b8-4613-90fd-1b6a211b431f",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720034887-aihdbsc10\",\"testCase\":\"should handle change password with typed ctx.client\"}"
+        },
+        "body": {
+          "currentPassword": "***MASKED***",
+          "newPassword": "***MASKED***",
+          "confirmPassword": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "API Error: 400 - {\"code\":3,\"message\":\"An error occurred while changing password\",\"details\":[]}",
+          "stack": "Error: API Error: 400 - {\"code\":3,\"message\":\"An error occurred while changing password\",\"details\":[]}\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/src/client.ts:73:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/authentication/happy-path/typed-login.api.spec.ts:98:7\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "ba999154-83b8-4613-90fd-1b6a211b431f",
+      "timestamp": {},
+      "duration": 106
+    }
+  ]
+}

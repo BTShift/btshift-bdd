@@ -1,0 +1,18 @@
+{
+  "endpoint": "/api/authentication/logout",
+  "method": "post",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "625e6e81-a4c7-489a-89d8-d42cdd7bcd19"
+    },
+    "body": {}
+  },
+  "response": {
+    "status": 200,
+    "body": {},
+    "headers": {}
+  },
+  "correlationId": "625e6e81-a4c7-489a-89d8-d42cdd7bcd19",
+  "timestamp": {},
+  "duration": 129
+}

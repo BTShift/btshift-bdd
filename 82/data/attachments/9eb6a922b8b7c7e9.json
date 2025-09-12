@@ -1,0 +1,28 @@
+{
+  "endpoint": "/api/users",
+  "method": "post",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "3c34db86-3035-489a-97a1-098c51aeb89a",
+      "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720046000-vnwoxoap9\"}"
+    },
+    "body": {
+      "email": "user-1757720046334-7v6qnfvwl-1@test.com",
+      "firstName": "Test",
+      "lastName": "User1757720046334-7v6qnfvwl-1",
+      "phoneNumber": "+212600000000",
+      "role": "User",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 0,
+    "error": {
+      "message": "API Error: 403 - ",
+      "stack": "Error: API Error: 403 - \n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/src/client.ts:73:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/password-reset/happy-path/password-reset.api.spec.ts:20:18\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at FixtureRunner.resolveParametersAndRunFunction (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/fixtureRunner.js:220:5)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:428:13\n    at TestInfoImpl._runAsStep (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:315:7)\n    at WorkerMain._runAllHooksForSuite (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:423:9)\n    at WorkerMain._runBeforeAllHooksForSuite (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:417:5)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:299:11\n    at TestInfoImpl._runAsStep (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:315:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:297:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+    }
+  },
+  "correlationId": "3c34db86-3035-489a-97a1-098c51aeb89a",
+  "timestamp": {},
+  "duration": 127
+}

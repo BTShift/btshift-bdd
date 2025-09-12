@@ -1,0 +1,7 @@
+{
+  "step": "Create client with typed API",
+  "operation": "Create Client",
+  "endpoint": "/api/clients",
+  "entityType": "client",
+  "error": "HTTP 500: Internal Server Error"
+}

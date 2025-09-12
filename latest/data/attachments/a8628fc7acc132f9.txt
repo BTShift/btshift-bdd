@@ -1,1 +1,0 @@
-❌ [Identity] POST /api/authentication/change-password | X-Correlation-ID: 4bfc752e-4ba5-4237-8a39-2a04fe81583e | Error: API Error: 400 - {"code":3,"message":"An error occurred while changing password","details":[]}

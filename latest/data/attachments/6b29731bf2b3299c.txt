@@ -1,0 +1,20 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/tenants/by-name/non-existent-1757720101782
+Correlation ID: a22338e7-c155-4ace-9203-9bbaff3f508d
+Timestamp: 2025-09-12T23:35:01.782Z
+Duration: 130ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "a22338e7-c155-4ace-9203-9bbaff3f508d",
+  "X-Test-Context": "{\"featureFile\":\"duplicate-tenant.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720101781-ia6is9pd1\",\"testCase\":\"should return 404 when getting tenant by non-existing name\"}"
+}
+
+=== Response ===
+
+Error Details:
+{
+  "message": "API Error: 404 - ",
+  "stack": "Error: API Error: 404 - \n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/tenant-management-types/src/client.ts:73:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.tenant (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts:118:5\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+}

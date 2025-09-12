@@ -1,0 +1,1 @@
+❌ [ClientManagement] POST /api/clients | X-Correlation-ID: a7382e69-5773-4a22-83b2-17c73017b645 | Error: HTTP 500: Internal Server Error

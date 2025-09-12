@@ -1,0 +1,32 @@
+{
+  "endpoint": "/api/clients",
+  "method": "post",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "a7382e69-5773-4a22-83b2-17c73017b645",
+      "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757719990518-1p1roeryg\",\"testCase\":\"should create client with typed client from @btshift/client-management-types\"}"
+    },
+    "body": {
+      "companyName": "Test Client 1757719990519",
+      "country": "Morocco",
+      "address": "123 Test Street, Casablanca",
+      "iceNumber": "001757719990519",
+      "rcNumber": "RC1757719990519",
+      "vatNumber": "VAT1757719990519",
+      "cnssNumber": "CNSS1757719990519",
+      "industry": "Technology",
+      "adminContactPerson": "admin-1757719990519@test.com",
+      "billingContactPerson": "billing-1757719990519@test.com"
+    }
+  },
+  "response": {
+    "status": 0,
+    "error": {
+      "message": "HTTP 500: Internal Server Error",
+      "stack": "Error: HTTP 500: Internal Server Error\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/client-management-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.clientManagement (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at response.operation (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts:64:14)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/helpers/enhanced-assertions.ts:213:22"
+    }
+  },
+  "correlationId": "a7382e69-5773-4a22-83b2-17c73017b645",
+  "timestamp": {},
+  "duration": 576
+}
