@@ -59,7 +59,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
 
     // Act - Using the typed client from npm package
     const response = await client.clientManagement('/api/clients', 'post', {
-      body: JSON.stringify(clientData)
+      body: clientData
     });
 
     // Assert - Response is typed based on OpenAPI schema
@@ -83,7 +83,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     };
     
     const createResponse = await client.clientManagement('/api/clients', 'post', {
-      body: JSON.stringify(clientData)
+      body: clientData
     });
     
     const clientId = createResponse.data.clientId;
@@ -109,7 +109,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     };
     
     const createResponse = await client.clientManagement('/api/clients', 'post', {
-      body: JSON.stringify(originalData)
+      body: originalData
     });
     
     const clientId = createResponse.data.clientId;
@@ -123,7 +123,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     };
     
     const updateResponse = await client.clientManagement(`/api/clients/${clientId}` as any, 'put', {
-      body: JSON.stringify(updateData)
+      body: updateData
     });
 
     // Assert
@@ -158,18 +158,18 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     
     // Arrange - Create clients for the group
     const client1 = await client.clientManagement('/api/clients', 'post', {
-      body: JSON.stringify({
+      body: {
         companyName: `Group Client 1 ${Date.now()}`,
         country: 'Morocco',
         industry: 'Technology'
-      })
+      }
     });
     const client2 = await client.clientManagement('/api/clients', 'post', {
-      body: JSON.stringify({
+      body: {
         companyName: `Group Client 2 ${Date.now()}`,
         country: 'Morocco',
         industry: 'Finance'
-      })
+      }
     });
     
     createdClientIds.push(client1.data.clientId, client2.data.clientId);
@@ -181,7 +181,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     };
     
     const groupResponse = await client.clientManagement('/api/groups', 'post', {
-      body: JSON.stringify(groupData)
+      body: groupData
     });
 
     // Assert
@@ -208,7 +208,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     };
     
     const clientResponse = await client.clientManagement('/api/clients', 'post', {
-      body: JSON.stringify(clientData)
+      body: clientData
     });
     
     const clientId = clientResponse.data.clientId;
@@ -237,7 +237,7 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     };
     
     const createResponse = await client.clientManagement('/api/clients', 'post', {
-      body: JSON.stringify(clientData)
+      body: clientData
     });
     
     const clientId = createResponse.data.clientId;
