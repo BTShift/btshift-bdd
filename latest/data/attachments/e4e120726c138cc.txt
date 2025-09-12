@@ -1,1 +1,0 @@
-❌ [Identity] POST /api/authentication/change-password | X-Correlation-ID: 9b2e1a85-b53c-48a0-b385-cdb18f1eb5c6 | Error: HTTP 400: Bad Request

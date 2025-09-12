@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/refresh
+Correlation ID: 2a8e3926-4532-41f7-9c78-8b92b36a840b
+Timestamp: 2025-09-12T23:44:58.931Z
+Duration: 261ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "2a8e3926-4532-41f7-9c78-8b92b36a840b",
+  "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720698525-qh6fkjife\",\"testCase\":\"should refresh token with valid refresh token\"}"
+}
+
+=== Request Body ===
+{
+  "refreshToken": "***MASKED***"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "tokenInfo": "***MASKED***"
+}

@@ -1,0 +1,57 @@
+🎬 Starting test session: test-1757720779795-o629q91fr for feature: multi-user-example.feature
+📋 Test context set: multi-user-example.feature :: api/features/multi-user-example.spec.ts (positive)
+🧪 Test case: should validate tenant isolation
+🔄 Current step: Test Execution
+🎬 Auto-context: multi-user-example.feature :: api/features/multi-user-example.spec.ts :: should validate tenant isolation
+🚀 [ac381830] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757720779797-3xbc0srsl for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757720779797-bz6zgtxpp for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757720779797-89b0b20b for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757720779798] Starting SuperAdmin authentication...
+🔐 [superadmin-1757720779798] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757720779797-bz6zgtxpp"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: dd42b725-b6c0-4889-b55e-c38d72f56fc3 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: dd42b725-b6c0-4889-b55e-c38d72f56fc3 | Success
+✅ [superadmin-1757720779798] SuperAdmin authentication successful
+🕐 [superadmin-1757720779798] Token expires at: 2025-09-12T23:54:20.324Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [ac381830] Using SuperAdmin authentication
+🕐 [ac381830] Token expires: 11:54:20 PM
+🧪 Adding test context to GET /api/tenants
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757720779797-bz6zgtxpp"}
+🔍 [Tenant] GET /api/tenants | X-Correlation-ID: ffa988e0-daeb-44b4-93b9-e45c2d9aa395 | Auth: Yes
+✅ [Tenant] GET /api/tenants | X-Correlation-ID: ffa988e0-daeb-44b4-93b9-e45c2d9aa395 | Success
+SuperAdmin sees 0 tenants
+🚀 [3b9474aa] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757720780516-9u0cs9rio for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757720780516-yc4jjdf20 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757720780516-3f842161 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757720780516] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757720780516] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757720780516] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757720780516-yc4jjdf20"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 9864907f-beb8-461a-967d-2a231dab6262 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 9864907f-beb8-461a-967d-2a231dab6262 | Success
+✅ [tenantadmin-1757720780516] TenantAdmin authentication successful
+🕐 [tenantadmin-1757720780516] Token expires at: 2025-09-12T23:54:20.913Z
+🏢 [tenantadmin-1757720780516] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [3b9474aa] Using TenantAdmin authentication
+🕐 [3b9474aa] Token expires: 11:54:20 PM
+🏢 [3b9474aa] Tenant ID: tenant-from-jwt-test.tenantadmin
+🧪 Adding test context to GET /api/users/current
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757720780516-yc4jjdf20"}
+🔍 [Identity] GET /api/users/current | X-Correlation-ID: eb6e48d6-ba4e-47bd-90ae-c70745267560 | Auth: Yes
+🏁 Clearing test context for session: test-1757720780516-yc4jjdf20

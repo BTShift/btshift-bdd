@@ -1,0 +1,31 @@
+{
+  "endpoint": "/api/audit-logs",
+  "method": "get",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "ef8741b3-b85f-4138-8a61-d290c0cf6808",
+      "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720688406-p6uudv4pb\",\"testCase\":\"should retrieve audit logs\"}"
+    },
+    "params": {
+      "query": {
+        "pageNumber": 1,
+        "pageSize": 10
+      }
+    },
+    "query": {
+      "pageNumber": 1,
+      "pageSize": 10
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "logs": [],
+      "totalCount": 0
+    },
+    "headers": {}
+  },
+  "correlationId": "ef8741b3-b85f-4138-8a61-d290c0cf6808",
+  "timestamp": {},
+  "duration": 237
+}

@@ -1,0 +1,235 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 7,
+  "timestamp": "2025-09-12T23:44:49.617Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "f024b432-4631-45e4-82ec-68d2285e2f77",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720687914-i1li38ore\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "f024b432-4631-45e4-82ec-68d2285e2f77",
+      "timestamp": {},
+      "duration": 452
+    },
+    {
+      "endpoint": "/api/audit-logs",
+      "method": "get",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "ef8741b3-b85f-4138-8a61-d290c0cf6808",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720688406-p6uudv4pb\",\"testCase\":\"should retrieve audit logs\"}"
+        },
+        "params": {
+          "query": {
+            "pageNumber": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "logs": [],
+          "totalCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "ef8741b3-b85f-4138-8a61-d290c0cf6808",
+      "timestamp": {},
+      "duration": 237
+    },
+    {
+      "endpoint": "/api/audit-logs",
+      "method": "get",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "a46a0022-ed84-447b-a45e-3ca05c97f064",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720688674-qpadxfqxy\",\"testCase\":\"should filter audit logs by user\"}"
+        },
+        "params": {
+          "query": {
+            "userId": "test-user-id",
+            "pageNumber": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "userId": "test-user-id",
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "logs": [],
+          "totalCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "a46a0022-ed84-447b-a45e-3ca05c97f064",
+      "timestamp": {},
+      "duration": 169
+    },
+    {
+      "endpoint": "/api/audit-logs",
+      "method": "get",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "3cb6b912-6d13-4b4a-ab90-d4c45abe35d5",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720688867-9kp0pirc4\",\"testCase\":\"should filter audit logs by date range\"}"
+        },
+        "params": {
+          "query": {
+            "startDate": "2025-09-05T23:44:48.867Z",
+            "endDate": "2025-09-12T23:44:48.867Z",
+            "pageNumber": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "startDate": "2025-09-05T23:44:48.867Z",
+          "endDate": "2025-09-12T23:44:48.867Z",
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "logs": [],
+          "totalCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "3cb6b912-6d13-4b4a-ab90-d4c45abe35d5",
+      "timestamp": {},
+      "duration": 171
+    },
+    {
+      "endpoint": "/api/audit-logs",
+      "method": "get",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "4e5de79d-a365-468c-90b2-c53b2c0c9d18",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720689054-emkjtflp6\",\"testCase\":\"should filter audit logs by action type\"}"
+        },
+        "params": {
+          "query": {
+            "actionType": "LOGIN",
+            "pageNumber": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "actionType": "LOGIN",
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "logs": [],
+          "totalCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "4e5de79d-a365-468c-90b2-c53b2c0c9d18",
+      "timestamp": {},
+      "duration": 170
+    },
+    {
+      "endpoint": "/api/audit-logs",
+      "method": "get",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "3104ba85-567d-461f-8c1c-1ec6cab657c8",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720689244-8rqjqiqzq\",\"testCase\":\"should get audit log by ID\"}"
+        },
+        "params": {
+          "query": {
+            "pageNumber": 1,
+            "pageSize": 1
+          }
+        },
+        "query": {
+          "pageNumber": 1,
+          "pageSize": 1
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "logs": [],
+          "totalCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "3104ba85-567d-461f-8c1c-1ec6cab657c8",
+      "timestamp": {},
+      "duration": 172
+    },
+    {
+      "endpoint": "/api/audit-logs/export",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "8b253501-bbf3-4587-a71e-57458626da83",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720689428-vu30syc8l\",\"testCase\":\"should export audit logs\"}"
+        },
+        "body": {
+          "format": "csv",
+          "startDate": "2025-08-13T23:44:49.429Z",
+          "endDate": "2025-09-12T23:44:49.429Z"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "HTTP 400: Bad Request",
+          "stack": "Error: HTTP 400: Bad Request\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts:106:22\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "8b253501-bbf3-4587-a71e-57458626da83",
+      "timestamp": {},
+      "duration": 170
+    }
+  ]
+}

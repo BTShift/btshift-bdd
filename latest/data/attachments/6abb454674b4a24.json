@@ -1,0 +1,19 @@
+{
+  "endpoint": "/api/authentication/logout",
+  "method": "post",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "c51b56cd-5aaa-4fde-8d14-095360439a98",
+      "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720810285-q2t2kguxq\"}"
+    },
+    "body": {}
+  },
+  "response": {
+    "status": 200,
+    "body": {},
+    "headers": {}
+  },
+  "correlationId": "c51b56cd-5aaa-4fde-8d14-095360439a98",
+  "timestamp": {},
+  "duration": 180
+}

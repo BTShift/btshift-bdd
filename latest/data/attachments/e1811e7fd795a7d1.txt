@@ -1,0 +1,45 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: a277730a-bf1b-41e2-b726-2c67914dd73f
+Timestamp: 2025-09-12T23:46:21.769Z
+Duration: 432ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "a277730a-bf1b-41e2-b726-2c67914dd73f",
+  "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757720781767-mufd9np2w\"}"
+}
+
+=== Request Body ===
+{
+  "email": "superadmin@shift.ma",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "tokenInfo": "***MASKED***",
+  "userInfo": {
+    "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+    "email": "superadmin@shift.ma",
+    "firstName": "Super",
+    "lastName": "Administrator",
+    "tenantId": "",
+    "roles": [
+      "SuperAdmin"
+    ],
+    "userType": "TenantUser",
+    "clientId": "",
+    "departmentId": "",
+    "teamId": ""
+  },
+  "requires2fa": false,
+  "sessionToken": "***MASKED***"
+}

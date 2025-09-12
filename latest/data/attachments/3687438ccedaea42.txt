@@ -1,0 +1,11 @@
+🎬 Starting test session: test-1757720689428-vu30syc8l for feature: audit-operations.api.feature
+📋 Test context set: audit-operations.api.feature :: api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts (positive)
+🧪 Test case: should export audit logs
+🔄 Current step: Test Execution
+🎬 Auto-context: audit-operations.api.feature :: api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts :: should export audit logs
+🧪 Adding test context to POST /api/audit-logs/export
+🧪 Test context JSON: {"featureFile":"audit-operations.api.feature","scenario":"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757720689428-vu30syc8l","testCase":"should export audit logs"}
+🔍 [Identity] POST /api/audit-logs/export | X-Correlation-ID: 8b253501-bbf3-4587-a71e-57458626da83 | Auth: Yes
+🏁 Clearing test context for session: test-1757720689428-vu30syc8l
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 289b1755-b0a1-4eda-8bb3-1019189014d9 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 289b1755-b0a1-4eda-8bb3-1019189014d9 | Success
