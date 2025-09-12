@@ -1,3 +1,0 @@
-❌ [Identity] POST /api/users | X-Correlation-ID: 1dcc86b4-30c3-4909-991b-d45a258d271e | Error: API Error: 403 - 
-❌ [ClientManagement] DELETE /api/clients/undefined | X-Correlation-ID: 969d589b-b023-420d-be32-a39c78378242 | Error: HTTP 500: Internal Server Error
-⚠️ Failed to cleanup client undefined
