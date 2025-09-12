@@ -83,20 +83,11 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
         }
       };
       
-      await expectWithContext(response, context).toBeDefined('Response should be defined');
-      await expectWithContext(response.data.clientId, context).toBeTruthy('Client ID should be generated');
-      await expectWithContext(response.data.companyName, context).toBe(
-        clientData.companyName,
-        `Company name should be '${clientData.companyName}'`
-      );
-      await expectWithContext(response.data.address, context).toBe(
-        clientData.address,
-        `Address should be '${clientData.address}'`
-      );
-      await expectWithContext(response.data.industry, context).toBe(
-        clientData.industry,
-        `Industry should be '${clientData.industry}'`
-      );
+      await expectWithContext(response, context).toBeDefined();
+      await expectWithContext(response.data.clientId, context).toBeTruthy();
+      await expectWithContext(response.data.companyName, context).toBe(clientData.companyName);
+      await expectWithContext(response.data.address, context).toBe(clientData.address);
+      await expectWithContext(response.data.industry, context).toBe(clientData.industry);
     });
     
     // Track for cleanup
@@ -138,19 +129,10 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
         entityType: 'client'
       };
       
-      await expectWithContext(getResponse, context).toBeDefined('Response should be defined');
-      await expectWithContext(getResponse.data.clientId, context).toBe(
-        clientId,
-        `Client ID should match requested ID '${clientId}'`
-      );
-      await expectWithContext(getResponse.data.companyName, context).toBe(
-        clientData.companyName,
-        `Company name should be '${clientData.companyName}'`
-      );
-      await expectWithContext(getResponse.data.country, context).toBe(
-        clientData.country,
-        `Country should be '${clientData.country}'`
-      );
+      await expectWithContext(getResponse, context).toBeDefined();
+      await expectWithContext(getResponse.data.clientId, context).toBe(clientId);
+      await expectWithContext(getResponse.data.companyName, context).toBe(clientData.companyName);
+      await expectWithContext(getResponse.data.country, context).toBe(clientData.country);
     });
   });
 

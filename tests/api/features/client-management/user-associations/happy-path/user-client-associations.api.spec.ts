@@ -76,7 +76,7 @@ describe('Client Management - User-Client Associations', () => {
       await expectWithContext(assignResponseData.associationId, {
         operation: 'User-Client Assignment',
         entityType: 'association'
-      }).toBeTruthy('Association ID should be generated');
+      }).toBeTruthy();
     });
   });
 

@@ -235,64 +235,83 @@ export async function testStep<T>(
  */
 export function expectWithContext(actual: any, context: AssertionContext) {
   return {
-    toBe: async (expected: any, customMessage?: string) => {
-      const message = customMessage || 
-        `${context.operation || 'Value'} should be '${expected}' but was '${actual}'`;
-      
-      if (actual !== expected) {
+    toBe: async (expected: any) => {
+      try {
+        expect(actual).toBe(expected);
+      } catch (error) {
+        // On failure, attach context before re-throwing
+        const message = `${context.operation || 'Value'} at ${context.endpoint || 'endpoint'}\n` +
+          `Expected: ${JSON.stringify(expected)}\n` +
+          `Actual: ${JSON.stringify(actual)}\n` +
+          `Entity: ${context.entityType} ${context.entityId || ''}`.trim();
+        
         await attachment(
-          'Expectation Failure',
+          'Assertion Failure Context',
           JSON.stringify({
             ...context,
             actual,
             expected,
-            message
+            message,
+            assertion: 'toBe'
           }, null, 2),
           'application/json'
         );
+        
+        console.error(`❌ ${message}`);
+        throw error; // Re-throw original error for test framework
       }
-      
-      expect(actual).toBe(expected, message);
     },
     
-    toBeTruthy: async (customMessage?: string) => {
-      const message = customMessage || 
-        `${context.operation || 'Value'} should be truthy but was '${actual}'`;
-      
-      if (!actual) {
+    toBeTruthy: async () => {
+      try {
+        expect(actual).toBeTruthy();
+      } catch (error) {
+        const message = `${context.operation || 'Value'} at ${context.endpoint || 'endpoint'}\n` +
+          `Expected: truthy value\n` +
+          `Actual: ${JSON.stringify(actual)}\n` +
+          `Entity: ${context.entityType} ${context.entityId || ''}`.trim();
+        
         await attachment(
-          'Expectation Failure',
+          'Assertion Failure Context',
           JSON.stringify({
             ...context,
             actual,
             expected: 'truthy value',
-            message
+            message,
+            assertion: 'toBeTruthy'
           }, null, 2),
           'application/json'
         );
+        
+        console.error(`❌ ${message}`);
+        throw error;
       }
-      
-      expect(actual).toBeTruthy(message);
     },
     
-    toBeDefined: async (customMessage?: string) => {
-      const message = customMessage || 
-        `${context.operation || 'Value'} should be defined but was ${actual}`;
-      
-      if (actual === undefined) {
+    toBeDefined: async () => {
+      try {
+        expect(actual).toBeDefined();
+      } catch (error) {
+        const message = `${context.operation || 'Value'} at ${context.endpoint || 'endpoint'}\n` +
+          `Expected: defined value\n` +
+          `Actual: ${actual === undefined ? 'undefined' : JSON.stringify(actual)}\n` +
+          `Entity: ${context.entityType} ${context.entityId || ''}`.trim();
+        
         await attachment(
-          'Expectation Failure', 
+          'Assertion Failure Context',
           JSON.stringify({
             ...context,
-            actual: 'undefined',
+            actual: actual === undefined ? 'undefined' : actual,
             expected: 'defined value',
-            message
+            message,
+            assertion: 'toBeDefined'
           }, null, 2),
           'application/json'
         );
+        
+        console.error(`❌ ${message}`);
+        throw error;
       }
-      
-      expect(actual).toBeDefined(message);
     }
   };
 }

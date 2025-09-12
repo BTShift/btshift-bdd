@@ -48,10 +48,10 @@ describe('Client Management - Group Operations', () => {
         entityType: 'group'
       };
       
-      await expectWithContext(response, context).toBeDefined('Response should be defined');
-      await expectWithContext(responseData.groupId, context).toBeTruthy('Group ID should be generated');
-      await expectWithContext(responseData.name, context).toBe(groupData.name, `Group name should be '${groupData.name}'`);
-      await expectWithContext(responseData.description, context).toBe(groupData.description, `Group description should be '${groupData.description}'`);
+      await expectWithContext(response, context).toBeDefined();
+      await expectWithContext(responseData.groupId, context).toBeTruthy();
+      await expectWithContext(responseData.name, context).toBe(groupData.name);
+      await expectWithContext(responseData.description, context).toBe(groupData.description);
     });
   });
 
@@ -208,7 +208,7 @@ describe('Client Management - Group Operations', () => {
         }
       };
       
-      await expectWithContext(listResponseData.groups, context).toBeDefined('Groups array should be defined');
+      await expectWithContext(listResponseData.groups, context).toBeDefined();
       
       expect(Array.isArray(listResponseData.groups)).toBe(
         true,
