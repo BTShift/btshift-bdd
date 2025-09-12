@@ -26,7 +26,7 @@ describe('Client Management - User-Client Associations', () => {
       body: clientData
     });
     const clientResponseData = ctx.getData(client);
-    ctx.cleanup.addClient(clientResponseData.client_id);
+    ctx.cleanup.addClient(clientResponseData.clientId);
 
     // Create a user
     const userData = TestDataFactory.user();
@@ -44,19 +44,19 @@ describe('Client Management - User-Client Associations', () => {
 
     // Assign user to client
     const response = await ctx.client.clientManagement(
-      `/api/clients/${clientResponseData.client_id}/users/${userResponseData.userId}`,
+      `/api/clients/${clientResponseData.clientId}/users/${userResponseData.userId}` as any,
       'post',
       {
         body: {
-          tenant_id: testTenantId,
-          assigned_by: 'admin-user-id'
+          tenantId: testTenantId,
+          assignedBy: 'admin-user-id'
         }
       }
     );
 
     const assignResponseData = ctx.getData(response);
     expect(assignResponseData.success).toBe(true);
-    expect(assignResponseData.association_id).toBeTruthy();
+    expect(assignResponseData.associationId).toBeTruthy();
   });
 
   test('should remove a user from a client', async () => {
@@ -66,7 +66,7 @@ describe('Client Management - User-Client Associations', () => {
       body: removeClientData
     });
     const removeClientResponseData = ctx.getData(client);
-    ctx.cleanup.addClient(removeClientResponseData.client_id);
+    ctx.cleanup.addClient(removeClientResponseData.clientId);
 
     const removeUserData = TestDataFactory.user();
     const user = await ctx.client.identity('/api/users', 'post', {
@@ -83,23 +83,23 @@ describe('Client Management - User-Client Associations', () => {
 
     // Assign user to client first
     await ctx.client.clientManagement(
-      `/api/clients/${removeClientResponseData.client_id}/users/${removeUserResponseData.userId}`,
+      `/api/clients/${removeClientResponseData.clientId}/users/${removeUserResponseData.userId}` as any,
       'post',
       {
         body: {
-          tenant_id: testTenantId,
-          assigned_by: 'admin-user-id'
+          tenantId: testTenantId,
+          assignedBy: 'admin-user-id'
         }
       }
     );
 
     // Remove user from client
     const response = await ctx.client.clientManagement(
-      `/api/clients/${removeClientResponseData.client_id}/users/${removeUserResponseData.userId}`,
+      `/api/clients/${removeClientResponseData.clientId}/users/${removeUserResponseData.userId}` as any,
       'delete',
       {
         body: {
-          tenant_id: testTenantId
+          tenantId: testTenantId
         }
       }
     );
@@ -115,7 +115,7 @@ describe('Client Management - User-Client Associations', () => {
       body: listUsersClientData
     });
     const listUsersClientResponseData = ctx.getData(client);
-    ctx.cleanup.addClient(listUsersClientResponseData.client_id);
+    ctx.cleanup.addClient(listUsersClientResponseData.clientId);
 
     // Create and assign multiple users
     const listUser1Data = TestDataFactory.user();
@@ -146,37 +146,37 @@ describe('Client Management - User-Client Associations', () => {
 
     // Assign both users to the client
     await ctx.client.clientManagement(
-      `/api/clients/${listUsersClientResponseData.client_id}/users/${listUser1ResponseData.userId}`,
+      `/api/clients/${listUsersClientResponseData.clientId}/users/${listUser1ResponseData.userId}` as any,
       'post',
       {
         body: {
-          tenant_id: testTenantId,
-          assigned_by: 'admin-user-id'
+          tenantId: testTenantId,
+          assignedBy: 'admin-user-id'
         }
       }
     );
 
     await ctx.client.clientManagement(
-      `/api/clients/${listUsersClientResponseData.client_id}/users/${listUser2ResponseData.userId}`,
+      `/api/clients/${listUsersClientResponseData.clientId}/users/${listUser2ResponseData.userId}` as any,
       'post',
       {
         body: {
-          tenant_id: testTenantId,
-          assigned_by: 'admin-user-id'
+          tenantId: testTenantId,
+          assignedBy: 'admin-user-id'
         }
       }
     );
 
     // Get client users
     const response = await ctx.client.clientManagement(
-      `/api/clients/${listUsersClientResponseData.client_id}/users`,
+      `/api/clients/${listUsersClientResponseData.clientId}/users` as any,
       'get',
       {
         params: {
           query: {
-            tenant_id: testTenantId,
+            tenantId: testTenantId,
             page: 1,
-            page_size: 10
+            pageSize: 10
           }
         }
       }
@@ -186,7 +186,7 @@ describe('Client Management - User-Client Associations', () => {
     expect(clientUsersResponseData.users).toBeDefined();
     expect(Array.isArray(clientUsersResponseData.users)).toBe(true);
     expect(clientUsersResponseData.users.length).toBe(2);
-    expect(clientUsersResponseData.total_count).toBe(2);
+    expect(clientUsersResponseData.totalCount).toBe(2);
   });
 
   test('should get all clients assigned to a user', async () => {
@@ -210,48 +210,48 @@ describe('Client Management - User-Client Associations', () => {
       body: userClient1Data
     });
     const userClient1ResponseData = ctx.getData(client1);
-    ctx.cleanup.addClient(userClient1ResponseData.client_id);
+    ctx.cleanup.addClient(userClient1ResponseData.clientId);
 
     const userClient2Data = TestDataFactory.client();
     const client2 = await ctx.client.clientManagement('/api/clients', 'post', {
       body: userClient2Data
     });
     const userClient2ResponseData = ctx.getData(client2);
-    ctx.cleanup.addClient(userClient2ResponseData.client_id);
+    ctx.cleanup.addClient(userClient2ResponseData.clientId);
 
     // Assign user to both clients
     await ctx.client.clientManagement(
-      `/api/clients/${userClient1ResponseData.client_id}/users/${userClientsUserResponseData.userId}`,
+      `/api/clients/${userClient1ResponseData.clientId}/users/${userClientsUserResponseData.userId}` as any,
       'post',
       {
         body: {
-          tenant_id: testTenantId,
-          assigned_by: 'admin-user-id'
+          tenantId: testTenantId,
+          assignedBy: 'admin-user-id'
         }
       }
     );
 
     await ctx.client.clientManagement(
-      `/api/clients/${userClient2ResponseData.client_id}/users/${userClientsUserResponseData.userId}`,
+      `/api/clients/${userClient2ResponseData.clientId}/users/${userClientsUserResponseData.userId}` as any,
       'post',
       {
         body: {
-          tenant_id: testTenantId,
-          assigned_by: 'admin-user-id'
+          tenantId: testTenantId,
+          assignedBy: 'admin-user-id'
         }
       }
     );
 
     // Get user clients
     const response = await ctx.client.clientManagement(
-      `/api/users/${userClientsUserResponseData.userId}/clients`,
+      `/api/users/${userClientsUserResponseData.userId}/clients` as any,
       'get',
       {
         params: {
           query: {
-            tenant_id: testTenantId,
+            tenantId: testTenantId,
             page: 1,
-            page_size: 10
+            pageSize: 10
           }
         }
       }
@@ -261,7 +261,7 @@ describe('Client Management - User-Client Associations', () => {
     expect(userClientsResponseData.clients).toBeDefined();
     expect(Array.isArray(userClientsResponseData.clients)).toBe(true);
     expect(userClientsResponseData.clients.length).toBe(2);
-    expect(userClientsResponseData.total_count).toBe(2);
+    expect(userClientsResponseData.totalCount).toBe(2);
   });
 
   test('should handle pagination for user-client associations', async () => {
@@ -271,7 +271,7 @@ describe('Client Management - User-Client Associations', () => {
       body: paginationClientData
     });
     const paginationClientResponseData = ctx.getData(client);
-    ctx.cleanup.addClient(paginationClientResponseData.client_id);
+    ctx.cleanup.addClient(paginationClientResponseData.clientId);
 
     // Create multiple users (more than page size)
     const users = [];
@@ -292,12 +292,12 @@ describe('Client Management - User-Client Associations', () => {
 
       // Assign user to client
       await ctx.client.clientManagement(
-        `/api/clients/${paginationClientResponseData.client_id}/users/${paginationUserResponseData.userId}`,
+        `/api/clients/${paginationClientResponseData.clientId}/users/${paginationUserResponseData.userId}` as any,
         'post',
         {
           body: {
-            tenant_id: testTenantId,
-            assigned_by: 'admin-user-id'
+            tenantId: testTenantId,
+            assignedBy: 'admin-user-id'
           }
         }
       );
@@ -305,14 +305,14 @@ describe('Client Management - User-Client Associations', () => {
 
     // Get first page
     const page1 = await ctx.client.clientManagement(
-      `/api/clients/${paginationClientResponseData.client_id}/users`,
+      `/api/clients/${paginationClientResponseData.clientId}/users` as any,
       'get',
       {
         params: {
           query: {
-            tenant_id: testTenantId,
+            tenantId: testTenantId,
             page: 1,
-            page_size: 3
+            pageSize: 3
           }
         }
       }
@@ -320,20 +320,20 @@ describe('Client Management - User-Client Associations', () => {
 
     const page1ResponseData = ctx.getData(page1);
     expect(page1ResponseData.users.length).toBe(3);
-    expect(page1ResponseData.total_count).toBe(5);
+    expect(page1ResponseData.totalCount).toBe(5);
     expect(page1ResponseData.page).toBe(1);
-    expect(page1ResponseData.page_size).toBe(3);
+    expect(page1ResponseData.pageSize).toBe(3);
 
     // Get second page
     const page2 = await ctx.client.clientManagement(
-      `/api/clients/${paginationClientResponseData.client_id}/users`,
+      `/api/clients/${paginationClientResponseData.clientId}/users` as any,
       'get',
       {
         params: {
           query: {
-            tenant_id: testTenantId,
+            tenantId: testTenantId,
             page: 2,
-            page_size: 3
+            pageSize: 3
           }
         }
       }
@@ -351,7 +351,7 @@ describe('Client Management - User-Client Associations', () => {
       body: metadataClientData
     });
     const metadataClientResponseData = ctx.getData(client);
-    ctx.cleanup.addClient(metadataClientResponseData.client_id);
+    ctx.cleanup.addClient(metadataClientResponseData.clientId);
 
     const metadataUserData = TestDataFactory.user();
     const user = await ctx.client.identity('/api/users', 'post', {
@@ -369,24 +369,24 @@ describe('Client Management - User-Client Associations', () => {
     // Assign with metadata
     const assignedBy = 'admin-user-123';
     await ctx.client.clientManagement(
-      `/api/clients/${metadataClientResponseData.client_id}/users/${metadataUserResponseData.userId}`,
+      `/api/clients/${metadataClientResponseData.clientId}/users/${metadataUserResponseData.userId}` as any,
       'post',
       {
         body: {
-          tenant_id: testTenantId,
-          assigned_by: assignedBy
+          tenantId: testTenantId,
+          assignedBy: assignedBy
         }
       }
     );
 
     // Get client users and verify metadata
     const response = await ctx.client.clientManagement(
-      `/api/clients/${metadataClientResponseData.client_id}/users`,
+      `/api/clients/${metadataClientResponseData.clientId}/users` as any,
       'get',
       {
         params: {
           query: {
-            tenant_id: testTenantId
+            tenantId: testTenantId
           }
         }
       }
@@ -394,7 +394,7 @@ describe('Client Management - User-Client Associations', () => {
 
     const metadataResponseData = ctx.getData(response);
     const assignedUser = metadataResponseData.users[0];
-    expect(assignedUser.assigned_by).toBe(assignedBy);
-    expect(assignedUser.assigned_at).toBeTruthy();
+    expect(assignedUser.assignedBy).toBe(assignedBy);
+    expect(assignedUser.assignedAt).toBeTruthy();
   });
 });

@@ -75,7 +75,7 @@ describe('Business Feature: Tenant Onboarding', () => {
 
     const retrieved = await ctx.correlation.callAndReport(
       'Retrieve tenant by ID',
-      () => ctx.client.tenant(`/api/tenants/${created.data.id}`, 'get'),
+      () => ctx.client.tenant(`/api/tenants/${created.data.id}` as any, 'get'),
       { endpoint: `/api/tenants/${created.data.id}`, method: 'GET', serviceName: 'Tenant Management' }
     );
 
@@ -94,7 +94,7 @@ describe('Business Feature: Tenant Onboarding', () => {
 
     const retrieved = await ctx.correlation.callAndReport(
       'Retrieve tenant by name',
-      () => ctx.client.tenant(`/api/tenants/by-name/${tenantData.tenantName}`, 'get'),
+      () => ctx.client.tenant(`/api/tenants/by-name/${tenantData.tenantName}` as any, 'get'),
       { endpoint: `/api/tenants/by-name/${tenantData.tenantName}`, method: 'GET', serviceName: 'Tenant Management' }
     );
 
@@ -112,7 +112,7 @@ describe('Business Feature: Tenant Onboarding', () => {
 
     await new Promise(resolve => setTimeout(resolve, 2000));
 
-    const activated = await ctx.client.tenant(`/api/tenants/${activationTestData.id}/activate`, 'post');
+    const activated = await ctx.client.tenant(`/api/tenants/${activationTestData.id}/activate` as any, 'post');
     const activatedData = ctx.getData(activated);
 
     expect(activatedData.id).toBe(activationTestData.id);
@@ -128,10 +128,10 @@ describe('Business Feature: Tenant Onboarding', () => {
     ctx.cleanup.addTenant(welcomeEmailTestData.id);
     
     await new Promise(resolve => setTimeout(resolve, 2000));
-    await ctx.client.tenant(`/api/tenants/${welcomeEmailTestData.id}/activate`, 'post');
+    await ctx.client.tenant(`/api/tenants/${welcomeEmailTestData.id}/activate` as any, 'post');
 
     await expect(
-      ctx.client.tenant(`/api/tenants/${welcomeEmailTestData.id}/resend-welcome`, 'post')
+      ctx.client.tenant(`/api/tenants/${welcomeEmailTestData.id}/resend-welcome` as any, 'post')
     ).resolves.toBeDefined();
   });
 
@@ -144,7 +144,7 @@ describe('Business Feature: Tenant Onboarding', () => {
     ctx.cleanup.addTenant(listTenantTestData.id);
 
     const response = await ctx.client.tenant('/api/tenants', 'get', {
-      params: { query: { pageSize: 50, pageNumber: 1 } }
+      params: { query: { pageSize: 50, page: 1 } }
     });
 
     const listResponseData = ctx.getData(response);

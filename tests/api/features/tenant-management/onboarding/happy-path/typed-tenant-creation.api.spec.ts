@@ -1,7 +1,7 @@
 import { describe, beforeAll, afterAll, expect } from '@playwright/test';
 import { test } from '../../../../../support/test-context-fixture';
 import { allure } from 'allure-playwright';
-import { TypedApiClient } from '../../../../support/clients/typed-api-client';
+import { TypedApiClient } from '../../../../support/clients/typed-api-client-enhanced';
 import { generateUniqueTenantData } from '../../../../support/fixtures/tenant-data';
 import { GlobalAuthManager } from '../../../../support/auth/global-auth-manager';
 
@@ -21,7 +21,7 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
     // Cleanup created tenants
     for (const tenantId of createdTenantIds) {
       try {
-        await client.tenant(`/api/tenants/${tenantId}`, 'delete');
+        await client.tenant(`/api/tenants/${tenantId}` as any, 'delete');
         console.log(`🧹 Cleaned up tenant: ${tenantId}`);
       } catch (error) {
         console.warn(`⚠️  Failed to cleanup tenant ${tenantId}:`, error);
@@ -82,7 +82,7 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
     createdTenantIds.push(tenantId);
 
     // Act - Get tenant using typed endpoint
-    const getResponse = await client.tenant(`/api/tenants/${tenantId}`, 'get');
+    const getResponse = await client.tenant(`/api/tenants/${tenantId}` as any, 'get');
 
     // Assert
     expect(getResponse).toBeDefined();
@@ -96,7 +96,7 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
       params: {
         query: {
           pageSize: 10,
-          pageNumber: 1
+          page: 1
         }
       }
     });
@@ -106,7 +106,7 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
     expect(Array.isArray(response.data.tenants)).toBe(true);
     expect(response.data.totalCount).toBeDefined();
     expect(response.data.pageSize).toBeDefined();
-    expect(response.data.pageNumber).toBeDefined();
+    expect(response.data.page).toBeDefined();
   });
 
   test('should activate tenant with typed client', async () => {
@@ -134,7 +134,7 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     // Act - Activate tenant
-    const activateResponse = await client.tenant(`/api/tenants/${tenantId}/activate`, 'post');
+    const activateResponse = await client.tenant(`/api/tenants/${tenantId}/activate` as any, 'post');
 
     // Assert
     expect(activateResponse).toBeDefined();
