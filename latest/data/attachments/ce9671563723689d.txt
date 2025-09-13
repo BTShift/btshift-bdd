@@ -1,1 +1,0 @@
-❌ [ClientManagement] GET /api/groups/7b5e94e0-7420-4406-bb44-15b02b11f9de | X-Correlation-ID: c97acf24-63b7-4540-9549-89fd616982c8 | Error: HTTP 405: Method Not Allowed

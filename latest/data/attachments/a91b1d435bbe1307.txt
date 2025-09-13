@@ -1,1 +1,0 @@
-❌ [Identity] POST /api/users | X-Correlation-ID: 7f43517d-5f7b-41eb-a667-fdb949f39520 | Error: HTTP 403: Forbidden
