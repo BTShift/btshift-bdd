@@ -1,0 +1,34 @@
+🚀 [5c2e6a07] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757741640907-p7att5dsz for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757741640908-izrpwjk4i for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757741640908-449cf6f1 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757741640909] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757741640909] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757741640909] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757741640908-izrpwjk4i"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: d788976b-c522-4425-a14f-c373cb5f68a9 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: d788976b-c522-4425-a14f-c373cb5f68a9 | Success
+✅ [tenantadmin-1757741640909] TenantAdmin authentication successful
+🕐 [tenantadmin-1757741640909] Token expires at: 2025-09-13T05:42:01.367Z
+🏢 [tenantadmin-1757741640909] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [5c2e6a07] Using TenantAdmin authentication
+🕐 [5c2e6a07] Token expires: 5:42:01 AM
+🏢 [5c2e6a07] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757741641397-sorkcw7fc for feature: user-client-associations.api.feature
+📋 Test context set: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts (positive)
+🧪 Test case: should get all clients assigned to a user
+🔄 Current step: Test Execution
+🎬 Auto-context: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts :: should get all clients assigned to a user
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757741641397-sorkcw7fc","testCase":"should get all clients assigned to a user"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 7c8cff8b-9a39-4c14-9722-3dae16b9035e | Auth: Yes
+🏁 Clearing test context for session: test-1757741641397-sorkcw7fc
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 2796636f-6431-4e71-8cc6-47883a22b229 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 2796636f-6431-4e71-8cc6-47883a22b229 | Success

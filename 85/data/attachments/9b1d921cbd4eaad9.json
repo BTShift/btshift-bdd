@@ -1,0 +1,30 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 1,
+  "timestamp": "2025-09-13T05:34:11.197Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/refresh",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "edeb85ec-ba90-4663-9c96-339582b8482e",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757741650918-qf3avc6h3\",\"testCase\":\"should reject refresh token with invalid refresh token\"}"
+        },
+        "body": {
+          "refreshToken": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "HTTP 400: Bad Request",
+          "stack": "Error: HTTP 400: Bad Request\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts:89:5\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "edeb85ec-ba90-4663-9c96-339582b8482e",
+      "timestamp": {},
+      "duration": 240
+    }
+  ]
+}

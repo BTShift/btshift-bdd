@@ -1,1 +1,0 @@
-❌ [Identity] GET /api/invitations | X-Correlation-ID: ca788fb0-b7c5-450b-8e96-220891446c78 | Error: HTTP 403: Forbidden

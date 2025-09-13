@@ -1,0 +1,40 @@
+{
+  "endpoint": "/api/authentication/login",
+  "method": "post",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "3c714638-2dce-4fd9-8300-d03e9c7c580f",
+      "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757741662185-c5vvzc0p2\",\"testCase\":\"should refresh token with typed ctx.client\"}"
+    },
+    "body": {
+      "email": "superadmin@shift.ma",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "tokenInfo": "***MASKED***",
+      "userInfo": {
+        "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+        "email": "superadmin@shift.ma",
+        "firstName": "Super",
+        "lastName": "Administrator",
+        "tenantId": "",
+        "roles": [
+          "SuperAdmin"
+        ],
+        "userType": "TenantUser",
+        "clientId": "",
+        "departmentId": "",
+        "teamId": ""
+      },
+      "requires2fa": false,
+      "sessionToken": "***MASKED***"
+    },
+    "headers": {}
+  },
+  "correlationId": "3c714638-2dce-4fd9-8300-d03e9c7c580f",
+  "timestamp": {},
+  "duration": 627
+}

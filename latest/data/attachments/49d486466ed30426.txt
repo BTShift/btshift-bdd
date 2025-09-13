@@ -1,0 +1,14 @@
+🎬 Starting test session: test-1757741630301-tw5ztn2mi for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should update an existing group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should update an existing group
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757741630301-tw5ztn2mi","testCase":"should update an existing group"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: 81be6890-4f02-47e0-9d19-64518b187ee9 | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: 81be6890-4f02-47e0-9d19-64518b187ee9 | Success
+🧪 Adding test context to PUT /api/groups/ec346089-20a5-465c-8b31-19d6b6f29e6a
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757741630301-tw5ztn2mi","testCase":"should update an existing group"}
+🔍 [ClientManagement] PUT /api/groups/ec346089-20a5-465c-8b31-19d6b6f29e6a | X-Correlation-ID: c5a3224e-3a2c-48a4-a17a-118fa5762095 | Auth: Yes
+✅ [ClientManagement] PUT /api/groups/ec346089-20a5-465c-8b31-19d6b6f29e6a | X-Correlation-ID: c5a3224e-3a2c-48a4-a17a-118fa5762095 | Success
+🏁 Clearing test context for session: test-1757741630301-tw5ztn2mi

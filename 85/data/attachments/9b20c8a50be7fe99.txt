@@ -1,0 +1,23 @@
+=== API Call Details ===
+Method: DELETE
+Endpoint: /api/groups/b4cf1722-bfc1-4f88-9fd6-a0096d9105d3
+Correlation ID: 642fc25b-ead8-471c-b357-33379915c574
+Timestamp: 2025-09-13T05:33:55.185Z
+Duration: 131ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "642fc25b-ead8-471c-b357-33379915c574"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": true,
+  "message": "Group deleted successfully"
+}

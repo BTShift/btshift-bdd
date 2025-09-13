@@ -1,0 +1,20 @@
+{
+  "endpoint": "/api/clients/cb23265c-63cb-4e6f-9fee-207902648182",
+  "method": "delete",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "64cb8933-b1aa-4c9a-bf33-3e2d9108e0b4"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "message": "Client deleted successfully"
+    },
+    "headers": {}
+  },
+  "correlationId": "64cb8933-b1aa-4c9a-bf33-3e2d9108e0b4",
+  "timestamp": {},
+  "duration": 126
+}

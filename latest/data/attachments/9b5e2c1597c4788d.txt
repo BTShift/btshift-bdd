@@ -1,0 +1,22 @@
+🎬 Starting test session: test-1757741632138-gp67ju56v for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should remove a client from a group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should remove a client from a group
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757741632138-gp67ju56v","testCase":"should remove a client from a group"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: 7637b545-7478-482d-a902-2f15526c77a3 | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: 7637b545-7478-482d-a902-2f15526c77a3 | Success
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757741632138-gp67ju56v","testCase":"should remove a client from a group"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 82d4f933-016c-49a1-b946-39dca1fd49aa | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 82d4f933-016c-49a1-b946-39dca1fd49aa | Success
+🧪 Adding test context to POST /api/groups/8533b7eb-4000-422f-ab54-a6e59d0f4548/clients/3c159845-7d4a-4433-8c15-b994b3f85692
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757741632138-gp67ju56v","testCase":"should remove a client from a group"}
+🔍 [ClientManagement] POST /api/groups/8533b7eb-4000-422f-ab54-a6e59d0f4548/clients/3c159845-7d4a-4433-8c15-b994b3f85692 | X-Correlation-ID: 7f7a0965-3f71-41f6-a450-f228593a26f9 | Auth: Yes
+✅ [ClientManagement] POST /api/groups/8533b7eb-4000-422f-ab54-a6e59d0f4548/clients/3c159845-7d4a-4433-8c15-b994b3f85692 | X-Correlation-ID: 7f7a0965-3f71-41f6-a450-f228593a26f9 | Success
+🧪 Adding test context to DELETE /api/groups/8533b7eb-4000-422f-ab54-a6e59d0f4548/clients/3c159845-7d4a-4433-8c15-b994b3f85692
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757741632138-gp67ju56v","testCase":"should remove a client from a group"}
+🔍 [ClientManagement] DELETE /api/groups/8533b7eb-4000-422f-ab54-a6e59d0f4548/clients/3c159845-7d4a-4433-8c15-b994b3f85692 | X-Correlation-ID: e97645ad-0e64-4462-9b2f-49fa235839b6 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/8533b7eb-4000-422f-ab54-a6e59d0f4548/clients/3c159845-7d4a-4433-8c15-b994b3f85692 | X-Correlation-ID: e97645ad-0e64-4462-9b2f-49fa235839b6 | Success
+🏁 Clearing test context for session: test-1757741632138-gp67ju56v

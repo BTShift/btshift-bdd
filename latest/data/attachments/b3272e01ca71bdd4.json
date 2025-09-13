@@ -1,0 +1,40 @@
+{
+  "endpoint": "/api/authentication/login",
+  "method": "post",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "cefafebb-97e3-46d0-b8c2-1020913dd300",
+      "X-Test-Context": "{\"featureFile\":\"api-global-auth-test.feature\",\"scenario\":\"API Test with Global Auth\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757741738547-yj2h5r6my\"}"
+    },
+    "body": {
+      "email": "superadmin@shift.ma",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "tokenInfo": "***MASKED***",
+      "userInfo": {
+        "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+        "email": "superadmin@shift.ma",
+        "firstName": "Super",
+        "lastName": "Administrator",
+        "tenantId": "",
+        "roles": [
+          "SuperAdmin"
+        ],
+        "userType": "TenantUser",
+        "clientId": "",
+        "departmentId": "",
+        "teamId": ""
+      },
+      "requires2fa": false,
+      "sessionToken": "***MASKED***"
+    },
+    "headers": {}
+  },
+  "correlationId": "cefafebb-97e3-46d0-b8c2-1020913dd300",
+  "timestamp": {},
+  "duration": 387
+}

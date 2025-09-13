@@ -1,0 +1,1 @@
+❌ [Identity] POST /api/permissions | X-Correlation-ID: 3770f812-aed9-452b-b1e6-0cfbc3ea8e90 | Error: HTTP 405: Method Not Allowed

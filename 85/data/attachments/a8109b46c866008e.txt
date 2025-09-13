@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: DELETE
+Endpoint: /api/groups/7b5e94e0-7420-4406-bb44-15b02b11f9de
+Correlation ID: 647b3972-5580-44e5-b70c-c100fe089a0d
+Timestamp: 2025-09-13T05:33:51.021Z
+Duration: 146ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "647b3972-5580-44e5-b70c-c100fe089a0d",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757741630857-7njxfq9a5\",\"testCase\":\"should delete a group\"}"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": true,
+  "message": "Group deleted successfully"
+}

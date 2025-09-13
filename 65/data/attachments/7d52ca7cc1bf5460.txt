@@ -1,3 +1,0 @@
-❌ [ClientManagement] PUT /api/groups/undefined | X-Correlation-ID: 5e00e161-655a-4a0f-bd03-d3cc3569414f | Error: HTTP 400: Bad Request
-❌ [ClientManagement] DELETE /api/groups/undefined | X-Correlation-ID: ef17ef53-8d00-4064-9604-34adf2df802c | Error: HTTP 500: Internal Server Error
-⚠️ Failed to cleanup group undefined

@@ -1,0 +1,120 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-13T05:34:03.266Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "8ed63a63-4ec4-40f3-8c43-4be25d9aecc6",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757741642545-l7xpgokuh\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "8ed63a63-4ec4-40f3-8c43-4be25d9aecc6",
+      "timestamp": {},
+      "duration": 345
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "f3cde8a8-00a6-43cc-9beb-b34d2a0faa49",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757741642929-lx3vtk2uk\",\"testCase\":\"should handle pagination for user-client associations\"}"
+        },
+        "body": {
+          "name": "Client 1757741642930-mmbg7e3xi-1",
+          "email": "client-1757741642930-mmbg7e3xi-1@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757741642930-mmbg7e3xi-1",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "2facc954-b055-4712-94c0-2d3258e1458c",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-13T05:34:03.0717277Z",
+          "updatedAt": "2025-09-13T05:34:03.0717280Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "f3cde8a8-00a6-43cc-9beb-b34d2a0faa49",
+      "timestamp": {},
+      "duration": 204
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "cad92c4e-06fc-4ca0-81eb-67aefa4e5ab3",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757741642929-lx3vtk2uk\",\"testCase\":\"should handle pagination for user-client associations\"}"
+        },
+        "body": {
+          "email": "user-1757741643136-s5ibgq7n6-2@test.com",
+          "firstName": "Test",
+          "lastName": "User1757741643136-s5ibgq7n6-2",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "HTTP 403: Forbidden",
+          "stack": "Error: HTTP 403: Forbidden\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts:306:20\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "cad92c4e-06fc-4ca0-81eb-67aefa4e5ab3",
+      "timestamp": {},
+      "duration": 106
+    }
+  ]
+}
