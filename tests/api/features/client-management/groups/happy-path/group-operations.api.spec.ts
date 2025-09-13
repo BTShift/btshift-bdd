@@ -5,16 +5,18 @@ import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../
 import { TestDataFactory } from '../../../../support/fixtures/test-data-factory';
 import { EnhancedAssertions, testStep, expectWithContext } from '../../../../support/helpers/enhanced-assertions';
 
-// Set Allure metadata at module level to ensure all tests are properly categorized
-allure.parentSuite('👥 Client Services');
-allure.feature('Client Relationship Management');
-allure.suite('Client Organization');
-
 describe('Client Management - Group Operations', () => {
   let ctx: TestContext;
 
   beforeAll(async () => {
     ctx = await setupApiTestWithContext('TenantAdmin');
+  });
+
+  // Set Allure metadata for each test to ensure all tests are properly categorized
+  test.beforeEach(async () => {
+    allure.parentSuite('👥 Client Services');
+    allure.feature('Client Relationship Management');
+    allure.suite('Client Organization');
   });
 
   afterAll(async () => {
