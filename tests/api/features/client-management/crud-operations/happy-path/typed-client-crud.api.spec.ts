@@ -6,14 +6,16 @@ import { MultiUserAuthManager } from '../../../../support/auth/multi-user-auth-m
 import { TestContextManager } from '../../../../../../lib/helpers/test-context-manager';
 import { EnhancedAssertions, testStep, expectWithContext } from '../../../../support/helpers/enhanced-assertions';
 
+// Set Allure metadata at module level to ensure all tests are properly categorized
+allure.parentSuite('👥 Client Services');
+allure.feature('Client Relationship Management');
+allure.suite('Client Operations');
+
 describe('Client Management - CRUD with Typed NPM Packages', () => {
   let client: TypedApiClient;
   const createdClientIds: string[] = [];
 
   beforeAll(async () => {
-    allure.parentSuite('👥 Client Services');
-    allure.feature('Client Relationship Management');
-    allure.suite('Client Operations');
     // Use TenantAdmin context for client management operations
     const authManager = MultiUserAuthManager.getInstance();
     client = await authManager.getAuthenticatedClient('TenantAdmin');
