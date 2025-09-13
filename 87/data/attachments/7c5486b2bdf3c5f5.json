@@ -1,0 +1,36 @@
+{
+  "endpoint": "/api/clients/403a4841-cb69-4707-847f-1cd9b6b6bc2d",
+  "method": "get",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "7a4b05cc-eb42-4c7c-a12e-e7d83beeca50",
+      "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743064389-5ducehdlo\",\"testCase\":\"should get client by ID with typed client\"}"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "clientId": "403a4841-cb69-4707-847f-1cd9b6b6bc2d",
+      "companyName": "Get Test Client 1757743064394",
+      "country": "Morocco",
+      "address": "",
+      "iceNumber": "",
+      "rcNumber": "",
+      "vatNumber": "",
+      "cnssNumber": "",
+      "industry": "Technology",
+      "adminContactPerson": "",
+      "billingContactPerson": "",
+      "status": "Active",
+      "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "fiscalYearEnd": "",
+      "assignedTeamId": "",
+      "createdAt": "2025-09-13T05:57:44.4740920Z",
+      "updatedAt": "2025-09-13T05:57:44.4740920Z"
+    },
+    "headers": {}
+  },
+  "correlationId": "7a4b05cc-eb42-4c7c-a12e-e7d83beeca50",
+  "timestamp": {},
+  "duration": 352
+}

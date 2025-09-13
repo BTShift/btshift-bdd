@@ -1,0 +1,46 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/clients
+Correlation ID: c063e7dd-5283-4acf-be5e-40a0daa6c590
+Timestamp: 2025-09-13T05:57:44.941Z
+Duration: 162ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "c063e7dd-5283-4acf-be5e-40a0daa6c590",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743064935-fhd4k7694\",\"testCase\":\"should update client with typed client\"}"
+}
+
+=== Request Body ===
+{
+  "companyName": "Update Test Client 1757743064941",
+  "country": "Morocco",
+  "industry": "Technology"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "clientId": "7ab4a1d2-bfc4-44c7-94f1-d3f144f740ce",
+  "companyName": "Update Test Client 1757743064941",
+  "country": "Morocco",
+  "address": "",
+  "iceNumber": "",
+  "rcNumber": "",
+  "vatNumber": "",
+  "cnssNumber": "",
+  "industry": "Technology",
+  "adminContactPerson": "",
+  "billingContactPerson": "",
+  "status": "Active",
+  "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+  "fiscalYearEnd": "",
+  "assignedTeamId": "",
+  "createdAt": "2025-09-13T05:57:45.0183353Z",
+  "updatedAt": "2025-09-13T05:57:45.0183354Z"
+}

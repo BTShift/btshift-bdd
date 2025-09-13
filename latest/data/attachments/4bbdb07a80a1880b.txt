@@ -1,0 +1,50 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/clients
+Correlation ID: 702ed2fa-2eb1-4b01-b1d6-3a9035bc83aa
+Timestamp: 2025-09-13T05:57:51.646Z
+Duration: 178ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "702ed2fa-2eb1-4b01-b1d6-3a9035bc83aa",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743071484-u9oa1gxt2\",\"testCase\":\"should remove a client from a group\"}"
+}
+
+=== Request Body ===
+{
+  "name": "Client 1757743071646-59denymp7-2",
+  "email": "client-1757743071646-59denymp7-2@test.com",
+  "phone": "+212612345678",
+  "address": "456 Business Ave",
+  "taxId": "TAX1757743071646-59denymp7-2",
+  "industry": "Technology",
+  "notes": "Auto-generated test client"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "clientId": "9a8c9eec-34a5-4a25-9247-d50f7a8f7a06",
+  "companyName": "",
+  "country": "",
+  "address": "456 Business Ave",
+  "iceNumber": "",
+  "rcNumber": "",
+  "vatNumber": "",
+  "cnssNumber": "",
+  "industry": "Technology",
+  "adminContactPerson": "",
+  "billingContactPerson": "",
+  "status": "Active",
+  "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+  "fiscalYearEnd": "",
+  "assignedTeamId": "",
+  "createdAt": "2025-09-13T05:57:51.7258109Z",
+  "updatedAt": "2025-09-13T05:57:51.7258110Z"
+}

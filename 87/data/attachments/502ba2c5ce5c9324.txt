@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/groups/a19a5119-5958-47e1-aade-6d763a1e55fa/clients/9a8c9eec-34a5-4a25-9247-d50f7a8f7a06
+Correlation ID: 32b596cb-89e1-4f7d-9fb0-9e87a5124c32
+Timestamp: 2025-09-13T05:57:51.826Z
+Duration: 160ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "32b596cb-89e1-4f7d-9fb0-9e87a5124c32",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743071484-u9oa1gxt2\",\"testCase\":\"should remove a client from a group\"}"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": true,
+  "message": "Client added to group successfully"
+}

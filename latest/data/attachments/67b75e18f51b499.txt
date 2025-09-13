@@ -1,0 +1,1 @@
+❌ [ClientManagement] GET /api/clients/9267d271-0a6d-4e06-b817-e9773fa5963f | X-Correlation-ID: 9a4a1a8c-cf33-46bf-a84d-7b6c1d61eda5 | Error: HTTP 404: Not Found

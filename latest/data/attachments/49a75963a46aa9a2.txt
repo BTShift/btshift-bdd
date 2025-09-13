@@ -1,0 +1,10 @@
+🎬 Starting test session: test-1757743087544-o99v3uf1i for feature: audit-operations.api.feature
+📋 Test context set: audit-operations.api.feature :: api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts (positive)
+🧪 Test case: should filter audit logs by user
+🔄 Current step: Test Execution
+🎬 Auto-context: audit-operations.api.feature :: api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts :: should filter audit logs by user
+🧪 Adding test context to GET /api/audit-logs
+🧪 Test context JSON: {"featureFile":"audit-operations.api.feature","scenario":"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757743087544-o99v3uf1i","testCase":"should filter audit logs by user"}
+🔍 [Identity] GET /api/audit-logs | X-Correlation-ID: 5a18d82b-7503-4ebb-ab1d-421a1742a481 | Auth: Yes
+✅ [Identity] GET /api/audit-logs | X-Correlation-ID: 5a18d82b-7503-4ebb-ab1d-421a1742a481 | Success
+🏁 Clearing test context for session: test-1757743087544-o99v3uf1i

@@ -1,0 +1,155 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 6,
+  "timestamp": "2025-09-13T05:58:10.515Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "1e2985f3-29c2-4355-9f0f-7577af52a448",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743089232-egcdtx9t7\",\"testCase\":\"should reject login with invalid email\"}"
+        },
+        "body": {
+          "email": "nonexistent@example.com",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "HTTP 400: Bad Request",
+          "stack": "Error: HTTP 400: Bad Request\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts:23:5\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "1e2985f3-29c2-4355-9f0f-7577af52a448",
+      "timestamp": {},
+      "duration": 248
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "e847d1db-8998-4436-b617-63c66ec0020c",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743089526-jrkti5btn\",\"testCase\":\"should reject login with invalid password\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "HTTP 400: Bad Request",
+          "stack": "Error: HTTP 400: Bad Request\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts:32:5\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "e847d1db-8998-4436-b617-63c66ec0020c",
+      "timestamp": {},
+      "duration": 258
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "38025d1b-d552-483a-a18c-7a8bd52b0626",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743089809-7k8xa4l8s\",\"testCase\":\"should reject login with empty email\"}"
+        },
+        "body": {
+          "email": "",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "HTTP 400: Bad Request",
+          "stack": "Error: HTTP 400: Bad Request\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts:41:5\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "38025d1b-d552-483a-a18c-7a8bd52b0626",
+      "timestamp": {},
+      "duration": 162
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "1d37cbec-3778-4683-a45c-5a6ed6a0ef69",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743089992-t57w5yvr1\",\"testCase\":\"should reject login with empty password\"}"
+        },
+        "body": {
+          "email": "test@example.com",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "HTTP 400: Bad Request",
+          "stack": "Error: HTTP 400: Bad Request\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts:50:5\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "1d37cbec-3778-4683-a45c-5a6ed6a0ef69",
+      "timestamp": {},
+      "duration": 160
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "16f61011-1970-486f-84f6-5b02e42a1b48",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743090168-944bd8ktk\",\"testCase\":\"should reject login with malformed email\"}"
+        },
+        "body": {
+          "email": "not-an-email",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "HTTP 400: Bad Request",
+          "stack": "Error: HTTP 400: Bad Request\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts:59:5\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "16f61011-1970-486f-84f6-5b02e42a1b48",
+      "timestamp": {},
+      "duration": 160
+    },
+    {
+      "endpoint": "/api/authentication/validate-token",
+      "method": "get",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "bf7629d1-1a35-42c1-86d8-e1a7692b179f",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743090345-eyifc5i46\",\"testCase\":\"should reject token validation with invalid token\"}"
+        },
+        "params": {
+          "query": {
+            "token": "***MASKED***"
+          }
+        },
+        "query": {
+          "token": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "HTTP 404: Not Found",
+          "stack": "Error: HTTP 404: Not Found\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/identity-types/dist/client.js:24:23)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.identity (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts:68:5\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "bf7629d1-1a35-42c1-86d8-e1a7692b179f",
+      "timestamp": {},
+      "duration": 151
+    }
+  ]
+}

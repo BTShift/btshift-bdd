@@ -1,0 +1,45 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/clients/2a045342-d4a8-4ec1-87e7-396f1f1c329e/groups
+Correlation ID: 2102aad4-b1d4-41f1-8626-4c27c733bcb6
+Timestamp: 2025-09-13T05:57:53.954Z
+Duration: 166ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "2102aad4-b1d4-41f1-8626-4c27c733bcb6",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743073144-4pfyg57ps\",\"testCase\":\"should get all groups for a client\"}"
+}
+
+=== Request Params ===
+{
+  "query": {}
+}
+
+=== Query Parameters ===
+{}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "groups": [
+    {
+      "groupId": "7c625249-9b56-46b0-a913-51f7c754bcf7",
+      "name": "TestGroup1_1757743073311",
+      "description": "First group",
+      "clientCount": 0
+    },
+    {
+      "groupId": "9dc763a8-2807-4f90-9f2b-e4c7d468a3dc",
+      "name": "TestGroup2_1757743073471",
+      "description": "Second group",
+      "clientCount": 0
+    }
+  ],
+  "totalCount": 2
+}

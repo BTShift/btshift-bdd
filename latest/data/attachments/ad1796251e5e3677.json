@@ -1,0 +1,45 @@
+{
+  "endpoint": "/api/clients",
+  "method": "post",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "e449baa7-6872-4965-967b-cec1a35aa178",
+      "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743072162-0lxb8og69\",\"testCase\":\"should get all clients in a group\"}"
+    },
+    "body": {
+      "name": "Client 1757743072328-qjwst0bov-3",
+      "email": "client-1757743072328-qjwst0bov-3@test.com",
+      "phone": "+212612345678",
+      "address": "456 Business Ave",
+      "taxId": "TAX1757743072328-qjwst0bov-3",
+      "industry": "Technology",
+      "notes": "Auto-generated test client"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "clientId": "6af7507e-185b-4822-8796-916c574e0410",
+      "companyName": "",
+      "country": "",
+      "address": "456 Business Ave",
+      "iceNumber": "",
+      "rcNumber": "",
+      "vatNumber": "",
+      "cnssNumber": "",
+      "industry": "Technology",
+      "adminContactPerson": "",
+      "billingContactPerson": "",
+      "status": "Active",
+      "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "fiscalYearEnd": "",
+      "assignedTeamId": "",
+      "createdAt": "2025-09-13T05:57:52.4040740Z",
+      "updatedAt": "2025-09-13T05:57:52.4040740Z"
+    },
+    "headers": {}
+  },
+  "correlationId": "e449baa7-6872-4965-967b-cec1a35aa178",
+  "timestamp": {},
+  "duration": 159
+}

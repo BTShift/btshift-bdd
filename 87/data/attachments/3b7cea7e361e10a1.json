@@ -1,0 +1,19 @@
+{
+  "endpoint": "/api/authentication/logout",
+  "method": "post",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "bf190f07-6029-4a1c-bd04-6d23ce05ba3a",
+      "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743097113-j0c4sghp9\",\"testCase\":\"should logout successfully\"}"
+    },
+    "body": {}
+  },
+  "response": {
+    "status": 200,
+    "body": {},
+    "headers": {}
+  },
+  "correlationId": "bf190f07-6029-4a1c-bd04-6d23ce05ba3a",
+  "timestamp": {},
+  "duration": 156
+}

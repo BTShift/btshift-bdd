@@ -1,0 +1,67 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-13T05:59:31.212Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "post",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "5b2c73d9-002d-4026-8d08-b3c131ff614b",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743170587-llucy2jyu\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "5b2c73d9-002d-4026-8d08-b3c131ff614b",
+      "timestamp": {},
+      "duration": 384
+    },
+    {
+      "endpoint": "/api/tenants/by-name/non-existent-1757743171011",
+      "method": "get",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "3e22c43c-6312-4252-9b7d-d14c9dbe5731",
+          "X-Test-Context": "{\"featureFile\":\"duplicate-tenant.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757743171011-vlqdvjukz\",\"testCase\":\"should return 404 when getting tenant by non-existing name\"}"
+        }
+      },
+      "response": {
+        "status": 0,
+        "error": {
+          "message": "API Error: 404 - ",
+          "stack": "Error: API Error: 404 - \n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/tenant-management-types/src/client.ts:73:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.tenant (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts:118:5\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+        }
+      },
+      "correlationId": "3e22c43c-6312-4252-9b7d-d14c9dbe5731",
+      "timestamp": {},
+      "duration": 168
+    }
+  ]
+}
