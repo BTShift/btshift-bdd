@@ -122,7 +122,11 @@ describe('Business Feature: Platform Access Control', () => {
     } catch (error: any) {
       // The error response is also typed based on the OpenAPI schema
       expect(error).toBeDefined();
-      expect(error.response?.status).toBeGreaterThanOrEqual(400);
+      // The typed client throws an error with message containing status
+      // Extract status from error message "HTTP 400: ..."
+      const statusMatch = error.message.match(/HTTP (\d{3}):/);
+      const status = statusMatch ? parseInt(statusMatch[1]) : 0;
+      expect(status).toBeGreaterThanOrEqual(400);
     }
   });
 });

@@ -149,10 +149,13 @@ describe('Client Management - Group Operations', () => {
           checkResponse: exists
         }
       });
-    } catch (error) {
+    } catch (error: any) {
       // If GET returns 404, that's expected - group was deleted
-      if (error.response?.status !== 404) {
+      // The typed client throws an error with message containing status
+      if (error.message.includes('404')) {
         console.log('✅ Group successfully deleted (GET returned 404)');
+      } else {
+        throw error; // Re-throw if it's not a 404
       }
     }
   });

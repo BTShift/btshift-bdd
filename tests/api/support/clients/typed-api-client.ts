@@ -3,9 +3,7 @@
  * This provides full type safety using the auto-generated types from the services
  */
 
-import { makeClient as makeIdentityClient } from '@btshift/identity-types';
-import { makeClient as makeTenantClient } from '@btshift/tenant-management-types';
-import { makeClient as makeClientManagementClient } from '@btshift/client-management-types';
+import createClient from 'openapi-fetch';
 import type { paths as IdentityPaths } from '@btshift/identity-types';
 import type { paths as TenantPaths } from '@btshift/tenant-management-types';
 import type { paths as ClientPaths } from '@btshift/client-management-types';
@@ -25,56 +23,37 @@ export class TypedApiClient {
   private baseUrl: string;
   private lastCorrelationId: string | null = null;
   
-  public identity: ReturnType<typeof makeIdentityClient>['api'];
-  public tenant: ReturnType<typeof makeTenantClient>['api'];
-  public clientManagement: ReturnType<typeof makeClientManagementClient>['api'];
+  private identityClient: ReturnType<typeof createClient<IdentityPaths>>;
+  private tenantClient: ReturnType<typeof createClient<TenantPaths>>;
+  private clientManagementClient: ReturnType<typeof createClient<ClientPaths>>;
+
+  // Public API maintains backward compatibility
+  public identity: (path: string, method: string, options?: any) => Promise<ApiResponse>;
+  public tenant: (path: string, method: string, options?: any) => Promise<ApiResponse>;
+  public clientManagement: (path: string, method: string, options?: any) => Promise<ApiResponse>;
 
   constructor(baseUrl?: string) {
     this.baseUrl = baseUrl || process.env.API_GATEWAY_URL || 'http://localhost:8080';
     
-    // Initialize identity client with correlation tracking
-    const identityClient = makeIdentityClient({
-      baseUrl: this.baseUrl,
-      getAuth: () => {
-        // Return just the token, the client library adds 'Bearer' prefix
-        return this.authToken || undefined;
-      },
-      headers: () => {
-        // Don't generate correlation ID here, let the wrapper handle it
-        return {};
-      }
+    // Initialize identity client with openapi-fetch
+    this.identityClient = createClient<IdentityPaths>({
+      baseUrl: this.baseUrl
     });
-    
-    // Wrap the API to add correlation logging
-    this.identity = this.wrapApiWithCorrelation(identityClient.api, 'Identity');
 
-    // Initialize tenant management client
-    const tenantClient = makeTenantClient({
-      baseUrl: this.baseUrl,
-      getAuth: () => {
-        // Return just the token, the client library adds 'Bearer' prefix
-        return this.authToken || undefined;
-      },
-      headers: () => {
-        // Don't generate correlation ID here, let the wrapper handle it
-        return {};
-      }
+    // Initialize tenant management client with openapi-fetch
+    this.tenantClient = createClient<TenantPaths>({
+      baseUrl: this.baseUrl
     });
-    this.tenant = this.wrapApiWithCorrelation(tenantClient.api, 'Tenant');
 
-    // Initialize client management client
-    const clientClient = makeClientManagementClient({
-      baseUrl: this.baseUrl,
-      getAuth: () => {
-        // Return just the token, the client library adds 'Bearer' prefix
-        return this.authToken || undefined;
-      },
-      headers: () => {
-        // Don't generate correlation ID here, let the wrapper handle it
-        return {};
-      }
+    // Initialize client management client with openapi-fetch
+    this.clientManagementClient = createClient<ClientPaths>({
+      baseUrl: this.baseUrl
     });
-    this.clientManagement = this.wrapApiWithCorrelation(clientClient.api, 'ClientManagement');
+
+    // Create backward-compatible wrapper functions
+    this.identity = this.createWrapper(this.identityClient, 'Identity');
+    this.tenant = this.createWrapper(this.tenantClient, 'Tenant');
+    this.clientManagement = this.createWrapper(this.clientManagementClient, 'ClientManagement');
   }
 
   setAuthToken(token: string): void {
@@ -93,104 +72,148 @@ export class TypedApiClient {
     return this.lastCorrelationId;
   }
 
-  // Wrap API calls with correlation ID logging and capture
-  private wrapApiWithCorrelation(api: any, serviceName: string): any {
-    
-    // Since the API is a function, we need to wrap the function call directly
-    return async (...args: any[]): Promise<ApiResponse> => {
-      const [path, method, options = {}] = args;
+  // Create a backward-compatible wrapper for openapi-fetch clients
+  private createWrapper(client: any, serviceName: string): (path: string, method: string, options?: any) => Promise<ApiResponse> {
+
+    return async (path: string, method: string, options: any = {}): Promise<ApiResponse> => {
       const startTime = Date.now();
-      
+
       // Generate correlation ID for this request
       const correlationId = randomUUID();
       this.lastCorrelationId = correlationId;
-      
+
       // Get test context from TestContextManager
       const testContext = TestContextManager.getInstance().getContextHeader();
-      
-      // Add correlation ID and test context to headers
-      const enhancedOptions = {
-        ...options,
-        headers: {
-          'X-Correlation-ID': correlationId,
-          ...(testContext && { 'X-Test-Context': testContext }),
-          ...options.headers
-        }
+
+      // Prepare headers
+      const headers: Record<string, string> = {
+        'X-Correlation-ID': correlationId,
+        ...(testContext && { 'X-Test-Context': testContext }),
+        ...(this.authToken && { 'Authorization': `Bearer ${this.authToken}` }),
+        ...options.headers
       };
-      
+
       // Log test context if available
       if (testContext) {
-        console.log(`🧪 Adding test context to ${method?.toUpperCase()} ${path}`);
+        console.log(`🧪 Adding test context to ${method.toUpperCase()} ${path}`);
         console.log(`🧪 Test context JSON:`, testContext);
       }
-      
+
       // Debug: Check if Authorization header is present
-      const hasAuth = options.headers?.Authorization || this.authToken;
-      console.log(`🔍 [${serviceName}] ${method?.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Auth: ${hasAuth ? 'Yes' : 'No'}`);
-      
+      const hasAuth = this.authToken;
+      console.log(`🔍 [${serviceName}] ${method.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Auth: ${hasAuth ? 'Yes' : 'No'}`);
+
       // Prepare API call details for reporting
       const apiCallDetails: ApiCallDetails = {
         endpoint: path,
-        method: method || 'GET',
+        method: method.toUpperCase(),
         request: {
-          headers: enhancedOptions.headers,
-          body: enhancedOptions.body,
-          params: enhancedOptions.params,
-          query: enhancedOptions.params?.query
+          headers,
+          body: options.body,
+          params: options.params,
+          query: options.params?.query
         },
         response: {},
         correlationId,
         timestamp: new Date()
       };
-      
+
       try {
-        const result = await api(path, method, enhancedOptions);
+        // Call openapi-fetch client with the appropriate method
+        let result: any;
+        const upperMethod = method.toUpperCase() as 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH';
+
+        // openapi-fetch uses uppercase method names
+        if (upperMethod === 'GET') {
+          result = await client.GET(path as any, { headers, params: options.params });
+        } else if (upperMethod === 'POST') {
+          result = await client.POST(path as any, { headers, body: options.body, params: options.params });
+        } else if (upperMethod === 'PUT') {
+          result = await client.PUT(path as any, { headers, body: options.body, params: options.params });
+        } else if (upperMethod === 'DELETE') {
+          result = await client.DELETE(path as any, { headers, params: options.params });
+        } else if (upperMethod === 'PATCH') {
+          result = await client.PATCH(path as any, { headers, body: options.body, params: options.params });
+        } else {
+          throw new Error(`Unsupported method: ${method}`);
+        }
+
         const duration = Date.now() - startTime;
-        
-        console.log(`✅ [${serviceName}] ${method?.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Success`);
-        
+
+        // openapi-fetch returns { data, error, response }
+        if (result.error) {
+          // Handle error response
+          console.error(`❌ [${serviceName}] ${method.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Error:`, result.error);
+
+          apiCallDetails.response = {
+            status: result.response?.status || 0,
+            error: result.error
+          };
+          apiCallDetails.duration = duration;
+
+          await ApiAllureReporter.reportApiCall(apiCallDetails);
+
+          // Throw error with correlation ID
+          // Format error message to match what tests expect (include status code in message)
+          const statusCode = result.response?.status || 0;
+          const statusText = result.response?.statusText || 'Unknown Error';
+          const errorMessage = result.error?.message || `HTTP ${statusCode}: ${statusText}`;
+
+          // Ensure status code is in the message for tests that check error.message.contains('404')
+          const finalMessage = errorMessage.includes(statusCode.toString())
+            ? errorMessage
+            : `HTTP ${statusCode}: ${statusText}`;
+
+          const error = new Error(finalMessage);
+          (error as any).correlationId = correlationId;
+          (error as any).requestCorrelationId = correlationId;
+          (error as any).response = result.response;
+          throw error;
+        }
+
+        console.log(`✅ [${serviceName}] ${method.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Success`);
+
         // Update API call details with response
         apiCallDetails.response = {
-          status: 200, // Assume success if no error
-          body: result,
-          headers: {} // Response headers not easily accessible from the typed client
+          status: result.response?.status || 200,
+          body: result.data,
+          headers: result.response?.headers || {}
         };
         apiCallDetails.duration = duration;
-        
+
         // Report to Allure
         await ApiAllureReporter.reportApiCall(apiCallDetails);
-        
+
         // Create enhanced response with correlation ID metadata
+        // Handle cases where result.data might be undefined (e.g., 204 No Content)
         const enhancedResponse = {
-          data: result,
+          data: result.data || {},
           correlationId: correlationId,
           requestCorrelationId: correlationId
         };
-        
+
         return enhancedResponse;
-      } catch (error) {
-        const duration = Date.now() - startTime;
-        console.error(`❌ [${serviceName}] ${method?.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Error:`, error.message);
-        
-        // Update API call details with error
-        apiCallDetails.response = {
-          status: error.response?.status || 0,
-          error: {
-            message: error.message,
-            response: error.response,
-            stack: error.stack
-          }
-        };
-        apiCallDetails.duration = duration;
-        
-        // Report to Allure
-        await ApiAllureReporter.reportApiCall(apiCallDetails);
-        
-        // Re-throw error but preserve correlation ID context
-        const enhancedError = error as any;
-        enhancedError.correlationId = correlationId;
-        enhancedError.requestCorrelationId = correlationId;
-        throw enhancedError;
+      } catch (error: any) {
+        // If error wasn't already handled above, handle it here
+        if (!error.correlationId) {
+          const duration = Date.now() - startTime;
+          console.error(`❌ [${serviceName}] ${method.toUpperCase()} ${path} | X-Correlation-ID: ${correlationId} | Error:`, error.message);
+
+          apiCallDetails.response = {
+            status: 0,
+            error: {
+              message: error.message,
+              stack: error.stack
+            }
+          };
+          apiCallDetails.duration = duration;
+
+          await ApiAllureReporter.reportApiCall(apiCallDetails);
+
+          error.correlationId = correlationId;
+          error.requestCorrelationId = correlationId;
+        }
+        throw error;
       }
     };
   }

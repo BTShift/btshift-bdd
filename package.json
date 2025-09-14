@@ -66,8 +66,9 @@
     "npm": ">=8.0.0"
   },
   "dependencies": {
-    "@btshift/client-management-types": "^3.0.6",
-    "@btshift/identity-types": "^7.0.0",
-    "@btshift/tenant-management-types": "^2.0.0"
+    "@btshift/client-management-types": "^4.0.0",
+    "@btshift/identity-types": "^8.0.0",
+    "@btshift/tenant-management-types": "^3.0.0",
+    "openapi-fetch": "^0.14.0"
   }
 }

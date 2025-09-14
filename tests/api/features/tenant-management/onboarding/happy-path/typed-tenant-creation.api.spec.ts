@@ -181,7 +181,11 @@ describe('Tenant Creation - Using Typed NPM Packages', () => {
     } catch (error: any) {
       // Error response is also typed
       expect(error).toBeDefined();
-      expect(error.response?.status).toBeGreaterThanOrEqual(400);
+      // The typed client throws an error with message containing status
+      // Extract status from error message "API Error: 400 - ..."
+      const statusMatch = error.message.match(/API Error: (\d{3})/);
+      const status = statusMatch ? parseInt(statusMatch[1]) : 0;
+      expect(status).toBeGreaterThanOrEqual(400);
     }
   });
 });

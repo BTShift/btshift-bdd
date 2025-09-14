@@ -289,9 +289,12 @@ describe('Client Management - CRUD with Typed NPM Packages', () => {
     // Assert - Verify deletion by trying to get the client
     try {
       await client.clientManagement(`/api/clients/${clientId}` as any, 'get');
-      throw new Error('Should have thrown 404 for deleted client');
+      throw new Error('Should have thrown error for deleted client');
     } catch (error: any) {
-      expect(error.response?.status).toBe(404);
+      // The API returns an error with code 5 for not found
+      // The error message should indicate the client was not found
+      expect(error.message).toBeDefined();
+      expect(error.message.toLowerCase()).toContain('not found');
     }
   });
 });

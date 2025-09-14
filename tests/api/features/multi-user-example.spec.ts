@@ -91,9 +91,10 @@ describe('Multi-User Context Example Tests', () => {
         await ctx.client.tenant('/api/platform/settings', 'get');
         // This should fail for TenantAdmin
         expect(true).toBe(false); // Should not reach here
-      } catch (error) {
+      } catch (error: any) {
         // Expected to fail with 403 Forbidden
-        expect(error.response?.status).toBe(403);
+        // The typed client throws an error with message containing status
+        expect(error.message).toContain('403');
         console.log('✅ TenantAdmin correctly denied access to platform settings');
       }
     });
