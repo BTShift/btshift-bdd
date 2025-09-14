@@ -160,6 +160,61 @@ describe('Client Management - Group Operations', () => {
     }
   });
 
+  test('should get a single group by ID', async () => {
+    // Create a group
+    const groupData = {
+      name: `GetTestGroup_${Date.now()}`,
+      description: 'Test group for individual retrieval'
+    };
+
+    const createResponse = await testStep('Create group for retrieval test', async () => {
+      return await ctx.client.clientManagement('/api/groups', 'post', {
+        body: groupData
+      });
+    }, {
+      operation: 'Create Group',
+      endpoint: '/api/groups',
+      entityType: 'group'
+    });
+
+    const createdData = ctx.getData(createResponse);
+    ctx.cleanup.addGroup(createdData.groupId);
+
+    // Get the group by ID using the new GetGroup endpoint
+    const response = await testStep('Get group by ID', async () => {
+      return await ctx.client.clientManagement(`/api/groups/${createdData.groupId}` as any, 'get');
+    }, {
+      operation: 'Get Group',
+      endpoint: `/api/groups/${createdData.groupId}`,
+      entityId: createdData.groupId,
+      entityType: 'group'
+    });
+
+    const retrievedData = ctx.getData(response);
+
+    await testStep('Verify group retrieval response', async () => {
+      const context = {
+        operation: 'Get Group',
+        endpoint: `/api/groups/${createdData.groupId}`,
+        entityId: createdData.groupId,
+        entityType: 'group',
+        additionalInfo: {
+          expectedGroupName: groupData.name,
+          expectedDescription: groupData.description
+        }
+      };
+
+      await expectWithContext(retrievedData, context).toBeDefined();
+      await expectWithContext(retrievedData.groupId, context).toBe(createdData.groupId);
+      await expectWithContext(retrievedData.name, context).toBe(groupData.name);
+      await expectWithContext(retrievedData.description, context).toBe(groupData.description);
+      await expectWithContext(retrievedData.clientCount, context).toBe(0);
+      await expectWithContext(retrievedData.tenantId, context).toBeTruthy();
+      await expectWithContext(retrievedData.createdAt, context).toBeTruthy();
+      await expectWithContext(retrievedData.updatedAt, context).toBeTruthy();
+    });
+  });
+
   test('should list all groups for a tenant', async () => {
     // Create multiple groups
     const group1 = await ctx.client.clientManagement('/api/groups', 'post', {
@@ -196,7 +251,7 @@ describe('Client Management - Group Operations', () => {
     });
 
     const listResponseData = ctx.getData(response);
-    
+
     await testStep('Verify groups list response', async () => {
       const context = {
         operation: 'List Groups',
@@ -206,14 +261,14 @@ describe('Client Management - Group Operations', () => {
           createdGroups: [group1Data.groupId, group2Data.groupId]
         }
       };
-      
+
       await expectWithContext(listResponseData.groups, context).toBeDefined();
-      
+
       expect(Array.isArray(listResponseData.groups)).toBe(
         true,
         `Response should contain an array of groups but got: ${typeof listResponseData.groups}`
       );
-      
+
       expect(listResponseData.groups.length).toBeGreaterThanOrEqual(
         2,
         `Should have at least 2 groups (created: ${group1Data.name}, ${group2Data.name}) but found ${listResponseData.groups.length}`
