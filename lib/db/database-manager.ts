@@ -48,11 +48,6 @@ export class DatabaseManager {
     return result.rows[0];
   }
 
-  async getSagaState(tenantId: string): Promise<any> {
-    const query = 'SELECT * FROM "TenantOnboardingStates" WHERE "TenantId" = $1';
-    const result = await this.tenantDbClient.query(query, [tenantId]);
-    return result.rows[0];
-  }
 
   async checkTenantDatabaseExists(dbName: string): Promise<boolean> {
     const query = "SELECT 1 FROM pg_database WHERE datname = $1";
@@ -201,5 +196,62 @@ export class DatabaseManager {
     }
     
     return false;
+  }
+
+  // New authorization-related database methods
+  async createTestUser(userData: {
+    userType: string;
+    email: string;
+    tenantId: string | null;
+    clientIds: string[] | null;
+  }): Promise<any> {
+    const userId = `test-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
+    // Insert user into identity database
+    const insertQuery = `
+      INSERT INTO "Users" ("Id", "Email", "UserType", "TenantId", "ClientIds", "EmailConfirmed", "CreatedAt")
+      VALUES ($1, $2, $3, $4, $5, true, NOW())
+      RETURNING *
+    `;
+
+    const values = [
+      userId,
+      userData.email,
+      userData.userType,
+      userData.tenantId,
+      userData.clientIds ? JSON.stringify(userData.clientIds) : null
+    ];
+
+    const result = await this.identityDbClient.query(insertQuery, values);
+    return result.rows[0];
+  }
+
+  async getClientById(clientId: string): Promise<any> {
+    // This would need to determine which tenant database to query
+    // For now, return a mock client
+    return {
+      Id: clientId,
+      CompanyName: `Test Client ${clientId}`,
+      TenantId: 'test-tenant'
+    };
+  }
+
+  async getUserClientAssociation(userEmail: string, clientId: string): Promise<any> {
+    const query = `
+      SELECT * FROM "UserClientAssociations"
+      WHERE "UserEmail" = $1 AND "ClientId" = $2
+    `;
+
+    const result = await this.identityDbClient.query(query, [userEmail, clientId]);
+    return result.rows[0];
+  }
+
+  // Helper methods for direct database queries
+  async queryTenantDb(query: string, params: any[] = []): Promise<any> {
+    return await this.tenantDbClient.query(query, params);
+  }
+
+  async queryIdentityDb(query: string, params: any[] = []): Promise<any> {
+    return await this.identityDbClient.query(query, params);
   }
 }

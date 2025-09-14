@@ -7,6 +7,8 @@ dotenv.config();
 export class ApiClient {
   private client: AxiosInstance;
   private authToken: string | null = null;
+  private operationalContext: any = {};
+  private lastRequestHeaders: any = {};
 
   constructor() {
     this.client = axios.create({
@@ -17,20 +19,32 @@ export class ApiClient {
       },
     });
 
-    // Add request interceptor to include auth token and test context
+    // Add request interceptor to include auth token, operational context, and test context
     this.client.interceptors.request.use(
       (config) => {
         if (this.authToken) {
           config.headers.Authorization = `Bearer ${this.authToken}`;
         }
-        
+
+        // Add operational context headers
+        if (this.operationalContext.tenantId) {
+          config.headers['X-Operation-Tenant-Id'] = this.operationalContext.tenantId;
+        }
+
+        if (this.operationalContext.clientId) {
+          config.headers['X-Operation-Client-Id'] = this.operationalContext.clientId;
+        }
+
         // Add test context header if available
         const testContext = TestContextManager.getInstance().getContextHeader();
         if (testContext) {
           config.headers['X-Test-Context'] = testContext;
           console.log(`🧪 Adding test context to ${config.method?.toUpperCase()} ${config.url}`);
         }
-        
+
+        // Store headers for validation
+        this.lastRequestHeaders = { ...config.headers };
+
         return config;
       },
       (error) => {
@@ -136,6 +150,91 @@ export class ApiClient {
 
   async validateToken(token: string): Promise<any> {
     const response = await this.client.get(`/api/authentication/validate-token?token=${token}`);
+    return response.data;
+  }
+
+  // New authorization methods
+  async loginWithUserType(userType: string, email: string, tenantId?: string, clientId?: string): Promise<any> {
+    const loginData: any = {
+      email,
+      password: process.env.TEST_USER_PASSWORD || 'TestPassword123!',
+      userType
+    };
+
+    if (tenantId) loginData.tenantId = tenantId;
+    if (clientId) loginData.clientId = clientId;
+
+    const response = await this.client.post('/api/authentication/login-with-usertype', loginData);
+
+    if (response.data.success && response.data.tokenInfo) {
+      this.setAuthToken(response.data.tokenInfo.accessToken);
+
+      // Set operational context based on user type
+      if (tenantId) {
+        this.operationalContext.tenantId = tenantId;
+      }
+      if (clientId) {
+        this.operationalContext.clientId = clientId;
+      }
+
+      return response.data;
+    }
+
+    throw new Error(`Login with UserType failed: ${response.data.message}`);
+  }
+
+  setOperationalContext(context: { tenantId?: string; clientId?: string }): void {
+    this.operationalContext = { ...this.operationalContext, ...context };
+  }
+
+  clearOperationalContext(): void {
+    this.operationalContext = {};
+  }
+
+  getLastRequestHeaders(): any {
+    return this.lastRequestHeaders;
+  }
+
+  async getTenants(): Promise<any> {
+    const response = await this.client.get('/api/tenants');
+    return response.data;
+  }
+
+  async getTenantInfo(tenantId: string): Promise<any> {
+    const response = await this.client.get(`/api/tenants/${tenantId}/info`);
+    return response.data;
+  }
+
+  async getClientInfo(clientId: string): Promise<any> {
+    const response = await this.client.get(`/api/clients/${clientId}`);
+    return response.data;
+  }
+
+  async updateClient(clientId: string, updateData: any): Promise<any> {
+    const response = await this.client.put(`/api/clients/${clientId}`, updateData);
+    return response.data;
+  }
+
+  async getClientGroup(groupId: string): Promise<any> {
+    const response = await this.client.get(`/api/groups/${groupId}`);
+    return response.data;
+  }
+
+  async getClients(filters?: any): Promise<any> {
+    let url = '/api/clients';
+    if (filters) {
+      const params = new URLSearchParams(filters).toString();
+      url += `?${params}`;
+    }
+    const response = await this.client.get(url);
+    return response.data;
+  }
+
+  async associateUserWithClient(clientId: string, userEmail: string): Promise<any> {
+    const response = await this.client.post('/api/user-client-associations', {
+      clientId,
+      userEmail,
+    });
     return response.data;
   }
 }

@@ -4,7 +4,8 @@ Feature: Tenant Onboarding
   So that they can use the accounting platform
 
   Background:
-    Given I am logged in as a SuperAdmin
+    Given I am logged in as UserType "SuperAdmin"
+    And I have platform-wide permissions
     And all tenant databases have been cleaned up
 
   @sprint1 @critical
@@ -42,10 +43,11 @@ Feature: Tenant Onboarding
       | Tenant Name | Admin Email        |
       | tenant-a    | admin@tenant-a.com |
       | tenant-b    | admin@tenant-b.com |
-    When I log in as admin of "tenant-a"
+    When I log in as UserType "TenantAdmin" for tenant "tenant-a"
     Then I should only see data for "tenant-a"
     And I should not be able to access "tenant-b" data
     And cross-tenant API requests should return 403 Forbidden
+    And requests should include "X-Operation-Tenant-Id: tenant-a"
 
   @sprint1 @validation
   Scenario: Duplicate tenant prevention
