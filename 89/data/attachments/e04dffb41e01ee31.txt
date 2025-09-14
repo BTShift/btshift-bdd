@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users
+Correlation ID: 57dd0c2e-5423-49b2-abaf-9dc08dd4b50a
+Timestamp: 2025-09-14T09:19:41.132Z
+Duration: 181ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "57dd0c2e-5423-49b2-abaf-9dc08dd4b50a",
+  "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841581131-4rayisn5h\",\"testCase\":\"should search users by email\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "email": "user-1757841581132-iprfecjd0-1@test.com",
+  "firstName": "Test",
+  "lastName": "User1757841581132-iprfecjd0-1",
+  "phoneNumber": "+212600000000",
+  "role": "User"
+}
+
+=== Response ===
+Status: 403
+
+Response Headers:
+{}

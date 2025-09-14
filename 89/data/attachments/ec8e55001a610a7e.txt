@@ -1,0 +1,36 @@
+=== API Call Details ===
+Method: PUT
+Endpoint: /api/groups/59797768-0ffa-4669-a582-a9a1271eabfb
+Correlation ID: 012e906e-170e-44c4-a99a-d2c41bb25c8c
+Timestamp: 2025-09-14T09:17:30.932Z
+Duration: 231ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "012e906e-170e-44c4-a99a-d2c41bb25c8c",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841450428-uj8sp6w9v\",\"testCase\":\"should update an existing group\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "UpdatedGroup_1757841450932",
+  "description": "Updated description"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "groupId": "59797768-0ffa-4669-a582-a9a1271eabfb",
+  "name": "UpdatedGroup_1757841450932",
+  "description": "Updated description",
+  "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+  "createdAt": "2025-09-14T09:17:30.4902870Z",
+  "updatedAt": "2025-09-14T09:17:30.9957785Z",
+  "clientCount": 0
+}

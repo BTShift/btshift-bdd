@@ -1,0 +1,97 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-14T09:19:26.320Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "c90bbc3f-b2d4-4604-9919-03c0a3ea7015",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841565612-ld4hju5ga\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "c90bbc3f-b2d4-4604-9919-03c0a3ea7015",
+      "timestamp": {},
+      "duration": 330
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b0274591-6b47-465e-82b3-9ac664262101",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841565612-ld4hju5ga\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841565978-4abxhqaby-1@test.com",
+          "firstName": "Test",
+          "lastName": "User1757841565978-4abxhqaby-1",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "b0274591-6b47-465e-82b3-9ac664262101",
+      "timestamp": {},
+      "duration": 180
+    },
+    {
+      "endpoint": "/api/users/undefined/2fa/status",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "d7f06f68-614e-427d-8ad1-d7c9c125a405",
+          "X-Test-Context": "{\"featureFile\":\"2fa-operations.api.feature\",\"scenario\":\"api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841566176-mcl3hmzr2\",\"testCase\":\"should get two-factor authentication status\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "isEnabled": false,
+          "provider": "",
+          "hasBackupCodes": false,
+          "lastUsedAt": ""
+        },
+        "headers": {}
+      },
+      "correlationId": "d7f06f68-614e-427d-8ad1-d7c9c125a405",
+      "timestamp": {},
+      "duration": 114
+    }
+  ]
+}

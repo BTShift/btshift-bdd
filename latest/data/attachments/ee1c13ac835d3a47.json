@@ -1,0 +1,95 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-14T09:19:23.056Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "10db771c-d6a1-4ae5-af00-63499a85576c",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841562349-5q51tr5dz\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "10db771c-d6a1-4ae5-af00-63499a85576c",
+      "timestamp": {},
+      "duration": 335
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "8449da39-cb73-4b65-962d-1cd671656b18",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841562349-5q51tr5dz\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841562722-r8cr7ahtm-1@test.com",
+          "firstName": "Test",
+          "lastName": "User1757841562722-r8cr7ahtm-1",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "8449da39-cb73-4b65-962d-1cd671656b18",
+      "timestamp": {},
+      "duration": 181
+    },
+    {
+      "endpoint": "/api/users/undefined/2fa/enable",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "86b546f7-7dba-4a59-a34b-eb80d702fef2",
+          "X-Test-Context": "{\"featureFile\":\"2fa-operations.api.feature\",\"scenario\":\"api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841562921-c7v9kqcbn\",\"testCase\":\"should generate new backup codes\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "Unable to read the request as JSON because the request content type '' is not a known JSON content type.",
+          "details": []
+        }
+      },
+      "correlationId": "86b546f7-7dba-4a59-a34b-eb80d702fef2",
+      "timestamp": {},
+      "duration": 110
+    }
+  ]
+}

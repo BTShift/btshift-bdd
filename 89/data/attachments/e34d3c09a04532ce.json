@@ -1,0 +1,17 @@
+{
+  "endpoint": "/api/invitations/undefined/cancel",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "c15d409a-7902-468b-925c-ab58d348fcfa",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "c15d409a-7902-468b-925c-ab58d348fcfa",
+  "timestamp": {},
+  "duration": 106
+}

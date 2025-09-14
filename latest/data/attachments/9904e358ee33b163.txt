@@ -1,0 +1,25 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users/undefined/change-password
+Correlation ID: 2d597f25-8f68-4e4c-b1f7-8c0a3386f939
+Timestamp: 2025-09-14T09:18:18.842Z
+Duration: 107ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "2d597f25-8f68-4e4c-b1f7-8c0a3386f939",
+  "X-Test-Context": "{\"featureFile\":\"password-reset.api.feature\",\"scenario\":\"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841498841-htv3hq6b9\",\"testCase\":\"should change password for authenticated user\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "currentPassword": "***MASKED***",
+  "newPassword": "***MASKED***"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

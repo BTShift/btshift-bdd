@@ -1,0 +1,26 @@
+{
+  "endpoint": "/api/users",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "4148fb88-cb8e-4843-9548-8af9d47d4e3b",
+      "X-Test-Context": "{\"featureFile\":\"session-operations.api.feature\",\"scenario\":\"api/features/identity/session-management/happy-path/session-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841543747-0lgotwh3n\",\"testCase\":\"should revoke specific session\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "user-1757841543748-u6sbt042h-2@test.com",
+      "firstName": "Test",
+      "lastName": "User1757841543748-u6sbt042h-2",
+      "phoneNumber": "+212600000000",
+      "role": "User",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "4148fb88-cb8e-4843-9548-8af9d47d4e3b",
+  "timestamp": {},
+  "duration": 114
+}

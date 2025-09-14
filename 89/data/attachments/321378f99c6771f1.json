@@ -1,0 +1,1783 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 51,
+  "timestamp": "2025-09-14T09:17:34.391Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "72f8430b-8911-4d29-9554-1035e5419a4f",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841444088-zpsexdwtd\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "72f8430b-8911-4d29-9554-1035e5419a4f",
+      "timestamp": {},
+      "duration": 703
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "774d809b-a862-4e3f-abcc-374b3af95a24",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841444904-8rqb43enr\",\"testCase\":\"should create client with typed client from @btshift/client-management-types\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Test Client 1757841444911",
+          "country": "Morocco",
+          "address": "123 Test Street, Casablanca",
+          "iceNumber": "001757841444911",
+          "rcNumber": "RC1757841444911",
+          "vatNumber": "VAT1757841444911",
+          "cnssNumber": "CNSS1757841444911",
+          "industry": "Technology",
+          "adminContactPerson": "admin-1757841444911@test.com",
+          "billingContactPerson": "billing-1757841444911@test.com"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "11f7464f-ac56-494f-a596-0b51ffbec5b5",
+          "companyName": "Test Client 1757841444911",
+          "country": "Morocco",
+          "address": "123 Test Street, Casablanca",
+          "iceNumber": "001757841444911",
+          "rcNumber": "RC1757841444911",
+          "vatNumber": "VAT1757841444911",
+          "cnssNumber": "CNSS1757841444911",
+          "industry": "Technology",
+          "adminContactPerson": "admin-1757841444911@test.com",
+          "billingContactPerson": "billing-1757841444911@test.com",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:25.8458781Z",
+          "updatedAt": "2025-09-14T09:17:25.8458782Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "774d809b-a862-4e3f-abcc-374b3af95a24",
+      "timestamp": {},
+      "duration": 1406
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "cb32132d-3f62-40a6-83dd-a6f722c3345f",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841446354-gjqqx1rvj\",\"testCase\":\"should get client by ID with typed client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Get Test Client 1757841446363",
+          "country": "Morocco",
+          "industry": "Technology"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "b265700b-64c3-4716-92bc-23e6e11abc44",
+          "companyName": "Get Test Client 1757841446363",
+          "country": "Morocco",
+          "address": "",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:26.4219831Z",
+          "updatedAt": "2025-09-14T09:17:26.4219832Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "cb32132d-3f62-40a6-83dd-a6f722c3345f",
+      "timestamp": {},
+      "duration": 119
+    },
+    {
+      "endpoint": "/api/clients/b265700b-64c3-4716-92bc-23e6e11abc44",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "492cacc1-765e-41e6-910a-d556a1640397",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841446354-gjqqx1rvj\",\"testCase\":\"should get client by ID with typed client\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "b265700b-64c3-4716-92bc-23e6e11abc44",
+          "companyName": "Get Test Client 1757841446363",
+          "country": "Morocco",
+          "address": "",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:26.4219830Z",
+          "updatedAt": "2025-09-14T09:17:26.4219830Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "492cacc1-765e-41e6-910a-d556a1640397",
+      "timestamp": {},
+      "duration": 354
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "049a25d0-bac1-41be-a4c7-b359f528aac9",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841446862-f2dm2g2cn\",\"testCase\":\"should update client with typed client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Update Test Client 1757841446865",
+          "country": "Morocco",
+          "industry": "Technology"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "15f2b2ff-5256-47ca-bd03-37eaf283c9dd",
+          "companyName": "Update Test Client 1757841446865",
+          "country": "Morocco",
+          "address": "",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:26.9238556Z",
+          "updatedAt": "2025-09-14T09:17:26.9238557Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "049a25d0-bac1-41be-a4c7-b359f528aac9",
+      "timestamp": {},
+      "duration": 117
+    },
+    {
+      "endpoint": "/api/clients/15f2b2ff-5256-47ca-bd03-37eaf283c9dd",
+      "method": "PUT",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "5c3768b0-6aaf-4263-a3df-019bb47a5c74",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841446862-f2dm2g2cn\",\"testCase\":\"should update client with typed client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Update Test Client 1757841446865 Updated",
+          "industry": "Finance",
+          "country": "Morocco"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "15f2b2ff-5256-47ca-bd03-37eaf283c9dd",
+          "companyName": "Update Test Client 1757841446865 Updated",
+          "country": "Morocco",
+          "address": "",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Finance",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:26.9238550Z",
+          "updatedAt": "2025-09-14T09:17:27.0439348Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "5c3768b0-6aaf-4263-a3df-019bb47a5c74",
+      "timestamp": {},
+      "duration": 125
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "6ec70139-e0f6-406b-ba3d-e0a8a23f0f8d",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841447129-cr6ouwcry\",\"testCase\":\"should list clients with typed client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "pageSize": 10,
+            "page": 1
+          }
+        },
+        "query": {
+          "pageSize": 10,
+          "page": 1
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clients": [
+            {
+              "clientId": "46d9e597-1035-4e6a-a05f-ee06487491c2",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "Technology",
+              "status": "Active"
+            },
+            {
+              "clientId": "a7aa2390-cd7b-47e2-904d-378fcf247e78",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "",
+              "status": "Active"
+            },
+            {
+              "clientId": "43557c37-60c0-4d65-be12-ebb3e47203a7",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "",
+              "status": "Active"
+            },
+            {
+              "clientId": "d2fdb9d9-3f62-4b6e-b4f1-43d290be4c83",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "",
+              "status": "Active"
+            },
+            {
+              "clientId": "8d9e22f0-da95-44ce-937f-5cc7fc8a4b91",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "",
+              "status": "Active"
+            },
+            {
+              "clientId": "93c1a60d-5124-4f7f-94c3-d647656b3d6c",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "",
+              "status": "Active"
+            },
+            {
+              "clientId": "57274d9d-1899-4742-8cca-a8fe41f50776",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "",
+              "status": "Active"
+            },
+            {
+              "clientId": "1da37a01-2ade-418d-9eaf-a44850a00eb7",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "Technology",
+              "status": "Active"
+            },
+            {
+              "clientId": "c2bc21f6-77e3-47be-ad94-02c7db9013d6",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "Technology",
+              "status": "Active"
+            },
+            {
+              "clientId": "051741eb-effc-4498-8047-f156aec69b34",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "Technology",
+              "status": "Active"
+            }
+          ],
+          "totalCount": 156,
+          "page": 1,
+          "pageSize": 10
+        },
+        "headers": {}
+      },
+      "correlationId": "6ec70139-e0f6-406b-ba3d-e0a8a23f0f8d",
+      "timestamp": {},
+      "duration": 113
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "97188e5c-b852-4479-aa7c-7afdd74dbb6b",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841447263-4spr2tbou\",\"testCase\":\"should create client group with typed client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Group Client 1 1757841447265",
+          "country": "Morocco",
+          "industry": "Technology"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "8b02778e-0357-4172-8674-e3e58dfd2e69",
+          "companyName": "Group Client 1 1757841447265",
+          "country": "Morocco",
+          "address": "",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:27.3249218Z",
+          "updatedAt": "2025-09-14T09:17:27.3249219Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "97188e5c-b852-4479-aa7c-7afdd74dbb6b",
+      "timestamp": {},
+      "duration": 119
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "519386f1-1494-4106-a6f0-6e5559e2db14",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841447263-4spr2tbou\",\"testCase\":\"should create client group with typed client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Group Client 2 1757841447386",
+          "country": "Morocco",
+          "industry": "Finance"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "b774b0c1-9efe-42f7-a9db-9ce565965ab0",
+          "companyName": "Group Client 2 1757841447386",
+          "country": "Morocco",
+          "address": "",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Finance",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:27.4443978Z",
+          "updatedAt": "2025-09-14T09:17:27.4443978Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "519386f1-1494-4106-a6f0-6e5559e2db14",
+      "timestamp": {},
+      "duration": 121
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "bb51bcfe-249f-44f1-91ed-d2576e52939e",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841447263-4spr2tbou\",\"testCase\":\"should create client group with typed client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "Test Group 1757841447509",
+          "description": "Created by typed API test"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "a3df92a1-35f4-429a-bfa0-fc0ad150c587",
+          "name": "Test Group 1757841447509",
+          "description": "Created by typed API test",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:27.5709365Z",
+          "updatedAt": "2025-09-14T09:17:27.5709365Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "bb51bcfe-249f-44f1-91ed-d2576e52939e",
+      "timestamp": {},
+      "duration": 124
+    },
+    {
+      "endpoint": "/api/groups/a3df92a1-35f4-429a-bfa0-fc0ad150c587/clients/8b02778e-0357-4172-8674-e3e58dfd2e69",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "1d0f6f11-a91e-4a79-a84b-2179f5e772e5",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841447263-4spr2tbou\",\"testCase\":\"should create client group with typed client\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client added to group successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "1d0f6f11-a91e-4a79-a84b-2179f5e772e5",
+      "timestamp": {},
+      "duration": 137
+    },
+    {
+      "endpoint": "/api/groups/a3df92a1-35f4-429a-bfa0-fc0ad150c587/clients/b774b0c1-9efe-42f7-a9db-9ce565965ab0",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "454063f7-3c13-40cc-8fe1-64c5ec54ace5",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841447263-4spr2tbou\",\"testCase\":\"should create client group with typed client\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client added to group successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "454063f7-3c13-40cc-8fe1-64c5ec54ace5",
+      "timestamp": {},
+      "duration": 125
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "6963d6d6-8dba-4291-9f13-cec7f451c391",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841447914-lb6q072la\",\"testCase\":\"should handle user-client associations with typed client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Association Test Client 1757841447916",
+          "country": "Morocco",
+          "industry": "Technology"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "a13da0be-7836-4aaa-84bd-0e3b21b2a3b4",
+          "companyName": "Association Test Client 1757841447916",
+          "country": "Morocco",
+          "address": "",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:27.9751474Z",
+          "updatedAt": "2025-09-14T09:17:27.9751474Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "6963d6d6-8dba-4291-9f13-cec7f451c391",
+      "timestamp": {},
+      "duration": 126
+    },
+    {
+      "endpoint": "/api/clients/a13da0be-7836-4aaa-84bd-0e3b21b2a3b4/users/test-user-id",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "af924e25-2a3f-443a-8c7d-b22771228e81",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841447914-lb6q072la\",\"testCase\":\"should handle user-client associations with typed client\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "User test-user-id successfully assigned to client a13da0be-7836-4aaa-84bd-0e3b21b2a3b4",
+          "associationId": "14e38501-f944-4afc-9fdf-85d2552bebfa"
+        },
+        "headers": {}
+      },
+      "correlationId": "af924e25-2a3f-443a-8c7d-b22771228e81",
+      "timestamp": {},
+      "duration": 144
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "62b418db-80c3-401d-9248-404c8bcd92a0",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841448202-ikpunct40\",\"testCase\":\"should delete client with typed client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Delete Test Client 1757841448205",
+          "country": "Morocco",
+          "industry": "Technology"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "6d94bab5-a952-4008-8dd7-41b782fb915a",
+          "companyName": "Delete Test Client 1757841448205",
+          "country": "Morocco",
+          "address": "",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:28.2639446Z",
+          "updatedAt": "2025-09-14T09:17:28.2639447Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "62b418db-80c3-401d-9248-404c8bcd92a0",
+      "timestamp": {},
+      "duration": 122
+    },
+    {
+      "endpoint": "/api/clients/6d94bab5-a952-4008-8dd7-41b782fb915a",
+      "method": "DELETE",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "8aae11af-2b1e-4cfe-9a09-f7950caa273c",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841448202-ikpunct40\",\"testCase\":\"should delete client with typed client\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client deleted successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "8aae11af-2b1e-4cfe-9a09-f7950caa273c",
+      "timestamp": {},
+      "duration": 121
+    },
+    {
+      "endpoint": "/api/clients/6d94bab5-a952-4008-8dd7-41b782fb915a",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "61265f66-e748-49a7-ab72-3c6040f2788f",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841448202-ikpunct40\",\"testCase\":\"should delete client with typed client\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "error": {
+          "code": 5,
+          "message": "Client with ID 6d94bab5-a952-4008-8dd7-41b782fb915a not found",
+          "details": []
+        }
+      },
+      "correlationId": "61265f66-e748-49a7-ab72-3c6040f2788f",
+      "timestamp": {},
+      "duration": 116
+    },
+    {
+      "endpoint": "/api/clients/11f7464f-ac56-494f-a596-0b51ffbec5b5",
+      "method": "DELETE",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "20b2e657-dbb7-4fed-a013-c051cb6ee017",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"Client Management Test Data Cleanup\",\"currentStep\":\"Test Cleanup\",\"testIntent\":\"positive\",\"expectedOutcome\":\"cleanup_success\",\"testSessionId\":\"cleanup-1757841448583\",\"testCase\":\"Data Cleanup\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client deleted successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "20b2e657-dbb7-4fed-a013-c051cb6ee017",
+      "timestamp": {},
+      "duration": 117
+    },
+    {
+      "endpoint": "/api/clients/b265700b-64c3-4716-92bc-23e6e11abc44",
+      "method": "DELETE",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "5184e24e-e3d7-49c7-9ac4-635a0520927e",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"Client Management Test Data Cleanup\",\"currentStep\":\"Test Cleanup\",\"testIntent\":\"positive\",\"expectedOutcome\":\"cleanup_success\",\"testSessionId\":\"cleanup-1757841448583\",\"testCase\":\"Data Cleanup\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client deleted successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "5184e24e-e3d7-49c7-9ac4-635a0520927e",
+      "timestamp": {},
+      "duration": 116
+    },
+    {
+      "endpoint": "/api/clients/15f2b2ff-5256-47ca-bd03-37eaf283c9dd",
+      "method": "DELETE",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "7240f9f6-f9a0-4242-9a3c-843ded585ce1",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"Client Management Test Data Cleanup\",\"currentStep\":\"Test Cleanup\",\"testIntent\":\"positive\",\"expectedOutcome\":\"cleanup_success\",\"testSessionId\":\"cleanup-1757841448583\",\"testCase\":\"Data Cleanup\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client deleted successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "7240f9f6-f9a0-4242-9a3c-843ded585ce1",
+      "timestamp": {},
+      "duration": 121
+    },
+    {
+      "endpoint": "/api/clients/8b02778e-0357-4172-8674-e3e58dfd2e69",
+      "method": "DELETE",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "9c115343-b55c-4821-9022-b98dcbd8cdf6",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"Client Management Test Data Cleanup\",\"currentStep\":\"Test Cleanup\",\"testIntent\":\"positive\",\"expectedOutcome\":\"cleanup_success\",\"testSessionId\":\"cleanup-1757841448583\",\"testCase\":\"Data Cleanup\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client deleted successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "9c115343-b55c-4821-9022-b98dcbd8cdf6",
+      "timestamp": {},
+      "duration": 118
+    },
+    {
+      "endpoint": "/api/clients/b774b0c1-9efe-42f7-a9db-9ce565965ab0",
+      "method": "DELETE",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "80a9653f-8de6-4860-b7c3-9d18a3a56925",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"Client Management Test Data Cleanup\",\"currentStep\":\"Test Cleanup\",\"testIntent\":\"positive\",\"expectedOutcome\":\"cleanup_success\",\"testSessionId\":\"cleanup-1757841448583\",\"testCase\":\"Data Cleanup\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client deleted successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "80a9653f-8de6-4860-b7c3-9d18a3a56925",
+      "timestamp": {},
+      "duration": 122
+    },
+    {
+      "endpoint": "/api/clients/a13da0be-7836-4aaa-84bd-0e3b21b2a3b4",
+      "method": "DELETE",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "93171c75-d99f-4511-87e7-e4c7dd2e2077",
+          "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"Client Management Test Data Cleanup\",\"currentStep\":\"Test Cleanup\",\"testIntent\":\"positive\",\"expectedOutcome\":\"cleanup_success\",\"testSessionId\":\"cleanup-1757841448583\",\"testCase\":\"Data Cleanup\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client deleted successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "93171c75-d99f-4511-87e7-e4c7dd2e2077",
+      "timestamp": {},
+      "duration": 123
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "254c4f8a-d92d-4359-9050-8e3a73e00b69",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841450293-0c0s7g3s7\",\"testCase\":\"should create a new client group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup_1757841450296",
+          "description": "Test group for API testing"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "8ca6fcc4-2d08-4bf8-9330-4c7d5cddb35c",
+          "name": "TestGroup_1757841450296",
+          "description": "Test group for API testing",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:30.3565132Z",
+          "updatedAt": "2025-09-14T09:17:30.3565132Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "254c4f8a-d92d-4359-9050-8e3a73e00b69",
+      "timestamp": {},
+      "duration": 115
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "5f56eb7f-d6c9-42f3-89c6-3c11ffa4fd59",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841450428-uj8sp6w9v\",\"testCase\":\"should update an existing group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup_1757841450430",
+          "description": "Original description"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "59797768-0ffa-4669-a582-a9a1271eabfb",
+          "name": "TestGroup_1757841450430",
+          "description": "Original description",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:30.4902878Z",
+          "updatedAt": "2025-09-14T09:17:30.4902878Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "5f56eb7f-d6c9-42f3-89c6-3c11ffa4fd59",
+      "timestamp": {},
+      "duration": 500
+    },
+    {
+      "endpoint": "/api/groups/59797768-0ffa-4669-a582-a9a1271eabfb",
+      "method": "PUT",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "012e906e-170e-44c4-a99a-d2c41bb25c8c",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841450428-uj8sp6w9v\",\"testCase\":\"should update an existing group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "UpdatedGroup_1757841450932",
+          "description": "Updated description"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "59797768-0ffa-4669-a582-a9a1271eabfb",
+          "name": "UpdatedGroup_1757841450932",
+          "description": "Updated description",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:30.4902870Z",
+          "updatedAt": "2025-09-14T09:17:30.9957785Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "012e906e-170e-44c4-a99a-d2c41bb25c8c",
+      "timestamp": {},
+      "duration": 231
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "75b8b20e-5744-4308-8c31-9c0259cde9ab",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841451177-rj41r8hxn\",\"testCase\":\"should delete a group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup_1757841451180",
+          "description": "Group to be deleted"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "9fca92ec-3280-4f5a-8143-3b0b94f11cd6",
+          "name": "TestGroup_1757841451180",
+          "description": "Group to be deleted",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:31.2409342Z",
+          "updatedAt": "2025-09-14T09:17:31.2409342Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "75b8b20e-5744-4308-8c31-9c0259cde9ab",
+      "timestamp": {},
+      "duration": 133
+    },
+    {
+      "endpoint": "/api/groups/9fca92ec-3280-4f5a-8143-3b0b94f11cd6",
+      "method": "DELETE",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "67e158b5-c1da-472f-a55b-6452d7c68017",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841451177-rj41r8hxn\",\"testCase\":\"should delete a group\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Group deleted successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "67e158b5-c1da-472f-a55b-6452d7c68017",
+      "timestamp": {},
+      "duration": 133
+    },
+    {
+      "endpoint": "/api/groups/9fca92ec-3280-4f5a-8143-3b0b94f11cd6",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "9ec86b46-dbf1-4c54-8b9b-d2520bed8e71",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841451177-rj41r8hxn\",\"testCase\":\"should delete a group\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 405,
+        "headers": {}
+      },
+      "correlationId": "9ec86b46-dbf1-4c54-8b9b-d2520bed8e71",
+      "timestamp": {},
+      "duration": 104
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "6a519def-9e61-410f-9223-ab60523dc127",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841451573-a5m138s0o\",\"testCase\":\"should list all groups for a tenant\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup1_1757841451575",
+          "description": "First test group"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "12f69779-d7b7-4d4d-95c5-67b5f8140475",
+          "name": "TestGroup1_1757841451575",
+          "description": "First test group",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:31.6352330Z",
+          "updatedAt": "2025-09-14T09:17:31.6352331Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "6a519def-9e61-410f-9223-ab60523dc127",
+      "timestamp": {},
+      "duration": 136
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "4797d175-e264-4fca-8514-ec60c7de55e2",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841451573-a5m138s0o\",\"testCase\":\"should list all groups for a tenant\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup2_1757841451713",
+          "description": "Second test group"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "cdda65f2-ef08-42a1-99a0-dbdfb644fa13",
+          "name": "TestGroup2_1757841451713",
+          "description": "Second test group",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:31.7731248Z",
+          "updatedAt": "2025-09-14T09:17:31.7731249Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "4797d175-e264-4fca-8514-ec60c7de55e2",
+      "timestamp": {},
+      "duration": 146
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "f3076355-a1b5-4a09-8181-b5f57c8d95c2",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841451573-a5m138s0o\",\"testCase\":\"should list all groups for a tenant\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "page": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "page": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groups": [
+            {
+              "groupId": "0c7c1054-04fb-4787-b273-8f4e94a4f1d6",
+              "name": "Basic",
+              "description": "Basic clients with essential service packages",
+              "clientCount": 0
+            },
+            {
+              "groupId": "b08a313c-e120-47a4-a76a-faa19cfe5d8a",
+              "name": "Premium",
+              "description": "Premium clients with comprehensive service packages",
+              "clientCount": 0
+            },
+            {
+              "groupId": "84dc3bcb-e13e-430a-a625-55e6dca0dfd7",
+              "name": "Standard",
+              "description": "Standard clients with regular service packages",
+              "clientCount": 0
+            },
+            {
+              "groupId": "12f69779-d7b7-4d4d-95c5-67b5f8140475",
+              "name": "TestGroup1_1757841451575",
+              "description": "First test group",
+              "clientCount": 0
+            },
+            {
+              "groupId": "5bc978dd-d68d-403b-ba57-c32004e39db3",
+              "name": "Test Group 1757664389272",
+              "description": "Created by typed API test",
+              "clientCount": 0
+            },
+            {
+              "groupId": "6f85b24e-40d1-421d-b66a-410390c65eca",
+              "name": "Test Group 1757666958346",
+              "description": "Created by typed API test",
+              "clientCount": 0
+            },
+            {
+              "groupId": "63a440cf-6226-4e3e-a3f0-fa71a95d9989",
+              "name": "Test Group 1757667000670",
+              "description": "Created by typed API test",
+              "clientCount": 0
+            },
+            {
+              "groupId": "b8980302-e76c-4770-875c-5275e5e56da9",
+              "name": "Test Group 1757667285669",
+              "description": "Created by typed API test",
+              "clientCount": 0
+            },
+            {
+              "groupId": "23b48cd3-d1e6-4424-b651-db25815aec98",
+              "name": "Test Group 1757672138269",
+              "description": "Created by typed API test",
+              "clientCount": 2
+            },
+            {
+              "groupId": "e2c374f3-a6dd-477d-aa2d-d76641cd197b",
+              "name": "Test Group 1757675699880",
+              "description": "Created by typed API test",
+              "clientCount": 2
+            }
+          ],
+          "totalCount": 32,
+          "page": 1,
+          "pageSize": 10
+        },
+        "headers": {}
+      },
+      "correlationId": "f3076355-a1b5-4a09-8181-b5f57c8d95c2",
+      "timestamp": {},
+      "duration": 112
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "3632624e-f138-4af4-b4c2-f8fe85e15422",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841451994-q1has4ziz\",\"testCase\":\"should add a client to a group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup_1757841451997",
+          "description": "Group for client association"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "b4731c82-3c5d-4f83-999b-604c4f3b12c9",
+          "name": "TestGroup_1757841451997",
+          "description": "Group for client association",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:32.0575074Z",
+          "updatedAt": "2025-09-14T09:17:32.0575075Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "3632624e-f138-4af4-b4c2-f8fe85e15422",
+      "timestamp": {},
+      "duration": 116
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "03191589-e4b4-4255-a6cd-30f3a39bc660",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841451994-q1has4ziz\",\"testCase\":\"should add a client to a group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "Client 1757841452115-an1vnwrwv-1",
+          "email": "client-1757841452115-an1vnwrwv-1@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757841452115-an1vnwrwv-1",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "485878ae-0646-4250-b31b-ea46107c753d",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:32.1754325Z",
+          "updatedAt": "2025-09-14T09:17:32.1754326Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "03191589-e4b4-4255-a6cd-30f3a39bc660",
+      "timestamp": {},
+      "duration": 124
+    },
+    {
+      "endpoint": "/api/groups/b4731c82-3c5d-4f83-999b-604c4f3b12c9/clients/485878ae-0646-4250-b31b-ea46107c753d",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "1cf31167-23bd-45ec-b3ae-d58269479580",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841451994-q1has4ziz\",\"testCase\":\"should add a client to a group\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client added to group successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "1cf31167-23bd-45ec-b3ae-d58269479580",
+      "timestamp": {},
+      "duration": 133
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "0667895f-c753-4d95-9343-2907e116a42a",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452388-ixmmn9yyy\",\"testCase\":\"should remove a client from a group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup_1757841452391",
+          "description": "Group for client removal"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "36fc4324-f056-442d-9621-86de9ca5bbc3",
+          "name": "TestGroup_1757841452391",
+          "description": "Group for client removal",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:32.4510671Z",
+          "updatedAt": "2025-09-14T09:17:32.4510671Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "0667895f-c753-4d95-9343-2907e116a42a",
+      "timestamp": {},
+      "duration": 117
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "5719c250-b44b-4c18-8725-a80fea04afe2",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452388-ixmmn9yyy\",\"testCase\":\"should remove a client from a group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "Client 1757841452510-lxrn37th6-2",
+          "email": "client-1757841452510-lxrn37th6-2@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757841452510-lxrn37th6-2",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "4f1c3db0-ff3f-4e64-aa9b-8e3c3b590364",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:32.5680535Z",
+          "updatedAt": "2025-09-14T09:17:32.5680535Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "5719c250-b44b-4c18-8725-a80fea04afe2",
+      "timestamp": {},
+      "duration": 126
+    },
+    {
+      "endpoint": "/api/groups/36fc4324-f056-442d-9621-86de9ca5bbc3/clients/4f1c3db0-ff3f-4e64-aa9b-8e3c3b590364",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "604ca251-625d-460f-9347-1fe7226bcef6",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452388-ixmmn9yyy\",\"testCase\":\"should remove a client from a group\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client added to group successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "604ca251-625d-460f-9347-1fe7226bcef6",
+      "timestamp": {},
+      "duration": 125
+    },
+    {
+      "endpoint": "/api/groups/36fc4324-f056-442d-9621-86de9ca5bbc3/clients/4f1c3db0-ff3f-4e64-aa9b-8e3c3b590364",
+      "method": "DELETE",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "cb2b16bd-7e1e-43ec-a247-5e332ef2444d",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452388-ixmmn9yyy\",\"testCase\":\"should remove a client from a group\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client removed from group successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "cb2b16bd-7e1e-43ec-a247-5e332ef2444d",
+      "timestamp": {},
+      "duration": 123
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "9109e515-2e3a-44e2-ba84-757dc31f568b",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452901-lq7vowfog\",\"testCase\":\"should get all clients in a group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup_1757841452903",
+          "description": "Group for client listing"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "48ad8ed7-706e-4da4-9dce-7b931b591408",
+          "name": "TestGroup_1757841452903",
+          "description": "Group for client listing",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:32.9631997Z",
+          "updatedAt": "2025-09-14T09:17:32.9631997Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "9109e515-2e3a-44e2-ba84-757dc31f568b",
+      "timestamp": {},
+      "duration": 116
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "6fa1c74d-9a42-460e-a740-58db5f429a87",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452901-lq7vowfog\",\"testCase\":\"should get all clients in a group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "Client 1757841453021-nb6ylm151-3",
+          "email": "client-1757841453021-nb6ylm151-3@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757841453021-nb6ylm151-3",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "4c726a36-d62e-4107-9853-f65d22cfd0c7",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:33.0785013Z",
+          "updatedAt": "2025-09-14T09:17:33.0785013Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "6fa1c74d-9a42-460e-a740-58db5f429a87",
+      "timestamp": {},
+      "duration": 119
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "992cc06a-7aa9-4498-80e9-e7c44985f0b3",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452901-lq7vowfog\",\"testCase\":\"should get all clients in a group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "Client 1757841453141-gkmgyl867-4",
+          "email": "client-1757841453141-gkmgyl867-4@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757841453141-gkmgyl867-4",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "33392a40-c9a9-471a-80d8-f6c809382f9d",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:33.1988772Z",
+          "updatedAt": "2025-09-14T09:17:33.1988773Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "992cc06a-7aa9-4498-80e9-e7c44985f0b3",
+      "timestamp": {},
+      "duration": 124
+    },
+    {
+      "endpoint": "/api/groups/48ad8ed7-706e-4da4-9dce-7b931b591408/clients/4c726a36-d62e-4107-9853-f65d22cfd0c7",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b92e80c8-f9d5-4ebe-8d8d-f0fd3de9a1e2",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452901-lq7vowfog\",\"testCase\":\"should get all clients in a group\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client added to group successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "b92e80c8-f9d5-4ebe-8d8d-f0fd3de9a1e2",
+      "timestamp": {},
+      "duration": 122
+    },
+    {
+      "endpoint": "/api/groups/48ad8ed7-706e-4da4-9dce-7b931b591408/clients/33392a40-c9a9-471a-80d8-f6c809382f9d",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "6733ac9a-58e6-4a60-a66f-4d5ee6408a47",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452901-lq7vowfog\",\"testCase\":\"should get all clients in a group\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client added to group successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "6733ac9a-58e6-4a60-a66f-4d5ee6408a47",
+      "timestamp": {},
+      "duration": 117
+    },
+    {
+      "endpoint": "/api/groups/48ad8ed7-706e-4da4-9dce-7b931b591408/clients",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "bcc3bfc7-4857-4522-bdc8-015cf510f89e",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452901-lq7vowfog\",\"testCase\":\"should get all clients in a group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {}
+        },
+        "query": {}
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clients": [
+            {
+              "clientId": "4c726a36-d62e-4107-9853-f65d22cfd0c7",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "Technology",
+              "status": "Active"
+            },
+            {
+              "clientId": "33392a40-c9a9-471a-80d8-f6c809382f9d",
+              "companyName": "",
+              "iceNumber": "",
+              "rcNumber": "",
+              "vatNumber": "",
+              "cnssNumber": "",
+              "industry": "Technology",
+              "status": "Active"
+            }
+          ],
+          "totalCount": 2
+        },
+        "headers": {}
+      },
+      "correlationId": "bcc3bfc7-4857-4522-bdc8-015cf510f89e",
+      "timestamp": {},
+      "duration": 113
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "76daa489-9d3a-4252-95a5-8214e210e78f",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841453636-wthx2njf2\",\"testCase\":\"should get all groups for a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "Client 1757841453639-e5ti7m832-5",
+          "email": "client-1757841453639-e5ti7m832-5@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757841453639-e5ti7m832-5",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "0bb5a1bd-e584-47c4-bbde-76468234804a",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:33.6971007Z",
+          "updatedAt": "2025-09-14T09:17:33.6971007Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "76daa489-9d3a-4252-95a5-8214e210e78f",
+      "timestamp": {},
+      "duration": 117
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "4e6e12db-87d6-40a7-98f8-1cc2931cea3c",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841453636-wthx2njf2\",\"testCase\":\"should get all groups for a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup1_1757841453758",
+          "description": "First group"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "da391a83-8a97-442a-bfe4-2d5fc3bab313",
+          "name": "TestGroup1_1757841453758",
+          "description": "First group",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:33.8176874Z",
+          "updatedAt": "2025-09-14T09:17:33.8176874Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "4e6e12db-87d6-40a7-98f8-1cc2931cea3c",
+      "timestamp": {},
+      "duration": 124
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "354e1679-281b-41e0-b6dd-98e9c8232e38",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841453636-wthx2njf2\",\"testCase\":\"should get all groups for a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup2_1757841453884",
+          "description": "Second group"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groupId": "7fe704fb-5acf-4ab1-9e99-618b8c3235dc",
+          "name": "TestGroup2_1757841453884",
+          "description": "Second group",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "createdAt": "2025-09-14T09:17:33.9431352Z",
+          "updatedAt": "2025-09-14T09:17:33.9431352Z",
+          "clientCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "354e1679-281b-41e0-b6dd-98e9c8232e38",
+      "timestamp": {},
+      "duration": 115
+    },
+    {
+      "endpoint": "/api/groups/da391a83-8a97-442a-bfe4-2d5fc3bab313/clients/0bb5a1bd-e584-47c4-bbde-76468234804a",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "5288e996-1fe0-4c52-9cc0-05ffd919bf07",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841453636-wthx2njf2\",\"testCase\":\"should get all groups for a client\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client added to group successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "5288e996-1fe0-4c52-9cc0-05ffd919bf07",
+      "timestamp": {},
+      "duration": 122
+    },
+    {
+      "endpoint": "/api/groups/7fe704fb-5acf-4ab1-9e99-618b8c3235dc/clients/0bb5a1bd-e584-47c4-bbde-76468234804a",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "abca7de0-34fc-4160-82de-848de8d92d94",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841453636-wthx2njf2\",\"testCase\":\"should get all groups for a client\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "Client added to group successfully"
+        },
+        "headers": {}
+      },
+      "correlationId": "abca7de0-34fc-4160-82de-848de8d92d94",
+      "timestamp": {},
+      "duration": 139
+    },
+    {
+      "endpoint": "/api/clients/0bb5a1bd-e584-47c4-bbde-76468234804a/groups",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "f84b1e9f-a119-4160-98ea-1c6ea1ff8454",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841453636-wthx2njf2\",\"testCase\":\"should get all groups for a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {}
+        },
+        "query": {}
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "groups": [
+            {
+              "groupId": "da391a83-8a97-442a-bfe4-2d5fc3bab313",
+              "name": "TestGroup1_1757841453758",
+              "description": "First group",
+              "clientCount": 0
+            },
+            {
+              "groupId": "7fe704fb-5acf-4ab1-9e99-618b8c3235dc",
+              "name": "TestGroup2_1757841453884",
+              "description": "Second group",
+              "clientCount": 0
+            }
+          ],
+          "totalCount": 2
+        },
+        "headers": {}
+      },
+      "correlationId": "f84b1e9f-a119-4160-98ea-1c6ea1ff8454",
+      "timestamp": {},
+      "duration": 111
+    }
+  ]
+}

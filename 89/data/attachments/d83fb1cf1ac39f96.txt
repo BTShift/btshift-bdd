@@ -1,0 +1,23 @@
+🎬 Starting test session: test-1757841457228-8aopqwymv for feature: user-client-associations.api.feature
+📋 Test context set: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts (positive)
+🧪 Test case: should remove a user from a client
+🔄 Current step: Test Execution
+🎬 Auto-context: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts :: should remove a user from a client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841457228-8aopqwymv","testCase":"should remove a user from a client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: cf45ad6d-a66f-41b8-878a-7d9635414417 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: cf45ad6d-a66f-41b8-878a-7d9635414417 | Success
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841457228-8aopqwymv","testCase":"should remove a user from a client"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: fe6adfb8-12f6-4331-b450-2cd517b2e354 | Auth: Yes
+✅ [Identity] POST /api/users | X-Correlation-ID: fe6adfb8-12f6-4331-b450-2cd517b2e354 | Success
+🧪 Adding test context to POST /api/clients/97ae11c0-aac0-4430-a956-d101c64fed75/users/undefined
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841457228-8aopqwymv","testCase":"should remove a user from a client"}
+🔍 [ClientManagement] POST /api/clients/97ae11c0-aac0-4430-a956-d101c64fed75/users/undefined | X-Correlation-ID: f84efba6-182b-4784-beec-976dd024083f | Auth: Yes
+✅ [ClientManagement] POST /api/clients/97ae11c0-aac0-4430-a956-d101c64fed75/users/undefined | X-Correlation-ID: f84efba6-182b-4784-beec-976dd024083f | Success
+🧪 Adding test context to DELETE /api/clients/97ae11c0-aac0-4430-a956-d101c64fed75/users/undefined
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841457228-8aopqwymv","testCase":"should remove a user from a client"}
+🔍 [ClientManagement] DELETE /api/clients/97ae11c0-aac0-4430-a956-d101c64fed75/users/undefined | X-Correlation-ID: b961ed15-240f-4792-af13-baf98e29500f | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/97ae11c0-aac0-4430-a956-d101c64fed75/users/undefined | X-Correlation-ID: b961ed15-240f-4792-af13-baf98e29500f | Success
+📍 Step: Verify user removal from client
+🏁 Clearing test context for session: test-1757841457228-8aopqwymv

@@ -1,0 +1,19 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/invitations/undefined
+Correlation ID: cd50b958-5f64-4990-9427-188a68ab30bc
+Timestamp: 2025-09-14T09:18:04.420Z
+Duration: 106ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "cd50b958-5f64-4990-9427-188a68ab30bc",
+  "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841484232-q0rduindx\",\"testCase\":\"should get invitation by ID\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 405
+
+Response Headers:
+{}

@@ -1,0 +1,25 @@
+{
+  "endpoint": "/api/users",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "e46e6cb0-2be4-4b33-86f0-8c66d26164db",
+      "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841582731-bnx0t6qbt\",\"testCase\":\"should get user by email\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "user-1757841582731-bkqv2nx39-1@test.com",
+      "firstName": "Test",
+      "lastName": "User1757841582731-bkqv2nx39-1",
+      "phoneNumber": "+212600000000",
+      "role": "User"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "e46e6cb0-2be4-4b33-86f0-8c66d26164db",
+  "timestamp": {},
+  "duration": 186
+}

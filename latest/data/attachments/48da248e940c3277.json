@@ -1,0 +1,99 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-14T09:18:46.137Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "30a3c3f5-c859-4c0b-84e5-43e54774349e",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841525411-kwddp2y5a\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "30a3c3f5-c859-4c0b-84e5-43e54774349e",
+      "timestamp": {},
+      "duration": 337
+    },
+    {
+      "endpoint": "/api/roles",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "a349d6f1-d233-4c7b-ae90-a95c0c59481b",
+          "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841525810-uavs3mnrf\",\"testCase\":\"should update role\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestRole_1757841525811",
+          "description": "Original description",
+          "permissions": [
+            "read:users"
+          ]
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "a349d6f1-d233-4c7b-ae90-a95c0c59481b",
+      "timestamp": {},
+      "duration": 182
+    },
+    {
+      "endpoint": "/api/roles/undefined",
+      "method": "PUT",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "c58f739c-d912-4599-813c-b60ed54aee53",
+          "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841525810-uavs3mnrf\",\"testCase\":\"should update role\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "description": "Updated description",
+          "permissions": [
+            "read:users",
+            "write:users",
+            "delete:users"
+          ]
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "c58f739c-d912-4599-813c-b60ed54aee53",
+      "timestamp": {},
+      "duration": 108
+    }
+  ]
+}

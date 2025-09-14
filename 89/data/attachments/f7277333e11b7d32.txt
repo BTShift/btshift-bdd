@@ -1,0 +1,42 @@
+🚀 [f32d0c4a] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757841499895-4vysxeuep for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841499896-j197ftjxt for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841499896-e91ffd89 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757841499897] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757841499897] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757841499897] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841499896-j197ftjxt"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 20f887e7-c372-4673-a245-8be350a52cdc | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 20f887e7-c372-4673-a245-8be350a52cdc | Success
+✅ [tenantadmin-1757841499897] TenantAdmin authentication successful
+🕐 [tenantadmin-1757841499897] Token expires at: 2025-09-14T09:26:20.283Z
+🏢 [tenantadmin-1757841499897] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [f32d0c4a] Using TenantAdmin authentication
+🕐 [f32d0c4a] Token expires: 9:26:20 AM
+🏢 [f32d0c4a] Tenant ID: tenant-from-jwt-test.tenantadmin
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841499896-j197ftjxt"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 14d1e9a8-f88d-4523-aea9-e862c2b2fad9 | Auth: Yes
+✅ [Identity] POST /api/users | X-Correlation-ID: 14d1e9a8-f88d-4523-aea9-e862c2b2fad9 | Success
+🎬 Starting test session: test-1757841500496-slsycou6y for feature: password-reset.api.feature
+📋 Test context set: password-reset.api.feature :: api/features/identity/password-reset/happy-path/password-reset.api.spec.ts (positive)
+🧪 Test case: should enforce password policy
+🔄 Current step: Test Execution
+🎬 Auto-context: password-reset.api.feature :: api/features/identity/password-reset/happy-path/password-reset.api.spec.ts :: should enforce password policy
+🧪 Adding test context to POST /api/users/undefined/change-password
+🧪 Test context JSON: {"featureFile":"password-reset.api.feature","scenario":"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841500496-slsycou6y","testCase":"should enforce password policy"}
+🔍 [Identity] POST /api/users/undefined/change-password | X-Correlation-ID: 7a0bb178-069f-4aa7-8e6b-25eb3e416173 | Auth: Yes
+✅ [Identity] POST /api/users/undefined/change-password | X-Correlation-ID: 7a0bb178-069f-4aa7-8e6b-25eb3e416173 | Success
+🏁 Clearing test context for session: test-1757841500496-slsycou6y
+🔍 [Identity] DELETE /api/users/undefined | X-Correlation-ID: 3be3df8d-a6bf-4d67-ba3c-2bbcfd18fe05 | Auth: Yes
+✅ [Identity] DELETE /api/users/undefined | X-Correlation-ID: 3be3df8d-a6bf-4d67-ba3c-2bbcfd18fe05 | Success
+🧹 Cleaned up user: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: c59b9f4f-c1d8-4e79-920d-d3f262af7b4c | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: c59b9f4f-c1d8-4e79-920d-d3f262af7b4c | Success

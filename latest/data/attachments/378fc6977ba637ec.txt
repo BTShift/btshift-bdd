@@ -1,0 +1,5 @@
+❌ [ClientManagement] GET /api/clients/6d94bab5-a952-4008-8dd7-41b782fb915a | X-Correlation-ID: 61265f66-e748-49a7-ab72-3c6040f2788f | Error: {
+  code: 5,
+  message: 'Client with ID 6d94bab5-a952-4008-8dd7-41b782fb915a not found',
+  details: []
+}

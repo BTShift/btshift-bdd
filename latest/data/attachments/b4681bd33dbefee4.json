@@ -1,0 +1,126 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 4,
+  "timestamp": "2025-09-14T09:18:49.415Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "9fe64732-a051-4d17-a24a-40f4ec5117f0",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841528534-mojysl92u\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "9fe64732-a051-4d17-a24a-40f4ec5117f0",
+      "timestamp": {},
+      "duration": 403
+    },
+    {
+      "endpoint": "/api/roles",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "101f2e1f-a0c4-401d-9d8b-36f399540e44",
+          "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841528989-uj97y1s3f\",\"testCase\":\"should list all roles\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestRole1_1757841528990",
+          "description": "First test role",
+          "permissions": [
+            "read:users"
+          ]
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "101f2e1f-a0c4-401d-9d8b-36f399540e44",
+      "timestamp": {},
+      "duration": 176
+    },
+    {
+      "endpoint": "/api/roles",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "6ad948d9-8248-4d76-8046-b16f52d08033",
+          "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841528989-uj97y1s3f\",\"testCase\":\"should list all roles\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestRole2_1757841528990",
+          "description": "Second test role",
+          "permissions": [
+            "write:users"
+          ]
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "6ad948d9-8248-4d76-8046-b16f52d08033",
+      "timestamp": {},
+      "duration": 114
+    },
+    {
+      "endpoint": "/api/roles",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "85dd2892-b585-4099-b64c-9652f7160e6d",
+          "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841528989-uj97y1s3f\",\"testCase\":\"should list all roles\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "pageNumber": 1,
+            "pageSize": 50
+          }
+        },
+        "query": {
+          "pageNumber": 1,
+          "pageSize": 50
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "85dd2892-b585-4099-b64c-9652f7160e6d",
+      "timestamp": {},
+      "duration": 108
+    }
+  ]
+}

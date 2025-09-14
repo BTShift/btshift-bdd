@@ -1,0 +1,54 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/groups/48ad8ed7-706e-4da4-9dce-7b931b591408/clients
+Correlation ID: bcc3bfc7-4857-4522-bdc8-015cf510f89e
+Timestamp: 2025-09-14T09:17:33.508Z
+Duration: 113ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "bcc3bfc7-4857-4522-bdc8-015cf510f89e",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452901-lq7vowfog\",\"testCase\":\"should get all clients in a group\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Params ===
+{
+  "query": {}
+}
+
+=== Query Parameters ===
+{}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "clients": [
+    {
+      "clientId": "4c726a36-d62e-4107-9853-f65d22cfd0c7",
+      "companyName": "",
+      "iceNumber": "",
+      "rcNumber": "",
+      "vatNumber": "",
+      "cnssNumber": "",
+      "industry": "Technology",
+      "status": "Active"
+    },
+    {
+      "clientId": "33392a40-c9a9-471a-80d8-f6c809382f9d",
+      "companyName": "",
+      "iceNumber": "",
+      "rcNumber": "",
+      "vatNumber": "",
+      "cnssNumber": "",
+      "industry": "Technology",
+      "status": "Active"
+    }
+  ],
+  "totalCount": 2
+}

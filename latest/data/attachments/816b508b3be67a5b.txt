@@ -1,0 +1,36 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/groups
+Correlation ID: 9109e515-2e3a-44e2-ba84-757dc31f568b
+Timestamp: 2025-09-14T09:17:32.903Z
+Duration: 116ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "9109e515-2e3a-44e2-ba84-757dc31f568b",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452901-lq7vowfog\",\"testCase\":\"should get all clients in a group\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "TestGroup_1757841452903",
+  "description": "Group for client listing"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "groupId": "48ad8ed7-706e-4da4-9dce-7b931b591408",
+  "name": "TestGroup_1757841452903",
+  "description": "Group for client listing",
+  "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+  "createdAt": "2025-09-14T09:17:32.9631997Z",
+  "updatedAt": "2025-09-14T09:17:32.9631997Z",
+  "clientCount": 0
+}

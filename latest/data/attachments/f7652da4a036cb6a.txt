@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users
+Correlation ID: b0274591-6b47-465e-82b3-9ac664262101
+Timestamp: 2025-09-14T09:19:25.978Z
+Duration: 180ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "b0274591-6b47-465e-82b3-9ac664262101",
+  "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841565612-ld4hju5ga\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "email": "user-1757841565978-4abxhqaby-1@test.com",
+  "firstName": "Test",
+  "lastName": "User1757841565978-4abxhqaby-1",
+  "phoneNumber": "+212600000000",
+  "role": "User"
+}
+
+=== Response ===
+Status: 403
+
+Response Headers:
+{}

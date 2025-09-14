@@ -1,0 +1,27 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/users/undefined/2fa/status
+Correlation ID: d7f06f68-614e-427d-8ad1-d7c9c125a405
+Timestamp: 2025-09-14T09:19:26.177Z
+Duration: 114ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "d7f06f68-614e-427d-8ad1-d7c9c125a405",
+  "X-Test-Context": "{\"featureFile\":\"2fa-operations.api.feature\",\"scenario\":\"api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841566176-mcl3hmzr2\",\"testCase\":\"should get two-factor authentication status\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "isEnabled": false,
+  "provider": "",
+  "hasBackupCodes": false,
+  "lastUsedAt": ""
+}

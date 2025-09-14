@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users
+Correlation ID: c2733930-b84d-4028-830f-4111ad33940c
+Timestamp: 2025-09-14T09:17:44.147Z
+Duration: 337ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "c2733930-b84d-4028-830f-4111ad33940c",
+  "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841464009-xwp47544t\",\"testCase\":\"should track assignment metadata\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "email": "user-1757841464147-jrs40gxyw-2@test.com",
+  "firstName": "Test",
+  "lastName": "User1757841464147-jrs40gxyw-2",
+  "phoneNumber": "+212600000000",
+  "role": "User"
+}
+
+=== Response ===
+Status: 403
+
+Response Headers:
+{}

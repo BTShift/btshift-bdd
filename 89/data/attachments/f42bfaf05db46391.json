@@ -1,0 +1,28 @@
+{
+  "endpoint": "/api/users",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "2c4739a3-661d-429c-85ff-7eb5b80e0d1e",
+      "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841579302-cakzpa9h4\",\"testCase\":\"should list users with pagination\"}",
+      "Authorization": "***MASKED***"
+    },
+    "params": {
+      "query": {
+        "page": 1,
+        "pageSize": 10
+      }
+    },
+    "query": {
+      "page": 1,
+      "pageSize": 10
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "2c4739a3-661d-429c-85ff-7eb5b80e0d1e",
+  "timestamp": {},
+  "duration": 110
+}

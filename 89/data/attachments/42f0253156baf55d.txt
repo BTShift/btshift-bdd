@@ -1,0 +1,19 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/users/undefined/sessions/concurrent
+Correlation ID: 6d0917ba-5fb6-48b4-8d1a-53f6b925fff3
+Timestamp: 2025-09-14T09:19:16.501Z
+Duration: 106ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "6d0917ba-5fb6-48b4-8d1a-53f6b925fff3",
+  "X-Test-Context": "{\"featureFile\":\"session-operations.api.feature\",\"scenario\":\"api/features/identity/session-management/happy-path/session-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841556500-abxjymsy4\",\"testCase\":\"should detect concurrent sessions\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

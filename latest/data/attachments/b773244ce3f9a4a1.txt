@@ -1,0 +1,19 @@
+=== API Call Details ===
+Method: DELETE
+Endpoint: /api/users/undefined/roles/undefined
+Correlation ID: 93aff474-ce76-4b99-b9d5-53f544d994eb
+Timestamp: 2025-09-14T09:18:53.055Z
+Duration: 107ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "93aff474-ce76-4b99-b9d5-53f544d994eb",
+  "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841532647-bac8wn8mu\",\"testCase\":\"should remove role from user\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 403
+
+Response Headers:
+{}

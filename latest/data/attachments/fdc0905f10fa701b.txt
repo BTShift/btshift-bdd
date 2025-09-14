@@ -1,0 +1,31 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/clients/8d9ffb35-459b-4df9-b485-7f6e02fdd50b/users/undefined
+Correlation ID: fa02ec58-801e-4e66-85b8-3f67b8a575a7
+Timestamp: 2025-09-14T09:17:44.486Z
+Duration: 125ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "fa02ec58-801e-4e66-85b8-3f67b8a575a7",
+  "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841464009-xwp47544t\",\"testCase\":\"should track assignment metadata\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "assignedBy": "admin-user-123"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": true,
+  "message": "User undefined successfully assigned to client 8d9ffb35-459b-4df9-b485-7f6e02fdd50b",
+  "associationId": "1f903672-0f3b-4ac6-b5e9-6110fac1c63e"
+}

@@ -1,0 +1,118 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 4,
+  "timestamp": "2025-09-14T09:19:07.673Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "5c421d22-3df4-40bd-9d1c-63ce14f824d0",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841546852-zvtsylqmr\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "5c421d22-3df4-40bd-9d1c-63ce14f824d0",
+      "timestamp": {},
+      "duration": 329
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "d3ed688e-6346-483b-82db-bf60c3452e1d",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841546852-zvtsylqmr\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841547217-8t6lfnd4a-1@test.com",
+          "firstName": "Test",
+          "lastName": "User1757841547217-8t6lfnd4a-1",
+          "phoneNumber": "+212600000000",
+          "role": "User",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "d3ed688e-6346-483b-82db-bf60c3452e1d",
+      "timestamp": {},
+      "duration": 182
+    },
+    {
+      "endpoint": "/api/auth/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "091eee40-0c6e-4672-860d-2873b577154c",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841546852-zvtsylqmr\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841547217-8t6lfnd4a-1@test.com",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "091eee40-0c6e-4672-860d-2873b577154c",
+      "timestamp": {},
+      "duration": 112
+    },
+    {
+      "endpoint": "/api/sessions/undefined/activity",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "81d8da61-bb07-41c4-a58a-f55a5798a6cd",
+          "X-Test-Context": "{\"featureFile\":\"session-operations.api.feature\",\"scenario\":\"api/features/identity/session-management/happy-path/session-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841547532-qscag0l8g\",\"testCase\":\"should track session activity\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "action": "page_view",
+          "resource": "/dashboard"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "81d8da61-bb07-41c4-a58a-f55a5798a6cd",
+      "timestamp": {},
+      "duration": 113
+    }
+  ]
+}

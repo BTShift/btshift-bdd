@@ -1,0 +1,24 @@
+{
+  "endpoint": "/api/users/undefined/permissions",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "118fc328-f92d-4921-9325-cd464db1c6c3",
+      "X-Test-Context": "{\"featureFile\":\"permission-crud.api.feature\",\"scenario\":\"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841518809-xrssuo21p\",\"testCase\":\"should get user permissions\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "userId": "undefined",
+      "roles": [],
+      "permissions": [],
+      "enabledModules": []
+    },
+    "headers": {}
+  },
+  "correlationId": "118fc328-f92d-4921-9325-cd464db1c6c3",
+  "timestamp": {},
+  "duration": 111
+}

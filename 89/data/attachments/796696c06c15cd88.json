@@ -1,0 +1,21 @@
+{
+  "endpoint": "/api/sessions/validate",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "6427380a-7600-4b65-95ba-e74bb6e747fc",
+      "X-Test-Context": "{\"featureFile\":\"session-operations.api.feature\",\"scenario\":\"api/features/identity/session-management/happy-path/session-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841551065-gry09apkc\",\"testCase\":\"should validate session token\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "token": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 405,
+    "headers": {}
+  },
+  "correlationId": "6427380a-7600-4b65-95ba-e74bb6e747fc",
+  "timestamp": {},
+  "duration": 112
+}

@@ -1,0 +1,23 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/sessions/undefined
+Correlation ID: 1a98d050-d1c5-436b-bc48-f78fe7a630a0
+Timestamp: 2025-09-14T09:19:12.988Z
+Duration: 115ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "1a98d050-d1c5-436b-bc48-f78fe7a630a0",
+  "X-Test-Context": "{\"featureFile\":\"session-operations.api.feature\",\"scenario\":\"api/features/identity/session-management/happy-path/session-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841552770-weexup9ve\",\"testCase\":\"should handle session timeout\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "An error occurred while retrieving session details",
+  "details": []
+}

@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/users/undefined/change-password",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "7a0bb178-069f-4aa7-8e6b-25eb3e416173",
+      "X-Test-Context": "{\"featureFile\":\"password-reset.api.feature\",\"scenario\":\"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841500496-slsycou6y\",\"testCase\":\"should enforce password policy\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "currentPassword": "***MASKED***",
+      "newPassword": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "7a0bb178-069f-4aa7-8e6b-25eb3e416173",
+  "timestamp": {},
+  "duration": 109
+}

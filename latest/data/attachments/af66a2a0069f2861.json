@@ -1,0 +1,93 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-14T09:18:12.283Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "0d6d4a52-e12b-4610-853c-986746e277a5",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841491573-ivgn70yxg\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "0d6d4a52-e12b-4610-853c-986746e277a5",
+      "timestamp": {},
+      "duration": 339
+    },
+    {
+      "endpoint": "/api/invitations",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "67ce20c5-9e5d-439d-8018-b7dc3de8b224",
+          "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841491963-4wviaypo5\",\"testCase\":\"should validate invitation token\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "invitee1757841491964@example.com",
+          "firstName": "David",
+          "lastName": "Lee",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "67ce20c5-9e5d-439d-8018-b7dc3de8b224",
+      "timestamp": {},
+      "duration": 181
+    },
+    {
+      "endpoint": "/api/invitations/validate",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "0db86e77-379f-4c23-b5c8-8e2ef003b613",
+          "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841491963-4wviaypo5\",\"testCase\":\"should validate invitation token\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "invitationToken": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 405,
+        "headers": {}
+      },
+      "correlationId": "0db86e77-379f-4c23-b5c8-8e2ef003b613",
+      "timestamp": {},
+      "duration": 107
+    }
+  ]
+}

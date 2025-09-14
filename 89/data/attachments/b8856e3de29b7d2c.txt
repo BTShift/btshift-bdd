@@ -1,0 +1,9 @@
+🎬 Starting test session: test-1757841471081-l899n80r8 for feature: invalid-credentials.api.feature
+📋 Test context set: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts (negative)
+🧪 Test case: should reject refresh token with empty refresh token
+🔄 Current step: Test Execution
+🎬 Auto-context: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts :: should reject refresh token with empty refresh token
+🧪 Adding test context to POST /api/authentication/refresh
+🧪 Test context JSON: {"featureFile":"invalid-credentials.api.feature","scenario":"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757841471081-l899n80r8","testCase":"should reject refresh token with empty refresh token"}
+🔍 [Identity] POST /api/authentication/refresh | X-Correlation-ID: 186121c4-4592-4335-b0e7-9c6d6e7cf9ed | Auth: No
+🏁 Clearing test context for session: test-1757841471081-l899n80r8

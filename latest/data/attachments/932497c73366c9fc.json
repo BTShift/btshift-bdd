@@ -1,0 +1,23 @@
+{
+  "endpoint": "/api/users/undefined",
+  "method": "PUT",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "db010e59-a667-4598-be01-14a96284854a",
+      "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841575868-5g0hveaov\",\"testCase\":\"should update user information\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "firstName": "Updated",
+      "lastName": "Name",
+      "phoneNumber": "+212600000001"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "db010e59-a667-4598-be01-14a96284854a",
+  "timestamp": {},
+  "duration": 113
+}

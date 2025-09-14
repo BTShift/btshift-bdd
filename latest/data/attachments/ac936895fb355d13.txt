@@ -1,0 +1,25 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/sessions/undefined/activity
+Correlation ID: cebeb7c8-277a-4a25-aa1c-5bbe9c9fd2e3
+Timestamp: 2025-09-14T09:19:09.248Z
+Duration: 114ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "cebeb7c8-277a-4a25-aa1c-5bbe9c9fd2e3",
+  "X-Test-Context": "{\"featureFile\":\"session-operations.api.feature\",\"scenario\":\"api/features/identity/session-management/happy-path/session-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841549247-7okyweqkm\",\"testCase\":\"should get session activity history\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "action": "api_call",
+  "resource": "/api/users"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

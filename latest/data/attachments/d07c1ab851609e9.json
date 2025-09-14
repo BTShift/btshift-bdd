@@ -1,0 +1,25 @@
+{
+  "endpoint": "/api/users",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "b0274591-6b47-465e-82b3-9ac664262101",
+      "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841565612-ld4hju5ga\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "user-1757841565978-4abxhqaby-1@test.com",
+      "firstName": "Test",
+      "lastName": "User1757841565978-4abxhqaby-1",
+      "phoneNumber": "+212600000000",
+      "role": "User"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "b0274591-6b47-465e-82b3-9ac664262101",
+  "timestamp": {},
+  "duration": 180
+}

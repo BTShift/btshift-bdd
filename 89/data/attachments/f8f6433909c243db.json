@@ -1,0 +1,24 @@
+{
+  "endpoint": "/api/permissions",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "14c9c6b2-d29c-4f0c-8d73-1b4352fa8bee",
+      "X-Test-Context": "{\"featureFile\":\"permission-crud.api.feature\",\"scenario\":\"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841513156-q2lqtkc36\",\"testCase\":\"should list all permissions\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "name": "test:permission1:1757841513156",
+      "description": "First test permission",
+      "resource": "resource1",
+      "action": "read"
+    }
+  },
+  "response": {
+    "status": 405,
+    "headers": {}
+  },
+  "correlationId": "14c9c6b2-d29c-4f0c-8d73-1b4352fa8bee",
+  "timestamp": {},
+  "duration": 177
+}

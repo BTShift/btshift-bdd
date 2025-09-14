@@ -1,0 +1,25 @@
+{
+  "endpoint": "/api/users",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "92068a89-b903-488a-8b77-147349683079",
+      "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841534603-c8dicjb8a\",\"testCase\":\"should get users by role\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "test.user1757841534790@example.com",
+      "firstName": "Test",
+      "lastName": "User",
+      "phoneNumber": "+212600000000",
+      "role": "User"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "92068a89-b903-488a-8b77-147349683079",
+  "timestamp": {},
+  "duration": 107
+}

@@ -1,0 +1,24 @@
+{
+  "endpoint": "/api/invitations",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "67ce20c5-9e5d-439d-8018-b7dc3de8b224",
+      "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841491963-4wviaypo5\",\"testCase\":\"should validate invitation token\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "invitee1757841491964@example.com",
+      "firstName": "David",
+      "lastName": "Lee",
+      "role": "User"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "67ce20c5-9e5d-439d-8018-b7dc3de8b224",
+  "timestamp": {},
+  "duration": 181
+}

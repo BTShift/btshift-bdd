@@ -1,0 +1,42 @@
+🚀 [d73299e2] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757841501514-6ool7v5uw for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841501514-2a59qr7t9 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841501514-0f549ba3 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757841501515] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757841501515] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757841501515] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841501514-2a59qr7t9"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 92a7101a-d862-4675-9550-08ac5d61e9d6 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 92a7101a-d862-4675-9550-08ac5d61e9d6 | Success
+✅ [tenantadmin-1757841501515] TenantAdmin authentication successful
+🕐 [tenantadmin-1757841501515] Token expires at: 2025-09-14T09:26:21.868Z
+🏢 [tenantadmin-1757841501515] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [d73299e2] Using TenantAdmin authentication
+🕐 [d73299e2] Token expires: 9:26:21 AM
+🏢 [d73299e2] Tenant ID: tenant-from-jwt-test.tenantadmin
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841501514-2a59qr7t9"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 8df2c474-a1fb-4bf2-ac33-9b28dfa40df8 | Auth: Yes
+✅ [Identity] POST /api/users | X-Correlation-ID: 8df2c474-a1fb-4bf2-ac33-9b28dfa40df8 | Success
+🎬 Starting test session: test-1757841502080-j180x36w7 for feature: password-reset.api.feature
+📋 Test context set: password-reset.api.feature :: api/features/identity/password-reset/happy-path/password-reset.api.spec.ts (positive)
+🧪 Test case: should get password policy requirements
+🔄 Current step: Test Execution
+🎬 Auto-context: password-reset.api.feature :: api/features/identity/password-reset/happy-path/password-reset.api.spec.ts :: should get password policy requirements
+🧪 Adding test context to GET /api/auth/password-policy
+🧪 Test context JSON: {"featureFile":"password-reset.api.feature","scenario":"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841502080-j180x36w7","testCase":"should get password policy requirements"}
+🔍 [Identity] GET /api/auth/password-policy | X-Correlation-ID: 062e22a0-1065-460d-b7c1-ccfcc3aef62c | Auth: Yes
+✅ [Identity] GET /api/auth/password-policy | X-Correlation-ID: 062e22a0-1065-460d-b7c1-ccfcc3aef62c | Success
+🏁 Clearing test context for session: test-1757841502080-j180x36w7
+🔍 [Identity] DELETE /api/users/undefined | X-Correlation-ID: 338c8e5e-d614-4d57-b658-1eddc9ed74e8 | Auth: Yes
+✅ [Identity] DELETE /api/users/undefined | X-Correlation-ID: 338c8e5e-d614-4d57-b658-1eddc9ed74e8 | Success
+🧹 Cleaned up user: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 590afad4-d8cc-4bb8-acdf-652f75be6d0e | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 590afad4-d8cc-4bb8-acdf-652f75be6d0e | Success

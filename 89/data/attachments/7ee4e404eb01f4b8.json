@@ -1,0 +1,91 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-14T09:19:43.056Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "476dc4fe-cb59-446c-8a7c-ce735bd7e1af",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841582362-vy8pc6kps\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "476dc4fe-cb59-446c-8a7c-ce735bd7e1af",
+      "timestamp": {},
+      "duration": 318
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "e46e6cb0-2be4-4b33-86f0-8c66d26164db",
+          "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841582731-bnx0t6qbt\",\"testCase\":\"should get user by email\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841582731-bkqv2nx39-1@test.com",
+          "firstName": "Test",
+          "lastName": "User1757841582731-bkqv2nx39-1",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "e46e6cb0-2be4-4b33-86f0-8c66d26164db",
+      "timestamp": {},
+      "duration": 186
+    },
+    {
+      "endpoint": "/api/users/by-email/user-1757841582731-bkqv2nx39-1%40test.com",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "70f2db53-31d8-4bb6-a10d-0a48701916b0",
+          "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841582731-bnx0t6qbt\",\"testCase\":\"should get user by email\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "70f2db53-31d8-4bb6-a10d-0a48701916b0",
+      "timestamp": {},
+      "duration": 104
+    }
+  ]
+}

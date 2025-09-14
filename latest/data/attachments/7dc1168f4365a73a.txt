@@ -1,0 +1,23 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/tenants/00000000-0000-0000-0000-000000000000
+Correlation ID: 23cac821-c832-40b5-b26c-c5eeae53e4d8
+Timestamp: 2025-09-14T09:19:58.993Z
+Duration: 226ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "23cac821-c832-40b5-b26c-c5eeae53e4d8",
+  "X-Test-Context": "{\"featureFile\":\"duplicate-tenant.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841598992-9o81rwxsd\",\"testCase\":\"should return 404 when getting tenant by non-existing ID\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 404
+
+Error Details:
+{
+  "code": 5,
+  "message": "Tenant with ID '00000000-0000-0000-0000-000000000000' not found",
+  "details": []
+}

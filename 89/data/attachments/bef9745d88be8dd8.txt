@@ -1,0 +1,30 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/audit-logs/export
+Correlation ID: b2299716-6e81-4970-b1d3-ba372f92ceee
+Timestamp: 2025-09-14T09:17:47.044Z
+Duration: 118ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "b2299716-6e81-4970-b1d3-ba372f92ceee",
+  "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841467043-w33ukn36y\",\"testCase\":\"should export audit logs\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "format": "csv",
+  "startDate": "2025-08-15T09:17:47.043Z",
+  "endDate": "2025-09-14T09:17:47.043Z"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "An error occurred while exporting audit logs",
+  "details": []
+}

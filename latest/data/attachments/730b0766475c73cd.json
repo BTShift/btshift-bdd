@@ -1,0 +1,55 @@
+{
+  "endpoint": "/api/users/undefined/clients",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "9aa3d5aa-8d28-4e9d-840c-2ea448eb9034",
+      "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841460666-emnwxdm0n\",\"testCase\":\"should get all clients assigned to a user\"}",
+      "Authorization": "***MASKED***"
+    },
+    "params": {
+      "query": {
+        "page": 1,
+        "pageSize": 10
+      }
+    },
+    "query": {
+      "page": 1,
+      "pageSize": 10
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "clients": [
+        {
+          "clientId": "833c824e-dadf-460b-ba23-27c4912d179b",
+          "companyName": "",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "status": "Active"
+        },
+        {
+          "clientId": "c191422d-5fb0-494b-9fa6-d9e40715a9f4",
+          "companyName": "",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "status": "Active"
+        }
+      ],
+      "totalCount": 2,
+      "page": 1,
+      "pageSize": 10
+    },
+    "headers": {}
+  },
+  "correlationId": "9aa3d5aa-8d28-4e9d-840c-2ea448eb9034",
+  "timestamp": {},
+  "duration": 115
+}

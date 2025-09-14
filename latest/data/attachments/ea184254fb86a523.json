@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/auth/password-reset/confirm",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "6cb075e6-1fe7-46f4-86e4-d49d5ebc1671",
+      "X-Test-Context": "{\"featureFile\":\"password-reset.api.feature\",\"scenario\":\"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841505278-oje8sjas5\",\"testCase\":\"should expire password reset token after use\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "token": "***MASKED***",
+      "newPassword": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "6cb075e6-1fe7-46f4-86e4-d49d5ebc1671",
+  "timestamp": {},
+  "duration": 115
+}

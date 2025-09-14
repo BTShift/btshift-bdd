@@ -1,0 +1,26 @@
+{
+  "endpoint": "/api/clients/833c824e-dadf-460b-ba23-27c4912d179b/users/undefined",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "0d6c5751-4bfb-422d-b5aa-68b8f7bfd6bc",
+      "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841460666-emnwxdm0n\",\"testCase\":\"should get all clients assigned to a user\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "assignedBy": "admin-user-id"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "message": "User undefined successfully assigned to client 833c824e-dadf-460b-ba23-27c4912d179b",
+      "associationId": "e8f906de-87a7-427b-b093-77a5bfa32257"
+    },
+    "headers": {}
+  },
+  "correlationId": "0d6c5751-4bfb-422d-b5aa-68b8f7bfd6bc",
+  "timestamp": {},
+  "duration": 129
+}

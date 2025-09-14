@@ -1,0 +1,31 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/users/search
+Correlation ID: 4fa4f33d-58f3-4d99-a380-8c8281dfdc81
+Timestamp: 2025-09-14T09:19:41.315Z
+Duration: 107ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "4fa4f33d-58f3-4d99-a380-8c8281dfdc81",
+  "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841581131-4rayisn5h\",\"testCase\":\"should search users by email\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Params ===
+{
+  "query": {
+    "email": "user-1757841581132-iprfecjd0-1@test.com"
+  }
+}
+
+=== Query Parameters ===
+{
+  "email": "user-1757841581132-iprfecjd0-1@test.com"
+}
+
+=== Response ===
+Status: 403
+
+Response Headers:
+{}

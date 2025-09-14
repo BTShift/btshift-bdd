@@ -1,0 +1,242 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 7,
+  "timestamp": "2025-09-14T09:17:47.177Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b7309695-2ab2-403e-bd83-409c8ff4c64d",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841465811-yrgnjsrr8\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "b7309695-2ab2-403e-bd83-409c8ff4c64d",
+      "timestamp": {},
+      "duration": 379
+    },
+    {
+      "endpoint": "/api/audit-logs",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "d79e900c-3e5f-431d-b8fe-4db83672ab7c",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841466242-hnvg7qtgv\",\"testCase\":\"should retrieve audit logs\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "pageNumber": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "logs": [],
+          "totalCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "d79e900c-3e5f-431d-b8fe-4db83672ab7c",
+      "timestamp": {},
+      "duration": 242
+    },
+    {
+      "endpoint": "/api/audit-logs",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "f4cae21d-b8be-472e-8bef-852a36894aa0",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841466518-s3de9j1vf\",\"testCase\":\"should filter audit logs by user\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "userId": "test-user-id",
+            "pageNumber": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "userId": "test-user-id",
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "logs": [],
+          "totalCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "f4cae21d-b8be-472e-8bef-852a36894aa0",
+      "timestamp": {},
+      "duration": 111
+    },
+    {
+      "endpoint": "/api/audit-logs",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "5d50c986-a80e-4a47-9ce0-bda28ab30cc6",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841466654-tdj94175w\",\"testCase\":\"should filter audit logs by date range\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "startDate": "2025-09-07T09:17:46.655Z",
+            "endDate": "2025-09-14T09:17:46.655Z",
+            "pageNumber": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "startDate": "2025-09-07T09:17:46.655Z",
+          "endDate": "2025-09-14T09:17:46.655Z",
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "logs": [],
+          "totalCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "5d50c986-a80e-4a47-9ce0-bda28ab30cc6",
+      "timestamp": {},
+      "duration": 114
+    },
+    {
+      "endpoint": "/api/audit-logs",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "cf8cfd18-b470-482d-a158-7864610b96bf",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841466784-kokno1oik\",\"testCase\":\"should filter audit logs by action type\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "actionType": "LOGIN",
+            "pageNumber": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "actionType": "LOGIN",
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "logs": [],
+          "totalCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "cf8cfd18-b470-482d-a158-7864610b96bf",
+      "timestamp": {},
+      "duration": 113
+    },
+    {
+      "endpoint": "/api/audit-logs",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "594ca1ca-0bb6-433f-be9d-0e34d6c8f6cd",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841466920-xf0b0a7lp\",\"testCase\":\"should get audit log by ID\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "pageNumber": 1,
+            "pageSize": 1
+          }
+        },
+        "query": {
+          "pageNumber": 1,
+          "pageSize": 1
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "logs": [],
+          "totalCount": 0
+        },
+        "headers": {}
+      },
+      "correlationId": "594ca1ca-0bb6-433f-be9d-0e34d6c8f6cd",
+      "timestamp": {},
+      "duration": 109
+    },
+    {
+      "endpoint": "/api/audit-logs/export",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b2299716-6e81-4970-b1d3-ba372f92ceee",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841467043-w33ukn36y\",\"testCase\":\"should export audit logs\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "format": "csv",
+          "startDate": "2025-08-15T09:17:47.043Z",
+          "endDate": "2025-09-14T09:17:47.043Z"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "An error occurred while exporting audit logs",
+          "details": []
+        }
+      },
+      "correlationId": "b2299716-6e81-4970-b1d3-ba372f92ceee",
+      "timestamp": {},
+      "duration": 118
+    }
+  ]
+}

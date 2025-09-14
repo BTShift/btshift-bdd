@@ -1,0 +1,57 @@
+🚀 [4f988ad1] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757841543023-5ybu84un1 for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841543024-fidnsezvb for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841543024-4ecdce8a for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757841543024] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757841543024] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757841543024] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841543024-fidnsezvb"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 5a38fc64-cd6e-4be1-b978-8bff62515764 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 5a38fc64-cd6e-4be1-b978-8bff62515764 | Success
+✅ [tenantadmin-1757841543024] TenantAdmin authentication successful
+🕐 [tenantadmin-1757841543024] Token expires at: 2025-09-14T09:27:03.409Z
+🏢 [tenantadmin-1757841543024] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [4f988ad1] Using TenantAdmin authentication
+🕐 [4f988ad1] Token expires: 9:27:03 AM
+🏢 [4f988ad1] Tenant ID: tenant-from-jwt-test.tenantadmin
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841543024-fidnsezvb"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 84107c06-8b22-4be6-992f-b80d8e095995 | Auth: Yes
+✅ [Identity] POST /api/users | X-Correlation-ID: 84107c06-8b22-4be6-992f-b80d8e095995 | Success
+🧪 Adding test context to POST /api/auth/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841543024-fidnsezvb"}
+🔍 [Identity] POST /api/auth/login | X-Correlation-ID: 9ee32aae-3757-4956-b91c-da0c5a10f0d8 | Auth: Yes
+✅ [Identity] POST /api/auth/login | X-Correlation-ID: 9ee32aae-3757-4956-b91c-da0c5a10f0d8 | Success
+🎬 Starting test session: test-1757841543747-0lgotwh3n for feature: session-operations.api.feature
+📋 Test context set: session-operations.api.feature :: api/features/identity/session-management/happy-path/session-operations.api.spec.ts (positive)
+🧪 Test case: should revoke specific session
+🔄 Current step: Test Execution
+🎬 Auto-context: session-operations.api.feature :: api/features/identity/session-management/happy-path/session-operations.api.spec.ts :: should revoke specific session
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"session-operations.api.feature","scenario":"api/features/identity/session-management/happy-path/session-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841543747-0lgotwh3n","testCase":"should revoke specific session"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 4148fb88-cb8e-4843-9548-8af9d47d4e3b | Auth: Yes
+✅ [Identity] POST /api/users | X-Correlation-ID: 4148fb88-cb8e-4843-9548-8af9d47d4e3b | Success
+🧪 Adding test context to POST /api/auth/login
+🧪 Test context JSON: {"featureFile":"session-operations.api.feature","scenario":"api/features/identity/session-management/happy-path/session-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841543747-0lgotwh3n","testCase":"should revoke specific session"}
+🔍 [Identity] POST /api/auth/login | X-Correlation-ID: d46587c3-2206-4841-b825-1627f6a256fa | Auth: Yes
+✅ [Identity] POST /api/auth/login | X-Correlation-ID: d46587c3-2206-4841-b825-1627f6a256fa | Success
+🧪 Adding test context to POST /api/sessions/undefined/revoke
+🧪 Test context JSON: {"featureFile":"session-operations.api.feature","scenario":"api/features/identity/session-management/happy-path/session-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841543747-0lgotwh3n","testCase":"should revoke specific session"}
+🔍 [Identity] POST /api/sessions/undefined/revoke | X-Correlation-ID: ed4c6141-91dd-44c4-9eda-42ddc276a2b6 | Auth: Yes
+✅ [Identity] POST /api/sessions/undefined/revoke | X-Correlation-ID: ed4c6141-91dd-44c4-9eda-42ddc276a2b6 | Success
+🏁 Clearing test context for session: test-1757841543747-0lgotwh3n
+🔍 [Identity] DELETE /api/users/undefined | X-Correlation-ID: 37562f58-3114-4f14-92a0-3bc92d7a875e | Auth: Yes
+✅ [Identity] DELETE /api/users/undefined | X-Correlation-ID: 37562f58-3114-4f14-92a0-3bc92d7a875e | Success
+🧹 Cleaned up user: undefined
+🔍 [Identity] DELETE /api/users/undefined | X-Correlation-ID: e1933b51-1bcf-4ab1-bd30-791789d5e35b | Auth: Yes
+✅ [Identity] DELETE /api/users/undefined | X-Correlation-ID: e1933b51-1bcf-4ab1-bd30-791789d5e35b | Success
+🧹 Cleaned up user: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: c4d1904e-13e4-4bb4-833f-3ed92cbfe25b | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: c4d1904e-13e4-4bb4-833f-3ed92cbfe25b | Success

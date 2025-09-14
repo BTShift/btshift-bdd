@@ -1,0 +1,25 @@
+{
+  "endpoint": "/api/users",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "28a89e43-8f41-4292-a92e-3fe8c658866c",
+      "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457736-z9wpnedxh\",\"testCase\":\"should get all users assigned to a client\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "user-1757841457967-m2vu4j22n-12@test.com",
+      "firstName": "Test",
+      "lastName": "User1757841457967-m2vu4j22n-12",
+      "phoneNumber": "+212600000000",
+      "role": "User"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "28a89e43-8f41-4292-a92e-3fe8c658866c",
+  "timestamp": {},
+  "duration": 106
+}

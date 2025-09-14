@@ -1,0 +1,51 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/clients
+Correlation ID: 25cf6fa8-7b8e-4d80-ab96-bf5f6ce7c83d
+Timestamp: 2025-09-14T09:17:36.852Z
+Duration: 119ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "25cf6fa8-7b8e-4d80-ab96-bf5f6ce7c83d",
+  "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841456849-2hrkd1hmx\",\"testCase\":\"should assign a user to a client\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "Client 1757841456852-y4wx98fin-6",
+  "email": "client-1757841456852-y4wx98fin-6@test.com",
+  "phone": "+212612345678",
+  "address": "456 Business Ave",
+  "taxId": "TAX1757841456852-y4wx98fin-6",
+  "industry": "Technology",
+  "notes": "Auto-generated test client"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "clientId": "d4eed105-fc3c-466c-aa22-4f7e98f2d0a3",
+  "companyName": "",
+  "country": "",
+  "address": "456 Business Ave",
+  "iceNumber": "",
+  "rcNumber": "",
+  "vatNumber": "",
+  "cnssNumber": "",
+  "industry": "Technology",
+  "adminContactPerson": "",
+  "billingContactPerson": "",
+  "status": "Active",
+  "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+  "fiscalYearEnd": "",
+  "assignedTeamId": "",
+  "createdAt": "2025-09-14T09:17:36.9098172Z",
+  "updatedAt": "2025-09-14T09:17:36.9098173Z"
+}

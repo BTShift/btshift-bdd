@@ -1,0 +1,35 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/invitations
+Correlation ID: 462daf14-b3c0-4eee-be72-913929633c92
+Timestamp: 2025-09-14T09:18:10.580Z
+Duration: 175ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "462daf14-b3c0-4eee-be72-913929633c92",
+  "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841490579-bpfwwa6nu\",\"testCase\":\"should list pending invitations\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Params ===
+{
+  "query": {
+    "status": "Pending",
+    "pageNumber": 1,
+    "pageSize": 10
+  }
+}
+
+=== Query Parameters ===
+{
+  "status": "Pending",
+  "pageNumber": 1,
+  "pageSize": 10
+}
+
+=== Response ===
+Status: 403
+
+Response Headers:
+{}

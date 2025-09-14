@@ -1,0 +1,21 @@
+{
+  "endpoint": "/api/auth/password-strength",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "f328e4e2-ccae-435b-b0e2-ef4ecaeff59d",
+      "X-Test-Context": "{\"featureFile\":\"password-reset.api.feature\",\"scenario\":\"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841503675-m45jceg9c\",\"testCase\":\"should check password strength\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "f328e4e2-ccae-435b-b0e2-ef4ecaeff59d",
+  "timestamp": {},
+  "duration": 108
+}

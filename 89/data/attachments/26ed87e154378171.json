@@ -1,0 +1,139 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 5,
+  "timestamp": "2025-09-14T09:18:25.651Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "49e5ee5d-3870-4433-973d-eae406f2519a",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841504699-9ugo5s33e\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "49e5ee5d-3870-4433-973d-eae406f2519a",
+      "timestamp": {},
+      "duration": 339
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "4ba1c0c3-5849-4b83-9aec-e58bd9536839",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841504699-9ugo5s33e\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841505073-nhwh65t8b-1@test.com",
+          "firstName": "Test",
+          "lastName": "User1757841505073-nhwh65t8b-1",
+          "phoneNumber": "+212600000000",
+          "role": "User",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "4ba1c0c3-5849-4b83-9aec-e58bd9536839",
+      "timestamp": {},
+      "duration": 187
+    },
+    {
+      "endpoint": "/api/auth/password-reset/request",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "999d25a2-e8b8-4b00-b71b-13058b960f4b",
+          "X-Test-Context": "{\"featureFile\":\"password-reset.api.feature\",\"scenario\":\"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841505278-oje8sjas5\",\"testCase\":\"should expire password reset token after use\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841505073-nhwh65t8b-1@test.com"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "999d25a2-e8b8-4b00-b71b-13058b960f4b",
+      "timestamp": {},
+      "duration": 111
+    },
+    {
+      "endpoint": "/api/auth/password-reset/confirm",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "6cb075e6-1fe7-46f4-86e4-d49d5ebc1671",
+          "X-Test-Context": "{\"featureFile\":\"password-reset.api.feature\",\"scenario\":\"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841505278-oje8sjas5\",\"testCase\":\"should expire password reset token after use\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "token": "***MASKED***",
+          "newPassword": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "6cb075e6-1fe7-46f4-86e4-d49d5ebc1671",
+      "timestamp": {},
+      "duration": 115
+    },
+    {
+      "endpoint": "/api/auth/password-reset/confirm",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "d78ac893-935f-41bb-95d0-5cc76e47a634",
+          "X-Test-Context": "{\"featureFile\":\"password-reset.api.feature\",\"scenario\":\"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841505278-oje8sjas5\",\"testCase\":\"should expire password reset token after use\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "token": "***MASKED***",
+          "newPassword": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "d78ac893-935f-41bb-95d0-5cc76e47a634",
+      "timestamp": {},
+      "duration": 114
+    }
+  ]
+}

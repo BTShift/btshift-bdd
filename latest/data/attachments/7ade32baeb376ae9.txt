@@ -1,0 +1,21 @@
+🎬 Starting test session: test-1757841451177-rj41r8hxn for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should delete a group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should delete a group
+📍 Step: Create group for deletion
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841451177-rj41r8hxn","testCase":"should delete a group"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: 75b8b20e-5744-4308-8c31-9c0259cde9ab | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: 75b8b20e-5744-4308-8c31-9c0259cde9ab | Success
+📍 Step: Delete the group
+🧪 Adding test context to DELETE /api/groups/9fca92ec-3280-4f5a-8143-3b0b94f11cd6
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841451177-rj41r8hxn","testCase":"should delete a group"}
+🔍 [ClientManagement] DELETE /api/groups/9fca92ec-3280-4f5a-8143-3b0b94f11cd6 | X-Correlation-ID: 67e158b5-c1da-472f-a55b-6452d7c68017 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/9fca92ec-3280-4f5a-8143-3b0b94f11cd6 | X-Correlation-ID: 67e158b5-c1da-472f-a55b-6452d7c68017 | Success
+📍 Step: Verify deletion response
+🧪 Adding test context to GET /api/groups/9fca92ec-3280-4f5a-8143-3b0b94f11cd6
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841451177-rj41r8hxn","testCase":"should delete a group"}
+🔍 [ClientManagement] GET /api/groups/9fca92ec-3280-4f5a-8143-3b0b94f11cd6 | X-Correlation-ID: 9ec86b46-dbf1-4c54-8b9b-d2520bed8e71 | Auth: Yes
+✅ [ClientManagement] GET /api/groups/9fca92ec-3280-4f5a-8143-3b0b94f11cd6 | X-Correlation-ID: 9ec86b46-dbf1-4c54-8b9b-d2520bed8e71 | Success
+🏁 Clearing test context for session: test-1757841451177-rj41r8hxn

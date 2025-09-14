@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/groups/a3df92a1-35f4-429a-bfa0-fc0ad150c587/clients/b774b0c1-9efe-42f7-a9db-9ce565965ab0",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "454063f7-3c13-40cc-8fe1-64c5ec54ace5",
+      "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841447263-4spr2tbou\",\"testCase\":\"should create client group with typed client\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "message": "Client added to group successfully"
+    },
+    "headers": {}
+  },
+  "correlationId": "454063f7-3c13-40cc-8fe1-64c5ec54ace5",
+  "timestamp": {},
+  "duration": 125
+}

@@ -1,0 +1,31 @@
+{
+  "endpoint": "/api/groups",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "254c4f8a-d92d-4359-9050-8e3a73e00b69",
+      "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841450293-0c0s7g3s7\",\"testCase\":\"should create a new client group\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "name": "TestGroup_1757841450296",
+      "description": "Test group for API testing"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "groupId": "8ca6fcc4-2d08-4bf8-9330-4c7d5cddb35c",
+      "name": "TestGroup_1757841450296",
+      "description": "Test group for API testing",
+      "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "createdAt": "2025-09-14T09:17:30.3565132Z",
+      "updatedAt": "2025-09-14T09:17:30.3565132Z",
+      "clientCount": 0
+    },
+    "headers": {}
+  },
+  "correlationId": "254c4f8a-d92d-4359-9050-8e3a73e00b69",
+  "timestamp": {},
+  "duration": 115
+}

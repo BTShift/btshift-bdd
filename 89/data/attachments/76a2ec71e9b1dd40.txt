@@ -1,0 +1,14 @@
+🎬 Starting test session: test-1757841447914-lb6q072la for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should handle user-client associations with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should handle user-client associations with typed client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841447914-lb6q072la","testCase":"should handle user-client associations with typed client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 6963d6d6-8dba-4291-9f13-cec7f451c391 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 6963d6d6-8dba-4291-9f13-cec7f451c391 | Success
+🧪 Adding test context to POST /api/clients/a13da0be-7836-4aaa-84bd-0e3b21b2a3b4/users/test-user-id
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841447914-lb6q072la","testCase":"should handle user-client associations with typed client"}
+🔍 [ClientManagement] POST /api/clients/a13da0be-7836-4aaa-84bd-0e3b21b2a3b4/users/test-user-id | X-Correlation-ID: af924e25-2a3f-443a-8c7d-b22771228e81 | Auth: Yes
+✅ [ClientManagement] POST /api/clients/a13da0be-7836-4aaa-84bd-0e3b21b2a3b4/users/test-user-id | X-Correlation-ID: af924e25-2a3f-443a-8c7d-b22771228e81 | Success
+🏁 Clearing test context for session: test-1757841447914-lb6q072la

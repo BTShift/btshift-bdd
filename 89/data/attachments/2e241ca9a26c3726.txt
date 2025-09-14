@@ -1,0 +1,42 @@
+🚀 [d6322777] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757841523782-upx0m515g for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841523783-a2f4kwzex for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841523783-1dcada97 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757841523783] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757841523783] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757841523783] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841523783-a2f4kwzex"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 4cbc957b-45c2-4a70-99f7-34970836d2cc | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 4cbc957b-45c2-4a70-99f7-34970836d2cc | Success
+✅ [tenantadmin-1757841523783] TenantAdmin authentication successful
+🕐 [tenantadmin-1757841523783] Token expires at: 2025-09-14T09:26:44.145Z
+🏢 [tenantadmin-1757841523783] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [d6322777] Using TenantAdmin authentication
+🕐 [d6322777] Token expires: 9:26:44 AM
+🏢 [d6322777] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757841524182-743lpr8g4 for feature: role-crud.api.feature
+📋 Test context set: role-crud.api.feature :: api/features/identity/role-management/happy-path/role-crud.api.spec.ts (positive)
+🧪 Test case: should retrieve role by ID
+🔄 Current step: Test Execution
+🎬 Auto-context: role-crud.api.feature :: api/features/identity/role-management/happy-path/role-crud.api.spec.ts :: should retrieve role by ID
+🧪 Adding test context to POST /api/roles
+🧪 Test context JSON: {"featureFile":"role-crud.api.feature","scenario":"api/features/identity/role-management/happy-path/role-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841524182-743lpr8g4","testCase":"should retrieve role by ID"}
+🔍 [Identity] POST /api/roles | X-Correlation-ID: 34d10ed3-08f3-433c-9142-1d8deda24cd1 | Auth: Yes
+✅ [Identity] POST /api/roles | X-Correlation-ID: 34d10ed3-08f3-433c-9142-1d8deda24cd1 | Success
+🧪 Adding test context to GET /api/roles/undefined
+🧪 Test context JSON: {"featureFile":"role-crud.api.feature","scenario":"api/features/identity/role-management/happy-path/role-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841524182-743lpr8g4","testCase":"should retrieve role by ID"}
+🔍 [Identity] GET /api/roles/undefined | X-Correlation-ID: fc804d2e-3e2c-4033-804e-bba0d9f19fd0 | Auth: Yes
+✅ [Identity] GET /api/roles/undefined | X-Correlation-ID: fc804d2e-3e2c-4033-804e-bba0d9f19fd0 | Success
+🏁 Clearing test context for session: test-1757841524182-743lpr8g4
+🔍 [Identity] DELETE /api/roles/undefined | X-Correlation-ID: 593e2148-40d7-4a4c-9f68-f6814b8c70f8 | Auth: Yes
+✅ [Identity] DELETE /api/roles/undefined | X-Correlation-ID: 593e2148-40d7-4a4c-9f68-f6814b8c70f8 | Success
+🧹 Cleaned up role: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 02beff19-0ec0-4866-8093-6f88477a6683 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 02beff19-0ec0-4866-8093-6f88477a6683 | Success

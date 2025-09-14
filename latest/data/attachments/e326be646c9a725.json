@@ -1,0 +1,18 @@
+{
+  "endpoint": "/api/users/undefined",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "1deb0427-36ad-4a23-badf-2aa1df9965cc",
+      "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841574253-3w4vxker9\",\"testCase\":\"should retrieve user by ID\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "1deb0427-36ad-4a23-badf-2aa1df9965cc",
+  "timestamp": {},
+  "duration": 107
+}

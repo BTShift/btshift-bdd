@@ -1,0 +1,32 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 1,
+  "timestamp": "2025-09-14T09:17:50.091Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/validate-token",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "0e58c85d-f5dc-47ce-a034-dcaf965186bf",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841469772-zz9yek2sw\",\"testCase\":\"should reject token validation with expired token\"}"
+        },
+        "params": {
+          "query": {
+            "token": "***MASKED***"
+          }
+        },
+        "query": {
+          "token": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "0e58c85d-f5dc-47ce-a034-dcaf965186bf",
+      "timestamp": {},
+      "duration": 273
+    }
+  ]
+}

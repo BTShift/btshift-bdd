@@ -1,0 +1,5 @@
+❌ [Identity] POST /api/users/undefined/2fa/enable | X-Correlation-ID: 61108d26-0288-439c-9d94-8c4065c12f89 | Error: {
+  code: 3,
+  message: "Unable to read the request as JSON because the request content type '' is not a known JSON content type.",
+  details: []
+}

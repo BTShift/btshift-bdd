@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/roles
+Correlation ID: 101f2e1f-a0c4-401d-9d8b-36f399540e44
+Timestamp: 2025-09-14T09:18:48.990Z
+Duration: 176ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "101f2e1f-a0c4-401d-9d8b-36f399540e44",
+  "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841528989-uj97y1s3f\",\"testCase\":\"should list all roles\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "TestRole1_1757841528990",
+  "description": "First test role",
+  "permissions": [
+    "read:users"
+  ]
+}
+
+=== Response ===
+Status: 403
+
+Response Headers:
+{}

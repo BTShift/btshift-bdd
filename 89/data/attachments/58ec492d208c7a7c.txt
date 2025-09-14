@@ -1,0 +1,5 @@
+❌ [Identity] POST /api/users/undefined/2fa/disable | X-Correlation-ID: cf846dc1-7f58-4ad0-8afc-367594227fd5 | Error: {
+  code: 3,
+  message: 'An error occurred while disabling 2FA',
+  details: []
+}

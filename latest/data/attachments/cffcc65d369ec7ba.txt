@@ -1,0 +1,54 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/clients
+Correlation ID: 774d809b-a862-4e3f-abcc-374b3af95a24
+Timestamp: 2025-09-14T09:17:24.915Z
+Duration: 1406ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "774d809b-a862-4e3f-abcc-374b3af95a24",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841444904-8rqb43enr\",\"testCase\":\"should create client with typed client from @btshift/client-management-types\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "companyName": "Test Client 1757841444911",
+  "country": "Morocco",
+  "address": "123 Test Street, Casablanca",
+  "iceNumber": "001757841444911",
+  "rcNumber": "RC1757841444911",
+  "vatNumber": "VAT1757841444911",
+  "cnssNumber": "CNSS1757841444911",
+  "industry": "Technology",
+  "adminContactPerson": "admin-1757841444911@test.com",
+  "billingContactPerson": "billing-1757841444911@test.com"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "clientId": "11f7464f-ac56-494f-a596-0b51ffbec5b5",
+  "companyName": "Test Client 1757841444911",
+  "country": "Morocco",
+  "address": "123 Test Street, Casablanca",
+  "iceNumber": "001757841444911",
+  "rcNumber": "RC1757841444911",
+  "vatNumber": "VAT1757841444911",
+  "cnssNumber": "CNSS1757841444911",
+  "industry": "Technology",
+  "adminContactPerson": "admin-1757841444911@test.com",
+  "billingContactPerson": "billing-1757841444911@test.com",
+  "status": "Active",
+  "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+  "fiscalYearEnd": "",
+  "assignedTeamId": "",
+  "createdAt": "2025-09-14T09:17:25.8458781Z",
+  "updatedAt": "2025-09-14T09:17:25.8458782Z"
+}

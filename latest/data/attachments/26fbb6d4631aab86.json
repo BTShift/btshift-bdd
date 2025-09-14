@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/groups/36fc4324-f056-442d-9621-86de9ca5bbc3/clients/4f1c3db0-ff3f-4e64-aa9b-8e3c3b590364",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "604ca251-625d-460f-9347-1fe7226bcef6",
+      "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841452388-ixmmn9yyy\",\"testCase\":\"should remove a client from a group\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "message": "Client added to group successfully"
+    },
+    "headers": {}
+  },
+  "correlationId": "604ca251-625d-460f-9347-1fe7226bcef6",
+  "timestamp": {},
+  "duration": 125
+}

@@ -1,0 +1,46 @@
+🚀 [b351700c] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757841494807-rj8rgg31e for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841494808-wpg8c1lyq for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841494808-98074912 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757841494808] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757841494808] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757841494808] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841494808-wpg8c1lyq"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 4d2ce7c1-89af-42df-af94-09c2b3d93b2c | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 4d2ce7c1-89af-42df-af94-09c2b3d93b2c | Success
+✅ [tenantadmin-1757841494808] TenantAdmin authentication successful
+🕐 [tenantadmin-1757841494808] Token expires at: 2025-09-14T09:26:15.159Z
+🏢 [tenantadmin-1757841494808] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [b351700c] Using TenantAdmin authentication
+🕐 [b351700c] Token expires: 9:26:15 AM
+🏢 [b351700c] Tenant ID: tenant-from-jwt-test.tenantadmin
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841494808-wpg8c1lyq"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 2eebbc57-89e0-4dca-9896-3e70b5a0259d | Auth: Yes
+✅ [Identity] POST /api/users | X-Correlation-ID: 2eebbc57-89e0-4dca-9896-3e70b5a0259d | Success
+🎬 Starting test session: test-1757841495375-frixo6v36 for feature: password-reset.api.feature
+📋 Test context set: password-reset.api.feature :: api/features/identity/password-reset/happy-path/password-reset.api.spec.ts (positive)
+🧪 Test case: should validate password reset token
+🔄 Current step: Test Execution
+🎬 Auto-context: password-reset.api.feature :: api/features/identity/password-reset/happy-path/password-reset.api.spec.ts :: should validate password reset token
+🧪 Adding test context to POST /api/auth/password-reset/request
+🧪 Test context JSON: {"featureFile":"password-reset.api.feature","scenario":"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841495375-frixo6v36","testCase":"should validate password reset token"}
+🔍 [Identity] POST /api/auth/password-reset/request | X-Correlation-ID: b685b6f5-7517-49c7-bd9b-1756e577fd4f | Auth: Yes
+✅ [Identity] POST /api/auth/password-reset/request | X-Correlation-ID: b685b6f5-7517-49c7-bd9b-1756e577fd4f | Success
+🧪 Adding test context to POST /api/auth/password-reset/validate
+🧪 Test context JSON: {"featureFile":"password-reset.api.feature","scenario":"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841495375-frixo6v36","testCase":"should validate password reset token"}
+🔍 [Identity] POST /api/auth/password-reset/validate | X-Correlation-ID: 45c055e2-9f0d-451c-989e-80e381bccbef | Auth: Yes
+✅ [Identity] POST /api/auth/password-reset/validate | X-Correlation-ID: 45c055e2-9f0d-451c-989e-80e381bccbef | Success
+🏁 Clearing test context for session: test-1757841495375-frixo6v36
+🔍 [Identity] DELETE /api/users/undefined | X-Correlation-ID: 5af22bd1-1c27-4305-bfff-07a82b7f5c5f | Auth: Yes
+✅ [Identity] DELETE /api/users/undefined | X-Correlation-ID: 5af22bd1-1c27-4305-bfff-07a82b7f5c5f | Success
+🧹 Cleaned up user: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 83c41ffc-56c8-471a-94b6-4a7600b5d132 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 83c41ffc-56c8-471a-94b6-4a7600b5d132 | Success

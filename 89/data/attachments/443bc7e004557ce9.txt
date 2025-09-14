@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: 0f1d124b-dcca-42e7-933c-59a4b9d762fa
+Timestamp: 2025-09-14T09:17:48.265Z
+Duration: 219ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "0f1d124b-dcca-42e7-933c-59a4b9d762fa",
+  "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841468265-ppnblhifg\",\"testCase\":\"should reject login with invalid password\"}"
+}
+
+=== Request Body ===
+{
+  "email": "superadmin@shift.ma",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "An error occurred during authentication",
+  "details": []
+}

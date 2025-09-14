@@ -1,0 +1,18 @@
+{
+  "endpoint": "/api/sessions/undefined/refresh",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "314dc5d0-8c1b-430e-b8b2-ace6f15c517a",
+      "X-Test-Context": "{\"featureFile\":\"session-operations.api.feature\",\"scenario\":\"api/features/identity/session-management/happy-path/session-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841542006-64khgub05\",\"testCase\":\"should refresh session\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "314dc5d0-8c1b-430e-b8b2-ace6f15c517a",
+  "timestamp": {},
+  "duration": 107
+}

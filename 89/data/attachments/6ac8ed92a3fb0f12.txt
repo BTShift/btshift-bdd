@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users/undefined/2fa/disable
+Correlation ID: cf846dc1-7f58-4ad0-8afc-367594227fd5
+Timestamp: 2025-09-14T09:19:21.309Z
+Duration: 115ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "cf846dc1-7f58-4ad0-8afc-367594227fd5",
+  "X-Test-Context": "{\"featureFile\":\"2fa-operations.api.feature\",\"scenario\":\"api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841561308-pgk63457b\",\"testCase\":\"should disable two-factor authentication\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "code": "123456"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "An error occurred while disabling 2FA",
+  "details": []
+}

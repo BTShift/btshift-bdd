@@ -1,0 +1,19 @@
+{
+  "endpoint": "/api/users/undefined/permissions",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "336391cb-8414-4c57-a36c-9284d6909d99",
+      "X-Test-Context": "{\"featureFile\":\"permission-crud.api.feature\",\"scenario\":\"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841520731-qxohut9r7\",\"testCase\":\"should check if user has permission\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {}
+  },
+  "response": {
+    "status": 405,
+    "headers": {}
+  },
+  "correlationId": "336391cb-8414-4c57-a36c-9284d6909d99",
+  "timestamp": {},
+  "duration": 112
+}

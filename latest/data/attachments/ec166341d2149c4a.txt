@@ -1,0 +1,31 @@
+🎬 Starting test session: test-1757841461755-dww7cb6cg for feature: user-client-associations.api.feature
+📋 Test context set: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts (positive)
+🧪 Test case: should handle pagination for user-client associations
+🔄 Current step: Test Execution
+🎬 Auto-context: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts :: should handle pagination for user-client associations
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841461755-dww7cb6cg","testCase":"should handle pagination for user-client associations"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 1f10ed53-6688-4818-9c91-fa5dc267b347 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 1f10ed53-6688-4818-9c91-fa5dc267b347 | Success
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841461755-dww7cb6cg","testCase":"should handle pagination for user-client associations"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 42ed32e4-eef1-4043-ad77-6513af1cfab0 | Auth: Yes
+✅ [Identity] POST /api/users | X-Correlation-ID: 42ed32e4-eef1-4043-ad77-6513af1cfab0 | Success
+🏁 Clearing test context for session: test-1757841461755-dww7cb6cg
+🔍 [ClientManagement] DELETE /api/clients/833c824e-dadf-460b-ba23-27c4912d179b | X-Correlation-ID: 5e944d32-05c2-4104-bb31-88f1d847541c | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/833c824e-dadf-460b-ba23-27c4912d179b | X-Correlation-ID: 5e944d32-05c2-4104-bb31-88f1d847541c | Success
+🧹 Cleaned up client: 833c824e-dadf-460b-ba23-27c4912d179b
+🔍 [ClientManagement] DELETE /api/clients/c191422d-5fb0-494b-9fa6-d9e40715a9f4 | X-Correlation-ID: 9dd092da-1998-44ff-aba6-21defeba13d1 | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/c191422d-5fb0-494b-9fa6-d9e40715a9f4 | X-Correlation-ID: 9dd092da-1998-44ff-aba6-21defeba13d1 | Success
+🧹 Cleaned up client: c191422d-5fb0-494b-9fa6-d9e40715a9f4
+🔍 [ClientManagement] DELETE /api/clients/3cf29dd7-f168-415d-882c-dcd6f9e79e49 | X-Correlation-ID: 7759826e-2ad2-4b0a-957c-7a22831daf0c | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/3cf29dd7-f168-415d-882c-dcd6f9e79e49 | X-Correlation-ID: 7759826e-2ad2-4b0a-957c-7a22831daf0c | Success
+🧹 Cleaned up client: 3cf29dd7-f168-415d-882c-dcd6f9e79e49
+🔍 [Identity] DELETE /api/users/undefined | X-Correlation-ID: 45340924-6087-4653-8ded-284b2508c381 | Auth: Yes
+✅ [Identity] DELETE /api/users/undefined | X-Correlation-ID: 45340924-6087-4653-8ded-284b2508c381 | Success
+🧹 Cleaned up user: undefined
+🔍 [Identity] DELETE /api/users/undefined | X-Correlation-ID: 46107196-b4f7-4857-89a3-5c804b5ec436 | Auth: Yes
+✅ [Identity] DELETE /api/users/undefined | X-Correlation-ID: 46107196-b4f7-4857-89a3-5c804b5ec436 | Success
+🧹 Cleaned up user: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 2f14c2ca-9c50-46b5-8d9b-c7139e3e99ad | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 2f14c2ca-9c50-46b5-8d9b-c7139e3e99ad | Success

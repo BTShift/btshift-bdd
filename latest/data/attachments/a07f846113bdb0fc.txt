@@ -1,0 +1,18 @@
+=== API Call Details ===
+Method: DELETE
+Endpoint: /api/users/undefined
+Correlation ID: da193488-3079-4b69-9b1c-50f4e16d5898
+Timestamp: 2025-09-14T09:19:44.695Z
+Duration: 108ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "da193488-3079-4b69-9b1c-50f4e16d5898",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 403
+
+Response Headers:
+{}

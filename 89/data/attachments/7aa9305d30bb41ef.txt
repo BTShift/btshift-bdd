@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users/undefined/2fa/verify
+Correlation ID: 6b6040fa-12f1-4270-a99d-e9ad59c3ea12
+Timestamp: 2025-09-14T09:19:19.709Z
+Duration: 111ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "6b6040fa-12f1-4270-a99d-e9ad59c3ea12",
+  "X-Test-Context": "{\"featureFile\":\"2fa-operations.api.feature\",\"scenario\":\"api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841559708-unr08rmnw\",\"testCase\":\"should verify two-factor authentication code\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "code": "123456"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

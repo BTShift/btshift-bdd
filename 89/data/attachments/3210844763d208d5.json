@@ -1,0 +1,18 @@
+{
+  "endpoint": "/api/users/undefined/sessions/revoke-all",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "ce9ca17d-9624-49da-8abc-4ff517a34625",
+      "X-Test-Context": "{\"featureFile\":\"session-operations.api.feature\",\"scenario\":\"api/features/identity/session-management/happy-path/session-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841545815-6pfbc9f6x\",\"testCase\":\"should revoke all sessions for user\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "ce9ca17d-9624-49da-8abc-4ff517a34625",
+  "timestamp": {},
+  "duration": 109
+}

@@ -1,0 +1,96 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-14T09:18:18.984Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "4d8012b2-039d-4ce6-90c5-a79632b00959",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841498239-nxh7ba3zv\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "4d8012b2-039d-4ce6-90c5-a79632b00959",
+      "timestamp": {},
+      "duration": 359
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "4f7ddb96-a79d-4bb1-a88c-e068c7d34ea1",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841498239-nxh7ba3zv\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841498638-0tfqf5pa0-1@test.com",
+          "firstName": "Test",
+          "lastName": "User1757841498638-0tfqf5pa0-1",
+          "phoneNumber": "+212600000000",
+          "role": "User",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "4f7ddb96-a79d-4bb1-a88c-e068c7d34ea1",
+      "timestamp": {},
+      "duration": 185
+    },
+    {
+      "endpoint": "/api/users/undefined/change-password",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "2d597f25-8f68-4e4c-b1f7-8c0a3386f939",
+          "X-Test-Context": "{\"featureFile\":\"password-reset.api.feature\",\"scenario\":\"api/features/identity/password-reset/happy-path/password-reset.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841498841-htv3hq6b9\",\"testCase\":\"should change password for authenticated user\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "currentPassword": "***MASKED***",
+          "newPassword": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "2d597f25-8f68-4e4c-b1f7-8c0a3386f939",
+      "timestamp": {},
+      "duration": 107
+    }
+  ]
+}

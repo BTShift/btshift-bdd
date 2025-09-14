@@ -1,0 +1,26 @@
+{
+  "endpoint": "/api/users",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "c0d727b1-03fb-4730-81c4-cabff74b1132",
+      "X-Test-Context": "{\"featureFile\":\"2fa-operations.api.feature\",\"scenario\":\"api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841571057-k7pbzlp0h\",\"testCase\":\"should validate 2FA for login\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "user-1757841571058-jt21r8vv4-2@test.com",
+      "firstName": "Test",
+      "lastName": "User1757841571058-jt21r8vv4-2",
+      "phoneNumber": "+212600000000",
+      "role": "User",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "c0d727b1-03fb-4730-81c4-cabff74b1132",
+  "timestamp": {},
+  "duration": 107
+}

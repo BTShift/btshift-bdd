@@ -1,0 +1,34 @@
+{
+  "endpoint": "/api/tenants",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "b65ae775-3eec-4194-a313-9f31394b81fe",
+      "X-Test-Context": "{\"featureFile\":\"tenant-creation.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841600804-3c3qh7kxn\",\"testCase\":\"should retrieve the created tenant by ID\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "companyName": "Test Company 1757841600804-skrfemq5o-1",
+      "tenantName": "tenant-1757841600804-skrfemq5o-1",
+      "domain": "tenant-1757841600804-skrfemq5o-1",
+      "plan": "Professional",
+      "adminEmail": "admin-1757841600804-skrfemq5o-1@test.com",
+      "adminFirstName": "Test",
+      "adminLastName": "Admin",
+      "phoneNumber": "+212612345678",
+      "address": "123 Test Street, Casablanca",
+      "country": "Morocco"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "Tenant name is required",
+      "details": []
+    }
+  },
+  "correlationId": "b65ae775-3eec-4194-a313-9f31394b81fe",
+  "timestamp": {},
+  "duration": 200
+}

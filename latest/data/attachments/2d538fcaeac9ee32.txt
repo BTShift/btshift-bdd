@@ -1,0 +1,23 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users/undefined/2fa/enable
+Correlation ID: b7aeb47c-f4ad-4e2b-8081-971508d87923
+Timestamp: 2025-09-14T09:19:18.087Z
+Duration: 109ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "b7aeb47c-f4ad-4e2b-8081-971508d87923",
+  "X-Test-Context": "{\"featureFile\":\"2fa-operations.api.feature\",\"scenario\":\"api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841558086-mt3tegt13\",\"testCase\":\"should enable two-factor authentication\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "Unable to read the request as JSON because the request content type '' is not a known JSON content type.",
+  "details": []
+}

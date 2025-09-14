@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/logout
+Correlation ID: a68680cb-1b68-46da-b2ac-5ae57c94d4cb
+Timestamp: 2025-09-14T09:19:23.169Z
+Duration: 115ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "a68680cb-1b68-46da-b2ac-5ae57c94d4cb",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{}

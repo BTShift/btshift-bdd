@@ -1,0 +1,17 @@
+{
+  "endpoint": "/api/users/undefined",
+  "method": "DELETE",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "da193488-3079-4b69-9b1c-50f4e16d5898",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "da193488-3079-4b69-9b1c-50f4e16d5898",
+  "timestamp": {},
+  "duration": 108
+}

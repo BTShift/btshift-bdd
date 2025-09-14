@@ -1,0 +1,19 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/platform/settings
+Correlation ID: 39fb5af9-ff92-4879-813c-0e46ff452c80
+Timestamp: 2025-09-14T09:19:47.301Z
+Duration: 104ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "39fb5af9-ff92-4879-813c-0e46ff452c80",
+  "X-Test-Context": "{\"featureFile\":\"multi-user-example.feature\",\"scenario\":\"api/features/multi-user-example.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841587300-6nrqmdlsu\",\"testCase\":\"should NOT be able to access platform settings\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

@@ -1,0 +1,32 @@
+🚀 [95e5edc3] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757841456837-up1q9ukjw for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841456837-ggk60o0a0 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841456837-6c416eff for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [95e5edc3] Using TenantAdmin authentication
+🕐 [95e5edc3] Token expires: 9:25:24 AM
+🏢 [95e5edc3] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757841456849-2hrkd1hmx for feature: user-client-associations.api.feature
+📋 Test context set: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts (positive)
+🧪 Test case: should assign a user to a client
+🔄 Current step: Test Execution
+🎬 Auto-context: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts :: should assign a user to a client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841456849-2hrkd1hmx","testCase":"should assign a user to a client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 25cf6fa8-7b8e-4d80-ab96-bf5f6ce7c83d | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 25cf6fa8-7b8e-4d80-ab96-bf5f6ce7c83d | Success
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841456849-2hrkd1hmx","testCase":"should assign a user to a client"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 219fedd6-d426-4ab0-b982-49b05a9f75c8 | Auth: Yes
+✅ [Identity] POST /api/users | X-Correlation-ID: 219fedd6-d426-4ab0-b982-49b05a9f75c8 | Success
+🧪 Adding test context to POST /api/clients/d4eed105-fc3c-466c-aa22-4f7e98f2d0a3/users/undefined
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841456849-2hrkd1hmx","testCase":"should assign a user to a client"}
+🔍 [ClientManagement] POST /api/clients/d4eed105-fc3c-466c-aa22-4f7e98f2d0a3/users/undefined | X-Correlation-ID: af9778ec-39af-4829-98ad-89ff7a2ac458 | Auth: Yes
+✅ [ClientManagement] POST /api/clients/d4eed105-fc3c-466c-aa22-4f7e98f2d0a3/users/undefined | X-Correlation-ID: af9778ec-39af-4829-98ad-89ff7a2ac458 | Success
+📍 Step: Verify user assignment
+🏁 Clearing test context for session: test-1757841456849-2hrkd1hmx

@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/users/undefined/2fa/enable",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "86b546f7-7dba-4a59-a34b-eb80d702fef2",
+      "X-Test-Context": "{\"featureFile\":\"2fa-operations.api.feature\",\"scenario\":\"api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841562921-c7v9kqcbn\",\"testCase\":\"should generate new backup codes\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "Unable to read the request as JSON because the request content type '' is not a known JSON content type.",
+      "details": []
+    }
+  },
+  "correlationId": "86b546f7-7dba-4a59-a34b-eb80d702fef2",
+  "timestamp": {},
+  "duration": 110
+}

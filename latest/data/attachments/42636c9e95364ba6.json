@@ -1,0 +1,157 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 6,
+  "timestamp": "2025-09-14T09:17:49.066Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "1d666628-14ff-440a-9633-69c72a186f5e",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841467995-2jnwcvw11\",\"testCase\":\"should reject login with invalid email\"}"
+        },
+        "body": {
+          "email": "nonexistent@example.com",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "An error occurred during authentication",
+          "details": []
+        }
+      },
+      "correlationId": "1d666628-14ff-440a-9633-69c72a186f5e",
+      "timestamp": {},
+      "duration": 236
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "0f1d124b-dcca-42e7-933c-59a4b9d762fa",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841468265-ppnblhifg\",\"testCase\":\"should reject login with invalid password\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "An error occurred during authentication",
+          "details": []
+        }
+      },
+      "correlationId": "0f1d124b-dcca-42e7-933c-59a4b9d762fa",
+      "timestamp": {},
+      "duration": 219
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "fe995ac3-f9dd-4559-9777-4347445c10a3",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841468506-dqq8etylw\",\"testCase\":\"should reject login with empty email\"}"
+        },
+        "body": {
+          "email": "",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "An error occurred during authentication",
+          "details": []
+        }
+      },
+      "correlationId": "fe995ac3-f9dd-4559-9777-4347445c10a3",
+      "timestamp": {},
+      "duration": 127
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "1a2649f6-e336-4f89-b14a-976d95d0d185",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841468654-g9x4zh5c1\",\"testCase\":\"should reject login with empty password\"}"
+        },
+        "body": {
+          "email": "test@example.com",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "An error occurred during authentication",
+          "details": []
+        }
+      },
+      "correlationId": "1a2649f6-e336-4f89-b14a-976d95d0d185",
+      "timestamp": {},
+      "duration": 123
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "18cf2ed9-e0b0-487d-9611-0db59894a0e3",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841468800-tfq76q1jx\",\"testCase\":\"should reject login with malformed email\"}"
+        },
+        "body": {
+          "email": "not-an-email",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "An error occurred during authentication",
+          "details": []
+        }
+      },
+      "correlationId": "18cf2ed9-e0b0-487d-9611-0db59894a0e3",
+      "timestamp": {},
+      "duration": 125
+    },
+    {
+      "endpoint": "/api/authentication/validate-token",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "9b32d762-afa4-4cfd-953f-655774b7a6aa",
+          "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841468940-j4avxuhry\",\"testCase\":\"should reject token validation with invalid token\"}"
+        },
+        "params": {
+          "query": {
+            "token": "***MASKED***"
+          }
+        },
+        "query": {
+          "token": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "9b32d762-afa4-4cfd-953f-655774b7a6aa",
+      "timestamp": {},
+      "duration": 110
+    }
+  ]
+}

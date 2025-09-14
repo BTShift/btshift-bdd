@@ -1,0 +1,72 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-14T09:18:27.121Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "7c45aa28-7816-4381-80e0-6a97e1639e5f",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841506536-hs2ecllz0\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "7c45aa28-7816-4381-80e0-6a97e1639e5f",
+      "timestamp": {},
+      "duration": 320
+    },
+    {
+      "endpoint": "/api/permissions",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "ac8ff480-dd3c-411f-b315-3929fa5b9046",
+          "X-Test-Context": "{\"featureFile\":\"permission-crud.api.feature\",\"scenario\":\"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841506907-uol6tx6zj\",\"testCase\":\"should create a new permission\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "test:permission:1757841506908",
+          "description": "Test permission for API testing",
+          "resource": "test-resource",
+          "action": "read"
+        }
+      },
+      "response": {
+        "status": 405,
+        "headers": {}
+      },
+      "correlationId": "ac8ff480-dd3c-411f-b315-3929fa5b9046",
+      "timestamp": {},
+      "duration": 184
+    }
+  ]
+}

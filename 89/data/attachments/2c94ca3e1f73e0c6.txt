@@ -1,0 +1,37 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/tenants
+Correlation ID: 4d39e498-f1b9-48fd-b6e6-28cfe482c713
+Timestamp: 2025-09-14T09:20:05.110Z
+Duration: 188ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "4d39e498-f1b9-48fd-b6e6-28cfe482c713",
+  "X-Test-Context": "{\"featureFile\":\"tenant-creation.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841605109-5evyt7a04\",\"testCase\":\"should successfully send welcome email after tenant activation\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "companyName": "Test Company 1757841605110-4eq2y6tf4-1",
+  "tenantName": "tenant-1757841605110-4eq2y6tf4-1",
+  "domain": "tenant-1757841605110-4eq2y6tf4-1",
+  "plan": "Professional",
+  "adminEmail": "admin-1757841605110-4eq2y6tf4-1@test.com",
+  "adminFirstName": "Test",
+  "adminLastName": "Admin",
+  "phoneNumber": "+212612345678",
+  "address": "123 Test Street, Casablanca",
+  "country": "Morocco"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "Tenant name is required",
+  "details": []
+}

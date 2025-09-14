@@ -1,0 +1,18 @@
+{
+  "endpoint": "/api/users/undefined/sessions/stats",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "8cd21b13-67df-4917-b4b1-08df62249f28",
+      "X-Test-Context": "{\"featureFile\":\"session-operations.api.feature\",\"scenario\":\"api/features/identity/session-management/happy-path/session-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841554804-iplqitvkl\",\"testCase\":\"should get session statistics\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "8cd21b13-67df-4917-b4b1-08df62249f28",
+  "timestamp": {},
+  "duration": 116
+}

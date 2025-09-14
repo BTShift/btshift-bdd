@@ -1,0 +1,415 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 13,
+  "timestamp": "2025-09-14T09:17:38.448Z",
+  "calls": [
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "25cf6fa8-7b8e-4d80-ab96-bf5f6ce7c83d",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841456849-2hrkd1hmx\",\"testCase\":\"should assign a user to a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "Client 1757841456852-y4wx98fin-6",
+          "email": "client-1757841456852-y4wx98fin-6@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757841456852-y4wx98fin-6",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "d4eed105-fc3c-466c-aa22-4f7e98f2d0a3",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:36.9098172Z",
+          "updatedAt": "2025-09-14T09:17:36.9098173Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "25cf6fa8-7b8e-4d80-ab96-bf5f6ce7c83d",
+      "timestamp": {},
+      "duration": 119
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "219fedd6-d426-4ab0-b982-49b05a9f75c8",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841456849-2hrkd1hmx\",\"testCase\":\"should assign a user to a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841456973-go72n2tpn-7@test.com",
+          "firstName": "Test",
+          "lastName": "User1757841456973-go72n2tpn-7",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "219fedd6-d426-4ab0-b982-49b05a9f75c8",
+      "timestamp": {},
+      "duration": 108
+    },
+    {
+      "endpoint": "/api/clients/d4eed105-fc3c-466c-aa22-4f7e98f2d0a3/users/undefined",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "af9778ec-39af-4829-98ad-89ff7a2ac458",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841456849-2hrkd1hmx\",\"testCase\":\"should assign a user to a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "assignedBy": "admin-user-id"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "User undefined successfully assigned to client d4eed105-fc3c-466c-aa22-4f7e98f2d0a3",
+          "associationId": "e5d35a9d-b8cb-4318-af36-9e2f4ee07283"
+        },
+        "headers": {}
+      },
+      "correlationId": "af9778ec-39af-4829-98ad-89ff7a2ac458",
+      "timestamp": {},
+      "duration": 131
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "cf45ad6d-a66f-41b8-878a-7d9635414417",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457228-8aopqwymv\",\"testCase\":\"should remove a user from a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "Client 1757841457232-j1vebfe8u-8",
+          "email": "client-1757841457232-j1vebfe8u-8@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757841457232-j1vebfe8u-8",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "97ae11c0-aac0-4430-a956-d101c64fed75",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:37.2914970Z",
+          "updatedAt": "2025-09-14T09:17:37.2914971Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "cf45ad6d-a66f-41b8-878a-7d9635414417",
+      "timestamp": {},
+      "duration": 119
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "fe6adfb8-12f6-4331-b450-2cd517b2e354",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457228-8aopqwymv\",\"testCase\":\"should remove a user from a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841457353-umra46b0j-9@test.com",
+          "firstName": "Test",
+          "lastName": "User1757841457353-umra46b0j-9",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "fe6adfb8-12f6-4331-b450-2cd517b2e354",
+      "timestamp": {},
+      "duration": 107
+    },
+    {
+      "endpoint": "/api/clients/97ae11c0-aac0-4430-a956-d101c64fed75/users/undefined",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "f84efba6-182b-4784-beec-976dd024083f",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457228-8aopqwymv\",\"testCase\":\"should remove a user from a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "assignedBy": "admin-user-id"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "User undefined successfully assigned to client 97ae11c0-aac0-4430-a956-d101c64fed75",
+          "associationId": "ff2cff32-c12e-48ca-9446-126a8ec20d69"
+        },
+        "headers": {}
+      },
+      "correlationId": "f84efba6-182b-4784-beec-976dd024083f",
+      "timestamp": {},
+      "duration": 129
+    },
+    {
+      "endpoint": "/api/clients/97ae11c0-aac0-4430-a956-d101c64fed75/users/undefined",
+      "method": "DELETE",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b961ed15-240f-4792-af13-baf98e29500f",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457228-8aopqwymv\",\"testCase\":\"should remove a user from a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {}
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "User undefined successfully removed from client 97ae11c0-aac0-4430-a956-d101c64fed75"
+        },
+        "headers": {}
+      },
+      "correlationId": "b961ed15-240f-4792-af13-baf98e29500f",
+      "timestamp": {},
+      "duration": 131
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "fd0ad628-4b4a-492e-82e6-24af7534242e",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457736-z9wpnedxh\",\"testCase\":\"should get all users assigned to a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "Client 1757841457739-39jy9tz8y-10",
+          "email": "client-1757841457739-39jy9tz8y-10@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757841457739-39jy9tz8y-10",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "00137649-a581-48f5-9a11-de945b0d37d6",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-14T09:17:37.7976274Z",
+          "updatedAt": "2025-09-14T09:17:37.7976275Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "fd0ad628-4b4a-492e-82e6-24af7534242e",
+      "timestamp": {},
+      "duration": 118
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "ed906a0f-43ab-4067-8121-f17823732f06",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457736-z9wpnedxh\",\"testCase\":\"should get all users assigned to a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841457858-kc7gl3fcd-11@test.com",
+          "firstName": "Test",
+          "lastName": "User1757841457858-kc7gl3fcd-11",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "ed906a0f-43ab-4067-8121-f17823732f06",
+      "timestamp": {},
+      "duration": 108
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "28a89e43-8f41-4292-a92e-3fe8c658866c",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457736-z9wpnedxh\",\"testCase\":\"should get all users assigned to a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757841457967-m2vu4j22n-12@test.com",
+          "firstName": "Test",
+          "lastName": "User1757841457967-m2vu4j22n-12",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 403,
+        "headers": {}
+      },
+      "correlationId": "28a89e43-8f41-4292-a92e-3fe8c658866c",
+      "timestamp": {},
+      "duration": 106
+    },
+    {
+      "endpoint": "/api/clients/00137649-a581-48f5-9a11-de945b0d37d6/users/undefined",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "c3cb5964-00ea-4103-83d1-34281c7169f7",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457736-z9wpnedxh\",\"testCase\":\"should get all users assigned to a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "assignedBy": "admin-user-id"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "User undefined successfully assigned to client 00137649-a581-48f5-9a11-de945b0d37d6",
+          "associationId": "3f9b2409-26f8-4ad6-b9c4-53cc056cbdee"
+        },
+        "headers": {}
+      },
+      "correlationId": "c3cb5964-00ea-4103-83d1-34281c7169f7",
+      "timestamp": {},
+      "duration": 125
+    },
+    {
+      "endpoint": "/api/clients/00137649-a581-48f5-9a11-de945b0d37d6/users/undefined",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "c8bdb2ab-15c9-482f-866b-e675679b751a",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457736-z9wpnedxh\",\"testCase\":\"should get all users assigned to a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "assignedBy": "admin-user-id"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "success": true,
+          "message": "User undefined successfully assigned to client 00137649-a581-48f5-9a11-de945b0d37d6",
+          "associationId": "3f9b2409-26f8-4ad6-b9c4-53cc056cbdee"
+        },
+        "headers": {}
+      },
+      "correlationId": "c8bdb2ab-15c9-482f-866b-e675679b751a",
+      "timestamp": {},
+      "duration": 112
+    },
+    {
+      "endpoint": "/api/clients/00137649-a581-48f5-9a11-de945b0d37d6/users",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "50200594-0d9c-4339-8ba3-ddfb243476b7",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841457736-z9wpnedxh\",\"testCase\":\"should get all users assigned to a client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "page": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "page": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "users": [
+            {
+              "userId": "undefined",
+              "email": "",
+              "firstName": "",
+              "lastName": "",
+              "assignedAt": "2025-09-14T09:17:38.1368700Z",
+              "assignedBy": ""
+            }
+          ],
+          "totalCount": 1,
+          "page": 1,
+          "pageSize": 10
+        },
+        "headers": {}
+      },
+      "correlationId": "50200594-0d9c-4339-8ba3-ddfb243476b7",
+      "timestamp": {},
+      "duration": 115
+    }
+  ]
+}

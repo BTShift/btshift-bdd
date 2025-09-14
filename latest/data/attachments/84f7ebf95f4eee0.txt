@@ -1,0 +1,25 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/sessions/undefined/activity
+Correlation ID: 81d8da61-bb07-41c4-a58a-f55a5798a6cd
+Timestamp: 2025-09-14T09:19:07.533Z
+Duration: 113ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "81d8da61-bb07-41c4-a58a-f55a5798a6cd",
+  "X-Test-Context": "{\"featureFile\":\"session-operations.api.feature\",\"scenario\":\"api/features/identity/session-management/happy-path/session-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841547532-qscag0l8g\",\"testCase\":\"should track session activity\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "action": "page_view",
+  "resource": "/dashboard"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

@@ -1,0 +1,42 @@
+🚀 [594ced8d] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757841565611-t8ti8yper for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841565612-ld4hju5ga for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841565612-36e353ad for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757841565613] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757841565613] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757841565613] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841565612-ld4hju5ga"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: c90bbc3f-b2d4-4604-9919-03c0a3ea7015 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: c90bbc3f-b2d4-4604-9919-03c0a3ea7015 | Success
+✅ [tenantadmin-1757841565613] TenantAdmin authentication successful
+🕐 [tenantadmin-1757841565613] Token expires at: 2025-09-14T09:27:25.964Z
+🏢 [tenantadmin-1757841565613] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [594ced8d] Using TenantAdmin authentication
+🕐 [594ced8d] Token expires: 9:27:25 AM
+🏢 [594ced8d] Tenant ID: tenant-from-jwt-test.tenantadmin
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841565612-ld4hju5ga"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: b0274591-6b47-465e-82b3-9ac664262101 | Auth: Yes
+✅ [Identity] POST /api/users | X-Correlation-ID: b0274591-6b47-465e-82b3-9ac664262101 | Success
+🎬 Starting test session: test-1757841566176-mcl3hmzr2 for feature: 2fa-operations.api.feature
+📋 Test context set: 2fa-operations.api.feature :: api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts (positive)
+🧪 Test case: should get two-factor authentication status
+🔄 Current step: Test Execution
+🎬 Auto-context: 2fa-operations.api.feature :: api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts :: should get two-factor authentication status
+🧪 Adding test context to GET /api/users/undefined/2fa/status
+🧪 Test context JSON: {"featureFile":"2fa-operations.api.feature","scenario":"api/features/identity/two-factor-auth/happy-path/2fa-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841566176-mcl3hmzr2","testCase":"should get two-factor authentication status"}
+🔍 [Identity] GET /api/users/undefined/2fa/status | X-Correlation-ID: d7f06f68-614e-427d-8ad1-d7c9c125a405 | Auth: Yes
+✅ [Identity] GET /api/users/undefined/2fa/status | X-Correlation-ID: d7f06f68-614e-427d-8ad1-d7c9c125a405 | Success
+🏁 Clearing test context for session: test-1757841566176-mcl3hmzr2
+🔍 [Identity] DELETE /api/users/undefined | X-Correlation-ID: 0f9a7ac9-84d4-4b5a-acbb-204864ae362c | Auth: Yes
+✅ [Identity] DELETE /api/users/undefined | X-Correlation-ID: 0f9a7ac9-84d4-4b5a-acbb-204864ae362c | Success
+🧹 Cleaned up user: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 4989754c-b175-42fd-983a-cbd7e0df82bf | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 4989754c-b175-42fd-983a-cbd7e0df82bf | Success

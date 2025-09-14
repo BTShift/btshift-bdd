@@ -1,0 +1,42 @@
+🚀 [8d2795ff] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757841580738-82ueghla7 for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841580738-l2cbpvulx for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757841580738-106718c0 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757841580739] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757841580739] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757841580739] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841580738-l2cbpvulx"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: f132e21c-b6d7-4d5f-ad75-cf56e22c9ee7 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: f132e21c-b6d7-4d5f-ad75-cf56e22c9ee7 | Success
+✅ [tenantadmin-1757841580739] TenantAdmin authentication successful
+🕐 [tenantadmin-1757841580739] Token expires at: 2025-09-14T09:27:41.101Z
+🏢 [tenantadmin-1757841580739] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [8d2795ff] Using TenantAdmin authentication
+🕐 [8d2795ff] Token expires: 9:27:41 AM
+🏢 [8d2795ff] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757841581131-4rayisn5h for feature: user-crud.api.feature
+📋 Test context set: user-crud.api.feature :: api/features/identity/user-management/happy-path/user-crud.api.spec.ts (positive)
+🧪 Test case: should search users by email
+🔄 Current step: Test Execution
+🎬 Auto-context: user-crud.api.feature :: api/features/identity/user-management/happy-path/user-crud.api.spec.ts :: should search users by email
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"user-crud.api.feature","scenario":"api/features/identity/user-management/happy-path/user-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841581131-4rayisn5h","testCase":"should search users by email"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 57dd0c2e-5423-49b2-abaf-9dc08dd4b50a | Auth: Yes
+✅ [Identity] POST /api/users | X-Correlation-ID: 57dd0c2e-5423-49b2-abaf-9dc08dd4b50a | Success
+🧪 Adding test context to GET /api/users/search
+🧪 Test context JSON: {"featureFile":"user-crud.api.feature","scenario":"api/features/identity/user-management/happy-path/user-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757841581131-4rayisn5h","testCase":"should search users by email"}
+🔍 [Identity] GET /api/users/search | X-Correlation-ID: 4fa4f33d-58f3-4d99-a380-8c8281dfdc81 | Auth: Yes
+✅ [Identity] GET /api/users/search | X-Correlation-ID: 4fa4f33d-58f3-4d99-a380-8c8281dfdc81 | Success
+🏁 Clearing test context for session: test-1757841581131-4rayisn5h
+🔍 [Identity] DELETE /api/users/undefined | X-Correlation-ID: a9ad03a4-f7bb-4bfc-bcff-91340e01644a | Auth: Yes
+✅ [Identity] DELETE /api/users/undefined | X-Correlation-ID: a9ad03a4-f7bb-4bfc-bcff-91340e01644a | Success
+🧹 Cleaned up user: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: dcf7cdcb-1ca9-464e-a6df-ca7330280364 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: dcf7cdcb-1ca9-464e-a6df-ca7330280364 | Success

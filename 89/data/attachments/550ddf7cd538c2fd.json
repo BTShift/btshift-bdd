@@ -1,0 +1,19 @@
+{
+  "endpoint": "/api/users/undefined/roles",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "f56cda52-b4f1-4d6d-abb4-90113001d8cc",
+      "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841532647-bac8wn8mu\",\"testCase\":\"should remove role from user\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {}
+  },
+  "response": {
+    "status": 403,
+    "headers": {}
+  },
+  "correlationId": "f56cda52-b4f1-4d6d-abb4-90113001d8cc",
+  "timestamp": {},
+  "duration": 112
+}

@@ -1,0 +1,27 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/permissions
+Correlation ID: ac8ff480-dd3c-411f-b315-3929fa5b9046
+Timestamp: 2025-09-14T09:18:26.908Z
+Duration: 184ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "ac8ff480-dd3c-411f-b315-3929fa5b9046",
+  "X-Test-Context": "{\"featureFile\":\"permission-crud.api.feature\",\"scenario\":\"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757841506907-uol6tx6zj\",\"testCase\":\"should create a new permission\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "test:permission:1757841506908",
+  "description": "Test permission for API testing",
+  "resource": "test-resource",
+  "action": "read"
+}
+
+=== Response ===
+Status: 405
+
+Response Headers:
+{}
