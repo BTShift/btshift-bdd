@@ -1,343 +1,371 @@
-import { Given, When, Then } from '@cucumber/cucumber';
+import { Given, When, Then, Before, After } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
-import { ApiClient } from '../../lib/helpers/api-client';
-import { DatabaseManager } from '../../lib/db/database-manager';
+import { AuthorizationTestContext } from '../../lib/helpers/authorization-test-context';
+import { TestDataFactory } from '../../lib/helpers/test-data-factory';
+import { UserType, TestUser, TestValidationError, ApiErrorResponse, TestApiResponse } from '../../lib/types/test-types';
 
-let apiClient: ApiClient;
-let dbManager: DatabaseManager;
-let currentUserContext: any = {};
-let operationalContext: any = {};
-let lastApiResponse: any = null;
-let lastApiError: any = null;
+let testContext: AuthorizationTestContext;
+
+// Test lifecycle hooks
+Before({ tags: '@authorization or @context' }, async function(scenario) {
+  const testId = `auth-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  testContext = AuthorizationTestContext.getInstance(testId);
+  await testContext.initialize();
+
+  console.log(`🔐 Starting authorization test: ${scenario.pickle.name}`);
+});
+
+After({ tags: '@authorization or @context' }, async function() {
+  if (testContext) {
+    await testContext.cleanup();
+    console.log('🧹 Authorization test cleanup completed');
+  }
+});
 
 // User setup and authentication steps
 Given('the following users exist:', async function(dataTable: any) {
   const users = dataTable.hashes();
-
-  if (!dbManager) {
-    dbManager = new DatabaseManager();
-    await dbManager.connect();
-  }
+  const dbManager = testContext.getDatabaseManager();
 
   for (const user of users) {
-    await dbManager.createTestUser({
-      userType: user.UserType,
+    const testUser: TestUser = {
+      userType: user.UserType as UserType,
       email: user.Email,
       tenantId: user.TenantId === 'null' ? null : user.TenantId,
       clientIds: user.ClientIds === 'null' ? null : user.ClientIds?.split(',')
-    });
+    };
+
+    await dbManager.createTestUser(testUser);
   }
 });
 
 Given('I am logged in as UserType {string}', async function(userType: string) {
-  if (!apiClient) {
-    apiClient = new ApiClient();
-  }
+  const apiClient = testContext.getApiClient();
+  const testUser = TestDataFactory.createSuperAdminUser({
+    userType: userType as UserType
+  });
 
-  // Set user context for SuperAdmin
-  currentUserContext = {
-    userType: userType,
-    email: 'super@btshift.com',
+  testContext.setUserContext({
+    userType: userType as UserType,
+    email: testUser.email,
     tenantId: null,
     clientId: null
-  };
+  });
 
-  await apiClient.loginWithUserType(userType, 'super@btshift.com');
+  await apiClient.loginWithUserType(userType, testUser.email);
 });
 
 Given('I am logged in as UserType {string} for tenant {string}',
   async function(userType: string, tenantId: string) {
-  if (!apiClient) {
-    apiClient = new ApiClient();
-  }
+  const apiClient = testContext.getApiClient();
+  const testUser = TestDataFactory.createTenantAdminUser(tenantId, {
+    userType: userType as UserType
+  });
 
-  // Set user context for TenantAdmin
-  currentUserContext = {
-    userType: userType,
-    email: `admin@${tenantId}.com`,
+  testContext.setUserContext({
+    userType: userType as UserType,
+    email: testUser.email,
     tenantId: tenantId,
     clientId: null
-  };
+  });
 
-  await apiClient.loginWithUserType(userType, `admin@${tenantId}.com`, tenantId);
+  await apiClient.loginWithUserType(userType, testUser.email, tenantId);
 });
 
 Given('I am logged in as UserType {string} for client {string} in tenant {string}',
   async function(userType: string, clientId: string, tenantId: string) {
-  if (!apiClient) {
-    apiClient = new ApiClient();
-  }
+  const apiClient = testContext.getApiClient();
+  const testUser = TestDataFactory.createClientUser(tenantId, clientId, {
+    userType: userType as UserType
+  });
 
-  // Set user context for ClientUser
-  currentUserContext = {
-    userType: userType,
-    email: `user@${clientId}.com`,
+  testContext.setUserContext({
+    userType: userType as UserType,
+    email: testUser.email,
     tenantId: tenantId,
     clientId: clientId
-  };
+  });
 
-  await apiClient.loginWithUserType(userType, `user@${clientId}.com`, tenantId, clientId);
+  await apiClient.loginWithUserType(userType, testUser.email, tenantId, clientId);
 });
 
 Given('I have platform-wide permissions', async function() {
-  // Verify SuperAdmin has platform-wide access
-  expect(currentUserContext.userType).toBe('SuperAdmin');
-  expect(currentUserContext.tenantId).toBeNull();
+  testContext.validateAuthorizationBoundary('SuperAdmin');
 });
 
 Given('I have tenant-scoped permissions for {string}', async function(tenantId: string) {
-  // Verify TenantAdmin has correct tenant scope
-  expect(currentUserContext.userType).toBe('TenantAdmin');
-  expect(currentUserContext.tenantId).toBe(tenantId);
+  testContext.validateAuthorizationBoundary('TenantAdmin', tenantId);
 });
 
 // Operational context steps
 Given('I select operational context tenant {string}', async function(tenantId: string) {
-  operationalContext.tenantId = tenantId;
-  apiClient.setOperationalContext({ tenantId });
+  try {
+    testContext.setOperationalContext({ tenantId });
+  } catch (error) {
+    throw new TestValidationError(`Failed to set tenant context: ${error}`, { tenantId });
+  }
 });
 
 Given('I select operational context client {string}', async function(clientId: string) {
-  operationalContext.clientId = clientId;
-  apiClient.setOperationalContext({
-    tenantId: operationalContext.tenantId || currentUserContext.tenantId,
-    clientId
-  });
+  try {
+    const currentContext = testContext.getOperationalContext();
+    testContext.setOperationalContext({
+      tenantId: currentContext.tenantId,
+      clientId
+    });
+  } catch (error) {
+    throw new TestValidationError(`Failed to set client context: ${error}`, { clientId });
+  }
 });
 
-// API operation steps
+// API operation steps with proper error handling
 When('I request tenant list', async function() {
+  const apiClient = testContext.getApiClient();
+
   try {
-    lastApiResponse = await apiClient.getTenants();
-    lastApiError = null;
+    const response: TestApiResponse = await apiClient.getTenants();
+    testContext.setLastApiResponse(response);
   } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
+    testContext.setLastApiError(error as ApiErrorResponse);
   }
 });
 
 When('I request tenant information', async function() {
+  const apiClient = testContext.getApiClient();
+  const userContext = testContext.getUserContext();
+
+  if (!userContext?.tenantId) {
+    throw new TestValidationError('No tenant context available for request');
+  }
+
   try {
-    lastApiResponse = await apiClient.getTenantInfo(currentUserContext.tenantId);
-    lastApiError = null;
+    const response: TestApiResponse = await apiClient.getTenantInfo(userContext.tenantId);
+    testContext.setLastApiResponse(response);
   } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
+    testContext.setLastApiError(error as ApiErrorResponse);
   }
 });
 
 When('I request client information', async function() {
+  const apiClient = testContext.getApiClient();
+  const userContext = testContext.getUserContext();
+
+  if (!userContext?.clientId) {
+    throw new TestValidationError('No client context available for request');
+  }
+
   try {
-    lastApiResponse = await apiClient.getClientInfo(currentUserContext.clientId);
-    lastApiError = null;
+    const response: TestApiResponse = await apiClient.getClientInfo(userContext.clientId);
+    testContext.setLastApiResponse(response);
   } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
+    testContext.setLastApiError(error as ApiErrorResponse);
   }
 });
 
 When('I attempt to create a new tenant', async function() {
+  const apiClient = testContext.getApiClient();
+  const testTenant = TestDataFactory.createTenant({
+    name: 'unauthorized-tenant-attempt'
+  });
+
   try {
-    lastApiResponse = await apiClient.createTenant({
-      name: 'unauthorized-tenant',
-      companyName: 'Unauthorized Tenant Company',
-      domain: 'unauthorized',
-      plan: 'Basic'
-    });
-    lastApiError = null;
+    const response: TestApiResponse = await apiClient.createTenant(testTenant);
+    testContext.setLastApiResponse(response);
   } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
+    testContext.setLastApiError(error as ApiErrorResponse);
   }
 });
 
 When('I attempt to access client {string} data', async function(clientId: string) {
+  const apiClient = testContext.getApiClient();
+
   try {
-    lastApiResponse = await apiClient.getClientInfo(clientId);
-    lastApiError = null;
+    const response: TestApiResponse = await apiClient.getClientInfo(clientId);
+    testContext.setLastApiResponse(response);
   } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
+    testContext.setLastApiError(error as ApiErrorResponse);
   }
 });
 
 When('I attempt to access tenant {string} data', async function(tenantId: string) {
+  const apiClient = testContext.getApiClient();
+
   try {
-    lastApiResponse = await apiClient.getTenantInfo(tenantId);
-    lastApiError = null;
+    const response: TestApiResponse = await apiClient.getTenantInfo(tenantId);
+    testContext.setLastApiResponse(response);
   } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
+    testContext.setLastApiError(error as ApiErrorResponse);
   }
 });
 
 When('I create a new client for the selected tenant', async function() {
+  const apiClient = testContext.getApiClient();
+  const operationalContext = testContext.getOperationalContext();
+
+  if (!operationalContext.tenantId) {
+    throw new TestValidationError('No operational tenant context set');
+  }
+
+  const testClient = TestDataFactory.createClient(operationalContext.tenantId);
+
   try {
-    lastApiResponse = await apiClient.createClient({
-      companyName: 'Test Client Inc',
-      taxId: '123456789',
-      email: 'test@client.com'
-    });
-    lastApiError = null;
+    const response: TestApiResponse = await apiClient.createClient(testClient);
+    testContext.setLastApiResponse(response);
   } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
+    testContext.setLastApiError(error as ApiErrorResponse);
   }
 });
 
 When('I update client information', async function() {
+  const apiClient = testContext.getApiClient();
+  const userContext = testContext.getUserContext();
+
+  if (!userContext?.clientId) {
+    throw new TestValidationError('No client context available for update');
+  }
+
   try {
-    lastApiResponse = await apiClient.updateClient(currentUserContext.clientId, {
+    const response: TestApiResponse = await apiClient.updateClient(userContext.clientId, {
       companyName: 'Updated Client Name'
     });
-    lastApiError = null;
+    testContext.setLastApiResponse(response);
   } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
+    testContext.setLastApiError(error as ApiErrorResponse);
   }
 });
 
+// Additional context operations
 When('I perform operations without selecting operational context', async function() {
-  // Clear operational context
-  operationalContext = {};
-  apiClient.clearOperationalContext();
+  testContext.clearOperationalContext();
 
+  const apiClient = testContext.getApiClient();
   try {
-    lastApiResponse = await apiClient.getTenants();
-    lastApiError = null;
+    const response: TestApiResponse = await apiClient.getTenants();
+    testContext.setLastApiResponse(response);
   } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
+    testContext.setLastApiError(error as ApiErrorResponse);
   }
 });
 
 When('I perform any tenant operation', async function() {
-  try {
-    lastApiResponse = await apiClient.getTenantInfo(currentUserContext.tenantId);
-    lastApiError = null;
-  } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
-  }
+  // Delegate to existing tenant request
+  await this.step('When I request tenant information');
 });
 
 When('I perform any client operation', async function() {
-  try {
-    lastApiResponse = await apiClient.getClientInfo(currentUserContext.clientId);
-    lastApiError = null;
-  } catch (error) {
-    lastApiError = error;
-    lastApiResponse = null;
-  }
+  // Delegate to existing client request
+  await this.step('When I request client information');
 });
 
-// Validation steps
+// Enhanced validation steps
 Then('I should see all tenants', async function() {
-  expect(lastApiResponse).toBeTruthy();
-  expect(lastApiResponse.tenants).toBeDefined();
-  expect(Array.isArray(lastApiResponse.tenants)).toBe(true);
+  const response = testContext.getLastApiResponse();
+  expect(response).toBeTruthy();
+  expect(response?.tenants).toBeDefined();
+  expect(Array.isArray(response?.tenants)).toBe(true);
 });
 
 Then('each request should include proper authorization headers', async function() {
-  // This would be validated by checking request interceptors
-  const lastRequest = apiClient.getLastRequestHeaders();
-  expect(lastRequest.Authorization).toMatch(/^Bearer /);
+  const apiClient = testContext.getApiClient();
+  const lastHeaders = apiClient.getLastRequestHeaders();
+  expect(lastHeaders.Authorization).toMatch(/^Bearer /);
 });
 
 Then('I should only see {string} data', async function(scope: string) {
-  expect(lastApiResponse).toBeTruthy();
+  const response = testContext.getLastApiResponse();
+  const userContext = testContext.getUserContext();
 
-  if (currentUserContext.userType === 'TenantAdmin') {
-    expect(lastApiResponse.tenantId || lastApiResponse.tenant?.id).toBe(scope);
-  } else if (currentUserContext.userType === 'ClientUser') {
-    expect(lastApiResponse.clientId || lastApiResponse.client?.id).toBe(scope);
+  expect(response).toBeTruthy();
+
+  if (userContext?.userType === 'TenantAdmin') {
+    expect(response?.tenantId || response?.data?.tenantId).toBe(scope);
+  } else if (userContext?.userType === 'ClientUser') {
+    expect(response?.clientId || response?.data?.clientId).toBe(scope);
   }
 });
 
 Then('I should not be able to access {string} data', async function(restrictedScope: string) {
-  // This should have triggered an error in the When step
-  expect(lastApiError).toBeTruthy();
-  expect(lastApiError.response?.status).toBe(403);
+  testContext.validateApiError(403);
 });
 
 Then('requests should include {string}', async function(expectedHeader: string) {
-  const lastRequest = apiClient.getLastRequestHeaders();
   const [headerName, expectedValue] = expectedHeader.split(': ');
-  expect(lastRequest[headerName]).toBe(expectedValue);
+  testContext.validateOperationalHeaders({ [headerName]: expectedValue });
 });
 
 Then('the request should include {string}', async function(expectedHeader: string) {
-  const lastRequest = apiClient.getLastRequestHeaders();
-  const [headerName, expectedValue] = expectedHeader.split(': ');
-  expect(lastRequest[headerName]).toBe(expectedValue);
+  await this.step(`Then requests should include "${expectedHeader}"`);
 });
 
 Then('I should receive a {int} Forbidden response', async function(statusCode: number) {
-  expect(lastApiError).toBeTruthy();
-  expect(lastApiError.response?.status).toBe(statusCode);
+  testContext.validateApiError(statusCode);
 });
 
 Then('no tenant should be created', async function() {
-  expect(lastApiError).toBeTruthy();
-  expect(lastApiResponse).toBeNull();
+  const error = testContext.getLastApiError();
+  const response = testContext.getLastApiResponse();
+
+  expect(error).toBeTruthy();
+  expect(response).toBeNull();
 });
 
 Then('no client-{int} data should be returned', async function(clientNumber: number) {
-  expect(lastApiError).toBeTruthy();
-  expect(lastApiResponse).toBeNull();
+  testContext.validateApiError(403);
 });
 
 Then('no tenant-b data should be returned', async function() {
-  expect(lastApiError).toBeTruthy();
-  expect(lastApiResponse).toBeNull();
+  testContext.validateApiError(403);
 });
 
 Then('the client should be created in {string}', async function(tenantId: string) {
-  expect(lastApiResponse).toBeTruthy();
-  expect(lastApiResponse.tenantId).toBe(tenantId);
+  const response = testContext.getLastApiResponse();
+  expect(response).toBeTruthy();
+  expect(response?.tenantId || response?.data?.tenantId).toBe(tenantId);
 });
 
 Then('I should receive confirmation within tenant context', async function() {
-  expect(lastApiResponse).toBeTruthy();
-  expect(lastApiResponse.tenantId).toBe(operationalContext.tenantId);
+  const response = testContext.getLastApiResponse();
+  const operationalContext = testContext.getOperationalContext();
+
+  expect(response).toBeTruthy();
+  expect(response?.tenantId || response?.data?.tenantId).toBe(operationalContext.tenantId);
 });
 
 Then('only {string} data should be updated', async function(clientId: string) {
-  expect(lastApiResponse).toBeTruthy();
-  expect(lastApiResponse.clientId || lastApiResponse.client?.id).toBe(clientId);
+  const response = testContext.getLastApiResponse();
+  expect(response).toBeTruthy();
+  expect(response?.clientId || response?.data?.clientId).toBe(clientId);
 });
 
 Then('requests should not include tenant or client context headers', async function() {
-  const lastRequest = apiClient.getLastRequestHeaders();
-  expect(lastRequest['X-Operation-Tenant-Id']).toBeUndefined();
-  expect(lastRequest['X-Operation-Client-Id']).toBeUndefined();
+  const apiClient = testContext.getApiClient();
+  const lastHeaders = apiClient.getLastRequestHeaders();
+  expect(lastHeaders['X-Operation-Tenant-Id']).toBeUndefined();
+  expect(lastHeaders['X-Operation-Client-Id']).toBeUndefined();
 });
 
 Then('I should see platform-wide data by default', async function() {
-  expect(lastApiResponse).toBeTruthy();
-  expect(lastApiResponse.tenants).toBeDefined();
-  expect(Array.isArray(lastApiResponse.tenants)).toBe(true);
+  const response = testContext.getLastApiResponse();
+  expect(response).toBeTruthy();
+  expect(response?.tenants).toBeDefined();
+  expect(Array.isArray(response?.tenants)).toBe(true);
 });
 
 Then('requests should automatically include {string}', async function(expectedHeader: string) {
-  const lastRequest = apiClient.getLastRequestHeaders();
-  const [headerName, expectedValue] = expectedHeader.split(': ');
-  expect(lastRequest[headerName]).toBe(expectedValue);
+  await this.step(`Then requests should include "${expectedHeader}"`);
 });
 
 Then('I should not be able to change the tenant context', async function() {
-  // Attempt to change context should be ignored or throw error
   expect(() => {
-    apiClient.setOperationalContext({ tenantId: 'different-tenant' });
-  }).toThrow();
+    testContext.setOperationalContext({ tenantId: 'different-tenant' });
+  }).toThrow('TenantAdmin cannot change tenant context');
 });
 
 Then('I should not be able to change the client or tenant context', async function() {
-  // Attempt to change context should be ignored or throw error
   expect(() => {
-    apiClient.setOperationalContext({
+    testContext.setOperationalContext({
       tenantId: 'different-tenant',
       clientId: 'different-client'
     });
-  }).toThrow();
+  }).toThrow(/ClientUser cannot change (tenant|client) context/);
 });
