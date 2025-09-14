@@ -1,6 +1,0 @@
-❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 186f0c8d-413f-46e2-96e8-f793567ad6c6 | Error: {
-  error: 'error',
-  message: 'Authorization failed',
-  timestamp: '2025-09-14T20:41:21.9514162+00:00'
-}
-❌ Global authentication failed: HTTP 500: Internal Server Error

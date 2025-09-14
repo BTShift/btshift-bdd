@@ -1,0 +1,29 @@
+{
+  "endpoint": "/api/authentication/validate-token",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "5e90d75c-e756-4e1c-959d-8f3520397366",
+      "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757884771096-v1am3pq1g\",\"testCase\":\"should reject token validation with invalid token\"}"
+    },
+    "params": {
+      "query": {
+        "token": "***MASKED***"
+      }
+    },
+    "query": {
+      "token": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 500,
+    "error": {
+      "error": "error",
+      "message": "Authorization failed",
+      "timestamp": "2025-09-14T21:19:31.1520089+00:00"
+    }
+  },
+  "correlationId": "5e90d75c-e756-4e1c-959d-8f3520397366",
+  "timestamp": {},
+  "duration": 111
+}

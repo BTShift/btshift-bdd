@@ -1,0 +1,25 @@
+{
+  "endpoint": "/api/authentication/login",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "bda9f3c1-774e-4a4a-872f-26a14868b851",
+      "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757884770559-5qw4rzdjp\",\"testCase\":\"should reject login with invalid password\"}"
+    },
+    "body": {
+      "email": "superadmin@shift.ma",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 500,
+    "error": {
+      "error": "error",
+      "message": "Authorization failed",
+      "timestamp": "2025-09-14T21:19:30.6169314+00:00"
+    }
+  },
+  "correlationId": "bda9f3c1-774e-4a4a-872f-26a14868b851",
+  "timestamp": {},
+  "duration": 112
+}

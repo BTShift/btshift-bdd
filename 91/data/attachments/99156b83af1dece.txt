@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: 83428845-76dd-4316-8eca-a342bcc8225d
+Timestamp: 2025-09-14T21:19:42.703Z
+Duration: 244ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "83428845-76dd-4316-8eca-a342bcc8225d",
+  "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757884782702-gc2w8s1nc\",\"testCase\":\"should validate typed error responses\"}"
+}
+
+=== Request Body ===
+{
+  "email": "invalid@example.com",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "error": "error",
+  "message": "Authorization failed",
+  "timestamp": "2025-09-14T21:19:42.8920492+00:00"
+}

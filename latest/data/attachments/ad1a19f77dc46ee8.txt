@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: 1e8566ec-da8b-4f17-9581-8bb771d983de
+Timestamp: 2025-09-14T21:19:30.830Z
+Duration: 112ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "1e8566ec-da8b-4f17-9581-8bb771d983de",
+  "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757884770830-xboamgxuj\",\"testCase\":\"should reject login with empty password\"}"
+}
+
+=== Request Body ===
+{
+  "email": "test@example.com",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "error": "error",
+  "message": "Authorization failed",
+  "timestamp": "2025-09-14T21:19:30.8869417+00:00"
+}

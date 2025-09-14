@@ -1,0 +1,15 @@
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: b207b952-0783-435e-962f-37f8c5e8f678 | Error: {
+  error: 'error',
+  message: 'Authorization failed',
+  timestamp: '2025-09-14T21:19:31.6594634+00:00'
+}
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 7499dbe0-d9f9-4cce-8f93-7578ef02eb0c | Error: {
+  error: 'error',
+  message: 'Authorization failed',
+  timestamp: '2025-09-14T21:19:31.8498052+00:00'
+}
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 75d44548-9fed-413e-8d4a-15b052c07182 | Error: {
+  error: 'error',
+  message: 'Authorization failed',
+  timestamp: '2025-09-14T21:19:31.9656999+00:00'
+}

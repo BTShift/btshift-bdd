@@ -1,0 +1,14 @@
+🚀 [94d61fba] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757884773974-xu789quge for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [94d61fba] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757884774005-6qcoa041a for feature: login.api.feature
+📋 Test context set: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts (positive)
+🧪 Test case: should refresh token with valid refresh token
+🔄 Current step: Test Execution
+🎬 Auto-context: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts :: should refresh token with valid refresh token
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757884774005-6qcoa041a","testCase":"should refresh token with valid refresh token"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 0ce522c5-8dbd-4a0d-879b-a3d9edb293c1 | Auth: No
+🏁 Clearing test context for session: test-1757884774005-6qcoa041a

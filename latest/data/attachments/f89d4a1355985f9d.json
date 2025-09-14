@@ -1,0 +1,26 @@
+{
+  "endpoint": "/api/authentication/login",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "d484aa23-5292-4998-acf4-ae917222d92f",
+      "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757884784761-9d0u3vjhq\"}"
+    },
+    "body": {
+      "email": "test.tenantadmin@btshift.ma",
+      "password": "***MASKED***",
+      "portalType": "Tenant"
+    }
+  },
+  "response": {
+    "status": 500,
+    "error": {
+      "error": "error",
+      "message": "Authorization failed",
+      "timestamp": "2025-09-14T21:19:44.9353215+00:00"
+    }
+  },
+  "correlationId": "d484aa23-5292-4998-acf4-ae917222d92f",
+  "timestamp": {},
+  "duration": 222
+}

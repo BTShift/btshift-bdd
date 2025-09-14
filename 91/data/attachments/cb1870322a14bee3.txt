@@ -1,0 +1,14 @@
+🚀 [6d5f4d0a] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757884775943-5d2hgfkse for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [6d5f4d0a] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757884775976-ct2zhdj0c for feature: login.api.feature
+📋 Test context set: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts (positive)
+🧪 Test case: should maintain authentication state across multiple requests
+🔄 Current step: Test Execution
+🎬 Auto-context: login.api.feature :: api/features/identity/authentication/happy-path/login.api.spec.ts :: should maintain authentication state across multiple requests
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"login.api.feature","scenario":"api/features/identity/authentication/happy-path/login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757884775976-ct2zhdj0c","testCase":"should maintain authentication state across multiple requests"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: d143f8cf-03d3-4f6b-8fe0-3e085ca4c573 | Auth: No
+🏁 Clearing test context for session: test-1757884775976-ct2zhdj0c

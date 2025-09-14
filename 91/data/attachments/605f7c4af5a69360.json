@@ -1,0 +1,24 @@
+{
+  "endpoint": "/api/authentication/refresh",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "0ec3b499-8d7e-4926-b475-99626a7d313a",
+      "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757884771345-9gtlsooy6\",\"testCase\":\"should reject refresh token with invalid refresh token\"}"
+    },
+    "body": {
+      "refreshToken": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 500,
+    "error": {
+      "error": "error",
+      "message": "Authorization failed",
+      "timestamp": "2025-09-14T21:19:31.4024063+00:00"
+    }
+  },
+  "correlationId": "0ec3b499-8d7e-4926-b475-99626a7d313a",
+  "timestamp": {},
+  "duration": 111
+}

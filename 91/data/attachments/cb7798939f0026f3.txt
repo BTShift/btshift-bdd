@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: d5d2810f-7ad3-46f0-b42d-fa9023032e12
+Timestamp: 2025-09-14T21:19:57.124Z
+Duration: 230ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "d5d2810f-7ad3-46f0-b42d-fa9023032e12",
+  "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757884797110-5zxwv091c\"}"
+}
+
+=== Request Body ===
+{
+  "email": "superadmin@shift.ma",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "error": "error",
+  "message": "Authorization failed",
+  "timestamp": "2025-09-14T21:19:57.2955788+00:00"
+}

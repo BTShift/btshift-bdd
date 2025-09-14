@@ -1,0 +1,32 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 1,
+  "timestamp": "2025-09-14T21:19:56.449Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "90d38240-67f1-4329-b3c7-734b494b2df0",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757884796190-muhedetk1\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 500,
+        "error": {
+          "error": "error",
+          "message": "Authorization failed",
+          "timestamp": "2025-09-14T21:19:56.3669585+00:00"
+        }
+      },
+      "correlationId": "90d38240-67f1-4329-b3c7-734b494b2df0",
+      "timestamp": {},
+      "duration": 218
+    }
+  ]
+}

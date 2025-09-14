@@ -1,7 +1,0 @@
-❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 06b27370-5e35-451b-a1fc-210a1ab33114 | Error: {
-  error: 'error',
-  message: 'Authorization failed',
-  timestamp: '2025-09-14T20:41:14.4383036+00:00'
-}
-❌ TenantAdmin authentication failed: HTTP 500: Internal Server Error
-❌ [c18c841d] Setup failed: HTTP 500: Internal Server Error
