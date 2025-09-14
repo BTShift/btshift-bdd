@@ -1,0 +1,5 @@
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 6dae41c9-3751-4a42-94a1-19fffa0fc5b1 | Error: {
+  error: 'error',
+  message: 'Authorization failed',
+  timestamp: '2025-09-14T20:40:57.8925055+00:00'
+}

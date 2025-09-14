@@ -1,0 +1,32 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 1,
+  "timestamp": "2025-09-14T20:41:08.932Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "a617c08e-bf09-4f9f-adff-e050603dd881",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757882468631-d5s5suu6p\",\"testCase\":\"should handle change password with typed ctx.client\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 500,
+        "error": {
+          "error": "error",
+          "message": "Authorization failed",
+          "timestamp": "2025-09-14T20:41:08.8273057+00:00"
+        }
+      },
+      "correlationId": "a617c08e-bf09-4f9f-adff-e050603dd881",
+      "timestamp": {},
+      "duration": 270
+    }
+  ]
+}

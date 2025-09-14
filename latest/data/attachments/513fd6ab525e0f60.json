@@ -1,0 +1,25 @@
+{
+  "endpoint": "/api/authentication/login",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "8e771993-fb37-484c-a93b-b43fb4228287",
+      "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757882457229-4frto9f0x\",\"testCase\":\"should reject login with invalid email\"}"
+    },
+    "body": {
+      "email": "nonexistent@example.com",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 500,
+    "error": {
+      "error": "error",
+      "message": "Authorization failed",
+      "timestamp": "2025-09-14T20:40:57.5076074+00:00"
+    }
+  },
+  "correlationId": "8e771993-fb37-484c-a93b-b43fb4228287",
+  "timestamp": {},
+  "duration": 327
+}

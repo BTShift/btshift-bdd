@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: 17679691-db83-43ae-80ca-8311c775c559
+Timestamp: 2025-09-14T20:41:06.709Z
+Duration: 271ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "17679691-db83-43ae-80ca-8311c775c559",
+  "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757882466708-euh63z3gq\",\"testCase\":\"should get current user information with typed ctx.client\"}"
+}
+
+=== Request Body ===
+{
+  "email": "superadmin@shift.ma",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "error": "error",
+  "message": "Authorization failed",
+  "timestamp": "2025-09-14T20:41:06.926909+00:00"
+}

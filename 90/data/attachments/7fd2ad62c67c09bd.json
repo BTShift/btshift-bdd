@@ -1,0 +1,32 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 1,
+  "timestamp": "2025-09-14T20:41:04.161Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "99c56a86-1457-48d7-807a-475258a4bbdb",
+          "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757882463814-nwuivfw0z\",\"testCase\":\"should return user information in login response\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 500,
+        "error": {
+          "error": "error",
+          "message": "Authorization failed",
+          "timestamp": "2025-09-14T20:41:04.0823176+00:00"
+        }
+      },
+      "correlationId": "99c56a86-1457-48d7-807a-475258a4bbdb",
+      "timestamp": {},
+      "duration": 316
+    }
+  ]
+}

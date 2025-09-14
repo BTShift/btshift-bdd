@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: 99c56a86-1457-48d7-807a-475258a4bbdb
+Timestamp: 2025-09-14T20:41:03.815Z
+Duration: 316ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "99c56a86-1457-48d7-807a-475258a4bbdb",
+  "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757882463814-nwuivfw0z\",\"testCase\":\"should return user information in login response\"}"
+}
+
+=== Request Body ===
+{
+  "email": "superadmin@shift.ma",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "error": "error",
+  "message": "Authorization failed",
+  "timestamp": "2025-09-14T20:41:04.0823176+00:00"
+}

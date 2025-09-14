@@ -1,5 +1,0 @@
-❌ [Identity] POST /api/audit-logs/export | X-Correlation-ID: b2299716-6e81-4970-b1d3-ba372f92ceee | Error: {
-  code: 3,
-  message: 'An error occurred while exporting audit logs',
-  details: []
-}

@@ -1,5 +1,0 @@
-❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 0f1d124b-dcca-42e7-933c-59a4b9d762fa | Error: {
-  code: 3,
-  message: 'An error occurred during authentication',
-  details: []
-}

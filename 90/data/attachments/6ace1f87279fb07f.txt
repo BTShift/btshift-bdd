@@ -1,0 +1,16 @@
+🎯 Auto-selected context: TenantAdmin (Default to tenant context for test isolation)
+🚀 [23f695bb] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757882478126-mzcqt6b5s for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757882478126-4mh6obrex for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757882478126-d58196bb for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757882478127] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757882478127] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757882478127] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757882478126-4mh6obrex"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 54c02781-77ec-4e9d-a1d9-a4fbd5620b5d | Auth: No

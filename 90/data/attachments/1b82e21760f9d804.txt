@@ -1,0 +1,34 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/authentication/validate-token
+Correlation ID: 1bbf4b1e-f8b5-469c-bac5-6ff5d9e886ba
+Timestamp: 2025-09-14T20:40:58.194Z
+Duration: 97ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "1bbf4b1e-f8b5-469c-bac5-6ff5d9e886ba",
+  "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757882458194-llw1rppcc\",\"testCase\":\"should reject token validation with expired token\"}"
+}
+
+=== Request Params ===
+{
+  "query": {
+    "token": "***MASKED***"
+  }
+}
+
+=== Query Parameters ===
+{
+  "token": "***MASKED***"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "error": "error",
+  "message": "Authorization failed",
+  "timestamp": "2025-09-14T20:40:58.2446628+00:00"
+}

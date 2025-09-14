@@ -1,5 +1,0 @@
-❌ [Identity] GET /api/sessions/undefined | X-Correlation-ID: 1a98d050-d1c5-436b-bc48-f78fe7a630a0 | Error: {
-  code: 3,
-  message: 'An error occurred while retrieving session details',
-  details: []
-}

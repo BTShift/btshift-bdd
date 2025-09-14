@@ -1,0 +1,20 @@
+🎬 Starting test session: test-1757882479078-9jij3hkon for feature: multi-user-example.feature
+📋 Test context set: multi-user-example.feature :: api/features/multi-user-example.spec.ts (positive)
+🧪 Test case: should validate tenant isolation
+🔄 Current step: Test Execution
+🎬 Auto-context: multi-user-example.feature :: api/features/multi-user-example.spec.ts :: should validate tenant isolation
+🚀 [e4fa3e00] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757882479080-us1bexbh2 for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757882479080-24gsov3bj for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757882479080-426edb66 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757882479081] Starting SuperAdmin authentication...
+🔐 [superadmin-1757882479081] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757882479080-24gsov3bj"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: a1b093bf-4d25-4f4d-827e-f435ccb83fbf | Auth: No
+🏁 Clearing test context for session: test-1757882479080-24gsov3bj

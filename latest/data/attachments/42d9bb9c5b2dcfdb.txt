@@ -1,0 +1,14 @@
+🚀 [e73ebfd2] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757882476108-9fiwwepey for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757882476108-dqm9cgcna for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757882476108-45dc2db4 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757882476109] Starting SuperAdmin authentication...
+🔐 [superadmin-1757882476109] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757882476108-dqm9cgcna"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 664f975f-221a-407c-b3de-fe9e5c18057d | Auth: No
