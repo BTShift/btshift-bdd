@@ -4,8 +4,9 @@ Feature: Client Management
   So that I can track accounting data for each client
 
   Background:
-    Given I am logged in as a tenant admin
+    Given I am logged in as UserType "TenantAdmin" for tenant "test-tenant"
     And my tenant is active
+    And I have tenant-scoped permissions for "test-tenant"
 
   @sprint1 @crud
   Scenario: Create a new client
@@ -40,8 +41,9 @@ Feature: Client Management
   @sprint1 @user-association
   Scenario: Associate user with client
     Given a client "Test Client" exists
-    And a ClientUser "client.user@example.com" exists
+    And a ClientUser "client.user@example.com" exists for tenant "test-tenant"
     When I associate the user with "Test Client"
     Then the user should only see "Test Client" data
     And the user should not see other clients
     And the association should be stored in the database
+    And the user should have UserType "ClientUser" with client-scoped permissions
