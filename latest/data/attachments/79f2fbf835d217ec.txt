@@ -1,0 +1,34 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/tenants
+Correlation ID: 6f22ccfe-ba2f-4d11-9d6a-9cf1dd1c9d78
+Timestamp: 2025-09-14T07:59:14.170Z
+Duration: 5190ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "6f22ccfe-ba2f-4d11-9d6a-9cf1dd1c9d78",
+  "X-Test-Context": "{\"featureFile\":\"typed-tenant-creation.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757836754169-0n3sva9n2\",\"testCase\":\"should activate tenant with typed client\"}"
+}
+
+=== Request Body ===
+{
+  "companyName": "BDD Test Company 1757836754169",
+  "tenantName": "activate-typed-1757836754169-u409kvsar",
+  "domain": "activate-typed-1757836754169-u409kvsar",
+  "plan": "Professional",
+  "adminEmail": "admin-1757836754169@activate-typed-1757836754169-u409kvsar.test",
+  "adminFirstName": "BDD",
+  "adminLastName": "Admin",
+  "phoneNumber": "+212612345678",
+  "address": "123 Test Street, Casablanca",
+  "country": "Morocco"
+}
+
+=== Response ===
+
+Error Details:
+{
+  "message": "API Error: 400 - {\"code\":3,\"message\":\"Tenant name is required\",\"details\":[]}",
+  "stack": "Error: API Error: 400 - {\"code\":3,\"message\":\"Tenant name is required\",\"details\":[]}\n    at api (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/@btshift/tenant-management-types/src/client.ts:73:13)\n    at processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at TypedApiClient.tenant (/home/runner/work/btshift-bdd/btshift-bdd/tests/api/support/clients/typed-api-client.ts:147:24)\n    at /home/runner/work/btshift-bdd/btshift-bdd/tests/api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts:115:28\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:309:9\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:326:11\n    at TimeoutManager.withRunnable (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/timeoutManager.js:67:14)\n    at TestInfoImpl._runWithTimeout (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/testInfo.js:324:7)\n    at /home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:307:7\n    at WorkerMain._runTest (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:282:5)\n    at WorkerMain.runTestGroup (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/worker/workerMain.js:194:11)\n    at process.<anonymous> (/home/runner/work/btshift-bdd/btshift-bdd/node_modules/playwright/lib/common/process.js:65:22)"
+}

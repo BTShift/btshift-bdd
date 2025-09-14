@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/groups/0db0886f-732f-4a38-9834-bfb25279d720/clients/8ef46969-d11c-44b9-ac00-39e9d420cbe1
+Correlation ID: 6d6449f9-c534-4551-966e-c3fc988765b5
+Timestamp: 2025-09-14T07:56:50.212Z
+Duration: 125ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "6d6449f9-c534-4551-966e-c3fc988765b5",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757836609717-1pr1t69ka\",\"testCase\":\"should create client group with typed client\"}"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": true,
+  "message": "Client added to group successfully"
+}

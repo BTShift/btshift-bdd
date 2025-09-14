@@ -1,0 +1,10 @@
+🎬 Starting test session: test-1757836725511-fx0e511jj for feature: multi-user-example.feature
+📋 Test context set: multi-user-example.feature :: api/features/multi-user-example.spec.ts (positive)
+🧪 Test case: should create client within tenant
+🔄 Current step: Test Execution
+🎬 Auto-context: multi-user-example.feature :: api/features/multi-user-example.spec.ts :: should create client within tenant
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"multi-user-example.feature","scenario":"api/features/multi-user-example.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836725511-fx0e511jj","testCase":"should create client within tenant"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 4de8163b-4148-49af-ab5d-6cebe04b4698 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 4de8163b-4148-49af-ab5d-6cebe04b4698 | Success
+🏁 Clearing test context for session: test-1757836725511-fx0e511jj

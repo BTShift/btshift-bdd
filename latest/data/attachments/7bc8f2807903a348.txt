@@ -1,0 +1,30 @@
+🎬 Starting test session: test-1757836615885-xts05u4kv for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should get all clients in a group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should get all clients in a group
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836615885-xts05u4kv","testCase":"should get all clients in a group"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: fd0c2b41-fede-48ec-a438-7494b9242ff7 | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: fd0c2b41-fede-48ec-a438-7494b9242ff7 | Success
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836615885-xts05u4kv","testCase":"should get all clients in a group"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: ff04f981-81bf-47f6-b5f1-2dc3518fac19 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: ff04f981-81bf-47f6-b5f1-2dc3518fac19 | Success
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836615885-xts05u4kv","testCase":"should get all clients in a group"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 20b3f4c7-0760-45ab-8b70-97fb75b39fa5 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 20b3f4c7-0760-45ab-8b70-97fb75b39fa5 | Success
+🧪 Adding test context to POST /api/groups/911d0844-49b1-461b-9422-f597ba575871/clients/f977ef20-5dc4-4456-b8ae-5cc05eb80976
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836615885-xts05u4kv","testCase":"should get all clients in a group"}
+🔍 [ClientManagement] POST /api/groups/911d0844-49b1-461b-9422-f597ba575871/clients/f977ef20-5dc4-4456-b8ae-5cc05eb80976 | X-Correlation-ID: 089a10d6-26bb-44a6-b3d2-350f9def581c | Auth: Yes
+✅ [ClientManagement] POST /api/groups/911d0844-49b1-461b-9422-f597ba575871/clients/f977ef20-5dc4-4456-b8ae-5cc05eb80976 | X-Correlation-ID: 089a10d6-26bb-44a6-b3d2-350f9def581c | Success
+🧪 Adding test context to POST /api/groups/911d0844-49b1-461b-9422-f597ba575871/clients/f5c21244-c928-43b1-bb2a-966664d12884
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836615885-xts05u4kv","testCase":"should get all clients in a group"}
+🔍 [ClientManagement] POST /api/groups/911d0844-49b1-461b-9422-f597ba575871/clients/f5c21244-c928-43b1-bb2a-966664d12884 | X-Correlation-ID: b9855710-a27a-4c96-9e32-9ca5a79151e7 | Auth: Yes
+✅ [ClientManagement] POST /api/groups/911d0844-49b1-461b-9422-f597ba575871/clients/f5c21244-c928-43b1-bb2a-966664d12884 | X-Correlation-ID: b9855710-a27a-4c96-9e32-9ca5a79151e7 | Success
+🧪 Adding test context to GET /api/groups/911d0844-49b1-461b-9422-f597ba575871/clients
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836615885-xts05u4kv","testCase":"should get all clients in a group"}
+🔍 [ClientManagement] GET /api/groups/911d0844-49b1-461b-9422-f597ba575871/clients | X-Correlation-ID: e72679ba-2b94-4bb5-a4c3-5341a46a8fe0 | Auth: Yes
+✅ [ClientManagement] GET /api/groups/911d0844-49b1-461b-9422-f597ba575871/clients | X-Correlation-ID: e72679ba-2b94-4bb5-a4c3-5341a46a8fe0 | Success
+🏁 Clearing test context for session: test-1757836615885-xts05u4kv

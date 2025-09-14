@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: DELETE
+Endpoint: /api/clients/8a8dd60d-7ebd-4a5c-adea-6b12ec093a46
+Correlation ID: bd9a165a-4985-4e77-aa4b-ee9fc963d677
+Timestamp: 2025-09-14T07:56:51.087Z
+Duration: 118ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "bd9a165a-4985-4e77-aa4b-ee9fc963d677",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"Client Management Test Data Cleanup\",\"currentStep\":\"Test Cleanup\",\"testIntent\":\"positive\",\"expectedOutcome\":\"cleanup_success\",\"testSessionId\":\"cleanup-1757836611087\",\"testCase\":\"Data Cleanup\"}"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": true,
+  "message": "Client deleted successfully"
+}

@@ -1,0 +1,30 @@
+{
+  "endpoint": "/api/groups/2328bab4-f0fe-41d5-a02b-1e201da04c7b",
+  "method": "put",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "17006421-beaa-4dd2-9962-958942af46a1",
+      "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757836613284-nedh8mkaq\",\"testCase\":\"should update an existing group\"}"
+    },
+    "body": {
+      "name": "UpdatedGroup_1757836613429",
+      "description": "Updated description"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "groupId": "2328bab4-f0fe-41d5-a02b-1e201da04c7b",
+      "name": "UpdatedGroup_1757836613429",
+      "description": "Updated description",
+      "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "createdAt": "2025-09-14T07:56:53.3492820Z",
+      "updatedAt": "2025-09-14T07:56:53.7008118Z",
+      "clientCount": 0
+    },
+    "headers": {}
+  },
+  "correlationId": "17006421-beaa-4dd2-9962-958942af46a1",
+  "timestamp": {},
+  "duration": 683
+}

@@ -1,0 +1,20 @@
+{
+  "endpoint": "/api/groups/aabd0815-92f8-482d-a4d5-4d247c5a29f9",
+  "method": "delete",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "d85af11d-f09b-4423-b360-416e78742a21"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "success": true,
+      "message": "Group deleted successfully"
+    },
+    "headers": {}
+  },
+  "correlationId": "d85af11d-f09b-4423-b360-416e78742a21",
+  "timestamp": {},
+  "duration": 120
+}

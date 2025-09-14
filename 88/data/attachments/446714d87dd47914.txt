@@ -1,0 +1,9 @@
+🎬 Starting test session: test-1757836636666-csi5bh6g0 for feature: invalid-credentials.api.feature
+📋 Test context set: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts (negative)
+🧪 Test case: should reject login with invalid password
+🔄 Current step: Test Execution
+🎬 Auto-context: invalid-credentials.api.feature :: api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts :: should reject login with invalid password
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"invalid-credentials.api.feature","scenario":"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757836636666-csi5bh6g0","testCase":"should reject login with invalid password"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: b461a673-dd7e-4f6b-a130-ff28394ca4f2 | Auth: No
+🏁 Clearing test context for session: test-1757836636666-csi5bh6g0

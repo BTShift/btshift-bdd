@@ -1,0 +1,38 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/audit-logs
+Correlation ID: c366ea86-965a-449b-8381-ee0d15d65054
+Timestamp: 2025-09-14T07:57:14.703Z
+Duration: 192ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "c366ea86-965a-449b-8381-ee0d15d65054",
+  "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757836634702-zdmb69ccb\",\"testCase\":\"should retrieve audit logs\"}"
+}
+
+=== Request Params ===
+{
+  "query": {
+    "pageNumber": 1,
+    "pageSize": 10
+  }
+}
+
+=== Query Parameters ===
+{
+  "pageNumber": 1,
+  "pageSize": 10
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "logs": [],
+  "totalCount": 0
+}

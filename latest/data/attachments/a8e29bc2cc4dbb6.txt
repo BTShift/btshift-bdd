@@ -1,0 +1,46 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/clients
+Correlation ID: ffe47fe4-79a8-47f6-9720-4a173fabe026
+Timestamp: 2025-09-14T07:56:50.654Z
+Duration: 176ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "ffe47fe4-79a8-47f6-9720-4a173fabe026",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757836610650-7coptnau8\",\"testCase\":\"should delete client with typed client\"}"
+}
+
+=== Request Body ===
+{
+  "companyName": "Delete Test Client 1757836610653",
+  "country": "Morocco",
+  "industry": "Technology"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "clientId": "c81fa74d-6f28-4e76-a5c3-8f573631b514",
+  "companyName": "Delete Test Client 1757836610653",
+  "country": "Morocco",
+  "address": "",
+  "iceNumber": "",
+  "rcNumber": "",
+  "vatNumber": "",
+  "cnssNumber": "",
+  "industry": "Technology",
+  "adminContactPerson": "",
+  "billingContactPerson": "",
+  "status": "Active",
+  "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+  "fiscalYearEnd": "",
+  "assignedTeamId": "",
+  "createdAt": "2025-09-14T07:56:50.7066173Z",
+  "updatedAt": "2025-09-14T07:56:50.7066173Z"
+}

@@ -1,0 +1,74 @@
+🎬 Starting test session: test-1757836616626-3g7bt1rcz for feature: group-operations.api.feature
+📋 Test context set: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts (positive)
+🧪 Test case: should get all groups for a client
+🔄 Current step: Test Execution
+🎬 Auto-context: group-operations.api.feature :: api/features/client-management/groups/happy-path/group-operations.api.spec.ts :: should get all groups for a client
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836616626-3g7bt1rcz","testCase":"should get all groups for a client"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: dddc6471-8572-4a74-8aa3-bbea36354a71 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: dddc6471-8572-4a74-8aa3-bbea36354a71 | Success
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836616626-3g7bt1rcz","testCase":"should get all groups for a client"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: b9ceb874-c5e0-47dd-b2f2-4a81ef8308f5 | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: b9ceb874-c5e0-47dd-b2f2-4a81ef8308f5 | Success
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836616626-3g7bt1rcz","testCase":"should get all groups for a client"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: f05006dd-7b50-4174-8ef8-a607dccec93e | Auth: Yes
+✅ [ClientManagement] POST /api/groups | X-Correlation-ID: f05006dd-7b50-4174-8ef8-a607dccec93e | Success
+🧪 Adding test context to POST /api/groups/fa8626cb-99aa-40e5-9775-d524b5aab285/clients/b9f51df3-a595-4013-835d-0acdd7882152
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836616626-3g7bt1rcz","testCase":"should get all groups for a client"}
+🔍 [ClientManagement] POST /api/groups/fa8626cb-99aa-40e5-9775-d524b5aab285/clients/b9f51df3-a595-4013-835d-0acdd7882152 | X-Correlation-ID: ec5e8f57-c5ac-4c44-a192-aee71cb14290 | Auth: Yes
+✅ [ClientManagement] POST /api/groups/fa8626cb-99aa-40e5-9775-d524b5aab285/clients/b9f51df3-a595-4013-835d-0acdd7882152 | X-Correlation-ID: ec5e8f57-c5ac-4c44-a192-aee71cb14290 | Success
+🧪 Adding test context to POST /api/groups/2ad66c4a-e9c0-407c-8751-5b19b0823529/clients/b9f51df3-a595-4013-835d-0acdd7882152
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836616626-3g7bt1rcz","testCase":"should get all groups for a client"}
+🔍 [ClientManagement] POST /api/groups/2ad66c4a-e9c0-407c-8751-5b19b0823529/clients/b9f51df3-a595-4013-835d-0acdd7882152 | X-Correlation-ID: 90e41eae-c510-4e4a-aadc-8cbbbbf5fe33 | Auth: Yes
+✅ [ClientManagement] POST /api/groups/2ad66c4a-e9c0-407c-8751-5b19b0823529/clients/b9f51df3-a595-4013-835d-0acdd7882152 | X-Correlation-ID: 90e41eae-c510-4e4a-aadc-8cbbbbf5fe33 | Success
+🧪 Adding test context to GET /api/clients/b9f51df3-a595-4013-835d-0acdd7882152/groups
+🧪 Test context JSON: {"featureFile":"group-operations.api.feature","scenario":"api/features/client-management/groups/happy-path/group-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836616626-3g7bt1rcz","testCase":"should get all groups for a client"}
+🔍 [ClientManagement] GET /api/clients/b9f51df3-a595-4013-835d-0acdd7882152/groups | X-Correlation-ID: 2baf2182-4527-49f4-9975-c8f10b03ed26 | Auth: Yes
+✅ [ClientManagement] GET /api/clients/b9f51df3-a595-4013-835d-0acdd7882152/groups | X-Correlation-ID: 2baf2182-4527-49f4-9975-c8f10b03ed26 | Success
+🏁 Clearing test context for session: test-1757836616626-3g7bt1rcz
+🔍 [ClientManagement] DELETE /api/groups/aabd0815-92f8-482d-a4d5-4d247c5a29f9 | X-Correlation-ID: d85af11d-f09b-4423-b360-416e78742a21 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/aabd0815-92f8-482d-a4d5-4d247c5a29f9 | X-Correlation-ID: d85af11d-f09b-4423-b360-416e78742a21 | Success
+🧹 Cleaned up group: aabd0815-92f8-482d-a4d5-4d247c5a29f9
+🔍 [ClientManagement] DELETE /api/groups/2328bab4-f0fe-41d5-a02b-1e201da04c7b | X-Correlation-ID: 020a96bf-04c9-429c-8a38-ca9488c9b984 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/2328bab4-f0fe-41d5-a02b-1e201da04c7b | X-Correlation-ID: 020a96bf-04c9-429c-8a38-ca9488c9b984 | Success
+🧹 Cleaned up group: 2328bab4-f0fe-41d5-a02b-1e201da04c7b
+🔍 [ClientManagement] DELETE /api/groups/04d089cd-ea09-4b0a-8743-485f00a842d6 | X-Correlation-ID: e5fdaddb-6210-49c0-abb0-a457b6b6675a | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/04d089cd-ea09-4b0a-8743-485f00a842d6 | X-Correlation-ID: e5fdaddb-6210-49c0-abb0-a457b6b6675a | Success
+🧹 Cleaned up group: 04d089cd-ea09-4b0a-8743-485f00a842d6
+🔍 [ClientManagement] DELETE /api/groups/0ae9be64-a8da-4050-b4a2-803712440314 | X-Correlation-ID: 31d7c1cc-9922-4e8c-9547-dd1644efaa86 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/0ae9be64-a8da-4050-b4a2-803712440314 | X-Correlation-ID: 31d7c1cc-9922-4e8c-9547-dd1644efaa86 | Success
+🧹 Cleaned up group: 0ae9be64-a8da-4050-b4a2-803712440314
+🔍 [ClientManagement] DELETE /api/groups/cd0702d2-cf7a-4acc-bafb-e4719b803a3f | X-Correlation-ID: 34050b8d-6fb2-4e97-9675-9cf348add788 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/cd0702d2-cf7a-4acc-bafb-e4719b803a3f | X-Correlation-ID: 34050b8d-6fb2-4e97-9675-9cf348add788 | Success
+🧹 Cleaned up group: cd0702d2-cf7a-4acc-bafb-e4719b803a3f
+🔍 [ClientManagement] DELETE /api/groups/e2c714f8-ee9f-4212-bee4-7dd5643ad0c6 | X-Correlation-ID: 9b087a79-b489-49ca-99a0-af67001e3f76 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/e2c714f8-ee9f-4212-bee4-7dd5643ad0c6 | X-Correlation-ID: 9b087a79-b489-49ca-99a0-af67001e3f76 | Success
+🧹 Cleaned up group: e2c714f8-ee9f-4212-bee4-7dd5643ad0c6
+🔍 [ClientManagement] DELETE /api/groups/911d0844-49b1-461b-9422-f597ba575871 | X-Correlation-ID: c858efd6-08b4-4637-b47c-8b7cf27b7e4d | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/911d0844-49b1-461b-9422-f597ba575871 | X-Correlation-ID: c858efd6-08b4-4637-b47c-8b7cf27b7e4d | Success
+🧹 Cleaned up group: 911d0844-49b1-461b-9422-f597ba575871
+🔍 [ClientManagement] DELETE /api/groups/fa8626cb-99aa-40e5-9775-d524b5aab285 | X-Correlation-ID: b0ac1dc9-4de3-48f6-9ac4-8e822744b811 | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/fa8626cb-99aa-40e5-9775-d524b5aab285 | X-Correlation-ID: b0ac1dc9-4de3-48f6-9ac4-8e822744b811 | Success
+🧹 Cleaned up group: fa8626cb-99aa-40e5-9775-d524b5aab285
+🔍 [ClientManagement] DELETE /api/groups/2ad66c4a-e9c0-407c-8751-5b19b0823529 | X-Correlation-ID: ff5c2244-3e45-44d7-95aa-106026c0cafc | Auth: Yes
+✅ [ClientManagement] DELETE /api/groups/2ad66c4a-e9c0-407c-8751-5b19b0823529 | X-Correlation-ID: ff5c2244-3e45-44d7-95aa-106026c0cafc | Success
+🧹 Cleaned up group: 2ad66c4a-e9c0-407c-8751-5b19b0823529
+🔍 [ClientManagement] DELETE /api/clients/8c720c93-f18c-4068-9807-36105348e894 | X-Correlation-ID: 269a9fb8-798d-4ad1-81de-5ef83bc99f04 | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/8c720c93-f18c-4068-9807-36105348e894 | X-Correlation-ID: 269a9fb8-798d-4ad1-81de-5ef83bc99f04 | Success
+🧹 Cleaned up client: 8c720c93-f18c-4068-9807-36105348e894
+🔍 [ClientManagement] DELETE /api/clients/7c14c179-f33c-412d-a464-2ae99d6816c4 | X-Correlation-ID: 666d88da-2087-4b96-aa39-e058d7c87606 | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/7c14c179-f33c-412d-a464-2ae99d6816c4 | X-Correlation-ID: 666d88da-2087-4b96-aa39-e058d7c87606 | Success
+🧹 Cleaned up client: 7c14c179-f33c-412d-a464-2ae99d6816c4
+🔍 [ClientManagement] DELETE /api/clients/f977ef20-5dc4-4456-b8ae-5cc05eb80976 | X-Correlation-ID: 4c8dcbdb-3846-4dde-8888-2342ee2e5c5b | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/f977ef20-5dc4-4456-b8ae-5cc05eb80976 | X-Correlation-ID: 4c8dcbdb-3846-4dde-8888-2342ee2e5c5b | Success
+🧹 Cleaned up client: f977ef20-5dc4-4456-b8ae-5cc05eb80976
+🔍 [ClientManagement] DELETE /api/clients/f5c21244-c928-43b1-bb2a-966664d12884 | X-Correlation-ID: d6266b57-85aa-4621-8cff-4b5cb83c8090 | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/f5c21244-c928-43b1-bb2a-966664d12884 | X-Correlation-ID: d6266b57-85aa-4621-8cff-4b5cb83c8090 | Success
+🧹 Cleaned up client: f5c21244-c928-43b1-bb2a-966664d12884
+🔍 [ClientManagement] DELETE /api/clients/b9f51df3-a595-4013-835d-0acdd7882152 | X-Correlation-ID: fe3a1d2b-d6c8-41c4-8cbe-aa59844953f7 | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/b9f51df3-a595-4013-835d-0acdd7882152 | X-Correlation-ID: fe3a1d2b-d6c8-41c4-8cbe-aa59844953f7 | Success
+🧹 Cleaned up client: b9f51df3-a595-4013-835d-0acdd7882152
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 7f599ae4-6ba6-4549-8097-785ec2f52268 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 7f599ae4-6ba6-4549-8097-785ec2f52268 | Success

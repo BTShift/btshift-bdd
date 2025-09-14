@@ -1,1 +1,0 @@
-❌ [Identity] GET /api/authentication/me | X-Correlation-ID: 68019496-d2ba-4989-8fc7-07d1b998402b | Error: HTTP 400: Bad Request

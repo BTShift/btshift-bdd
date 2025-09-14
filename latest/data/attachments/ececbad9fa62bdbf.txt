@@ -1,0 +1,1 @@
+❌ [Identity] POST /api/roles | X-Correlation-ID: 6f506686-5cba-4ba3-8182-0991f15418cd | Error: HTTP 403: Forbidden

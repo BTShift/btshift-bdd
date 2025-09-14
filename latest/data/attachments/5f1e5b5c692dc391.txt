@@ -1,0 +1,1 @@
+❌ [Identity] GET /api/users/current | X-Correlation-ID: a454d9fc-57ea-4fff-b18b-4ca80e60ae28 | Error: HTTP 403: Forbidden

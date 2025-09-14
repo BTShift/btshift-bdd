@@ -1,0 +1,10 @@
+🎬 Starting test session: test-1757836609587-016rh8s0h for feature: typed-client-crud.api.feature
+📋 Test context set: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts (positive)
+🧪 Test case: should list clients with typed client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-client-crud.api.feature :: api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts :: should list clients with typed client
+🧪 Adding test context to GET /api/clients
+🧪 Test context JSON: {"featureFile":"typed-client-crud.api.feature","scenario":"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757836609587-016rh8s0h","testCase":"should list clients with typed client"}
+🔍 [ClientManagement] GET /api/clients | X-Correlation-ID: d725ebef-24c9-4dd7-b719-4b2f2b5706e8 | Auth: Yes
+✅ [ClientManagement] GET /api/clients | X-Correlation-ID: d725ebef-24c9-4dd7-b719-4b2f2b5706e8 | Success
+🏁 Clearing test context for session: test-1757836609587-016rh8s0h
