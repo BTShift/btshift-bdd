@@ -88,6 +88,7 @@ export class TypedApiClient {
       // Prepare headers
       const headers: Record<string, string> = {
         'X-Correlation-ID': correlationId,
+        'X-Test-Mode': 'true', // Always inject test mode header during BDD tests
         ...(testContext && { 'X-Test-Context': testContext }),
         ...(this.authToken && { 'Authorization': `Bearer ${this.authToken}` }),
         ...options.headers
