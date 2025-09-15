@@ -1,0 +1,25 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/invitations/ba5f5def-e249-43a2-9ebf-132fe78371e1/accept
+Correlation ID: 293a20fc-65b9-46f7-9e04-52377b2cd4d3
+Timestamp: 2025-09-15T13:47:25.806Z
+Duration: 107ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "293a20fc-65b9-46f7-9e04-52377b2cd4d3",
+  "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944045462-4svyx0urn\",\"testCase\":\"should accept invitation\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "invitationToken": "***MASKED***",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

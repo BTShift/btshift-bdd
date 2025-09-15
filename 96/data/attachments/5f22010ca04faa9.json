@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/users/current",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "960f95d1-17b3-40f6-8010-390df862cc7d",
+      "X-Test-Context": "{\"featureFile\":\"multi-user-example.feature\",\"scenario\":\"api/features/multi-user-example.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944098064-90jh79agj\",\"testCase\":\"should automatically use appropriate context\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "User not found",
+      "details": []
+    }
+  },
+  "correlationId": "960f95d1-17b3-40f6-8010-390df862cc7d",
+  "timestamp": {},
+  "duration": 124
+}

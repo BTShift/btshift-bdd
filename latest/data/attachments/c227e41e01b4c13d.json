@@ -1,0 +1,26 @@
+{
+  "endpoint": "/api/groups",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "e55ab0ad-ae82-4a7d-aa0e-a66ddeb6d6d4",
+      "X-Test-Context": "{\"featureFile\":\"group-edge-cases.api.feature\",\"scenario\":\"api/features/client-management/groups/edge-cases/group-edge-cases.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757943998838-3x67k3d0s\",\"testCase\":\"should handle GetGroup authorization properly\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "name": "AuthTestGroup_1757943998844",
+      "description": "Test group for authorization verification"
+    }
+  },
+  "response": {
+    "status": 500,
+    "error": {
+      "code": 13,
+      "message": "An error occurred while creating the group",
+      "details": []
+    }
+  },
+  "correlationId": "e55ab0ad-ae82-4a7d-aa0e-a66ddeb6d6d4",
+  "timestamp": {},
+  "duration": 117
+}

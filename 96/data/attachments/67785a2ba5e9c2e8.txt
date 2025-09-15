@@ -1,0 +1,196 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/roles
+Correlation ID: 7a15f740-ee08-4b6a-8b4f-6fdea21c2cc9
+Timestamp: 2025-09-15T13:47:54.653Z
+Duration: 125ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "7a15f740-ee08-4b6a-8b4f-6fdea21c2cc9",
+  "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944074307-yaajuosag\",\"testCase\":\"should list all roles\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Params ===
+{
+  "query": {
+    "pageNumber": 1,
+    "pageSize": 50
+  }
+}
+
+=== Query Parameters ===
+{
+  "pageNumber": 1,
+  "pageSize": 50
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "roles": [
+    {
+      "id": "4bbb8060-d7e3-48dc-bdf1-bfd5c4787059",
+      "name": "TenantAdmin",
+      "description": "Accounting firm administrator managing their tenant",
+      "permissions": [
+        "invoices:send",
+        "transactions:create",
+        "roles:assign",
+        "reports:tax",
+        "clients:create",
+        "users:read",
+        "transactions:read",
+        "users:update",
+        "clients:read",
+        "clients:delete",
+        "transactions:update",
+        "accounting:dashboard",
+        "invoices:approve",
+        "invoices:read",
+        "reports:financial",
+        "settings:read",
+        "users:reset-password",
+        "invoices:delete",
+        "invoices:create",
+        "users:activate",
+        "users:create",
+        "reports:export",
+        "users:delete",
+        "roles:read",
+        "invoices:update",
+        "clients:update",
+        "users:suspend",
+        "reports:custom"
+      ],
+      "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "isSystemRole": true,
+      "createdAt": "2025-09-15T13:47:54Z",
+      "updatedAt": "2025-09-15T13:47:54Z",
+      "userCount": 3
+    },
+    {
+      "id": "6debc62a-7fcf-4f9c-9a14-c85433975e54",
+      "name": "TestRole2_1757944074308",
+      "description": "Second test role",
+      "permissions": [],
+      "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "isSystemRole": false,
+      "createdAt": "2025-09-15T13:47:54Z",
+      "updatedAt": "2025-09-15T13:47:54Z",
+      "userCount": 0
+    },
+    {
+      "id": "85d6bddf-0093-4626-839d-127e07142d2e",
+      "name": "Client",
+      "description": "Business client of the accounting firm",
+      "permissions": [
+        "invoices:read",
+        "reports:financial"
+      ],
+      "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "isSystemRole": true,
+      "createdAt": "2025-09-15T13:47:54Z",
+      "updatedAt": "2025-09-15T13:47:54Z",
+      "userCount": 0
+    },
+    {
+      "id": "d386877f-852d-4a1e-ad77-6e2dede75407",
+      "name": "Employee",
+      "description": "Employee of the accounting firm",
+      "permissions": [
+        "invoices:send",
+        "transactions:create",
+        "clients:create",
+        "transactions:read",
+        "clients:read",
+        "transactions:update",
+        "accounting:dashboard",
+        "invoices:read",
+        "reports:financial",
+        "invoices:create",
+        "reports:export",
+        "invoices:update",
+        "clients:update"
+      ],
+      "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "isSystemRole": true,
+      "createdAt": "2025-09-15T13:47:54Z",
+      "updatedAt": "2025-09-15T13:47:54Z",
+      "userCount": 0
+    },
+    {
+      "id": "dd74e0b9-377d-4e09-958b-8fc21113ff59",
+      "name": "SuperAdmin",
+      "description": "Super administrator with full platform control",
+      "permissions": [
+        "invoices:send",
+        "transactions:create",
+        "roles:assign",
+        "roles:create",
+        "reports:tax",
+        "settings:update",
+        "clients:create",
+        "roles:update",
+        "tenants:read",
+        "transactions:delete",
+        "users:read",
+        "transactions:read",
+        "users:update",
+        "clients:read",
+        "clients:delete",
+        "transactions:update",
+        "accounting:dashboard",
+        "invoices:approve",
+        "invoices:read",
+        "reports:financial",
+        "roles:manage-permissions",
+        "tenants:billing",
+        "settings:read",
+        "reports:read",
+        "tenants:update",
+        "settings:integrations",
+        "users:reset-password",
+        "tenants:create",
+        "invoices:delete",
+        "invoices:create",
+        "users:activate",
+        "users:create",
+        "tenants:suspend",
+        "reports:export",
+        "users:delete",
+        "roles:delete",
+        "roles:read",
+        "tenants:delete",
+        "reports:export",
+        "invoices:update",
+        "clients:update",
+        "users:suspend",
+        "settings:audit_logs",
+        "reports:custom"
+      ],
+      "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "isSystemRole": true,
+      "createdAt": "2025-09-15T13:47:54Z",
+      "updatedAt": "2025-09-15T13:47:54Z",
+      "userCount": 2
+    },
+    {
+      "id": "ec540550-d7a1-4d7e-a039-e17a4d9b7143",
+      "name": "TestRole1_1757944074308",
+      "description": "First test role",
+      "permissions": [],
+      "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+      "isSystemRole": false,
+      "createdAt": "2025-09-15T13:47:54Z",
+      "updatedAt": "2025-09-15T13:47:54Z",
+      "userCount": 0
+    }
+  ]
+}

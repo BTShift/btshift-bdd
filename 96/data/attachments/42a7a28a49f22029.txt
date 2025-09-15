@@ -1,0 +1,3 @@
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 79cc7c69-6340-41a5-87e4-1f3de568806b | Error: { code: 16, message: 'Invalid email or password', details: [] }
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 0da736a6-4f37-44d3-9468-07c72f9ecb18 | Error: { code: 16, message: 'Invalid email or password', details: [] }
+❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 05528fc7-191b-448b-b39f-b9933990598b | Error: { code: 16, message: 'Invalid email or password', details: [] }

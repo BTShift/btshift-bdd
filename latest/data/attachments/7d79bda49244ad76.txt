@@ -1,0 +1,23 @@
+🚀 [fb0ede91] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757944110277-3kt1678n4 for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757944110277-wd5kn77f8 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757944110277-7b2579e7 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [fb0ede91] Using SuperAdmin authentication
+🕐 [fb0ede91] Token expires: 1:56:29 PM
+🎬 Starting test session: test-1757944110289-vbmxix0wx for feature: tenant-creation.api.feature
+📋 Test context set: tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts (positive)
+🧪 Test case: Super Admin can successfully onboard a new accounting firm
+🔄 Current step: Test Execution
+🎬 Auto-context: tenant-creation.api.feature :: api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts :: Super Admin can successfully onboard a new accounting firm
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"tenant-creation.api.feature","scenario":"api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757944110289-vbmxix0wx","testCase":"Super Admin can successfully onboard a new accounting firm"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: c8f5a168-ab40-4337-a8ec-e18ef1df0921 | Auth: Yes
+🏁 Clearing test context for session: test-1757944110289-vbmxix0wx
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 76060915-aaf4-403b-891f-dfe008ae387f | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 76060915-aaf4-403b-891f-dfe008ae387f | Success

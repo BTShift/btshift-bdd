@@ -1,0 +1,7 @@
+{
+  "step": "Create new client group",
+  "operation": "Create Group",
+  "endpoint": "/api/groups",
+  "entityType": "group",
+  "error": "HTTP 500: Internal Server Error"
+}

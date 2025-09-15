@@ -1,0 +1,5 @@
+❌ [Identity] POST /api/authentication/refresh | X-Correlation-ID: d6f0d989-2f2b-4d39-87c3-45ab3125d6fe | Error: {
+  code: 3,
+  message: 'An error occurred while refreshing token',
+  details: []
+}

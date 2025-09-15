@@ -1,0 +1,29 @@
+{
+  "endpoint": "/api/users",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "56b6a94d-f4cc-4cff-9a2b-1f3060f922c9",
+      "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944076304-5ddz1m451\",\"testCase\":\"should assign role to user\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "test.user1757944076507@example.com",
+      "firstName": "Test",
+      "lastName": "User",
+      "phoneNumber": "+212600000000",
+      "role": "User"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "Invalid role specified",
+      "details": []
+    }
+  },
+  "correlationId": "56b6a94d-f4cc-4cff-9a2b-1f3060f922c9",
+  "timestamp": {},
+  "duration": 117
+}

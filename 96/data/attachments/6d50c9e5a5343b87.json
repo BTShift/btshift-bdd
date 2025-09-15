@@ -1,0 +1,293 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 4,
+  "timestamp": "2025-09-15T13:47:54.807Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "fcab44e9-d913-4982-af67-d7f8084501bb",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944073882-1pqf6wbda\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "fcab44e9-d913-4982-af67-d7f8084501bb",
+      "timestamp": {},
+      "duration": 374
+    },
+    {
+      "endpoint": "/api/roles",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "94a85d86-ce1a-4eca-bfc7-f0153062ee56",
+          "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944074307-yaajuosag\",\"testCase\":\"should list all roles\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestRole1_1757944074308",
+          "description": "First test role",
+          "permissions": [
+            "read:users"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "roleId": "ec540550-d7a1-4d7e-a039-e17a4d9b7143"
+        },
+        "headers": {}
+      },
+      "correlationId": "94a85d86-ce1a-4eca-bfc7-f0153062ee56",
+      "timestamp": {},
+      "duration": 209
+    },
+    {
+      "endpoint": "/api/roles",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "cc0f5e05-c737-4540-b450-8e13410c8937",
+          "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944074307-yaajuosag\",\"testCase\":\"should list all roles\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestRole2_1757944074308",
+          "description": "Second test role",
+          "permissions": [
+            "write:users"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "roleId": "6debc62a-7fcf-4f9c-9a14-c85433975e54"
+        },
+        "headers": {}
+      },
+      "correlationId": "cc0f5e05-c737-4540-b450-8e13410c8937",
+      "timestamp": {},
+      "duration": 132
+    },
+    {
+      "endpoint": "/api/roles",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "7a15f740-ee08-4b6a-8b4f-6fdea21c2cc9",
+          "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944074307-yaajuosag\",\"testCase\":\"should list all roles\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "pageNumber": 1,
+            "pageSize": 50
+          }
+        },
+        "query": {
+          "pageNumber": 1,
+          "pageSize": 50
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "roles": [
+            {
+              "id": "4bbb8060-d7e3-48dc-bdf1-bfd5c4787059",
+              "name": "TenantAdmin",
+              "description": "Accounting firm administrator managing their tenant",
+              "permissions": [
+                "invoices:send",
+                "transactions:create",
+                "roles:assign",
+                "reports:tax",
+                "clients:create",
+                "users:read",
+                "transactions:read",
+                "users:update",
+                "clients:read",
+                "clients:delete",
+                "transactions:update",
+                "accounting:dashboard",
+                "invoices:approve",
+                "invoices:read",
+                "reports:financial",
+                "settings:read",
+                "users:reset-password",
+                "invoices:delete",
+                "invoices:create",
+                "users:activate",
+                "users:create",
+                "reports:export",
+                "users:delete",
+                "roles:read",
+                "invoices:update",
+                "clients:update",
+                "users:suspend",
+                "reports:custom"
+              ],
+              "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+              "isSystemRole": true,
+              "createdAt": "2025-09-15T13:47:54Z",
+              "updatedAt": "2025-09-15T13:47:54Z",
+              "userCount": 3
+            },
+            {
+              "id": "6debc62a-7fcf-4f9c-9a14-c85433975e54",
+              "name": "TestRole2_1757944074308",
+              "description": "Second test role",
+              "permissions": [],
+              "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+              "isSystemRole": false,
+              "createdAt": "2025-09-15T13:47:54Z",
+              "updatedAt": "2025-09-15T13:47:54Z",
+              "userCount": 0
+            },
+            {
+              "id": "85d6bddf-0093-4626-839d-127e07142d2e",
+              "name": "Client",
+              "description": "Business client of the accounting firm",
+              "permissions": [
+                "invoices:read",
+                "reports:financial"
+              ],
+              "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+              "isSystemRole": true,
+              "createdAt": "2025-09-15T13:47:54Z",
+              "updatedAt": "2025-09-15T13:47:54Z",
+              "userCount": 0
+            },
+            {
+              "id": "d386877f-852d-4a1e-ad77-6e2dede75407",
+              "name": "Employee",
+              "description": "Employee of the accounting firm",
+              "permissions": [
+                "invoices:send",
+                "transactions:create",
+                "clients:create",
+                "transactions:read",
+                "clients:read",
+                "transactions:update",
+                "accounting:dashboard",
+                "invoices:read",
+                "reports:financial",
+                "invoices:create",
+                "reports:export",
+                "invoices:update",
+                "clients:update"
+              ],
+              "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+              "isSystemRole": true,
+              "createdAt": "2025-09-15T13:47:54Z",
+              "updatedAt": "2025-09-15T13:47:54Z",
+              "userCount": 0
+            },
+            {
+              "id": "dd74e0b9-377d-4e09-958b-8fc21113ff59",
+              "name": "SuperAdmin",
+              "description": "Super administrator with full platform control",
+              "permissions": [
+                "invoices:send",
+                "transactions:create",
+                "roles:assign",
+                "roles:create",
+                "reports:tax",
+                "settings:update",
+                "clients:create",
+                "roles:update",
+                "tenants:read",
+                "transactions:delete",
+                "users:read",
+                "transactions:read",
+                "users:update",
+                "clients:read",
+                "clients:delete",
+                "transactions:update",
+                "accounting:dashboard",
+                "invoices:approve",
+                "invoices:read",
+                "reports:financial",
+                "roles:manage-permissions",
+                "tenants:billing",
+                "settings:read",
+                "reports:read",
+                "tenants:update",
+                "settings:integrations",
+                "users:reset-password",
+                "tenants:create",
+                "invoices:delete",
+                "invoices:create",
+                "users:activate",
+                "users:create",
+                "tenants:suspend",
+                "reports:export",
+                "users:delete",
+                "roles:delete",
+                "roles:read",
+                "tenants:delete",
+                "reports:export",
+                "invoices:update",
+                "clients:update",
+                "users:suspend",
+                "settings:audit_logs",
+                "reports:custom"
+              ],
+              "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+              "isSystemRole": true,
+              "createdAt": "2025-09-15T13:47:54Z",
+              "updatedAt": "2025-09-15T13:47:54Z",
+              "userCount": 2
+            },
+            {
+              "id": "ec540550-d7a1-4d7e-a039-e17a4d9b7143",
+              "name": "TestRole1_1757944074308",
+              "description": "First test role",
+              "permissions": [],
+              "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+              "isSystemRole": false,
+              "createdAt": "2025-09-15T13:47:54Z",
+              "updatedAt": "2025-09-15T13:47:54Z",
+              "userCount": 0
+            }
+          ]
+        },
+        "headers": {}
+      },
+      "correlationId": "7a15f740-ee08-4b6a-8b4f-6fdea21c2cc9",
+      "timestamp": {},
+      "duration": 125
+    }
+  ]
+}

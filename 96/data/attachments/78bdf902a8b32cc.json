@@ -1,0 +1,30 @@
+{
+  "endpoint": "/api/users",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "4dd7bc21-f7ea-40d1-ade0-2bad8983e6a9",
+      "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944080993-qiewpv9dz\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "user-1757944081439-fyqy4ph5b-1@test.com",
+      "firstName": "Test",
+      "lastName": "User1757944081439-fyqy4ph5b-1",
+      "phoneNumber": "+212600000000",
+      "role": "User",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "Invalid role specified",
+      "details": []
+    }
+  },
+  "correlationId": "4dd7bc21-f7ea-40d1-ade0-2bad8983e6a9",
+  "timestamp": {},
+  "duration": 186
+}

@@ -1,0 +1,74 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-15T13:46:45.397Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "2709eb58-b8d9-42ea-abd2-e2387f4d4cad",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944004722-xqidf9olp\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "2709eb58-b8d9-42ea-abd2-e2387f4d4cad",
+      "timestamp": {},
+      "duration": 389
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "02e5aeff-6945-4c6a-a7cf-66b39d5d2e22",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944005245-anvncxqpo\",\"testCase\":\"should get a single group by ID\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "GetTestGroup_1757944005251",
+          "description": "Test group for individual retrieval"
+        }
+      },
+      "response": {
+        "status": 500,
+        "error": {
+          "code": 13,
+          "message": "An error occurred while creating the group",
+          "details": []
+        }
+      },
+      "correlationId": "02e5aeff-6945-4c6a-a7cf-66b39d5d2e22",
+      "timestamp": {},
+      "duration": 117
+    }
+  ]
+}

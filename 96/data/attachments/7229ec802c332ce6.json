@@ -1,0 +1,8 @@
+{
+  "step": "Attempt to get non-existent group",
+  "operation": "Get Non-existent Group",
+  "endpoint": "/api/groups/00000000-0000-0000-0000-000000000000",
+  "entityId": "00000000-0000-0000-0000-000000000000",
+  "entityType": "group",
+  "error": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"not found\"\u001b[39m\nReceived string:    \u001b[31m\"expected request to fail with 404 but it succeeded\"\u001b[39m"
+}

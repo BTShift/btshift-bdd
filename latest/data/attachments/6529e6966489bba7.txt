@@ -1,0 +1,31 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/authentication/validate-token
+Correlation ID: 66452b93-39a6-48b2-ba2d-cc61ab0d9890
+Timestamp: 2025-09-15T13:47:12.576Z
+Duration: 108ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "66452b93-39a6-48b2-ba2d-cc61ab0d9890",
+  "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944032314-qkdd91sla\",\"testCase\":\"should validate a valid token\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Params ===
+{
+  "query": {
+    "token": "***MASKED***"
+  }
+}
+
+=== Query Parameters ===
+{
+  "token": "***MASKED***"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

@@ -1,0 +1,81 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-15T13:48:24.267Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "63d172f4-483d-4b6e-b977-969a8cc82895",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944103647-rp1d008sh\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "63d172f4-483d-4b6e-b977-969a8cc82895",
+      "timestamp": {},
+      "duration": 351
+    },
+    {
+      "endpoint": "/api/tenants",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "34d324d5-8cf8-4fb7-9588-1ab11aef0bea",
+          "X-Test-Context": "{\"featureFile\":\"duplicate-tenant.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944104050-3yc5iaw89\",\"testCase\":\"should prevent creating tenant with duplicate admin email\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Test Company 1757944104051-5j9bt42ao-1",
+          "tenantName": "tenant-1757944104051-5j9bt42ao-1",
+          "domain": "tenant-1757944104051-5j9bt42ao-1",
+          "plan": "Professional",
+          "adminEmail": "admin-1757944104051-5j9bt42ao-1@test.com",
+          "adminFirstName": "Test",
+          "adminLastName": "Admin",
+          "phoneNumber": "+212612345678",
+          "address": "123 Test Street, Casablanca",
+          "country": "Morocco"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "Tenant name is required",
+          "details": []
+        }
+      },
+      "correlationId": "34d324d5-8cf8-4fb7-9588-1ab11aef0bea",
+      "timestamp": {},
+      "duration": 191
+    }
+  ]
+}

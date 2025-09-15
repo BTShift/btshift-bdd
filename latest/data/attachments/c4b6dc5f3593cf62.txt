@@ -1,0 +1,37 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/tenants
+Correlation ID: 34d324d5-8cf8-4fb7-9588-1ab11aef0bea
+Timestamp: 2025-09-15T13:48:24.051Z
+Duration: 191ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "34d324d5-8cf8-4fb7-9588-1ab11aef0bea",
+  "X-Test-Context": "{\"featureFile\":\"duplicate-tenant.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944104050-3yc5iaw89\",\"testCase\":\"should prevent creating tenant with duplicate admin email\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "companyName": "Test Company 1757944104051-5j9bt42ao-1",
+  "tenantName": "tenant-1757944104051-5j9bt42ao-1",
+  "domain": "tenant-1757944104051-5j9bt42ao-1",
+  "plan": "Professional",
+  "adminEmail": "admin-1757944104051-5j9bt42ao-1@test.com",
+  "adminFirstName": "Test",
+  "adminLastName": "Admin",
+  "phoneNumber": "+212612345678",
+  "address": "123 Test Street, Casablanca",
+  "country": "Morocco"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "Tenant name is required",
+  "details": []
+}

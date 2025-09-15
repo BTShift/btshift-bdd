@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: DELETE
+Endpoint: /api/clients/6f6ef51e-0ec9-449c-ab03-754f8eb325ac
+Correlation ID: c8c70602-c596-43f7-b22c-d37cdc8b83b4
+Timestamp: 2025-09-15T13:46:58.525Z
+Duration: 123ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "c8c70602-c596-43f7-b22c-d37cdc8b83b4",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": true,
+  "message": "Client deleted successfully"
+}

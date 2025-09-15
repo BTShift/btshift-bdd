@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/clients/bc9f0b1f-03b9-4d72-88a1-4fcbf5389f54",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "a7cd12ca-d8eb-45a3-b522-00a493d1dd36",
+      "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757943993114-0g46rf9tc\",\"testCase\":\"should delete client with typed client\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "error": {
+      "code": 5,
+      "message": "Client with ID bc9f0b1f-03b9-4d72-88a1-4fcbf5389f54 not found",
+      "details": []
+    }
+  },
+  "correlationId": "a7cd12ca-d8eb-45a3-b522-00a493d1dd36",
+  "timestamp": {},
+  "duration": 129
+}

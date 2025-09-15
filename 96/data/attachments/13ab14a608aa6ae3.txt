@@ -1,0 +1,33 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/roles
+Correlation ID: ed3506ba-afc2-43d2-af24-0b9924db9c10
+Timestamp: 2025-09-15T13:47:52.724Z
+Duration: 216ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "ed3506ba-afc2-43d2-af24-0b9924db9c10",
+  "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944072723-f6kcuqtb0\",\"testCase\":\"should delete role\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "TestRole_1757944072724",
+  "description": "Role to be deleted",
+  "permissions": [
+    "read:users"
+  ]
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "roleId": "4fdc360f-09ec-4afa-b903-521697b60524"
+}

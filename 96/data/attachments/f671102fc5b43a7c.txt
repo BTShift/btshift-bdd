@@ -1,0 +1,26 @@
+🚀 [73ecb005] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757943993672-uokftntey for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757943993672-bdi0qemjl for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757943993672-70e8d8d9 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [73ecb005] Using TenantAdmin authentication
+🕐 [73ecb005] Token expires: 1:54:32 PM
+🏢 [73ecb005] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757943994077-92ebnvsuz for feature: group-edge-cases.api.feature
+📋 Test context set: group-edge-cases.api.feature :: api/features/client-management/groups/edge-cases/group-edge-cases.api.spec.ts (negative)
+🧪 Test case: should return 404 when getting a non-existent group
+🔄 Current step: Test Execution
+🎬 Auto-context: group-edge-cases.api.feature :: api/features/client-management/groups/edge-cases/group-edge-cases.api.spec.ts :: should return 404 when getting a non-existent group
+📍 Step: Attempt to get non-existent group
+🧪 Adding test context to GET /api/groups/00000000-0000-0000-0000-000000000000
+🧪 Test context JSON: {"featureFile":"group-edge-cases.api.feature","scenario":"api/features/client-management/groups/edge-cases/group-edge-cases.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757943994077-92ebnvsuz","testCase":"should return 404 when getting a non-existent group"}
+🔍 [ClientManagement] GET /api/groups/00000000-0000-0000-0000-000000000000 | X-Correlation-ID: 93ae35c0-015d-4e8b-b85e-a585aa0b04d4 | Auth: Yes
+✅ [ClientManagement] GET /api/groups/00000000-0000-0000-0000-000000000000 | X-Correlation-ID: 93ae35c0-015d-4e8b-b85e-a585aa0b04d4 | Success
+🏁 Clearing test context for session: test-1757943994077-92ebnvsuz
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 5a1e9d06-a7a0-4218-971f-b72d646526ff | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 5a1e9d06-a7a0-4218-971f-b72d646526ff | Success

@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/users/current",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "53ed135b-3062-4b23-814b-2b6cdee2a217",
+      "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944099663-zhkfuiytl\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "User not found",
+      "details": []
+    }
+  },
+  "correlationId": "53ed135b-3062-4b23-814b-2b6cdee2a217",
+  "timestamp": {},
+  "duration": 117
+}

@@ -1,0 +1,26 @@
+{
+  "endpoint": "/api/groups",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "7e9a9ec5-0053-4d78-b35f-6b87d7368028",
+      "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944008223-318pghym1\",\"testCase\":\"should add a client to a group\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "name": "TestGroup_1757944008230",
+      "description": "Group for client association"
+    }
+  },
+  "response": {
+    "status": 500,
+    "error": {
+      "code": 13,
+      "message": "An error occurred while creating the group",
+      "details": []
+    }
+  },
+  "correlationId": "7e9a9ec5-0053-4d78-b35f-6b87d7368028",
+  "timestamp": {},
+  "duration": 111
+}

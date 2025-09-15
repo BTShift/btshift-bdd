@@ -1,0 +1,38 @@
+🚀 [b421bff4] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757944053632-j2aqjqn8l for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757944053632-60wxok64s for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757944053632-ae3eeb83 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757944053633] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757944053633] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757944053633] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757944053632-60wxok64s"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 823fae79-29aa-4fd5-b1c7-ceec7d1cb848 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 823fae79-29aa-4fd5-b1c7-ceec7d1cb848 | Success
+✅ [tenantadmin-1757944053633] TenantAdmin authentication successful
+🕐 [tenantadmin-1757944053633] Token expires at: 2025-09-15T13:55:34.029Z
+🏢 [tenantadmin-1757944053633] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [b421bff4] Using TenantAdmin authentication
+🕐 [b421bff4] Token expires: 1:55:34 PM
+🏢 [b421bff4] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757944054059-ay1mb26vt for feature: permission-crud.api.feature
+📋 Test context set: permission-crud.api.feature :: api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts (positive)
+🧪 Test case: should create a new permission
+🔄 Current step: Test Execution
+🎬 Auto-context: permission-crud.api.feature :: api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts :: should create a new permission
+🧪 Adding test context to POST /api/permissions
+🧪 Test context JSON: {"featureFile":"permission-crud.api.feature","scenario":"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757944054059-ay1mb26vt","testCase":"should create a new permission"}
+🔍 [Identity] POST /api/permissions | X-Correlation-ID: 622ddb63-ffdc-4ffb-8c89-713e7d5de019 | Auth: Yes
+✅ [Identity] POST /api/permissions | X-Correlation-ID: 622ddb63-ffdc-4ffb-8c89-713e7d5de019 | Success
+🏁 Clearing test context for session: test-1757944054059-ay1mb26vt
+🔍 [Identity] DELETE /api/permissions/undefined | X-Correlation-ID: c7f0aae8-79b2-407a-a5de-9ee3398deec1 | Auth: Yes
+✅ [Identity] DELETE /api/permissions/undefined | X-Correlation-ID: c7f0aae8-79b2-407a-a5de-9ee3398deec1 | Success
+🧹 Cleaned up permission: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 5e712b20-24c7-43b6-b831-52a196ab3fd9 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 5e712b20-24c7-43b6-b831-52a196ab3fd9 | Success

@@ -1,0 +1,77 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-15T13:48:05.895Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "d8c43543-fcc9-4008-aa95-73cb3fa1c76c",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944085259-6cfj5spv6\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "d8c43543-fcc9-4008-aa95-73cb3fa1c76c",
+      "timestamp": {},
+      "duration": 367
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "5a67a3e1-400b-4527-bce0-e4173ec809ab",
+          "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944085676-7g2kv3zxl\",\"testCase\":\"should retrieve user by ID\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757944085677-cb8pf0exf-1@test.com",
+          "firstName": "Test",
+          "lastName": "User1757944085677-cb8pf0exf-1",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "Invalid role specified",
+          "details": []
+        }
+      },
+      "correlationId": "5a67a3e1-400b-4527-bce0-e4173ec809ab",
+      "timestamp": {},
+      "duration": 192
+    }
+  ]
+}

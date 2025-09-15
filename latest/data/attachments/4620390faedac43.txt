@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/invitations/validate
+Correlation ID: 6d5f7846-16b7-49e3-82ba-f2591a135bf4
+Timestamp: 2025-09-15T13:47:31.203Z
+Duration: 109ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "6d5f7846-16b7-49e3-82ba-f2591a135bf4",
+  "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944050933-qgqf21fex\",\"testCase\":\"should validate invitation token\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "invitationToken": "***MASKED***"
+}
+
+=== Response ===
+Status: 405
+
+Response Headers:
+{}

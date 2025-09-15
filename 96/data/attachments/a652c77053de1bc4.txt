@@ -1,0 +1,33 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/roles
+Correlation ID: 11009c28-fcec-490f-afaf-e0408eaec008
+Timestamp: 2025-09-15T13:47:51.043Z
+Duration: 207ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "11009c28-fcec-490f-afaf-e0408eaec008",
+  "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944071042-h8tbqey3m\",\"testCase\":\"should update role\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "TestRole_1757944071043",
+  "description": "Original description",
+  "permissions": [
+    "read:users"
+  ]
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "roleId": "69c30b45-73e5-47c3-b30e-da79c524eebe"
+}

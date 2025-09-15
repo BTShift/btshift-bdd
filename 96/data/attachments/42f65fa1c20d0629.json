@@ -1,0 +1,123 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-15T13:47:03.482Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "82f6c362-0817-47ce-9620-5180d24aa905",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944022614-8fhqhhwz6\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "82f6c362-0817-47ce-9620-5180d24aa905",
+      "timestamp": {},
+      "duration": 393
+    },
+    {
+      "endpoint": "/api/clients",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "819d80b9-5db4-4c4c-b0d4-be71eba70230",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944023136-2506bqa2b\",\"testCase\":\"should track assignment metadata\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "Client 1757944023143-4eex61miw-1",
+          "email": "client-1757944023143-4eex61miw-1@test.com",
+          "phone": "+212612345678",
+          "address": "456 Business Ave",
+          "taxId": "TAX1757944023143-4eex61miw-1",
+          "industry": "Technology",
+          "notes": "Auto-generated test client"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "clientId": "3437d38f-30df-4f81-bd34-0442fe4f5fc7",
+          "companyName": "",
+          "country": "",
+          "address": "456 Business Ave",
+          "iceNumber": "",
+          "rcNumber": "",
+          "vatNumber": "",
+          "cnssNumber": "",
+          "industry": "Technology",
+          "adminContactPerson": "",
+          "billingContactPerson": "",
+          "status": "Active",
+          "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+          "fiscalYearEnd": "",
+          "assignedTeamId": "",
+          "createdAt": "2025-09-15T13:47:03.1999039Z",
+          "updatedAt": "2025-09-15T13:47:03.1999041Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "819d80b9-5db4-4c4c-b0d4-be71eba70230",
+      "timestamp": {},
+      "duration": 131
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "7ed1daf8-8633-4888-bbc6-574367a7904d",
+          "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944023136-2506bqa2b\",\"testCase\":\"should track assignment metadata\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "user-1757944023276-jtnci07rp-2@test.com",
+          "firstName": "Test",
+          "lastName": "User1757944023276-jtnci07rp-2",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "Invalid role specified",
+          "details": []
+        }
+      },
+      "correlationId": "7ed1daf8-8633-4888-bbc6-574367a7904d",
+      "timestamp": {},
+      "duration": 182
+    }
+  ]
+}

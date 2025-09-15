@@ -1,0 +1,37 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/tenants
+Correlation ID: 2401447d-5cbe-47c5-b8cf-81218da94282
+Timestamp: 2025-09-15T13:48:38.753Z
+Duration: 180ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "2401447d-5cbe-47c5-b8cf-81218da94282",
+  "X-Test-Context": "{\"featureFile\":\"typed-tenant-creation.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944118752-p7forff92\",\"testCase\":\"should create tenant with typed client from @btshift/tenant-management-types\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "companyName": "BDD Test Company 1757944118753",
+  "tenantName": "typed-test-1757944118753-czbans2nh",
+  "domain": "typed-test-1757944118753-czbans2nh",
+  "plan": "Professional",
+  "adminEmail": "admin-1757944118753@typed-test-1757944118753-czbans2nh.test",
+  "adminFirstName": "BDD",
+  "adminLastName": "Admin",
+  "phoneNumber": "+212612345678",
+  "address": "123 Test Street, Casablanca",
+  "country": "Morocco"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "Tenant name is required",
+  "details": []
+}

@@ -1,0 +1,33 @@
+=== API Call Details ===
+Method: PUT
+Endpoint: /api/roles/69c30b45-73e5-47c3-b30e-da79c524eebe
+Correlation ID: 4570e319-95df-4cbd-bdb9-e831c902bf1a
+Timestamp: 2025-09-15T13:47:51.252Z
+Duration: 136ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "4570e319-95df-4cbd-bdb9-e831c902bf1a",
+  "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944071042-h8tbqey3m\",\"testCase\":\"should update role\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "description": "Updated description",
+  "permissions": [
+    "read:users",
+    "write:users",
+    "delete:users"
+  ]
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "An error occurred while updating the role",
+  "details": []
+}

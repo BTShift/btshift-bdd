@@ -1,0 +1,49 @@
+🚀 [15fce6df] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757944073882-h9qoljd2q for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757944073882-1pqf6wbda for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757944073882-5d7fff2d for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757944073883] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757944073883] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757944073883] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757944073882-1pqf6wbda"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: fcab44e9-d913-4982-af67-d7f8084501bb | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: fcab44e9-d913-4982-af67-d7f8084501bb | Success
+✅ [tenantadmin-1757944073883] TenantAdmin authentication successful
+🕐 [tenantadmin-1757944073883] Token expires at: 2025-09-15T13:55:54.277Z
+🏢 [tenantadmin-1757944073883] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [15fce6df] Using TenantAdmin authentication
+🕐 [15fce6df] Token expires: 1:55:54 PM
+🏢 [15fce6df] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757944074307-yaajuosag for feature: role-crud.api.feature
+📋 Test context set: role-crud.api.feature :: api/features/identity/role-management/happy-path/role-crud.api.spec.ts (positive)
+🧪 Test case: should list all roles
+🔄 Current step: Test Execution
+🎬 Auto-context: role-crud.api.feature :: api/features/identity/role-management/happy-path/role-crud.api.spec.ts :: should list all roles
+🧪 Adding test context to POST /api/roles
+🧪 Test context JSON: {"featureFile":"role-crud.api.feature","scenario":"api/features/identity/role-management/happy-path/role-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757944074307-yaajuosag","testCase":"should list all roles"}
+🔍 [Identity] POST /api/roles | X-Correlation-ID: 94a85d86-ce1a-4eca-bfc7-f0153062ee56 | Auth: Yes
+✅ [Identity] POST /api/roles | X-Correlation-ID: 94a85d86-ce1a-4eca-bfc7-f0153062ee56 | Success
+🧪 Adding test context to POST /api/roles
+🧪 Test context JSON: {"featureFile":"role-crud.api.feature","scenario":"api/features/identity/role-management/happy-path/role-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757944074307-yaajuosag","testCase":"should list all roles"}
+🔍 [Identity] POST /api/roles | X-Correlation-ID: cc0f5e05-c737-4540-b450-8e13410c8937 | Auth: Yes
+✅ [Identity] POST /api/roles | X-Correlation-ID: cc0f5e05-c737-4540-b450-8e13410c8937 | Success
+🧪 Adding test context to GET /api/roles
+🧪 Test context JSON: {"featureFile":"role-crud.api.feature","scenario":"api/features/identity/role-management/happy-path/role-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757944074307-yaajuosag","testCase":"should list all roles"}
+🔍 [Identity] GET /api/roles | X-Correlation-ID: 7a15f740-ee08-4b6a-8b4f-6fdea21c2cc9 | Auth: Yes
+✅ [Identity] GET /api/roles | X-Correlation-ID: 7a15f740-ee08-4b6a-8b4f-6fdea21c2cc9 | Success
+🏁 Clearing test context for session: test-1757944074307-yaajuosag
+🔍 [Identity] DELETE /api/roles/ec540550-d7a1-4d7e-a039-e17a4d9b7143 | X-Correlation-ID: 90851058-15af-4e2c-bd2f-8f4ea2b7b981 | Auth: Yes
+✅ [Identity] DELETE /api/roles/ec540550-d7a1-4d7e-a039-e17a4d9b7143 | X-Correlation-ID: 90851058-15af-4e2c-bd2f-8f4ea2b7b981 | Success
+🧹 Cleaned up role: ec540550-d7a1-4d7e-a039-e17a4d9b7143
+🔍 [Identity] DELETE /api/roles/6debc62a-7fcf-4f9c-9a14-c85433975e54 | X-Correlation-ID: f9fc39f8-6f35-4bf3-8da5-f575fc7894c2 | Auth: Yes
+✅ [Identity] DELETE /api/roles/6debc62a-7fcf-4f9c-9a14-c85433975e54 | X-Correlation-ID: f9fc39f8-6f35-4bf3-8da5-f575fc7894c2 | Success
+🧹 Cleaned up role: 6debc62a-7fcf-4f9c-9a14-c85433975e54
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: c3ca6075-04ab-43b2-88d1-647787ffaaea | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: c3ca6075-04ab-43b2-88d1-647787ffaaea | Success

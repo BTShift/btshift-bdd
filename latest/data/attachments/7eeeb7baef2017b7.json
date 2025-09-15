@@ -1,0 +1,27 @@
+{
+  "endpoint": "/api/authentication/change-password",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "16d5c29f-33ef-4c46-97f1-c8ae87457a9b",
+      "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944041082-ckzjgy4d3\",\"testCase\":\"should handle change password with typed ctx.client\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "currentPassword": "***MASKED***",
+      "newPassword": "***MASKED***",
+      "confirmPassword": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "An error occurred while changing password",
+      "details": []
+    }
+  },
+  "correlationId": "16d5c29f-33ef-4c46-97f1-c8ae87457a9b",
+  "timestamp": {},
+  "duration": 126
+}

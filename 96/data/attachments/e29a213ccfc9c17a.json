@@ -1,0 +1,220 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 4,
+  "timestamp": "2025-09-15T13:47:31.335Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "dd73e3e0-4da5-4e92-95d3-cf9b2af2fa40",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944050251-6w1fdmiwb\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "dd73e3e0-4da5-4e92-95d3-cf9b2af2fa40",
+      "timestamp": {},
+      "duration": 359
+    },
+    {
+      "endpoint": "/api/invitations",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "936d7978-8a05-4bfa-814c-2cd0429fae0a",
+          "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944050660-2x14xf6bh\",\"testCase\":\"should list pending invitations\"}",
+          "Authorization": "***MASKED***"
+        },
+        "params": {
+          "query": {
+            "status": "Pending",
+            "pageNumber": 1,
+            "pageSize": 10
+          }
+        },
+        "query": {
+          "status": "Pending",
+          "pageNumber": 1,
+          "pageSize": 10
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "invitations": [
+            {
+              "id": "0065b17b-e710-4670-9a85-da50f4be6fca",
+              "email": "invitee1757944049005@example.com",
+              "firstName": "Charlie",
+              "lastName": "Brown",
+              "roleId": "",
+              "roleName": "",
+              "invitedById": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+              "invitedByName": "Test TenantAdmin",
+              "createdAt": "2025-09-15T13:47:29.2574250Z",
+              "expiresAt": "2025-09-22T13:47:29.2574260Z",
+              "acceptedAt": "",
+              "status": "pending"
+            },
+            {
+              "id": "70c513c6-5f65-4912-a727-d479b20b6f40",
+              "email": "invitee1757944047228@example.com",
+              "firstName": "Bob",
+              "lastName": "Wilson",
+              "roleId": "",
+              "roleName": "",
+              "invitedById": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+              "invitedByName": "Test TenantAdmin",
+              "createdAt": "2025-09-15T13:47:27.4925480Z",
+              "expiresAt": "2025-09-22T13:47:27.4925490Z",
+              "acceptedAt": "",
+              "status": "pending"
+            },
+            {
+              "id": "ba5f5def-e249-43a2-9ebf-132fe78371e1",
+              "email": "invitee1757944045463@example.com",
+              "firstName": "Alice",
+              "lastName": "Johnson",
+              "roleId": "",
+              "roleName": "",
+              "invitedById": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+              "invitedByName": "Test TenantAdmin",
+              "createdAt": "2025-09-15T13:47:25.7194690Z",
+              "expiresAt": "2025-09-22T13:47:25.7194690Z",
+              "acceptedAt": "",
+              "status": "pending"
+            },
+            {
+              "id": "84bd61f2-0ded-498c-a08e-4f8682358e1a",
+              "email": "invitee1757944043700@example.com",
+              "firstName": "Jane",
+              "lastName": "Smith",
+              "roleId": "",
+              "roleName": "",
+              "invitedById": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+              "invitedByName": "Test TenantAdmin",
+              "createdAt": "2025-09-15T13:47:23.9578050Z",
+              "expiresAt": "2025-09-22T13:47:23.9578050Z",
+              "acceptedAt": "",
+              "status": "pending"
+            },
+            {
+              "id": "cedc1439-fa8b-4514-a727-967ece5a5258",
+              "email": "invitee1757944042067@example.com",
+              "firstName": "John",
+              "lastName": "Doe",
+              "roleId": "",
+              "roleName": "",
+              "invitedById": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+              "invitedByName": "Test TenantAdmin",
+              "createdAt": "2025-09-15T13:47:22.2773410Z",
+              "expiresAt": "2025-09-22T13:47:22.2773410Z",
+              "acceptedAt": "",
+              "status": "pending"
+            },
+            {
+              "id": "ea098b42-aec3-48de-b5f2-952ea5883d6a",
+              "email": "anass.yatim+op1@gmail.com",
+              "firstName": "Anass",
+              "lastName": "YATIM",
+              "roleId": "",
+              "roleName": "",
+              "invitedById": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+              "invitedByName": "Super Administrator",
+              "createdAt": "2025-09-15T13:46:26.3338240Z",
+              "expiresAt": "2025-10-15T13:46:26.3338240Z",
+              "acceptedAt": "",
+              "status": "pending"
+            }
+          ],
+          "totalCount": 6,
+          "page": 1,
+          "pageSize": 10
+        },
+        "headers": {}
+      },
+      "correlationId": "936d7978-8a05-4bfa-814c-2cd0429fae0a",
+      "timestamp": {},
+      "duration": 245
+    },
+    {
+      "endpoint": "/api/invitations",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "35e443d4-3701-42f2-95e7-511f9c520976",
+          "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944050933-qgqf21fex\",\"testCase\":\"should validate invitation token\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "invitee1757944050933@example.com",
+          "firstName": "David",
+          "lastName": "Lee",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "invitationId": "43a4dd2d-de5e-46a5-ad54-33aa21a80c92",
+          "invitationToken": "***MASKED***",
+          "email": "invitee1757944050933@example.com",
+          "expiresAt": "2025-09-22T13:47:31.1258264Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "35e443d4-3701-42f2-95e7-511f9c520976",
+      "timestamp": {},
+      "duration": 267
+    },
+    {
+      "endpoint": "/api/invitations/validate",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "6d5f7846-16b7-49e3-82ba-f2591a135bf4",
+          "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944050933-qgqf21fex\",\"testCase\":\"should validate invitation token\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "invitationToken": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 405,
+        "headers": {}
+      },
+      "correlationId": "6d5f7846-16b7-49e3-82ba-f2591a135bf4",
+      "timestamp": {},
+      "duration": 109
+    }
+  ]
+}

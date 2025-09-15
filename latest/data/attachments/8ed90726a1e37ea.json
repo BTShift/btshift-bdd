@@ -1,0 +1,26 @@
+{
+  "endpoint": "/api/authentication/login",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "539d8047-0144-4bac-9bbf-773ed2486685",
+      "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944041478-4q8s8f0mw\",\"testCase\":\"should validate typed error responses\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "invalid@example.com",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 401,
+    "error": {
+      "code": 16,
+      "message": "Invalid email or password",
+      "details": []
+    }
+  },
+  "correlationId": "539d8047-0144-4bac-9bbf-773ed2486685",
+  "timestamp": {},
+  "duration": 126
+}

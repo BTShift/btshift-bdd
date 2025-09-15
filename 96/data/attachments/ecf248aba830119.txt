@@ -1,0 +1,128 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/invitations
+Correlation ID: 936d7978-8a05-4bfa-814c-2cd0429fae0a
+Timestamp: 2025-09-15T13:47:30.660Z
+Duration: 245ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "936d7978-8a05-4bfa-814c-2cd0429fae0a",
+  "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944050660-2x14xf6bh\",\"testCase\":\"should list pending invitations\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Params ===
+{
+  "query": {
+    "status": "Pending",
+    "pageNumber": 1,
+    "pageSize": 10
+  }
+}
+
+=== Query Parameters ===
+{
+  "status": "Pending",
+  "pageNumber": 1,
+  "pageSize": 10
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "invitations": [
+    {
+      "id": "0065b17b-e710-4670-9a85-da50f4be6fca",
+      "email": "invitee1757944049005@example.com",
+      "firstName": "Charlie",
+      "lastName": "Brown",
+      "roleId": "",
+      "roleName": "",
+      "invitedById": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+      "invitedByName": "Test TenantAdmin",
+      "createdAt": "2025-09-15T13:47:29.2574250Z",
+      "expiresAt": "2025-09-22T13:47:29.2574260Z",
+      "acceptedAt": "",
+      "status": "pending"
+    },
+    {
+      "id": "70c513c6-5f65-4912-a727-d479b20b6f40",
+      "email": "invitee1757944047228@example.com",
+      "firstName": "Bob",
+      "lastName": "Wilson",
+      "roleId": "",
+      "roleName": "",
+      "invitedById": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+      "invitedByName": "Test TenantAdmin",
+      "createdAt": "2025-09-15T13:47:27.4925480Z",
+      "expiresAt": "2025-09-22T13:47:27.4925490Z",
+      "acceptedAt": "",
+      "status": "pending"
+    },
+    {
+      "id": "ba5f5def-e249-43a2-9ebf-132fe78371e1",
+      "email": "invitee1757944045463@example.com",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "roleId": "",
+      "roleName": "",
+      "invitedById": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+      "invitedByName": "Test TenantAdmin",
+      "createdAt": "2025-09-15T13:47:25.7194690Z",
+      "expiresAt": "2025-09-22T13:47:25.7194690Z",
+      "acceptedAt": "",
+      "status": "pending"
+    },
+    {
+      "id": "84bd61f2-0ded-498c-a08e-4f8682358e1a",
+      "email": "invitee1757944043700@example.com",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "roleId": "",
+      "roleName": "",
+      "invitedById": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+      "invitedByName": "Test TenantAdmin",
+      "createdAt": "2025-09-15T13:47:23.9578050Z",
+      "expiresAt": "2025-09-22T13:47:23.9578050Z",
+      "acceptedAt": "",
+      "status": "pending"
+    },
+    {
+      "id": "cedc1439-fa8b-4514-a727-967ece5a5258",
+      "email": "invitee1757944042067@example.com",
+      "firstName": "John",
+      "lastName": "Doe",
+      "roleId": "",
+      "roleName": "",
+      "invitedById": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+      "invitedByName": "Test TenantAdmin",
+      "createdAt": "2025-09-15T13:47:22.2773410Z",
+      "expiresAt": "2025-09-22T13:47:22.2773410Z",
+      "acceptedAt": "",
+      "status": "pending"
+    },
+    {
+      "id": "ea098b42-aec3-48de-b5f2-952ea5883d6a",
+      "email": "anass.yatim+op1@gmail.com",
+      "firstName": "Anass",
+      "lastName": "YATIM",
+      "roleId": "",
+      "roleName": "",
+      "invitedById": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+      "invitedByName": "Super Administrator",
+      "createdAt": "2025-09-15T13:46:26.3338240Z",
+      "expiresAt": "2025-10-15T13:46:26.3338240Z",
+      "acceptedAt": "",
+      "status": "pending"
+    }
+  ],
+  "totalCount": 6,
+  "page": 1,
+  "pageSize": 10
+}

@@ -1,0 +1,35 @@
+🎯 Auto-selected context: TenantAdmin (Default to tenant context for test isolation)
+🚀 [9150d09f] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757944097601-rhong530h for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757944097602-dw80d1exz for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757944097602-37e76aae for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757944097602] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757944097602] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757944097602] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757944097602-dw80d1exz"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 094b630f-c19e-4cf2-b628-bc8f48eef8b0 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 094b630f-c19e-4cf2-b628-bc8f48eef8b0 | Success
+✅ [tenantadmin-1757944097602] TenantAdmin authentication successful
+🕐 [tenantadmin-1757944097602] Token expires at: 2025-09-15T13:56:18.036Z
+🏢 [tenantadmin-1757944097602] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [9150d09f] Using TenantAdmin authentication
+🕐 [9150d09f] Token expires: 1:56:18 PM
+🏢 [9150d09f] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757944098064-90jh79agj for feature: multi-user-example.feature
+📋 Test context set: multi-user-example.feature :: api/features/multi-user-example.spec.ts (positive)
+🧪 Test case: should automatically use appropriate context
+🔄 Current step: Test Execution
+🎬 Auto-context: multi-user-example.feature :: api/features/multi-user-example.spec.ts :: should automatically use appropriate context
+🧪 Adding test context to GET /api/users/current
+🧪 Test context JSON: {"featureFile":"multi-user-example.feature","scenario":"api/features/multi-user-example.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757944098064-90jh79agj","testCase":"should automatically use appropriate context"}
+🔍 [Identity] GET /api/users/current | X-Correlation-ID: 960f95d1-17b3-40f6-8010-390df862cc7d | Auth: Yes
+🏁 Clearing test context for session: test-1757944098064-90jh79agj
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: c42bf241-4178-434b-b5e8-72231e0f5ec1 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: c42bf241-4178-434b-b5e8-72231e0f5ec1 | Success

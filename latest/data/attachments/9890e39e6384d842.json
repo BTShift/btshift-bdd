@@ -1,0 +1,81 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-15T13:48:25.720Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "4cdd369e-9e17-43c4-80b8-2b4ea4a23fa0",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944105061-tnqb5int\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "4cdd369e-9e17-43c4-80b8-2b4ea4a23fa0",
+      "timestamp": {},
+      "duration": 398
+    },
+    {
+      "endpoint": "/api/tenants",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "92056b6a-12cb-4197-8466-d235b312a54e",
+          "X-Test-Context": "{\"featureFile\":\"duplicate-tenant.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944105510-80jxd9tda\",\"testCase\":\"should verify tenant exists check returns true for existing tenant\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Test Company 1757944105511-08kxh4y4k-1",
+          "tenantName": "tenant-1757944105511-08kxh4y4k-1",
+          "domain": "tenant-1757944105511-08kxh4y4k-1",
+          "plan": "Professional",
+          "adminEmail": "admin-1757944105511-08kxh4y4k-1@test.com",
+          "adminFirstName": "Test",
+          "adminLastName": "Admin",
+          "phoneNumber": "+212612345678",
+          "address": "123 Test Street, Casablanca",
+          "country": "Morocco"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "Tenant name is required",
+          "details": []
+        }
+      },
+      "correlationId": "92056b6a-12cb-4197-8466-d235b312a54e",
+      "timestamp": {},
+      "duration": 185
+    }
+  ]
+}

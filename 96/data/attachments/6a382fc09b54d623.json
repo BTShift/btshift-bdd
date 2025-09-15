@@ -1,0 +1,24 @@
+{
+  "endpoint": "/api/permissions",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "17e61de1-888e-4541-afdb-0483c1c4f8dd",
+      "X-Test-Context": "{\"featureFile\":\"permission-crud.api.feature\",\"scenario\":\"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944058841-k4tc2pj1n\",\"testCase\":\"should delete permission\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "name": "test:permission:1757944058842",
+      "description": "Permission to be deleted",
+      "resource": "test-resource",
+      "action": "delete"
+    }
+  },
+  "response": {
+    "status": 405,
+    "headers": {}
+  },
+  "correlationId": "17e61de1-888e-4541-afdb-0483c1c4f8dd",
+  "timestamp": {},
+  "duration": 199
+}

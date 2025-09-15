@@ -1,0 +1,30 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/change-password
+Correlation ID: 16d5c29f-33ef-4c46-97f1-c8ae87457a9b
+Timestamp: 2025-09-15T13:47:21.327Z
+Duration: 126ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "16d5c29f-33ef-4c46-97f1-c8ae87457a9b",
+  "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944041082-ckzjgy4d3\",\"testCase\":\"should handle change password with typed ctx.client\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "currentPassword": "***MASKED***",
+  "newPassword": "***MASKED***",
+  "confirmPassword": "***MASKED***"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "An error occurred while changing password",
+  "details": []
+}

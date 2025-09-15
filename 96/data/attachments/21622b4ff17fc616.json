@@ -1,0 +1,69 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-15T13:47:19.679Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "3fddfa39-aa57-47bc-8e1f-0e0940566bc3",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944039096-os85vh04j\",\"testCase\":\"should get current user information with typed ctx.client\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "3fddfa39-aa57-47bc-8e1f-0e0940566bc3",
+      "timestamp": {},
+      "duration": 361
+    },
+    {
+      "endpoint": "/api/authentication/me",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "53a191bc-26bc-40f0-87fc-60f0d44946fd",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944039096-os85vh04j\",\"testCase\":\"should get current user information with typed ctx.client\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "An error occurred while retrieving user information",
+          "details": []
+        }
+      },
+      "correlationId": "53a191bc-26bc-40f0-87fc-60f0d44946fd",
+      "timestamp": {},
+      "duration": 192
+    }
+  ]
+}

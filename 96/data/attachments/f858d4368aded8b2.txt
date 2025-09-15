@@ -1,0 +1,23 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/authentication/me
+Correlation ID: 53a191bc-26bc-40f0-87fc-60f0d44946fd
+Timestamp: 2025-09-15T13:47:19.466Z
+Duration: 192ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "53a191bc-26bc-40f0-87fc-60f0d44946fd",
+  "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944039096-os85vh04j\",\"testCase\":\"should get current user information with typed ctx.client\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "An error occurred while retrieving user information",
+  "details": []
+}

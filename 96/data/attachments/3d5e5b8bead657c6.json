@@ -1,0 +1,18 @@
+{
+  "endpoint": "/api/platform/settings",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "4dcb361a-f2bf-4b76-9c96-adccfe0139ac",
+      "X-Test-Context": "{\"featureFile\":\"multi-user-example.feature\",\"scenario\":\"api/features/multi-user-example.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944095693-n7dx3km4t\",\"testCase\":\"should access platform settings (SuperAdmin only)\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "4dcb361a-f2bf-4b76-9c96-adccfe0139ac",
+  "timestamp": {},
+  "duration": 108
+}

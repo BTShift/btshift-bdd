@@ -1,0 +1,22 @@
+{
+  "endpoint": "/api/authentication/me",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "fb03fc47-f230-49dd-96d9-22f5926e2475",
+      "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944034592-5o9exio6r\",\"testCase\":\"should maintain authentication state across multiple requests\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "An error occurred while retrieving user information",
+      "details": []
+    }
+  },
+  "correlationId": "fb03fc47-f230-49dd-96d9-22f5926e2475",
+  "timestamp": {},
+  "duration": 125
+}

@@ -1,0 +1,23 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/users/current
+Correlation ID: 53ed135b-3062-4b23-814b-2b6cdee2a217
+Timestamp: 2025-09-15T13:48:20.004Z
+Duration: 117ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "53ed135b-3062-4b23-814b-2b6cdee2a217",
+  "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757944099663-zhkfuiytl\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "User not found",
+  "details": []
+}
