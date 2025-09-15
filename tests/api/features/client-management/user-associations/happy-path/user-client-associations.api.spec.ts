@@ -1,4 +1,4 @@
-import { describe, beforeAll, afterAll, expect } from '../../../../api/support/test-imports';
+import { describe, beforeAll, afterAll, expect } from '../../../../support/test-imports';
 import { test } from '../../../../../support/test-context-fixture';
 import { allure } from 'allure-playwright';
 import { setupApiTestWithContext, teardownApiTest, TestContext } from '../../../../support/helpers/api-test-base';
