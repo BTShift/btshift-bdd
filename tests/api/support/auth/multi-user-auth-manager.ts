@@ -164,14 +164,14 @@ export class MultiUserAuthManager {
     switch (context) {
       case 'SuperAdmin':
         return {
-          email: process.env.SUPER_ADMIN_EMAIL || 'superadmin@shift.ma',
-          password: process.env.SUPER_ADMIN_PASSWORD || 'SuperAdmin@123!'
+          email: process.env['SUPER_ADMIN_EMAIL'] || 'superadmin@shift.ma',
+          password: process.env['SUPER_ADMIN_PASSWORD'] || 'SuperAdmin@123!'
         };
       
       case 'TenantAdmin':
         return {
-          email: process.env.TENANT_ADMIN_EMAIL || 'test.tenantadmin@btshift.ma',
-          password: process.env.TENANT_ADMIN_PASSWORD || 'SuperAdmin@123!'
+          email: process.env['TENANT_ADMIN_EMAIL'] || 'test.tenantadmin@btshift.ma',
+          password: process.env['TENANT_ADMIN_PASSWORD'] || 'SuperAdmin@123!'
         };
       
       default:

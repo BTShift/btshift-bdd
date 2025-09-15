@@ -2,7 +2,7 @@ import { Given, When, Then, Before, After } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { AuthorizationTestContext } from '../../lib/helpers/authorization-test-context';
 import { TestDataFactory } from '../../lib/helpers/test-data-factory';
-import { UserType, TestUser, TestValidationError, ApiErrorResponse, TestApiResponse } from '../../lib/types/test-types';
+import { UserType, TestUser, TestValidationError, ApiErrorResponse, TestApiResponse, TestTenant, TestClient } from '../../lib/types/test-types';
 
 let testContext: AuthorizationTestContext;
 
@@ -110,7 +110,7 @@ Given('I select operational context client {string}', async function(clientId: s
   try {
     const currentContext = testContext.getOperationalContext();
     testContext.setOperationalContext({
-      tenantId: currentContext.tenantId,
+      tenantId: currentContext.tenantId || '',
       clientId
     });
   } catch (error) {
@@ -123,7 +123,11 @@ When('I request tenant list', async function() {
   const apiClient = testContext.getApiClient();
 
   try {
-    const response: TestApiResponse = await apiClient.getTenants();
+    const tenants = await apiClient.getTenants();
+    const response: TestApiResponse<TestTenant[]> = {
+      success: true,
+      data: tenants
+    };
     testContext.setLastApiResponse(response);
   } catch (error) {
     testContext.setLastApiError(error as ApiErrorResponse);
@@ -139,7 +143,11 @@ When('I request tenant information', async function() {
   }
 
   try {
-    const response: TestApiResponse = await apiClient.getTenantInfo(userContext.tenantId);
+    const tenant = await apiClient.getTenantInfo(userContext.tenantId);
+    const response: TestApiResponse<TestTenant> = {
+      success: true,
+      data: tenant
+    };
     testContext.setLastApiResponse(response);
   } catch (error) {
     testContext.setLastApiError(error as ApiErrorResponse);
@@ -155,7 +163,11 @@ When('I request client information', async function() {
   }
 
   try {
-    const response: TestApiResponse = await apiClient.getClientInfo(userContext.clientId);
+    const client = await apiClient.getClientInfo(userContext.clientId);
+    const response: TestApiResponse<TestClient> = {
+      success: true,
+      data: client
+    };
     testContext.setLastApiResponse(response);
   } catch (error) {
     testContext.setLastApiError(error as ApiErrorResponse);
@@ -164,13 +176,22 @@ When('I request client information', async function() {
 
 When('I attempt to create a new tenant', async function() {
   const apiClient = testContext.getApiClient();
-  const testTenant = TestDataFactory.createTenant({
-    name: 'unauthorized-tenant-attempt'
-  });
+
+  // Create proper TenantCreateRequest
+  const tenantRequest = {
+    name: 'unauthorized-tenant-attempt',
+    companyName: 'Unauthorized Tenant Company',
+    domain: 'unauthorized-tenant',
+    adminEmail: 'admin@unauthorized.com'
+  };
 
   try {
-    const response: TestApiResponse = await apiClient.createTenant(testTenant);
-    testContext.setLastApiResponse(response);
+    const response = await apiClient.createTenant(tenantRequest);
+    const wrappedResponse: TestApiResponse = {
+      success: response.success,
+      data: response.data
+    };
+    testContext.setLastApiResponse(wrappedResponse);
   } catch (error) {
     testContext.setLastApiError(error as ApiErrorResponse);
   }
@@ -180,7 +201,11 @@ When('I attempt to access client {string} data', async function(clientId: string
   const apiClient = testContext.getApiClient();
 
   try {
-    const response: TestApiResponse = await apiClient.getClientInfo(clientId);
+    const client = await apiClient.getClientInfo(clientId);
+    const response: TestApiResponse<TestClient> = {
+      success: true,
+      data: client
+    };
     testContext.setLastApiResponse(response);
   } catch (error) {
     testContext.setLastApiError(error as ApiErrorResponse);
@@ -191,7 +216,11 @@ When('I attempt to access tenant {string} data', async function(tenantId: string
   const apiClient = testContext.getApiClient();
 
   try {
-    const response: TestApiResponse = await apiClient.getTenantInfo(tenantId);
+    const tenant = await apiClient.getTenantInfo(tenantId);
+    const response: TestApiResponse<TestTenant> = {
+      success: true,
+      data: tenant
+    };
     testContext.setLastApiResponse(response);
   } catch (error) {
     testContext.setLastApiError(error as ApiErrorResponse);
@@ -206,11 +235,20 @@ When('I create a new client for the selected tenant', async function() {
     throw new TestValidationError('No operational tenant context set');
   }
 
-  const testClient = TestDataFactory.createClient(operationalContext.tenantId);
+  // Create proper ClientCreateRequest
+  const clientRequest = {
+    companyName: 'Test Client Company',
+    taxId: `TAX${Date.now()}`,
+    email: `client${Date.now()}@test.com`
+  };
 
   try {
-    const response: TestApiResponse = await apiClient.createClient(testClient);
-    testContext.setLastApiResponse(response);
+    const response = await apiClient.createClient(clientRequest);
+    const wrappedResponse: TestApiResponse = {
+      success: response.success,
+      data: response.data
+    };
+    testContext.setLastApiResponse(wrappedResponse);
   } catch (error) {
     testContext.setLastApiError(error as ApiErrorResponse);
   }
@@ -225,9 +263,13 @@ When('I update client information', async function() {
   }
 
   try {
-    const response: TestApiResponse = await apiClient.updateClient(userContext.clientId, {
+    const updatedClient = await apiClient.updateClient(userContext.clientId, {
       companyName: 'Updated Client Name'
     });
+    const response: TestApiResponse = {
+      success: true,
+      data: updatedClient
+    };
     testContext.setLastApiResponse(response);
   } catch (error) {
     testContext.setLastApiError(error as ApiErrorResponse);
@@ -240,7 +282,11 @@ When('I perform operations without selecting operational context', async functio
 
   const apiClient = testContext.getApiClient();
   try {
-    const response: TestApiResponse = await apiClient.getTenants();
+    const tenants = await apiClient.getTenants();
+    const response: TestApiResponse<TestTenant[]> = {
+      success: true,
+      data: tenants
+    };
     testContext.setLastApiResponse(response);
   } catch (error) {
     testContext.setLastApiError(error as ApiErrorResponse);
@@ -249,26 +295,26 @@ When('I perform operations without selecting operational context', async functio
 
 When('I perform any tenant operation', async function() {
   // Delegate to existing tenant request
-  await this.step('When I request tenant information');
+  await this['step']('When I request tenant information');
 });
 
 When('I perform any client operation', async function() {
   // Delegate to existing client request
-  await this.step('When I request client information');
+  await this['step']('When I request client information');
 });
 
 // Enhanced validation steps
 Then('I should see all tenants', async function() {
   const response = testContext.getLastApiResponse();
   expect(response).toBeTruthy();
-  expect(response?.tenants).toBeDefined();
-  expect(Array.isArray(response?.tenants)).toBe(true);
+  expect(response?.data).toBeDefined();
+  expect(Array.isArray(response?.data)).toBe(true);
 });
 
 Then('each request should include proper authorization headers', async function() {
   const apiClient = testContext.getApiClient();
   const lastHeaders = apiClient.getLastRequestHeaders();
-  expect(lastHeaders.Authorization).toMatch(/^Bearer /);
+  expect(lastHeaders['Authorization']).toMatch(/^Bearer /);
 });
 
 Then('I should only see {string} data', async function(scope: string) {
@@ -278,23 +324,27 @@ Then('I should only see {string} data', async function(scope: string) {
   expect(response).toBeTruthy();
 
   if (userContext?.userType === 'TenantAdmin') {
-    expect(response?.tenantId || response?.data?.tenantId).toBe(scope);
+    const data = response?.data as any;
+    expect(response?.tenantId || data?.tenantId).toBe(scope);
   } else if (userContext?.userType === 'ClientUser') {
-    expect(response?.clientId || response?.data?.clientId).toBe(scope);
+    const data = response?.data as any;
+    expect(response?.clientId || data?.clientId).toBe(scope);
   }
 });
 
-Then('I should not be able to access {string} data', async function(restrictedScope: string) {
+Then('I should not be able to access {string} data', async function(_restrictedScope: string) {
   testContext.validateApiError(403);
 });
 
 Then('requests should include {string}', async function(expectedHeader: string) {
   const [headerName, expectedValue] = expectedHeader.split(': ');
-  testContext.validateOperationalHeaders({ [headerName]: expectedValue });
+  const headers: Record<string, string> = {};
+  if (headerName) headers[headerName] = expectedValue || '';
+  testContext.validateOperationalHeaders(headers);
 });
 
 Then('the request should include {string}', async function(expectedHeader: string) {
-  await this.step(`Then requests should include "${expectedHeader}"`);
+  await this['step'](`Then requests should include "${expectedHeader}"`);
 });
 
 Then('I should receive a {int} Forbidden response', async function(statusCode: number) {
@@ -309,7 +359,7 @@ Then('no tenant should be created', async function() {
   expect(response).toBeNull();
 });
 
-Then('no client-{int} data should be returned', async function(clientNumber: number) {
+Then('no client-{int} data should be returned', async function(_clientNumber: number) {
   testContext.validateApiError(403);
 });
 
@@ -320,7 +370,8 @@ Then('no tenant-b data should be returned', async function() {
 Then('the client should be created in {string}', async function(tenantId: string) {
   const response = testContext.getLastApiResponse();
   expect(response).toBeTruthy();
-  expect(response?.tenantId || response?.data?.tenantId).toBe(tenantId);
+  const data = response?.data as any;
+  expect(data?.tenantId).toBe(tenantId);
 });
 
 Then('I should receive confirmation within tenant context', async function() {
@@ -328,13 +379,15 @@ Then('I should receive confirmation within tenant context', async function() {
   const operationalContext = testContext.getOperationalContext();
 
   expect(response).toBeTruthy();
-  expect(response?.tenantId || response?.data?.tenantId).toBe(operationalContext.tenantId);
+  const data = response?.data as any;
+  expect(data?.tenantId).toBe(operationalContext.tenantId);
 });
 
 Then('only {string} data should be updated', async function(clientId: string) {
   const response = testContext.getLastApiResponse();
   expect(response).toBeTruthy();
-  expect(response?.clientId || response?.data?.clientId).toBe(clientId);
+  const data = response?.data as any;
+  expect(data?.clientId).toBe(clientId);
 });
 
 Then('requests should not include tenant or client context headers', async function() {
@@ -347,12 +400,12 @@ Then('requests should not include tenant or client context headers', async funct
 Then('I should see platform-wide data by default', async function() {
   const response = testContext.getLastApiResponse();
   expect(response).toBeTruthy();
-  expect(response?.tenants).toBeDefined();
-  expect(Array.isArray(response?.tenants)).toBe(true);
+  expect(response?.data).toBeDefined();
+  expect(Array.isArray(response?.data)).toBe(true);
 });
 
 Then('requests should automatically include {string}', async function(expectedHeader: string) {
-  await this.step(`Then requests should include "${expectedHeader}"`);
+  await this['step'](`Then requests should include "${expectedHeader}"`);
 });
 
 Then('I should not be able to change the tenant context', async function() {

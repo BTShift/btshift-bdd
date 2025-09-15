@@ -7,7 +7,7 @@ export class BaseApiClient {
   protected authToken: string | null = null;
 
   constructor(baseUrl?: string) {
-    this.baseUrl = baseUrl || process.env.API_GATEWAY_URL || 'http://localhost:5000';
+    this.baseUrl = baseUrl || process.env['API_GATEWAY_URL'] || 'http://localhost:5000';
   }
 
   setAuthToken(token: string): void {

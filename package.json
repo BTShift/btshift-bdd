@@ -68,6 +68,8 @@
     "@btshift/client-management-types": "^4.1.0",
     "@btshift/identity-types": "^8.0.1",
     "@btshift/tenant-management-types": "^3.0.0",
+    "@types/glob": "^8.1.0",
+    "glob": "^10.4.5",
     "openapi-fetch": "^0.14.0"
   }
 }

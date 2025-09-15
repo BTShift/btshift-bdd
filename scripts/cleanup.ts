@@ -11,19 +11,19 @@ class TestDataCleaner {
 
   constructor() {
     this.tenantDbClient = new Client({
-      host: process.env.TENANT_DB_HOST,
-      port: parseInt(process.env.TENANT_DB_PORT || '5432'),
-      user: process.env.TENANT_DB_USER,
-      password: process.env.TENANT_DB_PASSWORD,
-      database: process.env.TENANT_DB_NAME,
+      host: process.env['TENANT_DB_HOST'],
+      port: parseInt(process.env['TENANT_DB_PORT'] || '5432'),
+      user: process.env['TENANT_DB_USER'],
+      password: process.env['TENANT_DB_PASSWORD'],
+      database: process.env['TENANT_DB_NAME'],
     });
 
     this.identityDbClient = new Client({
-      host: process.env.IDENTITY_DB_HOST,
-      port: parseInt(process.env.IDENTITY_DB_PORT || '5432'),
-      user: process.env.IDENTITY_DB_USER,
-      password: process.env.IDENTITY_DB_PASSWORD,
-      database: process.env.IDENTITY_DB_NAME,
+      host: process.env['IDENTITY_DB_HOST'],
+      port: parseInt(process.env['IDENTITY_DB_PORT'] || '5432'),
+      user: process.env['IDENTITY_DB_USER'],
+      password: process.env['IDENTITY_DB_PASSWORD'],
+      database: process.env['IDENTITY_DB_NAME'],
     });
   }
 

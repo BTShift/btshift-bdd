@@ -1,6 +1,18 @@
 import { TypedScriptClient } from '../../scripts/lib/typed-script-client';
 import * as dotenv from 'dotenv';
 import { TestContextManager } from './test-context-manager';
+import {
+  LoginResponse,
+  TenantCreateRequest,
+  TenantCreateResponse,
+  ClientCreateRequest,
+  ClientCreateResponse,
+  UserCreateRequest,
+  UserCreateResponse,
+  TestTenant,
+  TestClient,
+  UserType
+} from '../types/test-types';
 
 dotenv.config();
 
@@ -11,7 +23,6 @@ dotenv.config();
 export class ApiClient {
   private typedClient: TypedScriptClient;
   private lastRequestHeaders: Record<string, any> = {};
-  private operationalContext: { tenantId?: string; clientId?: string } = {};
 
   constructor() {
     this.typedClient = new TypedScriptClient();
@@ -26,7 +37,6 @@ export class ApiClient {
   }
 
   setOperationalContext(context: { tenantId?: string; clientId?: string }): void {
-    this.operationalContext = context;
     // Store operational context for headers
     if (context.tenantId) {
       this.lastRequestHeaders['X-Operation-Tenant-Id'] = context.tenantId;
@@ -37,7 +47,6 @@ export class ApiClient {
   }
 
   clearOperationalContext(): void {
-    this.operationalContext = {};
     delete this.lastRequestHeaders['X-Operation-Tenant-Id'];
     delete this.lastRequestHeaders['X-Operation-Client-Id'];
   }
@@ -46,7 +55,7 @@ export class ApiClient {
     return { ...this.lastRequestHeaders };
   }
 
-  async login(email: string, password: string): Promise<any> {
+  async login(email: string, password: string): Promise<LoginResponse> {
     // Add test context if available
     const testContext = TestContextManager.getInstance().getContextHeader();
     if (testContext) {
@@ -54,23 +63,71 @@ export class ApiClient {
     }
 
     const result = await this.typedClient.login(email, password);
-    return result;
+    // Wrap in success format
+    const response: LoginResponse = {
+      success: true,
+      tokenInfo: result.tokenInfo ? {
+        accessToken: result.tokenInfo.accessToken || '',
+        refreshToken: result.tokenInfo.refreshToken || '',
+        expiresIn: parseInt(result.tokenInfo.expiresIn || '3600'),
+        tokenType: result.tokenInfo.tokenType || 'Bearer'
+      } : undefined,
+      userInfo: result.userInfo ? {
+        userId: result.userInfo.id || '',
+        email: result.userInfo.email || email,
+        userType: (result.userInfo.userType as UserType) || 'ClientUser'
+      } : undefined
+    };
+    return response;
   }
 
-  async register(userData: any): Promise<any> {
-    return await this.typedClient.register(userData);
+  async register(userData: UserCreateRequest): Promise<UserCreateResponse> {
+    const result = await this.typedClient.register(userData);
+    return {
+      success: true,
+      data: { userId: (result as any).userId || '', email: userData.email, userType: userData.userType }
+    };
   }
 
-  async createTenant(tenantData: any): Promise<any> {
-    return await this.typedClient.createTenant(tenantData);
+  async createTenant(tenantData: TenantCreateRequest): Promise<TenantCreateResponse> {
+    const result = await this.typedClient.createTenant(tenantData);
+    return {
+      success: true,
+      tenantId: (result as any).tenantId,
+      data: {
+        id: (result as any).tenantId || '',
+        name: tenantData.name,
+        companyName: tenantData.companyName,
+        domain: tenantData.domain,
+        status: 'Pending',
+        databaseName: (result as any).databaseName || ''
+      }
+    };
   }
 
-  async getTenant(tenantId: string): Promise<any> {
-    return await this.typedClient.getTenant(tenantId);
+  async getTenant(tenantId: string): Promise<TestTenant> {
+    const result = await this.typedClient.getTenant(tenantId);
+    if (!result) throw new Error('Tenant not found');
+    return {
+      id: result.id || tenantId,
+      name: result.name || '',
+      companyName: result.companyName || '',
+      domain: result.domain || '',
+      status: (result.status as any) || 'Active',
+      databaseName: result.databaseName || ''
+    };
   }
 
-  async getTenants(): Promise<any> {
-    return await this.typedClient.getTenants();
+  async getTenants(): Promise<TestTenant[]> {
+    const results = await this.typedClient.getTenants();
+    return results.map(t => ({
+      id: t.id || '',
+      name: t.name || '',
+      companyName: t.companyName || '',
+      domain: t.domain || '',
+      status: (t.status as any) || 'Active',
+      databaseName: t.databaseName || ''
+    }));
   }
 
   async activateTenant(tenantId: string): Promise<any> {
@@ -97,20 +154,52 @@ export class ApiClient {
     return await this.typedClient.validateToken(token);
   }
 
-  async createClient(clientData: any): Promise<any> {
-    return await this.typedClient.createClient(clientData);
+  async createClient(clientData: ClientCreateRequest): Promise<ClientCreateResponse> {
+    const result = await this.typedClient.createClient(clientData);
+    return {
+      success: true,
+      data: {
+        id: (result as any).clientId || '',
+        companyName: clientData.companyName,
+        taxId: clientData.taxId,
+        email: clientData.email,
+        tenantId: ''
+      }
+    };
   }
 
-  async getClient(clientId: string): Promise<any> {
-    return await this.typedClient.getClient(clientId);
+  async getClient(clientId: string): Promise<TestClient> {
+    const result = await this.typedClient.getClient(clientId);
+    if (!result) throw new Error('Client not found');
+    return {
+      id: (result as any).clientId || clientId,
+      companyName: (result as any).companyName || '',
+      taxId: (result as any).iceNumber || '',
+      email: '',
+      tenantId: ''
+    };
   }
 
-  async getClients(filters?: any): Promise<any> {
-    return await this.typedClient.getClients(filters);
+  async getClients(filters?: Record<string, unknown>): Promise<TestClient[]> {
+    const results = await this.typedClient.getClients(filters);
+    return results.map(c => ({
+      id: (c as any).clientId || '',
+      companyName: (c as any).companyName || '',
+      taxId: (c as any).iceNumber || '',
+      email: '',
+      tenantId: ''
+    }));
   }
 
-  async updateClient(clientId: string, updateData: any): Promise<any> {
-    return await this.typedClient.updateClient(clientId, updateData);
+  async updateClient(clientId: string, updateData: Partial<ClientCreateRequest>): Promise<TestClient> {
+    await this.typedClient.updateClient(clientId, updateData);
+    return {
+      id: clientId,
+      companyName: updateData.companyName || '',
+      taxId: updateData.taxId || '',
+      email: updateData.email || '',
+      tenantId: ''
+    };
   }
 
   async createClientGroup(groupData: any): Promise<any> {
@@ -138,7 +227,7 @@ export class ApiClient {
     // This method needs custom implementation
     const loginData: any = {
       email,
-      password: process.env.TEST_USER_PASSWORD || 'TestPassword123!',
+      password: process.env['TEST_USER_PASSWORD'] || 'TestPassword123!',
       userType
     };
 

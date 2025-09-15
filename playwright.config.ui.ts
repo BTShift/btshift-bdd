@@ -10,12 +10,12 @@ dotenv.config();
 export default defineConfig({
   testDir: './tests/ui',
   fullyParallel: true,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 1,
-  workers: process.env.CI ? 2 : 4, // Fewer workers for UI tests as they're resource intensive
+  forbidOnly: !!process.env['CI'],
+  retries: process.env['CI'] ? 2 : 1,
+  workers: process.env['CI'] ? 2 : 4, // Fewer workers for UI tests as they're resource intensive
 
   use: {
-    baseURL: process.env.FRONTEND_URL || 'http://localhost:3000',
+    baseURL: process.env['FRONTEND_URL'] || 'http://localhost:3000',
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
@@ -70,7 +70,7 @@ export default defineConfig({
       outputFile: 'test-results/ui/junit.xml' 
     }],
     // Console reporter for CI
-    process.env.CI ? ['github'] : ['list']
+    process.env['CI'] ? ['github'] : ['list']
   ],
 
   outputDir: 'test-results/ui',
@@ -79,7 +79,7 @@ export default defineConfig({
   webServer: {
     command: 'npm run dev',
     port: 3000,
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: !process.env['CI'],
     env: {
       NODE_ENV: 'test'
     }

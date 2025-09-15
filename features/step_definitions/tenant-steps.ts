@@ -1,4 +1,4 @@
-import { Given, When, Then, Before, After, BeforeAll, AfterAll } from '@cucumber/cucumber';
+import { Given, When, Then, Before, After } from '@cucumber/cucumber';
 import { chromium, Browser, Page, BrowserContext } from 'playwright';
 import { expect } from '@playwright/test';
 import { LoginPage } from '../../lib/pages/login-page';
@@ -27,7 +27,7 @@ Before(async function(scenario) {
   testContextManager.startTestSession(featureFile);
   testContextManager.setScenario(featureFile, scenarioName, testIntent);
   
-  browser = await chromium.launch({ headless: process.env.HEADLESS !== 'false' });
+  browser = await chromium.launch({ headless: process.env['HEADLESS'] !== 'false' });
   context = await browser.newContext();
   page = await context.newPage();
   
@@ -45,7 +45,7 @@ After(async function() {
   // Clear test context
   TestContextManager.getInstance().clearContext();
   
-  if (process.env.SKIP_CLEANUP_AFTER !== 'true') {
+  if (process.env['SKIP_CLEANUP_AFTER'] !== 'true') {
     // Only cleanup if not explicitly skipping
     console.log('Cleaning up test data...');
   } else {
@@ -62,10 +62,10 @@ Given('I am logged in as a SuperAdmin', async function() {
     '200_success'
   );
 
-  await page.goto(process.env.PLATFORM_ADMIN_URL!);
+  await page.goto(process.env['PLATFORM_ADMIN_URL']!);
   await loginPage.login(
-    process.env.PLATFORM_ADMIN_EMAIL!,
-    process.env.PLATFORM_ADMIN_PASSWORD!
+    process.env['PLATFORM_ADMIN_EMAIL']!,
+    process.env['PLATFORM_ADMIN_PASSWORD']!
   );
   await loginPage.waitForLoginSuccess();
 });
@@ -76,13 +76,13 @@ Given('I am logged in as UserType {string}', async function(userType: string) {
     '200_success'
   );
 
-  await page.goto(process.env.PLATFORM_ADMIN_URL!);
+  await page.goto(process.env['PLATFORM_ADMIN_URL']!);
 
   // Use appropriate credentials based on UserType
   let email, password;
   if (userType === 'SuperAdmin') {
-    email = process.env.PLATFORM_ADMIN_EMAIL!;
-    password = process.env.PLATFORM_ADMIN_PASSWORD!;
+    email = process.env['PLATFORM_ADMIN_EMAIL']!;
+    password = process.env['PLATFORM_ADMIN_PASSWORD']!;
   } else {
     throw new Error(`UserType ${userType} authentication not implemented for UI tests`);
   }
@@ -92,7 +92,7 @@ Given('I am logged in as UserType {string}', async function(userType: string) {
 });
 
 Given('all tenant databases have been cleaned up', async function() {
-  if (process.env.SKIP_CLEANUP_BEFORE === 'true') {
+  if (process.env['SKIP_CLEANUP_BEFORE'] === 'true') {
     console.log('Skipping cleanup (SKIP_CLEANUP_BEFORE=true)');
     return;
   }
@@ -107,8 +107,8 @@ Given('a pending tenant {string} exists', async function(tenantName: string) {
   );
   
   await apiClient.login(
-    process.env.PLATFORM_ADMIN_EMAIL!,
-    process.env.PLATFORM_ADMIN_PASSWORD!
+    process.env['PLATFORM_ADMIN_EMAIL']!,
+    process.env['PLATFORM_ADMIN_PASSWORD']!
   );
   
   const response = await apiClient.createTenant({
@@ -116,24 +116,24 @@ Given('a pending tenant {string} exists', async function(tenantName: string) {
     companyName: `${tenantName} Company`,
     domain: tenantName,
     plan: 'Professional',
-    primaryContactEmail: `admin@${tenantName}.com`,
-    primaryContactFirstName: 'Test',
-    primaryContactLastName: 'Admin',
+    adminEmail: `admin@${tenantName}.com`,
+    adminFirstName: 'Test',
+    adminLastName: 'Admin',
     phone: '+212612345678',
     address: '123 Test Street',
     country: 'Morocco'
   });
   
   expect(response.success).toBe(true);
-  createdTenantId = response.tenantId;
+  createdTenantId = (response as any).tenantId;
 });
 
 Given('two active tenants exist:', async function(dataTable: any) {
   const tenants = dataTable.hashes();
   
   await apiClient.login(
-    process.env.PLATFORM_ADMIN_EMAIL!,
-    process.env.PLATFORM_ADMIN_PASSWORD!
+    process.env['PLATFORM_ADMIN_EMAIL']!,
+    process.env['PLATFORM_ADMIN_PASSWORD']!
   );
   
   for (const tenant of tenants) {
@@ -142,9 +142,9 @@ Given('two active tenants exist:', async function(dataTable: any) {
       companyName: `${tenant['Tenant Name']} Company`,
       domain: tenant['Tenant Name'],
       plan: 'Professional',
-      primaryContactEmail: tenant['Admin Email'],
-      primaryContactFirstName: 'Test',
-      primaryContactLastName: 'Admin',
+      adminEmail: tenant['Admin Email'],
+      adminFirstName: 'Test',
+      adminLastName: 'Admin',
       phone: '+212612345678',
       address: '123 Test Street',
       country: 'Morocco'
@@ -153,15 +153,15 @@ Given('two active tenants exist:', async function(dataTable: any) {
     expect(response.success).toBe(true);
     
     // Wait for saga and activate
-    await dbManager.waitForSagaCompletion(response.tenantId, 30000);
-    await apiClient.activateTenant(response.tenantId);
+    await dbManager.waitForSagaCompletion((response as any).tenantId, 30000);
+    await apiClient.activateTenant((response as any).tenantId);
   }
 });
 
 Given('a tenant {string} already exists', async function(tenantName: string) {
   await apiClient.login(
-    process.env.PLATFORM_ADMIN_EMAIL!,
-    process.env.PLATFORM_ADMIN_PASSWORD!
+    process.env['PLATFORM_ADMIN_EMAIL']!,
+    process.env['PLATFORM_ADMIN_PASSWORD']!
   );
   
   const response = await apiClient.createTenant({
@@ -169,9 +169,9 @@ Given('a tenant {string} already exists', async function(tenantName: string) {
     companyName: `${tenantName} Company`,
     domain: tenantName,
     plan: 'Professional',
-    primaryContactEmail: `admin@${tenantName}.com`,
-    primaryContactFirstName: 'Test',
-    primaryContactLastName: 'Admin',
+    adminEmail: `admin@${tenantName}.com`,
+    adminFirstName: 'Test',
+    adminLastName: 'Admin',
     phone: '+212612345678',
     address: '123 Test Street',
     country: 'Morocco'
@@ -217,8 +217,8 @@ When('I log in as admin of {string}', async function(tenantName: string) {
   const admin = await dbManager.getUserByEmail(`admin@${tenantName}.com`);
 
   // Store tenant context for validation
-  this.currentTenant = tenant;
-  this.currentUser = admin;
+  this['currentTenant'] = tenant;
+  this['currentUser'] = admin;
 });
 
 When('I log in as UserType {string} for tenant {string}', async function(userType: string, tenantName: string) {
@@ -228,9 +228,9 @@ When('I log in as UserType {string} for tenant {string}', async function(userTyp
   const admin = await dbManager.getUserByEmail(`admin@${tenantName}.com`);
 
   // Store tenant context for validation
-  this.currentTenant = tenant;
-  this.currentUser = admin;
-  this.userType = userType;
+  this['currentTenant'] = tenant;
+  this['currentUser'] = admin;
+  this['userType'] = userType;
 });
 
 When('I try to create a tenant with the same name', async function() {
@@ -295,7 +295,7 @@ Then('the tenant admin should receive a welcome email', async function() {
   expect(admin.EmailConfirmed).toBe(false);
 });
 
-Then('the activation link should be valid for {int} days', async function(days: number) {
+Then('the activation link should be valid for {int} days', async function(_days: number) {
   // This would check the token expiry in the database
   // For now, we'll just verify a token exists
   const admin = await dbManager.getUserByEmail(tenantData.adminEmail);
@@ -304,10 +304,10 @@ Then('the activation link should be valid for {int} days', async function(days: 
 
 Then('I should only see data for {string}', async function(tenantName: string) {
   // This would be validated through API calls with tenant context
-  expect(this.currentTenant.Name).toBe(tenantName);
+  expect(this['currentTenant'].Name).toBe(tenantName);
 });
 
-Then('I should not be able to access {string} data', async function(otherTenant: string) {
+Then('I should not be able to access {string} data', async function(_otherTenant: string) {
   // Try to access other tenant's data via API
   try {
     // This would make an API call with wrong tenant context
@@ -349,9 +349,9 @@ Given('I have platform-wide permissions', async function() {
   // Verification step - no action needed for UI tests
 });
 
-Then('requests should include {string}', async function(expectedHeader: string) {
+Then('requests should include {string}', async function(_expectedHeader: string) {
   // This would be validated by checking API request headers
   // For now, we'll just verify the user context is correct
-  expect(this.currentTenant).toBeDefined();
-  expect(this.userType).toBe('TenantAdmin');
+  expect(this['currentTenant']).toBeDefined();
+  expect(this['userType']).toBe('TenantAdmin');
 });

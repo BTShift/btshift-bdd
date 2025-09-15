@@ -15,7 +15,7 @@ async function globalSetup() {
     const page = await context.newPage();
     
     try {
-      await page.goto(process.env.FRONTEND_URL || 'http://localhost:3000');
+      await page.goto(process.env['FRONTEND_URL'] || 'http://localhost:3000');
       console.log('✅ Frontend accessibility verified');
     } finally {
       await browser.close();

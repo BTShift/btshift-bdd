@@ -10,13 +10,13 @@ dotenv.config();
 export default defineConfig({
   testDir: './tests/api',
   fullyParallel: true,
-  forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 2 : 1,
-  workers: process.env.CI ? 4 : 6, // More workers for API tests as they're faster
+  forbidOnly: !!process.env['CI'],
+  retries: process.env['CI'] ? 2 : 1,
+  workers: process.env['CI'] ? 4 : 6, // More workers for API tests as they're faster
   
   // API tests don't need browser screenshots or videos
   use: {
-    baseURL: process.env.API_GATEWAY_URL,
+    baseURL: process.env['API_GATEWAY_URL'],
     extraHTTPHeaders: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export default defineConfig({
       outputFile: 'test-results/api/junit.xml' 
     }],
     // Console reporter for CI
-    process.env.CI ? ['github'] : ['list']
+    process.env['CI'] ? ['github'] : ['list']
   ],
 
   outputDir: 'test-results/api',

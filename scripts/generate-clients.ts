@@ -21,17 +21,17 @@ interface ServiceConfig {
 const services: ServiceConfig[] = [
   {
     name: 'tenant-management',
-    openApiUrl: `${process.env.API_GATEWAY_URL}/swagger/TenantManagement/swagger.json`,
+    openApiUrl: `${process.env['API_GATEWAY_URL']}/swagger/TenantManagement/swagger.json`,
     outputDir: 'lib/clients/tenant-management'
   },
   {
     name: 'client-management',
-    openApiUrl: `${process.env.API_GATEWAY_URL}/swagger/ClientManagement/swagger.json`,
+    openApiUrl: `${process.env['API_GATEWAY_URL']}/swagger/ClientManagement/swagger.json`,
     outputDir: 'lib/clients/client-management'
   },
   {
     name: 'identity',
-    openApiUrl: `${process.env.API_GATEWAY_URL}/swagger/Identity/swagger.json`,
+    openApiUrl: `${process.env['API_GATEWAY_URL']}/swagger/Identity/swagger.json`,
     outputDir: 'lib/clients/identity'
   }
 ];

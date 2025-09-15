@@ -25,7 +25,7 @@ export abstract class BaseApiClient {
   protected lastCorrelationId: string | null = null;
 
   constructor(baseUrl?: string) {
-    this.baseUrl = baseUrl || process.env.API_GATEWAY_URL || 'http://localhost:8080';
+    this.baseUrl = baseUrl || process.env['API_GATEWAY_URL'] || 'http://localhost:8080';
   }
 
   /**

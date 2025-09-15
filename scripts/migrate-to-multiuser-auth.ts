@@ -140,7 +140,7 @@ function main(): void {
   // Group targets by context
   const byContext = MIGRATION_TARGETS.reduce((acc, target) => {
     if (!acc[target.context]) acc[target.context] = [];
-    acc[target.context].push(target);
+    acc[target.context]!.push(target);
     return acc;
   }, {} as Record<string, MigrationTarget[]>);
   
@@ -166,7 +166,7 @@ function main(): void {
         skipped++;
       }
     } catch (error) {
-      console.error(`❌ Error migrating ${target.file}:`, error.message);
+      console.error(`❌ Error migrating ${target.file}:`, (error as Error).message);
       errors++;
     }
   }

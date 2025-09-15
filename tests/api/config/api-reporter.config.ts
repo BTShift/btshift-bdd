@@ -11,22 +11,22 @@ import { ApiAllureReporter } from '../support/helpers/api-allure-reporter';
 export function initializeApiReporter(): void {
   const config = {
     // Enable/disable API reporting (can be controlled via env var)
-    enabled: process.env.API_REPORTING !== 'false',
+    enabled: process.env['API_REPORTING'] !== 'false',
     
     // Include headers in reports (masks sensitive data by default)
-    includeHeaders: process.env.API_REPORT_HEADERS !== 'false',
+    includeHeaders: process.env['API_REPORT_HEADERS'] !== 'false',
     
     // Include request/response bodies
-    includeBody: process.env.API_REPORT_BODY !== 'false',
+    includeBody: process.env['API_REPORT_BODY'] !== 'false',
     
     // Mask sensitive data like passwords, tokens, etc.
-    maskSensitiveData: process.env.API_UNMASK_SENSITIVE !== 'true',
+    maskSensitiveData: process.env['API_UNMASK_SENSITIVE'] !== 'true',
     
     // Attach to Allure reports
-    attachToAllure: process.env.API_ALLURE_ATTACH !== 'false',
+    attachToAllure: process.env['API_ALLURE_ATTACH'] !== 'false',
     
     // Also log to console (useful for debugging)
-    consoleLog: process.env.API_CONSOLE_LOG === 'true'
+    consoleLog: process.env['API_CONSOLE_LOG'] === 'true'
   };
 
   ApiAllureReporter.configure(config);

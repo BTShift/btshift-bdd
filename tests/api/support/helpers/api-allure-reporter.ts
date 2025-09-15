@@ -39,7 +39,7 @@ export interface ApiReportConfig {
 
 // Default configuration
 const defaultConfig: ApiReportConfig = {
-  enabled: process.env.API_VERBOSE_LOGGING !== 'false', // Enabled by default unless explicitly disabled
+  enabled: process.env['API_VERBOSE_LOGGING'] !== 'false', // Enabled by default unless explicitly disabled
   includeHeaders: true,
   includeBody: true,
   maskSensitiveData: true,

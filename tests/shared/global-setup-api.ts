@@ -10,7 +10,7 @@ async function globalSetup() {
   
   try {
     // Verify API Gateway is accessible
-    const response = await fetch(process.env.API_GATEWAY_URL + '/health');
+    const response = await fetch(process.env['API_GATEWAY_URL'] + '/health');
     if (!response.ok) {
       throw new Error(`API Gateway health check failed: ${response.status}`);
     }

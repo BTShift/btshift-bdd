@@ -8,8 +8,8 @@
 import { TypedScriptClient } from './lib/typed-script-client';
 import * as crypto from 'crypto';
 
-const API_GATEWAY_URL = 'https://api-gateway-production-91e9.up.railway.app';
-const IDENTITY_SERVICE_URL = 'https://identity-service-production-80cf.up.railway.app';
+// const API_GATEWAY_URL = 'https://api-gateway-production-91e9.up.railway.app';
+// const IDENTITY_SERVICE_URL = 'https://identity-service-production-80cf.up.railway.app';
 
 // Standard passwords we'll use for testing
 const STANDARD_SUPER_ADMIN_PASSWORD = 'ShiftPlatform2024@SuperAdmin!';
@@ -157,7 +157,7 @@ async function main() {
     console.log('\n✅ Password reset complete!');
     
   } catch (error) {
-    console.error('❌ Failed to reset passwords:', error.message);
+    console.error('❌ Failed to reset passwords:', (error as Error).message);
     process.exit(1);
   }
 }

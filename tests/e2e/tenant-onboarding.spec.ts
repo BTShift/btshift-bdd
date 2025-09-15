@@ -49,10 +49,10 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
   test('Complete tenant creation flow through UI', async ({ page }) => {
     test.setTimeout(60000); // Increase timeout to 60 seconds for saga completion
     // Step 1: Login as SuperAdmin
-    await loginPage.navigate(process.env.PLATFORM_ADMIN_URL);
+    await loginPage.navigate(process.env['PLATFORM_ADMIN_URL']);
     await loginPage.login(
-      process.env.PLATFORM_ADMIN_EMAIL!,
-      process.env.PLATFORM_ADMIN_PASSWORD!
+      process.env['PLATFORM_ADMIN_EMAIL']!,
+      process.env['PLATFORM_ADMIN_PASSWORD']!
     );
     await loginPage.waitForLoginSuccess();
 
@@ -111,8 +111,8 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
   test('Tenant activation flow', async ({ page }) => {
     // Create tenant via API first
     await apiClient.login(
-      process.env.PLATFORM_ADMIN_EMAIL!,
-      process.env.PLATFORM_ADMIN_PASSWORD!
+      process.env['PLATFORM_ADMIN_EMAIL']!,
+      process.env['PLATFORM_ADMIN_PASSWORD']!
     );
     
     const activationTestData = {
@@ -131,10 +131,10 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
     await dbManager.waitForSagaCompletion(tenantId, 30000);
     
     // Login to UI and activate tenant
-    await loginPage.navigate(process.env.PLATFORM_ADMIN_URL);
+    await loginPage.navigate(process.env['PLATFORM_ADMIN_URL']);
     await loginPage.login(
-      process.env.PLATFORM_ADMIN_EMAIL!,
-      process.env.PLATFORM_ADMIN_PASSWORD!
+      process.env['PLATFORM_ADMIN_EMAIL']!,
+      process.env['PLATFORM_ADMIN_PASSWORD']!
     );
     await loginPage.waitForLoginSuccess();
     
@@ -150,8 +150,8 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
   test('Multi-tenant isolation validation', async () => {
     // Create two test tenants via API
     await apiClient.login(
-      process.env.PLATFORM_ADMIN_EMAIL!,
-      process.env.PLATFORM_ADMIN_PASSWORD!
+      process.env['PLATFORM_ADMIN_EMAIL']!,
+      process.env['PLATFORM_ADMIN_PASSWORD']!
     );
     
     const tenant1Data = {
@@ -192,8 +192,8 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
   test('Duplicate tenant prevention', async ({ page }) => {
     // Create a tenant first
     await apiClient.login(
-      process.env.PLATFORM_ADMIN_EMAIL!,
-      process.env.PLATFORM_ADMIN_PASSWORD!
+      process.env['PLATFORM_ADMIN_EMAIL']!,
+      process.env['PLATFORM_ADMIN_PASSWORD']!
     );
     
     const duplicateTestData = {
@@ -207,10 +207,10 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
     expect(firstResponse.success).toBe(true);
     
     // Try to create the same tenant again via UI
-    await loginPage.navigate(process.env.PLATFORM_ADMIN_URL);
+    await loginPage.navigate(process.env['PLATFORM_ADMIN_URL']);
     await loginPage.login(
-      process.env.PLATFORM_ADMIN_EMAIL!,
-      process.env.PLATFORM_ADMIN_PASSWORD!
+      process.env['PLATFORM_ADMIN_EMAIL']!,
+      process.env['PLATFORM_ADMIN_PASSWORD']!
     );
     await loginPage.waitForLoginSuccess();
     
@@ -227,10 +227,10 @@ test.describe('Sprint 1: Tenant Onboarding E2E Tests', () => {
 
   test('Session timeout after 10 minutes of inactivity', async ({ page, context }) => {
     // Login
-    await loginPage.navigate(process.env.PLATFORM_ADMIN_URL);
+    await loginPage.navigate(process.env['PLATFORM_ADMIN_URL']);
     await loginPage.login(
-      process.env.PLATFORM_ADMIN_EMAIL!,
-      process.env.PLATFORM_ADMIN_PASSWORD!
+      process.env['PLATFORM_ADMIN_EMAIL']!,
+      process.env['PLATFORM_ADMIN_PASSWORD']!
     );
     await loginPage.waitForLoginSuccess();
     

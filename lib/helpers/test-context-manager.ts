@@ -31,21 +31,21 @@ export class TestContextManager {
    * Start a new test session (called in Before hook)
    */
   startTestSession(featureFile: string): void {
-    this.testSessionId = this.generateTestSessionId();
-    console.log(`🎬 Starting test session: ${this.testSessionId} for feature: ${featureFile}`);
+    this['testSessionId'] = this.generateTestSessionId();
+    console.log(`🎬 Starting test session: ${this['testSessionId']} for feature: ${featureFile}`);
   }
 
   /**
    * Set the current scenario context
    */
   setScenario(featureFile: string, scenarioName: string, testIntent: 'positive' | 'negative' = 'positive'): void {
-    this.currentContext = {
+    this['currentContext'] = {
       featureFile,
       scenario: scenarioName,
       currentStep: '',
       testIntent,
       expectedOutcome: testIntent === 'positive' ? '2xx_success' : 'expected_failure',
-      testSessionId: this.testSessionId || this.generateTestSessionId()
+      testSessionId: this['testSessionId'] || this.generateTestSessionId()
     };
     
     console.log(`📋 Test context set: ${featureFile} :: ${scenarioName} (${testIntent})`);
@@ -55,12 +55,12 @@ export class TestContextManager {
    * Set the individual test case name (e.g., "should create client group with typed client")
    */
   setTestCase(testCaseName: string): void {
-    if (!this.currentContext) {
+    if (!this['currentContext']) {
       console.warn('⚠️  No test context set when updating test case:', testCaseName);
       return;
     }
 
-    this.currentContext.testCase = testCaseName;
+    this['currentContext'].testCase = testCaseName;
     console.log(`🧪 Test case: ${testCaseName}`);
   }
 
@@ -68,14 +68,14 @@ export class TestContextManager {
    * Update the current step being executed
    */
   setCurrentStep(stepDescription: string, expectedOutcome?: string): void {
-    if (!this.currentContext) {
+    if (!this['currentContext']) {
       console.warn('⚠️  No test context set when updating step:', stepDescription);
       return;
     }
 
-    this.currentContext.currentStep = stepDescription;
+    this['currentContext'].currentStep = stepDescription;
     if (expectedOutcome) {
-      this.currentContext.expectedOutcome = expectedOutcome;
+      this['currentContext'].expectedOutcome = expectedOutcome;
     }
 
     console.log(`🔄 Current step: ${stepDescription}`);
@@ -85,18 +85,18 @@ export class TestContextManager {
    * Get the current test context for API calls
    */
   getCurrentContext(): TestContext | null {
-    return this.currentContext;
+    return this['currentContext'];
   }
 
   /**
    * Get test context as HTTP header value (JSON string)
    */
   getContextHeader(): string | null {
-    if (!this.currentContext) {
+    if (!this['currentContext']) {
       return null;
     }
 
-    return JSON.stringify(this.currentContext);
+    return JSON.stringify(this['currentContext']);
   }
 
   /**
@@ -105,9 +105,9 @@ export class TestContextManager {
    */
   setCleanupContext(featureFile: string, scenario: string): void {
     // Preserve or create a session ID for cleanup
-    const sessionId = this.testSessionId || `cleanup-${Date.now()}`;
+    const sessionId = this['testSessionId'] || `cleanup-${Date.now()}`;
     
-    this.currentContext = {
+    this['currentContext'] = {
       featureFile,
       scenario,
       currentStep: 'Test Cleanup',
@@ -124,9 +124,9 @@ export class TestContextManager {
    * Clear the current context (called in After hook)
    */
   clearContext(): void {
-    console.log(`🏁 Clearing test context for session: ${this.testSessionId}`);
-    this.currentContext = null;
-    this.testSessionId = null;
+    console.log(`🏁 Clearing test context for session: ${this['testSessionId']}`);
+    this['currentContext'] = null;
+    this['testSessionId'] = null;
   }
 
   /**

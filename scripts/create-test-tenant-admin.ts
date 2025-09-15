@@ -3,7 +3,7 @@
 import { TypedScriptClient } from './lib/typed-script-client';
 import * as crypto from 'crypto';
 
-const API_GATEWAY_URL = 'https://api-gateway-production-91e9.up.railway.app';
+// const API_GATEWAY_URL = 'https://api-gateway-production-91e9.up.railway.app';
 const TENANT_ID = 'aef1fb0d-84fb-412d-97c8-06f7eb7f3846';
 
 async function createTestTenantAdmin() {

@@ -33,7 +33,7 @@ export class TypedApiClient {
   public clientManagement: (path: string, method: string, options?: any) => Promise<ApiResponse>;
 
   constructor(baseUrl?: string) {
-    this.baseUrl = baseUrl || process.env.API_GATEWAY_URL || 'http://localhost:8080';
+    this.baseUrl = baseUrl || process.env['API_GATEWAY_URL'] || 'http://localhost:8080';
     
     // Initialize identity client with openapi-fetch
     this.identityClient = createClient<IdentityPaths>({

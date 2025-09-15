@@ -63,6 +63,6 @@ export const invalidTenantDataSets = {
 };
 
 export const superAdminCredentials = {
-  email: process.env.SUPER_ADMIN_EMAIL || 'superadmin@btshift.com',
-  password: process.env.SUPER_ADMIN_PASSWORD || 'SuperAdmin123!'
+  email: process.env['SUPER_ADMIN_EMAIL'] || 'superadmin@btshift.com',
+  password: process.env['SUPER_ADMIN_PASSWORD'] || 'SuperAdmin123!'
 };

@@ -14,13 +14,13 @@ export class TenantPage {
   
   // Navigation buttons
   private nextButton: Locator;
-  private previousButton: Locator;
+  // private previousButton: Locator; // Currently unused but may be needed later
   private createButton: Locator;
   
   // Feedback elements
   private successMessage: Locator;
   private errorMessage: Locator;
-  private tenantsList: Locator;
+  // private tenantsList: Locator; // For future use in list operations
 
   constructor(page: Page) {
     this.page = page;
@@ -38,13 +38,13 @@ export class TenantPage {
     
     // Navigation buttons
     this.nextButton = page.getByRole('button', { name: 'Next' });
-    this.previousButton = page.getByRole('button', { name: 'Previous' });
+    // this.previousButton = page.getByRole('button', { name: 'Previous' }); // Currently unused
     this.createButton = page.getByRole('button', { name: 'Create Tenant' });
     
     // Feedback
     this.successMessage = page.locator('[role="status"]:has-text("success"), [role="alert"]:has-text("success")');
     this.errorMessage = page.locator('[role="alert"]:has-text("error")');
-    this.tenantsList = page.locator('table tbody tr');
+    // this.tenantsList = page.locator('table tbody tr'); // For future use
   }
 
   async navigate(): Promise<void> {
@@ -136,8 +136,25 @@ export class TenantPage {
     const tenantRow = this.page.locator(`tr:has-text("${name}")`);
     const menuButton = tenantRow.locator('button:has-text("Open menu")');
     await menuButton.click();
-    
+
     const resendButton = this.page.locator('[role="menuitem"]:has-text("Resend")');
     await resendButton.click();
+  }
+
+  // Alias for backward compatibility
+  async fillTenantForm(data: any): Promise<void> {
+    await this.fillTenantFormMultiStep({
+      name: data.name,
+      companyName: data.companyName,
+      domain: data.domain,
+      adminEmail: data.adminEmail,
+      adminFirstName: data.adminFirstName,
+      adminLastName: data.adminLastName
+    });
+  }
+
+  async getErrorMessage(): Promise<string> {
+    await this.errorMessage.waitFor({ state: 'visible', timeout: 5000 });
+    return await this.errorMessage.textContent() || '';
   }
 }

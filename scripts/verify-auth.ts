@@ -7,7 +7,7 @@
 import { TypedScriptClient } from './lib/typed-script-client';
 import * as crypto from 'crypto';
 
-const API_GATEWAY_URL = 'https://api-gateway-production-91e9.up.railway.app';
+// const API_GATEWAY_URL = 'https://api-gateway-production-91e9.up.railway.app';
 
 async function testAuth(email: string, password: string, label: string): Promise<boolean> {
   try {

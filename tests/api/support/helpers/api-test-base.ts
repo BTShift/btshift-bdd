@@ -293,7 +293,7 @@ export async function setupUnauthenticatedApiTest(): Promise<TestContext> {
   const cleanup = new CleanupManager();
   const correlation = new CorrelationTracker();
   
-  console.log(`🌐 [${testSessionId}] API Gateway URL:`, process.env.API_GATEWAY_URL);
+  console.log(`🌐 [${testSessionId}] API Gateway URL:`, process.env['API_GATEWAY_URL']);
   
   return { 
     client, 
