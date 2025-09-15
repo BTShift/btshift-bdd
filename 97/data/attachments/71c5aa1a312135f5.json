@@ -1,0 +1,71 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-15T18:13:34.130Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "98dae829-ec61-4039-9b7a-b3ca2b416ad6",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960013425-8f27thddo\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "98dae829-ec61-4039-9b7a-b3ca2b416ad6",
+      "timestamp": {},
+      "duration": 402
+    },
+    {
+      "endpoint": "/api/tenants/00000000-0000-0000-0000-000000000000",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "16972849-762a-407f-af7f-a377efa67e03",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"duplicate-tenant.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960013877-fyv77v4u1\",\"testCase\":\"should return 404 when getting tenant by non-existing ID\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "error": {
+          "code": 5,
+          "message": "Tenant with ID '00000000-0000-0000-0000-000000000000' not found",
+          "details": []
+        }
+      },
+      "correlationId": "16972849-762a-407f-af7f-a377efa67e03",
+      "timestamp": {},
+      "duration": 226
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "endpoint": "/api/tenants",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "272dff15-e863-468a-bc75-9f224c5f0d26",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"duplicate-tenant.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960009498-71nrdxrc2\",\"testCase\":\"should verify tenant exists check returns true for existing tenant\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "companyName": "Test Company 1757960009498-v3ek8g40p-1",
+      "tenantName": "tenant-1757960009498-v3ek8g40p-1",
+      "domain": "tenant-1757960009498-v3ek8g40p-1",
+      "plan": "Professional",
+      "adminEmail": "admin-1757960009498-v3ek8g40p-1@test.com",
+      "adminFirstName": "Test",
+      "adminLastName": "Admin",
+      "phoneNumber": "+212612345678",
+      "address": "123 Test Street, Casablanca",
+      "country": "Morocco"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "Tenant name is required",
+      "details": []
+    }
+  },
+  "correlationId": "272dff15-e863-468a-bc75-9f224c5f0d26",
+  "timestamp": {},
+  "duration": 198
+}

@@ -1,0 +1,34 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users
+Correlation ID: 6cf46527-0ec6-4b12-a985-8c1dd0cda4d9
+Timestamp: 2025-09-15T18:13:04.969Z
+Duration: 185ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "6cf46527-0ec6-4b12-a985-8c1dd0cda4d9",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959984581-9tj9jooug\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "email": "user-1757959984969-uu5iz3ybb-1@test.com",
+  "firstName": "Test",
+  "lastName": "User1757959984969-uu5iz3ybb-1",
+  "phoneNumber": "+212600000000",
+  "role": "User",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "Invalid role specified",
+  "details": []
+}

@@ -1,0 +1,41 @@
+🚀 [87981d2a] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757959923594-9wtwa4o6g for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959923595-b9taluapp for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959923595-de3d513d for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757959923595] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757959923595] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757959923595] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959923595-b9taluapp"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: f8484f29-13e8-4b23-b408-0ea87df34ee1 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: f8484f29-13e8-4b23-b408-0ea87df34ee1 | Success
+✅ [tenantadmin-1757959923595] TenantAdmin authentication successful
+🕐 [tenantadmin-1757959923595] Token expires at: 2025-09-15T18:20:04.070Z
+🏢 [tenantadmin-1757959923595] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [87981d2a] Using TenantAdmin authentication
+🕐 [87981d2a] Token expires: 6:20:04 PM
+🏢 [87981d2a] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757959924100-8lrx6tzw1 for feature: user-client-associations.api.feature
+📋 Test context set: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts (positive)
+🧪 Test case: should handle pagination for user-client associations
+🔄 Current step: Test Execution
+🎬 Auto-context: user-client-associations.api.feature :: api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts :: should handle pagination for user-client associations
+🧪 Adding test context to POST /api/clients
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959924100-8lrx6tzw1","testCase":"should handle pagination for user-client associations"}
+🔍 [ClientManagement] POST /api/clients | X-Correlation-ID: 5b82a8c6-8e27-401f-84e4-eff907635838 | Auth: Yes
+✅ [ClientManagement] POST /api/clients | X-Correlation-ID: 5b82a8c6-8e27-401f-84e4-eff907635838 | Success
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"user-client-associations.api.feature","scenario":"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959924100-8lrx6tzw1","testCase":"should handle pagination for user-client associations"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 665c79db-a7a4-437a-bf38-804007d5350e | Auth: Yes
+🏁 Clearing test context for session: test-1757959924100-8lrx6tzw1
+🔍 [ClientManagement] DELETE /api/clients/45065151-9a50-4cbc-9559-7ea7faf1268d | X-Correlation-ID: 6523faab-f25c-4631-bee8-5c5bca7e421f | Auth: Yes
+✅ [ClientManagement] DELETE /api/clients/45065151-9a50-4cbc-9559-7ea7faf1268d | X-Correlation-ID: 6523faab-f25c-4631-bee8-5c5bca7e421f | Success
+🧹 Cleaned up client: 45065151-9a50-4cbc-9559-7ea7faf1268d
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 0ac1dc40-2482-4638-8223-a10fee0530a2 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 0ac1dc40-2482-4638-8223-a10fee0530a2 | Success

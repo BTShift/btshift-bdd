@@ -1,0 +1,200 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 6,
+  "timestamp": "2025-09-15T18:12:17.903Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "5ab62ece-ba0c-4c98-aeb7-30c2db5643db",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959936529-4foume2qk\",\"testCase\":\"should refresh token with valid refresh token\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "5ab62ece-ba0c-4c98-aeb7-30c2db5643db",
+      "timestamp": {},
+      "duration": 346
+    },
+    {
+      "endpoint": "/api/authentication/refresh",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b5e7cfc6-4948-41ad-bf67-e0e43a40e231",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959936529-4foume2qk\",\"testCase\":\"should refresh token with valid refresh token\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "refreshToken": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "b5e7cfc6-4948-41ad-bf67-e0e43a40e231",
+      "timestamp": {},
+      "duration": 216
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "1fabdffe-df2f-4820-809c-f234f0e7d937",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959937127-nm86q7luq\",\"testCase\":\"should logout successfully\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "1fabdffe-df2f-4820-809c-f234f0e7d937",
+      "timestamp": {},
+      "duration": 245
+    },
+    {
+      "endpoint": "/api/authentication/logout",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "8db9907d-b9fd-45df-a046-703769969764",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959937127-nm86q7luq\",\"testCase\":\"should logout successfully\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {}
+      },
+      "response": {
+        "status": 200,
+        "body": {},
+        "headers": {}
+      },
+      "correlationId": "8db9907d-b9fd-45df-a046-703769969764",
+      "timestamp": {},
+      "duration": 121
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b8f5ceb5-bd30-418c-a2c4-ece6a644d069",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959937520-iimk9143a\",\"testCase\":\"should maintain authentication state across multiple requests\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "b8f5ceb5-bd30-418c-a2c4-ece6a644d069",
+      "timestamp": {},
+      "duration": 244
+    },
+    {
+      "endpoint": "/api/authentication/me",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "fb54e26c-cff3-49b2-8356-6c58aa6b060c",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959937520-iimk9143a\",\"testCase\":\"should maintain authentication state across multiple requests\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "An error occurred while retrieving user information",
+          "details": []
+        }
+      },
+      "correlationId": "fb54e26c-cff3-49b2-8356-6c58aa6b060c",
+      "timestamp": {},
+      "duration": 119
+    }
+  ]
+}

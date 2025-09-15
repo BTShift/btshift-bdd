@@ -1,0 +1,35 @@
+{
+  "endpoint": "/api/tenants",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "a3e39b8a-6ee7-448f-a49c-0c0cd7ac7e24",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"tenant-suspension.api.feature\",\"scenario\":\"api/features/tenant-management/suspension/happy-path/tenant-suspension.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960032093-3923ddf6x\",\"testCase\":\"should reactivate a suspended tenant\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "companyName": "Test Company 1757960032094-umkpois4q-1",
+      "tenantName": "tenant-1757960032094-umkpois4q-1",
+      "domain": "tenant-1757960032094-umkpois4q-1",
+      "plan": "Professional",
+      "adminEmail": "admin-1757960032094-umkpois4q-1@test.com",
+      "adminFirstName": "Test",
+      "adminLastName": "Admin",
+      "phoneNumber": "+212612345678",
+      "address": "123 Test Street, Casablanca",
+      "country": "Morocco"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "Tenant name is required",
+      "details": []
+    }
+  },
+  "correlationId": "a3e39b8a-6ee7-448f-a49c-0c0cd7ac7e24",
+  "timestamp": {},
+  "duration": 189
+}

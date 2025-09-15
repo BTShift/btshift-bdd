@@ -1,0 +1,41 @@
+🚀 [6b412d00] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757959963255-91t5b2547 for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959963256-9ngwqd008 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959963256-a6092f33 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757959963256] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757959963256] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757959963256] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959963256-9ngwqd008"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 56ad7999-1aee-4959-b108-f7075beae7e2 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 56ad7999-1aee-4959-b108-f7075beae7e2 | Success
+✅ [tenantadmin-1757959963256] TenantAdmin authentication successful
+🕐 [tenantadmin-1757959963256] Token expires at: 2025-09-15T18:20:43.651Z
+🏢 [tenantadmin-1757959963256] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [6b412d00] Using TenantAdmin authentication
+🕐 [6b412d00] Token expires: 6:20:43 PM
+🏢 [6b412d00] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757959963681-axjtsw5l7 for feature: permission-crud.api.feature
+📋 Test context set: permission-crud.api.feature :: api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts (positive)
+🧪 Test case: should list all permissions
+🔄 Current step: Test Execution
+🎬 Auto-context: permission-crud.api.feature :: api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts :: should list all permissions
+🧪 Adding test context to POST /api/permissions
+🧪 Test context JSON: {"featureFile":"permission-crud.api.feature","scenario":"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959963681-axjtsw5l7","testCase":"should list all permissions"}
+🔍 [Identity] POST /api/permissions | X-Correlation-ID: 62d1d23c-89f9-4d18-b05b-3280690542ef | Auth: Yes
+✅ [Identity] POST /api/permissions | X-Correlation-ID: 62d1d23c-89f9-4d18-b05b-3280690542ef | Success
+🧪 Adding test context to POST /api/permissions
+🧪 Test context JSON: {"featureFile":"permission-crud.api.feature","scenario":"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959963681-axjtsw5l7","testCase":"should list all permissions"}
+🔍 [Identity] POST /api/permissions | X-Correlation-ID: 9dcdaa76-863f-434d-ad2c-74297c6f880f | Auth: Yes
+✅ [Identity] POST /api/permissions | X-Correlation-ID: 9dcdaa76-863f-434d-ad2c-74297c6f880f | Success
+🧪 Adding test context to GET /api/permissions
+🧪 Test context JSON: {"featureFile":"permission-crud.api.feature","scenario":"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959963681-axjtsw5l7","testCase":"should list all permissions"}
+🔍 [Identity] GET /api/permissions | X-Correlation-ID: 6be7c594-1aef-48ae-8a80-f2ea0bb1d161 | Auth: Yes
+✅ [Identity] GET /api/permissions | X-Correlation-ID: 6be7c594-1aef-48ae-8a80-f2ea0bb1d161 | Success
+🏁 Clearing test context for session: test-1757959963681-axjtsw5l7

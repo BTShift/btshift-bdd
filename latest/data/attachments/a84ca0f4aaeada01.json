@@ -1,0 +1,170 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 5,
+  "timestamp": "2025-09-15T18:12:24.587Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "366adc32-07d2-4646-8f3d-dbc4a3af1132",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959943407-6f6rl4a9p\",\"testCase\":\"should refresh token with typed ctx.client\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "366adc32-07d2-4646-8f3d-dbc4a3af1132",
+      "timestamp": {},
+      "duration": 368
+    },
+    {
+      "endpoint": "/api/authentication/refresh",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "cd2c4501-6fa8-44f5-8497-cf29ff44ea68",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959943407-6f6rl4a9p\",\"testCase\":\"should refresh token with typed ctx.client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "refreshToken": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "cd2c4501-6fa8-44f5-8497-cf29ff44ea68",
+      "timestamp": {},
+      "duration": 227
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "241c04db-9af2-41aa-96a4-1070d73fc8d9",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959944038-1dd6ole5e\",\"testCase\":\"should handle change password with typed ctx.client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "241c04db-9af2-41aa-96a4-1070d73fc8d9",
+      "timestamp": {},
+      "duration": 254
+    },
+    {
+      "endpoint": "/api/authentication/change-password",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "1049769c-5837-4e19-9693-8c0cbac5250d",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959944038-1dd6ole5e\",\"testCase\":\"should handle change password with typed ctx.client\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "currentPassword": "***MASKED***",
+          "newPassword": "***MASKED***",
+          "confirmPassword": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "An error occurred while changing password",
+          "details": []
+        }
+      },
+      "correlationId": "1049769c-5837-4e19-9693-8c0cbac5250d",
+      "timestamp": {},
+      "duration": 123
+    },
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "ff04618f-3882-4c17-8bee-e4659c9acac5",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959944443-glhodw5n6\",\"testCase\":\"should validate typed error responses\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "invalid@example.com",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 401,
+        "error": {
+          "code": 16,
+          "message": "Invalid email or password",
+          "details": []
+        }
+      },
+      "correlationId": "ff04618f-3882-4c17-8bee-e4659c9acac5",
+      "timestamp": {},
+      "duration": 127
+    }
+  ]
+}

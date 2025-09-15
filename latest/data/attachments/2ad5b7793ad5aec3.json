@@ -1,0 +1,8 @@
+{
+  "step": "Attempt to get group with invalid ID format",
+  "operation": "Get Group Invalid Format",
+  "endpoint": "/api/groups/invalid-group-id",
+  "entityId": "invalid-group-id",
+  "entityType": "group",
+  "error": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m"
+}

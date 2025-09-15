@@ -1,0 +1,18 @@
+{
+  "endpoint": "/api/permissions/undefined",
+  "method": "DELETE",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "b2708ac1-70d8-49b5-9c44-4f90df3545f8",
+      "X-Test-Mode": "true",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "b2708ac1-70d8-49b5-9c44-4f90df3545f8",
+  "timestamp": {},
+  "duration": 107
+}

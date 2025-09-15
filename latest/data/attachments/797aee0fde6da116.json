@@ -1,0 +1,27 @@
+{
+  "endpoint": "/api/groups",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "f98e3c67-9647-440a-af07-06d74da9c614",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959904680-p8z41gqhc\",\"testCase\":\"should update an existing group\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "name": "TestGroup_1757959904687",
+      "description": "Original description"
+    }
+  },
+  "response": {
+    "status": 500,
+    "error": {
+      "code": 13,
+      "message": "An error occurred while creating the group",
+      "details": []
+    }
+  },
+  "correlationId": "f98e3c67-9647-440a-af07-06d74da9c614",
+  "timestamp": {},
+  "duration": 122
+}

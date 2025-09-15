@@ -1,0 +1,38 @@
+🚀 [2ce42537] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757959970537-noh9iv6sp for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959970537-lwpslojwk for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959970537-363725cb for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757959970538] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757959970538] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757959970538] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959970537-lwpslojwk"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: e0593fb1-87ab-4983-9894-fdcfef992236 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: e0593fb1-87ab-4983-9894-fdcfef992236 | Success
+✅ [tenantadmin-1757959970538] TenantAdmin authentication successful
+🕐 [tenantadmin-1757959970538] Token expires at: 2025-09-15T18:20:50.967Z
+🏢 [tenantadmin-1757959970538] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [2ce42537] Using TenantAdmin authentication
+🕐 [2ce42537] Token expires: 6:20:50 PM
+🏢 [2ce42537] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757959970997-9ibt9s25s for feature: role-crud.api.feature
+📋 Test context set: role-crud.api.feature :: api/features/identity/role-management/happy-path/role-crud.api.spec.ts (positive)
+🧪 Test case: should create a new role
+🔄 Current step: Test Execution
+🎬 Auto-context: role-crud.api.feature :: api/features/identity/role-management/happy-path/role-crud.api.spec.ts :: should create a new role
+🧪 Adding test context to POST /api/roles
+🧪 Test context JSON: {"featureFile":"role-crud.api.feature","scenario":"api/features/identity/role-management/happy-path/role-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959970997-9ibt9s25s","testCase":"should create a new role"}
+🔍 [Identity] POST /api/roles | X-Correlation-ID: c4d2eb06-1e9a-4b86-8821-5cf8c3af570a | Auth: Yes
+✅ [Identity] POST /api/roles | X-Correlation-ID: c4d2eb06-1e9a-4b86-8821-5cf8c3af570a | Success
+🏁 Clearing test context for session: test-1757959970997-9ibt9s25s
+🔍 [Identity] DELETE /api/roles/66f84556-bb12-4478-b582-a26f91b96511 | X-Correlation-ID: d80a3991-fba1-47f2-89f5-61333bf0d940 | Auth: Yes
+✅ [Identity] DELETE /api/roles/66f84556-bb12-4478-b582-a26f91b96511 | X-Correlation-ID: d80a3991-fba1-47f2-89f5-61333bf0d940 | Success
+🧹 Cleaned up role: 66f84556-bb12-4478-b582-a26f91b96511
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 15dc5e2e-ef78-4e11-80b7-78bc3f5ac983 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 15dc5e2e-ef78-4e11-80b7-78bc3f5ac983 | Success

@@ -1,0 +1,35 @@
+{
+  "endpoint": "/api/tenants",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "9e387228-e6d4-46f1-baa9-8db3cb3005a1",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"typed-tenant-creation.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/happy-path/typed-tenant-creation.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960026683-njbdz9iz7\",\"testCase\":\"should activate tenant with typed client\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "companyName": "BDD Test Company 1757960026684",
+      "tenantName": "activate-typed-1757960026684-wxapo5yc1",
+      "domain": "activate-typed-1757960026684-wxapo5yc1",
+      "plan": "Professional",
+      "adminEmail": "admin-1757960026684@activate-typed-1757960026684-wxapo5yc1.test",
+      "adminFirstName": "BDD",
+      "adminLastName": "Admin",
+      "phoneNumber": "+212612345678",
+      "address": "123 Test Street, Casablanca",
+      "country": "Morocco"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "Tenant name is required",
+      "details": []
+    }
+  },
+  "correlationId": "9e387228-e6d4-46f1-baa9-8db3cb3005a1",
+  "timestamp": {},
+  "duration": 201
+}

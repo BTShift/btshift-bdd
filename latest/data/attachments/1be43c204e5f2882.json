@@ -1,0 +1,83 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-15T18:13:50.858Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "55c810a2-d3ce-4c08-90f9-1130f319e9fc",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960030200-vwy6btu4z\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "55c810a2-d3ce-4c08-90f9-1130f319e9fc",
+      "timestamp": {},
+      "duration": 389
+    },
+    {
+      "endpoint": "/api/tenants",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "2d9c78b3-1fc5-4b3e-920d-b9b582b05269",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"tenant-suspension.api.feature\",\"scenario\":\"api/features/tenant-management/suspension/happy-path/tenant-suspension.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960030641-ay6x59x8i\",\"testCase\":\"should suspend an active tenant\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Test Company 1757960030642-8qhald2eq-1",
+          "tenantName": "tenant-1757960030642-8qhald2eq-1",
+          "domain": "tenant-1757960030642-8qhald2eq-1",
+          "plan": "Professional",
+          "adminEmail": "admin-1757960030642-8qhald2eq-1@test.com",
+          "adminFirstName": "Test",
+          "adminLastName": "Admin",
+          "phoneNumber": "+212612345678",
+          "address": "123 Test Street, Casablanca",
+          "country": "Morocco"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "Tenant name is required",
+          "details": []
+        }
+      },
+      "correlationId": "2d9c78b3-1fc5-4b3e-920d-b9b582b05269",
+      "timestamp": {},
+      "duration": 193
+    }
+  ]
+}

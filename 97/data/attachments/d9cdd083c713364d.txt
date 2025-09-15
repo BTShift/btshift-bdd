@@ -1,0 +1,42 @@
+🚀 [2adc4813] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757959960030-k9m58fyhi for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959960030-ukmbquf5v for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959960030-e0d31882 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757959960031] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757959960031] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757959960031] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959960030-ukmbquf5v"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: c2e503b6-6681-41e3-af4d-9ea9e7805109 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: c2e503b6-6681-41e3-af4d-9ea9e7805109 | Success
+✅ [tenantadmin-1757959960031] TenantAdmin authentication successful
+🕐 [tenantadmin-1757959960031] Token expires at: 2025-09-15T18:20:40.418Z
+🏢 [tenantadmin-1757959960031] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [2adc4813] Using TenantAdmin authentication
+🕐 [2adc4813] Token expires: 6:20:40 PM
+🏢 [2adc4813] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757959960447-d20yzpsss for feature: permission-crud.api.feature
+📋 Test context set: permission-crud.api.feature :: api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts (positive)
+🧪 Test case: should update permission
+🔄 Current step: Test Execution
+🎬 Auto-context: permission-crud.api.feature :: api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts :: should update permission
+🧪 Adding test context to POST /api/permissions
+🧪 Test context JSON: {"featureFile":"permission-crud.api.feature","scenario":"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959960447-d20yzpsss","testCase":"should update permission"}
+🔍 [Identity] POST /api/permissions | X-Correlation-ID: 925da921-c9e2-439b-be53-3dfa4ba6c7f7 | Auth: Yes
+✅ [Identity] POST /api/permissions | X-Correlation-ID: 925da921-c9e2-439b-be53-3dfa4ba6c7f7 | Success
+🧪 Adding test context to PUT /api/permissions/undefined
+🧪 Test context JSON: {"featureFile":"permission-crud.api.feature","scenario":"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959960447-d20yzpsss","testCase":"should update permission"}
+🔍 [Identity] PUT /api/permissions/undefined | X-Correlation-ID: 82e5dc35-e9b3-447f-90cc-f0e102083b1e | Auth: Yes
+✅ [Identity] PUT /api/permissions/undefined | X-Correlation-ID: 82e5dc35-e9b3-447f-90cc-f0e102083b1e | Success
+🏁 Clearing test context for session: test-1757959960447-d20yzpsss
+🔍 [Identity] DELETE /api/permissions/undefined | X-Correlation-ID: a1e04f0f-757a-476a-98d2-1bbee6586b6e | Auth: Yes
+✅ [Identity] DELETE /api/permissions/undefined | X-Correlation-ID: a1e04f0f-757a-476a-98d2-1bbee6586b6e | Success
+🧹 Cleaned up permission: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: dc7b3e02-f3d8-47a2-aa3f-ddf85499dd44 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: dc7b3e02-f3d8-47a2-aa3f-ddf85499dd44 | Success

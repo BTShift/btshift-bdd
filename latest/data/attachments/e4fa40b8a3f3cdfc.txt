@@ -1,0 +1,33 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users
+Correlation ID: af51176b-972d-4a62-9563-d82f64b78bd6
+Timestamp: 2025-09-15T18:12:49.498Z
+Duration: 127ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "af51176b-972d-4a62-9563-d82f64b78bd6",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"permission-crud.api.feature\",\"scenario\":\"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959969316-nupqkjp9c\",\"testCase\":\"should check if user has permission\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "email": "test.user1757959969498@example.com",
+  "firstName": "Test",
+  "lastName": "User",
+  "phoneNumber": "+212600000000",
+  "role": "User"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "Invalid role specified",
+  "details": []
+}

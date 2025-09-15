@@ -1,0 +1,33 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users
+Correlation ID: d7170a40-e952-4c2d-801a-1420bfec03eb
+Timestamp: 2025-09-15T18:13:07.790Z
+Duration: 191ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "d7170a40-e952-4c2d-801a-1420bfec03eb",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959987789-yf8q3pxs6\",\"testCase\":\"should create a new user successfully\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "email": "user-1757959987790-jzhc3cjxe-1@test.com",
+  "firstName": "Test",
+  "lastName": "User1757959987790-jzhc3cjxe-1",
+  "phoneNumber": "+212600000000",
+  "role": "User"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "Invalid role specified",
+  "details": []
+}

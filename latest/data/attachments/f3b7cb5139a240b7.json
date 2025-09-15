@@ -1,0 +1,19 @@
+{
+  "endpoint": "/api/tenants/by-name/non-existent-1757960010930",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "56ef2bb4-b3ea-4228-8a86-f5362a2853dd",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"duplicate-tenant.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960010929-iowmuv4wg\",\"testCase\":\"should verify tenant exists check returns false for non-existing tenant\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "56ef2bb4-b3ea-4228-8a86-f5362a2853dd",
+  "timestamp": {},
+  "duration": 182
+}

@@ -1,0 +1,19 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/invitations/f3bedd50-7e57-442b-a439-08ae906ff3f8/cancel
+Correlation ID: 9e749149-2049-4e0f-ac74-5a90f796e195
+Timestamp: 2025-09-15T18:12:30.803Z
+Duration: 123ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "9e749149-2049-4e0f-ac74-5a90f796e195",
+  "X-Test-Mode": "true",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

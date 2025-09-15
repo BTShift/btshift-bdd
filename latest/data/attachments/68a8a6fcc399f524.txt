@@ -1,0 +1,30 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/refresh
+Correlation ID: cd2c4501-6fa8-44f5-8497-cf29ff44ea68
+Timestamp: 2025-09-15T18:12:23.785Z
+Duration: 227ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "cd2c4501-6fa8-44f5-8497-cf29ff44ea68",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959943407-6f6rl4a9p\",\"testCase\":\"should refresh token with typed ctx.client\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "refreshToken": "***MASKED***"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "tokenInfo": "***MASKED***"
+}

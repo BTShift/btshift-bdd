@@ -1,0 +1,19 @@
+{
+  "endpoint": "/api/roles/fccef992-8e23-411b-b164-ae5d7633c5f3",
+  "method": "DELETE",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "d99d11eb-a393-4102-9a70-9fbefa95be94",
+      "X-Test-Mode": "true",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {},
+    "headers": {}
+  },
+  "correlationId": "d99d11eb-a393-4102-9a70-9fbefa95be94",
+  "timestamp": {},
+  "duration": 128
+}

@@ -1,0 +1,31 @@
+{
+  "endpoint": "/api/invitations",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "ff465fa3-9c56-4ac7-b111-ce95875435a3",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959948426-id1937z6w\",\"testCase\":\"should accept invitation\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "invitee1757959948427@example.com",
+      "firstName": "Alice",
+      "lastName": "Johnson",
+      "role": "User"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "invitationId": "3d989e97-d076-4eb1-a060-8f883200478c",
+      "invitationToken": "***MASKED***",
+      "email": "invitee1757959948427@example.com",
+      "expiresAt": "2025-09-22T18:12:28.7069467Z"
+    },
+    "headers": {}
+  },
+  "correlationId": "ff465fa3-9c56-4ac7-b111-ce95875435a3",
+  "timestamp": {},
+  "duration": 358
+}

@@ -1,0 +1,104 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-15T18:12:49.649Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "77c3df13-0891-486f-80cb-fc1f7d26fc8d",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959968873-v195gfknc\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "77c3df13-0891-486f-80cb-fc1f7d26fc8d",
+      "timestamp": {},
+      "duration": 392
+    },
+    {
+      "endpoint": "/api/permissions",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "6ddf9362-5ea4-4a9b-ba5d-e88c265fbea3",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"permission-crud.api.feature\",\"scenario\":\"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959969316-nupqkjp9c\",\"testCase\":\"should check if user has permission\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "test:permission:1757959969317",
+          "description": "Permission for checking",
+          "resource": "test-resource",
+          "action": "execute"
+        }
+      },
+      "response": {
+        "status": 405,
+        "headers": {}
+      },
+      "correlationId": "6ddf9362-5ea4-4a9b-ba5d-e88c265fbea3",
+      "timestamp": {},
+      "duration": 179
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "af51176b-972d-4a62-9563-d82f64b78bd6",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"permission-crud.api.feature\",\"scenario\":\"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959969316-nupqkjp9c\",\"testCase\":\"should check if user has permission\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "test.user1757959969498@example.com",
+          "firstName": "Test",
+          "lastName": "User",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "Invalid role specified",
+          "details": []
+        }
+      },
+      "correlationId": "af51176b-972d-4a62-9563-d82f64b78bd6",
+      "timestamp": {},
+      "duration": 127
+    }
+  ]
+}

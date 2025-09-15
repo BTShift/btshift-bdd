@@ -1,0 +1,19 @@
+{
+  "endpoint": "/api/groups/00000000-0000-0000-0000-000000000000",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "6b74b036-c2d2-4092-a149-f4be13a2848c",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"group-edge-cases.api.feature\",\"scenario\":\"api/features/client-management/groups/edge-cases/group-edge-cases.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959896796-qjti3i3pr\",\"testCase\":\"should return 404 when getting a non-existent group\"}",
+      "Authorization": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 405,
+    "headers": {}
+  },
+  "correlationId": "6b74b036-c2d2-4092-a149-f4be13a2848c",
+  "timestamp": {},
+  "duration": 108
+}

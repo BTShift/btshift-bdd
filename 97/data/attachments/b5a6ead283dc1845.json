@@ -1,0 +1,42 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 1,
+  "timestamp": "2025-09-15T18:13:34.435Z",
+  "calls": [
+    {
+      "endpoint": "/api/tenants",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "77744548-59d9-43c0-9ba3-31a40f5e6cd2",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"tenant-creation.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960014291-b09snaulg\",\"testCase\":\"Super Admin can successfully onboard a new accounting firm\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "companyName": "Test Company 1757960014299-a2mj4dj5v-1",
+          "tenantName": "tenant-1757960014299-a2mj4dj5v-1",
+          "domain": "tenant-1757960014299-a2mj4dj5v-1",
+          "plan": "Professional",
+          "adminEmail": "admin-1757960014299-a2mj4dj5v-1@test.com",
+          "adminFirstName": "Test",
+          "adminLastName": "Admin",
+          "phoneNumber": "+212612345678",
+          "address": "123 Test Street, Casablanca",
+          "country": "Morocco"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "Tenant name is required",
+          "details": []
+        }
+      },
+      "correlationId": "77744548-59d9-43c0-9ba3-31a40f5e6cd2",
+      "timestamp": {},
+      "duration": 115
+    }
+  ]
+}

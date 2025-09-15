@@ -1,0 +1,22 @@
+=== API Call Details ===
+Method: DELETE
+Endpoint: /api/roles/71dfc95a-e510-4c04-af8a-66d0cc143511
+Correlation ID: e7323b24-8191-4f68-b4bf-bff9ee8dbc2d
+Timestamp: 2025-09-15T18:12:53.177Z
+Duration: 132ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "e7323b24-8191-4f68-b4bf-bff9ee8dbc2d",
+  "X-Test-Mode": "true",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{}

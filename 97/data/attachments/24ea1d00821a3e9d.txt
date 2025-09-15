@@ -1,0 +1,41 @@
+🚀 [154321a9] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757959974086-1xvgb94l8 for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959974087-nzvikqyu0 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959974087-11516ce2 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757959974088] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757959974088] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757959974088] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959974087-nzvikqyu0"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 9657642e-6712-4ba7-a037-d4d05a2fb89f | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 9657642e-6712-4ba7-a037-d4d05a2fb89f | Success
+✅ [tenantadmin-1757959974088] TenantAdmin authentication successful
+🕐 [tenantadmin-1757959974088] Token expires at: 2025-09-15T18:20:54.495Z
+🏢 [tenantadmin-1757959974088] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [154321a9] Using TenantAdmin authentication
+🕐 [154321a9] Token expires: 6:20:54 PM
+🏢 [154321a9] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757959974542-8vln14lmg for feature: role-crud.api.feature
+📋 Test context set: role-crud.api.feature :: api/features/identity/role-management/happy-path/role-crud.api.spec.ts (positive)
+🧪 Test case: should update role
+🔄 Current step: Test Execution
+🎬 Auto-context: role-crud.api.feature :: api/features/identity/role-management/happy-path/role-crud.api.spec.ts :: should update role
+🧪 Adding test context to POST /api/roles
+🧪 Test context JSON: {"featureFile":"role-crud.api.feature","scenario":"api/features/identity/role-management/happy-path/role-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959974542-8vln14lmg","testCase":"should update role"}
+🔍 [Identity] POST /api/roles | X-Correlation-ID: dfa2374c-b2c1-457a-b902-c3faf82ea4d1 | Auth: Yes
+✅ [Identity] POST /api/roles | X-Correlation-ID: dfa2374c-b2c1-457a-b902-c3faf82ea4d1 | Success
+🧪 Adding test context to PUT /api/roles/fccef992-8e23-411b-b164-ae5d7633c5f3
+🧪 Test context JSON: {"featureFile":"role-crud.api.feature","scenario":"api/features/identity/role-management/happy-path/role-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959974542-8vln14lmg","testCase":"should update role"}
+🔍 [Identity] PUT /api/roles/fccef992-8e23-411b-b164-ae5d7633c5f3 | X-Correlation-ID: bd137d4b-eb2d-4b79-b558-50637e44f28a | Auth: Yes
+🏁 Clearing test context for session: test-1757959974542-8vln14lmg
+🔍 [Identity] DELETE /api/roles/fccef992-8e23-411b-b164-ae5d7633c5f3 | X-Correlation-ID: d99d11eb-a393-4102-9a70-9fbefa95be94 | Auth: Yes
+✅ [Identity] DELETE /api/roles/fccef992-8e23-411b-b164-ae5d7633c5f3 | X-Correlation-ID: d99d11eb-a393-4102-9a70-9fbefa95be94 | Success
+🧹 Cleaned up role: fccef992-8e23-411b-b164-ae5d7633c5f3
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: a8bd75d5-89ef-4045-9635-b22013345219 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: a8bd75d5-89ef-4045-9635-b22013345219 | Success

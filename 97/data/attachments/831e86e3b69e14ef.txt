@@ -1,0 +1,41 @@
+🚀 [a9b37187] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757959949826-ftq5h8c05 for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959949827-7zri8nrxb for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959949827-009e904e for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757959949827] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757959949827] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757959949827] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959949827-7zri8nrxb"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: e3a39912-54ab-40e1-85b9-a64827ef55dd | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: e3a39912-54ab-40e1-85b9-a64827ef55dd | Success
+✅ [tenantadmin-1757959949827] TenantAdmin authentication successful
+🕐 [tenantadmin-1757959949827] Token expires at: 2025-09-15T18:20:30.248Z
+🏢 [tenantadmin-1757959949827] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [a9b37187] Using TenantAdmin authentication
+🕐 [a9b37187] Token expires: 6:20:30 PM
+🏢 [a9b37187] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757959950282-xw4jtsxw3 for feature: invitation-operations.api.feature
+📋 Test context set: invitation-operations.api.feature :: api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts (positive)
+🧪 Test case: should resend invitation
+🔄 Current step: Test Execution
+🎬 Auto-context: invitation-operations.api.feature :: api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts :: should resend invitation
+🧪 Adding test context to POST /api/invitations
+🧪 Test context JSON: {"featureFile":"invitation-operations.api.feature","scenario":"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959950282-xw4jtsxw3","testCase":"should resend invitation"}
+🔍 [Identity] POST /api/invitations | X-Correlation-ID: 8e71b278-9234-48f4-8dfa-a03a1c8c1000 | Auth: Yes
+✅ [Identity] POST /api/invitations | X-Correlation-ID: 8e71b278-9234-48f4-8dfa-a03a1c8c1000 | Success
+🧪 Adding test context to POST /api/invitations/f3bedd50-7e57-442b-a439-08ae906ff3f8/resend
+🧪 Test context JSON: {"featureFile":"invitation-operations.api.feature","scenario":"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959950282-xw4jtsxw3","testCase":"should resend invitation"}
+🔍 [Identity] POST /api/invitations/f3bedd50-7e57-442b-a439-08ae906ff3f8/resend | X-Correlation-ID: bb43e0e5-20b0-454d-b16a-90622e93a919 | Auth: Yes
+🏁 Clearing test context for session: test-1757959950282-xw4jtsxw3
+🔍 [Identity] POST /api/invitations/f3bedd50-7e57-442b-a439-08ae906ff3f8/cancel | X-Correlation-ID: 9e749149-2049-4e0f-ac74-5a90f796e195 | Auth: Yes
+✅ [Identity] POST /api/invitations/f3bedd50-7e57-442b-a439-08ae906ff3f8/cancel | X-Correlation-ID: 9e749149-2049-4e0f-ac74-5a90f796e195 | Success
+🧹 Cancelled invitation: f3bedd50-7e57-442b-a439-08ae906ff3f8
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 128a8d2e-6293-4b73-9dfe-5ec19baaec06 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 128a8d2e-6293-4b73-9dfe-5ec19baaec06 | Success

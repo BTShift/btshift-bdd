@@ -1,0 +1,41 @@
+🚀 [d339008b] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757959967255-xtn140iyq for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959967256-7w9qfz3in for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959967256-b6c89651 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757959967257] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757959967257] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757959967257] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959967256-7w9qfz3in"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 25961de1-8587-4769-9dc5-71c48f5cc593 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 25961de1-8587-4769-9dc5-71c48f5cc593 | Success
+✅ [tenantadmin-1757959967257] TenantAdmin authentication successful
+🕐 [tenantadmin-1757959967257] Token expires at: 2025-09-15T18:20:47.635Z
+🏢 [tenantadmin-1757959967257] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [d339008b] Using TenantAdmin authentication
+🕐 [d339008b] Token expires: 6:20:47 PM
+🏢 [d339008b] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757959967670-3u9dc5rf9 for feature: permission-crud.api.feature
+📋 Test context set: permission-crud.api.feature :: api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts (positive)
+🧪 Test case: should get user permissions
+🔄 Current step: Test Execution
+🎬 Auto-context: permission-crud.api.feature :: api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts :: should get user permissions
+🧪 Adding test context to POST /api/permissions
+🧪 Test context JSON: {"featureFile":"permission-crud.api.feature","scenario":"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959967670-3u9dc5rf9","testCase":"should get user permissions"}
+🔍 [Identity] POST /api/permissions | X-Correlation-ID: 498d5e28-bf49-4ac9-a96c-47e73ed3ab7f | Auth: Yes
+✅ [Identity] POST /api/permissions | X-Correlation-ID: 498d5e28-bf49-4ac9-a96c-47e73ed3ab7f | Success
+🧪 Adding test context to POST /api/users
+🧪 Test context JSON: {"featureFile":"permission-crud.api.feature","scenario":"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959967670-3u9dc5rf9","testCase":"should get user permissions"}
+🔍 [Identity] POST /api/users | X-Correlation-ID: 3ff8c0fd-dff0-4b43-90b8-b3264174d767 | Auth: Yes
+🏁 Clearing test context for session: test-1757959967670-3u9dc5rf9
+🔍 [Identity] DELETE /api/permissions/undefined | X-Correlation-ID: 9a764fd0-5d8c-4f29-a24b-9c69bce5811f | Auth: Yes
+✅ [Identity] DELETE /api/permissions/undefined | X-Correlation-ID: 9a764fd0-5d8c-4f29-a24b-9c69bce5811f | Success
+🧹 Cleaned up permission: undefined
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: dfa162d6-0008-4e38-936f-23dc1e3d2353 | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: dfa162d6-0008-4e38-936f-23dc1e3d2353 | Success

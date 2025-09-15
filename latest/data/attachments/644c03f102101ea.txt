@@ -1,0 +1,1 @@
+❌ [Identity] POST /api/users | X-Correlation-ID: 2ab621e0-9147-44ca-92b8-034fd0fcd93e | Error: { code: 3, message: 'Invalid role specified', details: [] }

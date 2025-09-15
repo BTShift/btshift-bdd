@@ -1,0 +1,5 @@
+❌ [Identity] POST /api/invitations/f3bedd50-7e57-442b-a439-08ae906ff3f8/resend | X-Correlation-ID: bb43e0e5-20b0-454d-b16a-90622e93a919 | Error: {
+  code: 3,
+  message: "Unable to read the request as JSON because the request content type '' is not a known JSON content type.",
+  details: []
+}

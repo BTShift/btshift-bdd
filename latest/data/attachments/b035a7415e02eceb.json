@@ -1,0 +1,37 @@
+{
+  "endpoint": "/api/audit-logs",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "8494cb6a-ffa6-46c4-bd02-898a6a78044f",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959928198-fywlzpgcv\",\"testCase\":\"should filter audit logs by date range\"}",
+      "Authorization": "***MASKED***"
+    },
+    "params": {
+      "query": {
+        "startDate": "2025-09-08T18:12:08.199Z",
+        "endDate": "2025-09-15T18:12:08.199Z",
+        "pageNumber": 1,
+        "pageSize": 10
+      }
+    },
+    "query": {
+      "startDate": "2025-09-08T18:12:08.199Z",
+      "endDate": "2025-09-15T18:12:08.199Z",
+      "pageNumber": 1,
+      "pageSize": 10
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "logs": [],
+      "totalCount": 0
+    },
+    "headers": {}
+  },
+  "correlationId": "8494cb6a-ffa6-46c4-bd02-898a6a78044f",
+  "timestamp": {},
+  "duration": 160
+}

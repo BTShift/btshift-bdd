@@ -1,0 +1,31 @@
+{
+  "endpoint": "/api/roles/fccef992-8e23-411b-b164-ae5d7633c5f3",
+  "method": "PUT",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "bd137d4b-eb2d-4b79-b558-50637e44f28a",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959974542-8vln14lmg\",\"testCase\":\"should update role\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "description": "Updated description",
+      "permissions": [
+        "read:users",
+        "write:users",
+        "delete:users"
+      ]
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "An error occurred while updating the role",
+      "details": []
+    }
+  },
+  "correlationId": "bd137d4b-eb2d-4b79-b558-50637e44f28a",
+  "timestamp": {},
+  "duration": 135
+}

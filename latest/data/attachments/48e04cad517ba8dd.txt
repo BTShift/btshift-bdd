@@ -1,0 +1,30 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/groups
+Correlation ID: 029e31bf-78a0-463a-b5ba-17b11435ced2
+Timestamp: 2025-09-15T18:11:50.778Z
+Duration: 124ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "029e31bf-78a0-463a-b5ba-17b11435ced2",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959910771-59rxuokqt\",\"testCase\":\"should add a client to a group\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "TestGroup_1757959910778",
+  "description": "Group for client association"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "code": 13,
+  "message": "An error occurred while creating the group",
+  "details": []
+}

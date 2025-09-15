@@ -1,0 +1,20 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/invitations/4f1a51f6-a149-464b-a23b-8f6416020886/cancel
+Correlation ID: c69cc5f8-5081-4a7b-9745-5a28891ad842
+Timestamp: 2025-09-15T18:12:32.509Z
+Duration: 109ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "c69cc5f8-5081-4a7b-9745-5a28891ad842",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959952178-9753wft8a\",\"testCase\":\"should cancel invitation\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

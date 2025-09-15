@@ -1,0 +1,46 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: e6377749-9ce9-4a47-b41c-6b22d249bc72
+Timestamp: 2025-09-15T18:12:15.334Z
+Duration: 253ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "e6377749-9ce9-4a47-b41c-6b22d249bc72",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959935333-gw9xfhelc\",\"testCase\":\"should validate a valid token\"}"
+}
+
+=== Request Body ===
+{
+  "email": "superadmin@shift.ma",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "tokenInfo": "***MASKED***",
+  "userInfo": {
+    "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+    "email": "superadmin@shift.ma",
+    "firstName": "Super",
+    "lastName": "Administrator",
+    "tenantId": "",
+    "roles": [
+      "SuperAdmin"
+    ],
+    "userType": "SuperAdmin",
+    "clientId": "",
+    "departmentId": "",
+    "teamId": ""
+  },
+  "requires2fa": false,
+  "sessionToken": "***MASKED***"
+}

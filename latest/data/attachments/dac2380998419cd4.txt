@@ -1,0 +1,26 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/logout
+Correlation ID: 8db9907d-b9fd-45df-a046-703769969764
+Timestamp: 2025-09-15T18:12:17.377Z
+Duration: 121ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "8db9907d-b9fd-45df-a046-703769969764",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959937127-nm86q7luq\",\"testCase\":\"should logout successfully\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{}

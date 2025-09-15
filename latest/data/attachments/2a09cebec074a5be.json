@@ -1,0 +1,133 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-15T18:13:19.696Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b5a28233-3909-4a9a-b801-f5a6e9bf086e",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959998785-b3tfethuo\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "b5a28233-3909-4a9a-b801-f5a6e9bf086e",
+      "timestamp": {},
+      "duration": 353
+    },
+    {
+      "endpoint": "/api/tenants",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "e7aa64a0-6c2b-4001-a3ef-2ce11f89038d",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"multi-user-example.feature\",\"scenario\":\"api/features/multi-user-example.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959999266-tnshgnmd4\",\"testCase\":\"should list all tenants (SuperAdmin only)\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tenants": [
+            {
+              "id": "a02138dd-4f80-45da-9c82-01887e03e7e4",
+              "name": "nstech4",
+              "companyName": "nstech4",
+              "domain": "nstech4",
+              "status": "Pending",
+              "plan": "Starter",
+              "userCount": 0,
+              "createdAt": "2025-09-04T08:51:16.6520390Z"
+            },
+            {
+              "id": "75c9e775-1ca8-41e5-8801-b6a8e255a8fa",
+              "name": "nstech3",
+              "companyName": "nstech3",
+              "domain": "nstech3",
+              "status": "Failed",
+              "plan": "Starter",
+              "userCount": 0,
+              "createdAt": "2025-09-03T16:35:40.4817330Z"
+            },
+            {
+              "id": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+              "name": "nstech2",
+              "companyName": "nstech2",
+              "domain": "nstech2",
+              "status": "Active",
+              "plan": "Starter",
+              "userCount": 0,
+              "createdAt": "2025-09-03T15:14:33.7431710Z"
+            },
+            {
+              "id": "645e8102-df5c-4f40-8b59-bc4f4dfd273c",
+              "name": "nstech",
+              "companyName": "nstech SARL",
+              "domain": "nstech",
+              "status": "Active",
+              "plan": "Starter",
+              "userCount": 0,
+              "createdAt": "2025-09-02T12:27:46.3199840Z"
+            }
+          ],
+          "totalCount": 4,
+          "pageNumber": 1,
+          "pageSize": 10
+        },
+        "headers": {}
+      },
+      "correlationId": "e7aa64a0-6c2b-4001-a3ef-2ce11f89038d",
+      "timestamp": {},
+      "duration": 263
+    },
+    {
+      "endpoint": "/api/platform/settings",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "ebb80231-617f-494c-be31-56cb07031b5d",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"multi-user-example.feature\",\"scenario\":\"api/features/multi-user-example.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959999559-krzu64o6o\",\"testCase\":\"should access platform settings (SuperAdmin only)\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "ebb80231-617f-494c-be31-56cb07031b5d",
+      "timestamp": {},
+      "duration": 109
+    }
+  ]
+}

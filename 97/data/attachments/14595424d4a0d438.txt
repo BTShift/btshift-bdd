@@ -1,0 +1,35 @@
+🚀 [2e519911] Setting up test with TenantAdmin context...
+🎬 Starting test session: test-1757959901150-d8h14788h for feature: api-tenantadmin-test.feature
+📋 Test context set: api-tenantadmin-test.feature :: API Test with TenantAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959901151-zpxfw8bvd for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757959901151-64713577 for feature: api-tenantadmin-multiauth.feature
+📋 Test context set: api-tenantadmin-multiauth.feature :: API Test with TenantAdmin (MultiUserAuth) (positive)
+🔑 [tenantadmin-1757959901151] Starting TenantAdmin authentication...
+🔐 [tenantadmin-1757959901151] Logging in as: test.tenantadmin@btshift.ma
+🏢 [tenantadmin-1757959901151] Tenant context will be extracted from email domain automatically
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-tenantadmin-multiauth.feature","scenario":"API Test with TenantAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959901151-zpxfw8bvd"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: fda45786-d239-4121-8439-8957c50eda5c | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: fda45786-d239-4121-8439-8957c50eda5c | Success
+✅ [tenantadmin-1757959901151] TenantAdmin authentication successful
+🕐 [tenantadmin-1757959901151] Token expires at: 2025-09-15T18:19:41.602Z
+🏢 [tenantadmin-1757959901151] Tenant context derived from JWT token automatically
+🔐 Using TenantAdmin authentication (test.tenantadmin@btshift.ma)
+✅ [2e519911] Using TenantAdmin authentication
+🕐 [2e519911] Token expires: 6:19:41 PM
+🏢 [2e519911] Tenant ID: tenant-from-jwt-test.tenantadmin
+🎬 Starting test session: test-1757959901631-rjlqyvwtf for feature: group-edge-cases.api.feature
+📋 Test context set: group-edge-cases.api.feature :: api/features/client-management/groups/edge-cases/group-edge-cases.api.spec.ts (negative)
+🧪 Test case: should handle GetGroup authorization properly
+🔄 Current step: Test Execution
+🎬 Auto-context: group-edge-cases.api.feature :: api/features/client-management/groups/edge-cases/group-edge-cases.api.spec.ts :: should handle GetGroup authorization properly
+📍 Step: Create group for auth test
+🧪 Adding test context to POST /api/groups
+🧪 Test context JSON: {"featureFile":"group-edge-cases.api.feature","scenario":"api/features/client-management/groups/edge-cases/group-edge-cases.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757959901631-rjlqyvwtf","testCase":"should handle GetGroup authorization properly"}
+🔍 [ClientManagement] POST /api/groups | X-Correlation-ID: 14266792-a189-4841-9b5f-b1d8c0b85fee | Auth: Yes
+🏁 Clearing test context for session: test-1757959901631-rjlqyvwtf
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 1f2dd32e-7182-40c9-ada4-b2d503d1756b | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 1f2dd32e-7182-40c9-ada4-b2d503d1756b | Success

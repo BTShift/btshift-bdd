@@ -1,0 +1,68 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-15T18:11:38.568Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "ac09cbeb-f100-4551-88a5-c4ce2c694113",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959897731-0vrhat3em\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "ac09cbeb-f100-4551-88a5-c4ce2c694113",
+      "timestamp": {},
+      "duration": 559
+    },
+    {
+      "endpoint": "/api/groups/invalid-group-id",
+      "method": "GET",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "d83a486b-ca34-452f-87c1-660bec845b42",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"group-edge-cases.api.feature\",\"scenario\":\"api/features/client-management/groups/edge-cases/group-edge-cases.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959898421-egttf5lv4\",\"testCase\":\"should return 400 when getting a group with invalid ID format\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 405,
+        "headers": {}
+      },
+      "correlationId": "d83a486b-ca34-452f-87c1-660bec845b42",
+      "timestamp": {},
+      "duration": 109
+    }
+  ]
+}

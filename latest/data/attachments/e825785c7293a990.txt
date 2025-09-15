@@ -1,0 +1,26 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/logout
+Correlation ID: e0c33e95-7400-43e3-a16b-8eed033dff6e
+Timestamp: 2025-09-15T18:12:36.072Z
+Duration: 127ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "e0c33e95-7400-43e3-a16b-8eed033dff6e",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959955440-4ebxjyey4\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{}

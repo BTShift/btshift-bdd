@@ -1,0 +1,30 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/groups
+Correlation ID: f520dbca-004b-43bb-aa4f-1e5cf99b7630
+Timestamp: 2025-09-15T18:11:46.208Z
+Duration: 123ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "f520dbca-004b-43bb-aa4f-1e5cf99b7630",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959906197-6hyhzpnm7\",\"testCase\":\"should delete a group\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "TestGroup_1757959906204",
+  "description": "Group to be deleted"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "code": 13,
+  "message": "An error occurred while creating the group",
+  "details": []
+}

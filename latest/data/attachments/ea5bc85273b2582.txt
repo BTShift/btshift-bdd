@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/invitations/f3bedd50-7e57-442b-a439-08ae906ff3f8/resend
+Correlation ID: bb43e0e5-20b0-454d-b16a-90622e93a919
+Timestamp: 2025-09-15T18:12:30.663Z
+Duration: 112ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "bb43e0e5-20b0-454d-b16a-90622e93a919",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959950282-xw4jtsxw3\",\"testCase\":\"should resend invitation\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "Unable to read the request as JSON because the request content type '' is not a known JSON content type.",
+  "details": []
+}

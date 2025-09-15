@@ -1,5 +1,0 @@
-❌ [ClientManagement] GET /api/clients/bc9f0b1f-03b9-4d72-88a1-4fcbf5389f54 | X-Correlation-ID: a7cd12ca-d8eb-45a3-b522-00a493d1dd36 | Error: {
-  code: 5,
-  message: 'Client with ID bc9f0b1f-03b9-4d72-88a1-4fcbf5389f54 not found',
-  details: []
-}

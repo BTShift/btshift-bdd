@@ -1,0 +1,103 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-15T18:12:28.932Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "14dd24fe-6863-4965-a2d5-0192ba46d48e",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959948010-0etnbplv4\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "14dd24fe-6863-4965-a2d5-0192ba46d48e",
+      "timestamp": {},
+      "duration": 362
+    },
+    {
+      "endpoint": "/api/invitations",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "ff465fa3-9c56-4ac7-b111-ce95875435a3",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959948426-id1937z6w\",\"testCase\":\"should accept invitation\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "invitee1757959948427@example.com",
+          "firstName": "Alice",
+          "lastName": "Johnson",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "invitationId": "3d989e97-d076-4eb1-a060-8f883200478c",
+          "invitationToken": "***MASKED***",
+          "email": "invitee1757959948427@example.com",
+          "expiresAt": "2025-09-22T18:12:28.7069467Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "ff465fa3-9c56-4ac7-b111-ce95875435a3",
+      "timestamp": {},
+      "duration": 358
+    },
+    {
+      "endpoint": "/api/invitations/3d989e97-d076-4eb1-a060-8f883200478c/accept",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "1fe038cc-5cfb-4a47-a9e0-0f3cb1879ef0",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959948426-id1937z6w\",\"testCase\":\"should accept invitation\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "invitationToken": "***MASKED***",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 404,
+        "headers": {}
+      },
+      "correlationId": "1fe038cc-5cfb-4a47-a9e0-0f3cb1879ef0",
+      "timestamp": {},
+      "duration": 114
+    }
+  ]
+}

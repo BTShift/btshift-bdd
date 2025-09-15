@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/refresh
+Correlation ID: a657c0a2-45e4-4d11-96e9-1a1e05705a5e
+Timestamp: 2025-09-15T18:12:14.077Z
+Duration: 134ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "a657c0a2-45e4-4d11-96e9-1a1e05705a5e",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959934077-ykrwng7uy\",\"testCase\":\"should reject refresh token with invalid refresh token\"}"
+}
+
+=== Request Body ===
+{
+  "refreshToken": "***MASKED***"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "An error occurred while refreshing token",
+  "details": []
+}

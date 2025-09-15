@@ -1,0 +1,108 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-15T18:13:01.962Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "78a64090-dd01-447a-9510-5c7e0d67993d",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959981186-3dk62mwer\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "78a64090-dd01-447a-9510-5c7e0d67993d",
+      "timestamp": {},
+      "duration": 385
+    },
+    {
+      "endpoint": "/api/roles",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b01616e1-36b0-4462-8c26-abe17dbe7f9b",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959981623-sybd6k3a7\",\"testCase\":\"should remove role from user\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestRole_1757959981624",
+          "description": "Role for removal",
+          "permissions": [
+            "read:users"
+          ]
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "roleId": "446be58e-8bce-4c01-ba44-84872eef4422"
+        },
+        "headers": {}
+      },
+      "correlationId": "b01616e1-36b0-4462-8c26-abe17dbe7f9b",
+      "timestamp": {},
+      "duration": 199
+    },
+    {
+      "endpoint": "/api/users",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "8ced3ff8-7af2-4281-a326-06c40971e869",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959981623-sybd6k3a7\",\"testCase\":\"should remove role from user\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "test.user1757959981826@example.com",
+          "firstName": "Test",
+          "lastName": "User",
+          "phoneNumber": "+212600000000",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "Invalid role specified",
+          "details": []
+        }
+      },
+      "correlationId": "8ced3ff8-7af2-4281-a326-06c40971e869",
+      "timestamp": {},
+      "duration": 113
+    }
+  ]
+}

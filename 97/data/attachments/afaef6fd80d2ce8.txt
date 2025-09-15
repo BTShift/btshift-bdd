@@ -1,0 +1,26 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/logout
+Correlation ID: ae9175ee-3f62-4acc-9e39-191808d9407f
+Timestamp: 2025-09-15T18:13:49.420Z
+Duration: 116ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "ae9175ee-3f62-4acc-9e39-191808d9407f",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960028829-rnd82pqqj\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{}

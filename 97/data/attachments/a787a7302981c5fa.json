@@ -1,0 +1,23 @@
+{
+  "endpoint": "/api/invitations/3d989e97-d076-4eb1-a060-8f883200478c/accept",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "1fe038cc-5cfb-4a47-a9e0-0f3cb1879ef0",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959948426-id1937z6w\",\"testCase\":\"should accept invitation\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "invitationToken": "***MASKED***",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "1fe038cc-5cfb-4a47-a9e0-0f3cb1879ef0",
+  "timestamp": {},
+  "duration": 114
+}

@@ -1,0 +1,31 @@
+🚀 [5a14c861] Setting up test with SuperAdmin context...
+🎬 Starting test session: test-1757960007630-9v0us2eop for feature: api-superadmin-test.feature
+📋 Test context set: api-superadmin-test.feature :: API Test with SuperAdmin Context (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757960007630-awi0yn2d0 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔄 Current step: Test Execution
+🎬 Starting test session: test-1757960007630-16c64be3 for feature: api-superadmin-multiauth.feature
+📋 Test context set: api-superadmin-multiauth.feature :: API Test with SuperAdmin (MultiUserAuth) (positive)
+🔑 [superadmin-1757960007631] Starting SuperAdmin authentication...
+🔐 [superadmin-1757960007631] Logging in as: superadmin@shift.ma
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"api-superadmin-multiauth.feature","scenario":"API Test with SuperAdmin (MultiUserAuth)","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757960007630-awi0yn2d0"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 732df42e-e04a-487f-8f85-6937020f48aa | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 732df42e-e04a-487f-8f85-6937020f48aa | Success
+✅ [superadmin-1757960007631] SuperAdmin authentication successful
+🕐 [superadmin-1757960007631] Token expires at: 2025-09-15T18:21:28.046Z
+🔐 Using SuperAdmin authentication (superadmin@shift.ma)
+✅ [5a14c861] Using SuperAdmin authentication
+🕐 [5a14c861] Token expires: 6:21:28 PM
+🎬 Starting test session: test-1757960008076-62gnwres9 for feature: duplicate-tenant.api.feature
+📋 Test context set: duplicate-tenant.api.feature :: api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts (negative)
+🧪 Test case: should prevent creating tenant with duplicate admin email
+🔄 Current step: Test Execution
+🎬 Auto-context: duplicate-tenant.api.feature :: api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts :: should prevent creating tenant with duplicate admin email
+🧪 Adding test context to POST /api/tenants
+🧪 Test context JSON: {"featureFile":"duplicate-tenant.api.feature","scenario":"api/features/tenant-management/onboarding/edge-cases/duplicate-tenant.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757960008076-62gnwres9","testCase":"should prevent creating tenant with duplicate admin email"}
+🔍 [Tenant] POST /api/tenants | X-Correlation-ID: 24715428-a957-4ecd-9fe0-187fc19310b7 | Auth: Yes
+🏁 Clearing test context for session: test-1757960008076-62gnwres9
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 65e7a572-027b-442d-9ed2-2965e08e660f | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 65e7a572-027b-442d-9ed2-2965e08e660f | Success

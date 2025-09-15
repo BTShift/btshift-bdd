@@ -1,0 +1,30 @@
+{
+  "endpoint": "/api/users",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "ee297be7-aa3c-4adc-99ae-417bce1cc51a",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"user-crud.api.feature\",\"scenario\":\"api/features/identity/user-management/happy-path/user-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959994917-3kc1x39cu\",\"testCase\":\"should search users by email\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "user-1757959994918-ru7wd9b1w-1@test.com",
+      "firstName": "Test",
+      "lastName": "User1757959994918-ru7wd9b1w-1",
+      "phoneNumber": "+212600000000",
+      "role": "User"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "Invalid role specified",
+      "details": []
+    }
+  },
+  "correlationId": "ee297be7-aa3c-4adc-99ae-417bce1cc51a",
+  "timestamp": {},
+  "duration": 196
+}

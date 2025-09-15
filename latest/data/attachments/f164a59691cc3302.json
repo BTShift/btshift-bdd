@@ -1,0 +1,26 @@
+{
+  "endpoint": "/api/authentication/login",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "894ac74a-3b81-4f93-8877-ce3d57805ba9",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959933645-op3jcpybj\",\"testCase\":\"should reject login with malformed email\"}"
+    },
+    "body": {
+      "email": "not-an-email",
+      "password": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 401,
+    "error": {
+      "code": 16,
+      "message": "Invalid email or password",
+      "details": []
+    }
+  },
+  "correlationId": "894ac74a-3b81-4f93-8877-ce3d57805ba9",
+  "timestamp": {},
+  "duration": 141
+}

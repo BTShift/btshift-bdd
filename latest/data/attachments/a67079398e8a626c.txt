@@ -1,0 +1,1 @@
+❌ [Identity] GET /api/users/current | X-Correlation-ID: a496fba4-f68b-4a07-8e91-151872598f00 | Error: { code: 3, message: 'User not found', details: [] }

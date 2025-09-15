@@ -1,0 +1,19 @@
+🎬 Starting test session: test-1757959954102-mneqjh15i for feature: invitation-operations.api.feature
+📋 Test context set: invitation-operations.api.feature :: api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts (positive)
+🧪 Test case: should validate invitation token
+🔄 Current step: Test Execution
+🎬 Auto-context: invitation-operations.api.feature :: api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts :: should validate invitation token
+🧪 Adding test context to POST /api/invitations
+🧪 Test context JSON: {"featureFile":"invitation-operations.api.feature","scenario":"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959954102-mneqjh15i","testCase":"should validate invitation token"}
+🔍 [Identity] POST /api/invitations | X-Correlation-ID: 85f73d2a-4a2e-427f-88a4-db8b55234e82 | Auth: Yes
+✅ [Identity] POST /api/invitations | X-Correlation-ID: 85f73d2a-4a2e-427f-88a4-db8b55234e82 | Success
+🧪 Adding test context to POST /api/invitations/validate
+🧪 Test context JSON: {"featureFile":"invitation-operations.api.feature","scenario":"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959954102-mneqjh15i","testCase":"should validate invitation token"}
+🔍 [Identity] POST /api/invitations/validate | X-Correlation-ID: 1ee218da-a3e0-470e-b9dd-086526856fec | Auth: Yes
+✅ [Identity] POST /api/invitations/validate | X-Correlation-ID: 1ee218da-a3e0-470e-b9dd-086526856fec | Success
+🏁 Clearing test context for session: test-1757959954102-mneqjh15i
+🔍 [Identity] POST /api/invitations/d7433870-d3e7-4465-8580-011bd3350582/cancel | X-Correlation-ID: 45a9cccb-97ef-4cbc-83dc-bb13a171704b | Auth: Yes
+✅ [Identity] POST /api/invitations/d7433870-d3e7-4465-8580-011bd3350582/cancel | X-Correlation-ID: 45a9cccb-97ef-4cbc-83dc-bb13a171704b | Success
+🧹 Cancelled invitation: d7433870-d3e7-4465-8580-011bd3350582
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: 5c8faf02-1672-4a98-872f-0c0abdb06b4f | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: 5c8faf02-1672-4a98-872f-0c0abdb06b4f | Success

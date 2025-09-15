@@ -1,0 +1,5 @@
+❌ [Identity] PUT /api/roles/fccef992-8e23-411b-b164-ae5d7633c5f3 | X-Correlation-ID: bd137d4b-eb2d-4b79-b558-50637e44f28a | Error: {
+  code: 3,
+  message: 'An error occurred while updating the role',
+  details: []
+}

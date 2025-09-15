@@ -1,0 +1,5 @@
+❌ [ClientManagement] GET /api/clients/e555b12c-07db-475b-a709-d3c05e8bdbf9 | X-Correlation-ID: 94845dbc-67ba-46a8-a15c-8a04c0a99423 | Error: {
+  code: 5,
+  message: 'Client with ID e555b12c-07db-475b-a709-d3c05e8bdbf9 not found',
+  details: []
+}

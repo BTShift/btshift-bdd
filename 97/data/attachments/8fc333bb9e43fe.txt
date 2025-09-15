@@ -1,0 +1,11 @@
+🎬 Starting test session: test-1757959944443-glhodw5n6 for feature: typed-login.api.feature
+📋 Test context set: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts (negative)
+🧪 Test case: should validate typed error responses
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts :: should validate typed error responses
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"typed-login.api.feature","scenario":"api/features/identity/authentication/happy-path/typed-login.api.spec.ts","currentStep":"Test Execution","testIntent":"negative","expectedOutcome":"2xx_success","testSessionId":"test-1757959944443-glhodw5n6","testCase":"should validate typed error responses"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: ff04618f-3882-4c17-8bee-e4659c9acac5 | Auth: Yes
+🏁 Clearing test context for session: test-1757959944443-glhodw5n6
+🔍 [Identity] POST /api/authentication/logout | X-Correlation-ID: e41ddbac-d999-47cd-9d1f-73359916f11a | Auth: Yes
+✅ [Identity] POST /api/authentication/logout | X-Correlation-ID: e41ddbac-d999-47cd-9d1f-73359916f11a | Success

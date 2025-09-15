@@ -1,0 +1,103 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 3,
+  "timestamp": "2025-09-15T18:12:30.802Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "e3a39912-54ab-40e1-85b9-a64827ef55dd",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959949827-7zri8nrxb\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "e3a39912-54ab-40e1-85b9-a64827ef55dd",
+      "timestamp": {},
+      "duration": 396
+    },
+    {
+      "endpoint": "/api/invitations",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "8e71b278-9234-48f4-8dfa-a03a1c8c1000",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959950282-xw4jtsxw3\",\"testCase\":\"should resend invitation\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "email": "invitee1757959950283@example.com",
+          "firstName": "Bob",
+          "lastName": "Wilson",
+          "role": "User"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "invitationId": "f3bedd50-7e57-442b-a439-08ae906ff3f8",
+          "invitationToken": "***MASKED***",
+          "email": "invitee1757959950283@example.com",
+          "expiresAt": "2025-09-22T18:12:30.5724569Z"
+        },
+        "headers": {}
+      },
+      "correlationId": "8e71b278-9234-48f4-8dfa-a03a1c8c1000",
+      "timestamp": {},
+      "duration": 377
+    },
+    {
+      "endpoint": "/api/invitations/f3bedd50-7e57-442b-a439-08ae906ff3f8/resend",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "bb43e0e5-20b0-454d-b16a-90622e93a919",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959950282-xw4jtsxw3\",\"testCase\":\"should resend invitation\"}",
+          "Authorization": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "Unable to read the request as JSON because the request content type '' is not a known JSON content type.",
+          "details": []
+        }
+      },
+      "correlationId": "bb43e0e5-20b0-454d-b16a-90622e93a919",
+      "timestamp": {},
+      "duration": 112
+    }
+  ]
+}

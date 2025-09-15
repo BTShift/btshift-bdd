@@ -1,0 +1,33 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/users
+Correlation ID: a65137e6-c3b5-408c-9ef9-86ec0acb826d
+Timestamp: 2025-09-15T18:11:59.126Z
+Duration: 194ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "a65137e6-c3b5-408c-9ef9-86ec0acb826d",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959918975-yq10m0tq4\",\"testCase\":\"should remove a user from a client\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "email": "user-1757959919126-5fm9hb2ck-2@test.com",
+  "firstName": "Test",
+  "lastName": "User1757959919126-5fm9hb2ck-2",
+  "phoneNumber": "+212600000000",
+  "role": "User"
+}
+
+=== Response ===
+Status: 400
+
+Error Details:
+{
+  "code": 3,
+  "message": "Invalid role specified",
+  "details": []
+}

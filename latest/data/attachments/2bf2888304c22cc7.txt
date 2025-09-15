@@ -1,0 +1,5 @@
+❌ [ClientManagement] POST /api/clients/46953e96-2377-43ba-ab86-82cebd4b1758/users/test-user-id | X-Correlation-ID: 9a4cc8fb-66db-41e2-918a-28f321683f74 | Error: {
+  code: 13,
+  message: 'An error occurred while assigning user to client',
+  details: []
+}

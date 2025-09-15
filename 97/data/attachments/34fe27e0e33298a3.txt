@@ -1,0 +1,46 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: 6c49c39c-5d15-440b-ba4f-7f96e5f9c543
+Timestamp: 2025-09-15T18:13:46.256Z
+Duration: 405ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "6c49c39c-5d15-440b-ba4f-7f96e5f9c543",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"api-global-auth-test.feature\",\"scenario\":\"API Test with Global Auth\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960026242-fonqyl8xp\"}"
+}
+
+=== Request Body ===
+{
+  "email": "superadmin@shift.ma",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "tokenInfo": "***MASKED***",
+  "userInfo": {
+    "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+    "email": "superadmin@shift.ma",
+    "firstName": "Super",
+    "lastName": "Administrator",
+    "tenantId": "",
+    "roles": [
+      "SuperAdmin"
+    ],
+    "userType": "SuperAdmin",
+    "clientId": "",
+    "departmentId": "",
+    "teamId": ""
+  },
+  "requires2fa": false,
+  "sessionToken": "***MASKED***"
+}

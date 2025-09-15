@@ -1,0 +1,76 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-15T18:11:46.357Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "e7b58d06-ae6c-4a0f-8bda-801ce1c7e81c",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"api-tenantadmin-multiauth.feature\",\"scenario\":\"API Test with TenantAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959905689-zvn3gzqbo\"}"
+        },
+        "body": {
+          "email": "test.tenantadmin@btshift.ma",
+          "password": "***MASKED***",
+          "portalType": "Tenant"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "befc9dc5-3ead-45f1-ad99-bc4c308f595c",
+            "email": "test.tenantadmin@btshift.ma",
+            "firstName": "Test",
+            "lastName": "TenantAdmin",
+            "tenantId": "aef1fb0d-84fb-412d-97c8-06f7eb7f3846",
+            "roles": [
+              "TenantAdmin"
+            ],
+            "userType": "TenantUser",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "e7b58d06-ae6c-4a0f-8bda-801ce1c7e81c",
+      "timestamp": {},
+      "duration": 375
+    },
+    {
+      "endpoint": "/api/groups",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "f520dbca-004b-43bb-aa4f-1e5cf99b7630",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959906197-6hyhzpnm7\",\"testCase\":\"should delete a group\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "name": "TestGroup_1757959906204",
+          "description": "Group to be deleted"
+        }
+      },
+      "response": {
+        "status": 500,
+        "error": {
+          "code": 13,
+          "message": "An error occurred while creating the group",
+          "details": []
+        }
+      },
+      "correlationId": "f520dbca-004b-43bb-aa4f-1e5cf99b7630",
+      "timestamp": {},
+      "duration": 123
+    }
+  ]
+}

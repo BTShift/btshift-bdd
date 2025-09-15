@@ -1,0 +1,30 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/groups
+Correlation ID: 3a65f53d-0c96-404a-a3ac-f5a211828a21
+Timestamp: 2025-09-15T18:11:33.768Z
+Duration: 156ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "3a65f53d-0c96-404a-a3ac-f5a211828a21",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959893504-nb9rrjpn0\",\"testCase\":\"should create client group with typed client\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "Test Group 1757959893768",
+  "description": "Created by typed API test"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "code": 13,
+  "message": "An error occurred while creating the group",
+  "details": []
+}

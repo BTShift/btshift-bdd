@@ -1,0 +1,29 @@
+{
+  "endpoint": "/api/roles",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "323fe9e3-4e31-48bf-b4f2-768c3e761c05",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"role-crud.api.feature\",\"scenario\":\"api/features/identity/role-management/happy-path/role-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959983307-fx0wm1ct9\",\"testCase\":\"should get users by role\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "name": "TestRole_1757959983308",
+      "description": "Role for user listing",
+      "permissions": [
+        "read:users"
+      ]
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "roleId": "6b1f4a0b-9c20-4a40-909e-ac963eacdacc"
+    },
+    "headers": {}
+  },
+  "correlationId": "323fe9e3-4e31-48bf-b4f2-768c3e761c05",
+  "timestamp": {},
+  "duration": 198
+}

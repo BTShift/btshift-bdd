@@ -1,0 +1,28 @@
+{
+  "endpoint": "/api/audit-logs/export",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "b8a69285-e09e-468c-a7cc-4a82a0ca830c",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959931692-wpe8xvn15\",\"testCase\":\"should export audit logs\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "format": "csv",
+      "startDate": "2025-08-16T18:12:11.693Z",
+      "endDate": "2025-09-15T18:12:11.693Z"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "An error occurred while exporting audit logs",
+      "details": []
+    }
+  },
+  "correlationId": "b8a69285-e09e-468c-a7cc-4a82a0ca830c",
+  "timestamp": {},
+  "duration": 206
+}

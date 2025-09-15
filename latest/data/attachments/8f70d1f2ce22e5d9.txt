@@ -1,0 +1,28 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/permissions
+Correlation ID: 9dcdaa76-863f-434d-ad2c-74297c6f880f
+Timestamp: 2025-09-15T18:12:43.864Z
+Duration: 110ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "9dcdaa76-863f-434d-ad2c-74297c6f880f",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"permission-crud.api.feature\",\"scenario\":\"api/features/identity/permission-management/happy-path/permission-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959963681-axjtsw5l7\",\"testCase\":\"should list all permissions\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "test:permission2:1757959963682",
+  "description": "Second test permission",
+  "resource": "resource2",
+  "action": "write"
+}
+
+=== Response ===
+Status: 405
+
+Response Headers:
+{}

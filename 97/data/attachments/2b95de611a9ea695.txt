@@ -1,0 +1,29 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/authentication/login
+Correlation ID: ee567a4f-aef3-4ac6-9494-5e973925d879
+Timestamp: 2025-09-15T18:12:14.719Z
+Duration: 147ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "ee567a4f-aef3-4ac6-9494-5e973925d879",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959934375-e5m6o69br\",\"testCase\":\"should handle multiple failed login attempts gracefully\"}"
+}
+
+=== Request Body ===
+{
+  "email": "test@example.com",
+  "password": "***MASKED***"
+}
+
+=== Response ===
+Status: 401
+
+Error Details:
+{
+  "code": 16,
+  "message": "Invalid email or password",
+  "details": []
+}

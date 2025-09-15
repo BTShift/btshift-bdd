@@ -1,0 +1,24 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/clients/46953e96-2377-43ba-ab86-82cebd4b1758/users/test-user-id
+Correlation ID: 9a4cc8fb-66db-41e2-918a-28f321683f74
+Timestamp: 2025-09-15T18:11:35.997Z
+Duration: 178ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "9a4cc8fb-66db-41e2-918a-28f321683f74",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959895859-mm1x71pu6\",\"testCase\":\"should handle user-client associations with typed client\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "code": 13,
+  "message": "An error occurred while assigning user to client",
+  "details": []
+}

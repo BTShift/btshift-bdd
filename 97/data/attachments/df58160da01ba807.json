@@ -1,0 +1,27 @@
+{
+  "endpoint": "/api/authentication/validate-token",
+  "method": "GET",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "f28ed830-3afd-4af9-a491-90bfbdcb1355",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959935333-gw9xfhelc\",\"testCase\":\"should validate a valid token\"}",
+      "Authorization": "***MASKED***"
+    },
+    "params": {
+      "query": {
+        "token": "***MASKED***"
+      }
+    },
+    "query": {
+      "token": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {}
+  },
+  "correlationId": "f28ed830-3afd-4af9-a491-90bfbdcb1355",
+  "timestamp": {},
+  "duration": 113
+}

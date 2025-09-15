@@ -1,0 +1,76 @@
+{
+  "testName": "API Test Complete",
+  "totalCalls": 2,
+  "timestamp": "2025-09-15T18:12:11.924Z",
+  "calls": [
+    {
+      "endpoint": "/api/authentication/login",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "c81f4923-3452-4b08-bc6a-e770876e3df3",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"api-superadmin-multiauth.feature\",\"scenario\":\"API Test with SuperAdmin (MultiUserAuth)\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959931244-nt05718a9\"}"
+        },
+        "body": {
+          "email": "superadmin@shift.ma",
+          "password": "***MASKED***"
+        }
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "tokenInfo": "***MASKED***",
+          "userInfo": {
+            "id": "99a3ffec-fa9a-47d9-8c4b-ac1abbc3ca7b",
+            "email": "superadmin@shift.ma",
+            "firstName": "Super",
+            "lastName": "Administrator",
+            "tenantId": "",
+            "roles": [
+              "SuperAdmin"
+            ],
+            "userType": "SuperAdmin",
+            "clientId": "",
+            "departmentId": "",
+            "teamId": ""
+          },
+          "requires2fa": false,
+          "sessionToken": "***MASKED***"
+        },
+        "headers": {}
+      },
+      "correlationId": "c81f4923-3452-4b08-bc6a-e770876e3df3",
+      "timestamp": {},
+      "duration": 397
+    },
+    {
+      "endpoint": "/api/audit-logs/export",
+      "method": "POST",
+      "request": {
+        "headers": {
+          "X-Correlation-ID": "b8a69285-e09e-468c-a7cc-4a82a0ca830c",
+          "X-Test-Mode": "true",
+          "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959931692-wpe8xvn15\",\"testCase\":\"should export audit logs\"}",
+          "Authorization": "***MASKED***"
+        },
+        "body": {
+          "format": "csv",
+          "startDate": "2025-08-16T18:12:11.693Z",
+          "endDate": "2025-09-15T18:12:11.693Z"
+        }
+      },
+      "response": {
+        "status": 400,
+        "error": {
+          "code": 3,
+          "message": "An error occurred while exporting audit logs",
+          "details": []
+        }
+      },
+      "correlationId": "b8a69285-e09e-468c-a7cc-4a82a0ca830c",
+      "timestamp": {},
+      "duration": 206
+    }
+  ]
+}

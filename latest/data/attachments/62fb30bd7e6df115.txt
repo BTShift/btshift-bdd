@@ -1,0 +1,20 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/audit-logs/112b51c4-9808-4437-aa79-85a704f7b3b5
+Correlation ID: 8feec5f7-bdcc-4206-aa15-e3cb51c86d27
+Timestamp: 2025-09-15T18:12:10.323Z
+Duration: 110ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "8feec5f7-bdcc-4206-aa15-e3cb51c86d27",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"audit-operations.api.feature\",\"scenario\":\"api/features/identity/audit-logs/happy-path/audit-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959929907-p3spgtvpm\",\"testCase\":\"should get audit log by ID\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 404
+
+Response Headers:
+{}

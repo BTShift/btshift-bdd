@@ -1,0 +1,35 @@
+=== API Call Details ===
+Method: GET
+Endpoint: /api/authentication/validate-token
+Correlation ID: 22f03d69-e950-45ad-a585-63508377561a
+Timestamp: 2025-09-15T18:12:13.805Z
+Duration: 121ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "22f03d69-e950-45ad-a585-63508377561a",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"invalid-credentials.api.feature\",\"scenario\":\"api/features/identity/authentication/edge-cases/invalid-credentials.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"negative\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959933805-ns2u8f1vm\",\"testCase\":\"should reject token validation with invalid token\"}"
+}
+
+=== Request Params ===
+{
+  "query": {
+    "token": "***MASKED***"
+  }
+}
+
+=== Query Parameters ===
+{
+  "token": "***MASKED***"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "error": "error",
+  "message": "Authorization failed",
+  "timestamp": "2025-09-15T18:12:13.8679482+00:00"
+}

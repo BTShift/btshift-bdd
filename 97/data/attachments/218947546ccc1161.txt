@@ -1,0 +1,5 @@
+❌ [ClientManagement] POST /api/groups | X-Correlation-ID: 0b84a4c1-f88b-46c0-8142-ee5151759cfc | Error: {
+  code: 13,
+  message: 'An error occurred while creating the group',
+  details: []
+}

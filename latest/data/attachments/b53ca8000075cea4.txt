@@ -1,0 +1,36 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/invitations
+Correlation ID: 8e71b278-9234-48f4-8dfa-a03a1c8c1000
+Timestamp: 2025-09-15T18:12:30.283Z
+Duration: 377ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "8e71b278-9234-48f4-8dfa-a03a1c8c1000",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"invitation-operations.api.feature\",\"scenario\":\"api/features/identity/invitations/happy-path/invitation-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959950282-xw4jtsxw3\",\"testCase\":\"should resend invitation\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "email": "invitee1757959950283@example.com",
+  "firstName": "Bob",
+  "lastName": "Wilson",
+  "role": "User"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "invitationId": "f3bedd50-7e57-442b-a439-08ae906ff3f8",
+  "invitationToken": "***MASKED***",
+  "email": "invitee1757959950283@example.com",
+  "expiresAt": "2025-09-22T18:12:30.5724569Z"
+}

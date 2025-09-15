@@ -1,0 +1,30 @@
+=== API Call Details ===
+Method: POST
+Endpoint: /api/groups
+Correlation ID: 0b84a4c1-f88b-46c0-8142-ee5151759cfc
+Timestamp: 2025-09-15T18:11:47.770Z
+Duration: 123ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "0b84a4c1-f88b-46c0-8142-ee5151759cfc",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"group-operations.api.feature\",\"scenario\":\"api/features/client-management/groups/happy-path/group-operations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959907760-ahi2ovj1u\",\"testCase\":\"should get a single group by ID\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Request Body ===
+{
+  "name": "GetTestGroup_1757959907766",
+  "description": "Test group for individual retrieval"
+}
+
+=== Response ===
+Status: 500
+
+Error Details:
+{
+  "code": 13,
+  "message": "An error occurred while creating the group",
+  "details": []
+}

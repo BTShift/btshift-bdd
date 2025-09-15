@@ -1,0 +1,26 @@
+=== API Call Details ===
+Method: DELETE
+Endpoint: /api/clients/e555b12c-07db-475b-a709-d3c05e8bdbf9
+Correlation ID: ee5fbe12-dc60-4518-92cf-164398503dc2
+Timestamp: 2025-09-15T18:11:36.353Z
+Duration: 125ms
+
+=== Request Headers ===
+{
+  "X-Correlation-ID": "ee5fbe12-dc60-4518-92cf-164398503dc2",
+  "X-Test-Mode": "true",
+  "X-Test-Context": "{\"featureFile\":\"typed-client-crud.api.feature\",\"scenario\":\"api/features/client-management/crud-operations/happy-path/typed-client-crud.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959896206-otwrqfi6s\",\"testCase\":\"should delete client with typed client\"}",
+  "Authorization": "***MASKED***"
+}
+
+=== Response ===
+Status: 200
+
+Response Headers:
+{}
+
+Response Body:
+{
+  "success": true,
+  "message": "Client deleted successfully"
+}

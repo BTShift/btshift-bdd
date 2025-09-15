@@ -1,0 +1,19 @@
+🚀 [cc7d8a68] Setting up UNAUTHENTICATED test context...
+🎬 Starting test session: test-1757959943375-h17ogjed4 for feature: api-authentication.feature
+📋 Test context set: api-authentication.feature :: API Authentication Test (positive)
+🔄 Current step: API Test Execution
+🌐 [cc7d8a68] API Gateway URL: https://api-gateway-production-91e9.up.railway.app
+🎬 Starting test session: test-1757959943407-6f6rl4a9p for feature: typed-login.api.feature
+📋 Test context set: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts (positive)
+🧪 Test case: should refresh token with typed ctx.client
+🔄 Current step: Test Execution
+🎬 Auto-context: typed-login.api.feature :: api/features/identity/authentication/happy-path/typed-login.api.spec.ts :: should refresh token with typed ctx.client
+🧪 Adding test context to POST /api/authentication/login
+🧪 Test context JSON: {"featureFile":"typed-login.api.feature","scenario":"api/features/identity/authentication/happy-path/typed-login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959943407-6f6rl4a9p","testCase":"should refresh token with typed ctx.client"}
+🔍 [Identity] POST /api/authentication/login | X-Correlation-ID: 366adc32-07d2-4646-8f3d-dbc4a3af1132 | Auth: No
+✅ [Identity] POST /api/authentication/login | X-Correlation-ID: 366adc32-07d2-4646-8f3d-dbc4a3af1132 | Success
+🧪 Adding test context to POST /api/authentication/refresh
+🧪 Test context JSON: {"featureFile":"typed-login.api.feature","scenario":"api/features/identity/authentication/happy-path/typed-login.api.spec.ts","currentStep":"Test Execution","testIntent":"positive","expectedOutcome":"2xx_success","testSessionId":"test-1757959943407-6f6rl4a9p","testCase":"should refresh token with typed ctx.client"}
+🔍 [Identity] POST /api/authentication/refresh | X-Correlation-ID: cd2c4501-6fa8-44f5-8497-cf29ff44ea68 | Auth: Yes
+✅ [Identity] POST /api/authentication/refresh | X-Correlation-ID: cd2c4501-6fa8-44f5-8497-cf29ff44ea68 | Success
+🏁 Clearing test context for session: test-1757959943407-6f6rl4a9p

@@ -1,1 +1,0 @@
-❌ [Tenant] POST /api/tenants | X-Correlation-ID: 1772eae3-741b-43ac-b477-e5928c808a99 | Error: API Error: 400 - {"code":3,"message":"Tenant name is required","details":[]}

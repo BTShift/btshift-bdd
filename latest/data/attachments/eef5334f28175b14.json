@@ -1,0 +1,30 @@
+{
+  "endpoint": "/api/users",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "2ab621e0-9147-44ca-92b8-034fd0fcd93e",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"user-client-associations.api.feature\",\"scenario\":\"api/features/client-management/user-associations/happy-path/user-client-associations.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959917149-t5r6widf4\",\"testCase\":\"should assign a user to a client\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "email": "user-1757959917282-yxzv54cq1-2@test.com",
+      "firstName": "Test",
+      "lastName": "User1757959917282-yxzv54cq1-2",
+      "phoneNumber": "+212600000000",
+      "role": "User"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "Invalid role specified",
+      "details": []
+    }
+  },
+  "correlationId": "2ab621e0-9147-44ca-92b8-034fd0fcd93e",
+  "timestamp": {},
+  "duration": 218
+}

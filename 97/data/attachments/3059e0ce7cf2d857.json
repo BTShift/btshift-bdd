@@ -1,0 +1,35 @@
+{
+  "endpoint": "/api/tenants",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "7d0bf5d3-6d0a-46c6-b059-84bfd89e2cb3",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"tenant-creation.api.feature\",\"scenario\":\"api/features/tenant-management/onboarding/happy-path/tenant-creation.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757960019898-z7uqz6wp6\",\"testCase\":\"should successfully send welcome email after tenant activation\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "companyName": "Test Company 1757960019898-onbx0kg7m-1",
+      "tenantName": "tenant-1757960019898-onbx0kg7m-1",
+      "domain": "tenant-1757960019898-onbx0kg7m-1",
+      "plan": "Professional",
+      "adminEmail": "admin-1757960019898-onbx0kg7m-1@test.com",
+      "adminFirstName": "Test",
+      "adminLastName": "Admin",
+      "phoneNumber": "+212612345678",
+      "address": "123 Test Street, Casablanca",
+      "country": "Morocco"
+    }
+  },
+  "response": {
+    "status": 400,
+    "error": {
+      "code": 3,
+      "message": "Tenant name is required",
+      "details": []
+    }
+  },
+  "correlationId": "7d0bf5d3-6d0a-46c6-b059-84bfd89e2cb3",
+  "timestamp": {},
+  "duration": 197
+}

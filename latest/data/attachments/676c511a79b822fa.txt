@@ -1,1 +1,0 @@
-❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 3b0d70ee-4442-4efe-a9bd-3d9e9db95e1c | Error: { code: 16, message: 'Invalid email or password', details: [] }

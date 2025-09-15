@@ -1,0 +1,25 @@
+{
+  "endpoint": "/api/authentication/refresh",
+  "method": "POST",
+  "request": {
+    "headers": {
+      "X-Correlation-ID": "cd2c4501-6fa8-44f5-8497-cf29ff44ea68",
+      "X-Test-Mode": "true",
+      "X-Test-Context": "{\"featureFile\":\"typed-login.api.feature\",\"scenario\":\"api/features/identity/authentication/happy-path/typed-login.api.spec.ts\",\"currentStep\":\"Test Execution\",\"testIntent\":\"positive\",\"expectedOutcome\":\"2xx_success\",\"testSessionId\":\"test-1757959943407-6f6rl4a9p\",\"testCase\":\"should refresh token with typed ctx.client\"}",
+      "Authorization": "***MASKED***"
+    },
+    "body": {
+      "refreshToken": "***MASKED***"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "tokenInfo": "***MASKED***"
+    },
+    "headers": {}
+  },
+  "correlationId": "cd2c4501-6fa8-44f5-8497-cf29ff44ea68",
+  "timestamp": {},
+  "duration": 227
+}
