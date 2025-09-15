@@ -1,4 +1,4 @@
-import { describe, beforeAll, afterAll, expect } from '@playwright/test';
+import { describe, beforeAll, afterAll, expect } from '../../../../support/test-imports';
 import { test } from '../../../../../support/test-context-fixture';
 import { allure } from 'allure-playwright';
 import { TypedApiClient } from '../../../../support/clients/typed-api-client-enhanced';

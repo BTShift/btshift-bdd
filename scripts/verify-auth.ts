@@ -4,37 +4,37 @@
  * Verify authentication with the configured passwords
  */
 
-import axios from 'axios';
+import { TypedScriptClient } from './lib/typed-script-client';
 import * as crypto from 'crypto';
 
 const API_GATEWAY_URL = 'https://api-gateway-production-91e9.up.railway.app';
 
 async function testAuth(email: string, password: string, label: string): Promise<boolean> {
   try {
-    const response = await axios.post(
-      `${API_GATEWAY_URL}/api/authentication/login`,
-      { email, password },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Correlation-ID': crypto.randomUUID()
-        },
-        validateStatus: () => true
+    // Create a new client instance for each test to avoid token interference
+    const client = new TypedScriptClient();
+
+    // Use the identity client directly for more control
+    const response = await client.identity.POST('/api/authentication/login', {
+      body: { email, password },
+      headers: {
+        'X-Correlation-ID': crypto.randomUUID()
       }
-    );
-    
-    if (response.status === 200) {
+    });
+
+    if (!response.error && response.response.status === 200) {
       console.log(`✅ ${label}: Authentication successful`);
       console.log(`   User: ${email}`);
-      console.log(`   Token: ${response.data.token?.substring(0, 50)}...`);
+      const token = (response.data as any)?.token || (response.data as any)?.tokenInfo?.accessToken;
+      console.log(`   Token: ${token?.substring(0, 50)}...`);
       return true;
     } else {
       console.log(`❌ ${label}: Authentication failed`);
-      console.log(`   Status: ${response.status}`);
-      console.log(`   Error: ${JSON.stringify(response.data)}`);
+      console.log(`   Status: ${response.response?.status}`);
+      console.log(`   Error: ${JSON.stringify(response.error || response.data)}`);
       return false;
     }
-  } catch (error) {
+  } catch (error: any) {
     console.log(`❌ ${label}: Network error - ${error.message}`);
     return false;
   }

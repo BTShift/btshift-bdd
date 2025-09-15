@@ -1,153 +1,61 @@
-import { BaseApiClient } from './base-api-client';
+import { TypedScriptClient } from '../../../../scripts/lib/typed-script-client';
 
-export interface CreateClientRequest {
-  name: string;
-  email?: string;
-  phone?: string;
-  address?: string;
-  taxId?: string;
-  industry?: string;
-  notes?: string;
-}
+/**
+ * ClientManagementClient - Production-ready wrapper for client management operations
+ */
+export class ClientManagementClient {
+  private client: TypedScriptClient;
 
-export interface ClientResponse {
-  id: string;
-  name: string;
-  email?: string;
-  phone?: string;
-  address?: string;
-  taxId?: string;
-  industry?: string;
-  notes?: string;
-  status: 'Active' | 'Inactive' | 'Suspended';
-  createdAt: string;
-  updatedAt: string;
-}
+  constructor(baseUrl?: string) {
+    this.client = new TypedScriptClient();
+  }
 
-export interface UpdateClientRequest {
-  name?: string;
-  email?: string;
-  phone?: string;
-  address?: string;
-  taxId?: string;
-  industry?: string;
-  notes?: string;
-  status?: 'Active' | 'Inactive' | 'Suspended';
-}
+  setAuthToken(token: string): void {
+    this.client.setAuthToken(token);
+  }
 
-export interface CreateClientGroupRequest {
-  name: string;
-  description?: string;
-  clientIds: string[];
-}
+  async createClient(clientData: any): Promise<any> {
+    return await this.client.createClient(clientData);
+  }
 
-export interface ClientGroupResponse {
-  id: string;
-  name: string;
-  description?: string;
-  clients: ClientResponse[];
-  createdAt: string;
-}
+  async getClient(clientId: string): Promise<any> {
+    return await this.client.getClient(clientId);
+  }
 
-export interface UserClientAssociationRequest {
-  userId: string;
-  clientId: string;
-  role: 'Viewer' | 'Editor' | 'Admin';
-}
+  async getClients(filters?: any): Promise<any> {
+    return await this.client.getClients(filters);
+  }
 
-export class ClientManagementClient extends BaseApiClient {
-  
-  async createClient(request: CreateClientRequest): Promise<ClientResponse> {
-    const response = await this.request<ClientResponse>({
-      method: 'POST',
-      url: '/api/clients',
-      data: request,
-    });
+  async updateClient(clientId: string, updateData: any): Promise<any> {
+    return await this.client.updateClient(clientId, updateData);
+  }
+
+  async deleteClient(clientId: string): Promise<any> {
+    const response = await this.client.clientManagement.DELETE('/api/clients/{id}' as any, {
+      params: { path: { id: clientId } }
+    } as any);
+
+    if (response.error) {
+      throw new Error(`Delete client failed: ${response.error}`);
+    }
+
     return response.data;
   }
 
-  async getClient(clientId: string): Promise<ClientResponse> {
-    const response = await this.request<ClientResponse>({
-      method: 'GET',
-      url: `/api/clients/${clientId}`,
-    });
-    return response.data;
+  async createClientGroup(groupData: any): Promise<any> {
+    return await this.client.createClientGroup(groupData);
   }
 
-  async getClients(pageSize = 50, pageNumber = 1): Promise<{
-    clients: ClientResponse[];
-    totalCount: number;
-    pageSize: number;
-    pageNumber: number;
-  }> {
-    const response = await this.request({
-      method: 'GET',
-      url: '/api/clients',
-      params: { pageSize, pageNumber },
-    });
-    return response.data;
+  async getClientGroup(groupId: string): Promise<any> {
+    return await this.client.getClientGroup(groupId);
   }
 
-  async updateClient(clientId: string, request: UpdateClientRequest): Promise<ClientResponse> {
-    const response = await this.request<ClientResponse>({
-      method: 'PUT',
-      url: `/api/clients/${clientId}`,
-      data: request,
-    });
-    return response.data;
+  async associateUserWithClient(clientId: string, userEmail: string): Promise<any> {
+    return await this.client.associateUserWithClient(clientId, userEmail);
   }
 
-  async deleteClient(clientId: string): Promise<void> {
-    await this.request({
-      method: 'DELETE',
-      url: `/api/clients/${clientId}`,
-    });
-  }
-
-  async createClientGroup(request: CreateClientGroupRequest): Promise<ClientGroupResponse> {
-    const response = await this.request<ClientGroupResponse>({
-      method: 'POST',
-      url: '/api/groups',
-      data: request,
-    });
-    return response.data;
-  }
-
-  async getClientGroup(groupId: string): Promise<ClientGroupResponse> {
-    const response = await this.request<ClientGroupResponse>({
-      method: 'GET',
-      url: `/api/groups/${groupId}`,
-    });
-    return response.data;
-  }
-
-  async associateUserWithClient(request: UserClientAssociationRequest): Promise<void> {
-    await this.request({
-      method: 'POST',
-      url: '/api/user-client-associations',
-      data: request,
-    });
-  }
-
-  async getUserClientAssociations(userId: string): Promise<{
-    userId: string;
-    associations: Array<{
-      clientId: string;
-      client: ClientResponse;
-      role: string;
-    }>;
-  }> {
-    const response = await this.request({
-      method: 'GET',
-      url: `/api/user-client-associations/user/${userId}`,
-    });
-    return response.data;
-  }
-
-  async removeUserClientAssociation(userId: string, clientId: string): Promise<void> {
-    await this.request({
-      method: 'DELETE',
-      url: `/api/user-client-associations/user/${userId}/client/${clientId}`,
-    });
+  // Direct access to the underlying client for any custom operations
+  get rawClient() {
+    return this.client.clientManagement;
   }
 }

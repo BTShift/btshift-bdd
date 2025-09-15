@@ -5,7 +5,7 @@
  * This script uses the identity service to properly hash and update passwords
  */
 
-import axios from 'axios';
+import { TypedScriptClient } from './lib/typed-script-client';
 import * as crypto from 'crypto';
 
 const API_GATEWAY_URL = 'https://api-gateway-production-91e9.up.railway.app';
@@ -24,54 +24,54 @@ async function loginAsSuperAdmin(): Promise<string> {
     'ShiftPlatform2024!',
   ];
 
+  const client = new TypedScriptClient();
+
   for (const password of passwords) {
     try {
-      const response = await axios.post(
-        `${API_GATEWAY_URL}/api/authentication/login`,
-        { 
-          email: 'superadmin@shift.ma', 
-          password 
+      const response = await client.identity.POST('/api/authentication/login', {
+        body: {
+          email: 'superadmin@shift.ma',
+          password
         },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Correlation-ID': crypto.randomUUID()
-          }
+        headers: {
+          'X-Correlation-ID': crypto.randomUUID()
         }
-      );
+      });
 
-      if (response.status === 200 && response.data.token) {
-        console.log(`✅ Successfully logged in as SuperAdmin`);
-        return response.data.token;
+      if (!response.error && response.response.status === 200) {
+        const token = (response.data as any)?.token || (response.data as any)?.tokenInfo?.accessToken;
+        if (token) {
+          console.log(`✅ Successfully logged in as SuperAdmin`);
+          return token;
+        }
       }
     } catch (error) {
       // Continue trying next password
     }
   }
-  
+
   throw new Error('Could not login as SuperAdmin with any known password');
 }
 
 async function updateUserPassword(token: string, userId: string, newPassword: string): Promise<boolean> {
   try {
-    // Use the change password endpoint
-    const response = await axios.post(
-      `${API_GATEWAY_URL}/api/users/${userId}/change-password-admin`,
-      { 
-        newPassword 
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`,
-          'X-Correlation-ID': crypto.randomUUID()
-        }
-      }
-    );
+    const client = new TypedScriptClient();
+    client.setAuthToken(token);
 
-    return response.status === 200 || response.status === 204;
-  } catch (error) {
-    console.error(`Failed to update password for user ${userId}:`, error.response?.data || error.message);
+    // Use the change password endpoint
+    const response = await client.identity.POST('/api/users/{id}/change-password-admin' as any, {
+      params: { path: { id: userId } },
+      body: {
+        newPassword
+      },
+      headers: {
+        'X-Correlation-ID': crypto.randomUUID()
+      }
+    } as any);
+
+    return !response.error && (response.response.status === 200 || response.response.status === 204);
+  } catch (error: any) {
+    console.error(`Failed to update password for user ${userId}:`, error.message);
     return false;
   }
 }
@@ -114,22 +114,21 @@ async function main() {
     
     // Test SuperAdmin
     try {
-      const superAdminResponse = await axios.post(
-        `${API_GATEWAY_URL}/api/authentication/login`,
-        { 
-          email: 'superadmin@shift.ma', 
-          password: STANDARD_SUPER_ADMIN_PASSWORD 
+      const testClient = new TypedScriptClient();
+      const superAdminResponse = await testClient.identity.POST('/api/authentication/login', {
+        body: {
+          email: 'superadmin@shift.ma',
+          password: STANDARD_SUPER_ADMIN_PASSWORD
         },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Correlation-ID': crypto.randomUUID()
-          }
+        headers: {
+          'X-Correlation-ID': crypto.randomUUID()
         }
-      );
-      
-      if (superAdminResponse.status === 200) {
+      });
+
+      if (!superAdminResponse.error && superAdminResponse.response.status === 200) {
         console.log('✅ SuperAdmin can login with new password');
+      } else {
+        console.log('❌ SuperAdmin cannot login with new password');
       }
     } catch (error) {
       console.log('❌ SuperAdmin cannot login with new password');
@@ -137,21 +136,18 @@ async function main() {
     
     // Test TenantAdmin
     try {
-      const tenantAdminResponse = await axios.post(
-        `${API_GATEWAY_URL}/api/authentication/login`,
-        { 
-          email: 'anass.yatim+nstech2@gmail.com', 
-          password: STANDARD_TENANT_ADMIN_PASSWORD 
+      const testClient = new TypedScriptClient();
+      const tenantAdminResponse = await testClient.identity.POST('/api/authentication/login', {
+        body: {
+          email: 'anass.yatim+nstech2@gmail.com',
+          password: STANDARD_TENANT_ADMIN_PASSWORD
         },
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            'X-Correlation-ID': crypto.randomUUID()
-          }
+        headers: {
+          'X-Correlation-ID': crypto.randomUUID()
         }
-      );
-      
-      if (tenantAdminResponse.status === 200) {
+      });
+
+      if (!tenantAdminResponse.error && tenantAdminResponse.response.status === 200) {
         console.log('✅ TenantAdmin can login with new password');
       }
     } catch (error) {

@@ -1,61 +1,13 @@
-import axios, { AxiosInstance, AxiosResponse } from 'axios';
-import dotenv from 'dotenv';
-
-dotenv.config();
-
+/**
+ * BaseApiClient - Base class for API clients
+ * This is a compatibility layer for the old client structure
+ */
 export class BaseApiClient {
-  protected client: AxiosInstance;
-  private authToken: string | null = null;
+  protected baseUrl: string;
+  protected authToken: string | null = null;
 
-  constructor(baseURL?: string) {
-    this.client = axios.create({
-      baseURL: baseURL || process.env.API_GATEWAY_URL,
-      timeout: 30000,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    });
-
-    this.setupInterceptors();
-  }
-
-  private setupInterceptors(): void {
-    // Request interceptor to include auth token
-    this.client.interceptors.request.use(
-      (config) => {
-        if (this.authToken) {
-          config.headers.Authorization = `Bearer ${this.authToken}`;
-        }
-        return config;
-      },
-      (error) => Promise.reject(error)
-    );
-
-    // Response interceptor for logging and error handling
-    this.client.interceptors.response.use(
-      (response) => {
-        console.log(`✅ ${response.config.method?.toUpperCase()} ${response.config.url} - ${response.status}`);
-        return response;
-      },
-      (error) => {
-        const method = error.config?.method?.toUpperCase() || 'UNKNOWN';
-        const url = error.config?.url || 'UNKNOWN';
-        const status = error.response?.status || 'UNKNOWN';
-        console.error(`❌ ${method} ${url} - ${status}`);
-        
-        // Add more context to API errors
-        if (error.response) {
-          error.apiResponse = {
-            status: error.response.status,
-            statusText: error.response.statusText,
-            data: error.response.data,
-            headers: error.response.headers
-          };
-        }
-        
-        return Promise.reject(error);
-      }
-    );
+  constructor(baseUrl?: string) {
+    this.baseUrl = baseUrl || process.env.API_GATEWAY_URL || 'http://localhost:5000';
   }
 
   setAuthToken(token: string): void {
@@ -66,11 +18,14 @@ export class BaseApiClient {
     this.authToken = null;
   }
 
-  getAuthToken(): string | null {
-    return this.authToken;
+  getBaseUrl(): string {
+    return this.baseUrl;
   }
+}
 
-  protected async request<T = any>(config: any): Promise<AxiosResponse<T>> {
-    return this.client.request(config);
-  }
+export interface ApiResponse<T = any> {
+  data?: T;
+  error?: any;
+  status: number;
+  headers?: Record<string, string>;
 }

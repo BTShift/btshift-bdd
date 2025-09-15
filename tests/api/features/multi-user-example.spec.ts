@@ -3,7 +3,7 @@
  * This shows how to use different user contexts for proper testing
  */
 
-import { describe, beforeAll, afterAll, expect } from '@playwright/test';
+import { describe, beforeAll, afterAll, expect } from '../../../../support/test-imports';
 import { test } from '../../support/test-context-fixture';
 import { 
   setupApiTestWithContext, 

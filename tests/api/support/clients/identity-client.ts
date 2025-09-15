@@ -1,107 +1,54 @@
-import { BaseApiClient } from './base-api-client';
+import { TypedScriptClient } from '../../../../scripts/lib/typed-script-client';
 
-export interface LoginRequest {
-  email: string;
-  password: string;
-}
+/**
+ * IdentityClient - Production-ready wrapper for identity service operations
+ */
+export class IdentityClient {
+  private client: TypedScriptClient;
 
-export interface LoginResponse {
-  success: boolean;
-  message?: string;
-  tokenInfo?: {
-    accessToken: string;
-    refreshToken: string;
-    expiresAt: string;
-  };
-  user?: {
-    id: string;
-    email: string;
-    firstName: string;
-    lastName: string;
-    roles: string[];
-  };
-}
-
-export interface RegisterRequest {
-  email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  phoneNumber?: string;
-}
-
-export interface ResetPasswordRequest {
-  token: string;
-  newPassword: string;
-}
-
-export class IdentityClient extends BaseApiClient {
-  
-  async login(request: LoginRequest): Promise<LoginResponse> {
-    const response = await this.request<LoginResponse>({
-      method: 'POST',
-      url: '/api/authentication/login',
-      data: request,
-    });
-
-    // Auto-set token if login is successful
-    if (response.data.success && response.data.tokenInfo) {
-      this.setAuthToken(response.data.tokenInfo.accessToken);
-    }
-
-    return response.data;
+  constructor(baseUrl?: string) {
+    this.client = new TypedScriptClient();
   }
 
-  async register(request: RegisterRequest): Promise<any> {
-    const response = await this.request({
-      method: 'POST',
-      url: '/api/authentication/register',
-      data: request,
-    });
-    return response.data;
-  }
-
-  async resetPassword(request: ResetPasswordRequest): Promise<any> {
-    const response = await this.request({
-      method: 'POST',
-      url: '/api/authentication/reset-password',
-      data: request,
-    });
-    return response.data;
-  }
-
-  async validateToken(token: string): Promise<any> {
-    const response = await this.request({
-      method: 'GET',
-      url: `/api/authentication/validate-token?token=${token}`,
-    });
-    return response.data;
-  }
-
-  async refreshToken(refreshToken: string): Promise<LoginResponse> {
-    const response = await this.request<LoginResponse>({
-      method: 'POST',
-      url: '/api/authentication/refresh-token',
-      data: { refreshToken },
-    });
-
-    // Auto-set new token if refresh is successful
-    if (response.data.success && response.data.tokenInfo) {
-      this.setAuthToken(response.data.tokenInfo.accessToken);
-    }
-
-    return response.data;
+  async login(credentials: { email: string; password: string }): Promise<any> {
+    return await this.client.login(credentials.email, credentials.password);
   }
 
   async logout(): Promise<void> {
-    try {
-      await this.request({
-        method: 'POST',
-        url: '/api/authentication/logout',
-      });
-    } finally {
-      // Always clear token even if logout fails
-      this.clearAuthToken();
-    }
+    // Logout logic if needed
+    this.client.clearAuthToken();
+  }
+
+  setAuthToken(token: string): void {
+    this.client.setAuthToken(token);
+  }
+
+  async register(userData: any): Promise<any> {
+    return await this.client.register(userData);
+  }
+
+  async inviteUser(userData: any): Promise<any> {
+    return await this.client.inviteUser(userData);
+  }
+
+  async createUser(userData: any): Promise<any> {
+    return await this.client.createUser(userData);
+  }
+
+  async resetPassword(token: string, newPassword: string): Promise<any> {
+    return await this.client.resetPassword(token, newPassword);
+  }
+
+  async validateToken(token: string): Promise<any> {
+    return await this.client.validateToken(token);
+  }
+
+  async acceptInvitation(token: string, password: string, confirmPassword: string): Promise<any> {
+    return await this.client.acceptInvitation(token, password, confirmPassword);
+  }
+
+  // Direct access to the underlying client for any custom operations
+  get rawClient() {
+    return this.client.identity;
   }
 }

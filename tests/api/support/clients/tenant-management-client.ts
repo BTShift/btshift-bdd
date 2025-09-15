@@ -1,5 +1,71 @@
-import { BaseApiClient } from './base-api-client';
+import { TypedScriptClient } from '../../../../scripts/lib/typed-script-client';
 
+/**
+ * TenantManagementClient - Production-ready wrapper for tenant management operations
+ */
+export class TenantManagementClient {
+  private client: TypedScriptClient;
+
+  constructor(baseUrl?: string) {
+    this.client = new TypedScriptClient();
+  }
+
+  setAuthToken(token: string): void {
+    this.client.setAuthToken(token);
+  }
+
+  async createTenant(tenantData: CreateTenantRequest): Promise<any> {
+    return await this.client.createTenant(tenantData);
+  }
+
+  async getTenant(tenantId: string): Promise<any> {
+    return await this.client.getTenant(tenantId);
+  }
+
+  async getTenants(): Promise<any> {
+    return await this.client.getTenants();
+  }
+
+  async activateTenant(tenantId: string): Promise<any> {
+    return await this.client.activateTenant(tenantId);
+  }
+
+  async resendWelcomeEmail(tenantId: string): Promise<any> {
+    return await this.client.resendWelcomeEmail(tenantId);
+  }
+
+  async updateTenant(tenantId: string, updateData: any): Promise<any> {
+    const response = await this.client.tenant.PUT('/api/tenants/{id}' as any, {
+      params: { path: { id: tenantId } },
+      body: updateData
+    } as any);
+
+    if (response.error) {
+      throw new Error(`Update tenant failed: ${response.error}`);
+    }
+
+    return response.data;
+  }
+
+  async deleteTenant(tenantId: string): Promise<any> {
+    const response = await this.client.tenant.DELETE('/api/tenants/{id}' as any, {
+      params: { path: { id: tenantId } }
+    } as any);
+
+    if (response.error) {
+      throw new Error(`Delete tenant failed: ${response.error}`);
+    }
+
+    return response.data;
+  }
+
+  // Direct access to the underlying client for any custom operations
+  get rawClient() {
+    return this.client.tenant;
+  }
+}
+
+// Type definitions
 export interface CreateTenantRequest {
   companyName: string;
   tenantName: string;
@@ -13,108 +79,9 @@ export interface CreateTenantRequest {
   country: string;
 }
 
-export interface TenantResponse {
-  id: string;
-  companyName: string;
-  tenantName: string;
-  domain: string;
-  plan: string;
-  status: 'Pending' | 'Active' | 'Suspended' | 'Cancelled';
-  createdAt: string;
-  adminUser: {
-    id: string;
-    email: string;
-    firstName: string;
-    lastName: string;
-  };
-}
-
-export interface UpdateTenantStatusRequest {
-  status: 'Active' | 'Suspended' | 'Cancelled';
-  reason?: string;
-}
-
-export class TenantManagementClient extends BaseApiClient {
-  
-  async createTenant(request: CreateTenantRequest): Promise<TenantResponse> {
-    const response = await this.request<TenantResponse>({
-      method: 'POST',
-      url: '/api/tenants',
-      data: request,
-    });
-    return response.data;
-  }
-
-  async getTenant(tenantId: string): Promise<TenantResponse> {
-    const response = await this.request<TenantResponse>({
-      method: 'GET',
-      url: `/api/tenants/${tenantId}`,
-    });
-    return response.data;
-  }
-
-  async getTenants(pageSize = 50, pageNumber = 1): Promise<{
-    tenants: TenantResponse[];
-    totalCount: number;
-    pageSize: number;
-    pageNumber: number;
-  }> {
-    const response = await this.request({
-      method: 'GET',
-      url: '/api/tenants',
-      params: { pageSize, pageNumber },
-    });
-    return response.data;
-  }
-
-  async activateTenant(tenantId: string): Promise<TenantResponse> {
-    const response = await this.request<TenantResponse>({
-      method: 'POST',
-      url: `/api/tenants/${tenantId}/activate`,
-    });
-    return response.data;
-  }
-
-  async updateTenantStatus(tenantId: string, request: UpdateTenantStatusRequest): Promise<TenantResponse> {
-    const response = await this.request<TenantResponse>({
-      method: 'PUT',
-      url: `/api/tenants/${tenantId}/status`,
-      data: request,
-    });
-    return response.data;
-  }
-
-  async resendWelcomeEmail(tenantId: string): Promise<void> {
-    await this.request({
-      method: 'POST',
-      url: `/api/tenants/${tenantId}/resend-welcome`,
-    });
-  }
-
-  async deleteTenant(tenantId: string): Promise<void> {
-    await this.request({
-      method: 'DELETE',
-      url: `/api/tenants/${tenantId}`,
-    });
-  }
-
-  async getTenantByName(tenantName: string): Promise<TenantResponse | null> {
-    try {
-      const response = await this.request<TenantResponse>({
-        method: 'GET',
-        url: `/api/tenants/by-name/${tenantName}`,
-      });
-      return response.data;
-    } catch (error: any) {
-      if (error.response?.status === 404) {
-        return null;
-      }
-      throw error;
-    }
-  }
-
-  async checkTenantExists(tenantName: string): Promise<boolean> {
-    const tenant = await this.getTenantByName(tenantName);
-    return tenant !== null;
-  }
+export interface TenantData extends CreateTenantRequest {
+  id?: string;
+  status?: string;
+  createdAt?: string;
+  updatedAt?: string;
 }

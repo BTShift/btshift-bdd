@@ -44,7 +44,7 @@ async function generateClient(service: ServiceConfig): Promise<void> {
     await fs.mkdir(service.outputDir, { recursive: true });
     
     // Generate TypeScript client using openapi-typescript-codegen
-    await execAsync(`npx openapi-typescript-codegen --input "${service.openApiUrl}" --output "${service.outputDir}" --client axios`);
+    await execAsync(`npx openapi-typescript-codegen --input "${service.openApiUrl}" --output "${service.outputDir}" --client fetch`);
     
     // Create index.ts for easy imports
     const indexContent = `export * from './services';
