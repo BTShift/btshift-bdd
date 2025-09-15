@@ -1,7 +1,0 @@
-❌ [Identity] POST /api/authentication/login | X-Correlation-ID: 7f5ff243-fa9f-4e0e-89a4-cdac12be33b6 | Error: {
-  error: 'error',
-  message: 'Authorization failed',
-  timestamp: '2025-09-14T21:19:54.5035644+00:00'
-}
-❌ SuperAdmin authentication failed: HTTP 500: Internal Server Error
-❌ [30e02204] Setup failed: HTTP 500: Internal Server Error

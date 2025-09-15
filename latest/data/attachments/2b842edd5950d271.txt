@@ -1,5 +1,0 @@
-❌ [Identity] GET /api/authentication/validate-token | X-Correlation-ID: 5e90d75c-e756-4e1c-959d-8f3520397366 | Error: {
-  error: 'error',
-  message: 'Authorization failed',
-  timestamp: '2025-09-14T21:19:31.1520089+00:00'
-}
